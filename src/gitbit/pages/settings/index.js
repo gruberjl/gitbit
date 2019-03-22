@@ -1,6 +1,7 @@
 const React = require('react')
 const clone = require('clone-deep')
 const {toast} = require('react-toastify')
+const {Prompt} = require('react-router-dom')
 const {Nav} = require('../../components/nav')
 const {getTenant} = require('./lib/get-tenant')
 const {save} = require('./lib/save')
@@ -14,12 +15,29 @@ class Settings extends React.Component {
         description: '',
         image: '',
         favicon: ''
-      }
+      },
+      hasChanged: false
     }
+    this.onUnload = this.onUnload.bind(this)
   }
 
   componentDidMount() {
+    window.addEventListener('beforeunload', this.onUnload)
     getTenant().then(tenant => this.setState({tenant}))
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload)
+  }
+
+  onUnload() {
+    if (this.state.hasChanged) {
+      const confirmationMessage = 'Quit without saving?'
+      window.event.returnValue = confirmationMessage
+      return confirmationMessage
+    }
+
+    return undefined
   }
 
   setValue(event) {
@@ -27,14 +45,14 @@ class Settings extends React.Component {
     this.setState((prevState) => {
       const tenant = clone(prevState.tenant)
       tenant[name] = value
-      return {tenant}
+      return {tenant, hasChanged: true}
     })
   }
 
   save() {
     save(this.state.tenant).then((savedDoc) => {
       toast('saved')
-      this.setState({tenant: savedDoc})
+      this.setState({tenant: savedDoc.doc, hasChanged: false})
     })
       .catch(err => toast.error(err.toString()))
   }
@@ -46,6 +64,7 @@ class Settings extends React.Component {
 
     return (
       <div className="page">
+        <Prompt when={this.state.hasChanged} message="Quit without saving?" />
         <Nav />
         <main>
           <h1>Settings</h1>

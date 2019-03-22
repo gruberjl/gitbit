@@ -51730,6 +51730,10 @@ const {
 } = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/lib/index.js");
 
 const {
+  Prompt
+} = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+const {
   Nav
 } = __webpack_require__(/*! ../../components/nav */ "./src/gitbit/components/nav/index.js");
 
@@ -51750,14 +51754,31 @@ class Settings extends React.Component {
         description: '',
         image: '',
         favicon: ''
-      }
+      },
+      hasChanged: false
     };
+    this.onUnload = this.onUnload.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('beforeunload', this.onUnload);
     getTenant().then(tenant => this.setState({
       tenant
     }));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload);
+  }
+
+  onUnload() {
+    if (this.state.hasChanged) {
+      const confirmationMessage = 'Quit without saving?';
+      window.event.returnValue = confirmationMessage;
+      return confirmationMessage;
+    }
+
+    return undefined;
   }
 
   setValue(event) {
@@ -51769,7 +51790,8 @@ class Settings extends React.Component {
       const tenant = clone(prevState.tenant);
       tenant[name] = value;
       return {
-        tenant
+        tenant,
+        hasChanged: true
       };
     });
   }
@@ -51778,7 +51800,8 @@ class Settings extends React.Component {
     save(this.state.tenant).then(savedDoc => {
       toast('saved');
       this.setState({
-        tenant: savedDoc
+        tenant: savedDoc.doc,
+        hasChanged: false
       });
     }).catch(err => toast.error(err.toString()));
   }
@@ -51792,7 +51815,10 @@ class Settings extends React.Component {
     } = this.state.tenant;
     return React.createElement("div", {
       className: "page"
-    }, React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Settings"), React.createElement("div", null, React.createElement("input", {
+    }, React.createElement(Prompt, {
+      when: this.state.hasChanged,
+      message: "Quit without saving?"
+    }), React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Settings"), React.createElement("div", null, React.createElement("input", {
       type: "text",
       name: "title",
       placeholder: "title",
@@ -51957,6 +51983,7 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* eslint eqeqeq: 0 */
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 const clone = __webpack_require__(/*! clone-deep */ "./node_modules/clone-deep/index.js");
@@ -51968,6 +51995,10 @@ const queryString = __webpack_require__(/*! query-string */ "./node_modules/quer
 const {
   toast
 } = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/lib/index.js");
+
+const {
+  Prompt
+} = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 const {
   Nav,
@@ -51992,14 +52023,31 @@ class Story extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: queryString.parse(props.location.search).id
+      id: queryString.parse(props.location.search).id,
+      hasChanged: false
     };
+    this.onUnload = this.onUnload.bind(this);
   }
 
   componentDidMount() {
     getStory(this.state.id).then(story => this.setState({
       story
     }));
+    window.addEventListener('beforeunload', this.onUnload);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload);
+  }
+
+  onUnload() {
+    if (this.state.hasChanged) {
+      const confirmationMessage = 'Quit without saving?';
+      window.event.returnValue = confirmationMessage;
+      return confirmationMessage;
+    }
+
+    return undefined;
   }
 
   onFeaturedImageClick(featuredImage) {
@@ -52007,7 +52055,8 @@ class Story extends React.Component {
       const story = clone(state.story);
       story.featuredImage = featuredImage;
       return {
-        story
+        story,
+        hasChanged: true
       };
     });
   }
@@ -52017,7 +52066,8 @@ class Story extends React.Component {
       const story = clone(state.story);
       story.publishTime = dateTime;
       return {
-        story
+        story,
+        hasChanged: true
       };
     });
   }
@@ -52028,7 +52078,8 @@ class Story extends React.Component {
       const story = clone(state.story);
       story.title = title;
       return {
-        story
+        story,
+        hasChanged: true
       };
     });
   }
@@ -52039,7 +52090,8 @@ class Story extends React.Component {
       const story = clone(state.story);
       story.slug = slug;
       return {
-        story
+        story,
+        hasChanged: true
       };
     });
   }
@@ -52050,18 +52102,20 @@ class Story extends React.Component {
       const story = clone(state.story);
       story.template = template;
       return {
-        story
+        story,
+        hasChanged: true
       };
     });
   }
 
   editorChanged(editorDelta, content) {
-    this.setState(state => {
+    if (this.state.story.content != content) this.setState(state => {
       const story = clone(state.story);
       story.editorDelta = editorDelta;
       story.content = content;
       return {
-        story
+        story,
+        hasChanged: true
       };
     });
   }
@@ -52076,7 +52130,8 @@ class Story extends React.Component {
         newStory._rev = savedDoc.doc._rev;
         toast('saved');
         return {
-          story: newStory
+          story: newStory,
+          hasChanged: false
         };
       });
     }).catch(err => toast.error(err.toString()));
@@ -52091,12 +52146,16 @@ class Story extends React.Component {
   render() {
     if (this.state && this.state.story) {
       const {
-        story
+        story,
+        hasChanged
       } = this.state;
       const saveBtnText = moment(story.publishTime).isValid() ? `Publish ${moment(story.publishTime).calendar()}` : 'Save as draft';
       return React.createElement("div", {
         className: "page"
-      }, React.createElement(Nav, null), React.createElement("main", {
+      }, React.createElement(Prompt, {
+        when: hasChanged,
+        message: "Quit without saving?"
+      }), React.createElement(Nav, null), React.createElement("main", {
         className: "editor 2"
       }, React.createElement("article", null, React.createElement("h1", null, React.createElement("textarea", {
         placeholder: "Story Title",
@@ -52491,6 +52550,10 @@ const clone = __webpack_require__(/*! clone-deep */ "./node_modules/clone-deep/i
 const queryString = __webpack_require__(/*! query-string */ "./node_modules/query-string/index.js");
 
 const {
+  Prompt
+} = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+const {
   toast
 } = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/lib/index.js");
 
@@ -52508,14 +52571,31 @@ class Template extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      id: queryString.parse(props.location.search).id
+      id: queryString.parse(props.location.search).id,
+      hasChanged: false
     };
+    this.onUnload = this.onUnload.bind(this);
   }
 
   componentDidMount() {
+    window.addEventListener('beforeunload', this.onUnload);
     getTemplate(this.state.id).then(template => this.setState({
       template
     })).catch(err => toast.error(err.toString()));
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload);
+  }
+
+  onUnload() {
+    if (this.state.hasChanged) {
+      const confirmationMessage = 'Quit without saving?';
+      window.event.returnValue = confirmationMessage;
+      return confirmationMessage;
+    }
+
+    return undefined;
   }
 
   setName(event) {
@@ -52524,7 +52604,8 @@ class Template extends React.Component {
       const template = clone(state.template);
       template.name = name;
       return {
-        template
+        template,
+        hasChanged: true
       };
     });
   }
@@ -52535,7 +52616,8 @@ class Template extends React.Component {
       const template = clone(state.template);
       template.content = content;
       return {
-        template
+        template,
+        hasChanged: true
       };
     });
   }
@@ -52550,7 +52632,8 @@ class Template extends React.Component {
         newTemplate._rev = savedDoc.doc._rev;
         toast('saved');
         return {
-          template: newTemplate
+          template: newTemplate,
+          hasChanged: false
         };
       });
     }).catch(err => toast.error(err.toString()));
@@ -52565,11 +52648,15 @@ class Template extends React.Component {
   render() {
     if (this.state && this.state.template) {
       const {
-        template
+        template,
+        hasChanged
       } = this.state;
       return React.createElement("div", {
         className: "page"
-      }, React.createElement(Nav, null), React.createElement("main", {
+      }, React.createElement(Prompt, {
+        when: hasChanged,
+        message: "Quit without saving?"
+      }), React.createElement(Nav, null), React.createElement("main", {
         className: "editor"
       }, React.createElement("article", null, React.createElement("h1", null, React.createElement("textarea", {
         placeholder: "Template Name",

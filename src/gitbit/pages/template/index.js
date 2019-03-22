@@ -1,6 +1,7 @@
 const React = require('react')
 const clone = require('clone-deep')
 const queryString = require('query-string')
+const {Prompt} = require('react-router-dom')
 const {toast} = require('react-toastify')
 const {Nav} = require('../../components')
 const {getTemplate, save, remove} = require('./lib')
@@ -8,13 +9,29 @@ const {getTemplate, save, remove} = require('./lib')
 class Template extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {id: queryString.parse(props.location.search).id}
+    this.state = {id: queryString.parse(props.location.search).id, hasChanged: false}
+    this.onUnload = this.onUnload.bind(this)
   }
 
   componentDidMount() {
+    window.addEventListener('beforeunload', this.onUnload)
     getTemplate(this.state.id)
       .then(template => this.setState({template}))
       .catch(err => toast.error(err.toString()))
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload)
+  }
+
+  onUnload() {
+    if (this.state.hasChanged) {
+      const confirmationMessage = 'Quit without saving?'
+      window.event.returnValue = confirmationMessage
+      return confirmationMessage
+    }
+
+    return undefined
   }
 
   setName(event) {
@@ -22,7 +39,7 @@ class Template extends React.Component {
     this.setState((state) => {
       const template = clone(state.template)
       template.name = name
-      return {template}
+      return {template, hasChanged: true}
     })
   }
 
@@ -31,7 +48,7 @@ class Template extends React.Component {
     this.setState((state) => {
       const template = clone(state.template)
       template.content = content
-      return {template}
+      return {template, hasChanged: true}
     })
   }
 
@@ -46,7 +63,7 @@ class Template extends React.Component {
         const newTemplate = clone(state.template)
         newTemplate._rev = savedDoc.doc._rev
         toast('saved')
-        return {template: newTemplate}
+        return {template: newTemplate, hasChanged: false}
       })
     }).catch(err => toast.error(err.toString()))
   }
@@ -59,9 +76,10 @@ class Template extends React.Component {
 
   render() {
     if (this.state && this.state.template) {
-      const {template} = this.state
+      const {template, hasChanged} = this.state
       return (
         <div className="page">
+          <Prompt when={hasChanged} message="Quit without saving?" />
           <Nav />
           <main className="editor">
             <article>

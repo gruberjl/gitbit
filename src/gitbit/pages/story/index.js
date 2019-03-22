@@ -1,8 +1,10 @@
+/* eslint eqeqeq: 0 */
 const React = require('react')
 const clone = require('clone-deep')
 const moment = require('moment')
 const queryString = require('query-string')
 const {toast} = require('react-toastify')
+const {Prompt} = require('react-router-dom')
 const {Nav, Editor} = require('../../components')
 const {getStory, getImages, publish, remove} = require('./lib')
 const {FeaturedImages, Slug, PublishTime, Templates} = require('./settings')
@@ -10,18 +12,34 @@ const {FeaturedImages, Slug, PublishTime, Templates} = require('./settings')
 class Story extends React.Component {
   constructor(props) {
     super(props)
-    this.state = {id: queryString.parse(props.location.search).id}
+    this.state = {id: queryString.parse(props.location.search).id, hasChanged: false}
+    this.onUnload = this.onUnload.bind(this)
   }
 
   componentDidMount() {
     getStory(this.state.id).then(story => this.setState({story}))
+    window.addEventListener('beforeunload', this.onUnload)
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload)
+  }
+
+  onUnload() {
+    if (this.state.hasChanged) {
+      const confirmationMessage = 'Quit without saving?'
+      window.event.returnValue = confirmationMessage
+      return confirmationMessage
+    }
+
+    return undefined
   }
 
   onFeaturedImageClick(featuredImage) {
     this.setState((state) => {
       const story = clone(state.story)
       story.featuredImage = featuredImage
-      return {story}
+      return {story, hasChanged: true}
     })
   }
 
@@ -29,7 +47,7 @@ class Story extends React.Component {
     this.setState((state) => {
       const story = clone(state.story)
       story.publishTime = dateTime
-      return {story}
+      return {story, hasChanged: true}
     })
   }
 
@@ -38,7 +56,7 @@ class Story extends React.Component {
     this.setState((state) => {
       const story = clone(state.story)
       story.title = title
-      return {story}
+      return {story, hasChanged: true}
     })
   }
 
@@ -47,7 +65,7 @@ class Story extends React.Component {
     this.setState((state) => {
       const story = clone(state.story)
       story.slug = slug
-      return {story}
+      return {story, hasChanged: true}
     })
   }
 
@@ -56,17 +74,18 @@ class Story extends React.Component {
     this.setState((state) => {
       const story = clone(state.story)
       story.template = template
-      return {story}
+      return {story, hasChanged: true}
     })
   }
 
   editorChanged(editorDelta, content) {
-    this.setState((state) => {
-      const story = clone(state.story)
-      story.editorDelta = editorDelta
-      story.content = content
-      return {story}
-    })
+    if (this.state.story.content != content)
+      this.setState((state) => {
+        const story = clone(state.story)
+        story.editorDelta = editorDelta
+        story.content = content
+        return {story, hasChanged: true}
+      })
   }
 
   publish() {
@@ -80,7 +99,7 @@ class Story extends React.Component {
         const newStory = clone(state.story)
         newStory._rev = savedDoc.doc._rev
         toast('saved')
-        return {story: newStory}
+        return {story: newStory, hasChanged: false}
       })
     }).catch(err => toast.error(err.toString()))
   }
@@ -93,12 +112,12 @@ class Story extends React.Component {
 
   render() {
     if (this.state && this.state.story) {
-      const {story} = this.state
-
+      const {story, hasChanged} = this.state
       const saveBtnText = moment(story.publishTime).isValid() ? `Publish ${moment(story.publishTime).calendar()}` : 'Save as draft'
 
       return (
         <div className="page">
+          <Prompt when={hasChanged} message="Quit without saving?" />
           <Nav />
           <main className="editor 2">
             <article>
