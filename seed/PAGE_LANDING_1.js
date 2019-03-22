@@ -1,0 +1,12 @@
+module.exports = {
+  _id: 'localhost/landingpage1',
+  slug: '/landingpage1',
+  editorDelta: {
+    ops: [{insert: 'This is my landing page!\n'}]
+  },
+  featuredImage: '',
+  content: '<p>This is my landing page!</p>',
+  title: 'Landing Page 1',
+  publishTime: '2019-12-31T20:17:00.000Z',
+  template: 'landing-page'
+}
