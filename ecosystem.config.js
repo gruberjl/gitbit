@@ -4,7 +4,7 @@ const config = {
     script: './server/index.js',
 
     // Options reference: https://pm2.io/doc/en/runtime/reference/ecosystem-file/
-    instances: 3,
+    instances: 1,
     autorestart: true,
     watch: false,
     max_memory_restart: '768M',
