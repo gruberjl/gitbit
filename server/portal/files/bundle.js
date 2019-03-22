@@ -52022,22 +52022,25 @@ const {
 class Story extends React.Component {
   constructor(props) {
     super(props);
+    this.onUnload = this.onUnload.bind(this);
+    this.autoSave = this.autoSave.bind(this);
     this.state = {
       id: queryString.parse(props.location.search).id,
       hasChanged: false
     };
-    this.onUnload = this.onUnload.bind(this);
   }
 
   componentDidMount() {
     getStory(this.state.id).then(story => this.setState({
-      story
+      story,
+      intervalId: setInterval(this.autoSave, 60000)
     }));
     window.addEventListener('beforeunload', this.onUnload);
   }
 
   componentWillUnmount() {
     window.removeEventListener('beforeunload', this.onUnload);
+    if (this.state.intervalId) clearInterval(this.state.intervalId);
   }
 
   onUnload() {
@@ -52108,6 +52111,10 @@ class Story extends React.Component {
     });
   }
 
+  autoSave() {
+    if (this.state.hasChanged) this.publish(false);
+  }
+
   editorChanged(editorDelta, content) {
     if (this.state.story.content != content) this.setState(state => {
       const story = clone(state.story);
@@ -52120,7 +52127,7 @@ class Story extends React.Component {
     });
   }
 
-  publish() {
+  publish(showToast = true) {
     const self = this;
     const story = clone(this.state.story);
     if (!story._id) story._id = story.slug;
@@ -52128,7 +52135,7 @@ class Story extends React.Component {
       self.setState(state => {
         const newStory = clone(state.story);
         newStory._rev = savedDoc.doc._rev;
-        toast('saved');
+        if (showToast) toast('saved');
         return {
           story: newStory,
           hasChanged: false
