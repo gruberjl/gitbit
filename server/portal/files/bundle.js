@@ -51392,6 +51392,14 @@ const Toolbar = () => React.createElement("div", {
   value: "2",
   type: "button"
 }), React.createElement("button", {
+  className: "ql-header",
+  value: "3",
+  type: "button"
+}), React.createElement("button", {
+  className: "ql-header",
+  value: "4",
+  type: "button"
+}), React.createElement("button", {
   className: "ql-list",
   value: "ordered",
   type: "button"

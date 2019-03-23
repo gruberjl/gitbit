@@ -9,6 +9,8 @@ const Toolbar = () => (
     <button className="ql-blockquote" type="button">Blockquote</button>
     <button className="ql-header" value="1" type="button" />
     <button className="ql-header" value="2" type="button" />
+    <button className="ql-header" value="3" type="button" />
+    <button className="ql-header" value="4" type="button" />
     <button className="ql-list" value="ordered" type="button" />
     <button className="ql-list" value="bullet" type="button" />
     <button className="ql-image" type="button">Image</button>
