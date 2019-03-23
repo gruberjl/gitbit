@@ -79935,9 +79935,6 @@ const Toolbar = () => React.createElement("div", {
   className: "ql-italic",
   type: "button"
 }, "Italic"), React.createElement("button", {
-  className: "ql-link",
-  type: "button"
-}, "Link"), React.createElement("button", {
   className: "ql-underline",
   type: "button"
 }, "Underline"), React.createElement("button", {
@@ -79947,19 +79944,19 @@ const Toolbar = () => React.createElement("div", {
   className: "ql-header",
   value: "1",
   type: "button"
-}), React.createElement("button", {
+}, "H1"), React.createElement("button", {
   className: "ql-header",
   value: "2",
   type: "button"
-}), React.createElement("button", {
+}, "H2"), React.createElement("button", {
   className: "ql-header",
   value: "3",
   type: "button"
-}), React.createElement("button", {
+}, "H3"), React.createElement("button", {
   className: "ql-header",
   value: "4",
   type: "button"
-}), React.createElement("button", {
+}, "H4"), React.createElement("button", {
   className: "ql-list",
   value: "ordered",
   type: "button"
@@ -79968,6 +79965,9 @@ const Toolbar = () => React.createElement("div", {
   value: "bullet",
   type: "button"
 }), React.createElement("button", {
+  className: "ql-link",
+  type: "button"
+}, "Link"), React.createElement("button", {
   className: "ql-image",
   type: "button"
 }, "Image"), React.createElement("button", {
@@ -80687,7 +80687,6 @@ class Story extends React.Component {
 
   static getWordCount(html) {
     const text = cheerio.load(html).text();
-    console.log(text);
     return wordCount(text);
   }
 
