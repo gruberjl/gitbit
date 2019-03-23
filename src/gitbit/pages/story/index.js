@@ -5,6 +5,8 @@ const moment = require('moment')
 const queryString = require('query-string')
 const {toast} = require('react-toastify')
 const {Prompt} = require('react-router-dom')
+const cheerio = require('cheerio')
+const wordCount = require('word-count')
 const {Nav, Editor} = require('../../components')
 const {getStory, getImages, publish, remove} = require('./lib')
 const {FeaturedImages, Slug, PublishTime, Templates} = require('./settings')
@@ -18,14 +20,16 @@ class Story extends React.Component {
 
     this.state = {
       id: queryString.parse(props.location.search).id,
-      hasChanged: false
+      hasChanged: false,
+      words: 0
     }
   }
 
   componentDidMount() {
     getStory(this.state.id).then(story => this.setState({
       story,
-      intervalId: setInterval(this.autoSave, 60000)
+      intervalId: setInterval(this.autoSave, 60000),
+      words: Story.getWordCount(story.content)
     }))
 
     window.addEventListener('beforeunload', this.onUnload)
@@ -90,6 +94,11 @@ class Story extends React.Component {
     })
   }
 
+  static getWordCount(html) {
+    const text = cheerio.load(html).text()
+    return wordCount(text)
+  }
+
   autoSave() {
     if (this.state.hasChanged)
       this.publish(false)
@@ -101,7 +110,8 @@ class Story extends React.Component {
         const story = clone(state.story)
         story.editorDelta = editorDelta
         story.content = content
-        return {story, hasChanged: true}
+        const words = Story.getWordCount(content)
+        return {story, hasChanged: true, words}
       })
   }
 
@@ -132,7 +142,8 @@ class Story extends React.Component {
 
   render() {
     if (this.state && this.state.story) {
-      const {story, hasChanged} = this.state
+      const {story, hasChanged, words} = this.state
+      const wordsLabel = words > 1 ? 'words' : 'word'
       const saveBtnText = moment(story.publishTime).isValid() ? `Publish ${moment(story.publishTime).calendar()}` : 'Save as draft'
 
       return (
@@ -143,6 +154,9 @@ class Story extends React.Component {
             <article>
               <h1><textarea placeholder="Story Title" value={story.title} onChange={this.setTitle.bind(this)} /></h1>
               <Editor onChange={this.editorChanged.bind(this)} deltaOnMount={story.editorDelta} />
+              <div>
+                <span>{words} {wordsLabel}</span>
+              </div>
               <hr />
               <FeaturedImages
                 images={getImages(story.editorDelta)}
