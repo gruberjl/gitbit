@@ -80386,31 +80386,49 @@ class Settings extends React.Component {
     }, React.createElement(Prompt, {
       when: this.state.hasChanged,
       message: "Quit without saving?"
-    }), React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Settings"), React.createElement("div", null, React.createElement("input", {
+    }), React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Settings"), React.createElement("form", {
+      className: "pure-form pure-form-stacked"
+    }, React.createElement("label", {
+      htmlFor: "title"
+    }, "title"), React.createElement("input", {
+      className: "pure-input-1",
       type: "text",
+      id: "title",
       name: "title",
       placeholder: "title",
       value: title,
       onChange: this.setValue.bind(this)
-    })), React.createElement("div", null, React.createElement("input", {
+    }), React.createElement("label", {
+      htmlFor: "description"
+    }, "description"), React.createElement("input", {
+      className: "pure-input-1",
       type: "text",
+      id: "description",
       name: "description",
       placeholder: "description",
       value: description,
       onChange: this.setValue.bind(this)
-    })), React.createElement("div", null, React.createElement("input", {
+    }), React.createElement("label", {
+      htmlFor: "image"
+    }, "image"), React.createElement("input", {
+      className: "pure-input-1",
       type: "text",
+      id: "image",
       name: "image",
       placeholder: "image",
       value: image,
       onChange: this.setValue.bind(this)
-    })), React.createElement("div", null, React.createElement("input", {
+    }), React.createElement("label", {
+      htmlFor: "favicon"
+    }, "favicon"), React.createElement("input", {
+      className: "pure-input-1",
       type: "text",
+      id: "favicon",
       name: "favicon",
       placeholder: "favicon",
       value: favicon,
       onChange: this.setValue.bind(this)
-    })), React.createElement("div", null, React.createElement("button", {
+    }), React.createElement("button", {
       onClick: this.save.bind(this),
       type: "button"
     }, "Save"))));

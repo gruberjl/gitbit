@@ -68,21 +68,20 @@ class Settings extends React.Component {
         <Nav />
         <main>
           <h1>Settings</h1>
-          <div>
-            <input type="text" name="title" placeholder="title" value={title} onChange={this.setValue.bind(this)} />
-          </div>
-          <div>
-            <input type="text" name="description" placeholder="description" value={description} onChange={this.setValue.bind(this)} />
-          </div>
-          <div>
-            <input type="text" name="image" placeholder="image" value={image} onChange={this.setValue.bind(this)} />
-          </div>
-          <div>
-            <input type="text" name="favicon" placeholder="favicon" value={favicon} onChange={this.setValue.bind(this)} />
-          </div>
-          <div>
+          <form className="pure-form pure-form-stacked">
+            <label htmlFor="title">title</label>
+            <input className="pure-input-1" type="text" id="title" name="title" placeholder="title" value={title} onChange={this.setValue.bind(this)} />
+
+            <label htmlFor="description">description</label>
+            <input className="pure-input-1" type="text" id="description" name="description" placeholder="description" value={description} onChange={this.setValue.bind(this)} />
+
+            <label htmlFor="image">image</label>
+            <input className="pure-input-1" type="text" id="image" name="image" placeholder="image" value={image} onChange={this.setValue.bind(this)} />
+
+            <label htmlFor="favicon">favicon</label>
+            <input className="pure-input-1" type="text" id="favicon" name="favicon" placeholder="favicon" value={favicon} onChange={this.setValue.bind(this)} />
             <button onClick={this.save.bind(this)} type="button">Save</button>
-          </div>
+          </form>
         </main>
       </div>
     )

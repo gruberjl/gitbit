@@ -41,6 +41,7 @@ module.exports = {
     'react/destructuring-assignment': 0,
     'object-curly-newline': 0,
     'jsx-a11y/label-has-for':0,
+    'jsx-a11y/label-has-associated-control': 0,
     'react/jsx-one-expression-per-line':0
   }
 }
