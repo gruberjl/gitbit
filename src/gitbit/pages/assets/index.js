@@ -36,20 +36,15 @@ class Assets extends React.Component {
 
   render() {
     return (
-      <div className="page">
+      <div className="pure-g">
         <Nav />
-        <main>
+        <main className="pure-u-4-5">
           <h1>Assets</h1>
-          <div>
-            <input onChange={this.setFile.bind(this)} type="file" />
-          </div>
-          <div>
-            <input onChange={this.setName.bind(this)} type="text" placeholder="Enter the desired name of file" />
-          </div>
-          <br />
-          <div>
-            <button onClick={this.submit.bind(this)} type="button">Upload</button>
-          </div>
+          <form className="pure-form pure-form-stacked">
+            <input onChange={this.setFile.bind(this)} type="file" className="pure-input-1" />
+            <input onChange={this.setName.bind(this)} type="text" placeholder="Enter the desired name of file" className="pure-input-1" />
+            <button onClick={this.submit.bind(this)} type="button" className="pure-input-1">Upload</button>
+          </form>
         </main>
       </div>
     )

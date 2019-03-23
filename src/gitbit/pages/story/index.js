@@ -147,32 +147,34 @@ class Story extends React.Component {
       const saveBtnText = moment(story.publishTime).isValid() ? `Publish ${moment(story.publishTime).calendar()}` : 'Save as draft'
 
       return (
-        <div className="page">
+        <div className="pure-g">
           <Prompt when={hasChanged} message="Quit without saving?" />
           <Nav />
-          <main className="editor 2">
+          <main className="pure-u-4-5">
             <article>
-              <h1><textarea placeholder="Story Title" value={story.title} onChange={this.setTitle.bind(this)} /></h1>
-              <Editor onChange={this.editorChanged.bind(this)} deltaOnMount={story.editorDelta} />
-              <div>
-                <span>{words} {wordsLabel}</span>
-              </div>
-              <hr />
-              <FeaturedImages
-                images={getImages(story.editorDelta)}
-                onFeaturedImageClick={this.onFeaturedImageClick.bind(this)}
-                selectedImage={story.featuredImage}
-              />
-              <Slug slug={story.slug} onChange={this.setSlug.bind(this)} />
-              <PublishTime
-                publishTime={story.publishTime}
-                onChange={this.setPublishTime.bind(this)}
-              />
-              <Templates template={story.template} onChange={this.setTemplate.bind(this)} />
-              <div>
-                <button onClick={this.publish.bind(this)} type="button">{saveBtnText}</button>
-                <button onClick={this.remove.bind(this)} type="button">Delete Story</button>
-              </div>
+              <form className="pure-form pure-form-stacked">
+                <h1><textarea placeholder="Story Title" value={story.title} onChange={this.setTitle.bind(this)} className="pure-input-1" /></h1>
+                <Editor onChange={this.editorChanged.bind(this)} deltaOnMount={story.editorDelta} />
+                <div>
+                  <span>{words} {wordsLabel}</span>
+                </div>
+                <hr />
+                <FeaturedImages
+                  images={getImages(story.editorDelta)}
+                  onFeaturedImageClick={this.onFeaturedImageClick.bind(this)}
+                  selectedImage={story.featuredImage}
+                />
+                <Slug slug={story.slug} onChange={this.setSlug.bind(this)} />
+                <PublishTime
+                  publishTime={story.publishTime}
+                  onChange={this.setPublishTime.bind(this)}
+                />
+                <Templates template={story.template} onChange={this.setTemplate.bind(this)} />
+                <div>
+                  <button onClick={this.publish.bind(this)} type="button">{saveBtnText}</button>
+                  <button onClick={this.remove.bind(this)} type="button">Delete Story</button>
+                </div>
+              </form>
             </article>
           </main>
         </div>

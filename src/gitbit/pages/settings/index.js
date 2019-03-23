@@ -63,10 +63,10 @@ class Settings extends React.Component {
     } = this.state.tenant
 
     return (
-      <div className="page">
+      <div className="pure-g">
         <Prompt when={this.state.hasChanged} message="Quit without saving?" />
         <Nav />
-        <main>
+        <main className="pure-u-4-5">
           <h1>Settings</h1>
           <form className="pure-form pure-form-stacked">
             <label htmlFor="title">title</label>

@@ -80046,23 +80046,39 @@ const {
 } = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
 
 const Nav = () => React.createElement("nav", {
-  className: "sidebar"
+  className: "pure-u-1-5"
 }, React.createElement("ul", {
-  className: "no-bullets"
-}, React.createElement("li", null, React.createElement(Link, {
-  to: "/edit-story"
-}, "New Story")), React.createElement("li", null, React.createElement(Link, {
-  to: "/stories"
-}, "Stories"))), React.createElement("h3", null, "Settings"), React.createElement("ul", {
-  className: "no-bullets"
-}, React.createElement("li", null, React.createElement(Link, {
-  to: "/settings"
-}, "General")), React.createElement("li", null, React.createElement(Link, {
-  to: "/edit-template"
-}, "New Template")), React.createElement("li", null, React.createElement(Link, {
-  to: "/templates"
-}, "Templates")), React.createElement("li", null, React.createElement(Link, {
-  to: "/edit-assets"
+  className: "pure-menu-list"
+}, React.createElement("li", {
+  className: "pure-menu-item"
+}, React.createElement(Link, {
+  to: "/edit-story",
+  className: "pure-menu-link"
+}, "New Story")), React.createElement("li", {
+  className: "pure-menu-item"
+}, React.createElement(Link, {
+  to: "/stories",
+  className: "pure-menu-link"
+}, "Stories")), React.createElement("li", {
+  className: "pure-menu-item"
+}, React.createElement(Link, {
+  to: "/settings",
+  className: "pure-menu-link"
+}, "General")), React.createElement("li", {
+  className: "pure-menu-item"
+}, React.createElement(Link, {
+  to: "/edit-template",
+  className: "pure-menu-link"
+}, "New Template")), React.createElement("li", {
+  className: "pure-menu-item"
+}, React.createElement(Link, {
+  to: "/templates",
+  className: "pure-menu-link"
+}, "Templates")), React.createElement("li", {
+  className: "pure-menu-item"
+}, React.createElement(Link, {
+  to: "/edit-assets",
+  className: "pure-menu-link"
 }, "Assets"))));
 
 module.exports = {
@@ -80190,17 +80206,24 @@ class Assets extends React.Component {
 
   render() {
     return React.createElement("div", {
-      className: "page"
-    }, React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Assets"), React.createElement("div", null, React.createElement("input", {
+      className: "pure-g"
+    }, React.createElement(Nav, null), React.createElement("main", {
+      className: "pure-u-4-5"
+    }, React.createElement("h1", null, "Assets"), React.createElement("form", {
+      className: "pure-form pure-form-stacked"
+    }, React.createElement("input", {
       onChange: this.setFile.bind(this),
-      type: "file"
-    })), React.createElement("div", null, React.createElement("input", {
+      type: "file",
+      className: "pure-input-1"
+    }), React.createElement("input", {
       onChange: this.setName.bind(this),
       type: "text",
-      placeholder: "Enter the desired name of file"
-    })), React.createElement("br", null), React.createElement("div", null, React.createElement("button", {
+      placeholder: "Enter the desired name of file",
+      className: "pure-input-1"
+    }), React.createElement("button", {
       onClick: this.submit.bind(this),
-      type: "button"
+      type: "button",
+      className: "pure-input-1"
     }, "Upload"))));
   }
 
@@ -80226,8 +80249,10 @@ const {
 } = __webpack_require__(/*! ../../components/nav */ "./src/gitbit/components/nav/index.js");
 
 const Home = () => React.createElement("div", {
-  className: "page"
-}, React.createElement(Nav, null), React.createElement("main", null, "Home"));
+  className: "pure-g"
+}, React.createElement(Nav, null), React.createElement("main", {
+  className: "pure-u-4-5"
+}, "Home"));
 
 module.exports = {
   Home
@@ -80382,11 +80407,13 @@ class Settings extends React.Component {
       favicon
     } = this.state.tenant;
     return React.createElement("div", {
-      className: "page"
+      className: "pure-g"
     }, React.createElement(Prompt, {
       when: this.state.hasChanged,
       message: "Quit without saving?"
-    }), React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Settings"), React.createElement("form", {
+    }), React.createElement(Nav, null), React.createElement("main", {
+      className: "pure-u-4-5"
+    }, React.createElement("h1", null, "Settings"), React.createElement("form", {
       className: "pure-form pure-form-stacked"
     }, React.createElement("label", {
       htmlFor: "title"
@@ -80527,11 +80554,17 @@ class Stories extends React.Component {
 
   render() {
     return React.createElement("div", {
-      className: "page"
-    }, React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Stories"), React.createElement("div", null, this.state.stories.map(story => React.createElement("div", {
+      className: "pure-g"
+    }, React.createElement(Nav, null), React.createElement("main", {
+      className: "pure-u-4-5"
+    }, React.createElement("h1", null, "Stories"), React.createElement("ul", {
+      className: "pure-menu-list"
+    }, this.state.stories.map(story => React.createElement("li", {
+      className: "pure-menu-item",
       key: story._id
     }, React.createElement(Link, {
-      to: `/edit-story?id=${story._id}`
+      to: `/edit-story?id=${story._id}`,
+      className: "pure-menu-link"
     }, story.title))))));
   }
 
@@ -80759,16 +80792,19 @@ class Story extends React.Component {
       const wordsLabel = words > 1 ? 'words' : 'word';
       const saveBtnText = moment(story.publishTime).isValid() ? `Publish ${moment(story.publishTime).calendar()}` : 'Save as draft';
       return React.createElement("div", {
-        className: "page"
+        className: "pure-g"
       }, React.createElement(Prompt, {
         when: hasChanged,
         message: "Quit without saving?"
       }), React.createElement(Nav, null), React.createElement("main", {
-        className: "editor 2"
-      }, React.createElement("article", null, React.createElement("h1", null, React.createElement("textarea", {
+        className: "pure-u-4-5"
+      }, React.createElement("article", null, React.createElement("form", {
+        className: "pure-form pure-form-stacked"
+      }, React.createElement("h1", null, React.createElement("textarea", {
         placeholder: "Story Title",
         value: story.title,
-        onChange: this.setTitle.bind(this)
+        onChange: this.setTitle.bind(this),
+        className: "pure-input-1"
       })), React.createElement(Editor, {
         onChange: this.editorChanged.bind(this),
         deltaOnMount: story.editorDelta
@@ -80791,7 +80827,7 @@ class Story extends React.Component {
       }, saveBtnText), React.createElement("button", {
         onClick: this.remove.bind(this),
         type: "button"
-      }, "Delete Story")))));
+      }, "Delete Story"))))));
     }
 
     return React.createElement("h1", null, "Loading...");
@@ -81260,13 +81296,15 @@ class Template extends React.Component {
         hasChanged
       } = this.state;
       return React.createElement("div", {
-        className: "page"
+        className: "pure-g"
       }, React.createElement(Prompt, {
         when: hasChanged,
         message: "Quit without saving?"
       }), React.createElement(Nav, null), React.createElement("main", {
-        className: "editor"
-      }, React.createElement("article", null, React.createElement("h1", null, React.createElement("textarea", {
+        className: "pure-u-4-5"
+      }, React.createElement("article", null, React.createElement("form", {
+        className: "pure-form pure-form-stacked"
+      }, React.createElement("h1", null, React.createElement("textarea", {
         placeholder: "Template Name",
         value: template.name,
         onChange: this.setName.bind(this),
@@ -81276,14 +81314,16 @@ class Template extends React.Component {
         value: template.content,
         onChange: this.setContent.bind(this),
         rows: "35",
-        cols: "150"
+        className: "pure-input-1"
       }), React.createElement("div", null, React.createElement("button", {
         onClick: this.save.bind(this),
-        type: "button"
+        type: "button",
+        className: "pure-button pure-button-primary margin12"
       }, "Save"), React.createElement("button", {
         onClick: this.remove.bind(this),
-        type: "button"
-      }, "Delete Template")))));
+        type: "button",
+        className: "pure-button margin12"
+      }, "Delete Template"))))));
     }
 
     return React.createElement("div", null, "Loading");
@@ -81443,11 +81483,17 @@ class Templates extends React.Component {
 
   render() {
     return React.createElement("div", {
-      className: "page"
-    }, React.createElement(Nav, null), React.createElement("main", null, React.createElement("h1", null, "Templates"), React.createElement("div", null, this.state.templates.map(template => React.createElement("div", {
+      className: "pure-g"
+    }, React.createElement(Nav, null), React.createElement("main", {
+      className: "pure-u-4-5"
+    }, React.createElement("h1", null, "Templates"), React.createElement("ul", {
+      className: "pure-menu-list"
+    }, this.state.templates.map(template => React.createElement("li", {
+      className: "pure-menu-item",
       key: template._id
     }, React.createElement(Link, {
-      to: `/edit-template?id=${template._id}`
+      to: `/edit-template?id=${template._id}`,
+      className: "pure-menu-link"
     }, template.name))))));
   }
 

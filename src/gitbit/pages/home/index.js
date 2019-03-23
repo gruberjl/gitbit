@@ -2,9 +2,9 @@ const React = require('react')
 const {Nav} = require('../../components/nav')
 
 const Home = () => (
-  <div className="page">
+  <div className="pure-g">
     <Nav />
-    <main>Home</main>
+    <main className="pure-u-4-5">Home</main>
   </div>
 )
 

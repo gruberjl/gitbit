@@ -19,17 +19,19 @@ class Stories extends React.Component {
 
   render() {
     return (
-      <div className="page">
+      <div className="pure-g">
         <Nav />
-        <main>
+        <main className="pure-u-4-5">
           <h1>Stories</h1>
-          <div>
+          <ul className="pure-menu-list">
             {
             this.state.stories.map(story => (
-              <div key={story._id}><Link to={`/edit-story?id=${story._id}`}>{story.title}</Link></div>
+              <li className="pure-menu-item" key={story._id}>
+                <Link to={`/edit-story?id=${story._id}`} className="pure-menu-link">{story.title}</Link>
+              </li>
             ))
           }
-          </div>
+          </ul>
         </main>
       </div>
     )

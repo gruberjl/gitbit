@@ -78,17 +78,19 @@ class Template extends React.Component {
     if (this.state && this.state.template) {
       const {template, hasChanged} = this.state
       return (
-        <div className="page">
+        <div className="pure-g">
           <Prompt when={hasChanged} message="Quit without saving?" />
           <Nav />
-          <main className="editor">
+          <main className="pure-u-4-5">
             <article>
-              <h1><textarea placeholder="Template Name" value={template.name} onChange={this.setName.bind(this)} rows="1" /></h1>
-              <textarea placeholder="HTML - content" value={template.content} onChange={this.setContent.bind(this)} rows="35" cols="150" />
-              <div>
-                <button onClick={this.save.bind(this)} type="button">Save</button>
-                <button onClick={this.remove.bind(this)} type="button">Delete Template</button>
-              </div>
+              <form className="pure-form pure-form-stacked">
+                <h1><textarea placeholder="Template Name" value={template.name} onChange={this.setName.bind(this)} rows="1" /></h1>
+                <textarea placeholder="HTML - content" value={template.content} onChange={this.setContent.bind(this)} rows="35" className="pure-input-1" />
+                <div>
+                  <button onClick={this.save.bind(this)} type="button" className="pure-button pure-button-primary margin12">Save</button>
+                  <button onClick={this.remove.bind(this)} type="button" className="pure-button margin12">Delete Template</button>
+                </div>
+              </form>
             </article>
           </main>
         </div>

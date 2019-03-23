@@ -18,17 +18,19 @@ class Templates extends React.Component {
 
   render() {
     return (
-      <div className="page">
+      <div className="pure-g">
         <Nav />
-        <main>
+        <main className="pure-u-4-5">
           <h1>Templates</h1>
-          <div>
+          <ul className="pure-menu-list">
             {
-            this.state.templates.map(template => (
-              <div key={template._id}><Link to={`/edit-template?id=${template._id}`}>{template.name}</Link></div>
-            ))
-          }
-          </div>
+              this.state.templates.map(template => (
+                <li className="pure-menu-item" key={template._id}>
+                  <Link to={`/edit-template?id=${template._id}`} className="pure-menu-link">{template.name}</Link>
+                </li>
+              ))
+            }
+          </ul>
         </main>
       </div>
     )
