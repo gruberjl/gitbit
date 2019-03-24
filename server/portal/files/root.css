@@ -11,6 +11,10 @@ article {
   margin: 12px;
 }
 
+.text-align-right {
+  text-align: right;
+}
+
 h1 textarea {
   height: 80px;
 }

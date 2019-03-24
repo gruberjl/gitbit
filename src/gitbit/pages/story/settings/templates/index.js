@@ -17,7 +17,7 @@ class Templates extends React.Component {
         <div>
           <label htmlFor="templateSelect">
             <span>Template:</span>
-            <select value={this.props.template} onChange={this.props.onChange} id="templateSelect">
+            <select value={this.props.template} onChange={this.props.onChange} id="templateSelect" className="pure-input-1">
               {
                 this.state.templates.map(template => (
                   <option key={template._id} value={template.id}>{template.name}</option>

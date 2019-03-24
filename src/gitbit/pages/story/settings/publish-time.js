@@ -18,7 +18,7 @@ class PublishTime extends React.Component {
     return (
       <div>
         <h4>When do you want to publish?</h4>
-        <input type="datetime-local" value={localTime} onChange={this.setPublishTime.bind(this)} />
+        <input type="datetime-local" value={localTime} onChange={this.setPublishTime.bind(this)} className="pure-input-1" />
       </div>
     )
   }

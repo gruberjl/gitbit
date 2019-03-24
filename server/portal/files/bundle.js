@@ -80737,8 +80737,12 @@ class Story extends React.Component {
   }
 
   static getWordCount(html) {
-    const text = cheerio.load(html).text();
-    return wordCount(text);
+    if (html) {
+      const text = cheerio.load(html).text();
+      return wordCount(text);
+    }
+
+    return 0;
   }
 
   autoSave() {
@@ -80821,12 +80825,16 @@ class Story extends React.Component {
       }), React.createElement(Templates, {
         template: story.template,
         onChange: this.setTemplate.bind(this)
-      }), React.createElement("div", null, React.createElement("button", {
+      }), React.createElement("div", {
+        className: "text-align-right"
+      }, React.createElement("button", {
         onClick: this.publish.bind(this),
-        type: "button"
+        type: "button",
+        className: "pure-button pure-button-primary margin12"
       }, saveBtnText), React.createElement("button", {
         onClick: this.remove.bind(this),
-        type: "button"
+        type: "button",
+        className: "pure-button margin12"
       }, "Delete Story"))))));
     }
 
@@ -81076,7 +81084,8 @@ class PublishTime extends React.Component {
     return React.createElement("div", null, React.createElement("h4", null, "When do you want to publish?"), React.createElement("input", {
       type: "datetime-local",
       value: localTime,
-      onChange: this.setPublishTime.bind(this)
+      onChange: this.setPublishTime.bind(this),
+      className: "pure-input-1"
     }));
   }
 
@@ -81105,7 +81114,8 @@ const Slug = ({
   name: "slug",
   placeholder: "url",
   value: slug,
-  onChange: onChange
+  onChange: onChange,
+  className: "pure-input-1"
 })));
 
 module.exports = {
@@ -81145,7 +81155,8 @@ class Templates extends React.Component {
     }, React.createElement("span", null, "Template:"), React.createElement("select", {
       value: this.props.template,
       onChange: this.props.onChange,
-      id: "templateSelect"
+      id: "templateSelect",
+      className: "pure-input-1"
     }, this.state.templates.map(template => React.createElement("option", {
       key: template._id,
       value: template.id
@@ -81308,14 +81319,17 @@ class Template extends React.Component {
         placeholder: "Template Name",
         value: template.name,
         onChange: this.setName.bind(this),
-        rows: "1"
+        rows: "1",
+        className: "pure-input-1"
       })), React.createElement("textarea", {
         placeholder: "HTML - content",
         value: template.content,
         onChange: this.setContent.bind(this),
         rows: "35",
         className: "pure-input-1"
-      }), React.createElement("div", null, React.createElement("button", {
+      }), React.createElement("div", {
+        className: "text-align-right"
+      }, React.createElement("button", {
         onClick: this.save.bind(this),
         type: "button",
         className: "pure-button pure-button-primary margin12"

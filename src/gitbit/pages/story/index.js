@@ -95,8 +95,12 @@ class Story extends React.Component {
   }
 
   static getWordCount(html) {
-    const text = cheerio.load(html).text()
-    return wordCount(text)
+    if (html) {
+      const text = cheerio.load(html).text()
+      return wordCount(text)
+    }
+
+    return 0
   }
 
   autoSave() {
@@ -153,7 +157,14 @@ class Story extends React.Component {
           <main className="pure-u-4-5">
             <article>
               <form className="pure-form pure-form-stacked">
-                <h1><textarea placeholder="Story Title" value={story.title} onChange={this.setTitle.bind(this)} className="pure-input-1" /></h1>
+                <h1>
+                  <textarea
+                    placeholder="Story Title"
+                    value={story.title}
+                    onChange={this.setTitle.bind(this)}
+                    className="pure-input-1"
+                  />
+                </h1>
                 <Editor onChange={this.editorChanged.bind(this)} deltaOnMount={story.editorDelta} />
                 <div>
                   <span>{words} {wordsLabel}</span>
@@ -170,9 +181,9 @@ class Story extends React.Component {
                   onChange={this.setPublishTime.bind(this)}
                 />
                 <Templates template={story.template} onChange={this.setTemplate.bind(this)} />
-                <div>
-                  <button onClick={this.publish.bind(this)} type="button">{saveBtnText}</button>
-                  <button onClick={this.remove.bind(this)} type="button">Delete Story</button>
+                <div className="text-align-right">
+                  <button onClick={this.publish.bind(this)} type="button" className="pure-button pure-button-primary margin12">{saveBtnText}</button>
+                  <button onClick={this.remove.bind(this)} type="button" className="pure-button margin12">Delete Story</button>
                 </div>
               </form>
             </article>

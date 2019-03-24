@@ -84,9 +84,17 @@ class Template extends React.Component {
           <main className="pure-u-4-5">
             <article>
               <form className="pure-form pure-form-stacked">
-                <h1><textarea placeholder="Template Name" value={template.name} onChange={this.setName.bind(this)} rows="1" /></h1>
+                <h1>
+                  <textarea
+                    placeholder="Template Name"
+                    value={template.name}
+                    onChange={this.setName.bind(this)}
+                    rows="1"
+                    className="pure-input-1"
+                  />
+                </h1>
                 <textarea placeholder="HTML - content" value={template.content} onChange={this.setContent.bind(this)} rows="35" className="pure-input-1" />
-                <div>
+                <div className="text-align-right">
                   <button onClick={this.save.bind(this)} type="button" className="pure-button pure-button-primary margin12">Save</button>
                   <button onClick={this.remove.bind(this)} type="button" className="pure-button margin12">Delete Template</button>
                 </div>
