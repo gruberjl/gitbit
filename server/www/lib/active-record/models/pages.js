@@ -12,6 +12,8 @@ const beforeSave = async (tenantId, record) => {
     r.featuredImage = featuredImage.versions.original.url
   }
 
+  r.tenantId = tenantId
+
   return {record: r}
 }
 

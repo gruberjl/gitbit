@@ -80480,7 +80480,7 @@ const {
   fetch
 } = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
 
-const getTenant = () => fetch('/api/tenants/find').then(res => res.json()).then(res => res.doc);
+const getTenant = () => fetch('/api/tenants/find-me').then(res => res.json()).then(res => res.doc);
 
 module.exports = {
   getTenant
@@ -80602,7 +80602,7 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-/* eslint eqeqeq: 0 */
+/* eslint eqeqeq: 0 no-alert:0 */
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 const clone = __webpack_require__(/*! clone-deep */ "./node_modules/clone-deep/index.js");
@@ -80766,11 +80766,11 @@ class Story extends React.Component {
   publish(showToast = true) {
     const self = this;
     const story = clone(this.state.story);
-    if (!story._id) story._id = story.slug;
     publish(story).then(savedDoc => {
       self.setState(state => {
         const newStory = clone(state.story);
         newStory._rev = savedDoc.doc._rev;
+        newStory._id = savedDoc.doc._id;
         if (showToast) toast('saved');
         return {
           story: newStory,
@@ -80781,8 +80781,9 @@ class Story extends React.Component {
   }
 
   remove() {
-    remove(this.state.story).then(() => {
-      this.props.history.push('/gitbit/stories');
+    const r = window.confirm('Delete story?');
+    if (r) remove(this.state.story).then(() => {
+      this.props.history.push('/stories');
     });
   }
 
@@ -81198,6 +81199,7 @@ module.exports = {
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
+/* eslint no-alert:0 */
 const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
 
 const clone = __webpack_require__(/*! clone-deep */ "./node_modules/clone-deep/index.js");
@@ -81280,11 +81282,11 @@ class Template extends React.Component {
   save() {
     const self = this;
     const template = clone(this.state.template);
-    if (!template._id) template._id = template.name;
     save(template).then(savedDoc => {
       self.setState(state => {
         const newTemplate = clone(state.template);
         newTemplate._rev = savedDoc.doc._rev;
+        newTemplate._id = savedDoc.doc._id;
         toast('saved');
         return {
           template: newTemplate,
@@ -81295,7 +81297,8 @@ class Template extends React.Component {
   }
 
   remove() {
-    remove(this.state.template).then(() => {
+    const r = window.confirm('Delete template?');
+    if (r) remove(this.state.template).then(() => {
       this.props.history.push('/templates');
     });
   }

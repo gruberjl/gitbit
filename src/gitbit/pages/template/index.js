@@ -1,3 +1,4 @@
+/* eslint no-alert:0 */
 const React = require('react')
 const clone = require('clone-deep')
 const queryString = require('query-string')
@@ -55,13 +56,12 @@ class Template extends React.Component {
   save() {
     const self = this
     const template = clone(this.state.template)
-    if (!template._id)
-      template._id = template.name
 
     save(template).then((savedDoc) => {
       self.setState((state) => {
         const newTemplate = clone(state.template)
         newTemplate._rev = savedDoc.doc._rev
+        newTemplate._id = savedDoc.doc._id
         toast('saved')
         return {template: newTemplate, hasChanged: false}
       })
@@ -69,9 +69,11 @@ class Template extends React.Component {
   }
 
   remove() {
-    remove(this.state.template).then(() => {
-      this.props.history.push('/templates')
-    })
+    const r = window.confirm('Delete template?')
+    if (r)
+      remove(this.state.template).then(() => {
+        this.props.history.push('/templates')
+      })
   }
 
   render() {

@@ -1,4 +1,4 @@
-/* eslint eqeqeq: 0 */
+/* eslint eqeqeq: 0 no-alert:0 */
 const React = require('react')
 const clone = require('clone-deep')
 const moment = require('moment')
@@ -122,14 +122,12 @@ class Story extends React.Component {
   publish(showToast = true) {
     const self = this
     const story = clone(this.state.story)
-    if (!story._id)
-      story._id = story.slug
 
     publish(story).then((savedDoc) => {
       self.setState((state) => {
         const newStory = clone(state.story)
         newStory._rev = savedDoc.doc._rev
-
+        newStory._id = savedDoc.doc._id
         if (showToast)
           toast('saved')
 
@@ -139,9 +137,11 @@ class Story extends React.Component {
   }
 
   remove() {
-    remove(this.state.story).then(() => {
-      this.props.history.push('/gitbit/stories')
-    })
+    const r = window.confirm('Delete story?')
+    if (r)
+      remove(this.state.story).then(() => {
+        this.props.history.push('/stories')
+      })
   }
 
   render() {

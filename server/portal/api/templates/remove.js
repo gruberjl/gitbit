@@ -1,11 +1,10 @@
 const cloneDeep = require('clone-deep')
-const db = require('../../www/lib/db')
+const db = require('../../../lib/db')
+const {authorize} = require('../../auth')
 
 const remove = async (req, res) => {
   const doc = cloneDeep(req.body)
-  doc._id = db.buildId(req.user.tenant, doc._id)
-
-  const response = await db.destroy(req.params.dbName, doc)
+  const response = await db.destroy('templates', req.body)
 
   if (response.error)
     res.status(400).json({error: response.error})
@@ -15,4 +14,4 @@ const remove = async (req, res) => {
   }
 }
 
-module.exports = {remove}
+module.exports = {remove: [authorize, remove]}
