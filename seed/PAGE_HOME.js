@@ -1,5 +1,5 @@
 module.exports = {
-  _id: 'localhost/',
+  _id: 'page-home',
   slug: '/',
   editorDelta: {
     ops: [
@@ -17,5 +17,6 @@ module.exports = {
   content: '<h1>This is my home page!</h1><p><a href="/landingpage1" target="_blank">Landing Page 1</a></p><p><a href="/articles/story1" target="_blank">Story 1</a></p><p><a href="/not-a-site" target="_blank">404 Error</a></p>',
   title: 'Localhost site',
   publishTime: '2019-12-31T20:17:00.000Z',
-  template: 'home'
+  template: 'home',
+  tenant: 'localhost'
 }

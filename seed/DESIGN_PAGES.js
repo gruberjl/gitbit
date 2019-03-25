@@ -6,6 +6,9 @@ module.exports = {
     },
     for_feed: {
       map: "function (doc) { if (doc.template === 'story' && new Date(doc.publishTime) <= new Date()) emit(doc._id.split('/')[0] + '/' + doc.publishTime, {slug: doc.slug, publishTime: doc.publishTime, title: doc.title})}"
+    },
+    by_url: {
+      map: 'function (doc) {if (doc.slug) emit([doc.tenant, doc.slug])};'
     }
   }
 }

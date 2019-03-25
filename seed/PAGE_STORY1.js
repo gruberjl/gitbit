@@ -1,5 +1,5 @@
 module.exports = {
-  _id: 'localhost/articles/story1',
+  _id: 'story1',
   slug: '/articles/story1',
   editorDelta: {
     ops: [{insert: 'This is my story!\n'}]
@@ -8,5 +8,6 @@ module.exports = {
   content: '<p>This is my story!</p>',
   title: 'Story 1',
   publishTime: '2019-12-31T20:17:00.000Z',
-  template: 'story'
+  template: 'story',
+  tenant: 'localhost'
 }

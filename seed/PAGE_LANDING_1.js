@@ -1,5 +1,5 @@
 module.exports = {
-  _id: 'localhost/landingpage1',
+  _id: 'landingpage1',
   slug: '/landingpage1',
   editorDelta: {
     ops: [{insert: 'This is my landing page!\n'}]
@@ -8,5 +8,6 @@ module.exports = {
   content: '<p>This is my landing page!</p>',
   title: 'Landing Page 1',
   publishTime: '2019-12-31T20:17:00.000Z',
-  template: 'landing-page'
+  template: 'landing-page',
+  tenant: 'localhost'
 }
