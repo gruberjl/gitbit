@@ -80079,7 +80079,12 @@ const Nav = () => React.createElement("nav", {
 }, React.createElement(Link, {
   to: "/edit-assets",
   className: "pure-menu-link"
-}, "Assets"))));
+}, "Assets")), React.createElement("li", {
+  className: "pure-menu-item"
+}, React.createElement(Link, {
+  to: "/edit-user",
+  className: "pure-menu-link"
+}, "User"))));
 
 module.exports = {
   Nav
@@ -80114,7 +80119,8 @@ const {
   Story,
   Templates,
   Template,
-  Assets
+  Assets,
+  User
 } = __webpack_require__(/*! ./pages */ "./src/gitbit/pages/index.js");
 
 const Index = React.createElement(BrowserRouter, null, React.createElement("div", null, React.createElement(Route, {
@@ -80143,6 +80149,10 @@ const Index = React.createElement(BrowserRouter, null, React.createElement("div"
   exact: true,
   path: "/edit-assets/",
   component: Assets
+}), React.createElement(Route, {
+  exact: true,
+  path: "/edit-user/",
+  component: User
 }), React.createElement(ToastContainer, {
   position: "bottom-left"
 })));
@@ -80295,6 +80305,10 @@ const {
   Assets
 } = __webpack_require__(/*! ./assets */ "./src/gitbit/pages/assets/index.js");
 
+const {
+  User
+} = __webpack_require__(/*! ./user */ "./src/gitbit/pages/user/index.js");
+
 module.exports = {
   Home,
   Settings,
@@ -80302,7 +80316,8 @@ module.exports = {
   Story,
   Templates,
   Template,
-  Assets
+  Assets,
+  User
 };
 
 /***/ }),
@@ -81555,6 +81570,223 @@ const getTemplates = async () => fetch('/api/templates/query').then(res => res.j
 
 module.exports = {
   getTemplates
+};
+
+/***/ }),
+
+/***/ "./src/gitbit/pages/user/index.js":
+/*!****************************************!*\
+  !*** ./src/gitbit/pages/user/index.js ***!
+  \****************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const clone = __webpack_require__(/*! clone-deep */ "./node_modules/clone-deep/index.js");
+
+const {
+  fetch
+} = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+
+const {
+  toast
+} = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/lib/index.js");
+
+const {
+  Prompt
+} = __webpack_require__(/*! react-router-dom */ "./node_modules/react-router-dom/es/index.js");
+
+const {
+  Nav
+} = __webpack_require__(/*! ../../components/nav */ "./src/gitbit/components/nav/index.js");
+
+const {
+  save
+} = __webpack_require__(/*! ./lib/save */ "./src/gitbit/pages/user/lib/save.js");
+
+const {
+  updatePassword
+} = __webpack_require__(/*! ./lib/update-password */ "./src/gitbit/pages/user/lib/update-password.js");
+
+class User extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      user: {
+        email: ''
+      },
+      newPassword: '',
+      hasChanged: false
+    };
+    this.onUnload = this.onUnload.bind(this);
+  }
+
+  componentDidMount() {
+    window.addEventListener('beforeunload', this.onUnload);
+    const self = this;
+    fetch('/api/users/find-me').then(res => res.json()).then(res => {
+      self.setState({
+        user: res.doc
+      });
+    });
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('beforeunload', this.onUnload);
+  }
+
+  onUnload() {
+    if (this.state.hasChanged) {
+      const confirmationMessage = 'Quit without saving?';
+      window.event.returnValue = confirmationMessage;
+      return confirmationMessage;
+    }
+
+    return undefined;
+  }
+
+  setValue(event) {
+    const {
+      name,
+      value
+    } = event.target;
+    this.setState(prevState => {
+      const user = clone(prevState.user);
+      user[name] = value;
+      return {
+        user,
+        hasChanged: true
+      };
+    });
+  }
+
+  setPassword(event) {
+    this.setState({
+      newPassword: event.target.value
+    });
+  }
+
+  save() {
+    save(this.state.user).then(savedDoc => {
+      toast('saved');
+      this.setState({
+        user: savedDoc.doc,
+        hasChanged: false
+      });
+    }).catch(err => toast.error(err.toString()));
+  }
+
+  updatePassword() {
+    updatePassword(this.state.newPassword).then(() => {
+      toast('Password updated');
+    }).catch(err => toast.error(err.toString()));
+  }
+
+  render() {
+    const {
+      email
+    } = this.state.user;
+    return React.createElement("div", {
+      className: "pure-g"
+    }, React.createElement(Prompt, {
+      when: this.state.hasChanged,
+      message: "Quit without saving?"
+    }), React.createElement(Nav, null), React.createElement("main", {
+      className: "pure-u-4-5"
+    }, React.createElement("h1", null, "Settings"), React.createElement("form", {
+      className: "pure-form pure-form-stacked"
+    }, React.createElement("label", {
+      htmlFor: "email"
+    }, "email"), React.createElement("input", {
+      className: "pure-input-1",
+      type: "email",
+      id: "email",
+      name: "email",
+      placeholder: "email",
+      value: email,
+      onChange: this.setValue.bind(this)
+    }), React.createElement("button", {
+      onClick: this.save.bind(this),
+      type: "button"
+    }, "Save")), React.createElement("hr", null), React.createElement("h1", null, "Change Password"), React.createElement("form", {
+      className: "pure-form pure-form-stacked"
+    }, React.createElement("label", {
+      htmlFor: "new-password"
+    }, "password"), React.createElement("input", {
+      className: "pure-input-1",
+      type: "password",
+      id: "new-password",
+      name: "new-password",
+      placeholder: "password",
+      value: this.state.newPassword,
+      onChange: this.setPassword.bind(this)
+    }), React.createElement("button", {
+      onClick: this.updatePassword.bind(this),
+      type: "button"
+    }, "Update Password"))));
+  }
+
+}
+
+module.exports = {
+  User
+};
+
+/***/ }),
+
+/***/ "./src/gitbit/pages/user/lib/save.js":
+/*!*******************************************!*\
+  !*** ./src/gitbit/pages/user/lib/save.js ***!
+  \*******************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const {
+  fetch
+} = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+
+const save = user => fetch('/api/users/update', {
+  method: 'POST',
+  headers: {
+    'Content-Type': 'application/json'
+  },
+  body: JSON.stringify(user)
+}).then(response => response.json());
+
+module.exports = {
+  save
+};
+
+/***/ }),
+
+/***/ "./src/gitbit/pages/user/lib/update-password.js":
+/*!******************************************************!*\
+  !*** ./src/gitbit/pages/user/lib/update-password.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const {
+  fetch
+} = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+
+const updatePassword = async newPassword => {
+  const response = await fetch('/api/users/update-password', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({
+      newPassword
+    })
+  });
+  const doc = await response.json();
+  return doc;
+};
+
+module.exports = {
+  updatePassword
 };
 
 /***/ }),

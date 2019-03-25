@@ -2,7 +2,7 @@ const React = require('react')
 const ReactDOM = require('react-dom')
 const {BrowserRouter, Route} = require('react-router-dom')
 const {ToastContainer} = require('react-toastify')
-const {Home, Settings, Stories, Story, Templates, Template, Assets} = require('./pages')
+const {Home, Settings, Stories, Story, Templates, Template, Assets, User} = require('./pages')
 
 const Index = (
   <BrowserRouter>
@@ -18,6 +18,8 @@ const Index = (
       <Route exact path="/edit-template/" component={Template} />
 
       <Route exact path="/edit-assets/" component={Assets} />
+
+      <Route exact path="/edit-user/" component={User} />
       <ToastContainer position="bottom-left" />
     </div>
   </BrowserRouter>

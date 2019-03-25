@@ -24,6 +24,7 @@ router.get('/tenants/find-me', tenants.findMe)
 
 router.post('/users/update', users.save)
 router.get('/users/find-me', users.findMe)
+router.post('/users/update-password', users.updatePassword)
 
 router.use(error404)
 

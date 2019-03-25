@@ -10,6 +10,7 @@ const Nav = () => (
       <li className="pure-menu-item"><Link to="/edit-template" className="pure-menu-link">New Template</Link></li>
       <li className="pure-menu-item"><Link to="/templates" className="pure-menu-link">Templates</Link></li>
       <li className="pure-menu-item"><Link to="/edit-assets" className="pure-menu-link">Assets</Link></li>
+      <li className="pure-menu-item"><Link to="/edit-user" className="pure-menu-link">User</Link></li>
     </ul>
   </nav>
 )
