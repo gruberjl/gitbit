@@ -19,6 +19,13 @@ const seedDesignDocs = async () => {
       ddoc: 'byPublished'
     }
   })
+
+  await db.templates.createIndex({
+    index: {
+      fields: ['tenant'],
+      ddoc: 'byTenant'
+    }
+  })
 }
 
 seedDesignDocs()

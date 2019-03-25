@@ -1,6 +1,7 @@
 module.exports = {
   _id: 'templatelanding-page',
   name: 'landing-page',
+  tenant: 'localhost',
   content: `
     <!DOCTYPE html>
     <html>

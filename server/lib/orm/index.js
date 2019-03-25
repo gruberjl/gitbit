@@ -1,3 +1,4 @@
 const pages = require('./pages')
+const templates = require('./templates')
 
-module.exports = {pages}
+module.exports = {pages, templates}

@@ -1,6 +1,7 @@
 module.exports = {
   _id: 'templatehome',
   name: 'home',
+  tenant: 'localhost',
   content: `
     <!DOCTYPE html>
     <html>

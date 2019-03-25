@@ -1,6 +1,7 @@
 module.exports = {
   _id: 'template404',
   name: '404',
+  tenant: 'localhost',
   content: `
     <!DOCTYPE html>
     <html>
