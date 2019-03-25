@@ -1,9 +1,13 @@
 const cloneDeep = require('clone-deep')
+const generate = require('nanoid')
 const db = require('../../../lib/db')
 const {authorize} = require('../../auth')
 
 const save = async (req, res) => {
   const data = cloneDeep(req.body)
+
+  if (!data._id)
+    data._id = generate()
 
   data.tenant = req.user.tenant
 
