@@ -7,7 +7,7 @@ module.exports = {
   featuredImage: '',
   content: '<p>This is my landing page!</p>',
   title: 'Landing Page 1',
-  publishTime: '2019-12-31T20:17:00.000Z',
+  publishTime: '2019-01-03T20:17:00.000Z',
   template: 'templatelanding-page',
   tenant: 'localhost',
   notes: ''

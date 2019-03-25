@@ -1,19 +1,14 @@
-const db = require('../../../lib/db')
+// const db = require('../../../lib/db')
+const {pages} = require('../../../lib/orm')
 const {authorize} = require('../../auth')
 
 const query = async (req, res) => {
-  const startkey = `${req.user.tenant}/`
-  const endkey = `${req.user.tenant}/\ufff0`
-  const options = {startkey, endkey, include_docs: true}
+  const docs = await pages.queryByPublished(req.user.tenant)
 
-  const response = await db.allDocs('pages', options)
+  if (docs.error)
+    return res.status(400).json({error: docs.error})
 
-  if (response.error)
-    res.status(400).json({error: response.error})
-  else {
-    const docs = response.rows.map(row => row.doc)
-    res.status(200).json({docs})
-  }
+  return res.status(200).json({docs})
 }
 
 module.exports = {query: [authorize, query]}

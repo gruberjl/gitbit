@@ -1,7 +1,7 @@
 const db = require('../../db').dbs.pages
 
 const findByUrl = async (tenantId, slug) => {
-  const response = await db.pages.find({
+  const response = await db.find({
     selector: {
       tenant: tenantId,
       slug

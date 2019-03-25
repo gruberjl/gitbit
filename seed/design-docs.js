@@ -12,6 +12,13 @@ const seedDesignDocs = async () => {
       ddoc: 'byUrl'
     }
   })
+
+  await db.pages.createIndex({
+    index: {
+      fields: ['tenant', 'publishTime'],
+      ddoc: 'byPublished'
+    }
+  })
 }
 
 seedDesignDocs()
