@@ -8,6 +8,6 @@ module.exports = {
   content: '<p>This is my landing page!</p>',
   title: 'Landing Page 1',
   publishTime: '2019-12-31T20:17:00.000Z',
-  template: 'landing-page',
+  template: 'templatelanding-page',
   tenant: 'localhost'
 }

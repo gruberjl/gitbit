@@ -1,5 +1,5 @@
 module.exports = {
-  _id: 'localhost/home',
+  _id: 'templatehome',
   name: 'home',
   content: `
     <!DOCTYPE html>

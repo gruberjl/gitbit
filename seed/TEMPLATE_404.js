@@ -1,5 +1,5 @@
 module.exports = {
-  _id: 'localhost/404',
+  _id: 'template404',
   name: '404',
   content: `
     <!DOCTYPE html>

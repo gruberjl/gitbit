@@ -1,5 +1,5 @@
 module.exports = {
-  _id: 'localhost/landing-page',
+  _id: 'templatelanding-page',
   name: 'landing-page',
   content: `
     <!DOCTYPE html>
