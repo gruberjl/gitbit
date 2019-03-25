@@ -81160,7 +81160,7 @@ class Templates extends React.Component {
       className: "pure-input-1"
     }, this.state.templates.map(template => React.createElement("option", {
       key: template._id,
-      value: template.id
+      value: template._id
     }, template.name)))));
     return React.createElement("p", null, "Loading Templates...");
   }
