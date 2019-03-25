@@ -1,5 +1,6 @@
 /* eslint global-require:0 */
 const PouchDB = require('pouchdb')
+PouchDB.plugin(require('pouchdb-find'))
 const {DB_NAME, DB_PATH} = require('./consts')
 
 const dbOptions = {}

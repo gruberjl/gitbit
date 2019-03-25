@@ -44,6 +44,7 @@
     "pm2": "^3.3.1",
     "pouchdb": "^7.0.0",
     "pouchdb-adapter-memory": "^7.0.0",
+    "pouchdb-find": "^7.0.0",
     "promised-handlebars": "^2.0.1",
     "query-string": "^6.2.0",
     "react": "^16.6.3",

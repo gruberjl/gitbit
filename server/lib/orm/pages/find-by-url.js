@@ -1,9 +1,18 @@
 const db = require('../../db').dbs.pages
 
 const findByUrl = async (tenantId, slug) => {
-  const response = await db.query('view/by_url', {key: [tenantId, slug], include_docs: true, limit: 1})
+  const response = await db.pages.find({
+    selector: {
+      tenant: tenantId,
+      slug
+    },
+    use_index: 'byUrl',
+    limit: 1
+  })
 
-  if (!response.rows[0])
+  const doc = response.docs[0]
+
+  if (!doc)
     return {
       error: {
         status: 404,
@@ -14,7 +23,7 @@ const findByUrl = async (tenantId, slug) => {
       }
     }
 
-  return response.rows[0].doc
+  return doc
 }
 
 module.exports = {findByUrl}
