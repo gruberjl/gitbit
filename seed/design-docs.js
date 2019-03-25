@@ -1,4 +1,4 @@
-const {db} = require('../server/www/lib/db')
+const {db} = require('../server/lib/db')
 const DESIGN_HOSTNAMES = require('./DESIGN_HOSTNAMES')
 const DESIGN_PAGES = require('./DESIGN_PAGES')
 
