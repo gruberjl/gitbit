@@ -14,7 +14,7 @@ const findByUrl = async (tenantId, slug) => {
       }
     }
 
-  return response.rows[0]
+  return response.rows[0].doc
 }
 
 module.exports = {findByUrl}

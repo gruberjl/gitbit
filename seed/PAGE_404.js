@@ -1,7 +1,7 @@
 module.exports = {
   _id: 'page404',
   title: '404',
-  slug: '/404',
+  slug: '~404',
   editorDelta: {
     ops: [{insert: 'Sorry, this page is not found.\n'}]
   },
