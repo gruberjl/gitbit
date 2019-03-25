@@ -94,6 +94,15 @@ class Story extends React.Component {
     })
   }
 
+  setNotes(event) {
+    const notes = event.target.value
+    this.setState((state) => {
+      const story = clone(state.story)
+      story.notes = notes
+      return {story, hasChanged: true}
+    })
+  }
+
   static getWordCount(html) {
     if (html) {
       const text = cheerio.load(html).text()
@@ -170,6 +179,7 @@ class Story extends React.Component {
                   <span>{words} {wordsLabel}</span>
                 </div>
                 <hr />
+                <textarea placeholder="Notes" value={story.notes} onChange={this.setNotes.bind(this)} rows="5" className="pure-input-1" />
                 <FeaturedImages
                   images={getImages(story.editorDelta)}
                   onFeaturedImageClick={this.onFeaturedImageClick.bind(this)}

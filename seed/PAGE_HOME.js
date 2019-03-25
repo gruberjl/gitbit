@@ -18,5 +18,6 @@ module.exports = {
   title: 'Localhost site',
   publishTime: '2019-12-31T20:17:00.000Z',
   template: 'templatehome',
-  tenant: 'localhost'
+  tenant: 'localhost',
+  notes: ''
 }

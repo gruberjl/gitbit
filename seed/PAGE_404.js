@@ -7,6 +7,7 @@ module.exports = {
   },
   featuredImage: '',
   content: '<p>Sorry, this page is not found.</p>',
+  notes: '',
   publishTime: '2019-12-31T20:17:00.000Z',
   template: 'template404',
   tenant: 'localhost'

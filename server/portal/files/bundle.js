@@ -80736,6 +80736,18 @@ class Story extends React.Component {
     });
   }
 
+  setNotes(event) {
+    const notes = event.target.value;
+    this.setState(state => {
+      const story = clone(state.story);
+      story.notes = notes;
+      return {
+        story,
+        hasChanged: true
+      };
+    });
+  }
+
   static getWordCount(html) {
     if (html) {
       const text = cheerio.load(html).text();
@@ -80813,7 +80825,13 @@ class Story extends React.Component {
       })), React.createElement(Editor, {
         onChange: this.editorChanged.bind(this),
         deltaOnMount: story.editorDelta
-      }), React.createElement("div", null, React.createElement("span", null, words, " ", wordsLabel)), React.createElement("hr", null), React.createElement(FeaturedImages, {
+      }), React.createElement("div", null, React.createElement("span", null, words, " ", wordsLabel)), React.createElement("hr", null), React.createElement("textarea", {
+        placeholder: "Notes",
+        value: story.notes,
+        onChange: this.setNotes.bind(this),
+        rows: "5",
+        className: "pure-input-1"
+      }), React.createElement(FeaturedImages, {
         images: getImages(story.editorDelta),
         onFeaturedImageClick: this.onFeaturedImageClick.bind(this),
         selectedImage: story.featuredImage
