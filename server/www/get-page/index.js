@@ -21,17 +21,17 @@ const getPage = async (req, res) => {
 
   if (pageDoc.error) {
     const errorHtml = await build404(tenant, protocol, hostname, path, query)
-    return res.send(errorHtml)
+    return res.status(404).send(errorHtml)
   }
 
   if (!moment(pageDoc.publishTime).isValid()) {
     const errorHtml = await build404(tenant)
-    return res.send(errorHtml)
+    return res.status(404).send(errorHtml)
   }
 
   if (moment(pageDoc.publishTime).isAfter(moment.utc())) {
     const errorHtml = await build404(tenant)
-    return res.send(errorHtml)
+    return res.status(404).send(errorHtml)
   }
 
   const templateDoc = await db.find('templates', pageDoc.template)
