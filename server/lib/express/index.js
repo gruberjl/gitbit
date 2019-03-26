@@ -8,6 +8,12 @@ const createApp = () => {
   const app = express()
 
   app.set('trust proxy', 1)
+  app.set('x-powered-by', false)
+
+  app.use((req, res, next) => {
+    res.removeHeader('X-Powered-By')
+    next()
+  })
 
   if (process.env.NODE_ENV === 'production')
     app.use(compression())
