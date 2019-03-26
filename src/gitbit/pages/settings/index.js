@@ -4,6 +4,7 @@ const {toast} = require('react-toastify')
 const {Prompt} = require('react-router-dom')
 const {Nav} = require('../../components/nav')
 const {getTenant} = require('./lib/get-tenant')
+const {Hostnames} = require('./hostnames')
 const {save} = require('./lib/save')
 
 class Settings extends React.Component {
@@ -59,7 +60,7 @@ class Settings extends React.Component {
 
   render() {
     const {
-      title, description, image, favicon
+      title, description, image, favicon, primaryHostname
     } = this.state.tenant
 
     return (
@@ -80,6 +81,8 @@ class Settings extends React.Component {
 
             <label htmlFor="favicon">favicon</label>
             <input className="pure-input-1" type="text" id="favicon" name="favicon" placeholder="favicon" value={favicon} onChange={this.setValue.bind(this)} />
+
+            <Hostnames name="primaryHostname" hostname={primaryHostname} onChange={this.setValue.bind(this)} />
             <button onClick={this.save.bind(this)} type="button">Save</button>
           </form>
         </main>

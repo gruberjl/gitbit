@@ -28,6 +28,7 @@ if (env.isProd) {
 } else {
   proxy.use(vhost('portal.localhost', portal))
   proxy.use(vhost('localhost', www))
+  proxy.use(vhost('127.0.0.1', www))
   logInfo('Starting dev proxy server on port 3000')
   proxy.listen(3000)
 }

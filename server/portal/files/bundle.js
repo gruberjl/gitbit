@@ -80322,6 +80322,74 @@ module.exports = {
 
 /***/ }),
 
+/***/ "./src/gitbit/pages/settings/hostnames/index.js":
+/*!******************************************************!*\
+  !*** ./src/gitbit/pages/settings/hostnames/index.js ***!
+  \******************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const React = __webpack_require__(/*! react */ "./node_modules/react/index.js");
+
+const {
+  getHostnames
+} = __webpack_require__(/*! ./lib */ "./src/gitbit/pages/settings/hostnames/lib/index.js");
+
+class Hostnames extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {};
+  }
+
+  componentDidMount() {
+    getHostnames().then(hostnames => this.setState({
+      hostnames
+    }));
+  }
+
+  render() {
+    if (this.state.hostnames) return React.createElement("div", null, React.createElement("label", {
+      htmlFor: "hostnameSelect"
+    }, React.createElement("span", null, "Primary Hostname:"), React.createElement("select", {
+      name: this.props.name,
+      value: this.props.hostname,
+      onChange: this.props.onChange,
+      id: "hostnameSelect",
+      className: "pure-input-1"
+    }, this.state.hostnames.map(hostname => React.createElement("option", {
+      key: hostname._id,
+      value: hostname._id
+    }, hostname._id)))));
+    return React.createElement("p", null, "Loading Hostnames...");
+  }
+
+}
+
+module.exports = {
+  Hostnames
+};
+
+/***/ }),
+
+/***/ "./src/gitbit/pages/settings/hostnames/lib/index.js":
+/*!**********************************************************!*\
+  !*** ./src/gitbit/pages/settings/hostnames/lib/index.js ***!
+  \**********************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+const {
+  fetch
+} = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
+
+const getHostnames = async () => fetch('/api/hostnames/query').then(res => res.json()).then(res => res.docs);
+
+module.exports = {
+  getHostnames
+};
+
+/***/ }),
+
 /***/ "./src/gitbit/pages/settings/index.js":
 /*!********************************************!*\
   !*** ./src/gitbit/pages/settings/index.js ***!
@@ -80348,6 +80416,10 @@ const {
 const {
   getTenant
 } = __webpack_require__(/*! ./lib/get-tenant */ "./src/gitbit/pages/settings/lib/get-tenant.js");
+
+const {
+  Hostnames
+} = __webpack_require__(/*! ./hostnames */ "./src/gitbit/pages/settings/hostnames/index.js");
 
 const {
   save
@@ -80419,7 +80491,8 @@ class Settings extends React.Component {
       title,
       description,
       image,
-      favicon
+      favicon,
+      primaryHostname
     } = this.state.tenant;
     return React.createElement("div", {
       className: "pure-g"
@@ -80469,6 +80542,10 @@ class Settings extends React.Component {
       name: "favicon",
       placeholder: "favicon",
       value: favicon,
+      onChange: this.setValue.bind(this)
+    }), React.createElement(Hostnames, {
+      name: "primaryHostname",
+      hostname: primaryHostname,
       onChange: this.setValue.bind(this)
     }), React.createElement("button", {
       onClick: this.save.bind(this),

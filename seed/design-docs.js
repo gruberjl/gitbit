@@ -26,6 +26,13 @@ const seedDesignDocs = async () => {
       ddoc: 'byTenant'
     }
   })
+
+  await db.hostnames.createIndex({
+    index: {
+      fields: ['tenant'],
+      ddoc: 'byTenant'
+    }
+  })
 }
 
 seedDesignDocs()
