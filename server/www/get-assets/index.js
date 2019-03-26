@@ -31,6 +31,7 @@ const getAssets = (req, res, next) => {
     next()
   })
 
+  res.append('Cache-Control', 'max-age=2592000')
   imgStream.pipe(res)
 }
 
