@@ -13,6 +13,9 @@ const build404 = async (tenant, protocol, hostname, path, query) => {
 }
 
 const getPage = async (req, res) => {
+  res.append('Cache-Control', 'private')
+  res.set('Content-Type', 'text/html; charset=utf-8')
+
   const {tenant, protocol, hostname, path, query} = req
   const pageDoc = await pages.findByUrl(tenant._id, path)
 
