@@ -10,29 +10,32 @@ const getAssets = (req, res, next) => {
     ? `${req.tenant._id}/${req.params.fldr}/${req.params.file}`
     : `${req.tenant._id}/${req.params.file}`
 
-  const imgStream = s3.getObject({
-    Bucket: 'web-hosting-assets',
-    Key
-  }).createReadStream().on('error', (error) => {
-    logError({
-      message: error.message,
-      code: error.code,
-      statusCode: error.statusCode,
-      retryable: error.retryable,
-      msg: 'Error creating readStream in server/get-assets/index.js.',
-      req: {
-        params: req.params,
-        tenant: {
-          _id: req.tenant._id,
-          _rev: req.tenant._rev
-        }
-      }
+  s3.getObject({Bucket: 'web-hosting-assets', Key})
+    .on('httpHeaders', function sendStream(statusCode, headers) {
+      res.set('Cache-Control', 'max-age=2592000')
+      res.set('Content-Length', headers['content-length'])
+      res.set('Content-Type', headers['content-type'])
+      this.response.httpResponse.createUnbufferedStream()
+        .pipe(res)
     })
-    next()
-  })
-
-  res.append('Cache-Control', 'max-age=2592000')
-  imgStream.pipe(res)
+    .on('error', (error) => {
+      logError({
+        message: error.message,
+        code: error.code,
+        statusCode: error.statusCode,
+        retryable: error.retryable,
+        msg: 'Error creating readStream in server/get-assets/index.js.',
+        req: {
+          params: req.params,
+          tenant: {
+            _id: req.tenant._id,
+            _rev: req.tenant._rev
+          }
+        }
+      })
+      next()
+    })
+    .send()
 }
 
 module.exports = {getAssets}
