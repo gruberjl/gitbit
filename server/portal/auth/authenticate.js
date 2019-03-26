@@ -25,11 +25,15 @@ const authenticate = async (req, res) => {
     return res.send(html)
   }
 
+  const dt = new Date()
+  const oneYear = new Date(dt.setFullYear(dt.getFullYear() + 1))
+
   const sessionDoc = await db.create('sessions', {
     _id: `${user.tenant}-${generate('1234567890abcdefghijklmnopqrstuvwxyz', 10)}`,
     userId: user._id,
     userRev: user._rev,
-    created: (new Date()).toISOString()
+    created: (new Date()).toISOString(),
+    expires: req.body.remember ? oneYear.toISOString() : 0
   })
 
   if (sessionDoc.error) {
@@ -37,7 +41,7 @@ const authenticate = async (req, res) => {
     return res.send(html)
   }
 
-  res.cookie('ses', sessionDoc.id, {signed: true, httpOnly: true})
+  res.cookie('ses', sessionDoc.id, {signed: true, httpOnly: true, expires: req.body.remember ? oneYear : 0})
 
   return res.redirect('/')
 }
