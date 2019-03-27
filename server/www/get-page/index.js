@@ -21,16 +21,19 @@ const getPage = async (req, res) => {
 
   if (pageDoc.error) {
     const errorHtml = await build404(tenant, protocol, hostname, path, query)
+    res.set('Content-Length', Buffer.byteLength(errorHtml, 'utf8'))
     return res.status(404).send(errorHtml)
   }
 
   if (!moment(pageDoc.publishTime).isValid()) {
     const errorHtml = await build404(tenant)
+    res.set('Content-Length', Buffer.byteLength(errorHtml, 'utf8'))
     return res.status(404).send(errorHtml)
   }
 
   if (moment(pageDoc.publishTime).isAfter(moment.utc())) {
     const errorHtml = await build404(tenant)
+    res.set('Content-Length', Buffer.byteLength(errorHtml, 'utf8'))
     return res.status(404).send(errorHtml)
   }
 
@@ -38,7 +41,7 @@ const getPage = async (req, res) => {
 
   const context = buildPageContext(tenant, pageDoc, protocol, hostname, path, JSON.stringify(query))
   const html = await render(templateDoc.content, context)
-
+  res.set('Content-Length', Buffer.byteLength(html, 'utf8'))
   return res.send(html)
 }
 
