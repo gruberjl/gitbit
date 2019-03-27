@@ -5,7 +5,7 @@ const queryString = require('query-string')
 const {Prompt} = require('react-router-dom')
 const {toast} = require('react-toastify')
 const {Nav} = require('../../components')
-const {getTemplate, save, remove} = require('./lib')
+const {getTemplate, save, remove, inlineCss} = require('./lib')
 
 class Template extends React.Component {
   constructor(props) {
@@ -53,9 +53,10 @@ class Template extends React.Component {
     })
   }
 
-  save() {
+  async save() {
     const self = this
     const template = clone(this.state.template)
+    template.html = await inlineCss(template.content)
 
     save(template).then((savedDoc) => {
       self.setState((state) => {
