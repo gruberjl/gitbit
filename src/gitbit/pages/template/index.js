@@ -4,6 +4,8 @@ const clone = require('clone-deep')
 const queryString = require('query-string')
 const {Prompt} = require('react-router-dom')
 const {toast} = require('react-toastify')
+const CodeMirror = require('react-codemirror2').Controlled
+require('codemirror/mode/htmlmixed/htmlmixed')
 const {Nav} = require('../../components')
 const {getTemplate, save, remove, inlineCss} = require('./lib')
 
@@ -44,11 +46,11 @@ class Template extends React.Component {
     })
   }
 
-  setContent(event) {
-    const content = event.target.value
+  setContent(editor, data, value) {
+    // const content = event.target.value
     this.setState((state) => {
       const template = clone(state.template)
-      template.content = content
+      template.content = value
       return {template, hasChanged: true}
     })
   }
@@ -85,7 +87,7 @@ class Template extends React.Component {
           <Prompt when={hasChanged} message="Quit without saving?" />
           <Nav />
           <main className="pure-u-4-5">
-            <article>
+            <div className="margin12">
               <form className="pure-form pure-form-stacked">
                 <h1>
                   <textarea
@@ -96,13 +98,13 @@ class Template extends React.Component {
                     className="pure-input-1"
                   />
                 </h1>
-                <textarea placeholder="HTML - content" value={template.content} onChange={this.setContent.bind(this)} rows="35" className="pure-input-1" />
+                <CodeMirror value={template.content} options={{mode: 'htmlmixed', theme: 'material', lineNumbers: true}} onBeforeChange={this.setContent.bind(this)} />
                 <div className="text-align-right">
                   <button onClick={this.save.bind(this)} type="button" className="pure-button pure-button-primary margin12">Save</button>
                   <button onClick={this.remove.bind(this)} type="button" className="pure-button margin12">Delete Template</button>
                 </div>
               </form>
-            </article>
+            </div>
           </main>
         </div>
       )
@@ -111,5 +113,5 @@ class Template extends React.Component {
     return (<div>Loading</div>)
   }
 }
-
+// <textarea placeholder="HTML - content" value={template.content} onChange={this.setContent.bind(this)} rows="35" className="pure-input-1" />
 module.exports = {Template}

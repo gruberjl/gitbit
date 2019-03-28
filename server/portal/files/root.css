@@ -31,6 +31,10 @@ article .ql-editor h4 {
   font-size: inherit;
 }
 
+.CodeMirror.cm-s-material {
+  height: 75vh;
+}
+
 .featured-image {
   width: 250px;
   border: 2px solid transparent;
