@@ -113,5 +113,5 @@ class Template extends React.Component {
     return (<div>Loading</div>)
   }
 }
-// <textarea placeholder="HTML - content" value={template.content} onChange={this.setContent.bind(this)} rows="35" className="pure-input-1" />
+
 module.exports = {Template}
