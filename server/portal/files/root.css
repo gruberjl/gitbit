@@ -32,7 +32,7 @@ article .ql-editor h4 {
 }
 
 .CodeMirror.cm-s-material {
-  height: 75vh;
+  height: auto;
 }
 
 .featured-image {
