@@ -1,12 +1,14 @@
 const Jimp = require('jimp')
 
-const processImage = async (file, height) => {
+const processImage = async (file, width) => {
   const image = await Jimp.read(file.data)
+  image.quality(90)
 
-  if (height)
-    image.resize(Jimp.AUTO, height)
+  if (width)
+    image.resize(width, Jimp.AUTO)
 
   const buffer = await image.getBufferAsync('image/png')
+
   return {buffer}
 }
 

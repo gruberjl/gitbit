@@ -21,7 +21,7 @@ const upload = async (req, res) => {
   if (image1200.error)
     return res.status(432).json({error: image1200.error})
 
-  const response1200 = await putObject(req.user.tenant, `images/1200/${id}.png`, 'image/png', original.buffer)
+  const response1200 = await putObject(req.user.tenant, `images/1200/${id}.png`, 'image/png', image1200.buffer)
 
   if (response1200.error)
     return res.status(431).json({error: response1200.error})
