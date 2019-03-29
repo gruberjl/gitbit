@@ -31,6 +31,23 @@ article .ql-editor h4 {
   font-size: inherit;
 }
 
+.ql-editor figure {
+  margin: 0;
+}
+
+.ql-editor figcaption {
+  min-height: 25px;
+  color: rgba(0,0,0,.68);
+  text-align: center;
+  font-weight: 400px;
+  font-size: medium;
+}
+
+.ql-editor figcaption:empty:before{
+  content: attr(placeholder);
+  display: block; /* For Firefox */
+}
+
 .CodeMirror.cm-s-material {
   height: auto;
 }

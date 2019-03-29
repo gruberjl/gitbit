@@ -108693,7 +108693,12 @@ class Figure extends BlockEmbed {
     img.setAttribute('srcset', srcset);
     const sizes = '(max-width: 400px) 360px,(max-width: 800px) 760px,(max-width: 1200px) 1160px, 2500px';
     img.setAttribute('sizes', sizes);
+    img.setAttribute('alt', value.alt || '');
     node.appendChild(img);
+    const caption = document.createElement('figcaption');
+    caption.setAttribute('placeholder', 'Type caption for image');
+    caption.innerText = value.alt || '';
+    node.appendChild(caption);
     return node;
   }
 
@@ -108704,11 +108709,14 @@ class Figure extends BlockEmbed {
     const image800 = sizes[1].trim().split(' ')[0];
     const image1200 = sizes[2].trim().split(' ')[0];
     const image2500 = sizes[3].trim().split(' ')[0];
+    const caption = node.getElementsByTagName('figcaption')[0];
+    const alt = caption.innerText;
     return {
       image400,
       image800,
       image1200,
-      image2500
+      image2500,
+      alt
     };
   }
 
