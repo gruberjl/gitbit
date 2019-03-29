@@ -108972,15 +108972,13 @@ const {
 } = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
 
 const upload = async file => {
-  const data = new FormData(); // data.append('filename', `images/${file.name}`)
-
+  const data = new FormData();
   data.append('file', file);
   const response = await fetch('/api/assets/create-image', {
     method: 'POST',
     body: data
   });
   const res = await response.json();
-  console.log(res);
   return res.url;
 };
 
@@ -109754,6 +109752,7 @@ class Story extends React.Component {
     this.setState(state => {
       const story = clone(state.story);
       story.featuredImage = featuredImage;
+      story.featuredImage1200 = featuredImage.replace('original', 1200);
       return {
         story,
         hasChanged: true

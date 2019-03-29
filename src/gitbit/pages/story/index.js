@@ -55,6 +55,7 @@ class Story extends React.Component {
     this.setState((state) => {
       const story = clone(state.story)
       story.featuredImage = featuredImage
+      story.featuredImage1200 = featuredImage.replace('original', 1200)
       return {story, hasChanged: true}
     })
   }
