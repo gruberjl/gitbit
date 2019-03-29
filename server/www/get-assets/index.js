@@ -6,9 +6,7 @@ const spacesEndpoint = new aws.Endpoint('sfo2.digitaloceanspaces.com')
 const s3 = new aws.S3({endpoint: spacesEndpoint})
 
 const getAssets = (req, res, next) => {
-  const Key = req.params.fldr
-    ? `${req.tenant._id}/${req.params.fldr}/${req.params.file}`
-    : `${req.tenant._id}/${req.params.file}`
+  const Key = `${req.tenant._id}/${req.params['0']}`
 
   s3.getObject({Bucket: 'web-hosting-assets', Key})
     .on('httpHeaders', function sendStream(statusCode, headers) {

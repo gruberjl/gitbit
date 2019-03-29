@@ -108972,14 +108972,15 @@ const {
 } = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
 
 const upload = async file => {
-  const data = new FormData();
-  data.append('filename', `images/${file.name}`);
+  const data = new FormData(); // data.append('filename', `images/${file.name}`)
+
   data.append('file', file);
-  const response = await fetch('/api/assets/create', {
+  const response = await fetch('/api/assets/create-image', {
     method: 'POST',
     body: data
   });
   const res = await response.json();
+  console.log(res);
   return res.url;
 };
 
