@@ -33,8 +33,7 @@ www.get('/sitemap.xml', getSitemap)
 www.get('/rss.xml', getRss)
 www.get('/feed.json', getJsonFeed)
 www.get('/atom.xml', getAtom)
-www.get('/assets/:file', getAssets)
-www.get('/assets/:fldr/:file', getAssets)
+www.get('/assets/*', getAssets)
 www.get('/*', getPage)
 
 module.exports = {www}
