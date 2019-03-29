@@ -10,7 +10,7 @@ const upload = async (file) => {
   })
   const res = await response.json()
 
-  return res.url
+  return res['2500'].url
 }
 
 module.exports = {upload}

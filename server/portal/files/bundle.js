@@ -108979,7 +108979,7 @@ const upload = async file => {
     body: data
   });
   const res = await response.json();
-  return res.url;
+  return res['2500'].url;
 };
 
 module.exports = {
