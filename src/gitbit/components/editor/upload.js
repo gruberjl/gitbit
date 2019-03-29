@@ -8,9 +8,17 @@ const upload = async (file) => {
     method: 'POST',
     body: data
   })
-  const res = await response.json()
 
-  return res['2500'].url
+  const r = await response.json()
+
+  const images = {
+    image400: r.image400.url,
+    image800: r.image800.url,
+    image1200: r.image1200.url,
+    image2500: r.image2500.url
+  }
+
+  return images
 }
 
 module.exports = {upload}

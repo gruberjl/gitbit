@@ -108674,6 +108674,54 @@ module.exports = function (data) {
 
 /***/ }),
 
+/***/ "./src/gitbit/components/editor/figure.js":
+/*!************************************************!*\
+  !*** ./src/gitbit/components/editor/figure.js ***!
+  \************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* global Quill */
+const BlockEmbed = Quill.import('blots/block/embed');
+
+class Figure extends BlockEmbed {
+  static create(value) {
+    const node = super.create();
+    const img = document.createElement('img');
+    img.setAttribute('src', value.image2500);
+    const srcset = `${value.image400} 400w, ${value.image800} 800w, ${value.image1200} 1200w, ${value.image2500} 2500w`;
+    img.setAttribute('srcset', srcset);
+    const sizes = '(max-width: 400px) 360px,(max-width: 800px) 760px,(max-width: 1200px) 1160px, 2500px';
+    img.setAttribute('sizes', sizes);
+    node.appendChild(img);
+    return node;
+  }
+
+  static value(node) {
+    const srcset = node.getElementsByTagName('img')[0].getAttribute('srcset');
+    const sizes = srcset.split(',');
+    const image400 = sizes[0].trim().split(' ')[0];
+    const image800 = sizes[1].trim().split(' ')[0];
+    const image1200 = sizes[2].trim().split(' ')[0];
+    const image2500 = sizes[3].trim().split(' ')[0];
+    return {
+      image400,
+      image800,
+      image1200,
+      image2500
+    };
+  }
+
+}
+
+Figure.blotName = 'figure';
+Figure.tagName = 'figure';
+module.exports = {
+  Figure
+};
+
+/***/ }),
+
 /***/ "./src/gitbit/components/editor/image-drop.js":
 /*!****************************************************!*\
   !*** ./src/gitbit/components/editor/image-drop.js ***!
@@ -108714,18 +108762,18 @@ class ImageDrop {
   }
 
   handlePaste(evt) {
-    if (evt.clipboardData && evt.clipboardData.items && evt.clipboardData.items.length) this.readFiles(evt.clipboardData.items, dataUrl => {
+    if (evt.clipboardData && evt.clipboardData.items && evt.clipboardData.items.length) this.readFiles(evt.clipboardData.items, images => {
       const selection = this.quill.getSelection();
 
       if (selection) {// we must be in a browser that supports pasting (like Firefox)
         // so it has already been placed into the editor
-      } else setTimeout(() => this.insert(dataUrl), 0);
+      } else setTimeout(() => this.insert(images), 0);
     });
   }
 
-  insert(dataUrl) {
+  insert(images) {
     const index = (this.quill.getSelection() || {}).index || this.quill.getLength();
-    this.quill.insertEmbed(index, 'image', dataUrl, 'user');
+    this.quill.insertEmbed(index, 'figure', images, 'user');
   }
 
   readFiles(files, callback) {
@@ -108736,8 +108784,8 @@ class ImageDrop {
 
       const blob = file.getAsFile ? file.getAsFile() : file;
       if (blob instanceof Blob) reader.readAsDataURL(blob);
-      this.options.upload(file).then(imageUrl => {
-        callback(imageUrl);
+      this.options.upload(file).then(images => {
+        callback(images);
       }, error => {
         throw new Error(error.message);
       });
@@ -108787,19 +108835,19 @@ class ImageUploader {
     const file = this.fileHolder.files[0];
     const fileReader = new FileReader();
     if (file) fileReader.readAsDataURL(file);
-    this.options.upload(file).then(imageUrl => {
-      this.insertToEditor(imageUrl);
+    this.options.upload(file).then(images => {
+      this.insertToEditor(images);
     }, error => {
       throw new Error(error.message);
     });
   }
 
-  insertToEditor(url) {
+  insertToEditor(images) {
     const {
       range
     } = this; // Insert the server saved image
 
-    this.quill.insertEmbed(range.index, 'image', `${url}`);
+    this.quill.insertEmbed(range.index, 'figure', images, 'user');
     range.index++;
     this.quill.setSelection(range, 'api');
   }
@@ -108838,6 +108886,10 @@ const {
   upload
 } = __webpack_require__(/*! ./upload */ "./src/gitbit/components/editor/upload.js");
 
+const {
+  Figure
+} = __webpack_require__(/*! ./figure */ "./src/gitbit/components/editor/figure.js");
+
 let quillRegistered = false;
 
 class Editor extends React.Component {
@@ -108858,6 +108910,7 @@ class Editor extends React.Component {
 
     if (!quillRegistered) {
       quillRegistered = true;
+      Quill.register(Figure);
       Quill.register('modules/imageDrop', ImageDrop);
       Quill.register('modules/imageUploader', ImageUploader);
     }
@@ -108978,8 +109031,14 @@ const upload = async file => {
     method: 'POST',
     body: data
   });
-  const res = await response.json();
-  return res['2500'].url;
+  const r = await response.json();
+  const images = {
+    image400: r.image400.url,
+    image800: r.image800.url,
+    image1200: r.image1200.url,
+    image2500: r.image2500.url
+  };
+  return images;
 };
 
 module.exports = {

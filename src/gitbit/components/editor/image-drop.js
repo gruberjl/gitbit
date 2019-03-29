@@ -28,19 +28,19 @@ class ImageDrop {
 
   handlePaste(evt) {
     if (evt.clipboardData && evt.clipboardData.items && evt.clipboardData.items.length)
-      this.readFiles(evt.clipboardData.items, (dataUrl) => {
+      this.readFiles(evt.clipboardData.items, (images) => {
         const selection = this.quill.getSelection()
         if (selection) {
           // we must be in a browser that supports pasting (like Firefox)
           // so it has already been placed into the editor
         } else
-          setTimeout(() => this.insert(dataUrl), 0)
+          setTimeout(() => this.insert(images), 0)
       })
   }
 
-  insert(dataUrl) {
+  insert(images) {
     const index = (this.quill.getSelection() || {}).index || this.quill.getLength()
-    this.quill.insertEmbed(index, 'image', dataUrl, 'user')
+    this.quill.insertEmbed(index, 'figure', images, 'user')
   }
 
   readFiles(files, callback) {
@@ -57,8 +57,8 @@ class ImageDrop {
         reader.readAsDataURL(blob)
 
       this.options.upload(file).then(
-        (imageUrl) => {
-          callback(imageUrl)
+        (images) => {
+          callback(images)
         },
         (error) => {
           throw new Error(error.message)

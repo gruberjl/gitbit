@@ -39,8 +39,8 @@ class ImageUploader {
 
 
     this.options.upload(file).then(
-      (imageUrl) => {
-        this.insertToEditor(imageUrl)
+      (images) => {
+        this.insertToEditor(images)
       },
       (error) => {
         throw new Error(error.message)
@@ -48,10 +48,10 @@ class ImageUploader {
     )
   }
 
-  insertToEditor(url) {
+  insertToEditor(images) {
     const {range} = this
     // Insert the server saved image
-    this.quill.insertEmbed(range.index, 'image', `${url}`)
+    this.quill.insertEmbed(range.index, 'figure', images, 'user')
 
     range.index++
     this.quill.setSelection(range, 'api')
