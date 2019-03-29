@@ -109874,6 +109874,18 @@ class Story extends React.Component {
     });
   }
 
+  setDescription(event) {
+    const description = event.target.value;
+    this.setState(state => {
+      const story = clone(state.story);
+      story.description = description;
+      return {
+        story,
+        hasChanged: true
+      };
+    });
+  }
+
   setNotes(event) {
     const notes = event.target.value;
     this.setState(state => {
@@ -109976,6 +109988,12 @@ class Story extends React.Component {
       }), React.createElement(Slug, {
         slug: story.slug,
         onChange: this.setSlug.bind(this)
+      }), React.createElement("textarea", {
+        placeholder: "Description",
+        value: story.description,
+        onChange: this.setDescription.bind(this),
+        rows: "5",
+        className: "pure-input-1"
       }), React.createElement(PublishTime, {
         publishTime: story.publishTime,
         onChange: this.setPublishTime.bind(this)

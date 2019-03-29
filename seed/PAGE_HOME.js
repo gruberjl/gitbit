@@ -19,5 +19,6 @@ module.exports = {
   publishTime: '2019-01-02T20:17:00.000Z',
   template: 'templatehome',
   tenant: 'localhost',
+  description: '',
   notes: ''
 }

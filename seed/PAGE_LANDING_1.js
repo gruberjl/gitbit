@@ -10,5 +10,6 @@ module.exports = {
   publishTime: '2019-01-03T20:17:00.000Z',
   template: 'templatelanding-page',
   tenant: 'localhost',
+  description: '',
   notes: ''
 }
