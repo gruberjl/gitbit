@@ -8,7 +8,7 @@ const build404 = async (tenant, protocol, hostname, path, query) => {
   const templateDoc = await db.find('templates', pageDoc.template)
 
   const context = buildPageContext(tenant, pageDoc, protocol, hostname, path, query)
-  const errorHtml = await render(templateDoc.content, context)
+  const errorHtml = await render(templateDoc.html, context)
   return errorHtml
 }
 
@@ -40,7 +40,7 @@ const getPage = async (req, res) => {
   const templateDoc = await db.find('templates', pageDoc.template)
 
   const context = buildPageContext(tenant, pageDoc, protocol, hostname, path, JSON.stringify(query))
-  const html = await render(templateDoc.content, context)
+  const html = await render(templateDoc.html, context)
   res.set('Content-Length', Buffer.byteLength(html, 'utf8'))
   return res.send(html)
 }
