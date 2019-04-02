@@ -17,6 +17,7 @@ module.exports = {
   content: '<h1>This is my home page!</h1><p><a href="/landingpage1" target="_blank">Landing Page 1</a></p><p><a href="/articles/story1" target="_blank">Story 1</a></p><p><a href="/not-a-site" target="_blank">404 Error</a></p>',
   title: 'Localhost site',
   publishTime: '2019-01-02T20:17:00.000Z',
+  updateTime: '2019-01-01T20:17:00.000Z',
   template: 'templatehome',
   tenant: 'localhost',
   description: '',

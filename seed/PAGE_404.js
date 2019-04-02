@@ -10,6 +10,7 @@ module.exports = {
   notes: '',
   description: '',
   publishTime: '2019-01-01T20:17:00.000Z',
+  updateTime: '2019-01-01T20:17:00.000Z',
   template: 'template404',
   tenant: 'localhost'
 }
