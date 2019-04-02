@@ -1,6 +1,7 @@
 const React = require('react')
 const {Link} = require('react-router-dom')
 const {toast} = require('react-toastify')
+const moment = require('moment')
 const {getStories} = require('./lib')
 const {Nav} = require('../../components/nav')
 
@@ -27,7 +28,10 @@ class Stories extends React.Component {
             {
             this.state.stories.map(story => (
               <li className="pure-menu-item" key={story._id}>
-                <Link to={`/edit-story?id=${story._id}`} className="pure-menu-link">{story.title}</Link>
+                <Link to={`/edit-story?id=${story._id}`} className="pure-menu-link">
+                  <div><strong>{story.title || '(untitled)'}</strong></div>
+                  <span>{moment(story.updateTime).format('MMM Do YY')}</span>
+                </Link>
               </li>
             ))
           }

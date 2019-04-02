@@ -141,6 +141,7 @@ class Story extends React.Component {
   publish(showToast = true) {
     const self = this
     const story = clone(this.state.story)
+    story.updateTime = moment().toISOString()
 
     publish(story).then((savedDoc) => {
       self.setState((state) => {

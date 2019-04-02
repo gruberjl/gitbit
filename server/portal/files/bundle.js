@@ -109667,6 +109667,8 @@ const {
   toast
 } = __webpack_require__(/*! react-toastify */ "./node_modules/react-toastify/lib/index.js");
 
+const moment = __webpack_require__(/*! moment */ "./node_modules/moment/moment.js");
+
 const {
   getStories
 } = __webpack_require__(/*! ./lib */ "./src/gitbit/pages/stories/lib/index.js");
@@ -109702,7 +109704,7 @@ class Stories extends React.Component {
     }, React.createElement(Link, {
       to: `/edit-story?id=${story._id}`,
       className: "pure-menu-link"
-    }, story.title))))));
+    }, React.createElement("div", null, React.createElement("strong", null, story.title || '(untitled)')), React.createElement("span", null, moment(story.updateTime).format('MMM Do YY'))))))));
   }
 
 }
@@ -109724,7 +109726,7 @@ const {
   fetch
 } = __webpack_require__(/*! whatwg-fetch */ "./node_modules/whatwg-fetch/fetch.js");
 
-const getStories = async () => fetch('/api/pages/query').then(res => res.json());
+const getStories = async () => fetch('/api/pages/query-by-updated').then(res => res.json());
 
 module.exports = {
   getStories
@@ -109928,6 +109930,7 @@ class Story extends React.Component {
   publish(showToast = true) {
     const self = this;
     const story = clone(this.state.story);
+    story.updateTime = moment().toISOString();
     publish(story).then(savedDoc => {
       self.setState(state => {
         const newStory = clone(state.story);

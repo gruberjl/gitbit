@@ -11,6 +11,7 @@ const router = express.Router()
 router.post('/pages/create', pages.save)
 router.get('/pages/find', pages.find)
 router.get('/pages/query', pages.query)
+router.get('/pages/query-by-updated', pages.queryByUpdated)
 router.post('/pages/update', pages.save)
 router.post('/pages/remove', pages.remove)
 
