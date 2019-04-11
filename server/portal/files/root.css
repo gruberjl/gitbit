@@ -29,6 +29,9 @@ article .ql-editor h4 {
 
 .content.ql-container {
   font-size: inherit;
+  border-top-color: rgb(204, 204, 204) !important;
+  border-top-style: solid !important;
+  border-top-width: 1px !important;
 }
 
 .ql-editor figure {
@@ -70,6 +73,20 @@ article .ql-editor h4 {
 
 .featured-image img {
   max-width: 100%;
+}
+
+#toolbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: white;
+  border-left: 0px;
+  border-right: 0px;
+  border-bottom: 0px;
+  display: flex;
+  justify-content: center;
 }
 
 .Toastify__toast-container {
