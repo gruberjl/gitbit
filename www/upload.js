@@ -10,7 +10,7 @@ const Bucket = 'web-hosting-assets'
 const assetsFldr = join(__dirname, 'assets')
 
 const uploadStyles = async () => {
-  const Body = fs.readFileSync(join(__dirname, 'assets', 'styles.css'), 'utf8')
+  const Body = fs.readFileSync(join(assetsFldr, 'styles.css'), 'utf8')
 
   const options = {
     Bucket,
