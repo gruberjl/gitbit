@@ -1,0 +1,27 @@
+.splash-container {
+  background: #eee;
+  color: black;
+  min-height: 80vh;
+  padding: 55px;
+}
+
+.splash {
+  text-align: center;
+  max-width: 768px;
+  margin: auto;
+}
+
+.splash-head {
+  font-size: 55px;
+}
+
+.splash-subhead {
+  font-size: 20px;
+}
+
+.splash-button {
+  background: #770eb6;
+  color: white;
+  font-size: 20px;
+  margin-top: 55px;
+}
