@@ -5,6 +5,7 @@ const {ImageUploader} = require('./image-uploader')
 const {Toolbar} = require('./toolbar')
 const {upload} = require('./upload')
 const {Figure} = require('./figure')
+const {PlainTextClipboard} = require('./plain-text-clipboard')
 
 let quillRegistered = false
 
@@ -25,6 +26,7 @@ class Editor extends React.Component {
     if (!quillRegistered) {
       quillRegistered = true
       Quill.register(Figure)
+      Quill.register('modules/clipboard', PlainTextClipboard)
       Quill.register('modules/imageDrop', ImageDrop)
       Quill.register('modules/imageUploader', ImageUploader)
     }

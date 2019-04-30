@@ -108898,6 +108898,10 @@ const {
   Figure
 } = __webpack_require__(/*! ./figure */ "./src/gitbit/components/editor/figure.js");
 
+const {
+  PlainTextClipboard
+} = __webpack_require__(/*! ./plain-text-clipboard */ "./src/gitbit/components/editor/plain-text-clipboard.js");
+
 let quillRegistered = false;
 
 class Editor extends React.Component {
@@ -108919,6 +108923,8 @@ class Editor extends React.Component {
     if (!quillRegistered) {
       quillRegistered = true;
       Quill.register(Figure);
+      console.log('a');
+      Quill.register('modules/clipboard', PlainTextClipboard);
       Quill.register('modules/imageDrop', ImageDrop);
       Quill.register('modules/imageUploader', ImageUploader);
     }
@@ -108953,6 +108959,48 @@ class Editor extends React.Component {
 
 module.exports = {
   Editor
+};
+
+/***/ }),
+
+/***/ "./src/gitbit/components/editor/plain-text-clipboard.js":
+/*!**************************************************************!*\
+  !*** ./src/gitbit/components/editor/plain-text-clipboard.js ***!
+  \**************************************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+/* global Quill */
+
+/* eslint consistent-return: 0 */
+const Delta = Quill.import('delta');
+const Clipboard = Quill.import('modules/clipboard');
+
+class PlainTextClipboard extends Clipboard {
+  onPaste(e) {
+    if (e.defaultPrevented || !this.quill.isEnabled()) return;
+    const range = this.quill.getSelection();
+    let delta = new Delta().retain(range.index);
+
+    if (e && e.clipboardData && e.clipboardData.types && e.clipboardData.getData) {
+      const text = (e.originalEvent || e).clipboardData.getData('text/plain');
+      const cleanedText = this.convert(text); // Stop the data from actually being pasted
+
+      e.stopPropagation();
+      e.preventDefault(); // Process cleaned text
+
+      delta = delta.concat(cleanedText).delete(range.length);
+      this.quill.updateContents(delta, Quill.sources.USER); // range.length contributes to delta.length()
+
+      this.quill.setSelection(delta.length() - range.length, Quill.sources.SILENT);
+      return false;
+    }
+  }
+
+}
+
+module.exports = {
+  PlainTextClipboard
 };
 
 /***/ }),
