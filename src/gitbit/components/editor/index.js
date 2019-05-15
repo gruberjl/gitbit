@@ -17,6 +17,7 @@ class Editor extends React.Component {
 
   componentDidMount() {
     this.buildQuill()
+    document.getElementsByClassName('ql-editor')[0].removeAttribute('data-gramm')
   }
 
   buildQuill() {
