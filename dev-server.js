@@ -46,7 +46,7 @@ app.use((req, res, next) => {
   next()
 })
 
-app.use(express.static('docs', {extensions:['html'], redirect:false}))
+app.use(express.static('docs', {extensions:['html', 'css'], redirect:false}))
 
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
