@@ -1,4 +1,4 @@
-import { doc, deleteDoc as DeleteDoc } from 'firebase/firestore'
+import { doc, deleteDoc as DeleteDoc } from 'firebase/firestore/lite'
 import {getDb} from './get-db'
 
 const deleteDoc = (path, id) => {

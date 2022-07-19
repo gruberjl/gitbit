@@ -1,7 +1,6 @@
 import express from 'express'
 import fs from "fs"
 import path from 'path'
-import './build/index.js'
 import buildPage from './build/build-page.js'
 
 const app = express()
@@ -17,9 +16,10 @@ app.use(function (req, res, next) {
 })
 
 app.use('/*.js', async (req, res, next) => {
-  if (req.originalUrl.includes('/assets/'))
+  let url = req.originalUrl.split('?')[0]
+  if (url.includes('/assets/'))
     return next()
-  let filePath = `./src/pages${req.originalUrl}`
+  let filePath = `./src/pages${url}`
   if (filePath.endsWith('/'))
     filePath = filePath.slice(0, -1)
 
@@ -27,12 +27,14 @@ app.use('/*.js', async (req, res, next) => {
 })
 
 app.use('/**', async (req, res, next) => {
-  if (req.originalUrl.includes('/assets/') || req.originalUrl.endsWith('.js') || req.originalUrl.endsWith('.js/') || req.originalUrl.endsWith('.png/') || req.originalUrl.endsWith('.png') || req.originalUrl.endsWith('.xml/') || req.originalUrl.endsWith('.ico') || req.originalUrl.endsWith('.ico/') || req.originalUrl.endsWith('.svg/') || req.originalUrl.endsWith('.webmanifest/') || req.originalUrl.endsWith('.webmanifest') || req.originalUrl.endsWith('.css/') || req.originalUrl.endsWith('.css'))
+  let url = req.originalUrl.split('?')[0]
+  if (url.includes('/assets/') || url.endsWith('.js') || url.endsWith('.js/') || url.endsWith('.png/') || url.endsWith('.png') || url.endsWith('.xml/') || url.endsWith('.ico') || url.endsWith('.ico/') || url.endsWith('.svg/') || url.endsWith('.webmanifest/') || url.endsWith('.webmanifest') || url.endsWith('.css/') || url.endsWith('.css'))
     return next()
-  let cleanedUrl = req.originalUrl === '/' ? '/index' : req.originalUrl
-  if (cleanedUrl.endsWith('/'))
-    cleanedUrl = cleanedUrl.slice(0, -1)
-  const filePath = `./src/pages${cleanedUrl}.js`
+
+  url = url === '/' ? '/index' : url
+  if (url.endsWith('/'))
+    url = url.slice(0, -1)
+  const filePath = `./src/pages${url}.js`
 
   await buildPage(filePath)
 

@@ -3,9 +3,9 @@ const TerserPlugin = require("terser-webpack-plugin")
 
 module.exports = (sourcePath = './src/pages/index.js', outputPath = './docs', outputFilename = 'index.js') => {
   if (sourcePath && sourcePath.WEBPACK_BUNDLE) {
-    sourcePath = './src/pages/login.js'
+    sourcePath = './src/pages/tests.js'
     outputPath = './docs'
-    outputFilename = 'login.js'
+    outputFilename = 'tests.js'
   }
 
   return {
@@ -20,6 +20,7 @@ module.exports = (sourcePath = './src/pages/index.js', outputPath = './docs', ou
       maxEntrypointSize: 512000,
       maxAssetSize: 512000
     },
+    devtool: process.env.NODE_ENV !== 'production' ? 'eval' : 'none',
     module: {
       rules: [
         {
