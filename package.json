@@ -1,0 +1,53 @@
+{
+  "name": "gitbit",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "set DEBUG=gitbit:*&&babel-node build",
+    "build:webpack": "webpack",
+    "start": "babel-node dev-server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gruberjl/gitbit.git"
+  },
+  "author": "",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://github.com/gruberjl/gitbit/issues"
+  },
+  "homepage": "https://github.com/gruberjl/gitbit#readme",
+  "devDependencies": {
+    "@babel/core": "^7.18.6",
+    "@babel/node": "^7.18.6",
+    "@babel/plugin-transform-react-jsx": "^7.18.6",
+    "@babel/preset-env": "^7.18.6",
+    "babel-loader": "^8.2.5",
+    "copy-dir": "^1.3.0",
+    "ejs": "^3.1.8",
+    "express": "^4.18.1",
+    "firebase-admin": "^11.0.0",
+    "glob": "^8.0.3",
+    "sitemap": "^7.1.1",
+    "terser-webpack-plugin": "^5.3.3",
+    "webpack-cli": "^4.10.0"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.9.3",
+    "@emotion/styled": "^11.9.3",
+    "@mui/icons-material": "^5.8.4",
+    "@mui/material": "^5.9.0",
+    "draft-js": "^0.11.7",
+    "draftjs-to-html": "^0.9.1",
+    "firebase": "^9.9.0",
+    "install": "^0.13.0",
+    "npm": "^8.14.0",
+    "preact": "^10.10.0",
+    "preact-helmet": "^4.0.0-alpha-3",
+    "preact-render-to-string": "^5.2.1",
+    "react": "npm:@preact/compat",
+    "react-dom": "npm:@preact/compat"
+  }
+}
