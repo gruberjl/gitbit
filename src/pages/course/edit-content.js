@@ -15,6 +15,7 @@ import Snackbar from '@mui/material/Snackbar'
 import { EditorState, convertToRaw, convertFromRaw } from 'draft-js'
 // import {Editor} from 'react-draft-wysiwyg'
 import Wysiwyg from '../../components/wysiwyg'
+import decorators from '../../components/wysiwyg-decorators'
 const isBrowser = () => typeof window !== 'undefined'
 
 import debounce from 'debounce'
@@ -53,6 +54,7 @@ class EditContentPage extends Component {
     this.selectFeaturedImage = this.selectFeaturedImage.bind(this)
     this.handlePublishChange = this.handlePublishChange.bind(this)
     this.setSlug = this.setSlug.bind(this)
+    this.addImage = this.addImage.bind(this)
 
     let params = new URLSearchParams()
     if (isBrowser())
@@ -72,7 +74,7 @@ class EditContentPage extends Component {
         slug: ''
       },
       courseId: params.get('courseId'),
-      editorState: EditorState.createEmpty(),
+      editorState: EditorState.createEmpty(decorators),
       alert: ''
     }
 
@@ -97,7 +99,7 @@ class EditContentPage extends Component {
 
     this.setState({
       content,
-      editorState: EditorState.createWithContent(convertFromRaw(content.article))
+      editorState: EditorState.createWithContent(convertFromRaw(content.article), decorators)
     })
   }
 
@@ -167,6 +169,12 @@ class EditContentPage extends Component {
     this.setState({content})
   }
 
+  addImage(json) {
+    const content = JSON.parse(JSON.stringify(this.state.content))
+    content.images.push(json.data.url)
+    this.setState({content})
+  }
+
   render() {
     const uploadImageCallBack = async (file) => {
       const formData = new FormData();
@@ -217,7 +225,7 @@ class EditContentPage extends Component {
                   )) }
                 </Grid>
                 <Grid item  xs={12}>
-                  <Wysiwyg editorState={this.state.editorState} onEditorStateChange={this.setEditorState} />
+                  <Wysiwyg editorState={this.state.editorState} onEditorStateChange={this.setEditorState} addImage={this.addImage} />
                 </Grid>
                 <Grid item container justifyContent="space-between" alignItems="center">
                   <Grid item>

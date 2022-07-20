@@ -2,7 +2,9 @@ import express from 'express'
 import fs from "fs"
 import path from 'path'
 import buildPage from './build/build-page.js'
+import buildRoot from './build/build-root.js'
 
+buildRoot()
 const app = express()
 const port = 8000
 
