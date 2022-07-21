@@ -7,10 +7,9 @@ import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
-
 import { onAuthStateChanged } from "../../components/firebase/on-auth-state-changed"
-import getAllDocs from '../../components/firebase/get-all-docs'
 import saveDoc from '../../components/firebase/save-doc'
+import questions from '../../data/questions'
 
 const alignRightStyles = {
   textAlign: 'right'
@@ -21,7 +20,6 @@ const isBrowser = () => typeof window !== 'undefined'
 class TestsNewPage extends Component {
   constructor(props) {
     super(props)
-    this.addQuestions = this.addQuestions.bind(this)
     this.handleNumOfQuestionsChange = this.handleNumOfQuestionsChange.bind(this)
     this.createTest = this.createTest.bind(this)
     this.setUid = this.setUid.bind(this)
@@ -29,7 +27,6 @@ class TestsNewPage extends Component {
     this.state = {
       numOfQuestions: 60,
       createTestClicked: false,
-      questions: [],
       uid: ''
     }
   }
@@ -37,7 +34,6 @@ class TestsNewPage extends Component {
   componentDidMount() {
     if (isBrowser()) {
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-      getAllDocs(`Tests/MS-500/Questions`).then(this.addQuestions)
     }
   }
 
@@ -55,12 +51,6 @@ class TestsNewPage extends Component {
     }
   }
 
-  addQuestions(docs) {
-    this.setState({
-      questions: docs
-    })
-  }
-
   handleNumOfQuestionsChange(event) {
     const newValue = event.target.value;
     this.setState({
@@ -72,15 +62,20 @@ class TestsNewPage extends Component {
     this.setState({
       createTestClicked:true
     })
+
     const numOfQuestions = this.state.numOfQuestions
 
-    if (numOfQuestions > 0 && numOfQuestions <= this.state.questions.length) {
-      const shuffled = this.state.questions.sort(() => 0.5 - Math.random());
+    if (numOfQuestions > 0 && numOfQuestions <= questions.length) {
+      const shuffled = questions.sort(() => 0.5 - Math.random());
       const questionsInTest = []
       const selected = shuffled.slice(0, numOfQuestions)
 
       for (let i = 0; i < selected.length; i++) {
-        questionsInTest.push(selected[i])
+        const testQuestion = {
+          id: selected[i].id,
+          answers:[]
+        }
+        questionsInTest.push(testQuestion)
       }
 
       const data = {
@@ -120,7 +115,7 @@ class TestsNewPage extends Component {
                     inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
                     label="Number of Questions"
                     defaultValue="60"
-                    helperText={`Must be a number between 1-${this.state.questions.length}`}
+                    helperText={`Must be a number between 1-${questions.length}`}
                     variant="standard"
                     value={this.state.numOfQuestions}
                     onChange={this.handleNumOfQuestionsChange}
@@ -133,11 +128,11 @@ class TestsNewPage extends Component {
                   <Button variant="contained" onClick={this.createTest}>Create Test</Button>
                 </Grid>
               </Grid>
-              { this.state.createTestClicked === true && (this.state.numOfQuestions > this.state.questions.length || this.state.numOfQuestions < 1) ?
+              { this.state.createTestClicked === true && (this.state.numOfQuestions > questions.length || this.state.numOfQuestions < 1) ?
                 <Grid container>
                   <Alert severity="error">
                     <h5>Error with number of questions</h5>
-                    <p>Question count must be between 1-{this.state.questions.length}</p>
+                    <p>Question count must be between 1-{questions.length}</p>
                   </Alert>
                 </Grid>
                 : null

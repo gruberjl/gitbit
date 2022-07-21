@@ -40,8 +40,7 @@ class TestPage extends Component {
         uid: user.uid
       })
 
-      getDoc(`users/${this.state.uid}/tests`, this.state.testId).then(test => {
-        console.log(test.questions[0])
+      getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
         this.setState({
           test,
           nextQuestionId: test.questions[0].id

@@ -1,27 +1,29 @@
 const path = require('path')
 const webpack = require('webpack')
 const config = require('../webpack.config.js')
+const debug = require('debug')('gitbit:build-webpack')
 
 const buildWebpack = (page) => new Promise((res, rej) => {
+  debug(`building webpack ${page.jsBundlePath}`)
   const outputPath = path.dirname('./docs' + page.jsBundlePath)
   const fileName = path.basename(page.jsBundlePath)
 
   webpack(config(page.pageFile, outputPath, fileName), (err, stats) => {
     if (err) {
-      console.log(`Error building ${page.jsBundlePath}`)
-      console.log(err)
+      debug(`Error building ${page.jsBundlePath}`)
+      debug(err)
     }
 
     if (stats.hasErrors()) {
-      console.log(`Error in stats building ${page.jsBundlePath}`)
-      console.error(stats.toJson().errors);
+      debug(`Error in stats building ${page.jsBundlePath}`)
+      debug(stats.toJson().errors);
     }
 
     if (stats.hasWarnings()) {
-      console.log(`Warning building ${page.jsBundlePath}`)
-      console.warn(stats.toJson().warnings);
+      debug(`Warning building ${page.jsBundlePath}`)
+      debug(stats.toJson().warnings);
     }
-
+    debug('done building page')
     res()
   })
 })

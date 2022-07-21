@@ -3,11 +3,10 @@ import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import Checkbox from '@mui/material/Checkbox'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
 import DialogTitle from '@mui/material/DialogTitle'
 import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
 import DialogActions from '@mui/material/DialogActions'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -16,29 +15,12 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import saveDoc from '../../../../components/firebase/save-doc'
-import {onAuthStateChanged} from '../../../../components/firebase'
-import {getDoc} from '../../../../components/firebase'
-import draftToHtml from 'draftjs-to-html'
-
-const optionStyles = {
-  marginTop: '14px',
-  marginBottom: '14px',
-  display: 'flex'
-}
-
-const checkboxStyles = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
-}
-
-const referencesStyle = {
-  marginTop: '24px'
-}
-
-const bottomButtonStyle = {
-  marginTop: '24px'
-}
+import {onAuthStateChanged} from '../../../../components/firebase/on-auth-state-changed'
+import {getDoc} from '../../../../components/firebase/get-doc'
+import Choice from '../../../../components/question/choice'
+import Header from '../../../../components/question/header'
+import Footer from '../../../../components/question/footer'
+import universalStyles from '../../../../components/universal-styles'
 
 const isBrowser = () => typeof window !== 'undefined'
 
@@ -46,35 +28,34 @@ class EditQuestionPage extends Component {
   constructor(props) {
     super(props)
     this.setUid = this.setUid.bind(this)
-    this.handleCorrectAnswerChange = this.handleCorrectAnswerChange.bind(this)
     this.toggleShowAnswer = this.toggleShowAnswer.bind(this)
     this.toggleShowQuestions = this.toggleShowQuestions.bind(this)
     this.gotoQuestion = this.gotoQuestion.bind(this)
     this.toggleEndExam = this.toggleEndExam.bind(this)
     this.endExam = this.endExam.bind(this)
-    const params = new URLSearchParams(props.location.search)
+    this.onTestQuestionChange = this.onTestQuestionChange.bind(this)
+
+    let params = new URLSearchParams()
+    if (isBrowser())
+      params = new URLSearchParams(location.search)
 
     this.state = {
-      questions: {},
       uid: '',
       testId: params.get('testId'),
-      test: {},
-      question: {"references":{"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","targetOption":"_blank"}}},"blocks":[{"type":"unstyled","key":"5v7ud","inlineStyleRanges":[],"entityRanges":[],"data":{},"text":"A security group is required to set permissions in Microsoft 365. A security group can be created in Microsoft 365 admin center or Azure AD admin center (they both create the same groups)","depth":0},{"depth":0,"data":{},"entityRanges":[{"length":95,"key":0,"offset":0}],"key":"2ckp5","type":"unstyled","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV"}]},"id":"JLdb6vJCH","answers":[{"value":"An Office 365 group in the Microsoft 365 admin center","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"A security group in the Microsoft 365 admin center"},{"isCorrectAnswer":false,"value":"A distribution list in the Microsoft 365 admin center"},{"isCorrectAnswer":true,"value":"A security group in the Azure AD admin center"}],"question":{"blocks":[{"text":"What are two ways you can create a group that will be used to provide limited access to Windows Analytics?","key":"53jih","entityRanges":[],"depth":0,"data":{},"type":"unstyled","inlineStyleRanges":[]}],"entityMap":{}}},
+      test: {questions:[{answers:[]}]},
+      question: {"id":"JLdb6vJCH","references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"}},"blocks":[{"inlineStyleRanges":[],"type":"unstyled","text":"A security group is required to set permissions in Microsoft 365. A security group can be created in Microsoft 365 admin center or Azure AD admin center (they both create the same groups)","data":{},"entityRanges":[],"key":"5v7ud","depth":0},{"inlineStyleRanges":[],"key":"2ckp5","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","entityRanges":[{"offset":0,"length":95,"key":0}],"depth":0,"data":{},"type":"unstyled"}]},"answers":[{"value":"An Office 365 group in the Microsoft 365 admin center","isCorrectAnswer":false},{"value":"A security group in the Microsoft 365 admin center","isCorrectAnswer":true},{"value":"A distribution list in the Microsoft 365 admin center","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"A security group in the Azure AD admin center"}],"question":{"entityMap":{},"blocks":[{"text":"What are two ways you can create a group that will be used to provide limited access to Windows Analytics?","key":"53jih","inlineStyleRanges":[],"depth":0,"data":{},"type":"unstyled","entityRanges":[]}]}},
       previousQuestionId: '',
       nextQuestionId: '',
-      questionId: 'JLdb6vJCH',
-      questionIdx: '',
+      questionIdx: 0,
       questionHtml: `<p>What are two ways you can create a group that will be used to provide limited access to Windows Analytics?</p>
 `,
       questionText: `What are two ways you can create a group that will be used to provide limited access to Windows Analytics?`,
       referencesHtml: `<p>A security group is required to set permissions in Microsoft 365. A security group can be created in Microsoft 365 admin center or Azure AD admin center (they both create the same groups)</p>
 <p><a href="https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV" target="_blank">https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV</a></p>
 `,
-      selectedAnswer: [],
       answerShown: false,
       questionsShown: false,
-      endExamShown: false,
-      endExamText: 'Are you sure you want to end the exam?'
+      endExamShown: false
     }
 
     this.state.jsonLd = {
@@ -104,7 +85,7 @@ class EditQuestionPage extends Component {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
         "@type": "Answer",
         "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
-        url: 'https://www.gitbit.org/course/ms-500/question/JLdb6vJCH',
+        url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
           name: 'John Gruber',
@@ -133,87 +114,27 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${this.state.uid}/tests`, this.state.testId).then(test => {
-          let previousQuestionId = ''
-          let nextQuestionId = ''
-          let currentQuestion
-          let previousItm
-          let foundQuestion = false
-          let questionIdx
-          let selectedAnswer = this.state.selectedAnswer
-
-          test.questions.forEach((question, idx) => {
-            if (foundQuestion) {
-                nextQuestionId = question.id
-                foundQuestion = false
-            }
-
-            if (this.state.questionId === question.id) {
-              foundQuestion = true
-              currentQuestion = question
-              questionIdx = idx+1
-              if (previousItm)
-                previousQuestionId = previousItm.id
-
-              if (currentQuestion.answered)
-                selectedAnswer = currentQuestion.answered
-            }
-
-            previousItm = question
-          })
-
-          getDoc(`Tests/MS-500/Questions`, currentQuestion.id).then(question => {
-            const questionHtml = draftToHtml(question.question)
-            const referencesHtml = draftToHtml(question.references)
-            this.setState({question, questionHtml, referencesHtml})
-          })
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
+          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+          const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
+          const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
             questionIdx: questionIdx,
             nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId,
-            selectedAnswer
+            previousQuestionId: previousQuestionId
           })
-        })
-      } else {
-        getDoc(`Tests/MS-500/Questions`, this.state.questionId).then(question => {
-          const questionHtml = draftToHtml(question.question)
-          const referencesHtml = draftToHtml(question.references)
-          this.setState({question, questionHtml, referencesHtml})
         })
       }
     }
   }
 
-  handleCorrectAnswerChange(event) {
-    const idx = event.target.dataset.index
-    const target = event.target
-    const selectedAnswer = [...this.state.selectedAnswer]
-
-    if (target.checked) {
-      selectedAnswer.push(idx)
-    } else {
-      const index = selectedAnswer.indexOf(`${idx}`)
-      selectedAnswer.splice(index, 1)
-    }
-
-    this.setState({selectedAnswer})
-
-    if (this.state.testId) {
-      const test = Object.assign({}, this.state.test)
-
-      test.questions = test.questions.map(question => {
-        if (question.id === this.state.questionId) {
-          question.answered = selectedAnswer
-        }
-        return question
-      })
-
-      saveDoc(`users/${this.state.uid}/tests`, test)
-
-      this.setState({test})
-    }
+  onTestQuestionChange(testQuestion) {
+    const test = JSON.parse(JSON.stringify(this.state.test))
+    test.questions[this.state.questionIdx] = testQuestion
+    this.setState({test})
+    saveDoc(`users/${this.state.uid}/tests`, test)
   }
 
   toggleShowAnswer() {
@@ -247,128 +168,43 @@ class EditQuestionPage extends Component {
   }
 
   render() {
-    let answers = this.state.question.answers ? this.state.question.answers : []
-
-    answers = [...answers].map((answer, index) => {
-      answer.isSelected = this.state.selectedAnswer.includes(`${index}`)
-      answer.optionStyles = Object.assign({}, optionStyles)
-      if (this.state.answerShown && answer.isCorrectAnswer) {
-        answer.optionStyles.background = 'green'
-      }
-
-      return answer
-    })
-
     return (
       <Page jsonLdType={'QAPage'} jsonLd={this.state.jsonLd} title={this.state.questionText} description={this.state.questionText}>
         <main>
+          <style>{universalStyles}</style>
           <div>
             <Container>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
-                <Grid item md={6} xs={12} lg={8}><h1>Question {this.state.questionIdx}</h1></Grid>
-                <Grid item md={6} xs={12} lg={4} className='flex-space-between'> {
-                  this.state.previousQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.previousQuestionId}?testId=${this.state.testId}`}>Previous Question</Button> :
-                    ''
-                  }
-                  {
-                    this.state.nextQuestionId !== '' ?
-                      <Button href={`/course/ms-500/question/${this.state.nextQuestionId}?testId=${this.state.testId}`}>Next Question</Button> : (
-                          this.state.testId ?
-                            <Button onClick={this.toggleEndExam} color="secondary">End Exam</Button> :
-                            ''
-                      )
-
-                  }
-                </Grid>
-              </Grid>
-              <Grid container className="img-width-100">
-                { this.state.questionHtml !== '' ?
-                  <div dangerouslySetInnerHTML={{__html: this.state.questionHtml}}></div>
-                  : ''
-                }
-              </Grid>
-              <Grid container>
-                {answers.map((answerState, index) => {
-                  return (
-                    <FormGroup style={answerState.optionStyles} key={index}>
-                      <FormControlLabel control={<Checkbox name={"AnswerCheck" + index} id={"AnswerCheck" + index} data-index={index} inline style={checkboxStyles} checked={this.state.selectedAnswer.includes(`${index}`)} onChange={this.handleCorrectAnswerChange} />} label={answerState.value} />
-                    </FormGroup>
-                  )
-                })}
-              </Grid>
-              <Grid container>
-                <Grid item>
+                <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div style={referencesStyle} dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
                     ''
                   }
                 </Grid>
               </Grid>
-              <Grid container className='align-right'><Grid item md={6} xs={12} lg={8}></Grid>
-              <Grid item md={6} xs={12} lg={4} className='flex-space-between'> {
-                  this.state.previousQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.previousQuestionId}?testId=${this.state.testId}`}>Previous Question</Button> :
-                    ''
-                  }
-                {
-                  this.state.nextQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.nextQuestionId}?testId=${this.state.testId}`}>Next Question</Button> :
-                    this.state.testId ?
-                      <Button onClick={this.toggleEndExam} color="secondary">End Exam</Button> :
-                      ''
-                  }
-                </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item xs={12} md={6}>
-                  <Button onClick={this.toggleShowAnswer} style={bottomButtonStyle}>
-                    { this.state.answerShown ?
-                      <span>Hide Answer</span> :
-                      <span>Show Answer</span>
-                    }
-                  </Button>
-                </Grid>
-                { this.state.testId ?
-                  <Grid item xs={12} md={6} className='align-right'>
-                    <Button onClick={this.toggleShowQuestions} style={bottomButtonStyle}>
-                      { this.state.questionsShown ?
-                        <span>Hide Question List</span> :
-                        <span>Show Question List</span>
-                      }
-                    </Button>
-                  </Grid> :
-                  ''
-                }
-              </Grid>
-              { this.state.testId ?
-                <Grid container>
-                  <Grid item className='align-right'>
-                    <Button onClick={this.toggleEndExam} variant="warning" style={bottomButtonStyle}>End Exam</Button>
-                  </Grid>
-                </Grid> :
-                ''
-              }
+              <Footer previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} toggleShowAnswer={this.toggleShowAnswer} toggleQuestionList={this.toggleShowQuestions} />
             </Container>
           </div>
 
           <Dialog onClose={this.toggleShowQuestions} open={this.state.questionsShown}>
-            <DialogTitle>Showing Test Questions</DialogTitle>
+            <DialogTitle>Test Questions</DialogTitle>
             <TableContainer>
               <Table striped bordered hover>
                 <TableHead>
                   <TableRow>
                     <TableCell>#</TableCell>
-                    <TableCell>Answer</TableCell>
+                    <TableCell>Answered</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  { this.state.test && this.state.test.questions ? this.state.test.questions.map((question, idx) => (
+                  { this.state.test.questions.map((question, idx) => (
                     <TableRow hover key={idx} onClick={this.gotoQuestion(question.id)} className="cursor-pointer">
                       <TableCell>{idx+1}</TableCell>
-                      <TableCell>{question.answered}</TableCell>
+                      <TableCell>{question.answers.length>0 ? 'Complete' : 'Not complete'}</TableCell>
                     </TableRow>
-                  )) : '' }
+                  ))}
                 </TableBody>
               </Table>
             </TableContainer>
@@ -377,7 +213,7 @@ class EditQuestionPage extends Component {
           <Dialog onClose={this.toggleEndExam} open={this.state.endExamShown}>
             <DialogTitle>Are you sure?</DialogTitle>
             <DialogContent>
-              <DialogContentText>{ this.state.endExamText }</DialogContentText>
+              <DialogContentText>Are you sure you want to end the exam?</DialogContentText>
             </DialogContent>
             <DialogActions>
               <Button variant="contained" onClick={this.endExam}>

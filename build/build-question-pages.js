@@ -3,6 +3,7 @@ import admin from "firebase-admin"
 const {getApps} = require("firebase-admin/app")
 import serviceAccount from "./firestore.json"
 import buildQuestionPage from './build-question-page'
+const debug = require('debug')('gitbit:build-question-pages')
 
 if ( !getApps().length ) {
   admin.initializeApp({
@@ -28,8 +29,6 @@ const buildQuestionPages = async () => {
   for (let i = 0; i < questions.length; i++) {
     await buildQuestionPage(questions[i])
   }
-
-  deleteBrowseQuestions(questions)
 }
 
 const deleteQuestions = () => {

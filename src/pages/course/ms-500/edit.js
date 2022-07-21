@@ -45,7 +45,7 @@ class EditPage extends Component {
         <main>
           <Container>
             <Grid container>
-              <grid item xs={10}>
+              <Grid item xs={10}>
                 <h1>Questions</h1>
               </Grid>
               <Grid item xs={2} className='text-end'>

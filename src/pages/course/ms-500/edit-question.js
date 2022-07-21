@@ -13,6 +13,7 @@ import saveDoc from '../../../components/firebase/save-doc'
 import deleteDoc from '../../../components/firebase/delete-doc'
 import Wysiwyg from '../../../components/wysiwyg'
 import decorators from '../../../components/wysiwyg-decorators'
+import universalStyles from '../../../components/universal-styles'
 
 const optionStyles = {
   marginTop: '14px',
@@ -34,6 +35,8 @@ const referencesStyle = {
   marginTop: '24px'
 }
 
+const isBrowser = () => typeof window !== 'undefined'
+
 class EditQuestionPage extends Component {
   constructor(props) {
     super(props)
@@ -50,8 +53,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uploadError: '',
       id: params.has('docid') ? params.get('docid') : shortid.generate(),
-      editorState: EditorState.createEmpty(),
-      referencesEditorState: EditorState.createEmpty(),
+      editorState: EditorState.createEmpty(decorators),
+      referencesEditorState: EditorState.createEmpty(decorators),
       answersState: [
         {
           isCorrectAnswer: false,
@@ -78,8 +81,8 @@ class EditQuestionPage extends Component {
   getData(docId) {
     getDoc('Tests/MS-500/Questions', docId).then(doc => this.setState({
       doc,
-      editorState:EditorState.createWithContent(convertFromRaw(doc.question)),
-      referencesEditorState:EditorState.createWithContent(convertFromRaw(doc.references)),
+      editorState:EditorState.createWithContent(convertFromRaw(doc.question), decorators),
+      referencesEditorState:EditorState.createWithContent(convertFromRaw(doc.references), decorators),
       answersState:doc.answers
     }))
   }
@@ -174,46 +177,45 @@ class EditQuestionPage extends Component {
     return (
       <Page title={'Microsoft 365 MS-500 practice test question edit'} description={'Edit the MS-500 Practice test questions'}>
         <main>
-          <div>
-            <Container>
-              <Grid container>
-                <Grid item xs={6}><h1>Question</h1></Grid>
-                <Grid item xs={6} className='text-end'>
-                  { this.state.hasBeenSaved ?
-                      <Button variant="outlined" color="error" style={{marginRight: '12px'}} onClick={deleteQuestion}>Delete</Button> :
-                      ''
-                  }
+          <style>{universalStyles}</style>
+          <Container>
+            <Grid container sx={{ alignItems: 'center' }}>
+              <Grid item xs={6}><h1>Question</h1></Grid>
+              <Grid item xs={6} sx={{display:'flex', justifyContent:'end'}}>
+                { this.state.hasBeenSaved ?
+                    <Button variant="outlined" color="error" style={{marginRight: '12px'}} onClick={deleteQuestion}>Delete</Button> :
+                    ''
+                }
 
-                  <Button onClick={save}>Save</Button>
-                </Grid>
+                <Button onClick={save}>Save</Button>
               </Grid>
-              <Grid container>
-                <Alert severity="error" sx={{ display: (uploadError === '' ? 'none' : 'flex') }}>
-                  <h5>Error Uploading file to Imgur</h5>
-                  <p>{uploadError}</p>
-                </Alert>
+            </Grid>
+            <Grid container>
+              <Alert severity="error" sx={{ display: (uploadError === '' ? 'none' : 'flex') }}>
+                <h5>Error Uploading file to Imgur</h5>
+                <p>{uploadError}</p>
+              </Alert>
+            </Grid>
+            <Grid container>
+              <Grid item>
+                <Wysiwyg editorState={editorState} onEditorStateChange={this.setEditorState} addImage={this.addImage} />
               </Grid>
-              <Grid container>
-                <Grid item>
-                  <Wysiwyg editorState={editorState} onEditorStateChange={this.setEditorState} addImage={this.addImage} />
-                </Grid>
-              </Grid>
-              {answersState.map((answerState, index) => {
-                return (
-                  <div style={optionStyles} key={index}>
-                    <Checkbox name={"AnswerCheck" + index} data-index={index} style={checkboxStyles} checked={answerState.isCorrectAnswer} onChange={handleCorrectAnswerChange} />
-                    <TextField label="Answer option" variant="Standard" name={"Answer" + index} data-index={index} value={answerState.value} onChange={handleAnswerChange} />
-                    <Button onClick={deleteAnswer} name={"deleteAnswer" + index} data-index={index} style={deleteAnswerStyle} variant="outlined" color="error">Delete</Button>
-                  </div>
-                )
-              })}
-              <Button onClick={addAnswer}>Add</Button>
-              <div>
-                <h2 style={referencesStyle}>References</h2>
-                <Wysiwyg editorState={referencesEditorState} onEditorStateChange={this.setReferencesEditorState} addImage={this.addImage} />
-              </div>
-            </Container>
-          </div>
+            </Grid>
+            {answersState.map((answerState, index) => {
+              return (
+                <div style={optionStyles} key={index}>
+                  <Checkbox data-index={index} style={checkboxStyles} checked={answerState.isCorrectAnswer} onChange={handleCorrectAnswerChange} />
+                  <TextField fullWidth label="Answer option" variant="outlined" data-index={index} value={answerState.value} onChange={handleAnswerChange} />
+                  <Button onClick={deleteAnswer} data-index={index} style={deleteAnswerStyle} variant="outlined" color="error">Delete</Button>
+                </div>
+              )
+            })}
+            <Button onClick={addAnswer}>Add</Button>
+            <div>
+              <h2 style={referencesStyle}>References</h2>
+              <Wysiwyg editorState={referencesEditorState} onEditorStateChange={this.setReferencesEditorState} addImage={this.addImage} />
+            </div>
+          </Container>
         </main>
       </Page>
     )

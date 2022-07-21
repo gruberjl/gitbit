@@ -5,10 +5,12 @@ import { h } from 'preact'
 import ejs from 'ejs'
 import Helmet from 'preact-helmet'
 import buildWebpack from './build-webpack'
+const debug = require('debug')('gitbit:build-page')
 
 const template = fs.readFileSync(`${__dirname}\\template.ejs`, 'utf8')
 
 const buildPage = async (pageFile) => {
+  debug(`building page: ${pageFile}`)
   global.location = {
     pathname: getPathname(pageFile),
     href: `https://www.gitbit.org${getPathname(pageFile)}`

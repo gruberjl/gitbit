@@ -3,11 +3,10 @@ import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import Checkbox from '@mui/material/Checkbox'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
 import DialogTitle from '@mui/material/DialogTitle'
 import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
 import DialogActions from '@mui/material/DialogActions'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -16,29 +15,12 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import saveDoc from '../../../../components/firebase/save-doc'
-import {onAuthStateChanged} from '../../../../components/firebase'
-import {getDoc} from '../../../../components/firebase'
-import draftToHtml from 'draftjs-to-html'
-
-const optionStyles = {
-  marginTop: '14px',
-  marginBottom: '14px',
-  display: 'flex'
-}
-
-const checkboxStyles = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
-}
-
-const referencesStyle = {
-  marginTop: '24px'
-}
-
-const bottomButtonStyle = {
-  marginTop: '24px'
-}
+import {onAuthStateChanged} from '../../../../components/firebase/on-auth-state-changed'
+import {getDoc} from '../../../../components/firebase/get-doc'
+import Choice from '../../../../components/question/choice'
+import Header from '../../../../components/question/header'
+import Footer from '../../../../components/question/footer'
+import universalStyles from '../../../../components/universal-styles'
 
 const isBrowser = () => typeof window !== 'undefined'
 
@@ -46,24 +28,25 @@ class EditQuestionPage extends Component {
   constructor(props) {
     super(props)
     this.setUid = this.setUid.bind(this)
-    this.handleCorrectAnswerChange = this.handleCorrectAnswerChange.bind(this)
     this.toggleShowAnswer = this.toggleShowAnswer.bind(this)
     this.toggleShowQuestions = this.toggleShowQuestions.bind(this)
     this.gotoQuestion = this.gotoQuestion.bind(this)
     this.toggleEndExam = this.toggleEndExam.bind(this)
     this.endExam = this.endExam.bind(this)
-    const params = new URLSearchParams(props.location.search)
+    this.onTestQuestionChange = this.onTestQuestionChange.bind(this)
+
+    let params = new URLSearchParams()
+    if (isBrowser())
+      params = new URLSearchParams(location.search)
 
     this.state = {
-      questions: {},
       uid: '',
       testId: params.get('testId'),
-      test: {},
-      question: {"id":"FG2WrFf-y","references":{"blocks":[{"text":"Group1 has to be assigned because you can't create a device group based on the device owners' attributes.","key":"55t4k","entityRanges":[],"data":{},"inlineStyleRanges":[],"depth":0,"type":"unstyled"},{"key":"d7oo1","data":{},"inlineStyleRanges":[],"type":"unstyled","text":"Group 2 can be dynamic because a user does have a department attribute.","entityRanges":[],"depth":0},{"key":"ekcqp","entityRanges":[],"text":"Group 3 can be dynamic because a device does have a deviceownership attribute.","depth":0,"inlineStyleRanges":[],"type":"unstyled","data":{}},{"type":"unstyled","data":{},"key":"47cii","inlineStyleRanges":[],"depth":0,"entityRanges":[],"text":"References:"},{"inlineStyleRanges":[],"type":"unstyled","depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","data":{},"key":"7or3i","entityRanges":[{"key":0,"length":95,"offset":0}]},{"text":"https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md","entityRanges":[{"key":1,"offset":0,"length":129}],"depth":0,"key":"7tlkv","inlineStyleRanges":[],"type":"unstyled","data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV"},"type":"LINK"},"1":{"mutability":"MUTABLE","data":{"url":"https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md","targetOption":"_blank"},"type":"LINK"}}},"answers":[{"value":"Assigned membership groups: 0","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Assigned membership groups: 1"},{"isCorrectAnswer":false,"value":"Assigned membership groups: 2"},{"value":"Assigned membership groups: 3","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Dynamic membership groups: 0"},{"value":"Dynamic membership groups: 1","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Dynamic membership groups: 2"},{"value":"Dynamic membership groups: 3","isCorrectAnswer":false}],"question":{"blocks":[{"depth":0,"inlineStyleRanges":[],"entityRanges":[],"text":"You have a Microsoft 365 tenant with Microsoft E5 licenses.","data":{},"type":"unstyled","key":"dt717"},{"type":"unstyled","text":"Users and devices are added/removed daily. Users in the sales department change their devices frequently.","depth":0,"data":{},"key":"5p1iu","inlineStyleRanges":[],"entityRanges":[]},{"text":"You've been asked to create three groups with the following requirements.","type":"unstyled","inlineStyleRanges":[],"depth":0,"data":{},"entityRanges":[],"key":"14noi"},{"data":{},"entityRanges":[{"length":1,"key":0,"offset":0}],"depth":0,"type":"atomic","key":"d6mp2","text":" ","inlineStyleRanges":[]},{"text":"The solution must minimize administrative effort.","depth":0,"data":{},"type":"unstyled","entityRanges":[],"key":"9mb72","inlineStyleRanges":[]},{"entityRanges":[],"type":"unstyled","key":"80hct","data":{},"inlineStyleRanges":[],"depth":0,"text":"How many assigned groups and how many dynamic groups should be created?"}],"entityMap":{"0":{"mutability":"MUTABLE","type":"IMAGE","data":{"alt":"Group Names and Requirements","height":"auto","alignment":"left","width":"auto","src":"https://i.ibb.co/fdScjrV/Chart2.png"}}}}},
+      test: {questions:[{answers:[]}]},
+      question: {"id":"FG2WrFf-y","question":{"blocks":[{"key":"dt717","type":"unstyled","entityRanges":[],"depth":0,"text":"You have a Microsoft 365 tenant with Microsoft E5 licenses.","data":{},"inlineStyleRanges":[]},{"entityRanges":[],"data":{},"key":"5p1iu","depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"Users and devices are added/removed daily. Users in the sales department change their devices frequently."},{"entityRanges":[],"text":"You've been asked to create three groups with the following requirements.","key":"14noi","type":"unstyled","inlineStyleRanges":[],"depth":0,"data":{}},{"text":" ","entityRanges":[{"key":0,"length":1,"offset":0}],"type":"atomic","depth":0,"data":{},"key":"d6mp2","inlineStyleRanges":[]},{"data":{},"entityRanges":[],"text":"The solution must minimize administrative effort.","depth":0,"key":"9mb72","type":"unstyled","inlineStyleRanges":[]},{"entityRanges":[],"type":"unstyled","key":"80hct","depth":0,"text":"How many assigned groups and how many dynamic groups should be created?","inlineStyleRanges":[],"data":{}}],"entityMap":{"0":{"data":{"width":"auto","alignment":"left","height":"auto","src":"https://i.ibb.co/fdScjrV/Chart2.png","alt":"Group Names and Requirements"},"mutability":"MUTABLE","type":"IMAGE"}}},"references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV"},"mutability":"MUTABLE","type":"LINK"},"1":{"data":{"targetOption":"_blank","url":"https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"key":"55t4k","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{},"depth":0,"text":"Group1 has to be assigned because you can't create a device group based on the device owners' attributes."},{"text":"Group 2 can be dynamic because a user does have a department attribute.","data":{},"entityRanges":[],"inlineStyleRanges":[],"depth":0,"type":"unstyled","key":"d7oo1"},{"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"key":"ekcqp","text":"Group 3 can be dynamic because a device does have a deviceownership attribute.","data":{},"depth":0},{"data":{},"entityRanges":[],"depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"References:","key":"47cii"},{"entityRanges":[{"key":0,"length":95,"offset":0}],"inlineStyleRanges":[],"key":"7or3i","data":{},"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","type":"unstyled"},{"inlineStyleRanges":[],"entityRanges":[{"offset":0,"key":1,"length":129}],"key":"7tlkv","type":"unstyled","data":{},"text":"https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md","depth":0}]},"answers":[{"isCorrectAnswer":false,"value":"Assigned membership groups: 0"},{"isCorrectAnswer":true,"value":"Assigned membership groups: 1"},{"value":"Assigned membership groups: 2","isCorrectAnswer":false},{"value":"Assigned membership groups: 3","isCorrectAnswer":false},{"value":"Dynamic membership groups: 0","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Dynamic membership groups: 1"},{"isCorrectAnswer":true,"value":"Dynamic membership groups: 2"},{"isCorrectAnswer":false,"value":"Dynamic membership groups: 3"}]},
       previousQuestionId: '',
       nextQuestionId: '',
-      questionId: 'FG2WrFf-y',
-      questionIdx: '',
+      questionIdx: 0,
       questionHtml: `<p>You have a Microsoft 365 tenant with Microsoft E5 licenses.</p>
 <p>Users and devices are added/removed daily. Users in the sales department change their devices frequently.</p>
 <p>You've been asked to create three groups with the following requirements.</p>
@@ -79,11 +62,9 @@ class EditQuestionPage extends Component {
 <p><a href="https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV" target="_blank">https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV</a></p>
 <p><a href="https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md" target="_blank">https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md</a></p>
 `,
-      selectedAnswer: [],
       answerShown: false,
       questionsShown: false,
-      endExamShown: false,
-      endExamText: 'Are you sure you want to end the exam?'
+      endExamShown: false
     }
 
     this.state.jsonLd = {
@@ -113,7 +94,7 @@ class EditQuestionPage extends Component {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
         "@type": "Answer",
         "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
-        url: 'https://www.gitbit.org/course/ms-500/question/FG2WrFf-y',
+        url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
           name: 'John Gruber',
@@ -142,87 +123,27 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${this.state.uid}/tests`, this.state.testId).then(test => {
-          let previousQuestionId = ''
-          let nextQuestionId = ''
-          let currentQuestion
-          let previousItm
-          let foundQuestion = false
-          let questionIdx
-          let selectedAnswer = this.state.selectedAnswer
-
-          test.questions.forEach((question, idx) => {
-            if (foundQuestion) {
-                nextQuestionId = question.id
-                foundQuestion = false
-            }
-
-            if (this.state.questionId === question.id) {
-              foundQuestion = true
-              currentQuestion = question
-              questionIdx = idx+1
-              if (previousItm)
-                previousQuestionId = previousItm.id
-
-              if (currentQuestion.answered)
-                selectedAnswer = currentQuestion.answered
-            }
-
-            previousItm = question
-          })
-
-          getDoc(`Tests/MS-500/Questions`, currentQuestion.id).then(question => {
-            const questionHtml = draftToHtml(question.question)
-            const referencesHtml = draftToHtml(question.references)
-            this.setState({question, questionHtml, referencesHtml})
-          })
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
+          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+          const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
+          const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
             questionIdx: questionIdx,
             nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId,
-            selectedAnswer
+            previousQuestionId: previousQuestionId
           })
-        })
-      } else {
-        getDoc(`Tests/MS-500/Questions`, this.state.questionId).then(question => {
-          const questionHtml = draftToHtml(question.question)
-          const referencesHtml = draftToHtml(question.references)
-          this.setState({question, questionHtml, referencesHtml})
         })
       }
     }
   }
 
-  handleCorrectAnswerChange(event) {
-    const idx = event.target.dataset.index
-    const target = event.target
-    const selectedAnswer = [...this.state.selectedAnswer]
-
-    if (target.checked) {
-      selectedAnswer.push(idx)
-    } else {
-      const index = selectedAnswer.indexOf(`${idx}`)
-      selectedAnswer.splice(index, 1)
-    }
-
-    this.setState({selectedAnswer})
-
-    if (this.state.testId) {
-      const test = Object.assign({}, this.state.test)
-
-      test.questions = test.questions.map(question => {
-        if (question.id === this.state.questionId) {
-          question.answered = selectedAnswer
-        }
-        return question
-      })
-
-      saveDoc(`users/${this.state.uid}/tests`, test)
-
-      this.setState({test})
-    }
+  onTestQuestionChange(testQuestion) {
+    const test = JSON.parse(JSON.stringify(this.state.test))
+    test.questions[this.state.questionIdx] = testQuestion
+    this.setState({test})
+    saveDoc(`users/${this.state.uid}/tests`, test)
   }
 
   toggleShowAnswer() {
@@ -256,128 +177,43 @@ class EditQuestionPage extends Component {
   }
 
   render() {
-    let answers = this.state.question.answers ? this.state.question.answers : []
-
-    answers = [...answers].map((answer, index) => {
-      answer.isSelected = this.state.selectedAnswer.includes(`${index}`)
-      answer.optionStyles = Object.assign({}, optionStyles)
-      if (this.state.answerShown && answer.isCorrectAnswer) {
-        answer.optionStyles.background = 'green'
-      }
-
-      return answer
-    })
-
     return (
       <Page jsonLdType={'QAPage'} jsonLd={this.state.jsonLd} title={this.state.questionText} description={this.state.questionText}>
         <main>
+          <style>{universalStyles}</style>
           <div>
             <Container>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
-                <Grid item md={6} xs={12} lg={8}><h1>Question {this.state.questionIdx}</h1></Grid>
-                <Grid item md={6} xs={12} lg={4} className='flex-space-between'> {
-                  this.state.previousQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.previousQuestionId}?testId=${this.state.testId}`}>Previous Question</Button> :
-                    ''
-                  }
-                  {
-                    this.state.nextQuestionId !== '' ?
-                      <Button href={`/course/ms-500/question/${this.state.nextQuestionId}?testId=${this.state.testId}`}>Next Question</Button> : (
-                          this.state.testId ?
-                            <Button onClick={this.toggleEndExam} color="secondary">End Exam</Button> :
-                            ''
-                      )
-
-                  }
-                </Grid>
-              </Grid>
-              <Grid container className="img-width-100">
-                { this.state.questionHtml !== '' ?
-                  <div dangerouslySetInnerHTML={{__html: this.state.questionHtml}}></div>
-                  : ''
-                }
-              </Grid>
-              <Grid container>
-                {answers.map((answerState, index) => {
-                  return (
-                    <FormGroup style={answerState.optionStyles} key={index}>
-                      <FormControlLabel control={<Checkbox name={"AnswerCheck" + index} id={"AnswerCheck" + index} data-index={index} inline style={checkboxStyles} checked={this.state.selectedAnswer.includes(`${index}`)} onChange={this.handleCorrectAnswerChange} />} label={answerState.value} />
-                    </FormGroup>
-                  )
-                })}
-              </Grid>
-              <Grid container>
-                <Grid item>
+                <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div style={referencesStyle} dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
                     ''
                   }
                 </Grid>
               </Grid>
-              <Grid container className='align-right'><Grid item md={6} xs={12} lg={8}></Grid>
-              <Grid item md={6} xs={12} lg={4} className='flex-space-between'> {
-                  this.state.previousQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.previousQuestionId}?testId=${this.state.testId}`}>Previous Question</Button> :
-                    ''
-                  }
-                {
-                  this.state.nextQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.nextQuestionId}?testId=${this.state.testId}`}>Next Question</Button> :
-                    this.state.testId ?
-                      <Button onClick={this.toggleEndExam} color="secondary">End Exam</Button> :
-                      ''
-                  }
-                </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item xs={12} md={6}>
-                  <Button onClick={this.toggleShowAnswer} style={bottomButtonStyle}>
-                    { this.state.answerShown ?
-                      <span>Hide Answer</span> :
-                      <span>Show Answer</span>
-                    }
-                  </Button>
-                </Grid>
-                { this.state.testId ?
-                  <Grid item xs={12} md={6} className='align-right'>
-                    <Button onClick={this.toggleShowQuestions} style={bottomButtonStyle}>
-                      { this.state.questionsShown ?
-                        <span>Hide Question List</span> :
-                        <span>Show Question List</span>
-                      }
-                    </Button>
-                  </Grid> :
-                  ''
-                }
-              </Grid>
-              { this.state.testId ?
-                <Grid container>
-                  <Grid item className='align-right'>
-                    <Button onClick={this.toggleEndExam} variant="warning" style={bottomButtonStyle}>End Exam</Button>
-                  </Grid>
-                </Grid> :
-                ''
-              }
+              <Footer previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} toggleShowAnswer={this.toggleShowAnswer} toggleQuestionList={this.toggleShowQuestions} />
             </Container>
           </div>
 
           <Dialog onClose={this.toggleShowQuestions} open={this.state.questionsShown}>
-            <DialogTitle>Showing Test Questions</DialogTitle>
+            <DialogTitle>Test Questions</DialogTitle>
             <TableContainer>
               <Table striped bordered hover>
                 <TableHead>
                   <TableRow>
                     <TableCell>#</TableCell>
-                    <TableCell>Answer</TableCell>
+                    <TableCell>Answered</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  { this.state.test && this.state.test.questions ? this.state.test.questions.map((question, idx) => (
+                  { this.state.test.questions.map((question, idx) => (
                     <TableRow hover key={idx} onClick={this.gotoQuestion(question.id)} className="cursor-pointer">
                       <TableCell>{idx+1}</TableCell>
-                      <TableCell>{question.answered}</TableCell>
+                      <TableCell>{question.answers.length>0 ? 'Complete' : 'Not complete'}</TableCell>
                     </TableRow>
-                  )) : '' }
+                  ))}
                 </TableBody>
               </Table>
             </TableContainer>
@@ -386,7 +222,7 @@ class EditQuestionPage extends Component {
           <Dialog onClose={this.toggleEndExam} open={this.state.endExamShown}>
             <DialogTitle>Are you sure?</DialogTitle>
             <DialogContent>
-              <DialogContentText>{ this.state.endExamText }</DialogContentText>
+              <DialogContentText>Are you sure you want to end the exam?</DialogContentText>
             </DialogContent>
             <DialogActions>
               <Button variant="contained" onClick={this.endExam}>

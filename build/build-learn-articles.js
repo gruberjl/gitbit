@@ -6,6 +6,7 @@ import serviceAccount from "./firestore.json"
 import testLearnArticles from '../test/learn-articles'
 import { h } from "preact"
 import render from 'preact-render-to-string'
+const debug = require('debug')('gitbit:build-learn-articles')
 
 if ( !getApps().length ) {
   admin.initializeApp({
@@ -18,6 +19,7 @@ const db = admin.firestore()
 const template = fs.readFileSync('./src/templates/learn-article.js', 'utf8').toString()
 
 const buildLearnArticles = async () => {
+  debug('deleteLearnArticles')
   deleteLearnArticles()
   const articles = []
 
@@ -28,6 +30,7 @@ const buildLearnArticles = async () => {
     articles.push(article)
   })
 
+  debug('testLearnArticles')
   testLearnArticles(articles, db)
 
   const course = (await db.collection("courses").doc('MS-500').get()).data()
@@ -35,6 +38,7 @@ const buildLearnArticles = async () => {
 
   for (let i = 0; i < sortedArticles.length; i++) {
     const article = articles[i]
+    debug(`building article: ${article.id}`)
     const nextArticle = sortedArticles.length - 1 > i ? sortedArticles[i + 1].slug : 'NEXT_CONTENT'
     const previousArticle = i > 0 ? sortedArticles[i - 1].slug : 'PREVIOUS_CONTENT'
 
@@ -65,5 +69,4 @@ const deleteLearnArticles = () => {
   fs.mkdirSync('./src/pages/course/ms-500/learn')
 }
 
-buildLearnArticles()
 export default buildLearnArticles

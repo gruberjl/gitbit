@@ -6,8 +6,9 @@ import Paper from '@mui/material/Paper'
 import { onAuthStateChanged } from "../../components/firebase/on-auth-state-changed"
 import {getDoc} from '../../components/firebase/get-doc'
 import saveDoc from '../../components/firebase/save-doc'
-import CheckBox from '@mui/icons-material/CheckBox'
 import CheckBoxOutlineBlank from '@mui/icons-material/CheckBoxOutlineBlank'
+import CheckBox from '@mui/icons-material/CheckBox'
+import IndeterminateCheckBox from '@mui/icons-material/IndeterminateCheckBox'
 import Page from '../../components/page'
 import QUESTIONS from '../../data/questions'
 
@@ -25,20 +26,13 @@ const gradeQuestion = (question, answers) => {
   let maxPoints = question.answers.filter((answer) => answer.isCorrectAnswer === true).length
   let pointsReceived = 0
 
-  answers.every((answer) => {
-    const questionAnswer = question.answers[answer]
-    if (!questionAnswer) {
-      maxPoints = 0
-      pointsReceived = 0
-      return false
-    }
-
-    if (questionAnswer.isCorrectAnswer)
+  question.answers.forEach(answer => {
+    const userMarkedCorrect = answers.includes(answer.value)
+    if (answer.isCorrectAnswer && userMarkedCorrect) {
       pointsReceived++
-    else
+    } else if (!answer.isCorrectAnswer && userMarkedCorrect) {
       pointsReceived--
-
-    return true
+    }
   })
 
   if (pointsReceived < 0)
@@ -99,17 +93,24 @@ class TestsSummary extends Component {
     const questions = this.state.questions
 
     test.questions.forEach((testQuestion) => {
-      const question = QUESTIONS.find(q => q.id === testQuestion.id)
-      if (!question)
+      const QUESTION = QUESTIONS.find(q => q.id === testQuestion.id)
+      const question = {}
+      if (!QUESTION)
         return
 
-      question.text = question.question.substring(0, 25)
-      question.answered = testQuestion.answered
       if (test.isComplete) {
-        const {maxPoints, pointsReceived} = gradeQuestion(question, testQuestion.answered || [])
+        const {maxPoints, pointsReceived} = gradeQuestion(QUESTION, testQuestion.answers || [])
         question.maxPoints = maxPoints
         question.pointsReceived = pointsReceived
       }
+
+      question.text = QUESTION.question.substring(0, 25)
+      question.id = QUESTION.id
+      question.status = 'Not answered'
+      if (question.maxPoints === question.pointsReceived)
+        question.status = 'Answered correctly'
+      else if (testQuestion.answers.length>0)
+        question.status = 'Answered incorrectly'
 
       questions.push(question)
     })
@@ -176,13 +177,20 @@ class TestsSummary extends Component {
             </Grid>
             <Grid container>
               { questions.map((question, idx) => (
-                <Grid item style={{display:'flex', alignItems:'center', justifyContent:'start'}} xs={6} md={4} key={idx} title={question.answered && question.answered.length > 0 ? ( question.maxPoints === question.pointsReceived ? 'Answered correctly' : 'Answered incorrectly' ) : 'Not answered'}>
-                  { question.answered && question.answered.length > 0 ?
-                      ( question.maxPoints === question.pointsReceived ?
-                          <CheckBox style={checkedBoxSyle} /> :
-                          <CheckBox style={uncheckedBoxSyle} /> ) :
-                      <CheckBoxOutlineBlank style={uncheckedBoxSyle} />
+                <Grid item style={{display:'flex', alignItems:'center', justifyContent:'start'}} xs={6} md={4} key={idx} title={question.status}>
+                  { question.status === 'Answered correctly'
+                    ? <CheckBox color='success'/>
+                    : ''
                   }
+                  { question.status === 'Not answered'
+                    ? <CheckBoxOutlineBlank color="action"/>
+                    : ''
+                  }
+                  { question.status === 'Answered incorrectly'
+                    ? <IndeterminateCheckBox sx={{ color: 'red' }} />
+                    : ''
+                  }
+
                   <Button variant="text" size="large" href={`/course/ms-500/question/${question.id}?testId=${this.state.testId}`}>{idx+1}. {question.text}</Button>
                 </Grid>
               ))}

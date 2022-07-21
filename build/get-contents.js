@@ -1,6 +1,7 @@
 const admin = require("firebase-admin")
 const {getApps} = require("firebase-admin/app")
 const serviceAccount = require("./firestore.json")
+const debug = require('debug')('gitbit:get-contents')
 
 if ( !getApps().length ) {
   admin.initializeApp({
@@ -12,6 +13,7 @@ if ( !getApps().length ) {
 const db = admin.firestore()
 
 const getContents = async (course) => {
+  debug(`Getting contents`)
   if (!course)
     course = (await db.collection("courses").doc('MS-500').get()).data()
 

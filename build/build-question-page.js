@@ -4,10 +4,12 @@ import { convertFromRaw } from 'draft-js'
 import admin from "firebase-admin"
 const {getApps} = require("firebase-admin/app")
 import serviceAccount from "./firestore.json"
+const debug = require('debug')('gitbit:build-question-page')
 
 const template = fs.readFileSync('./src/templates/question.js', 'utf8')
 
 const buildQuestionPage = async (question) => {
+  debug(`building question: ${question.id}`)
   if (typeof question === 'string' || question instanceof String) {
     if ( !getApps().length ) {
       admin.initializeApp({

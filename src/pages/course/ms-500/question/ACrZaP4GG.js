@@ -3,11 +3,10 @@ import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import Checkbox from '@mui/material/Checkbox'
-import FormGroup from '@mui/material/FormGroup'
-import FormControlLabel from '@mui/material/FormControlLabel'
 import DialogTitle from '@mui/material/DialogTitle'
 import Dialog from '@mui/material/Dialog'
+import DialogContent from '@mui/material/DialogContent'
+import DialogContentText from '@mui/material/DialogContentText'
 import DialogActions from '@mui/material/DialogActions'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -16,29 +15,12 @@ import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
 import saveDoc from '../../../../components/firebase/save-doc'
-import {onAuthStateChanged} from '../../../../components/firebase'
-import {getDoc} from '../../../../components/firebase'
-import draftToHtml from 'draftjs-to-html'
-
-const optionStyles = {
-  marginTop: '14px',
-  marginBottom: '14px',
-  display: 'flex'
-}
-
-const checkboxStyles = {
-  display: 'flex',
-  alignItems: 'center',
-  justifyContent: 'center'
-}
-
-const referencesStyle = {
-  marginTop: '24px'
-}
-
-const bottomButtonStyle = {
-  marginTop: '24px'
-}
+import {onAuthStateChanged} from '../../../../components/firebase/on-auth-state-changed'
+import {getDoc} from '../../../../components/firebase/get-doc'
+import Choice from '../../../../components/question/choice'
+import Header from '../../../../components/question/header'
+import Footer from '../../../../components/question/footer'
+import universalStyles from '../../../../components/universal-styles'
 
 const isBrowser = () => typeof window !== 'undefined'
 
@@ -46,24 +28,25 @@ class EditQuestionPage extends Component {
   constructor(props) {
     super(props)
     this.setUid = this.setUid.bind(this)
-    this.handleCorrectAnswerChange = this.handleCorrectAnswerChange.bind(this)
     this.toggleShowAnswer = this.toggleShowAnswer.bind(this)
     this.toggleShowQuestions = this.toggleShowQuestions.bind(this)
     this.gotoQuestion = this.gotoQuestion.bind(this)
     this.toggleEndExam = this.toggleEndExam.bind(this)
     this.endExam = this.endExam.bind(this)
-    const params = new URLSearchParams(props.location.search)
+    this.onTestQuestionChange = this.onTestQuestionChange.bind(this)
+
+    let params = new URLSearchParams()
+    if (isBrowser())
+      params = new URLSearchParams(location.search)
 
     this.state = {
-      questions: {},
       uid: '',
       testId: params.get('testId'),
-      test: {},
-      question: {"id":"ACrZaP4GG","answers":[{"isCorrectAnswer":false,"value":"From the Microsoft 365 Admin Center go to users > Select the user > Set the password expiration policy"},{"isCorrectAnswer":false,"value":"From the Azure Active Directory Admin Center > Enterprise Admin > Password settings > Device Settings"},{"value":"From the Microsoft 365 Admin Center go to Settings > Org Settings > Security and Privacy > Password Expiration policy","isCorrectAnswer":true}],"question":{"blocks":[{"key":"722d9","depth":0,"inlineStyleRanges":[],"type":"unstyled","data":{},"entityRanges":[],"text":"You need to ensure that all users must change their passwords every 100 days."},{"type":"unstyled","data":{},"inlineStyleRanges":[{"offset":0,"length":48,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","offset":0,"length":48},{"length":48,"offset":0,"style":"fontsize-16"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":0,"length":48}],"key":"c0511","entityRanges":[],"depth":0,"text":"What steps should you take to complete the task?"}],"entityMap":{}},"references":{"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH","targetOption":"_blank"}},"1":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day"}}},"blocks":[{"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH","type":"unstyled","entityRanges":[{"length":90,"offset":0,"key":0}],"inlineStyleRanges":[],"key":"4c9n6","data":{}},{"key":"a7c8c","entityRanges":[{"offset":0,"key":1,"length":108}],"type":"unstyled","inlineStyleRanges":[],"text":"https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day","depth":0,"data":{}},{"data":{},"type":"ordered-list-item","inlineStyleRanges":[],"key":"aacr","depth":0,"text":"Sign in to the Microsoft 365 Admin Center.","entityRanges":[]},{"type":"ordered-list-item","key":"64psl","depth":0,"entityRanges":[],"inlineStyleRanges":[],"data":{},"text":"In the left navigation pane, expand Show All > Settings > Org Settings."},{"entityRanges":[],"data":{},"key":"ch3mn","type":"ordered-list-item","depth":0,"text":"Click on Security and Privacy.","inlineStyleRanges":[]},{"key":"d1j1g","inlineStyleRanges":[],"depth":0,"text":"Select the Password Expiration Policy.","type":"ordered-list-item","entityRanges":[],"data":{}},{"data":{},"text":"Ensure that the checkbox labeled Set user passwords to expire after a number of days is ticked.","depth":0,"type":"ordered-list-item","entityRanges":[],"key":"428jq","inlineStyleRanges":[]},{"key":"2loqj","depth":0,"inlineStyleRanges":[],"entityRanges":[],"type":"ordered-list-item","text":"Enter 100 in the Days before passwords expire field.","data":{}},{"entityRanges":[],"key":"b5gtt","inlineStyleRanges":[],"type":"ordered-list-item","data":{},"text":"Click Save changes to save the changes.","depth":0}]}},
+      test: {questions:[{answers:[]}]},
+      question: {"question":{"entityMap":{},"blocks":[{"key":"722d9","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"text":"You need to ensure that all users must change their passwords every 100 days."},{"key":"c0511","data":{},"inlineStyleRanges":[{"length":48,"style":"color-rgb(33,37,41)","offset":0},{"offset":0,"length":48,"style":"bgcolor-rgb(255,255,255)"},{"offset":0,"length":48,"style":"fontsize-16"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":48,"offset":0}],"text":"What steps should you take to complete the task?","type":"unstyled","entityRanges":[],"depth":0}]},"id":"ACrZaP4GG","references":{"blocks":[{"data":{},"key":"4c9n6","inlineStyleRanges":[],"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH","type":"unstyled","entityRanges":[{"length":90,"offset":0,"key":0}]},{"key":"a7c8c","depth":0,"text":"https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day","inlineStyleRanges":[],"entityRanges":[{"length":108,"offset":0,"key":1}],"data":{},"type":"unstyled"},{"data":{},"inlineStyleRanges":[],"type":"ordered-list-item","text":"Sign in to the Microsoft 365 Admin Center.","depth":0,"entityRanges":[],"key":"aacr"},{"inlineStyleRanges":[],"data":{},"entityRanges":[],"text":"In the left navigation pane, expand Show All > Settings > Org Settings.","depth":0,"type":"ordered-list-item","key":"64psl"},{"depth":0,"entityRanges":[],"text":"Click on Security and Privacy.","key":"ch3mn","type":"ordered-list-item","data":{},"inlineStyleRanges":[]},{"data":{},"inlineStyleRanges":[],"text":"Select the Password Expiration Policy.","depth":0,"type":"ordered-list-item","entityRanges":[],"key":"d1j1g"},{"depth":0,"type":"ordered-list-item","data":{},"inlineStyleRanges":[],"key":"428jq","entityRanges":[],"text":"Ensure that the checkbox labeled Set user passwords to expire after a number of days is ticked."},{"depth":0,"text":"Enter 100 in the Days before passwords expire field.","inlineStyleRanges":[],"type":"ordered-list-item","entityRanges":[],"key":"2loqj","data":{}},{"text":"Click Save changes to save the changes.","type":"ordered-list-item","data":{},"key":"b5gtt","inlineStyleRanges":[],"entityRanges":[],"depth":0}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day"},"type":"LINK"}}},"answers":[{"value":"From the Microsoft 365 Admin Center go to users > Select the user > Set the password expiration policy","isCorrectAnswer":false},{"value":"From the Azure Active Directory Admin Center > Enterprise Admin > Password settings > Device Settings","isCorrectAnswer":false},{"value":"From the Microsoft 365 Admin Center go to Settings > Org Settings > Security and Privacy > Password Expiration policy","isCorrectAnswer":true}]},
       previousQuestionId: '',
       nextQuestionId: '',
-      questionId: 'ACrZaP4GG',
-      questionIdx: '',
+      questionIdx: 0,
       questionHtml: `<p>You need to ensure that all users must change their passwords every 100 days.</p>
 <p><span style="color: rgb(33,37,41);background-color: rgb(255,255,255);font-size: 16px;font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji;">What steps should you take to complete the task?</span></p>
 `,
@@ -80,11 +63,9 @@ class EditQuestionPage extends Component {
 <li>Click Save changes to save the changes.</li>
 </ol>
 `,
-      selectedAnswer: [],
       answerShown: false,
       questionsShown: false,
-      endExamShown: false,
-      endExamText: 'Are you sure you want to end the exam?'
+      endExamShown: false
     }
 
     this.state.jsonLd = {
@@ -114,7 +95,7 @@ class EditQuestionPage extends Component {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
         "@type": "Answer",
         "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
-        url: 'https://www.gitbit.org/course/ms-500/question/ACrZaP4GG',
+        url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
           name: 'John Gruber',
@@ -143,87 +124,27 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${this.state.uid}/tests`, this.state.testId).then(test => {
-          let previousQuestionId = ''
-          let nextQuestionId = ''
-          let currentQuestion
-          let previousItm
-          let foundQuestion = false
-          let questionIdx
-          let selectedAnswer = this.state.selectedAnswer
-
-          test.questions.forEach((question, idx) => {
-            if (foundQuestion) {
-                nextQuestionId = question.id
-                foundQuestion = false
-            }
-
-            if (this.state.questionId === question.id) {
-              foundQuestion = true
-              currentQuestion = question
-              questionIdx = idx+1
-              if (previousItm)
-                previousQuestionId = previousItm.id
-
-              if (currentQuestion.answered)
-                selectedAnswer = currentQuestion.answered
-            }
-
-            previousItm = question
-          })
-
-          getDoc(`Tests/MS-500/Questions`, currentQuestion.id).then(question => {
-            const questionHtml = draftToHtml(question.question)
-            const referencesHtml = draftToHtml(question.references)
-            this.setState({question, questionHtml, referencesHtml})
-          })
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
+          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+          const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
+          const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
             questionIdx: questionIdx,
             nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId,
-            selectedAnswer
+            previousQuestionId: previousQuestionId
           })
-        })
-      } else {
-        getDoc(`Tests/MS-500/Questions`, this.state.questionId).then(question => {
-          const questionHtml = draftToHtml(question.question)
-          const referencesHtml = draftToHtml(question.references)
-          this.setState({question, questionHtml, referencesHtml})
         })
       }
     }
   }
 
-  handleCorrectAnswerChange(event) {
-    const idx = event.target.dataset.index
-    const target = event.target
-    const selectedAnswer = [...this.state.selectedAnswer]
-
-    if (target.checked) {
-      selectedAnswer.push(idx)
-    } else {
-      const index = selectedAnswer.indexOf(`${idx}`)
-      selectedAnswer.splice(index, 1)
-    }
-
-    this.setState({selectedAnswer})
-
-    if (this.state.testId) {
-      const test = Object.assign({}, this.state.test)
-
-      test.questions = test.questions.map(question => {
-        if (question.id === this.state.questionId) {
-          question.answered = selectedAnswer
-        }
-        return question
-      })
-
-      saveDoc(`users/${this.state.uid}/tests`, test)
-
-      this.setState({test})
-    }
+  onTestQuestionChange(testQuestion) {
+    const test = JSON.parse(JSON.stringify(this.state.test))
+    test.questions[this.state.questionIdx] = testQuestion
+    this.setState({test})
+    saveDoc(`users/${this.state.uid}/tests`, test)
   }
 
   toggleShowAnswer() {
@@ -257,128 +178,43 @@ class EditQuestionPage extends Component {
   }
 
   render() {
-    let answers = this.state.question.answers ? this.state.question.answers : []
-
-    answers = [...answers].map((answer, index) => {
-      answer.isSelected = this.state.selectedAnswer.includes(`${index}`)
-      answer.optionStyles = Object.assign({}, optionStyles)
-      if (this.state.answerShown && answer.isCorrectAnswer) {
-        answer.optionStyles.background = 'green'
-      }
-
-      return answer
-    })
-
     return (
       <Page jsonLdType={'QAPage'} jsonLd={this.state.jsonLd} title={this.state.questionText} description={this.state.questionText}>
         <main>
+          <style>{universalStyles}</style>
           <div>
             <Container>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
-                <Grid item md={6} xs={12} lg={8}><h1>Question {this.state.questionIdx}</h1></Grid>
-                <Grid item md={6} xs={12} lg={4} className='flex-space-between'> {
-                  this.state.previousQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.previousQuestionId}?testId=${this.state.testId}`}>Previous Question</Button> :
-                    ''
-                  }
-                  {
-                    this.state.nextQuestionId !== '' ?
-                      <Button href={`/course/ms-500/question/${this.state.nextQuestionId}?testId=${this.state.testId}`}>Next Question</Button> : (
-                          this.state.testId ?
-                            <Button onClick={this.toggleEndExam} color="secondary">End Exam</Button> :
-                            ''
-                      )
-
-                  }
-                </Grid>
-              </Grid>
-              <Grid container className="img-width-100">
-                { this.state.questionHtml !== '' ?
-                  <div dangerouslySetInnerHTML={{__html: this.state.questionHtml}}></div>
-                  : ''
-                }
-              </Grid>
-              <Grid container>
-                {answers.map((answerState, index) => {
-                  return (
-                    <FormGroup style={answerState.optionStyles} key={index}>
-                      <FormControlLabel control={<Checkbox name={"AnswerCheck" + index} id={"AnswerCheck" + index} data-index={index} inline style={checkboxStyles} checked={this.state.selectedAnswer.includes(`${index}`)} onChange={this.handleCorrectAnswerChange} />} label={answerState.value} />
-                    </FormGroup>
-                  )
-                })}
-              </Grid>
-              <Grid container>
-                <Grid item>
+                <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div style={referencesStyle} dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
                     ''
                   }
                 </Grid>
               </Grid>
-              <Grid container className='align-right'><Grid item md={6} xs={12} lg={8}></Grid>
-              <Grid item md={6} xs={12} lg={4} className='flex-space-between'> {
-                  this.state.previousQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.previousQuestionId}?testId=${this.state.testId}`}>Previous Question</Button> :
-                    ''
-                  }
-                {
-                  this.state.nextQuestionId !== '' ?
-                    <Button href={`/course/ms-500/question/${this.state.nextQuestionId}?testId=${this.state.testId}`}>Next Question</Button> :
-                    this.state.testId ?
-                      <Button onClick={this.toggleEndExam} color="secondary">End Exam</Button> :
-                      ''
-                  }
-                </Grid>
-              </Grid>
-              <Grid container>
-                <Grid item xs={12} md={6}>
-                  <Button onClick={this.toggleShowAnswer} style={bottomButtonStyle}>
-                    { this.state.answerShown ?
-                      <span>Hide Answer</span> :
-                      <span>Show Answer</span>
-                    }
-                  </Button>
-                </Grid>
-                { this.state.testId ?
-                  <Grid item xs={12} md={6} className='align-right'>
-                    <Button onClick={this.toggleShowQuestions} style={bottomButtonStyle}>
-                      { this.state.questionsShown ?
-                        <span>Hide Question List</span> :
-                        <span>Show Question List</span>
-                      }
-                    </Button>
-                  </Grid> :
-                  ''
-                }
-              </Grid>
-              { this.state.testId ?
-                <Grid container>
-                  <Grid item className='align-right'>
-                    <Button onClick={this.toggleEndExam} variant="warning" style={bottomButtonStyle}>End Exam</Button>
-                  </Grid>
-                </Grid> :
-                ''
-              }
+              <Footer previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} toggleShowAnswer={this.toggleShowAnswer} toggleQuestionList={this.toggleShowQuestions} />
             </Container>
           </div>
 
           <Dialog onClose={this.toggleShowQuestions} open={this.state.questionsShown}>
-            <DialogTitle>Showing Test Questions</DialogTitle>
+            <DialogTitle>Test Questions</DialogTitle>
             <TableContainer>
               <Table striped bordered hover>
                 <TableHead>
                   <TableRow>
                     <TableCell>#</TableCell>
-                    <TableCell>Answer</TableCell>
+                    <TableCell>Answered</TableCell>
                   </TableRow>
                 </TableHead>
                 <TableBody>
-                  { this.state.test && this.state.test.questions ? this.state.test.questions.map((question, idx) => (
+                  { this.state.test.questions.map((question, idx) => (
                     <TableRow hover key={idx} onClick={this.gotoQuestion(question.id)} className="cursor-pointer">
                       <TableCell>{idx+1}</TableCell>
-                      <TableCell>{question.answered}</TableCell>
+                      <TableCell>{question.answers.length>0 ? 'Complete' : 'Not complete'}</TableCell>
                     </TableRow>
-                  )) : '' }
+                  ))}
                 </TableBody>
               </Table>
             </TableContainer>
@@ -387,7 +223,7 @@ class EditQuestionPage extends Component {
           <Dialog onClose={this.toggleEndExam} open={this.state.endExamShown}>
             <DialogTitle>Are you sure?</DialogTitle>
             <DialogContent>
-              <DialogContentText>{ this.state.endExamText }</DialogContentText>
+              <DialogContentText>Are you sure you want to end the exam?</DialogContentText>
             </DialogContent>
             <DialogActions>
               <Button variant="contained" onClick={this.endExam}>

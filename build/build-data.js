@@ -5,6 +5,7 @@ const serviceAccount = require("./firestore.json")
 const draftToHtml = require('draftjs-to-html')
 const { convertFromRaw } = require('draft-js')
 const getContents = require('./get-contents').default
+const debug = require('debug')('gitbit:build-data')
 
 if ( !getApps().length ) {
   admin.initializeApp({
@@ -16,8 +17,11 @@ if ( !getApps().length ) {
 const db = admin.firestore()
 
 const run = async () => {
+  debug('buildCourse')
   const course = await buildCourse()
+  debug('buildQuestions')
   await buildQuestions()
+  debug('buildContents')
   await buildContents(course)
 }
 

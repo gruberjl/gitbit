@@ -2,8 +2,10 @@ const { SitemapStream, streamToPromise } = require( 'sitemap' )
 const { Readable } = require( 'stream' )
 const fs = require('fs')
 const glob = require('glob')
+const debug = require('debug')('gitbit:build-sitemap')
 
 const buildSitemap = async () => {
+  debug(`building sitemap`)
   const pageFiles = glob.sync('./src/pages/**/*.js')
   const links = pageFiles.map(file => {
     const stats = fs.statSync(file)
