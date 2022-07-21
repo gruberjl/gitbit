@@ -252,7 +252,6 @@ class Wysiwyg extends Component {
           editorState={this.props.editorState}
           handleKeyCommand={this.handleKeyCommand}
           onChange={this.props.onEditorStateChange}
-          onTab={this.onTab}
         />
 
         <Dialog onClose={this.closeLinkDialog} open={this.state.linkDialogOpen}>

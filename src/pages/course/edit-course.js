@@ -1,23 +1,30 @@
-import * as React from "react"
+import { h, Component } from "preact"
 import Page from '../../components/page'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
-import Tab from 'react-bootstrap/Tab'
-import Tabs from 'react-bootstrap/Tabs'
-import {getDoc, saveDoc} from '../../components/firebase'
+import Container from '@mui/material/Container'
+import Grid from '@mui/material/Grid'
+import Tabs from '@mui/material/Tabs'
+import Tab from '@mui/material/Tab'
+import Typography from '@mui/material/Typography'
+import Box from '@mui/material/Box'
+import {getDoc} from '../../components/firebase/get-doc'
+import saveDoc from '../../components/firebase/save-doc'
 import ViewPeople from '../../components/course/view-people'
 import EditCourseTab from '../../components/course/edit-course'
 import EditContents from '../../components/course/edit-contents'
 
-class EditCourse extends React.Component {
+const isBrowser = () => typeof window !== 'undefined'
+
+class EditCourse extends Component {
   constructor(props) {
     super(props)
     this.setCourse = this.setCourse.bind(this)
     this.handleFieldChange = this.handleFieldChange.bind(this)
     this.submit = this.submit.bind(this)
+    this.setTab = this.setTab.bind(this)
 
-    const params = new URLSearchParams(props.location.search)
+    let params = new URLSearchParams()
+    if (isBrowser())
+      params = new URLSearchParams(location.search)
 
     this.state ={
       title: '',
@@ -25,8 +32,13 @@ class EditCourse extends React.Component {
       audience: '',
       err: '',
       courseId: params.get('courseId'),
-      success: false
+      success: false,
+      tab: 0
     }
+  }
+
+  setTab(e, tab) {
+    this.setState({tab})
   }
 
   setCourse(course) {
@@ -69,21 +81,28 @@ class EditCourse extends React.Component {
       <Page title={'Edit Course'}>
         <main>
           <Container>
-            <Row>
-              <Col>
-                <Tabs defaultActiveKey="edit" id="uncontrolled-tab-example" className="mb-3">
-                  <Tab eventKey="edit" title="Edit Course">
+            <Grid container>
+              <Grid item xs={12}>
+                <Box sx={{ width: '100%' }}>
+                  <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                    <Tabs value={this.state.tab} onChange={this.setTab} aria-label="navigation">
+                      <Tab label="Edit Course" />
+                      <Tab label="View People" />
+                      <Tab label="Edit Contents" />
+                    </Tabs>
+                  </Box>
+                  <div role="tabpanel" hidden={this.state.tab !== 0}>
                     <EditCourseTab courseId={this.state.courseId} />
-                  </Tab>
-                  <Tab eventKey="people" title="View People">
+                  </div>
+                  <div role="tabpanel" hidden={this.state.tab !== 1}>
                     <ViewPeople courseId={this.state.courseId} />
-                  </Tab>
-                  <Tab eventKey="contents" title="Edit Contents">
+                  </div>
+                  <div role="tabpanel" hidden={this.state.tab !== 2}>
                     <EditContents courseId={this.state.courseId} />
-                  </Tab>
-                </Tabs>
-              </Col>
-            </Row>
+                  </div>
+                </Box>
+              </Grid>
+            </Grid>
           </Container>
         </main>
       </Page>

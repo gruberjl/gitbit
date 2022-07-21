@@ -1,12 +1,15 @@
 const admin = require("firebase-admin")
+const {getApps} = require("firebase-admin/app")
 const serviceAccount = require("./firestore.json")
 
-const app = admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://web-server-9d634.firebaseio.com"
-}, 'getContentsApp')
+if ( !getApps().length ) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://web-server-9d634.firebaseio.com"
+  })
+}
 
-const db = admin.firestore(app)
+const db = admin.firestore()
 
 const getContents = async (course) => {
   if (!course)

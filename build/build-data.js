@@ -1,14 +1,17 @@
 const fs = require('fs')
 const admin = require("firebase-admin")
+const {getApps} = require("firebase-admin/app")
 const serviceAccount = require("./firestore.json")
 const draftToHtml = require('draftjs-to-html')
 const { convertFromRaw } = require('draft-js')
 const getContents = require('./get-contents').default
 
-admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount),
-  databaseURL: "https://web-server-9d634.firebaseio.com"
-})
+if ( !getApps().length ) {
+  admin.initializeApp({
+    credential: admin.credential.cert(serviceAccount),
+    databaseURL: "https://web-server-9d634.firebaseio.com"
+  })
+}
 
 const db = admin.firestore()
 

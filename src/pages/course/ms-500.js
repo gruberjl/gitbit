@@ -1,18 +1,17 @@
-import * as React from "react"
+import { h, Component } from "preact"
 import Page from '../../components/page'
-import Container from 'react-bootstrap/Container'
-import Row from 'react-bootstrap/Row'
-import Col from 'react-bootstrap/Col'
+import Container from '@mui/material/Container'
+import Grid from '@mui/material/Grid'
 
-class TestPage extends React.Component {
+class TestPage extends Component {
   render() {
     return (
       <Page title={'Ready to begin your exam?'} description={'Microsoft 365 MS-500 practice test prep page'}>
         <main>
           <div>
             <Container>
-              <Row>
-                <Col>
+              <Grid container>
+                <Grid item>
                   <h1>MS-500 Test</h1>
                   <h2>Skills measured</h2>
                   <ul>
@@ -21,8 +20,8 @@ class TestPage extends React.Component {
                     <li>Implement and manage information protection (15-20%)</li>
                     <li>Manage governance and compliance features in Microsoft 365 (25-30%)</li>
                   </ul>
-                </Col>
-              </Row>
+                </Grid>
+              </Grid>
             </Container>
           </div>
         </main>
@@ -30,5 +29,5 @@ class TestPage extends React.Component {
     )
   }
 }
- 
+
 export default TestPage

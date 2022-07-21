@@ -30,7 +30,7 @@ app.use('/*.js', async (req, res, next) => {
 
 app.use('/**', async (req, res, next) => {
   let url = req.originalUrl.split('?')[0]
-  if (url.includes('/assets/') || url.endsWith('.js') || url.endsWith('.js/') || url.endsWith('.png/') || url.endsWith('.png') || url.endsWith('.xml/') || url.endsWith('.ico') || url.endsWith('.ico/') || url.endsWith('.svg/') || url.endsWith('.webmanifest/') || url.endsWith('.webmanifest') || url.endsWith('.css/') || url.endsWith('.css'))
+  if (url.includes('/assets/') || url.endsWith('.js') || url.endsWith('.js/') || url.endsWith('.png/') || url.endsWith('.png') || url.endsWith('.xml/') || url.endsWith('.ico') || url.endsWith('.ico/') || url.endsWith('.svg/') || url.endsWith('.webmanifest/') || url.endsWith('.webmanifest') || url.endsWith('.css/') || url.endsWith('.css') || url.endsWith('.txt') || url.endsWith('.txt/'))
     return next()
 
   url = url === '/' ? '/index' : url

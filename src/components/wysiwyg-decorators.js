@@ -40,7 +40,7 @@ const Image = (props) => {
   const {src, alt} = props.contentState.getEntity(props.entityKey).getData();
   return (
     <div>
-      <img src={src} alt={alt} />
+      <img src={src} alt={alt} style="max-width:100%" />
     </div>
   );
 }

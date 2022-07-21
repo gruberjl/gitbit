@@ -3,9 +3,9 @@ const TerserPlugin = require("terser-webpack-plugin")
 
 module.exports = (sourcePath = './src/pages/index.js', outputPath = './docs', outputFilename = 'index.js') => {
   if (sourcePath && sourcePath.WEBPACK_BUNDLE) {
-    sourcePath = './src/pages/course/edit-content.js'
+    sourcePath = './src/pages/course/ms-500/learn/Whats-in-this-course-cpchjBLkC.js'
     outputPath = './docs'
-    outputFilename = 'edit-content.js'
+    outputFilename = 'Whats-in-this-course-cpchjBLkC.js'
   }
 
   return {

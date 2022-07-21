@@ -6,9 +6,13 @@ import buildPage from './build-page'
 import buildData from './build-data'
 import buildSitemap from './build-sitemap'
 import buildRoot from './build-root'
+import buildQuestionPages from './build-question-pages'
+import buildLearnArticles from './build-learn-articles'
 
 const build = async () => {
   await buildData()
+  await buildQuestionPages()
+  await buildLearnArticles()
   deleteDocs()
   buildRoot()
   buildSitemap()

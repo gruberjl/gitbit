@@ -32,11 +32,13 @@ const getNextContent = (completedContent) => {
 const DashboardPage = () => {
   const [userAcct, setUserAcct] = useState({completedContent: []})
   const [nextContent, setNextContent] = useState(contents[0])
+  const [uid, setUid] = useState('')
 
   useEffect(() => {
     if (isBrowser()) {
       const onAuthStateChangedListener = onAuthStateChanged(user => {
         if (user) {
+          setUid(user.uid)
           getDoc('courses/MS-500/users', user.uid).then((userAcct) => {
             if (!userAcct.completedContent) {
               userAcct.completedContent = []
@@ -63,6 +65,12 @@ const DashboardPage = () => {
             </Grid>
           </Grid>
           <Grid container justifyContent="center">
+            { uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
+              <Grid item xs={12}>
+                <a href='http://localhost:8000/course/edit-course?courseId=MS-500'>Manage site</a>
+              </Grid> :
+              ''
+            }
             <Grid item xs={12} lg={3}>
               <Card>
                 { nextContent.isComplete
