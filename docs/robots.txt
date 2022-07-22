@@ -2,5 +2,10 @@ User-agent: Googlebot
 
 User-agent: *
 Allow: /
+Disallow: /course/ms-500/test.js$
+Disallow: /dashboard$
+Disallow: /tests$
+Disallow: /tests/new$
+Disallow: /tests/summary$
 
 Sitemap: https://www.gitbit.org/sitemap/sitemap-index.xml

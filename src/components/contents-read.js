@@ -44,7 +44,7 @@ const ContentsRead = ({completedContent}) => {
     <div>
       {course.sections.map((section, idx) => (
         <Accordion key={idx} defaultExpanded>
-          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content" id={`panel${idx}-header`}>
+          <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content">
             <Typography>{section.title}</Typography>
           </AccordionSummary>
           <AccordionDetails>

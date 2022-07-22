@@ -4,13 +4,8 @@ import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import {onAuthStateChanged} from '../../../components/firebase/on-auth-state-changed'
-import Table from '@mui/material/Table'
-import TableBody from '@mui/material/TableBody'
-import TableCell from '@mui/material/TableCell'
-import TableContainer from '@mui/material/TableContainer'
-import TableHead from '@mui/material/TableHead'
-import TableRow from '@mui/material/TableRow'
 import questions from '../../../data/questions'
+import Typography from '@mui/material/Typography'
 
 const isBrowser = () => typeof window !== 'undefined'
 
@@ -53,33 +48,29 @@ class BrowseQuestionsPage extends Component {
                 }
               </Grid>
             </Grid>
-            <Grid container>
-              <Grid item>
-                <TableContainer>
-                  <Table>
-                    <TableHead>
-                      <TableRow>
-                        { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
-                          <TableCell>Edit</TableCell> :
-                          ''
-                        }
-                        <TableCell>Question</TableCell>
-                      </TableRow>
-                    </TableHead>
-                    <TableBody>
-                      {questions.map((doc, idx) => (
-                        <TableRow key={idx}>
-                          { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
-                            <TableCell><Button variant="text" href={`/course/ms-500/edit-question?docid=${doc.id}`}>Edit</Button></TableCell > :
-                            ''
-                          }
-                          <TableCell><Button variant="text" href={`/course/ms-500/question/${doc.id}`}>{doc.question}</Button></TableCell >
-                        </TableRow>
-                      ))}
-                    </TableBody>
-                  </Table>
-                </TableContainer>
+            <Grid container spacing={2}>
+              { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
+                <Grid item xs={1}>
+                  <Typography variant="h6" gutterBottom component="h3">Edit</Typography>
+                </Grid> :
+                ''
+              }
+              <Grid item xs={this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ? 11 : 12}>
+                <Typography variant="h6" gutterBottom component="h2">Question</Typography>
               </Grid>
+              {questions.map((doc, idx) => (
+                <Grid container item xs={12} key={idx}>
+                  { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
+                    <Grid item xs={1}>
+                      <Button variant="text" href={`/course/ms-500/edit-question?docid=${doc.id}`}>Edit</Button>
+                    </Grid> :
+                    ''
+                  }
+                  <Grid item xs={this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ? 11 : 12} sx={{borderTop: '1px solid rgb(224, 224, 224);'}}>
+                    <Button variant="text" href={`/course/ms-500/question/${doc.id}`}>{doc.question}</Button>
+                  </Grid>
+                </Grid>
+              ))}
             </Grid>
           </Container>
         </main>
@@ -87,5 +78,30 @@ class BrowseQuestionsPage extends Component {
     )
   }
 }
+
+// <TableContainer>
+//   <Table>
+//     <TableHead>
+//       <TableRow>
+//         { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
+//           <TableCell>Edit</TableCell> :
+//           ''
+//         }
+//         <TableCell>Question</TableCell>
+//       </TableRow>
+//     </TableHead>
+//     <TableBody>
+//       {questions.map((doc, idx) => (
+//         <TableRow key={idx}>
+//           { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
+//             <TableCell><Button variant="text" href={`/course/ms-500/edit-question?docid=${doc.id}`}>Edit</Button></TableCell > :
+//             ''
+//           }
+//           <TableCell><Button variant="text" href={`/course/ms-500/question/${doc.id}`}>{doc.question}</Button></TableCell >
+//         </TableRow>
+//       ))}
+//     </TableBody>
+//   </Table>
+// </TableContainer>
 
 export default BrowseQuestionsPage

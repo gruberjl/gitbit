@@ -42,8 +42,8 @@ const buildPage = async (pageFile) => {
 }
 
 const getImageUrl = (meta) => {
-  return meta.match(/image primaryImageOfPage" content=".*?">/g)[0]
-    .replace('image primaryImageOfPage" content="', '')
+  return meta.match(/property="og:image" content=".*?">/g)[0]
+    .replace('property="og:image" content="', '')
     .replace('">', '')
     .replace('https://www.gitbit.org', '')
 }

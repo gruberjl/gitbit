@@ -6,6 +6,7 @@
   "scripts": {
     "build": "set DEBUG=gitbit:*&&babel-node build&&npm run test:dev&&npm run eslint",
     "build:webpack": "webpack",
+    "post:push": "node build/post-push",
     "eslint": "eslint src/** --fix",
     "start": "babel-node dev-server",
     "test:dev": "node test/test-dev"
@@ -42,7 +43,8 @@
     "seo-analyzer": "^2.1.0",
     "sitemap": "^7.1.1",
     "terser-webpack-plugin": "^5.3.3",
-    "webpack-cli": "^4.10.0"
+    "webpack-cli": "^4.10.0",
+    "xml-js": "^1.6.11"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",

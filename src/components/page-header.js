@@ -81,16 +81,22 @@ export default function PageHeader() {
                   GitBit
                 </Typography>
               </a>
-              <Box sx={{flexGrow: 1}}>
-                <Button href='/dashboard' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Dashboard</Button>
-                <Button href='/tests' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>My Tests</Button>
-                <Button href='/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
-              </Box>
+              { uid == '' ?
+                <Box sx={{flexGrow: 1}}>
+                  <Button href='/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
+                  <Button href='/course/ms-500/learn/Whats-in-this-course-cpchjBLkC' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>First lesson</Button>
+                </Box> :
+                <Box sx={{flexGrow: 1}}>
+                  <Button href='/dashboard' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Dashboard</Button>
+                  <Button href='/tests' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>My Tests</Button>
+                  <Button href='/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
+                </Box>
+              }
               { uid ?
                 <Button sx={{display: {xs: 'none', md: 'inline-flex'}}} color="inherit" onClick={signout}>Sign Out</Button> :
                 <Button sx={{display: {xs: 'none', md: 'inline-flex'}}} color="inherit" href='/sign-up'>Sign Up</Button>
               }
-              <IconButton onClick={() => toggleDrawer(!openDrawer)} aria-label="menu" color="inherit" sx={{display: {xs: 'inline-flex', sm: 'none'}}}>
+              <IconButton onClick={() => toggleDrawer(!openDrawer)} aria-label="menu" color="inherit" sx={{display: {xs: 'inline-flex', sm: 'inline-flex', md: 'none'}}}>
                 <MenuIcon />
               </IconButton>
             </Toolbar>
@@ -99,35 +105,51 @@ export default function PageHeader() {
       </Box>
       <Drawer anchor="right" open={openDrawer} onClose={() => toggleDrawer(!openDrawer)}>
         <Box sx={{width: 250}} role="presentation" onClick={() => toggleDrawer(!openDrawer)} onKeyDown={() => toggleDrawer(!openDrawer)}>
-          <List>
-            <ListItem disablePadding>
-              <ListItemButton href='/dashboard'>
-                <ListItemText primary="Dashboard" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton href='/tests'>
-                <ListItemText primary="My Tests" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton href='/blog'>
-                <ListItemText primary="Blog" />
-              </ListItemButton>
-            </ListItem>
-          </List>
+          { uid == '' ?
+            <List>
+              <ListItem disablePadding>
+                <ListItemButton href='/course/ms-500/learn/Whats-in-this-course-cpchjBLkC'>
+                  <ListItemText primary="Go to first lesson" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton href='/blog'>
+                  <ListItemText primary="Blog" />
+                </ListItemButton>
+              </ListItem>
+            </List> :
+            <List>
+              <ListItem disablePadding>
+                <ListItemButton href='/dashboard'>
+                  <ListItemText primary="Dashboard" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton href='/tests'>
+                  <ListItemText primary="My Tests" />
+                </ListItemButton>
+              </ListItem>
+              <ListItem disablePadding>
+                <ListItemButton href='/blog'>
+                  <ListItemText primary="Blog" />
+                </ListItemButton>
+              </ListItem>
+            </List>
+          }
           <Divider />
           <List>
-            <ListItem disablePadding>
-              <ListItemButton onClick={signout}>
-                <ListItemText primary="Sign Out" />
-              </ListItemButton>
-            </ListItem>
-            <ListItem disablePadding>
-              <ListItemButton href='/sign-up'>
-                <ListItemText primary="Sign Up" />
-              </ListItemButton>
-            </ListItem>
+            { uid == '' ?
+              <ListItem disablePadding>
+                <ListItemButton href='/sign-up'>
+                  <ListItemText primary="Sign Up" />
+                </ListItemButton>
+              </ListItem> :
+              <ListItem disablePadding>
+                <ListItemButton onClick={signout}>
+                  <ListItemText primary="Sign Out" />
+                </ListItemButton>
+              </ListItem>
+            }
           </List>
         </Box>
       </Drawer>

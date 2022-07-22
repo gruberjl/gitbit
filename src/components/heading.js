@@ -21,7 +21,7 @@ const getTitle = (propsTitle) => {
     return title
   }
 
-  return 'Training for MS-500: Microsoft Office 365 Security Admin'
+  return 'Training for MS-500: Microsoft 365 Security Administration'
 }
 
 const getImageUrl = (image) => {
@@ -82,7 +82,7 @@ const getJsonLd = (jsonLdType, /* id, */ title, description, image, jsonLd={}) =
 export default function Heading(props) {
   const description = getDescription(props.description)
   const title = getTitle(props.title)
-  const pageTitle = `${title } - GitBit`
+  const pageTitle = `${title} - GitBit`
 
   const jsonLD = getJsonLd(props.jsonLdType, title, description, props.image, props.jsonLd)
 
@@ -91,11 +91,11 @@ export default function Heading(props) {
       <Helmet title={pageTitle}
         meta={[
           {name: 'description', content: description},
-          {property: 'og:image', itemprop: 'image primaryImageOfPage', content: getImageUrl(props.image) || gitBitImg},
-          {name: 'og:title', property: 'og:title', itemprop: 'name', content: title},
-          {name: 'og:description', property: 'og:description', itemprop: 'description', content: description},
-          {name: 'twitter:title', property: 'twitter:title', itemprop: 'name', content: title},
-          {name: 'twitter:description', property: 'twitter:description', itemprop: 'description', content: description},
+          {property: 'og:image', content: getImageUrl(props.image) || gitBitImg},
+          {name: 'og:title', property: 'og:title', content: title},
+          {name: 'og:description', property: 'og:description', content: description},
+          {name: 'twitter:title', property: 'twitter:title', content: title},
+          {name: 'twitter:description', property: 'twitter:description', content: description},
           {name: 'twitter:image', property: 'twitter:image', content: getImageUrl(props.image) || gitBitImg}
         ]}
         script={[

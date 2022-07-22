@@ -38,7 +38,7 @@ class Tests extends Component {
 
   render() {
     return (
-      <Page title={'Practice Tests to help you prepare for Microsoft 365 MS-500'} description={'Practice Tests to help you prepare for Microsoft 365 MS-500'}>
+      <Page title={'Practice Tests to prepare for Microsoft 365 MS-500'} description={'Practice Tests to help you prepare for Microsoft 365 MS-500'}>
         <main>
           <Container>
             <Grid container justifyContent="center" alignItems="center">

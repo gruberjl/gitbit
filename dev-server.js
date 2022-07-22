@@ -37,7 +37,7 @@ app.use('/**', async (req, res, next) => {
   if (url.endsWith('/'))
     url = url.slice(0, -1)
   const filePath = `./src/pages${url}.js`
-
+  console.log(`building page ${filePath}`)
   await buildPage(filePath)
 
   res.sendFile(path.resolve(filePath.replace('./src/pages/', './docs/').replace('.js', '.html')))
