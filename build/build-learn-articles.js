@@ -6,6 +6,7 @@ import serviceAccount from "./firestore.json"
 import testLearnArticles from '../test/learn-articles'
 import { h } from "preact"
 import render from 'preact-render-to-string'
+const stringify = require('json-stable-stringify')
 const debug = require('debug')('gitbit:build-learn-articles')
 
 if ( !getApps().length ) {
@@ -50,8 +51,8 @@ const buildLearnArticles = async () => {
         .replaceAll('{', '&#123;')
         .replaceAll('}', '&#125;')
 
-      const newFile = template.replace('{COURSE:true, sections:[]}', JSON.stringify(course))
-        .replace('{ARTICLE:true}', JSON.stringify(article))
+      const newFile = template.replace('{COURSE:true, sections:[]}', stringify(course))
+        .replace('{ARTICLE: true}', stringify(article))
         .replace('<ARTICLE />', articleHtml)
         .replace('NEXT_CONTENT', nextArticle)
         .replace('PREVIOUS_CONTENT', previousArticle)

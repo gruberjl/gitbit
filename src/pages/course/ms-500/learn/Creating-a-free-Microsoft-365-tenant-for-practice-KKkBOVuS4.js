@@ -17,6 +17,7 @@ const isBrowser = () => typeof window !== 'undefined'
 const marginTop24Style = {
   marginTop: '24px'
 }
+let bottomOfArticle
 
 class ArticlePage extends Component {
   constructor(props) {
@@ -29,7 +30,7 @@ class ArticlePage extends Component {
     this.state = {
       isTrackScrolling: false,
       path: '/course/ms-500/learn/Creating-a-free-Microsoft-365-tenant-for-practice-KKkBOVuS4',
-      article: {ARTICLE: true},
+      article: {publish: true, sectionId: 'qwJW5VrBW', featuredImage: 'https://i.ibb.co/F07sjQJ/microsoft-365-e5-trial.png', id: 'KKkBOVuS4', images: ['https://i.ibb.co/5L6jZrq/sign-up-for-microsoft-365-free-trial.png', 'https://i.ibb.co/5L6jZrq/sign-up-for-microsoft-365-free-trial.png', 'https://i.ibb.co/F07sjQJ/microsoft-365-e5-trial.png', 'https://i.ibb.co/MMLchmz/tell-us-about-yourself.png', 'https://i.ibb.co/0ngk6BK/send-verification-code.png', 'https://i.ibb.co/xSYVRY1/how-youll-sign-in.png', 'https://i.ibb.co/xSYVRY1/how-youll-sign-in.png', 'https://i.ibb.co/QJXH0Dk/how-youll-sign-in-2.png'], type: 'article', slug: 'Creating-a-free-Microsoft-365-tenant-for-practice-KKkBOVuS4', article: {blocks: [{data: {}, inlineStyleRanges: [], text: 'Before we can start learning how to secure Microsoft 365 we will need a test tenant. A tenant where we can implement whatever you want and test things out before implementing them in production. A place where we can perform hands-on learning in a live environment without affecting production. Fortunately, we can set up a Microsoft 365 tenant for free to try out. You only need a free email address, such as gmail.com, outlook.com, or yahoo.com, and a phone number.', entityRanges: [], key: '7famg', type: 'unstyled', depth: 0}, {depth: 0, data: {}, entityRanges: [{length: 13, key: 0, offset: 9}], type: 'unstyled', inlineStyleRanges: [], key: '424dd', text: '1. Go to Office 365 E5     '}, {entityRanges: [{length: 10, offset: 9, key: 1}], type: 'unstyled', data: {}, depth: 0, inlineStyleRanges: [], text: '2. Click Free Trial', key: 'cims2'}, {text: ' ', type: 'atomic', entityRanges: [{length: 1, offset: 0, key: 2}], depth: 0, data: {}, inlineStyleRanges: [], key: '8ki3m'}, {data: {}, key: 'c6rpj', inlineStyleRanges: [{style: 'BOLD', length: 4, offset: 35}], type: 'unstyled', text: '3. Enter your email address. Click Next.', entityRanges: [], depth: 0}, {entityRanges: [], key: '90fvb', text: '4. Click Set up account.', type: 'unstyled', depth: 0, data: {}, inlineStyleRanges: [{length: 14, offset: 9, style: 'BOLD'}]}, {entityRanges: [], inlineStyleRanges: [{style: 'BOLD', length: 4, offset: 62}], key: '3fqj7', data: {}, type: 'unstyled', depth: 0, text: '5. Fill out the form under Tell us about yourself. Then click Next.'}, {entityRanges: [{key: 3, length: 1, offset: 0}], inlineStyleRanges: [], text: ' ', data: {}, depth: 0, type: 'atomic', key: '6mjuf'}, {depth: 0, type: 'unstyled', text: '6. Enter your phone number and click Send verification code. Enter the code texted to you.', entityRanges: [], inlineStyleRanges: [], data: {}, key: '67j8a'}, {data: {}, inlineStyleRanges: [], entityRanges: [{length: 1, key: 4, offset: 0}], key: 'b4bvf', text: ' ', type: 'atomic', depth: 0}, {entityRanges: [], inlineStyleRanges: [{offset: 75, style: 'BOLD', length: 18}, {length: 4, offset: 130, style: 'BOLD'}], data: {}, depth: 0, text: '7. Enter a name for your test tenant, for example, gitbittest1. Then click Check Availability. Find an available name. Then click Next.', type: 'unstyled', key: '6q2lc'}, {data: {}, text: ' ', type: 'atomic', entityRanges: [{key: 5, offset: 0, length: 1}], depth: 0, key: '242v4', inlineStyleRanges: []}, {key: 'e07ns', depth: 0, inlineStyleRanges: [{length: 7, offset: 105, style: 'BOLD'}], text: '8. Then enter a username, and password for your new tenant. Remember them or write them down. Then click Sign up.', entityRanges: [], type: 'unstyled', data: {}}, {inlineStyleRanges: [], key: 'ano85', type: 'atomic', data: {}, entityRanges: [{offset: 0, length: 1, key: 6}], depth: 0, text: ' '}, {type: 'unstyled', key: 'eml33', text: 'That\'s it. You now have a Microsoft 365 test tenant.', data: {}, depth: 0, entityRanges: [], inlineStyleRanges: []}], entityMap: {0: {data: {url: 'https://click.linksynergy.com/fs-bin/click?id=iOIpmChCQh0&offerid=817940.17&type=3&subid=0', alt: 'Microsoft 365 E5 Trial', targetOption: '_blank', alignment: 'left', height: 'auto', width: 'auto', src: 'https://i.ibb.co/F07sjQJ/microsoft-365-e5-trial.png'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {src: 'https://i.ibb.co/MMLchmz/tell-us-about-yourself.png', alignment: 'left', url: 'https://click.linksynergy.com/fs-bin/click?id=iOIpmChCQh0&offerid=817940.17&type=3&subid=0', alt: 'Tell us about yourself form', height: 'auto', targetOption: '_blank', width: 'auto'}}, 2: {mutability: 'MUTABLE', type: 'IMAGE', data: {width: 'auto', alignment: 'none', url: 'https://click.linksynergy.com/fs-bin/click?id=iOIpmChCQh0&offerid=817940.17&type=3&subid=0', alt: 'Microsoft 365 E5 Trial', src: 'https://i.ibb.co/F07sjQJ/microsoft-365-e5-trial.png', targetOption: '_blank', height: 'auto'}}, 3: {data: {alignment: 'none', alt: 'Tell us about yourself form', src: 'https://i.ibb.co/MMLchmz/tell-us-about-yourself.png', height: 'auto', width: 'auto'}, mutability: 'MUTABLE', type: 'IMAGE'}, 4: {data: {src: 'https://i.ibb.co/0ngk6BK/send-verification-code.png', alignment: 'none', width: 'auto', alt: 'Send verification code', height: 'auto'}, type: 'IMAGE', mutability: 'MUTABLE'}, 5: {data: {alignment: 'none', src: 'https://i.ibb.co/xSYVRY1/how-youll-sign-in.png', height: 'auto', width: 'auto', alt: 'How you\'ll sign in'}, mutability: 'MUTABLE', type: 'IMAGE'}, 6: {data: {alignment: 'none', height: 'auto', src: 'https://i.ibb.co/QJXH0Dk/how-youll-sign-in-2.png', alt: 'How you\'ll sign in - enter credentials', width: 'auto'}, type: 'IMAGE', mutability: 'MUTABLE'}}}, pushlish: true, datePublished: '2022/5/26', description: 'How to create a free Microsoft 365 tenant to test new security features and pass you MS-500', title: 'Creating a free Microsoft 365 tenant for practice'},
       nextContentSlug: 'Managing-the-Microsoft-365-tenant-Introduction-to-the-admin-centers-bzotoOjEe',
       previousContentSlug: 'Whats-in-this-course-cpchjBLkC',
       hasCompletedContent: false,
@@ -55,6 +56,9 @@ class ArticlePage extends Component {
 
   addScroll() {
     if (isBrowser()) {
+      const el = document.getElementById('bottom-of-article')
+      const rect = el.getBoundingClientRect()
+      bottomOfArticle = rect.top
       document.addEventListener('scroll', this.trackScrolling)
       this.setState({isTrackScrolling: true})
     }
@@ -68,7 +72,7 @@ class ArticlePage extends Component {
   }
 
   trackScrolling() {
-    if (document.body.scrollHeight * .8 < window.innerHeight + window.scrollY)
+    if (bottomOfArticle && bottomOfArticle <= window.scrollY+window.innerHeight)
       this.setHasCompletedContent(true)
   }
 
@@ -172,6 +176,7 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/QJXH0Dk/how-youll-sign-in-2.png" alt="How you'll sign in - enter credentials" style="height: auto;width: auto" /></div>
                   <p>That's it. You now have a Microsoft 365 test tenant.</p>
                 </div>
+                <div id="bottom-of-article" />
                 <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
                   <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
                   <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>

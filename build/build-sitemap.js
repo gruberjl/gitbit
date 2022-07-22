@@ -7,6 +7,8 @@ const debug = require('debug')('gitbit:build-sitemap')
 const buildSitemap = async () => {
   debug(`building sitemap`)
   const pageFiles = glob.sync('./src/pages/**/*.js')
+    .filter(file => file !== './src/pages/404.js')
+
   const links = pageFiles.map(file => {
     const stats = fs.statSync(file)
 
@@ -26,7 +28,7 @@ const buildSitemap = async () => {
   if (!fs.existsSync('./docs/sitemap/')){
     fs.mkdirSync('./docs/sitemap/');
   }
-
+  
   fs.writeFileSync('./docs/sitemap/sitemap-index.xml', sitemap)
 }
 

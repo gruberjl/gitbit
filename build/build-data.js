@@ -6,6 +6,7 @@ const draftToHtml = require('draftjs-to-html')
 const { convertFromRaw } = require('draft-js')
 const getContents = require('./get-contents').default
 const debug = require('debug')('gitbit:build-data')
+const stringify = require('json-stable-stringify')
 
 if ( !getApps().length ) {
   admin.initializeApp({
@@ -39,7 +40,7 @@ const buildQuestions = async () => {
 
   const dataTemplate = fs.readFileSync('./src/templates/data.js', 'utf8').toString()
 
-  const contentsRead = dataTemplate.replace('0', JSON.stringify(questions))
+  const contentsRead = dataTemplate.replace('0', stringify(questions))
   fs.writeFileSync('./src/data/questions.js', contentsRead)
 }
 
@@ -47,7 +48,7 @@ const buildContents = async (course) => {
   const contents = await getContents()
 
   const dataTemplate = fs.readFileSync('./src/templates/data.js', 'utf8').toString()
-  const contentsRead = dataTemplate.replace('0', JSON.stringify(contents))
+  const contentsRead = dataTemplate.replace('0', stringify(contents))
   fs.writeFileSync('./src/data/contents.js', contentsRead)
 }
 
@@ -57,7 +58,7 @@ const buildCourse = async () => {
   course.id = courseObj.id
 
   const dataTemplate = fs.readFileSync('./src/templates/data.js', 'utf8').toString()
-  const contentsRead = dataTemplate.replace('0', JSON.stringify(course))
+  const contentsRead = dataTemplate.replace('0', stringify(course))
   fs.writeFileSync('./src/data/course.js', contentsRead)
 
   return course

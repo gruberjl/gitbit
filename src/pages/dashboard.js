@@ -66,7 +66,7 @@ const DashboardPage = () => {
           <Grid container justifyContent="center">
             { uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
               <Grid item xs={12}>
-                <a href='http://localhost:8000/course/edit-course?courseId=MS-500'>Manage site</a>
+                <a href='/course/edit-course?courseId=MS-500'>Manage site</a>
               </Grid> :
               ''
             }

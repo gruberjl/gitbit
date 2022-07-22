@@ -17,6 +17,7 @@ const isBrowser = () => typeof window !== 'undefined'
 const marginTop24Style = {
   marginTop: '24px'
 }
+let bottomOfArticle
 
 class ArticlePage extends Component {
   constructor(props) {
@@ -55,6 +56,9 @@ class ArticlePage extends Component {
 
   addScroll() {
     if (isBrowser()) {
+      const el = document.getElementById('bottom-of-article')
+      const rect = el.getBoundingClientRect()
+      bottomOfArticle = rect.top
       document.addEventListener('scroll', this.trackScrolling)
       this.setState({isTrackScrolling: true})
     }
@@ -68,7 +72,7 @@ class ArticlePage extends Component {
   }
 
   trackScrolling() {
-    if (document.body.scrollHeight * .8 < window.innerHeight + window.scrollY)
+    if (bottomOfArticle && bottomOfArticle <= window.scrollY+window.innerHeight)
       this.setHasCompletedContent(true)
   }
 
@@ -157,6 +161,7 @@ class ArticlePage extends Component {
               <Grid item lg={9}>
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><ARTICLE /></div>
+                <div id="bottom-of-article" />
                 <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
                   <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
                   <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>

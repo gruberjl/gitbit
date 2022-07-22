@@ -2,6 +2,7 @@ const sizeOf = require('image-size')
 const url = require('url')
 const http = require('http')
 const https = require('https')
+const stringify = require('json-stable-stringify')
 const debug = require('debug')('gitbit:get-image-dimensions')
 
 const getImageDimensions = async (imageUrl) => {
@@ -13,7 +14,7 @@ const getImageDimensions = async (imageUrl) => {
     imageUrl = `./docs/${imageUrl}`
     dimensions = sizeOf(imageUrl)
   }
-  debug(`Returning dimensions ${JSON.stringify(dimensions)}`)
+  debug(`Returning dimensions ${stringify(dimensions)}`)
   return dimensions
 }
 

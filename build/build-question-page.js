@@ -4,6 +4,7 @@ import { convertFromRaw } from 'draft-js'
 import admin from "firebase-admin"
 const {getApps} = require("firebase-admin/app")
 import serviceAccount from "./firestore.json"
+const stringify = require('json-stable-stringify')
 const debug = require('debug')('gitbit:build-question-page')
 
 const template = fs.readFileSync('./src/templates/question.js', 'utf8')
@@ -33,7 +34,7 @@ const buildQuestionPage = async (question) => {
     .replace('QUESTION_ID', question.id)
     .replace('This is my question', questionHtml)
     .replace('This is my references', referencesHtml)
-    .replace('{question: true}', JSON.stringify(question))
+    .replace('{question: true}', stringify(question))
     .replace('question text placeholder', questionText)
 
   fs.writeFileSync(`./src/pages/course/ms-500/question/${question.id}.js`, newFile)
