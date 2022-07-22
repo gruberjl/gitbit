@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"inlineStyleRanges":[{"style":"BOLD","offset":25,"length":35},{"style":"BOLD","length":22,"offset":63},{"offset":88,"style":"BOLD","length":12}],"data":{},"text":"To review sign-ins go to Azure Active Directory admin center > Azure Active Directory > Sign-in logs.","depth":0,"key":"2rrnq","entityRanges":[],"type":"unstyled"},{"inlineStyleRanges":[],"depth":0,"type":"unstyled","entityRanges":[{"offset":0,"key":0,"length":105}],"key":"8uqsb","data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1"},{"inlineStyleRanges":[],"key":"evcu4","depth":0,"text":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins","type":"unstyled","entityRanges":[{"offset":0,"length":91,"key":1}],"data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1","targetOption":"_blank"}},"1":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins"}}}},"question":{"entityMap":{},"blocks":[{"type":"unstyled","entityRanges":[],"depth":0,"key":"af5hk","data":{},"text":"Your organization is currently using Microsoft 365. Your manager has asked you where he can go to audit the sign in's of any user with the user administrator role. Where you should tell him to go?","inlineStyleRanges":[]}]},"answers":[{"isCorrectAnswer":true,"value":"Azure Ad Sign-in logs"},{"isCorrectAnswer":false,"value":"Azure AD Identity Protection"},{"isCorrectAnswer":false,"value":"Azure AD Authentication methods"},{"value":"Azure AD Access review","isCorrectAnswer":false}],"id":"tQ5ZzbV9D"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: true, value: 'Azure Ad Sign-in logs'}, {value: 'Azure AD Identity Protection', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Azure AD Authentication methods'}, {isCorrectAnswer: false, value: 'Azure AD Access review'}], id: 'tQ5ZzbV9D', references: {blocks: [{inlineStyleRanges: [{style: 'BOLD', offset: 25, length: 35}, {style: 'BOLD', length: 22, offset: 63}, {offset: 88, length: 12, style: 'BOLD'}], type: 'unstyled', data: {}, text: 'To review sign-ins go to Azure Active Directory admin center > Azure Active Directory > Sign-in logs.', depth: 0, entityRanges: [], key: '2rrnq'}, {data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1', key: '8uqsb', entityRanges: [{length: 105, key: 0, offset: 0}]}, {key: 'evcu4', type: 'unstyled', text: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins', entityRanges: [{key: 1, length: 91, offset: 0}], data: {}, inlineStyleRanges: [], depth: 0}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1'}}, 1: {data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}}}, question: {entityMap: {}, blocks: [{entityRanges: [], depth: 0, key: 'af5hk', inlineStyleRanges: [], data: {}, text: 'Your organization is currently using Microsoft 365. Your manager has asked you where he can go to audit the sign in\'s of any user with the user administrator role. Where you should tell him to go?', type: 'unstyled'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -62,21 +62,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -84,8 +84,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -93,15 +93,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -115,16 +114,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -175,12 +174,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

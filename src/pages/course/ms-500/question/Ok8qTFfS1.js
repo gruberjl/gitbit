@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"Ok8qTFfS1","answers":[{"value":"From the Microsoft 365 Admin Center grant John Global Access Permissions","isCorrectAnswer":false},{"value":"From the Microsoft 365 Admin Center license John with an Office 365 E3","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"From the Exchange Admin Center grant John the Organization Management role."},{"value":"From the Azure Active Directory Admin Center grant John the Application administrator role","isCorrectAnswer":false}],"references":{"blocks":[{"data":{},"entityRanges":[],"inlineStyleRanges":[],"depth":0,"text":"The Organization management Exchange Online admin role grants the user full control of Exchange Online while not providing any rights elsewhere.","type":"unstyled","key":"2o2c"},{"type":"unstyled","depth":0,"key":"95pm0","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","entityRanges":[{"length":95,"offset":0,"key":0}],"data":{}},{"entityRanges":[{"length":92,"key":1,"offset":0}],"data":{},"depth":0,"type":"unstyled","key":"2bfcv","inlineStyleRanges":[{"offset":0,"length":92,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","length":92,"offset":0},{"length":92,"style":"fontsize-16","offset":0},{"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":92}],"text":"https://www.iorad.com/player/1795870/MS-500---How-to-grant-user-Exchange-Online-Admin-Access"},{"key":"533lg","type":"ordered-list-item","data":{},"inlineStyleRanges":[],"entityRanges":[],"text":"In the Exchange Administration Center (EAC), navigate to Permissions > Admin Roles.","depth":0},{"type":"ordered-list-item","data":{},"entityRanges":[],"depth":0,"key":"7le02","inlineStyleRanges":[],"text":"Select the group: Organization Management and then click on Edit."},{"entityRanges":[],"inlineStyleRanges":[],"depth":0,"type":"ordered-list-item","key":"3edon","data":{},"text":"In the Members section, click on Add."},{"text":"Select the user you want to add to the role group, and click Add > OK > Save.","inlineStyleRanges":[],"type":"ordered-list-item","key":"4hmpa","entityRanges":[],"data":{},"depth":0}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"}},"1":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1795870/MS-500---How-to-grant-user-Exchange-Online-Admin-Access"},"type":"LINK"},"2":{"data":{"url":"https://help.bittitan.com/hc/en-us/articles/115008104507-How-do-I-assign-the-elevated-admin-role-Organization-Management-to-the-account-that-is-performing-a-","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"3":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/exchange/permissions-exo/permissions-exo","targetOption":"_blank"}}}},"question":{"entityMap":{},"blocks":[{"depth":0,"data":{},"text":"A new admin has started with your organization the new admin will need to manage Exchange Online. You've been asked to grant the new user the required permissions.\nWhat steps should you take to complete the task?","type":"unstyled","entityRanges":[],"key":"eklqe","inlineStyleRanges":[{"length":89,"offset":74,"style":"color-rgb(80,80,80)"},{"offset":74,"style":"bgcolor-rgb(255,255,255)","length":89},{"length":48,"offset":164,"style":"bgcolor-rgb(255,255,255)"},{"style":"fontsize-16","length":89,"offset":74},{"length":48,"offset":164,"style":"fontsize-16"},{"style":"fontfamily-Roboto Condensed\", sans-serif","length":89,"offset":74},{"length":48,"offset":164,"style":"color-rgb(33,37,41)"},{"offset":164,"length":48,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}]}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{key: '2o2c', inlineStyleRanges: [], entityRanges: [], data: {}, text: 'The Organization management Exchange Online admin role grants the user full control of Exchange Online while not providing any rights elsewhere.', type: 'unstyled', depth: 0}, {type: 'unstyled', entityRanges: [{offset: 0, length: 95, key: 0}], data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', inlineStyleRanges: [], key: '95pm0', depth: 0}, {inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 92, offset: 0}, {style: 'bgcolor-rgb(255,255,255)', length: 92, offset: 0}, {style: 'fontsize-16', length: 92, offset: 0}, {offset: 0, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 92}], depth: 0, type: 'unstyled', text: 'https://www.iorad.com/player/1795870/MS-500---How-to-grant-user-Exchange-Online-Admin-Access', key: '2bfcv', data: {}, entityRanges: [{length: 92, offset: 0, key: 1}]}, {data: {}, depth: 0, key: '533lg', entityRanges: [], text: 'In the Exchange Administration Center (EAC), navigate to Permissions > Admin Roles.', type: 'ordered-list-item', inlineStyleRanges: []}, {entityRanges: [], depth: 0, text: 'Select the group: Organization Management and then click on Edit.', data: {}, type: 'ordered-list-item', inlineStyleRanges: [], key: '7le02'}, {data: {}, entityRanges: [], type: 'ordered-list-item', depth: 0, inlineStyleRanges: [], key: '3edon', text: 'In the Members section, click on Add.'}, {entityRanges: [], depth: 0, data: {}, text: 'Select the user you want to add to the role group, and click Add > OK > Save.', type: 'ordered-list-item', inlineStyleRanges: [], key: '4hmpa'}], entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU'}, type: 'LINK'}, 1: {data: {url: 'https://www.iorad.com/player/1795870/MS-500---How-to-grant-user-Exchange-Online-Admin-Access', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 2: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://help.bittitan.com/hc/en-us/articles/115008104507-How-do-I-assign-the-elevated-admin-role-Organization-Management-to-the-account-that-is-performing-a-'}, type: 'LINK'}, 3: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/exchange/permissions-exo/permissions-exo', targetOption: '_blank'}}}}, question: {entityMap: {}, blocks: [{text: 'A new admin has started with your organization the new admin will need to manage Exchange Online. You\'ve been asked to grant the new user the required permissions.\nWhat steps should you take to complete the task?', inlineStyleRanges: [{offset: 74, length: 89, style: 'color-rgb(80,80,80)'}, {style: 'bgcolor-rgb(255,255,255)', length: 89, offset: 74}, {style: 'bgcolor-rgb(255,255,255)', length: 48, offset: 164}, {style: 'fontsize-16', length: 89, offset: 74}, {offset: 164, style: 'fontsize-16', length: 48}, {offset: 74, style: 'fontfamily-Roboto Condensed", sans-serif', length: 89}, {offset: 164, style: 'color-rgb(33,37,41)', length: 48}, {offset: 164, length: 48, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], type: 'unstyled', depth: 0, data: {}, entityRanges: [], key: 'eklqe'}]}, id: 'Ok8qTFfS1', answers: [{isCorrectAnswer: false, value: 'From the Microsoft 365 Admin Center grant John Global Access Permissions'}, {value: 'From the Microsoft 365 Admin Center license John with an Office 365 E3', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'From the Exchange Admin Center grant John the Organization Management role.'}, {value: 'From the Azure Active Directory Admin Center grant John the Application administrator role', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

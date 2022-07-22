@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Only employees who have an Azure AD user account","isCorrectAnswer":false},{"value":"Employees who have an Azure AD user account or a synced on-premises account","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Only employees who have a synced on-premises account"},{"isCorrectAnswer":false,"value":"Fix the synchronization server and install Azure AD Connect in staging mode"},{"value":"Fix the synchronization server and install an additional authentication agent","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Install an additional authentication agent and run the Start-ADSyncSyncCycle cmdlet"},{"value":"Install Azure AD Connect in staging mode and run the Start-ADSyncSyncCycle cmdlet","isCorrectAnswer":false}],"question":{"entityMap":{"0":{"mutability":"MUTABLE","type":"IMAGE","data":{"alignment":"left","alt":"AD Connect Setup","height":"auto","width":"auto","src":"https://i.ibb.co/VpsjVFh/ad-connect-setup.png"}},"1":{"type":"IMAGE","mutability":"MUTABLE","data":{"width":"auto","src":"https://i.ibb.co/CWcS1NP/ad-connect-status.png","height":"auto","alignment":"left","alt":"AD Connect Scheduler status"}}},"blocks":[{"inlineStyleRanges":[],"key":"3l77q","depth":0,"type":"unstyled","data":{},"text":"Your network contains an on-premises Active Directory domain that syncs to Azure Active Directory (Azure AD) as shown in the following exhibit.","entityRanges":[]},{"data":{},"inlineStyleRanges":[],"key":"4tnb1","depth":0,"type":"atomic","text":" ","entityRanges":[{"length":1,"key":0,"offset":0}]},{"text":"The synchronization schedule is configured as shown in the following exhibit.","entityRanges":[],"data":{},"depth":0,"type":"unstyled","inlineStyleRanges":[],"key":"dv9ht"},{"type":"atomic","data":{},"depth":0,"inlineStyleRanges":[],"text":" ","entityRanges":[{"key":1,"length":1,"offset":0}],"key":"bm5re"},{"data":{},"type":"unstyled","depth":0,"inlineStyleRanges":[{"length":51,"offset":0,"style":"color-rgb(80,80,80)"},{"length":51,"offset":0,"style":"bgcolor-rgb(255,255,255)"},{"offset":0,"style":"fontsize-16","length":51},{"length":51,"offset":0,"style":"fontfamily-Roboto Condensed\", sans-serif"}],"text":"Which employees can authenticate by using Azure AD?","key":"f2iao","entityRanges":[]},{"type":"unstyled","key":"7q87t","depth":0,"text":"What should you do to remove the warning for pass-through authentication?","entityRanges":[],"data":{},"inlineStyleRanges":[]}]},"references":{"blocks":[{"type":"unstyled","depth":0,"inlineStyleRanges":[],"key":"fdm35","data":{},"entityRanges":[],"text":"Users that have an Azure AD user account or a synced on-premises account can both authenticate. (Pass-through authentication does not affect cloud-only accounts)"},{"depth":0,"text":"The yellow exclamation mark is Microsoft warning you that you should have at least 2 pass-through authentication agents (in case one server fails).","key":"88p1k","inlineStyleRanges":[],"type":"unstyled","data":{},"entityRanges":[]},{"key":"ftho5","text":"There's also an issue with the synchronization server because the last sync time is 4 hours. A sync should run every 30 minutes.","entityRanges":[],"type":"unstyled","inlineStyleRanges":[],"depth":0,"data":{}},{"depth":0,"entityRanges":[{"offset":0,"key":0,"length":69}],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","inlineStyleRanges":[],"type":"unstyled","key":"e66bb","data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","targetOption":"_blank"}}}},"id":"-7MLm8ziu"},
+      test: {questions: [{answers: []}]},
+      question: {id: '-7MLm8ziu', references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{text: 'Users that have an Azure AD user account or a synced on-premises account can both authenticate. (Pass-through authentication does not affect cloud-only accounts)', entityRanges: [], data: {}, depth: 0, key: 'fdm35', inlineStyleRanges: [], type: 'unstyled'}, {data: {}, inlineStyleRanges: [], entityRanges: [], depth: 0, key: '88p1k', text: 'The yellow exclamation mark is Microsoft warning you that you should have at least 2 pass-through authentication agents (in case one server fails).', type: 'unstyled'}, {data: {}, text: 'There\'s also an issue with the synchronization server because the last sync time is 4 hours. A sync should run every 30 minutes.', key: 'ftho5', inlineStyleRanges: [], type: 'unstyled', depth: 0, entityRanges: []}, {text: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', depth: 0, data: {}, key: 'e66bb', type: 'unstyled', entityRanges: [{length: 69, offset: 0, key: 0}], inlineStyleRanges: []}]}, answers: [{value: 'Only employees who have an Azure AD user account', isCorrectAnswer: false}, {value: 'Employees who have an Azure AD user account or a synced on-premises account', isCorrectAnswer: true}, {value: 'Only employees who have a synced on-premises account', isCorrectAnswer: false}, {value: 'Fix the synchronization server and install Azure AD Connect in staging mode', isCorrectAnswer: false}, {value: 'Fix the synchronization server and install an additional authentication agent', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Install an additional authentication agent and run the Start-ADSyncSyncCycle cmdlet'}, {value: 'Install Azure AD Connect in staging mode and run the Start-ADSyncSyncCycle cmdlet', isCorrectAnswer: false}], question: {entityMap: {0: {type: 'IMAGE', data: {alignment: 'left', width: 'auto', alt: 'AD Connect Setup', height: 'auto', src: 'https://i.ibb.co/VpsjVFh/ad-connect-setup.png'}, mutability: 'MUTABLE'}, 1: {type: 'IMAGE', data: {height: 'auto', width: 'auto', src: 'https://i.ibb.co/CWcS1NP/ad-connect-status.png', alt: 'AD Connect Scheduler status', alignment: 'left'}, mutability: 'MUTABLE'}}, blocks: [{type: 'unstyled', key: '3l77q', inlineStyleRanges: [], data: {}, entityRanges: [], depth: 0, text: 'Your network contains an on-premises Active Directory domain that syncs to Azure Active Directory (Azure AD) as shown in the following exhibit.'}, {text: ' ', entityRanges: [{offset: 0, key: 0, length: 1}], depth: 0, key: '4tnb1', data: {}, type: 'atomic', inlineStyleRanges: []}, {text: 'The synchronization schedule is configured as shown in the following exhibit.', data: {}, inlineStyleRanges: [], depth: 0, entityRanges: [], key: 'dv9ht', type: 'unstyled'}, {depth: 0, data: {}, text: ' ', entityRanges: [{offset: 0, key: 1, length: 1}], inlineStyleRanges: [], key: 'bm5re', type: 'atomic'}, {entityRanges: [], data: {}, key: 'f2iao', type: 'unstyled', text: 'Which employees can authenticate by using Azure AD?', depth: 0, inlineStyleRanges: [{style: 'color-rgb(80,80,80)', length: 51, offset: 0}, {style: 'bgcolor-rgb(255,255,255)', length: 51, offset: 0}, {style: 'fontsize-16', offset: 0, length: 51}, {style: 'fontfamily-Roboto Condensed", sans-serif', offset: 0, length: 51}]}, {key: '7q87t', text: 'What should you do to remove the warning for pass-through authentication?', type: 'unstyled', inlineStyleRanges: [], data: {}, entityRanges: [], depth: 0}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

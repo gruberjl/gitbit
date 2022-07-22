@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":true,"value":"Group1"},{"value":"Group2","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Group3"},{"value":"Group4","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Group11"},{"isCorrectAnswer":false,"value":"Group12"},{"value":"Group13","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"Group14"}],"references":{"blocks":[{"depth":0,"entityRanges":[],"inlineStyleRanges":[],"text":"Labels can be applied to any group that has an email address.","data":{},"key":"fcm5p","type":"unstyled"},{"key":"a5cnr","data":{},"inlineStyleRanges":[],"entityRanges":[{"length":103,"offset":0,"key":0}],"depth":0,"type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf"},{"text":"https://docs.microsoft.com/en-us/azure/information-protection/prepare","type":"unstyled","inlineStyleRanges":[],"depth":0,"data":{},"entityRanges":[{"length":69,"key":1,"offset":0}],"key":"12ibg"}],"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf"},"type":"LINK","mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/azure/information-protection/prepare","targetOption":"_blank"}}}},"question":{"blocks":[{"inlineStyleRanges":[],"data":{},"key":"dbiq","depth":0,"entityRanges":[],"text":"Your network contains an on-premises Active Directory domain named contoso.com. The domain contains the groups shown in the following table.","type":"unstyled"},{"key":"ud99","depth":0,"inlineStyleRanges":[],"text":" ","entityRanges":[{"length":1,"key":0,"offset":0}],"data":{},"type":"atomic"},{"type":"unstyled","depth":0,"text":"The domain is synced to a Microsoft Azure Active Directory (Azure AD) tenant that contains the groups shown in the following table.","key":"5p4qs","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"data":{},"text":" ","type":"atomic","entityRanges":[{"key":1,"length":1,"offset":0}],"depth":0,"key":"bvvi5","inlineStyleRanges":[]},{"data":{},"text":"You create an Information Protection label policy named Policy1.","key":"akqei","depth":0,"inlineStyleRanges":[],"entityRanges":[],"type":"unstyled"},{"text":"You need to apply Policy1.","data":{},"depth":0,"inlineStyleRanges":[],"entityRanges":[],"key":"bmrsk","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[],"type":"unstyled","inlineStyleRanges":[],"text":"To which groups can you apply Policy1?","key":"5jrsu"}],"entityMap":{"0":{"mutability":"MUTABLE","type":"IMAGE","data":{"src":"https://i.ibb.co/K9qMwTt/group-type-chart.png","alignment":"left","width":"auto","height":"auto","alt":"Group Type Chart"}},"1":{"mutability":"MUTABLE","data":{"alignment":"left","height":"auto","width":"auto","src":"https://i.ibb.co/T27s5tb/group-type-assignment-chart.png","alt":"Group Type chart"},"type":"IMAGE"}}},"id":"ztPrHQ9d8"},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {height: 'auto', alignment: 'left', src: 'https://i.ibb.co/K9qMwTt/group-type-chart.png', alt: 'Group Type Chart', width: 'auto'}}, 1: {type: 'IMAGE', data: {alt: 'Group Type chart', height: 'auto', width: 'auto', src: 'https://i.ibb.co/T27s5tb/group-type-assignment-chart.png', alignment: 'left'}, mutability: 'MUTABLE'}}, blocks: [{type: 'unstyled', entityRanges: [], depth: 0, inlineStyleRanges: [], text: 'Your network contains an on-premises Active Directory domain named contoso.com. The domain contains the groups shown in the following table.', key: 'dbiq', data: {}}, {key: 'ud99', depth: 0, entityRanges: [{offset: 0, key: 0, length: 1}], data: {}, type: 'atomic', text: ' ', inlineStyleRanges: []}, {inlineStyleRanges: [], entityRanges: [], key: '5p4qs', data: {}, type: 'unstyled', depth: 0, text: 'The domain is synced to a Microsoft Azure Active Directory (Azure AD) tenant that contains the groups shown in the following table.'}, {data: {}, entityRanges: [{length: 1, offset: 0, key: 1}], key: 'bvvi5', depth: 0, inlineStyleRanges: [], text: ' ', type: 'atomic'}, {key: 'akqei', depth: 0, inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'You create an Information Protection label policy named Policy1.', entityRanges: []}, {data: {}, inlineStyleRanges: [], key: 'bmrsk', entityRanges: [], text: 'You need to apply Policy1.', depth: 0, type: 'unstyled'}, {inlineStyleRanges: [], text: 'To which groups can you apply Policy1?', type: 'unstyled', key: '5jrsu', depth: 0, data: {}, entityRanges: []}]}, answers: [{value: 'Group1', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Group2'}, {value: 'Group3', isCorrectAnswer: false}, {value: 'Group4', isCorrectAnswer: true}, {value: 'Group11', isCorrectAnswer: false}, {value: 'Group12', isCorrectAnswer: false}, {value: 'Group13', isCorrectAnswer: true}, {isCorrectAnswer: true, value: 'Group14'}], references: {entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/information-protection/prepare', targetOption: '_blank'}}}, blocks: [{entityRanges: [], type: 'unstyled', key: 'fcm5p', text: 'Labels can be applied to any group that has an email address.', depth: 0, data: {}, inlineStyleRanges: []}, {depth: 0, data: {}, inlineStyleRanges: [], entityRanges: [{length: 103, key: 0, offset: 0}], key: 'a5cnr', type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf'}, {inlineStyleRanges: [], entityRanges: [{key: 1, offset: 0, length: 69}], key: '12ibg', depth: 0, data: {}, text: 'https://docs.microsoft.com/en-us/azure/information-protection/prepare', type: 'unstyled'}]}, id: 'ztPrHQ9d8'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

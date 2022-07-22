@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"6CgII_FUB","references":{"blocks":[{"type":"unstyled","entityRanges":[],"inlineStyleRanges":[{"offset":93,"style":"color-rgb(33,37,41)","length":7},{"offset":112,"style":"color-rgb(33,37,41)","length":7},{"offset":150,"length":7,"style":"color-rgb(33,37,41)"},{"offset":93,"length":7,"style":"bgcolor-rgb(255,255,255)"},{"length":7,"style":"bgcolor-rgb(255,255,255)","offset":112},{"length":7,"style":"bgcolor-rgb(255,255,255)","offset":150},{"style":"fontsize-16","length":7,"offset":93},{"offset":112,"length":7,"style":"fontsize-16"},{"offset":150,"style":"fontsize-16","length":7},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":93,"length":7},{"offset":112,"length":7,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"},{"length":7,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":150}],"data":{},"key":"236vf","depth":0,"text":"*.malware.com would block all subdomains of malware.com. It would block www.malware.com, ftp.malware.com, 1.www.malware .com, etc. It would not block malware.com."},{"data":{},"inlineStyleRanges":[],"type":"unstyled","depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","entityRanges":[{"length":105,"offset":0,"key":0}],"key":"7lqv1"},{"entityRanges":[{"key":1,"length":161,"offset":0}],"key":"6b5eo","depth":0,"data":{},"text":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/tenant-allow-block-list?view=o365-worldwide#url-syntax-for-the-tenant-allowblock-list","inlineStyleRanges":[],"type":"unstyled"}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","targetOption":"_blank"}},"1":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/tenant-allow-block-list?view=o365-worldwide#url-syntax-for-the-tenant-allowblock-list"},"mutability":"MUTABLE","type":"LINK"}}},"answers":[{"value":"GitBit.phishing.malware.com","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"GitBit.malware.com"},{"isCorrectAnswer":true,"value":"malware.gitbit.org"},{"isCorrectAnswer":true,"value":"malware.com"}],"question":{"blocks":[{"data":{},"key":"5888u","text":"Your organization has a Microsoft 365 tenant with a primary domain of gitbit.org","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"depth":0},{"inlineStyleRanges":[],"type":"unstyled","text":"Your organization has the following safe links policy.","depth":0,"entityRanges":[],"key":"audof","data":{}},{"inlineStyleRanges":[],"key":"1p3pv","type":"atomic","entityRanges":[{"offset":0,"key":0,"length":1}],"depth":0,"data":{},"text":" "},{"text":"Which URL can users access from Microsoft Office Online?","depth":0,"type":"unstyled","key":"3go1h","entityRanges":[],"inlineStyleRanges":[],"data":{}}],"entityMap":{"0":{"data":{"alt":"URL Block List","alignment":"left","width":"auto","src":"https://i.ibb.co/K7dqRB9/Block-URLs.png","height":"auto"},"mutability":"MUTABLE","type":"IMAGE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {id: '6CgII_FUB', references: {blocks: [{key: '236vf', text: '*.malware.com would block all subdomains of malware.com. It would block www.malware.com, ftp.malware.com, 1.www.malware .com, etc. It would not block malware.com.', type: 'unstyled', inlineStyleRanges: [{style: 'color-rgb(33,37,41)', offset: 93, length: 7}, {style: 'color-rgb(33,37,41)', length: 7, offset: 112}, {style: 'color-rgb(33,37,41)', offset: 150, length: 7}, {offset: 93, length: 7, style: 'bgcolor-rgb(255,255,255)'}, {offset: 112, length: 7, style: 'bgcolor-rgb(255,255,255)'}, {offset: 150, length: 7, style: 'bgcolor-rgb(255,255,255)'}, {length: 7, style: 'fontsize-16', offset: 93}, {style: 'fontsize-16', offset: 112, length: 7}, {length: 7, offset: 150, style: 'fontsize-16'}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 93, length: 7}, {length: 7, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 112}, {length: 7, offset: 150, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], depth: 0, entityRanges: [], data: {}}, {text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', depth: 0, entityRanges: [{key: 0, length: 105, offset: 0}], data: {}, type: 'unstyled', key: '7lqv1', inlineStyleRanges: []}, {depth: 0, text: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/tenant-allow-block-list?view=o365-worldwide#url-syntax-for-the-tenant-allowblock-list', key: '6b5eo', entityRanges: [{key: 1, offset: 0, length: 161}], data: {}, inlineStyleRanges: [], type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL'}, type: 'LINK'}, 1: {data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/tenant-allow-block-list?view=o365-worldwide#url-syntax-for-the-tenant-allowblock-list'}, type: 'LINK', mutability: 'MUTABLE'}}}, answers: [{isCorrectAnswer: false, value: 'GitBit.phishing.malware.com'}, {value: 'GitBit.malware.com', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'malware.gitbit.org'}, {isCorrectAnswer: true, value: 'malware.com'}], question: {blocks: [{entityRanges: [], key: '5888u', depth: 0, inlineStyleRanges: [], data: {}, text: 'Your organization has a Microsoft 365 tenant with a primary domain of gitbit.org', type: 'unstyled'}, {key: 'audof', text: 'Your organization has the following safe links policy.', inlineStyleRanges: [], data: {}, depth: 0, entityRanges: [], type: 'unstyled'}, {entityRanges: [{length: 1, key: 0, offset: 0}], key: '1p3pv', data: {}, text: ' ', depth: 0, inlineStyleRanges: [], type: 'atomic'}, {type: 'unstyled', key: '3go1h', text: 'Which URL can users access from Microsoft Office Online?', entityRanges: [], inlineStyleRanges: [], data: {}, depth: 0}], entityMap: {0: {data: {width: 'auto', src: 'https://i.ibb.co/K7dqRB9/Block-URLs.png', height: 'auto', alignment: 'left', alt: 'URL Block List'}, type: 'IMAGE', mutability: 'MUTABLE'}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

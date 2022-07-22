@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":true,"value":"eDiscovery Manager"},{"value":"Security Operator","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"eDiscovery Administrator"},{"isCorrectAnswer":false,"value":"Global Reader"}],"references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/compliance/manage-gdpr-data-subject-requests-with-the-dsr-case-tool?view=o365-worldwide#step-1-assign-","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"}},"blocks":[{"data":{},"type":"unstyled","text":"An eDiscovery manager can only view and edit cases to which they have been granted access. They can't access or manage cases created by other eDiscovery Managers.","inlineStyleRanges":[],"depth":0,"key":"a89km","entityRanges":[]},{"data":{},"inlineStyleRanges":[],"depth":0,"key":"9e1r6","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","type":"unstyled","entityRanges":[{"key":0,"offset":0,"length":95}]},{"type":"unstyled","text":"https://docs.microsoft.com/en-us/microsoft-365/compliance/manage-gdpr-data-subject-requests-with-the-dsr-case-tool?view=o365-worldwide#step-1-assign- ediscovery-permissions-to-potential-case-members","entityRanges":[{"key":1,"length":198,"offset":0}],"data":{},"key":"auumg","inlineStyleRanges":[],"depth":0}]},"id":"p9HtoHv75","question":{"entityMap":{},"blocks":[{"type":"unstyled","data":{},"key":"99kfo","entityRanges":[],"inlineStyleRanges":[],"text":"You have a Microsoft 365 tenant that contains a user named User1.","depth":0},{"entityRanges":[],"text":"You have already created an eDiscovery case named CaseA.","inlineStyleRanges":[],"key":"4791e","type":"unstyled","depth":0,"data":{}},{"data":{},"inlineStyleRanges":[],"depth":0,"entityRanges":[],"text":"You need to allow John Gruber to export CaseA. Your organization requires you to use the principle of least privilege.","type":"unstyled","key":"6kap3"},{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"key":"7qjeq","type":"unstyled","text":"Which role should you grant to John Gruber to fulfill the request above?","data":{}}]}},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{entityRanges: [], text: 'You have a Microsoft 365 tenant that contains a user named User1.', data: {}, inlineStyleRanges: [], type: 'unstyled', key: '99kfo', depth: 0}, {inlineStyleRanges: [], key: '4791e', entityRanges: [], type: 'unstyled', text: 'You have already created an eDiscovery case named CaseA.', depth: 0, data: {}}, {inlineStyleRanges: [], text: 'You need to allow John Gruber to export CaseA. Your organization requires you to use the principle of least privilege.', type: 'unstyled', data: {}, depth: 0, key: '6kap3', entityRanges: []}, {depth: 0, text: 'Which role should you grant to John Gruber to fulfill the request above?', data: {}, inlineStyleRanges: [], entityRanges: [], type: 'unstyled', key: '7qjeq'}]}, id: 'p9HtoHv75', answers: [{isCorrectAnswer: true, value: 'eDiscovery Manager'}, {value: 'Security Operator', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'eDiscovery Administrator'}, {isCorrectAnswer: false, value: 'Global Reader'}], references: {blocks: [{type: 'unstyled', data: {}, text: 'An eDiscovery manager can only view and edit cases to which they have been granted access. They can\'t access or manage cases created by other eDiscovery Managers.', depth: 0, inlineStyleRanges: [], entityRanges: [], key: 'a89km'}, {text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', entityRanges: [{length: 95, key: 0, offset: 0}], data: {}, depth: 0, inlineStyleRanges: [], key: '9e1r6', type: 'unstyled'}, {key: 'auumg', text: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/manage-gdpr-data-subject-requests-with-the-dsr-case-tool?view=o365-worldwide#step-1-assign- ediscovery-permissions-to-potential-case-members', inlineStyleRanges: [], data: {}, type: 'unstyled', depth: 0, entityRanges: [{key: 1, offset: 0, length: 198}]}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/manage-gdpr-data-subject-requests-with-the-dsr-case-tool?view=o365-worldwide#step-1-assign-'}}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

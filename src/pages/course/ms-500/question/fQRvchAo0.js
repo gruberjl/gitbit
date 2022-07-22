@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"key":"eac8h","type":"unstyled","entityRanges":[],"depth":0,"inlineStyleRanges":[],"data":{},"text":"Your organization has a Microsoft Sentinel workspace that has a connector configured to Azure AD and Microsoft Office 365."},{"key":"dl0ge","type":"unstyled","depth":0,"inlineStyleRanges":[],"text":"You need to configure a Fusion rule template to detect multistage attacks where users sign in by using compromised credentials. Then they delete multiple files from Microsoft OneDrive.","data":{},"entityRanges":[]},{"key":"14fko","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"text":"What do you need to do after you create an active rule that has the default settings?","depth":0,"data":{}}]},"answers":[{"isCorrectAnswer":false,"value":"Setup data connectors."},{"isCorrectAnswer":true,"value":"Add a workbook."},{"isCorrectAnswer":false,"value":"Setup a playbook."},{"value":"Add a custom rule template.","isCorrectAnswer":false}],"id":"fQRvchAo0","references":{"blocks":[{"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Collect-detect-investigate-and-respond-to-security-threats-using-Microsoft-Sentinel-LEyZMWBSt","depth":0,"inlineStyleRanges":[],"entityRanges":[{"length":136,"key":0,"offset":0}],"key":"fhvtv","type":"unstyled"},{"depth":0,"inlineStyleRanges":[],"entityRanges":[{"key":1,"length":80,"offset":0}],"data":{},"type":"unstyled","text":"https://docs.microsoft.com/en-gb/azure/azure-monitor/platform/workbooks-overview","key":"6fug3"},{"inlineStyleRanges":[],"type":"unstyled","key":"aecsj","text":"Workbooks are a way to view the alerts so it would make sense to create one after activating a rule template.","depth":0,"entityRanges":[],"data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Collect-detect-investigate-and-respond-to-security-threats-using-Microsoft-Sentinel-LEyZMWBSt","targetOption":"_blank"},"type":"LINK"},"1":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-gb/azure/azure-monitor/platform/workbooks-overview"},"type":"LINK","mutability":"MUTABLE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{data: {}, type: 'unstyled', inlineStyleRanges: [], entityRanges: [{key: 0, length: 136, offset: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Collect-detect-investigate-and-respond-to-security-threats-using-Microsoft-Sentinel-LEyZMWBSt', depth: 0, key: 'fhvtv'}, {data: {}, key: '6fug3', depth: 0, inlineStyleRanges: [], entityRanges: [{key: 1, length: 80, offset: 0}], type: 'unstyled', text: 'https://docs.microsoft.com/en-gb/azure/azure-monitor/platform/workbooks-overview'}, {data: {}, inlineStyleRanges: [], key: 'aecsj', text: 'Workbooks are a way to view the alerts so it would make sense to create one after activating a rule template.', entityRanges: [], depth: 0, type: 'unstyled'}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Collect-detect-investigate-and-respond-to-security-threats-using-Microsoft-Sentinel-LEyZMWBSt', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-gb/azure/azure-monitor/platform/workbooks-overview', targetOption: '_blank'}}}}, answers: [{value: 'Setup data connectors.', isCorrectAnswer: false}, {value: 'Add a workbook.', isCorrectAnswer: true}, {value: 'Setup a playbook.', isCorrectAnswer: false}, {value: 'Add a custom rule template.', isCorrectAnswer: false}], question: {entityMap: {}, blocks: [{depth: 0, data: {}, key: 'eac8h', entityRanges: [], inlineStyleRanges: [], type: 'unstyled', text: 'Your organization has a Microsoft Sentinel workspace that has a connector configured to Azure AD and Microsoft Office 365.'}, {type: 'unstyled', depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'You need to configure a Fusion rule template to detect multistage attacks where users sign in by using compromised credentials. Then they delete multiple files from Microsoft OneDrive.', key: 'dl0ge', data: {}}, {type: 'unstyled', key: '14fko', entityRanges: [], inlineStyleRanges: [], text: 'What do you need to do after you create an active rule that has the default settings?', data: {}, depth: 0}]}, id: 'fQRvchAo0'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

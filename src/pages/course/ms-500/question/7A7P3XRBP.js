@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"A user risk policy","isCorrectAnswer":false},{"value":"A sign-in risk policy","isCorrectAnswer":false},{"value":"A named location in Azure Active Directory (Azure AD)","isCorrectAnswer":true},{"value":"An Azure MFA Server","isCorrectAnswer":false}],"question":{"blocks":[{"key":"6ifdh","text":"Your company has a main office and a Microsoft 365 subscription.","data":{},"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","depth":0},{"depth":0,"data":{},"type":"unstyled","inlineStyleRanges":[],"text":"You need to enforce Microsoft Azure Multi-Factor Authentication (MFA) by using conditional access for all users who are NOT physically present in the office.","entityRanges":[],"key":"au8te"},{"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","depth":0,"text":"What should you include in the configuration?","key":"93bpr","data":{}}],"entityMap":{}},"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh","targetOption":"_blank"}},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition"},"mutability":"MUTABLE"}},"blocks":[{"type":"unstyled","depth":0,"data":{},"inlineStyleRanges":[],"key":"ah32a","entityRanges":[],"text":"Named locations are required when you want to create a conditional access policy requiring MFA while excluding certain locations."},{"key":"a57dn","type":"unstyled","entityRanges":[{"key":0,"offset":0,"length":86}],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh","inlineStyleRanges":[],"data":{},"depth":0},{"data":{},"type":"unstyled","entityRanges":[{"key":1,"length":93,"offset":0}],"inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition","key":"ce4rr","depth":0}]},"id":"7A7P3XRBP"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'A user risk policy', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'A sign-in risk policy'}, {isCorrectAnswer: true, value: 'A named location in Azure Active Directory (Azure AD)'}, {isCorrectAnswer: false, value: 'An Azure MFA Server'}], references: {entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh'}, mutability: 'MUTABLE'}, 1: {type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition'}, mutability: 'MUTABLE'}}, blocks: [{key: 'ah32a', entityRanges: [], inlineStyleRanges: [], type: 'unstyled', data: {}, depth: 0, text: 'Named locations are required when you want to create a conditional access policy requiring MFA while excluding certain locations.'}, {inlineStyleRanges: [], type: 'unstyled', key: 'a57dn', text: 'https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh', depth: 0, entityRanges: [{length: 86, key: 0, offset: 0}], data: {}}, {inlineStyleRanges: [], data: {}, type: 'unstyled', entityRanges: [{offset: 0, length: 93, key: 1}], text: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition', depth: 0, key: 'ce4rr'}]}, id: '7A7P3XRBP', question: {entityMap: {}, blocks: [{key: '6ifdh', data: {}, text: 'Your company has a main office and a Microsoft 365 subscription.', depth: 0, entityRanges: [], inlineStyleRanges: [], type: 'unstyled'}, {data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [], text: 'You need to enforce Microsoft Azure Multi-Factor Authentication (MFA) by using conditional access for all users who are NOT physically present in the office.', key: 'au8te', depth: 0}, {entityRanges: [], key: '93bpr', data: {}, inlineStyleRanges: [], text: 'What should you include in the configuration?', type: 'unstyled', depth: 0}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

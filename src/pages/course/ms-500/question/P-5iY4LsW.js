@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":false,"value":"An alert will be created if User2 downloads 50 files in 30 seconds from the Montreal office."},{"value":"An alert will be created if User2 downloads one file per second for two minutes from the Seattle office.","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"An alert will be created if User1 downloads 40 files in 10 seconds from the New York office."}],"question":{"entityMap":{"0":{"data":{"src":"https://i.ibb.co/MDcKN4R/location-chart.png","height":"auto","alignment":"left","alt":"Location chart","width":"auto"},"mutability":"MUTABLE","type":"IMAGE"},"1":{"mutability":"MUTABLE","type":"IMAGE","data":{"alignment":"left","src":"https://i.ibb.co/cw2YC3W/users-chart.png","alt":"Users chart","width":"auto","height":"auto"}},"2":{"mutability":"MUTABLE","type":"IMAGE","data":{"src":"https://i.ibb.co/cQNvDmf/policy-filter.png","height":"auto","alignment":"left","width":"auto","alt":"Policy Filter"}},"3":{"data":{"alignment":"left","height":"auto","alt":"Policy Alert","width":"auto","src":"https://i.ibb.co/yXBMZm7/Policy-Alert.png"},"mutability":"MUTABLE","type":"IMAGE"}},"blocks":[{"type":"unstyled","key":"8vprs","entityRanges":[],"text":"Your organization has a Microsoft 365 tenant.","depth":0,"data":{},"inlineStyleRanges":[]},{"entityRanges":[],"type":"unstyled","depth":0,"data":{},"inlineStyleRanges":[],"text":"The organization has the offices shown below.","key":"a3ln6"},{"inlineStyleRanges":[],"data":{},"text":" ","depth":0,"key":"1eeo1","type":"atomic","entityRanges":[{"key":0,"length":1,"offset":0}]},{"depth":0,"key":"1r9kv","text":"The Microsoft 365 tenant has the following users.","inlineStyleRanges":[],"entityRanges":[],"data":{},"type":"unstyled"},{"entityRanges":[{"length":1,"key":1,"offset":0}],"depth":0,"inlineStyleRanges":[],"data":{},"key":"27nqr","text":" ","type":"atomic"},{"type":"unstyled","key":"5nibv","data":{},"depth":0,"text":"Your tenant has the following Microsoft Cloud App Security policy.","entityRanges":[],"inlineStyleRanges":[{"offset":0,"style":"color-rgb(80,80,80)","length":66},{"style":"bgcolor-rgb(255,255,255)","length":66,"offset":0},{"style":"fontsize-16","length":66,"offset":0},{"length":66,"offset":0,"style":"fontfamily-Roboto Condensed\", sans-serif"}]},{"depth":0,"key":"fbe54","entityRanges":[{"offset":0,"key":2,"length":1}],"inlineStyleRanges":[],"data":{},"text":" ","type":"atomic"},{"inlineStyleRanges":[],"text":"","data":{},"entityRanges":[],"type":"unstyled","key":"bjtno","depth":0},{"text":" ","inlineStyleRanges":[],"data":{},"key":"4qpph","type":"atomic","entityRanges":[{"key":3,"offset":0,"length":1}],"depth":0},{"data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0,"entityRanges":[],"key":"38sdi","text":"Check the box next to each true statement."}]},"references":{"blocks":[{"inlineStyleRanges":[],"data":{},"entityRanges":[],"key":"fqqbc","type":"unstyled","text":"Microsoft Defender for Cloud Apps reviews public IP addresses so Montreal is not covered. New York is also excluded by the IP address filter.","depth":0},{"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP","type":"unstyled","entityRanges":[{"key":0,"length":107,"offset":0}],"data":{},"key":"5jjp4","inlineStyleRanges":[]}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP","targetOption":"_blank"},"mutability":"MUTABLE"}}},"id":"P-5iY4LsW"},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{key: '8vprs', text: 'Your organization has a Microsoft 365 tenant.', data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', entityRanges: []}, {entityRanges: [], type: 'unstyled', depth: 0, inlineStyleRanges: [], key: 'a3ln6', data: {}, text: 'The organization has the offices shown below.'}, {entityRanges: [{key: 0, offset: 0, length: 1}], text: ' ', key: '1eeo1', depth: 0, inlineStyleRanges: [], type: 'atomic', data: {}}, {data: {}, entityRanges: [], type: 'unstyled', key: '1r9kv', inlineStyleRanges: [], text: 'The Microsoft 365 tenant has the following users.', depth: 0}, {inlineStyleRanges: [], type: 'atomic', depth: 0, key: '27nqr', text: ' ', entityRanges: [{length: 1, offset: 0, key: 1}], data: {}}, {data: {}, inlineStyleRanges: [{length: 66, offset: 0, style: 'color-rgb(80,80,80)'}, {length: 66, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {offset: 0, length: 66, style: 'fontsize-16'}, {length: 66, offset: 0, style: 'fontfamily-Roboto Condensed", sans-serif'}], entityRanges: [], key: '5nibv', type: 'unstyled', text: 'Your tenant has the following Microsoft Cloud App Security policy.', depth: 0}, {depth: 0, inlineStyleRanges: [], key: 'fbe54', entityRanges: [{key: 2, offset: 0, length: 1}], type: 'atomic', data: {}, text: ' '}, {key: 'bjtno', inlineStyleRanges: [], depth: 0, data: {}, type: 'unstyled', text: '', entityRanges: []}, {data: {}, type: 'atomic', key: '4qpph', text: ' ', entityRanges: [{offset: 0, key: 3, length: 1}], inlineStyleRanges: [], depth: 0}, {text: 'Check the box next to each true statement.', key: '38sdi', depth: 0, type: 'unstyled', entityRanges: [], data: {}, inlineStyleRanges: []}], entityMap: {0: {type: 'IMAGE', mutability: 'MUTABLE', data: {width: 'auto', alignment: 'left', src: 'https://i.ibb.co/MDcKN4R/location-chart.png', height: 'auto', alt: 'Location chart'}}, 1: {type: 'IMAGE', data: {height: 'auto', src: 'https://i.ibb.co/cw2YC3W/users-chart.png', alignment: 'left', alt: 'Users chart', width: 'auto'}, mutability: 'MUTABLE'}, 2: {type: 'IMAGE', data: {height: 'auto', alt: 'Policy Filter', src: 'https://i.ibb.co/cQNvDmf/policy-filter.png', alignment: 'left', width: 'auto'}, mutability: 'MUTABLE'}, 3: {data: {src: 'https://i.ibb.co/yXBMZm7/Policy-Alert.png', width: 'auto', alignment: 'left', alt: 'Policy Alert', height: 'auto'}, type: 'IMAGE', mutability: 'MUTABLE'}}}, answers: [{isCorrectAnswer: false, value: 'An alert will be created if User2 downloads 50 files in 30 seconds from the Montreal office.'}, {isCorrectAnswer: true, value: 'An alert will be created if User2 downloads one file per second for two minutes from the Seattle office.'}, {value: 'An alert will be created if User1 downloads 40 files in 10 seconds from the New York office.', isCorrectAnswer: false}], references: {blocks: [{text: 'Microsoft Defender for Cloud Apps reviews public IP addresses so Montreal is not covered. New York is also excluded by the IP address filter.', key: 'fqqbc', inlineStyleRanges: [], depth: 0, entityRanges: [], data: {}, type: 'unstyled'}, {entityRanges: [{length: 107, offset: 0, key: 0}], key: '5jjp4', inlineStyleRanges: [], data: {}, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP', depth: 0}], entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP', targetOption: '_blank'}, mutability: 'MUTABLE'}}}, id: 'P-5iY4LsW'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

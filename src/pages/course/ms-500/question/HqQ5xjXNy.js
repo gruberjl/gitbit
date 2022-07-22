@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","targetOption":"_blank"}},"1":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/office365/securitycompliance/dynamic-delivery-and-previewing","targetOption":"_blank"},"mutability":"MUTABLE"}},"blocks":[{"data":{},"inlineStyleRanges":[],"entityRanges":[],"key":"aq9gm","depth":0,"type":"unstyled","text":"Sometimes safe attachments cause a delay in email delivery. When you're users complain that there is a delay when receiving emails with attachments then this option may be for you. In short, the email will be delivered automatically to the user's inbox and then after the scanning is complete the attachment will show up."},{"entityRanges":[{"key":0,"length":105,"offset":0}],"inlineStyleRanges":[],"depth":0,"data":{},"key":"6nn73","text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","type":"unstyled"},{"type":"unstyled","depth":0,"entityRanges":[{"key":1,"length":93,"offset":0}],"key":"3id4q","text":"https://docs.microsoft.com/en-us/office365/securitycompliance/dynamic-delivery-and-previewing","data":{},"inlineStyleRanges":[]}]},"answers":[{"isCorrectAnswer":false,"value":"Set the action to block current and future messages and attachments with detected malware."},{"isCorrectAnswer":false,"value":"Add an exception for emails coming from gitbit.org"},{"isCorrectAnswer":false,"value":"Add a condition"},{"value":"Set the action to Dynamic Delivery","isCorrectAnswer":true}],"question":{"entityMap":{},"blocks":[{"inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses.","type":"unstyled","key":"f48pv","data":{},"entityRanges":[],"depth":0},{"depth":0,"entityRanges":[],"data":{},"text":"You've just implemented a Defender for Office 365 safe attachments policy for your entire organization.","type":"unstyled","key":"9sjqb","inlineStyleRanges":[]},{"data":{},"depth":0,"inlineStyleRanges":[],"type":"unstyled","key":"c7c6m","entityRanges":[],"text":"Your help desk is getting calls that emails containing attachments are taking a long to be received."},{"entityRanges":[],"key":"fj3du","type":"unstyled","inlineStyleRanges":[],"depth":0,"data":{},"text":"You need to reconfigure the safe attachments policy so emails are received more quickly but the attachments still need to be scanned for malware and any attachments with malware must be blocked."},{"type":"unstyled","inlineStyleRanges":[],"text":"How should you reconfigure the safe attachment policy?","entityRanges":[],"key":"4jaft","data":{},"depth":0}]},"id":"HqQ5xjXNy"},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{text: 'Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses.', type: 'unstyled', data: {}, entityRanges: [], depth: 0, key: 'f48pv', inlineStyleRanges: []}, {depth: 0, inlineStyleRanges: [], text: 'You\'ve just implemented a Defender for Office 365 safe attachments policy for your entire organization.', key: '9sjqb', type: 'unstyled', entityRanges: [], data: {}}, {entityRanges: [], depth: 0, key: 'c7c6m', inlineStyleRanges: [], type: 'unstyled', text: 'Your help desk is getting calls that emails containing attachments are taking a long to be received.', data: {}}, {text: 'You need to reconfigure the safe attachments policy so emails are received more quickly but the attachments still need to be scanned for malware and any attachments with malware must be blocked.', key: 'fj3du', data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [], depth: 0}, {entityRanges: [], type: 'unstyled', depth: 0, inlineStyleRanges: [], key: '4jaft', data: {}, text: 'How should you reconfigure the safe attachment policy?'}]}, answers: [{value: 'Set the action to block current and future messages and attachments with detected malware.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Add an exception for emails coming from gitbit.org'}, {isCorrectAnswer: false, value: 'Add a condition'}, {isCorrectAnswer: true, value: 'Set the action to Dynamic Delivery'}], references: {blocks: [{text: 'Sometimes safe attachments cause a delay in email delivery. When you\'re users complain that there is a delay when receiving emails with attachments then this option may be for you. In short, the email will be delivered automatically to the user\'s inbox and then after the scanning is complete the attachment will show up.', data: {}, type: 'unstyled', entityRanges: [], key: 'aq9gm', depth: 0, inlineStyleRanges: []}, {entityRanges: [{offset: 0, key: 0, length: 105}], key: '6nn73', inlineStyleRanges: [], depth: 0, data: {}, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL'}, {data: {}, depth: 0, inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/office365/securitycompliance/dynamic-delivery-and-previewing', type: 'unstyled', entityRanges: [{key: 1, length: 93, offset: 0}], key: '3id4q'}], entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL'}, mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/dynamic-delivery-and-previewing'}}}}, id: 'HqQ5xjXNy'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

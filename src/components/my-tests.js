@@ -1,5 +1,5 @@
-import { h } from "preact"
-import { useState, useEffect } from 'preact/hooks'
+import {h} from 'preact'
+import {useState, useEffect} from 'preact/hooks'
 import Button from '@mui/material/Button'
 import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
@@ -7,7 +7,7 @@ import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
 import TableHead from '@mui/material/TableHead'
 import TableRow from '@mui/material/TableRow'
-import { onAuthStateChanged } from "../components/firebase/on-auth-state-changed"
+import {onAuthStateChanged} from '../components/firebase/on-auth-state-changed'
 import getAllDocs from '../components/firebase/get-all-docs'
 import deleteDoc from '../components/firebase/delete-doc'
 
@@ -19,13 +19,12 @@ const MyTests = () => {
 
   useEffect(() => {
     if (isBrowser()) {
-      const onAuthStateChangedListener = onAuthStateChanged(user => {
+      const onAuthStateChangedListener = onAuthStateChanged((user) => {
         if (user) {
           setUid(user.uid)
           getAllDocs(`users/${user.uid}/tests`).then(setTests)
-        } else {
+        } else
           window.location.href = '/login'
-        }
       })
 
       return () => onAuthStateChangedListener()
@@ -35,13 +34,13 @@ const MyTests = () => {
   const deleteTest = (event) => {
     const id = event.target.dataset.id
     deleteDoc(`users/${uid}/tests`, id).then(() => {
-      const newTests = tests.filter(test => {
-        return test.id !== id;
+      const newTests = tests.filter((test) => {
+        return test.id !== id
       })
 
       setTests(newTests)
     }).catch((error) => {
-        console.error("Error removing document: ", error);
+      console.error('Error removing document: ', error)
     })
   }
 

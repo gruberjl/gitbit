@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Global administrator","isCorrectAnswer":false},{"value":"User administrator","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Privileged role administrator"},{"isCorrectAnswer":false,"value":"Security administrator"}],"id":"8OiMKi9ha","question":{"entityMap":{},"blocks":[{"entityRanges":[],"data":{},"key":"f10j4","depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"Your manager asks you to give John Gruber the ability to assign the reports reader role to other users. Your organization adheres to the principle of least privilege."},{"depth":0,"inlineStyleRanges":[],"text":"Which role should you assign to John Gruber?","type":"unstyled","entityRanges":[],"key":"dj7o5","data":{}}]},"references":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU"},"type":"LINK"},"1":{"data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/permissions-microsoft-365-compliance-security?view=o365-worldwide","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"key":"bfddk","type":"unstyled","entityRanges":[],"depth":0,"text":"Users with the privileged role administrator role can manage role assignments in Azure Active Directory. They can also enable, configure, and manage the Azure AD Privileged Identity Management. The privileged role administrators can assign other users with different admin roles. They cannot manage their own role permissions. For example, if John Gruber is assigned the privileged role administrator then John Gruber can assign UserA with the reports reader role.","data":{},"inlineStyleRanges":[]},{"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","data":{},"type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[{"offset":0,"key":0,"length":95}],"key":"cn28l"},{"inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/permissions-microsoft-365-compliance-security?view=o365-worldwide","entityRanges":[{"length":141,"key":1,"offset":0}],"depth":0,"key":"71uh0","data":{},"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {id: '8OiMKi9ha', answers: [{value: 'Global administrator', isCorrectAnswer: false}, {value: 'User administrator', isCorrectAnswer: false}, {value: 'Privileged role administrator', isCorrectAnswer: true}, {value: 'Security administrator', isCorrectAnswer: false}], references: {blocks: [{text: 'Users with the privileged role administrator role can manage role assignments in Azure Active Directory. They can also enable, configure, and manage the Azure AD Privileged Identity Management. The privileged role administrators can assign other users with different admin roles. They cannot manage their own role permissions. For example, if John Gruber is assigned the privileged role administrator then John Gruber can assign UserA with the reports reader role.', type: 'unstyled', entityRanges: [], depth: 0, key: 'bfddk', data: {}, inlineStyleRanges: []}, {depth: 0, key: 'cn28l', inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', entityRanges: [{length: 95, offset: 0, key: 0}]}, {inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/permissions-microsoft-365-compliance-security?view=o365-worldwide', depth: 0, type: 'unstyled', data: {}, key: '71uh0', entityRanges: [{key: 1, length: 141, offset: 0}]}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/permissions-microsoft-365-compliance-security?view=o365-worldwide', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}}}, question: {blocks: [{inlineStyleRanges: [], depth: 0, data: {}, text: 'Your manager asks you to give John Gruber the ability to assign the reports reader role to other users. Your organization adheres to the principle of least privilege.', type: 'unstyled', key: 'f10j4', entityRanges: []}, {data: {}, text: 'Which role should you assign to John Gruber?', key: 'dj7o5', inlineStyleRanges: [], entityRanges: [], type: 'unstyled', depth: 0}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

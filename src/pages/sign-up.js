@@ -1,5 +1,5 @@
-import { h } from "preact"
-import { useState } from 'preact/hooks'
+import {h} from 'preact'
+import {useState} from 'preact/hooks'
 import Page from '../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -19,20 +19,20 @@ const SignUpPage = () => {
 
   const submit = () => {
     createUserWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const data = {
-          id: userCredential.user.uid,
-          role: 'student',
-          uid: userCredential.user.uid
-        }
-        saveDoc('courses/MS-500/users/', data)
-        window.location.href = '/dashboard'
-      })
-      .catch((error) => {
-        console.log(error.code)
-        console.log(error.message)
-        setErr(error.message)
-      })
+        .then((userCredential) => {
+          const data = {
+            id: userCredential.user.uid,
+            role: 'student',
+            uid: userCredential.user.uid
+          }
+          saveDoc('courses/MS-500/users/', data)
+          window.location.href = '/dashboard'
+        })
+        .catch((error) => {
+          console.log(error.code)
+          console.log(error.message)
+          setErr(error.message)
+        })
   }
 
   return (
@@ -41,11 +41,11 @@ const SignUpPage = () => {
         <Container>
           <Grid container justifyContent="center">
             <Grid item>
-              <Typography component="h1" variant="h2" sx={{mt:4, mb:4}}>Sign up for free to start learning!</Typography>
+              <Typography component="h1" variant="h2" sx={{mt: 4, mb: 4}}>Sign up for free to start learning!</Typography>
               <Box component="form">
                 <Stack spacing={2}>
-                  <TextField label="Email" variant="outlined" type='email' value={email} onChange={e => setEmail(e.target.value)} helperText="We don't share your email." />
-                  <TextField label="Password" variant="outlined" type='password' value={password} onChange={e => setPassword(e.target.value)} />
+                  <TextField label="Email" variant="outlined" type='email' value={email} onChange={(e) => setEmail(e.target.value)} helperText="We don't share your email." />
+                  <TextField label="Password" variant="outlined" type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                   { err === '' ? null :
                     <Alert severity="error">
                       {err}

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Disable the delayed updates option for the Microsoft Defender for Identity sensors.","isCorrectAnswer":false},{"value":"Enable auditing in the Office 365 Security & Compliance center.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Enable the delayed updates option for the Microsoft Defender for Identity sensors."},{"value":"Integrate the third-party SIEM solution with Microsoft Defender for identity.","isCorrectAnswer":true}],"question":{"entityMap":{},"blocks":[{"depth":0,"data":{},"type":"unstyled","entityRanges":[],"key":"9bi1q","text":"Your organization has an on-premises Active Directory domain that runs Windows Server 2022 servers and has advanced auditing enabled. Your organization is already collecting the servers' security logs using a third-party SIEM solution.","inlineStyleRanges":[]},{"depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"text":"Your organization has purchased a Microsoft 365 tenant and your manager has asked you to deploy Microsoft Defender for identity by using standalone sensors.","key":"7e2p1","type":"unstyled"},{"inlineStyleRanges":[],"type":"unstyled","text":"You need to configure the Defender for Identity standalone sensor to detect when certain sensitive groups are updated and any time malicious services are created.","depth":0,"data":{},"entityRanges":[],"key":"ckv72"},{"key":"5jeqb","data":{},"entityRanges":[],"depth":0,"inlineStyleRanges":[],"text":"How can you fulfill your manager's request?","type":"unstyled"}]},"id":"L1SBGW44b","references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-event-forwarding"},"mutability":"MUTABLE"}},"blocks":[{"entityRanges":[],"data":{},"text":"You'll need to integrate a SIEM and Defender for Identity when you're using a third-party SIEM solution and you want Defender for Identity to detect when sensitive groups are modified and when malicious services are created. In short, anytime you want Defender for Identity to alert when the SIEM solution picks up an issue.","depth":0,"key":"5ild6","inlineStyleRanges":[],"type":"unstyled"},{"data":{},"entityRanges":[{"offset":0,"length":90,"key":0}],"key":"bkm9o","type":"unstyled","depth":0,"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA"},{"text":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-event-forwarding ","entityRanges":[{"length":92,"offset":0,"key":1}],"key":"6vb60","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{type: 'unstyled', inlineStyleRanges: [], depth: 0, key: '5ild6', data: {}, text: 'You\'ll need to integrate a SIEM and Defender for Identity when you\'re using a third-party SIEM solution and you want Defender for Identity to detect when sensitive groups are modified and when malicious services are created. In short, anytime you want Defender for Identity to alert when the SIEM solution picks up an issue.', entityRanges: []}, {text: 'https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA', entityRanges: [{length: 90, key: 0, offset: 0}], key: 'bkm9o', depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled'}, {depth: 0, key: '6vb60', text: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-event-forwarding ', entityRanges: [{key: 1, length: 92, offset: 0}], data: {}, inlineStyleRanges: [], type: 'unstyled'}], entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-event-forwarding'}, type: 'LINK'}}}, question: {blocks: [{entityRanges: [], inlineStyleRanges: [], depth: 0, type: 'unstyled', text: 'Your organization has an on-premises Active Directory domain that runs Windows Server 2022 servers and has advanced auditing enabled. Your organization is already collecting the servers\' security logs using a third-party SIEM solution.', key: '9bi1q', data: {}}, {text: 'Your organization has purchased a Microsoft 365 tenant and your manager has asked you to deploy Microsoft Defender for identity by using standalone sensors.', data: {}, inlineStyleRanges: [], depth: 0, key: '7e2p1', entityRanges: [], type: 'unstyled'}, {key: 'ckv72', inlineStyleRanges: [], data: {}, depth: 0, entityRanges: [], type: 'unstyled', text: 'You need to configure the Defender for Identity standalone sensor to detect when certain sensitive groups are updated and any time malicious services are created.'}, {text: 'How can you fulfill your manager\'s request?', data: {}, entityRanges: [], key: '5jeqb', depth: 0, type: 'unstyled', inlineStyleRanges: []}], entityMap: {}}, answers: [{value: 'Disable the delayed updates option for the Microsoft Defender for Identity sensors.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Enable auditing in the Office 365 Security & Compliance center.'}, {isCorrectAnswer: false, value: 'Enable the delayed updates option for the Microsoft Defender for Identity sensors.'}, {value: 'Integrate the third-party SIEM solution with Microsoft Defender for identity.', isCorrectAnswer: true}], id: 'L1SBGW44b'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

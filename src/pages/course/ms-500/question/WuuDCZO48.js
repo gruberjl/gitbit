@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{"0":{"data":{"width":"auto","src":"https://i.ibb.co/SKq0RCg/user-mailbox-mfa.png","alignment":"left","alt":"User Mailbox MFA Chart","height":"auto"},"mutability":"MUTABLE","type":"IMAGE"}},"blocks":[{"entityRanges":[],"key":"8p5s3","data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0,"text":"Your organization has a hybrid Microsoft 365 tenant with an Exchange on-premises server."},{"entityRanges":[{"length":1,"offset":0,"key":0}],"inlineStyleRanges":[],"text":" ","depth":0,"key":"3epeq","type":"atomic","data":{}},{"depth":0,"inlineStyleRanges":[],"data":{},"type":"unstyled","key":"6qh1h","entityRanges":[],"text":"You've been asked to implement Microsoft 365 Attack Simulator but before you do your manager needs to know who can receive the fake threats."},{"key":"3b2tn","inlineStyleRanges":[],"entityRanges":[],"type":"unstyled","data":{},"text":"Which users should you tell your boss can receive the attack simulation fake threats?","depth":0}]},"answers":[{"isCorrectAnswer":false,"value":"User1"},{"value":"User2","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"User3"},{"isCorrectAnswer":true,"value":"User4"}],"id":"WuuDCZO48","references":{"blocks":[{"depth":0,"entityRanges":[],"type":"unstyled","inlineStyleRanges":[],"text":"Each targeted recipient must have an Exchange Online mailbox.","key":"3katt","data":{}},{"entityRanges":[{"key":0,"length":90,"offset":0}],"data":{},"depth":0,"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK ","key":"6rr01","type":"unstyled"},{"type":"unstyled","inlineStyleRanges":[],"key":"5chl6","entityRanges":[{"key":1,"length":112,"offset":0}],"data":{},"depth":0,"text":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulator?view=o365-worldwide "}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulator?view=o365-worldwide","targetOption":"_blank"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: false, value: 'User1'}, {value: 'User2', isCorrectAnswer: false}, {value: 'User3', isCorrectAnswer: true}, {value: 'User4', isCorrectAnswer: true}], question: {blocks: [{text: 'Your organization has a hybrid Microsoft 365 tenant with an Exchange on-premises server.', key: '8p5s3', type: 'unstyled', entityRanges: [], inlineStyleRanges: [], data: {}, depth: 0}, {type: 'atomic', entityRanges: [{key: 0, length: 1, offset: 0}], text: ' ', key: '3epeq', data: {}, depth: 0, inlineStyleRanges: []}, {key: '6qh1h', text: 'You\'ve been asked to implement Microsoft 365 Attack Simulator but before you do your manager needs to know who can receive the fake threats.', type: 'unstyled', entityRanges: [], inlineStyleRanges: [], data: {}, depth: 0}, {data: {}, text: 'Which users should you tell your boss can receive the attack simulation fake threats?', inlineStyleRanges: [], type: 'unstyled', key: '3b2tn', depth: 0, entityRanges: []}], entityMap: {0: {type: 'IMAGE', mutability: 'MUTABLE', data: {height: 'auto', alignment: 'left', alt: 'User Mailbox MFA Chart', width: 'auto', src: 'https://i.ibb.co/SKq0RCg/user-mailbox-mfa.png'}}}}, id: 'WuuDCZO48', references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK', targetOption: '_blank'}, type: 'LINK'}, 1: {type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulator?view=o365-worldwide'}, mutability: 'MUTABLE'}}, blocks: [{data: {}, type: 'unstyled', text: 'Each targeted recipient must have an Exchange Online mailbox.', entityRanges: [], key: '3katt', depth: 0, inlineStyleRanges: []}, {text: 'https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK ', entityRanges: [{length: 90, offset: 0, key: 0}], data: {}, depth: 0, type: 'unstyled', inlineStyleRanges: [], key: '6rr01'}, {type: 'unstyled', inlineStyleRanges: [], entityRanges: [{length: 112, offset: 0, key: 1}], text: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/attack-simulator?view=o365-worldwide ', data: {}, key: '5chl6', depth: 0}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

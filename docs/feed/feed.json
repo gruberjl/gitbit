@@ -1,0 +1,362 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Training for MS-500: Microsoft Office 365 Security Admin",
+    "home_page_url": "https://www.gitbit.org/blog",
+    "feed_url": "https://www.gitbit.org/feed/feed.json",
+    "description": "Learn, prepare and training for the Microsoft Microsoft Office 365 Exam MS-500: Microsoft 365 Security Administration MS-500 exam",
+    "icon": "https://www.gitbit.org/images/gitbit-logo-1200x675.png",
+    "author": {
+        "name": "John Gruber",
+        "url": "https://www.gitbit.org"
+    },
+    "items": [
+        {
+            "id": "https://www.gitbit.org/blog/top-11-tips-and-tricks-for-using-microsoft-onedrive",
+            "url": "https://www.gitbit.org/blog/top-11-tips-and-tricks-for-using-microsoft-onedrive",
+            "title": "Top 11 Tips and Tricks for Using Microsoft OneDrive",
+            "summary": "with OneDrive you can keep items on your local device and sync them to the cloud. That way your files are available while you don't have an internet connection but are still backed up to the cloud as soon as you connect!",
+            "image": "https://miro.medium.com/max/1200/1*sfDRk0sFrRgZ5ib7BOBQ_w.png",
+            "date_modified": "2021-08-06T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/13-ways-to-make-microsoft-lists-work-for-you",
+            "url": "https://www.gitbit.org/blog/13-ways-to-make-microsoft-lists-work-for-you",
+            "title": "13 Ways to Make Microsoft Lists Work for You",
+            "summary": "Microsoft Lists is a new app that is available with Microsoft 365. With Microsoft Lists, you can create a list to organize information. Store, share and collaborate with others in a clean list…",
+            "image": "https://miro.medium.com/max/1200/1*DsNJyGjMb37x7GMWGNgnQw.png",
+            "date_modified": "2020-11-24T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/30-advanced-tips-for-becoming-a-microsoft-teams-power-user",
+            "url": "https://www.gitbit.org/blog/30-advanced-tips-for-becoming-a-microsoft-teams-power-user",
+            "title": "30 Advanced Tips for Becoming a Microsoft Teams Power User",
+            "summary": "Microsoft Teams is a communication platform much like Slack that combines one on one & team chat, video meetings, and file storage. Teams also has a number of application integrations that can be…",
+            "image": "https://miro.medium.com/max/1200/1*qRhUy_LCV-zZDIc1z8DL5w.png",
+            "date_modified": "2020-10-14T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/10-tips-for-improving-productivity-using-word",
+            "url": "https://www.gitbit.org/blog/10-tips-for-improving-productivity-using-word",
+            "title": "10 Tips for Improving Productivity using Word",
+            "summary": "While working for Microsoft, Charles Simonyi and Richard Brodie developed the first version of Microsoft Word. The two developers chipped away at Xerox Bravo, the principal WYSIWYG (What You See Is…",
+            "image": "https://miro.medium.com/max/1200/1*Rg_5e2z8nlnKnRvEKHHOrQ.png",
+            "date_modified": "2019-10-18T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/ultimate-guide-automating-medium-to-twitter",
+            "url": "https://www.gitbit.org/blog/ultimate-guide-automating-medium-to-twitter",
+            "title": "Ultimate Guide: Automating Medium to Twitter",
+            "summary": "But why should marketing take half your time? Get it off your plate so you can focus on the more creative processes. I know what you’re thinking… Automatically posting a tweet when you publish a…",
+            "image": "https://miro.medium.com/max/642/1*0Cl30s78fnG98LRd8t0dwA.png",
+            "date_modified": "2019-06-26T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/introduction-to-email-threats--defense",
+            "url": "https://www.gitbit.org/blog/introduction-to-email-threats--defense",
+            "title": "Introduction to Email Threats & Defense",
+            "summary": "There’s a constant threat to your organization. Email is one of the most common ways hackers attempt to breach your organization’s security. Over half of the messages received are spam, phishing…",
+            "image": "https://miro.medium.com/max/1200/1*Ijemqp-iDELaFM_DK0PX0g.png",
+            "date_modified": "2019-06-10T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/reset-passwords-in-office-365-how-to-reset-passwords-in-office-365",
+            "url": "https://www.gitbit.org/blog/reset-passwords-in-office-365-how-to-reset-passwords-in-office-365",
+            "title": "Reset Passwords in Office 365. How to reset passwords in Office 365",
+            "summary": "Like most IT services and applications Office 365 is secured with passwords. People will occasionally forget their password and a reset will be required. Since every organization has different needs…",
+            "image": "https://miro.medium.com/max/588/1*N58qbHvqifsYw3wm4Fv_6A.png",
+            "date_modified": "2018-12-13T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/office-365--ad-connect-manage-groups",
+            "url": "https://www.gitbit.org/blog/office-365--ad-connect-manage-groups",
+            "title": "Office 365 + AD Connect: Manage Groups",
+            "summary": "If you are using Office 365 with AD Connect your groups are probably in your on-premise Active Directory. If your groups are being synced from your own premises Active Directory, you won’t be able to…",
+            "image": "https://miro.medium.com/max/712/1*vnQl6oW3O8X_2EyEmEe1oA.png",
+            "date_modified": "2018-12-11T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/hide-user-from-address-lists-ad-connect",
+            "url": "https://www.gitbit.org/blog/hide-user-from-address-lists-ad-connect",
+            "title": "Hide User from Address Lists (AD Connect)",
+            "summary": "How to hide a user from the address book in Office 365 when using AD Connect",
+            "image": "https://miro.medium.com/max/712/1*nSGfArEq7cmtEwXqn0Pavg.png",
+            "date_modified": "2018-11-02T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/8-reasons-startups-choose-office-365",
+            "url": "https://www.gitbit.org/blog/8-reasons-startups-choose-office-365",
+            "title": "8 Reasons Startups Choose Office 365",
+            "summary": "Before I get started I’d like to note: This isn’t a G-Suite vs Office 365 or anything else vs Office 365. This is a breakdown of the best parts of Office 365. There’s a lot of great options for…",
+            "image": "https://miro.medium.com/max/1200/1*5WDkCFfsNRXviWiQReDefw.jpeg",
+            "date_modified": "2018-10-22T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/connect-powershell-to-exchange-online",
+            "url": "https://www.gitbit.org/blog/connect-powershell-to-exchange-online",
+            "title": "Connect PowerShell to Exchange Online",
+            "summary": "Office 365 is a suite of clouds and services bundled into one package. Connecting to Exchange Online’s PowerShell will allow you to manage the email portion of your Office 365 tenant.",
+            "image": "https://miro.medium.com/max/859/1*CLmyTy4bL13Rd2fZ12529Q.png",
+            "date_modified": "2018-10-19T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/mac-s-onedrive-for-business-microsoft-vs-apple-is-one-of-the",
+            "url": "https://www.gitbit.org/blog/mac-s-onedrive-for-business-microsoft-vs-apple-is-one-of-the",
+            "title": "Mac ❤’s OneDrive for Business. Microsoft vs Apple is one of the…",
+            "summary": "Everything you need to know to start using OneDrive on Mac",
+            "image": "https://miro.medium.com/max/1200/1*gmbdfxFBGhLBnLbXjfLuLQ.png",
+            "date_modified": "2018-10-18T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/6-concepts-to-master-codeless-automation",
+            "url": "https://www.gitbit.org/blog/6-concepts-to-master-codeless-automation",
+            "title": "6 Concepts to Master Codeless Automation",
+            "summary": "Some days it seems impossible to get everything done. As time goes by hectic days become normal. Racing through tasks and grinding through the daily routines without missing a beat becomes a…",
+            "image": "https://miro.medium.com/max/1200/1*SIb-7xHwfHKsPU2YMxoJUA.png",
+            "date_modified": "2018-10-14T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/10-writing-tips-for-microsoft-word",
+            "url": "https://www.gitbit.org/blog/10-writing-tips-for-microsoft-word",
+            "title": "10 Writing Tips for Microsoft Word",
+            "summary": "10 tips to save you time and stay organized. Microsoft Word 2016 is built for maximum productivity. Quickly produce professional documents using the rich authoring features.",
+            "image": "https://miro.medium.com/max/1200/1*soXE-MymVVp4327bzccbpA.jpeg",
+            "date_modified": "2018-10-13T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/whats-onedrive-for-business-enterprise-file-sync-and-share",
+            "url": "https://www.gitbit.org/blog/whats-onedrive-for-business-enterprise-file-sync-and-share",
+            "title": "What’s OneDrive for Business. Enterprise File Sync and Share",
+            "summary": "The world is changing. Data is growing at a rapid pace. By 2020 the world will have accumulated 44 zettabytes or 44,000,000,000,000 GB of data.",
+            "image": "https://miro.medium.com/max/1187/1*JZH5y9EsQeEhRxaolsLipw.png",
+            "date_modified": "2018-10-12T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/codeless-automation-ifttt-vs-zapier-vs-microsoft-flow",
+            "url": "https://www.gitbit.org/blog/codeless-automation-ifttt-vs-zapier-vs-microsoft-flow",
+            "title": "Codeless Automation: IFTTT vs Zapier vs Microsoft Flow",
+            "summary": "With IFTTT’s total fund raising at over 62 million dollars the codelesss automation workspace has really heated up. With products like IFTTT, Zapier, and Microsoft Flow on the market, automating…",
+            "image": "https://miro.medium.com/max/1200/1*-uNwn8p2fGeJFz1TAvoQmQ.png",
+            "date_modified": "2018-10-10T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/improving-teamwork-and-collaboration-with-microsoft-teams",
+            "url": "https://www.gitbit.org/blog/improving-teamwork-and-collaboration-with-microsoft-teams",
+            "title": "Improving Teamwork and Collaboration with Microsoft Teams",
+            "summary": "Microsoft Teams is a collaboration hub built around group chat with a fast growing list of connections to all the apps your team needs. Microsoft has developed apps for every device. Use the…",
+            "image": "https://miro.medium.com/max/1200/1*lu07WwPtQxi3E-JM6mupAA.jpeg",
+            "date_modified": "2018-09-17T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/what-is-office-365-office-365-is-microsofts-cloud-for",
+            "url": "https://www.gitbit.org/blog/what-is-office-365-office-365-is-microsofts-cloud-for",
+            "title": "What Is Office 365?. Office 365 is Microsoft’s cloud for…",
+            "summary": "Office 365 is Microsoft’s cloud for businesses. Designed around productivity and collaboration, Microsoft has integrated over 30 apps into the cloud platform. From email, file storage, and secure…",
+            "image": "https://miro.medium.com/max/1200/0*cGOLIwkj_pYA9pAt.JPG",
+            "date_modified": "2018-04-17T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/5-apps-to-connect-to-microsoft-teams",
+            "url": "https://www.gitbit.org/blog/5-apps-to-connect-to-microsoft-teams",
+            "title": "5 Apps to Connect to Microsoft Teams",
+            "summary": "Microsoft Teams is quickly becoming the hub for teamwork within Office 365. A team can chat via text, voice, and video. Microsoft Teams can connect people and apps together.",
+            "image": "https://miro.medium.com/max/1200/1*xU1xKF2sXw-hDqkJuMpxbg.jpeg",
+            "date_modified": "2018-02-09T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/interview-with-simon-chan-on-the-future-of-microsoft-to-do",
+            "url": "https://www.gitbit.org/blog/interview-with-simon-chan-on-the-future-of-microsoft-to-do",
+            "title": "Interview with Simon Chan on the Future of Microsoft To-Do",
+            "summary": "Meet Simon Chan. After developing Wunderlist’s client base to 20 mil, he joined Microsoft as Senior Product Manager of To-Do. Find out about the eventual fate of To-Do and how Simon intends to proceed",
+            "image": "https://miro.medium.com/max/1200/1*t2GmJE7phLo75UsqCeiurw.jpeg",
+            "date_modified": "2018-02-05T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/10-reasons-sharepoint-online-destroys-file-shares",
+            "url": "https://www.gitbit.org/blog/10-reasons-sharepoint-online-destroys-file-shares",
+            "title": "10 Reasons SharePoint Online Destroys File Shares",
+            "summary": "The IT department of the future leads the business driving innovation. We streamline the day to day, improve customer experience, and help the sales team close more deals!",
+            "image": "https://miro.medium.com/max/1200/1*px7gQaOUIJmLN2LhwNgyFQ.jpeg",
+            "date_modified": "2018-02-01T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/5-steps-to-being-more-productive-using-microsoft-to-do",
+            "url": "https://www.gitbit.org/blog/5-steps-to-being-more-productive-using-microsoft-to-do",
+            "title": "5 Steps to Being More Productive Using Microsoft To-Do",
+            "summary": "Microsoft To-Do is one of the latest apps to be included in Office 365. It’s a simple to-do list that makes it easy to plan your day. Whether it’s for work, school or home, To-Do will help you…",
+            "image": "https://miro.medium.com/max/505/1*e2eAae92fZFoVRa8lcLaYw.png",
+            "date_modified": "2018-01-27T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/how-to-stop-managing-and-start-meeting-deadlines",
+            "url": "https://www.gitbit.org/blog/how-to-stop-managing-and-start-meeting-deadlines",
+            "title": "How to Stop Managing and Start Meeting Deadlines",
+            "summary": "Scrum is the leading agile development methodology, used by Fortune 500 companies around the world. Planner is Microsoft Office 365’s task management app designed for agile teams.",
+            "image": "https://miro.medium.com/max/999/1*85HOtkEcI2oQJxalNeWYAQ.png",
+            "date_modified": "2018-01-19T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/13-outlook-productivity--organization-tips",
+            "url": "https://www.gitbit.org/blog/13-outlook-productivity--organization-tips",
+            "title": "13 Outlook Productivity & Organization Tips",
+            "summary": "Microsoft Outlook is a personal information manager from Microsoft, accessible as a piece of the Microsoft Office suite. Albeit often used as an email application, it likewise incorporates a…",
+            "image": "https://miro.medium.com/max/1200/1*5s_KoLjkCsFe9-eXmTY38g.jpeg",
+            "date_modified": "2019-01-23T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/19-reasons-exchange-online-is-winning",
+            "url": "https://www.gitbit.org/blog/19-reasons-exchange-online-is-winning",
+            "title": "19 Reasons Exchange Online is Winning",
+            "summary": "Exchange Online is Microsoft’s hosted email for businesses. It’s the industry-leading cloud solution adopted by small businesses and fortune 500 companies. Microsoft Exchange Online provides the…",
+            "image": "https://miro.medium.com/max/1200/1*06thNHYNsN-FgSa_w4GhaQ.jpeg",
+            "date_modified": "2019-01-19T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/microsoft-adds-free-form-digital-canvas-to-office-365",
+            "url": "https://www.gitbit.org/blog/microsoft-adds-free-form-digital-canvas-to-office-365",
+            "title": "Microsoft Adds Free-form Digital Canvas to Office 365",
+            "summary": "Microsoft Whiteboard is a freeform digital canvas where people, ideas, and content come together. Microsoft Whiteboard Preview is the next version of the existing Microsoft Whiteboard app on Surface…",
+            "image": "https://miro.medium.com/max/876/1*52UIhaYiQ-e81aDVmu-ZhA.png",
+            "date_modified": "2018-01-17T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/6-security--compliance-features-of-microsoft-teams",
+            "url": "https://www.gitbit.org/blog/6-security--compliance-features-of-microsoft-teams",
+            "title": "6 Security & Compliance Features of Microsoft Teams",
+            "summary": "Microsoft Teams is one of the latest and fastest growing applications included in Office 365. Microsoft has already announced they’ll be replacing Skype with the Teams application. “Communicate in…",
+            "image": "https://miro.medium.com/max/1200/1*tq8UWk-AbrYaLkDehWizyw.jpeg",
+            "date_modified": "2018-01-16T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/11-tips-for-improving-productivity-using-onenote",
+            "url": "https://www.gitbit.org/blog/11-tips-for-improving-productivity-using-onenote",
+            "title": "11 Tips for Improving Productivity using OneNote",
+            "summary": "OneNote is a digital notebook that automatically backs up to Microsoft’s Office 365 cloud. Microsoft has developed apps for every device including Windows PC, Mac,iPhone, Android. OneNote notebooks…",
+            "image": "https://miro.medium.com/max/1200/1*pFl-NA9QZkRgzrudAfuUWA.jpeg",
+            "date_modified": "2018-01-12T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/blog/how-to-automatically-forward-email-from-office-365-to-another-email-address",
+            "url": "https://www.gitbit.org/blog/how-to-automatically-forward-email-from-office-365-to-another-email-address",
+            "title": "How to Automatically Forward Email from Office 365 to another Email Address",
+            "summary": "Email forwarding refers to manually or automatically re-sending an email message delivered to one email address to one or more other addresses. Email forwarding is an ambiguous term that references…",
+            "image": "https://miro.medium.com/max/1130/1*hb1dnishAsWeJQHytvH7Cg.png",
+            "date_modified": "2018-01-11T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        }
+    ]
+}

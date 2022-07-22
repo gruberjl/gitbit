@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"NHtE6T4cH","answers":[{"isCorrectAnswer":false,"value":"Configure port mirroring for Server1."},{"isCorrectAnswer":false,"value":"Install the Microsoft Monitoring Agent on DC1."},{"isCorrectAnswer":false,"value":"Install the Microsoft Monitoring Agent on Server1."},{"value":"Configure port mirroring for DC1.","isCorrectAnswer":true}],"references":{"blocks":[{"depth":0,"key":"e3h3","inlineStyleRanges":[],"data":{},"text":"How to setup a DC to communicate through a member server:","type":"unstyled","entityRanges":[]},{"text":"1. Install the standalone sensor on Server2","type":"unstyled","key":"q319","inlineStyleRanges":[],"depth":0,"entityRanges":[],"data":{}},{"inlineStyleRanges":[],"key":"2n2ev","data":{},"type":"unstyled","entityRanges":[],"depth":0,"text":"2. Setup event subscription on Server2"},{"entityRanges":[],"depth":0,"data":{},"type":"unstyled","inlineStyleRanges":[],"text":"3. Setup port mirroring on Server1","key":"8v1pn"},{"type":"unstyled","key":"686d4","inlineStyleRanges":[],"entityRanges":[{"length":90,"key":0,"offset":0}],"depth":0,"data":{},"text":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-port-mirroring"}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-port-mirroring","targetOption":"_blank"},"type":"LINK"}}},"question":{"blocks":[{"key":"8j6p0","type":"unstyled","depth":0,"text":"Your network contains an on-premises Active Directory domain. The domain contains the servers shown in the following table.","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"entityRanges":[{"length":1,"offset":0,"key":0}],"type":"atomic","inlineStyleRanges":[],"key":"blh46","data":{},"text":" ","depth":0},{"key":"b4tpj","type":"unstyled","text":"You plan to implement Defender for Identity for the domain.","entityRanges":[],"data":{},"inlineStyleRanges":[],"depth":0},{"entityRanges":[],"type":"unstyled","key":"9a7i","depth":0,"inlineStyleRanges":[],"data":{},"text":"You install a Defender for Identity standalone sensor on Server1."},{"key":"aqdev","text":"You need to monitor the domain by using Defender for Identity.","data":{},"inlineStyleRanges":[],"depth":0,"entityRanges":[],"type":"unstyled"},{"text":"What should you do?","depth":0,"inlineStyleRanges":[],"type":"unstyled","key":"3c5k5","entityRanges":[],"data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"alignment":"left","height":"auto","alt":"servers chart","width":"auto","src":"https://i.ibb.co/0y2T0zL/servers.png"},"type":"IMAGE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {id: 'NHtE6T4cH', references: {entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-port-mirroring', targetOption: '_blank'}}}, blocks: [{entityRanges: [], key: 'e3h3', data: {}, text: 'How to setup a DC to communicate through a member server:', type: 'unstyled', inlineStyleRanges: [], depth: 0}, {text: '1. Install the standalone sensor on Server2', key: 'q319', depth: 0, type: 'unstyled', entityRanges: [], inlineStyleRanges: [], data: {}}, {type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: [], text: '2. Setup event subscription on Server2', data: {}, key: '2n2ev'}, {entityRanges: [], text: '3. Setup port mirroring on Server1', depth: 0, data: {}, type: 'unstyled', key: '8v1pn', inlineStyleRanges: []}, {depth: 0, type: 'unstyled', text: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/configure-port-mirroring', data: {}, entityRanges: [{offset: 0, length: 90, key: 0}], inlineStyleRanges: [], key: '686d4'}]}, answers: [{isCorrectAnswer: false, value: 'Configure port mirroring for Server1.'}, {value: 'Install the Microsoft Monitoring Agent on DC1.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Install the Microsoft Monitoring Agent on Server1.'}, {isCorrectAnswer: true, value: 'Configure port mirroring for DC1.'}], question: {entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {alt: 'servers chart', alignment: 'left', height: 'auto', src: 'https://i.ibb.co/0y2T0zL/servers.png', width: 'auto'}}}, blocks: [{text: 'Your network contains an on-premises Active Directory domain. The domain contains the servers shown in the following table.', type: 'unstyled', entityRanges: [], key: '8j6p0', depth: 0, data: {}, inlineStyleRanges: []}, {text: ' ', type: 'atomic', entityRanges: [{offset: 0, length: 1, key: 0}], key: 'blh46', data: {}, inlineStyleRanges: [], depth: 0}, {entityRanges: [], inlineStyleRanges: [], depth: 0, text: 'You plan to implement Defender for Identity for the domain.', type: 'unstyled', key: 'b4tpj', data: {}}, {inlineStyleRanges: [], type: 'unstyled', key: '9a7i', data: {}, depth: 0, entityRanges: [], text: 'You install a Defender for Identity standalone sensor on Server1.'}, {type: 'unstyled', data: {}, depth: 0, key: 'aqdev', entityRanges: [], text: 'You need to monitor the domain by using Defender for Identity.', inlineStyleRanges: []}, {entityRanges: [], type: 'unstyled', data: {}, text: 'What should you do?', depth: 0, inlineStyleRanges: [], key: '3c5k5'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

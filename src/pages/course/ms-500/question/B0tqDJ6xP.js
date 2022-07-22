@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":false,"value":"If User1 saves a Word document with \"Product1 and Product2\" in it, the document will be assigned Label1 automatically."},{"isCorrectAnswer":true,"value":"If User1 saves a Word document with \"Product2 and Product1\" in it, the document will be assigned Label2 automatically."},{"isCorrectAnswer":false,"value":"If User1 saves a Word document with \"product2\" in it, the document will be assigned Label2 automatically."}],"question":{"entityMap":{"0":{"type":"IMAGE","data":{"height":"auto","src":"https://i.ibb.co/Hz0XgJn/condition-chart.png","width":"auto","alignment":"left","alt":"Condition chart"},"mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","data":{"width":"auto","height":"auto","alt":"Label Conditions","src":"https://i.ibb.co/xYd5gCX/label-conditions.png","alignment":"left"},"type":"IMAGE"},"2":{"type":"IMAGE","mutability":"MUTABLE","data":{"height":"auto","src":"https://i.ibb.co/H7SJhBG/policy-chart2.png","width":"auto","alt":"Policy Chart","alignment":"left"}}},"blocks":[{"depth":0,"text":"Your organization has the sensitive info type data classifications shown below.","key":"arbvt","type":"unstyled","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"entityRanges":[{"length":1,"key":0,"offset":0}],"inlineStyleRanges":[],"text":" ","depth":0,"data":{},"key":"8a52q","type":"atomic"},{"data":{},"type":"unstyled","entityRanges":[],"text":"Your organization has the Information Protection labels shown below","key":"culrr","depth":0,"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":25,"offset":0},{"style":"bgcolor-rgb(255,255,255)","offset":0,"length":25},{"offset":0,"style":"fontsize-16","length":25},{"length":25,"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}]},{"text":" ","data":{},"type":"atomic","key":"19tkh","entityRanges":[{"length":1,"key":1,"offset":0}],"depth":0,"inlineStyleRanges":[]},{"depth":0,"text":"Your organization has the Information Protection label policies shown below","data":{},"key":"71qem","entityRanges":[],"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":25,"offset":0},{"offset":0,"length":25,"style":"bgcolor-rgb(255,255,255)"},{"length":25,"style":"fontsize-16","offset":0},{"length":25,"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}],"type":"unstyled"},{"key":"9i63c","depth":0,"text":" ","inlineStyleRanges":[],"type":"atomic","entityRanges":[{"key":2,"offset":0,"length":1}],"data":{}},{"entityRanges":[],"depth":0,"data":{},"key":"3ebb3","inlineStyleRanges":[],"type":"unstyled","text":"check the box next to each true statement."}]},"references":{"blocks":[{"text":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf ","key":"alqe8","data":{},"depth":0,"entityRanges":[{"key":0,"length":103,"offset":0}],"type":"unstyled","inlineStyleRanges":[]},{"depth":0,"entityRanges":[{"key":1,"length":96,"offset":0}],"type":"unstyled","inlineStyleRanges":[],"key":"b78bo","text":"https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide","data":{}},{"depth":0,"data":{},"key":"9u0k","entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","text":"Only one sensitivity label will be applied to a document automatically. The higher the order number the higher the priority so Label2 will take precedence over Label1."},{"depth":0,"entityRanges":[],"text":"Since the first 2 documents contain Product1 & Product2 Label2 is applied because it has the highest order.","data":{},"inlineStyleRanges":[{"style":"color-rgb(23,23,23)","offset":0,"length":107},{"offset":0,"length":107,"style":"bgcolor-rgb(255,255,255)"},{"offset":0,"style":"fontsize-16","length":107},{"length":107,"style":"fontfamily-Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif","offset":0}],"type":"unstyled","key":"bvdfr"},{"depth":0,"type":"unstyled","entityRanges":[],"text":"Since condition2 is case sensitive the third document does not receive the label.","inlineStyleRanges":[{"length":81,"style":"color-rgb(23,23,23)","offset":0},{"style":"bgcolor-rgb(255,255,255)","length":81,"offset":0},{"length":81,"style":"fontsize-16","offset":0},{"style":"fontfamily-Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif","length":81,"offset":0}],"data":{},"key":"837ic"}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide","targetOption":"_blank"}}}},"id":"B0tqDJ6xP"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'If User1 saves a Word document with "Product1 and Product2" in it, the document will be assigned Label1 automatically.', isCorrectAnswer: false}, {value: 'If User1 saves a Word document with "Product2 and Product1" in it, the document will be assigned Label2 automatically.', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'If User1 saves a Word document with "product2" in it, the document will be assigned Label2 automatically.'}], question: {entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {alignment: 'left', height: 'auto', alt: 'Condition chart', width: 'auto', src: 'https://i.ibb.co/Hz0XgJn/condition-chart.png'}}, 1: {mutability: 'MUTABLE', data: {width: 'auto', src: 'https://i.ibb.co/xYd5gCX/label-conditions.png', alt: 'Label Conditions', height: 'auto', alignment: 'left'}, type: 'IMAGE'}, 2: {mutability: 'MUTABLE', data: {src: 'https://i.ibb.co/H7SJhBG/policy-chart2.png', alignment: 'left', alt: 'Policy Chart', width: 'auto', height: 'auto'}, type: 'IMAGE'}}, blocks: [{entityRanges: [], data: {}, type: 'unstyled', text: 'Your organization has the sensitive info type data classifications shown below.', key: 'arbvt', depth: 0, inlineStyleRanges: []}, {key: '8a52q', text: ' ', inlineStyleRanges: [], type: 'atomic', depth: 0, entityRanges: [{key: 0, length: 1, offset: 0}], data: {}}, {depth: 0, text: 'Your organization has the Information Protection labels shown below', data: {}, entityRanges: [], key: 'culrr', type: 'unstyled', inlineStyleRanges: [{length: 25, style: 'color-rgb(33,37,41)', offset: 0}, {offset: 0, style: 'bgcolor-rgb(255,255,255)', length: 25}, {length: 25, style: 'fontsize-16', offset: 0}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0, length: 25}]}, {depth: 0, inlineStyleRanges: [], text: ' ', type: 'atomic', key: '19tkh', data: {}, entityRanges: [{key: 1, offset: 0, length: 1}]}, {entityRanges: [], inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 25, offset: 0}, {offset: 0, style: 'bgcolor-rgb(255,255,255)', length: 25}, {style: 'fontsize-16', offset: 0, length: 25}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0, length: 25}], depth: 0, type: 'unstyled', data: {}, text: 'Your organization has the Information Protection label policies shown below', key: '71qem'}, {type: 'atomic', inlineStyleRanges: [], data: {}, key: '9i63c', depth: 0, text: ' ', entityRanges: [{offset: 0, key: 2, length: 1}]}, {text: 'check the box next to each true statement.', entityRanges: [], inlineStyleRanges: [], type: 'unstyled', key: '3ebb3', depth: 0, data: {}}]}, id: 'B0tqDJ6xP', references: {entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide', targetOption: '_blank'}}}, blocks: [{depth: 0, type: 'unstyled', key: 'alqe8', text: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf ', entityRanges: [{key: 0, offset: 0, length: 103}], data: {}, inlineStyleRanges: []}, {data: {}, inlineStyleRanges: [], key: 'b78bo', entityRanges: [{length: 96, offset: 0, key: 1}], depth: 0, text: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide', type: 'unstyled'}, {entityRanges: [], data: {}, key: '9u0k', depth: 0, inlineStyleRanges: [], type: 'unstyled', text: 'Only one sensitivity label will be applied to a document automatically. The higher the order number the higher the priority so Label2 will take precedence over Label1.'}, {data: {}, entityRanges: [], depth: 0, type: 'unstyled', key: 'bvdfr', inlineStyleRanges: [{length: 107, offset: 0, style: 'color-rgb(23,23,23)'}, {offset: 0, style: 'bgcolor-rgb(255,255,255)', length: 107}, {offset: 0, style: 'fontsize-16', length: 107}, {style: 'fontfamily-Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif', length: 107, offset: 0}], text: 'Since the first 2 documents contain Product1 & Product2 Label2 is applied because it has the highest order.'}, {depth: 0, entityRanges: [], text: 'Since condition2 is case sensitive the third document does not receive the label.', type: 'unstyled', inlineStyleRanges: [{style: 'color-rgb(23,23,23)', length: 81, offset: 0}, {style: 'bgcolor-rgb(255,255,255)', length: 81, offset: 0}, {length: 81, style: 'fontsize-16', offset: 0}, {length: 81, style: 'fontfamily-Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif', offset: 0}], key: '837ic', data: {}}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

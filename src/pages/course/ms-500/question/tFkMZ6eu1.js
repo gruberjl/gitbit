@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"data":{},"type":"unstyled","text":"We can enable auditing at the mailbox level. We'll be using Exchange Online PowerShell.","inlineStyleRanges":[],"depth":0,"key":"74go5","entityRanges":[]},{"entityRanges":[],"text":"1. Open PowerShell and connect to Exchange Online using Connect-ExchangeOnline.","key":"2rkv1","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled"},{"entityRanges":[],"key":"2amie","data":{},"depth":0,"inlineStyleRanges":[],"text":"2. Run the following command \"Get-Mailbox -ResultSize unlimited | Set-Mailbox -AuditEnabled $true -DefaultAuditSet Admin,Delegate,Owner\" Or for one user we can run the following \"Set-Maibox -Identity \"User1\" -AuditEnabled $true\"","type":"unstyled"},{"key":"5dbc0","data":{},"depth":0,"inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"key":0,"length":105,"offset":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1"},{"depth":0,"type":"unstyled","text":"https://docs.microsoft.com/en-us/powershell/module/exchange/set-mailbox?view=exchange-ps","entityRanges":[{"length":88,"key":1,"offset":0}],"inlineStyleRanges":[],"data":{},"key":"f55he"}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1","targetOption":"_blank"},"mutability":"MUTABLE"},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/powershell/module/exchange/set-mailbox?view=exchange-ps"},"mutability":"MUTABLE"}}},"answers":[{"value":"Yes","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"No"}],"question":{"blocks":[{"data":{},"inlineStyleRanges":[],"text":"You have a Microsoft 365 subscription.","key":"c1k37","entityRanges":[],"type":"unstyled","depth":0},{"depth":0,"type":"unstyled","text":"You have a user named User1. Several users have full access to the mailbox of User1.","inlineStyleRanges":[],"data":{},"entityRanges":[],"key":"4jctk"},{"key":"3p9vn","entityRanges":[],"depth":0,"data":{},"inlineStyleRanges":[],"text":"Some email messages sent to User1 appear to have been read and deleted before the user viewed them.","type":"unstyled"},{"entityRanges":[],"key":"el88j","type":"unstyled","inlineStyleRanges":[],"data":{},"text":"When you search the audit log in Security & Compliance to identify who signed in to the mailbox of User1, the results are blank.","depth":0},{"entityRanges":[],"key":"9pnn8","text":"You need to ensure that you can view future sign-ins to the mailbox of User1. You run the Set-Maibox -Identity \"User1\" -AuditEnabled $true command. Does that","data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0},{"key":"64b9s","type":"unstyled","text":"meet the goal?","inlineStyleRanges":[],"data":{},"entityRanges":[],"depth":0}],"entityMap":{}},"id":"tFkMZ6eu1"},
+      test: {questions: [{answers: []}]},
+      question: {id: 'tFkMZ6eu1', references: {entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {data: {url: 'https://docs.microsoft.com/en-us/powershell/module/exchange/set-mailbox?view=exchange-ps', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}}, blocks: [{text: 'We can enable auditing at the mailbox level. We\'ll be using Exchange Online PowerShell.', type: 'unstyled', entityRanges: [], inlineStyleRanges: [], key: '74go5', data: {}, depth: 0}, {key: '2rkv1', data: {}, entityRanges: [], depth: 0, inlineStyleRanges: [], text: '1. Open PowerShell and connect to Exchange Online using Connect-ExchangeOnline.', type: 'unstyled'}, {text: '2. Run the following command "Get-Mailbox -ResultSize unlimited | Set-Mailbox -AuditEnabled $true -DefaultAuditSet Admin,Delegate,Owner" Or for one user we can run the following "Set-Maibox -Identity "User1" -AuditEnabled $true"', type: 'unstyled', key: '2amie', inlineStyleRanges: [], entityRanges: [], data: {}, depth: 0}, {key: '5dbc0', depth: 0, entityRanges: [{key: 0, length: 105, offset: 0}], inlineStyleRanges: [], data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1', type: 'unstyled'}, {entityRanges: [{offset: 0, key: 1, length: 88}], data: {}, key: 'f55he', inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/powershell/module/exchange/set-mailbox?view=exchange-ps', depth: 0, type: 'unstyled'}]}, question: {blocks: [{key: 'c1k37', data: {}, text: 'You have a Microsoft 365 subscription.', entityRanges: [], type: 'unstyled', inlineStyleRanges: [], depth: 0}, {data: {}, key: '4jctk', entityRanges: [], type: 'unstyled', text: 'You have a user named User1. Several users have full access to the mailbox of User1.', inlineStyleRanges: [], depth: 0}, {depth: 0, text: 'Some email messages sent to User1 appear to have been read and deleted before the user viewed them.', key: '3p9vn', data: {}, type: 'unstyled', inlineStyleRanges: [], entityRanges: []}, {entityRanges: [], text: 'When you search the audit log in Security & Compliance to identify who signed in to the mailbox of User1, the results are blank.', data: {}, inlineStyleRanges: [], depth: 0, key: 'el88j', type: 'unstyled'}, {key: '9pnn8', text: 'You need to ensure that you can view future sign-ins to the mailbox of User1. You run the Set-Maibox -Identity "User1" -AuditEnabled $true command. Does that', type: 'unstyled', depth: 0, inlineStyleRanges: [], data: {}, entityRanges: []}, {entityRanges: [], depth: 0, data: {}, key: '64b9s', text: 'meet the goal?', inlineStyleRanges: [], type: 'unstyled'}], entityMap: {}}, answers: [{value: 'Yes', isCorrectAnswer: true}, {value: 'No', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

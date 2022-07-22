@@ -1,6 +1,6 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import shortid from 'shortid'
-import { EditorState, convertToRaw, convertFromRaw } from 'draft-js'
+import {EditorState, convertToRaw, convertFromRaw} from 'draft-js'
 import Page from '../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -69,28 +69,27 @@ class EditQuestionPage extends Component {
           value: ''
         }
       ],
-      hasBeenSaved: params.has('docid') ? true : false,
+      hasBeenSaved: !!params.has('docid'),
       doc: {}
     }
 
-    if (params.has('docid')) {
+    if (params.has('docid'))
       this.getData(params.get('docid'))
-    }
   }
 
   getData(docId) {
-    getDoc('Tests/MS-500/Questions', docId).then(doc => this.setState({
+    getDoc('Tests/MS-500/Questions', docId).then((doc) => this.setState({
       doc,
-      editorState:EditorState.createWithContent(convertFromRaw(doc.question), decorators),
-      referencesEditorState:EditorState.createWithContent(convertFromRaw(doc.references), decorators),
-      answersState:doc.answers
+      editorState: EditorState.createWithContent(convertFromRaw(doc.question), decorators),
+      referencesEditorState: EditorState.createWithContent(convertFromRaw(doc.references), decorators),
+      answersState: doc.answers
     }))
   }
 
   setEditorState(editorState) {
     this.setState({
-      editorState,
-    });
+      editorState
+    })
   }
 
   setReferencesEditorState(referencesEditorState) {
@@ -101,7 +100,7 @@ class EditQuestionPage extends Component {
 
   setAnswersState(answersState) {
     this.setState({
-      answersState,
+      answersState
     })
   }
 
@@ -116,26 +115,26 @@ class EditQuestionPage extends Component {
 
     const handleCorrectAnswerChange = (event) => {
       const idx = event.target.dataset.index
-      const target = event.target;
-      let items = [...answersState];
-      let item = {...items[idx]};
+      const target = event.target
+      const items = [...answersState]
+      const item = {...items[idx]}
       item.isCorrectAnswer = target.type === 'checkbox' ? target.checked : target.value
-      items[idx] = item;
-      this.setAnswersState(items);
+      items[idx] = item
+      this.setAnswersState(items)
     }
 
     const handleAnswerChange = (event) => {
       const idx = event.target.dataset.index
-      const target = event.target;
-      let items = [...answersState];
-      let item = {...items[idx]};
+      const target = event.target
+      const items = [...answersState]
+      const item = {...items[idx]}
       item.value = target.type === 'checkbox' ? target.checked : target.value
-      items[idx] = item;
-      this.setAnswersState(items);
+      items[idx] = item
+      this.setAnswersState(items)
     }
 
     const addAnswer = () => {
-      let items = [...answersState]
+      const items = [...answersState]
       items.push({
         isCorrectAnswer: false,
         value: ''
@@ -145,7 +144,7 @@ class EditQuestionPage extends Component {
 
     const deleteAnswer = (event) => {
       const idx = event.target.dataset.index
-      let items = [...answersState]
+      const items = [...answersState]
       items.splice(idx, 1)
       this.setAnswersState(items)
     }
@@ -165,11 +164,11 @@ class EditQuestionPage extends Component {
     }
 
     const deleteQuestion = () => {
-      if(window.confirm('Are you sure you want to delete the question?')) {
+      if (window.confirm('Are you sure you want to delete the question?')) {
         deleteDoc(`Tests/MS-500/Questions`, this.state.id).then(() => {
-            window.location.href = "/course/ms-500/edit/"
+          window.location.href = '/course/ms-500/edit/'
         }).catch((error) => {
-            console.error("Error removing document: ", error);
+          console.error('Error removing document: ', error)
         })
       }
     }
@@ -179,9 +178,9 @@ class EditQuestionPage extends Component {
         <main>
           <style>{universalStyles}</style>
           <Container>
-            <Grid container sx={{ alignItems: 'center' }}>
+            <Grid container sx={{alignItems: 'center'}}>
               <Grid item xs={6}><h1>Question</h1></Grid>
-              <Grid item xs={6} sx={{display:'flex', justifyContent:'end'}}>
+              <Grid item xs={6} sx={{display: 'flex', justifyContent: 'end'}}>
                 { this.state.hasBeenSaved ?
                     <Button variant="outlined" color="error" style={{marginRight: '12px'}} onClick={deleteQuestion}>Delete</Button> :
                     ''
@@ -191,7 +190,7 @@ class EditQuestionPage extends Component {
               </Grid>
             </Grid>
             <Grid container>
-              <Alert severity="error" sx={{ display: (uploadError === '' ? 'none' : 'flex') }}>
+              <Alert severity="error" sx={{display: (uploadError === '' ? 'none' : 'flex')}}>
                 <h5>Error Uploading file to Imgur</h5>
                 <p>{uploadError}</p>
               </Alert>

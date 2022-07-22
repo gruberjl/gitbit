@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"data":{"url":"https://docs.microsoft.com/en-us/powershell/module/exchange/policy-and-compliance-audit/set-adminauditlogconfig?view=exchange-ps","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"2":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/microsoft-365/compliance/enable-mailbox-auditing?view=o365-worldwide"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"type":"unstyled","data":{},"entityRanges":[],"key":"addi5","depth":0,"inlineStyleRanges":[],"text":"To enable Exchange auditing we'll need to use PowerShell."},{"text":"1. Open PowerShell and connect to Exchange Online using Connect-ExchangeOnline.","depth":0,"type":"unstyled","data":{},"key":"c980p","entityRanges":[],"inlineStyleRanges":[]},{"type":"unstyled","entityRanges":[],"depth":0,"text":"2. Run the following command \"Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogCmdlets *Mailbox*\"","key":"898ib","data":{},"inlineStyleRanges":[]},{"data":{},"depth":0,"inlineStyleRanges":[],"text":"3. Then run the following command \"Set-OrganizationConfig -AuditDisabled $false\"","key":"3cjkc","type":"unstyled","entityRanges":[]},{"key":"3s83k","text":"You can also replace step 3 with the following: Set-Mailbox -Identity \"User1 \" -AuditDelegate @{Add=\"MailboxLogin\"}","data":{},"inlineStyleRanges":[],"entityRanges":[],"depth":0,"type":"unstyled"},{"key":"2qcvr","data":{},"type":"unstyled","depth":0,"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1","entityRanges":[{"length":105,"offset":0,"key":0}]},{"data":{},"type":"unstyled","key":"cd35f","entityRanges":[{"length":128,"offset":0,"key":1}],"text":"https://docs.microsoft.com/en-us/powershell/module/exchange/policy-and-compliance-audit/set-adminauditlogconfig?view=exchange-ps","depth":0,"inlineStyleRanges":[]},{"depth":0,"text":"https://docs.microsoft.com/en-us/microsoft-365/compliance/enable-mailbox-auditing?view=o365-worldwide ","type":"unstyled","data":{},"entityRanges":[{"offset":0,"length":101,"key":2}],"key":"2eq4a","inlineStyleRanges":[]}]},"question":{"entityMap":{},"blocks":[{"text":"Your organization has a Microsoft 365 tenant. Your organization has a user named John Gruber. Several users have full access to John Gruber's mailbox.","data":{},"key":"7qt30","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"depth":0},{"data":{},"entityRanges":[],"type":"unstyled","text":"A few emails that were sent to John Gruber have been read and deleted before John Gruber viewed them.","key":"cafcm","depth":0,"inlineStyleRanges":[]},{"inlineStyleRanges":[],"text":"You've been asked to see who accessed and deleted the emails. You search the audit log in the Microsoft Defender admin center to see who read and deleted the emails but the audit logs are blank. So your manager has asked you to configure the audit logs so your can view who accessed the mailbox in the future.","entityRanges":[],"depth":0,"key":"2ri6","data":{},"type":"unstyled"},{"key":"9ip01","depth":0,"text":"What Exchange PowerShell commands do you need to run to verify you can see the audit logs in the future?","inlineStyleRanges":[],"data":{},"type":"unstyled","entityRanges":[]}]},"answers":[{"isCorrectAnswer":false,"value":"Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogCmdlets *Mailbox*"},{"value":"Set-Maibox -Identity \"John Gruber\" -AuditEnabled $true","isCorrectAnswer":true}],"id":"TO1FKMRg4"},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{data: {}, text: 'Your organization has a Microsoft 365 tenant. Your organization has a user named John Gruber. Several users have full access to John Gruber\'s mailbox.', type: 'unstyled', inlineStyleRanges: [], key: '7qt30', depth: 0, entityRanges: []}, {depth: 0, inlineStyleRanges: [], key: 'cafcm', data: {}, text: 'A few emails that were sent to John Gruber have been read and deleted before John Gruber viewed them.', entityRanges: [], type: 'unstyled'}, {depth: 0, entityRanges: [], type: 'unstyled', key: '2ri6', inlineStyleRanges: [], data: {}, text: 'You\'ve been asked to see who accessed and deleted the emails. You search the audit log in the Microsoft Defender admin center to see who read and deleted the emails but the audit logs are blank. So your manager has asked you to configure the audit logs so your can view who accessed the mailbox in the future.'}, {data: {}, depth: 0, text: 'What Exchange PowerShell commands do you need to run to verify you can see the audit logs in the future?', entityRanges: [], key: '9ip01', inlineStyleRanges: [], type: 'unstyled'}], entityMap: {}}, references: {entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/powershell/module/exchange/policy-and-compliance-audit/set-adminauditlogconfig?view=exchange-ps'}}, 2: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/enable-mailbox-auditing?view=o365-worldwide', targetOption: '_blank'}}}, blocks: [{type: 'unstyled', text: 'To enable Exchange auditing we\'ll need to use PowerShell.', key: 'addi5', inlineStyleRanges: [], entityRanges: [], data: {}, depth: 0}, {data: {}, type: 'unstyled', key: 'c980p', entityRanges: [], text: '1. Open PowerShell and connect to Exchange Online using Connect-ExchangeOnline.', inlineStyleRanges: [], depth: 0}, {text: '2. Run the following command "Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogCmdlets *Mailbox*"', inlineStyleRanges: [], entityRanges: [], type: 'unstyled', key: '898ib', data: {}, depth: 0}, {inlineStyleRanges: [], entityRanges: [], key: '3cjkc', text: '3. Then run the following command "Set-OrganizationConfig -AuditDisabled $false"', type: 'unstyled', data: {}, depth: 0}, {inlineStyleRanges: [], entityRanges: [], key: '3s83k', text: 'You can also replace step 3 with the following: Set-Mailbox -Identity "User1 " -AuditDelegate @{Add="MailboxLogin"}', data: {}, depth: 0, type: 'unstyled'}, {entityRanges: [{offset: 0, length: 105, key: 0}], key: '2qcvr', inlineStyleRanges: [], data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1', depth: 0, type: 'unstyled'}, {data: {}, text: 'https://docs.microsoft.com/en-us/powershell/module/exchange/policy-and-compliance-audit/set-adminauditlogconfig?view=exchange-ps', key: 'cd35f', type: 'unstyled', inlineStyleRanges: [], depth: 0, entityRanges: [{key: 1, length: 128, offset: 0}]}, {entityRanges: [{length: 101, offset: 0, key: 2}], inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/enable-mailbox-auditing?view=o365-worldwide ', type: 'unstyled', data: {}, depth: 0, key: '2eq4a'}]}, id: 'TO1FKMRg4', answers: [{isCorrectAnswer: false, value: 'Set-AdminAuditLogConfig -AdminAuditLogEnabled $true -AdminAuditLogCmdlets *Mailbox*'}, {value: 'Set-Maibox -Identity "John Gruber" -AuditEnabled $true', isCorrectAnswer: true}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"data":{},"text":"Your organization has a Microsoft 365 tenant with a primary domain of GitBit.org","key":"33fgs","type":"unstyled","entityRanges":[],"depth":0,"inlineStyleRanges":[]},{"entityRanges":[],"inlineStyleRanges":[],"key":"9sl95","data":{},"text":"Your organization works with a partner company named Uber Bikes. Your Microsoft OneDrive settings haven't been changed.","depth":0,"type":"unstyled"},{"inlineStyleRanges":[],"depth":0,"data":{},"text":"You need to allow your users to share files from Microsoft OneDrive to specific users at Uber Bikes but prevent your users from sharing files with anyone else.","key":"26io4","type":"unstyled","entityRanges":[]},{"entityRanges":[],"key":"8uovg","data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0,"text":"What settings should you change in the SharePoint Online admin center?"}],"entityMap":{}},"references":{"blocks":[{"inlineStyleRanges":[],"text":"By default, OneDrive files can be shared with anyone so increasing the permission level doesn't make sense.","key":"ahbov","type":"unstyled","data":{},"entityRanges":[],"depth":0},{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"type":"unstyled","data":{},"key":"4thd2","text":"By default, the link settings are set to \"Anyone with the link\" so they should be set to Specific people."},{"key":"6sb7a","inlineStyleRanges":[],"entityRanges":[],"depth":0,"type":"unstyled","data":{},"text":"By setting the OneDrive External sharing to the least permissive level users would only be able to share with users that are currently in the GitBit organization so your users wouldn't be able to share with Litware."},{"text":"Decreasing the permission level for OneDrive External sharing would be correct so users cannot share with anyone.","key":"b8vlr","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{},"depth":0},{"entityRanges":[],"inlineStyleRanges":[],"key":"237vv","depth":0,"data":{},"text":"Modifying the device and sync settings wouldn't change who users can share too.","type":"unstyled"},{"entityRanges":[{"length":128,"key":0,"offset":0}],"type":"unstyled","data":{},"key":"1ne1r","depth":0,"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI "},{"inlineStyleRanges":[],"data":{},"entityRanges":[{"key":1,"length":75,"offset":0}],"text":"https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off ","depth":0,"key":"2e97s","type":"unstyled"}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"1":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off","targetOption":"_blank"}}}},"answers":[{"value":"Increase the permission level for OneDrive External sharing so your users can share with users at Uber Bikes.","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Modify the Links settings."},{"isCorrectAnswer":true,"value":"Decrease the permissions for OneDrive External sharing so your users can only share with users at Uber Bikes."},{"isCorrectAnswer":false,"value":"Modify the Device access settings so your users cannot access OneDrive files unless they are on a managed device."},{"value":"Modify the Sync settings so your users can't sync their files to their devices.","isCorrectAnswer":false}],"id":"40e4R_WgX"},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI'}, type: 'LINK'}, 1: {type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off', targetOption: '_blank'}, mutability: 'MUTABLE'}}, blocks: [{entityRanges: [], data: {}, inlineStyleRanges: [], depth: 0, key: 'ahbov', type: 'unstyled', text: 'By default, OneDrive files can be shared with anyone so increasing the permission level doesn\'t make sense.'}, {type: 'unstyled', entityRanges: [], inlineStyleRanges: [], text: 'By default, the link settings are set to "Anyone with the link" so they should be set to Specific people.', key: '4thd2', data: {}, depth: 0}, {depth: 0, type: 'unstyled', key: '6sb7a', data: {}, text: 'By setting the OneDrive External sharing to the least permissive level users would only be able to share with users that are currently in the GitBit organization so your users wouldn\'t be able to share with Litware.', inlineStyleRanges: [], entityRanges: []}, {depth: 0, type: 'unstyled', data: {}, entityRanges: [], inlineStyleRanges: [], text: 'Decreasing the permission level for OneDrive External sharing would be correct so users cannot share with anyone.', key: 'b8vlr'}, {data: {}, key: '237vv', text: 'Modifying the device and sync settings wouldn\'t change who users can share too.', depth: 0, inlineStyleRanges: [], entityRanges: [], type: 'unstyled'}, {text: 'https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI ', entityRanges: [{key: 0, length: 128, offset: 0}], inlineStyleRanges: [], depth: 0, data: {}, type: 'unstyled', key: '1ne1r'}, {inlineStyleRanges: [], type: 'unstyled', data: {}, entityRanges: [{key: 1, length: 75, offset: 0}], key: '2e97s', depth: 0, text: 'https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off '}]}, id: '40e4R_WgX', answers: [{value: 'Increase the permission level for OneDrive External sharing so your users can share with users at Uber Bikes.', isCorrectAnswer: false}, {value: 'Modify the Links settings.', isCorrectAnswer: true}, {value: 'Decrease the permissions for OneDrive External sharing so your users can only share with users at Uber Bikes.', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Modify the Device access settings so your users cannot access OneDrive files unless they are on a managed device.'}, {isCorrectAnswer: false, value: 'Modify the Sync settings so your users can\'t sync their files to their devices.'}], question: {blocks: [{text: 'Your organization has a Microsoft 365 tenant with a primary domain of GitBit.org', depth: 0, key: '33fgs', entityRanges: [], data: {}, inlineStyleRanges: [], type: 'unstyled'}, {data: {}, text: 'Your organization works with a partner company named Uber Bikes. Your Microsoft OneDrive settings haven\'t been changed.', depth: 0, key: '9sl95', inlineStyleRanges: [], type: 'unstyled', entityRanges: []}, {data: {}, type: 'unstyled', inlineStyleRanges: [], depth: 0, entityRanges: [], text: 'You need to allow your users to share files from Microsoft OneDrive to specific users at Uber Bikes but prevent your users from sharing files with anyone else.', key: '26io4'}, {key: '8uovg', entityRanges: [], inlineStyleRanges: [], depth: 0, type: 'unstyled', data: {}, text: 'What settings should you change in the SharePoint Online admin center?'}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

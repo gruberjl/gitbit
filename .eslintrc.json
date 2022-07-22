@@ -1,0 +1,14 @@
+{
+  "extends": ["preact", "eslint:recommended", "google"],
+  "rules": {
+    "linebreak-style": ["error", "windows"],
+    "semi": ["error", "never"],
+    "max-len": 0,
+    "comma-dangle": ["error", "never"],
+    "quote-props": ["error", "as-needed"],
+    "object-curly-spacing": ["error", "never"],
+    "require-jsdoc": 0,
+    "curly": ["error", "multi-or-nest"],
+    "react/no-danger": 0
+  }
+}

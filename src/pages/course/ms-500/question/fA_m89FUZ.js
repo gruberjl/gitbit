@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"type":"unstyled","data":{},"key":"evc3f","inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant with many Microsoft Defender for Office 365 policies configured.","depth":0,"entityRanges":[]},{"inlineStyleRanges":[],"type":"unstyled","data":{},"depth":0,"text":"Your manager has asked you to grant John Gruber the ability to view Microsoft Defender for Office 365 reports through the dashboard.","key":"6flts","entityRanges":[]},{"key":"cpje5","data":{},"inlineStyleRanges":[],"entityRanges":[],"depth":0,"text":"Which role should you assign to John Gruber?","type":"unstyled"}],"entityMap":{}},"id":"fA_m89FUZ","references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"1":{"data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/view-reports-for-mdo","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"key":"65t9q","data":{},"inlineStyleRanges":[{"offset":0,"length":216,"style":"color-rgb(33,37,41)"},{"offset":0,"style":"bgcolor-rgb(255,255,255)","length":216},{"offset":0,"style":"fontsize-16","length":216},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":216,"offset":0}],"text":"Users with the security reader role have global read-only access to view the security configuration. All the other roles will not provide John Gruber the ability to view reports in the Microsoft Defender admin center","type":"unstyled","entityRanges":[],"depth":0},{"depth":0,"type":"unstyled","key":"asnsb","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","entityRanges":[{"offset":0,"length":95,"key":0}],"data":{},"inlineStyleRanges":[]},{"entityRanges":[{"key":1,"offset":0,"length":96}],"inlineStyleRanges":[],"type":"unstyled","text":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/view-reports-for-mdo","depth":0,"key":"e1pvr","data":{}}]},"answers":[{"isCorrectAnswer":true,"value":"The Security reader role."},{"isCorrectAnswer":false,"value":"The Compliance administrator role."},{"value":"The Information Protection administrator role.","isCorrectAnswer":false},{"value":"The Exchange administrator role.","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{type: 'unstyled', entityRanges: [], inlineStyleRanges: [{offset: 0, style: 'color-rgb(33,37,41)', length: 216}, {offset: 0, length: 216, style: 'bgcolor-rgb(255,255,255)'}, {length: 216, style: 'fontsize-16', offset: 0}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0, length: 216}], text: 'Users with the security reader role have global read-only access to view the security configuration. All the other roles will not provide John Gruber the ability to view reports in the Microsoft Defender admin center', depth: 0, key: '65t9q', data: {}}, {text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', data: {}, inlineStyleRanges: [], key: 'asnsb', depth: 0, entityRanges: [{length: 95, key: 0, offset: 0}], type: 'unstyled'}, {inlineStyleRanges: [], data: {}, depth: 0, key: 'e1pvr', type: 'unstyled', entityRanges: [{length: 96, key: 1, offset: 0}], text: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/view-reports-for-mdo'}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/view-reports-for-mdo'}, mutability: 'MUTABLE', type: 'LINK'}}}, answers: [{value: 'The Security reader role.', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'The Compliance administrator role.'}, {value: 'The Information Protection administrator role.', isCorrectAnswer: false}, {value: 'The Exchange administrator role.', isCorrectAnswer: false}], id: 'fA_m89FUZ', question: {entityMap: {}, blocks: [{key: 'evc3f', data: {}, inlineStyleRanges: [], type: 'unstyled', depth: 0, entityRanges: [], text: 'Your organization has a Microsoft 365 tenant with many Microsoft Defender for Office 365 policies configured.'}, {depth: 0, inlineStyleRanges: [], entityRanges: [], key: '6flts', type: 'unstyled', text: 'Your manager has asked you to grant John Gruber the ability to view Microsoft Defender for Office 365 reports through the dashboard.', data: {}}, {type: 'unstyled', data: {}, key: 'cpje5', depth: 0, text: 'Which role should you assign to John Gruber?', entityRanges: [], inlineStyleRanges: []}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

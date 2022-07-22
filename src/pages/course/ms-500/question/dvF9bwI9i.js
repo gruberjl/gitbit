@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"key":"4eaep","data":{},"depth":0,"inlineStyleRanges":[],"entityRanges":[],"text":"You'll need to exclude the external network also known as the public IP address.","type":"unstyled"},{"type":"unstyled","key":"fbnj5","text":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk","entityRanges":[{"key":0,"length":128,"offset":0}],"data":{},"depth":0,"inlineStyleRanges":[]},{"key":"a13ld","type":"unstyled","depth":0,"data":{},"text":"https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings#trusted-ips","inlineStyleRanges":[],"entityRanges":[{"key":1,"offset":0,"length":104}]}],"entityMap":{"0":{"type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk"},"mutability":"MUTABLE"},"1":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings#trusted-ips","targetOption":"_blank"},"mutability":"MUTABLE"}}},"question":{"blocks":[{"key":"f01np","entityRanges":[],"inlineStyleRanges":[],"depth":0,"text":"Your organization has the IP address ranges shown below.","type":"unstyled","data":{}},{"type":"atomic","key":"9m2gt","depth":0,"entityRanges":[{"offset":0,"length":1,"key":0}],"data":{},"text":" ","inlineStyleRanges":[]},{"depth":0,"inlineStyleRanges":[],"key":"dj2i8","data":{},"entityRanges":[],"text":"Users must use MFA unless they are signing in from the internal network of the Chicago office.","type":"unstyled"},{"inlineStyleRanges":[],"key":"5rj92","depth":0,"text":"Which IP addresses should you configure in the Trusted IP list for MFA?","type":"unstyled","entityRanges":[],"data":{}}],"entityMap":{"0":{"data":{"alt":"Location chart","width":"auto","src":"https://i.ibb.co/9rgYK1j/location-chart.png","alignment":"left","height":"auto"},"mutability":"MUTABLE","type":"IMAGE"}}},"id":"dvF9bwI9i","answers":[{"isCorrectAnswer":true,"value":"131.107.83.0/28"},{"isCorrectAnswer":false,"value":"192.168.16.0/20"},{"value":"172.16.0.0/24","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"192.168.0.0/20"}]},
+      test: {questions: [{answers: []}]},
+      question: {id: 'dvF9bwI9i', references: {blocks: [{text: 'You\'ll need to exclude the external network also known as the public IP address.', key: '4eaep', inlineStyleRanges: [], type: 'unstyled', depth: 0, entityRanges: [], data: {}}, {data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk', type: 'unstyled', entityRanges: [{key: 0, offset: 0, length: 128}], key: 'fbnj5', depth: 0, inlineStyleRanges: []}, {data: {}, entityRanges: [{length: 104, key: 1, offset: 0}], text: 'https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings#trusted-ips', inlineStyleRanges: [], depth: 0, key: 'a13ld', type: 'unstyled'}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk', targetOption: '_blank'}}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-mfasettings#trusted-ips'}}}}, question: {entityMap: {0: {type: 'IMAGE', data: {src: 'https://i.ibb.co/9rgYK1j/location-chart.png', height: 'auto', alt: 'Location chart', alignment: 'left', width: 'auto'}, mutability: 'MUTABLE'}}, blocks: [{data: {}, entityRanges: [], key: 'f01np', depth: 0, type: 'unstyled', inlineStyleRanges: [], text: 'Your organization has the IP address ranges shown below.'}, {data: {}, key: '9m2gt', text: ' ', depth: 0, entityRanges: [{length: 1, key: 0, offset: 0}], type: 'atomic', inlineStyleRanges: []}, {text: 'Users must use MFA unless they are signing in from the internal network of the Chicago office.', entityRanges: [], key: 'dj2i8', depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled'}, {inlineStyleRanges: [], text: 'Which IP addresses should you configure in the Trusted IP list for MFA?', type: 'unstyled', depth: 0, data: {}, entityRanges: [], key: '5rj92'}]}, answers: [{isCorrectAnswer: true, value: '131.107.83.0/28'}, {value: '192.168.16.0/20', isCorrectAnswer: false}, {value: '172.16.0.0/24', isCorrectAnswer: false}, {value: '192.168.0.0/20', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

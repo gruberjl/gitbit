@@ -1,5 +1,5 @@
-import { h } from "preact"
-import { useState } from 'preact/hooks'
+import {h} from 'preact'
+import {useState} from 'preact/hooks'
 import Page from '../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -18,12 +18,12 @@ const LoginPage = () => {
 
   const submit = () => {
     signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        window.location.href = '/dashboard'
-      })
-      .catch((error) => {
-        setErr(error.message)
-      })
+        .then((userCredential) => {
+          window.location.href = '/dashboard'
+        })
+        .catch((error) => {
+          setErr(error.message)
+        })
   }
 
   return (
@@ -32,11 +32,11 @@ const LoginPage = () => {
         <Container>
           <Grid container justifyContent="center">
             <Grid item>
-              <Typography variant="h1" sx={{mt:4, mb:4}}>Sign in</Typography>
+              <Typography variant="h1" sx={{mt: 4, mb: 4}}>Sign in</Typography>
               <Box component="form">
                 <Stack spacing={2}>
-                  <TextField label="Email" variant="outlined" type='email' value={email} onChange={e => setEmail(e.target.value)} />
-                  <TextField label="Password" variant="outlined" type='password' value={password} onChange={e => setPassword(e.target.value)} />
+                  <TextField label="Email" variant="outlined" type='email' value={email} onChange={(e) => setEmail(e.target.value)} />
+                  <TextField label="Password" variant="outlined" type='password' value={password} onChange={(e) => setPassword(e.target.value)} />
                   { err === '' ? null :
                     <Alert severity="error">
                       {err}

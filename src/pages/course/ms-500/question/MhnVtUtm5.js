@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"key":"43u18","entityRanges":[],"data":{},"text":"The security administrator role gives any user assigned the role the ability to manage Microsoft Defender for Endpoint roles.","depth":0,"inlineStyleRanges":[],"type":"unstyled"},{"key":"7j6g","depth":0,"type":"unstyled","data":{},"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","entityRanges":[{"key":0,"length":95,"offset":0}]},{"type":"unstyled","key":"1cv0j","depth":0,"inlineStyleRanges":[],"data":{},"text":"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/rbac","entityRanges":[{"length":95,"offset":0,"key":1}]}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/rbac"},"mutability":"MUTABLE"}}},"answers":[{"value":"User1","isCorrectAnswer":false},{"value":"User2","isCorrectAnswer":true},{"value":"User3","isCorrectAnswer":false},{"value":"User4","isCorrectAnswer":false}],"id":"MhnVtUtm5","question":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"height":"auto","alt":"Users Roles Chart","src":"https://i.ibb.co/6mjYxD7/users-roles.png","width":"auto","alignment":"left"},"type":"IMAGE"}},"blocks":[{"entityRanges":[],"data":{},"inlineStyleRanges":[],"key":"cosd7","type":"unstyled","depth":0,"text":"Your organization has Microsoft 365 tenant with Microsoft 365 E5 licenses. The tenant contains the following users."},{"inlineStyleRanges":[],"text":" ","entityRanges":[{"key":0,"length":1,"offset":0}],"key":"377ga","depth":0,"type":"atomic","data":{}},{"depth":0,"type":"unstyled","entityRanges":[],"text":"Your manager has asked you which admins can enable Microsoft Defender for Endpoint roles.","inlineStyleRanges":[],"data":{},"key":"186in"},{"key":"cb1f","inlineStyleRanges":[],"type":"unstyled","data":{},"depth":0,"entityRanges":[],"text":"Click the check box next to each user that can enable Microsoft Defender for Endpoint roles."}]}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'User1', isCorrectAnswer: false}, {value: 'User2', isCorrectAnswer: true}, {value: 'User3', isCorrectAnswer: false}, {value: 'User4', isCorrectAnswer: false}], references: {blocks: [{inlineStyleRanges: [], depth: 0, data: {}, entityRanges: [], text: 'The security administrator role gives any user assigned the role the ability to manage Microsoft Defender for Endpoint roles.', type: 'unstyled', key: '43u18'}, {entityRanges: [{length: 95, key: 0, offset: 0}], key: '7j6g', text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', depth: 0, inlineStyleRanges: [], data: {}, type: 'unstyled'}, {type: 'unstyled', depth: 0, entityRanges: [{offset: 0, length: 95, key: 1}], key: '1cv0j', data: {}, text: 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/rbac', inlineStyleRanges: []}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {data: {url: 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/rbac', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}}}, question: {entityMap: {0: {mutability: 'MUTABLE', data: {src: 'https://i.ibb.co/6mjYxD7/users-roles.png', width: 'auto', height: 'auto', alignment: 'left', alt: 'Users Roles Chart'}, type: 'IMAGE'}}, blocks: [{depth: 0, text: 'Your organization has Microsoft 365 tenant with Microsoft 365 E5 licenses. The tenant contains the following users.', data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [], key: 'cosd7'}, {type: 'atomic', text: ' ', entityRanges: [{offset: 0, key: 0, length: 1}], depth: 0, inlineStyleRanges: [], key: '377ga', data: {}}, {text: 'Your manager has asked you which admins can enable Microsoft Defender for Endpoint roles.', key: '186in', data: {}, type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: []}, {data: {}, key: 'cb1f', depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'Click the check box next to each user that can enable Microsoft Defender for Endpoint roles.', type: 'unstyled'}]}, id: 'MhnVtUtm5'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

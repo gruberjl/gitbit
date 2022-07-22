@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Device1","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Device2"},{"isCorrectAnswer":true,"value":"Device6"}],"question":{"blocks":[{"entityRanges":[],"inlineStyleRanges":[],"key":"6t3pm","depth":0,"type":"unstyled","data":{},"text":"The devices enrolled in Intune are configured as shown in the following table:"},{"key":"9tjo3","text":" ","type":"atomic","depth":0,"data":{},"entityRanges":[{"key":0,"offset":0,"length":1}],"inlineStyleRanges":[]},{"key":"c0grv","text":"The device compliance policies in Intune are configured as shown in the following table:","depth":0,"type":"unstyled","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"type":"atomic","inlineStyleRanges":[],"text":" ","key":"99it7","data":{},"depth":0,"entityRanges":[{"key":1,"length":1,"offset":0}]},{"type":"unstyled","text":"The device compliance policies have the assignments shown in the following table:","depth":0,"data":{},"key":"56p0h","entityRanges":[],"inlineStyleRanges":[]},{"depth":0,"data":{},"key":"62f10","type":"atomic","inlineStyleRanges":[],"text":" ","entityRanges":[{"length":1,"offset":0,"key":2}]},{"data":{},"inlineStyleRanges":[],"text":"The Mark devices with no compliance policy are assigned as Compliant.","type":"unstyled","entityRanges":[],"key":"a7l90","depth":0},{"entityRanges":[],"data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0,"key":"16cgt","text":"You are evaluating which devices are compliant with Intune."},{"entityRanges":[],"type":"unstyled","key":"evag6","text":"Check the box if the device is compliant","data":{},"depth":0,"inlineStyleRanges":[]}],"entityMap":{"0":{"type":"IMAGE","data":{"alignment":"left","alt":"Devices Chart","height":"auto","src":"https://i.ibb.co/rt25GT1/Devices.png","width":"auto"},"mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","type":"IMAGE","data":{"alignment":"left","width":"auto","src":"https://i.ibb.co/YZzVcsL/Device-policies.png","height":"auto","alt":"Device policies chart"}},"2":{"mutability":"MUTABLE","type":"IMAGE","data":{"height":"auto","alignment":"left","src":"https://i.ibb.co/hXnkN3N/Device-policy-goups.png","width":"auto","alt":"Device policy group chart"}}}},"id":"Vw6DPEjhS","references":{"blocks":[{"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":89,"offset":0},{"length":89,"offset":0,"style":"bgcolor-rgb(255,255,255)"},{"style":"fontsize-16","offset":0,"length":89},{"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":89}],"type":"unstyled","depth":0,"key":"77i1q","text":"Device1 is an Android device that is not encrypted that's a member of GroupA and GroupC. DevicePolicy3 applies to Android devices that are members of GroupA so DevicePolicy3 is applied and requires the device to be encrypted. Since Device1 is not encrypted the device is not compliant.","entityRanges":[],"data":{}},{"key":"bi4mp","data":{},"type":"unstyled","depth":0,"text":"Device2 is a Windows 10 computer that's encrypted and a member of GroupB and GroupC. DevicePolicy2 has an exclusion of GroupC so Device2 doesn't have a compliance policy. As stated all devices that don't have a compliance policy are marked compliant so Device2 is marked compliant.","entityRanges":[],"inlineStyleRanges":[]},{"entityRanges":[],"data":{},"depth":0,"text":"Device6 is a Windows 10 computer that is not a member of any group therefore it has no compliance policy applied and is therefore marked as compliant.","key":"aisi1","inlineStyleRanges":[],"type":"unstyled"},{"entityRanges":[{"key":0,"offset":0,"length":86}],"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN ","depth":0,"key":"4tanb","inlineStyleRanges":[],"type":"unstyled"}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN","targetOption":"_blank"},"mutability":"MUTABLE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {width: 'auto', alt: 'Devices Chart', height: 'auto', alignment: 'left', src: 'https://i.ibb.co/rt25GT1/Devices.png'}}, 1: {mutability: 'MUTABLE', data: {height: 'auto', width: 'auto', alt: 'Device policies chart', alignment: 'left', src: 'https://i.ibb.co/YZzVcsL/Device-policies.png'}, type: 'IMAGE'}, 2: {data: {height: 'auto', alignment: 'left', width: 'auto', src: 'https://i.ibb.co/hXnkN3N/Device-policy-goups.png', alt: 'Device policy group chart'}, mutability: 'MUTABLE', type: 'IMAGE'}}, blocks: [{text: 'The devices enrolled in Intune are configured as shown in the following table:', type: 'unstyled', key: '6t3pm', inlineStyleRanges: [], entityRanges: [], data: {}, depth: 0}, {data: {}, text: ' ', entityRanges: [{length: 1, key: 0, offset: 0}], key: '9tjo3', depth: 0, type: 'atomic', inlineStyleRanges: []}, {type: 'unstyled', text: 'The device compliance policies in Intune are configured as shown in the following table:', data: {}, key: 'c0grv', inlineStyleRanges: [], entityRanges: [], depth: 0}, {entityRanges: [{length: 1, offset: 0, key: 1}], depth: 0, data: {}, type: 'atomic', inlineStyleRanges: [], text: ' ', key: '99it7'}, {depth: 0, data: {}, type: 'unstyled', entityRanges: [], text: 'The device compliance policies have the assignments shown in the following table:', inlineStyleRanges: [], key: '56p0h'}, {data: {}, key: '62f10', inlineStyleRanges: [], entityRanges: [{offset: 0, length: 1, key: 2}], depth: 0, type: 'atomic', text: ' '}, {type: 'unstyled', entityRanges: [], inlineStyleRanges: [], data: {}, text: 'The Mark devices with no compliance policy are assigned as Compliant.', key: 'a7l90', depth: 0}, {entityRanges: [], text: 'You are evaluating which devices are compliant with Intune.', inlineStyleRanges: [], key: '16cgt', depth: 0, data: {}, type: 'unstyled'}, {data: {}, entityRanges: [], inlineStyleRanges: [], type: 'unstyled', key: 'evag6', text: 'Check the box if the device is compliant', depth: 0}]}, id: 'Vw6DPEjhS', references: {blocks: [{type: 'unstyled', key: '77i1q', depth: 0, entityRanges: [], text: 'Device1 is an Android device that is not encrypted that\'s a member of GroupA and GroupC. DevicePolicy3 applies to Android devices that are members of GroupA so DevicePolicy3 is applied and requires the device to be encrypted. Since Device1 is not encrypted the device is not compliant.', inlineStyleRanges: [{offset: 0, style: 'color-rgb(33,37,41)', length: 89}, {length: 89, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {offset: 0, style: 'fontsize-16', length: 89}, {length: 89, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0}], data: {}}, {entityRanges: [], text: 'Device2 is a Windows 10 computer that\'s encrypted and a member of GroupB and GroupC. DevicePolicy2 has an exclusion of GroupC so Device2 doesn\'t have a compliance policy. As stated all devices that don\'t have a compliance policy are marked compliant so Device2 is marked compliant.', data: {}, depth: 0, type: 'unstyled', inlineStyleRanges: [], key: 'bi4mp'}, {type: 'unstyled', data: {}, text: 'Device6 is a Windows 10 computer that is not a member of any group therefore it has no compliance policy applied and is therefore marked as compliant.', entityRanges: [], inlineStyleRanges: [], key: 'aisi1', depth: 0}, {inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN ', data: {}, depth: 0, type: 'unstyled', key: '4tanb', entityRanges: [{key: 0, length: 86, offset: 0}]}], entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN', targetOption: '_blank'}, mutability: 'MUTABLE'}}}, answers: [{isCorrectAnswer: false, value: 'Device1'}, {isCorrectAnswer: true, value: 'Device2'}, {value: 'Device6', isCorrectAnswer: true}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -71,21 +71,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -93,8 +93,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -102,15 +102,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -124,16 +123,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -184,12 +183,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

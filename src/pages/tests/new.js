@@ -1,13 +1,12 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import shortid from 'shortid'
 import Page from '../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
-import Box from '@mui/material/Box'
 import TextField from '@mui/material/TextField'
 import Alert from '@mui/material/Alert'
 import Button from '@mui/material/Button'
-import { onAuthStateChanged } from "../../components/firebase/on-auth-state-changed"
+import {onAuthStateChanged} from '../../components/firebase/on-auth-state-changed'
 import saveDoc from '../../components/firebase/save-doc'
 import questions from '../../data/questions'
 
@@ -32,9 +31,8 @@ class TestsNewPage extends Component {
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -46,34 +44,33 @@ class TestsNewPage extends Component {
       this.setState({
         uid: user.uid
       })
-    } else {
+    } else
       window.location.href = '/login'
-    }
   }
 
   handleNumOfQuestionsChange(event) {
-    const newValue = event.target.value;
+    const newValue = event.target.value
     this.setState({
-      numOfQuestions:newValue
+      numOfQuestions: newValue
     })
   }
 
   createTest() {
     this.setState({
-      createTestClicked:true
+      createTestClicked: true
     })
 
     const numOfQuestions = this.state.numOfQuestions
 
     if (numOfQuestions > 0 && numOfQuestions <= questions.length) {
-      const shuffled = questions.sort(() => 0.5 - Math.random());
+      const shuffled = questions.sort(() => 0.5 - Math.random())
       const questionsInTest = []
       const selected = shuffled.slice(0, numOfQuestions)
 
       for (let i = 0; i < selected.length; i++) {
         const testQuestion = {
           id: selected[i].id,
-          answers:[]
+          answers: []
         }
         questionsInTest.push(testQuestion)
       }
@@ -112,7 +109,7 @@ class TestsNewPage extends Component {
               <Grid container>
                 <Grid item>
                   <TextField
-                    inputProps={{ inputMode: 'numeric', pattern: '[0-9]*' }}
+                    inputProps={{inputMode: 'numeric', pattern: '[0-9]*'}}
                     label="Number of Questions"
                     defaultValue="60"
                     helperText={`Must be a number between 1-${questions.length}`}
@@ -123,7 +120,7 @@ class TestsNewPage extends Component {
                 </Grid>
               </Grid>
               <Grid container>
-                <Grid item xs={10}></Grid>
+                <Grid item xs={10} />
                 <Grid item xs={2} style={alignRightStyles}>
                   <Button variant="contained" onClick={this.createTest}>Create Test</Button>
                 </Grid>
@@ -134,8 +131,8 @@ class TestsNewPage extends Component {
                     <h5>Error with number of questions</h5>
                     <p>Question count must be between 1-{questions.length}</p>
                   </Alert>
-                </Grid>
-                : null
+                </Grid> :
+                null
               }
             </Container>
           </div>

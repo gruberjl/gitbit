@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"key":"cdna6","data":{},"entityRanges":[],"inlineStyleRanges":[],"depth":0,"type":"unstyled","text":"The security reader can read all security related reports and audit logs but can't make any changes."},{"key":"209d7","type":"unstyled","data":{},"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU ","inlineStyleRanges":[],"entityRanges":[{"length":95,"key":0,"offset":0}]}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU"}}}},"question":{"blocks":[{"type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"depth":0,"data":{},"text":"Your organization has a Microsoft 365 tenant with auditing enabled.","key":"3p1h6"},{"key":"4u8p1","depth":0,"type":"unstyled","data":{},"inlineStyleRanges":[],"text":"You've been asked to grant John Gruber the ability to review audit logs in your Microsoft 365 tenant. You give John Gruber the Global administrator role.","entityRanges":[]},{"entityRanges":[],"data":{},"key":"clb4k","type":"unstyled","depth":0,"text":"A few days later and learn John Gruber disabled auditing.","inlineStyleRanges":[]},{"depth":0,"data":{},"inlineStyleRanges":[],"key":"3vhqh","type":"unstyled","text":"You re-enable auditing and then remove John Gruber's user account from the Global administrator role.","entityRanges":[]},{"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","key":"6d771","depth":0,"text":"You need to give John Gruber the ability to review audit logs but he can't be given permission to disable auditing. Your organization adheres to the principle of least privilege.","data":{}},{"depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"type":"unstyled","text":"Which role should you give to John Gruber?","key":"dcf5"}],"entityMap":{}},"id":"1FPTnVmIY","answers":[{"value":"Security operator","isCorrectAnswer":false},{"value":"Security reader","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Global administrator"},{"value":"Security administrator","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{text: 'Your organization has a Microsoft 365 tenant with auditing enabled.', data: {}, key: '3p1h6', inlineStyleRanges: [], depth: 0, entityRanges: [], type: 'unstyled'}, {key: '4u8p1', data: {}, type: 'unstyled', text: 'You\'ve been asked to grant John Gruber the ability to review audit logs in your Microsoft 365 tenant. You give John Gruber the Global administrator role.', entityRanges: [], depth: 0, inlineStyleRanges: []}, {key: 'clb4k', data: {}, text: 'A few days later and learn John Gruber disabled auditing.', entityRanges: [], inlineStyleRanges: [], type: 'unstyled', depth: 0}, {key: '3vhqh', depth: 0, data: {}, inlineStyleRanges: [], text: 'You re-enable auditing and then remove John Gruber\'s user account from the Global administrator role.', entityRanges: [], type: 'unstyled'}, {key: '6d771', data: {}, entityRanges: [], depth: 0, inlineStyleRanges: [], text: 'You need to give John Gruber the ability to review audit logs but he can\'t be given permission to disable auditing. Your organization adheres to the principle of least privilege.', type: 'unstyled'}, {entityRanges: [], data: {}, inlineStyleRanges: [], key: 'dcf5', depth: 0, type: 'unstyled', text: 'Which role should you give to John Gruber?'}]}, references: {blocks: [{depth: 0, text: 'The security reader can read all security related reports and audit logs but can\'t make any changes.', inlineStyleRanges: [], entityRanges: [], key: 'cdna6', data: {}, type: 'unstyled'}, {type: 'unstyled', data: {}, entityRanges: [{length: 95, key: 0, offset: 0}], key: '209d7', inlineStyleRanges: [], depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU '}], entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}, type: 'LINK'}}}, answers: [{isCorrectAnswer: false, value: 'Security operator'}, {isCorrectAnswer: true, value: 'Security reader'}, {isCorrectAnswer: false, value: 'Global administrator'}, {isCorrectAnswer: false, value: 'Security administrator'}], id: '1FPTnVmIY'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

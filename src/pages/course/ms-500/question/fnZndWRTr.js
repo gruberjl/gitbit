@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"fnZndWRTr","references":{"blocks":[{"key":"20j6g","depth":0,"text":"The user will need the eDiscovery Manager role assigned and then be given the permissions to the case.","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{}},{"data":{},"entityRanges":[],"key":"6f8bi","text":"1. Go to Microsoft Purview admin center > Permissions > Microsoft Purview solutions roles  > eDiscovery Manager. Click Edit next to eDiscovery Manager.","type":"unstyled","depth":0,"inlineStyleRanges":[]},{"type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"depth":0,"key":"7eq0k","data":{},"text":"2. Click Choose eDisvoery Manager > Add. Click the member you want to grant permissions to. Click Add. Click Done > Save."},{"key":"ch81d","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f","type":"unstyled","entityRanges":[{"key":0,"length":114,"offset":0}],"data":{},"inlineStyleRanges":[],"depth":0},{"type":"unstyled","key":"3uetn","depth":0,"inlineStyleRanges":[],"entityRanges":[{"key":1,"length":91,"offset":0}],"text":"https://docs.microsoft.com/en-us/office365/securitycompliance/assign-ediscovery-permissions","data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f"},"type":"LINK"},"1":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/office365/securitycompliance/assign-ediscovery-permissions","targetOption":"_blank"}}}},"answers":[{"isCorrectAnswer":false,"value":"From the Azure Active Directory admin center, assign a role group to Admin1."},{"isCorrectAnswer":false,"value":"From the Microsoft 365 admin center, assign a role to Admin1."},{"isCorrectAnswer":true,"value":"From the Microsoft Purview admin center, open the case and go to Settings > Access & permissions"}],"question":{"entityMap":{},"blocks":[{"depth":0,"text":"You have a Microsoft 365 subscription.","data":{},"inlineStyleRanges":[],"key":"46kh2","entityRanges":[],"type":"unstyled"},{"type":"unstyled","text":"The Global administrator role is assigned to your user account. You have a user named Admin1.","data":{},"inlineStyleRanges":[],"depth":0,"key":"6qs2l","entityRanges":[]},{"key":"653k","type":"unstyled","text":"You create an eDiscovery case named Case1.","data":{},"depth":0,"inlineStyleRanges":[],"entityRanges":[]},{"data":{},"depth":0,"type":"unstyled","key":"3avhu","text":"You need to ensure that Admin1 can view the results of Case1.","entityRanges":[],"inlineStyleRanges":[]},{"entityRanges":[],"data":{},"inlineStyleRanges":[],"key":"chmgb","text":"What should you do first?","depth":0,"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f'}}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/assign-ediscovery-permissions', targetOption: '_blank'}}}, blocks: [{depth: 0, text: 'The user will need the eDiscovery Manager role assigned and then be given the permissions to the case.', key: '20j6g', type: 'unstyled', entityRanges: [], inlineStyleRanges: [], data: {}}, {entityRanges: [], depth: 0, key: '6f8bi', data: {}, text: '1. Go to Microsoft Purview admin center > Permissions > Microsoft Purview solutions roles  > eDiscovery Manager. Click Edit next to eDiscovery Manager.', inlineStyleRanges: [], type: 'unstyled'}, {depth: 0, key: '7eq0k', type: 'unstyled', entityRanges: [], data: {}, inlineStyleRanges: [], text: '2. Click Choose eDisvoery Manager > Add. Click the member you want to grant permissions to. Click Add. Click Done > Save.'}, {inlineStyleRanges: [], depth: 0, entityRanges: [{length: 114, offset: 0, key: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f', type: 'unstyled', key: 'ch81d', data: {}}, {type: 'unstyled', inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/office365/securitycompliance/assign-ediscovery-permissions', key: '3uetn', entityRanges: [{length: 91, key: 1, offset: 0}], data: {}, depth: 0}]}, answers: [{value: 'From the Azure Active Directory admin center, assign a role group to Admin1.', isCorrectAnswer: false}, {value: 'From the Microsoft 365 admin center, assign a role to Admin1.', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'From the Microsoft Purview admin center, open the case and go to Settings > Access & permissions'}], id: 'fnZndWRTr', question: {blocks: [{key: '46kh2', depth: 0, data: {}, entityRanges: [], text: 'You have a Microsoft 365 subscription.', type: 'unstyled', inlineStyleRanges: []}, {key: '6qs2l', inlineStyleRanges: [], depth: 0, text: 'The Global administrator role is assigned to your user account. You have a user named Admin1.', data: {}, entityRanges: [], type: 'unstyled'}, {depth: 0, inlineStyleRanges: [], data: {}, type: 'unstyled', entityRanges: [], key: '653k', text: 'You create an eDiscovery case named Case1.'}, {key: '3avhu', data: {}, type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: [], text: 'You need to ensure that Admin1 can view the results of Case1.'}, {data: {}, inlineStyleRanges: [], entityRanges: [], key: 'chmgb', text: 'What should you do first?', type: 'unstyled', depth: 0}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

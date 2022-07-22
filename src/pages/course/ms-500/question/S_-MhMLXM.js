@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"S_-MhMLXM","answers":[{"isCorrectAnswer":false,"value":"A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a device state condition"},{"value":"An app protection policy in Microsoft Endpoint Manager","isCorrectAnswer":true},{"value":"A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a client apps condition","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"A device compliance policy in Microsoft Endpoint Manager"}],"question":{"entityMap":{},"blocks":[{"text":"Your company has a Microsoft 365 subscription.","data":{},"key":"3em5r","inlineStyleRanges":[],"type":"unstyled","depth":0,"entityRanges":[]},{"key":"6lq4i","text":"The company does not permit users to enroll personal devices in mobile device management (MDM).","depth":0,"entityRanges":[],"type":"unstyled","inlineStyleRanges":[],"data":{}},{"depth":0,"text":"Users in the sales department have personal iOS devices.","data":{},"type":"unstyled","entityRanges":[],"key":"28f3s","inlineStyleRanges":[]},{"data":{},"type":"unstyled","entityRanges":[],"depth":0,"text":"You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant.","inlineStyleRanges":[],"key":"dg7ah"},{"depth":0,"text":"The users must be prevented from backing up the app data to iCloud.","entityRanges":[],"data":{},"type":"unstyled","key":"11f59","inlineStyleRanges":[]},{"inlineStyleRanges":[],"data":{},"type":"unstyled","depth":0,"entityRanges":[],"text":"What should you create?","key":"5dvm3"}]},"references":{"blocks":[{"data":{},"type":"unstyled","depth":0,"entityRanges":[],"key":"dj4p2","inlineStyleRanges":[],"text":"App protection policies that apply to Microsoft 365 apps, for example, Power BI, will protect apps even if the user is on an unmanaged device."},{"type":"unstyled","entityRanges":[{"key":0,"length":98,"offset":0}],"key":"ngqi","depth":0,"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","inlineStyleRanges":[]}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","targetOption":"_blank"},"mutability":"MUTABLE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{entityRanges: [], type: 'unstyled', key: 'dj4p2', data: {}, inlineStyleRanges: [], depth: 0, text: 'App protection policies that apply to Microsoft 365 apps, for example, Power BI, will protect apps even if the user is on an unmanaged device.'}, {depth: 0, inlineStyleRanges: [], entityRanges: [{offset: 0, length: 98, key: 0}], type: 'unstyled', key: 'ngqi', text: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx', data: {}}], entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx'}, mutability: 'MUTABLE'}}}, question: {blocks: [{entityRanges: [], key: '3em5r', data: {}, depth: 0, inlineStyleRanges: [], text: 'Your company has a Microsoft 365 subscription.', type: 'unstyled'}, {text: 'The company does not permit users to enroll personal devices in mobile device management (MDM).', key: '6lq4i', type: 'unstyled', inlineStyleRanges: [], entityRanges: [], data: {}, depth: 0}, {type: 'unstyled', entityRanges: [], key: '28f3s', data: {}, inlineStyleRanges: [], text: 'Users in the sales department have personal iOS devices.', depth: 0}, {inlineStyleRanges: [], data: {}, depth: 0, entityRanges: [], text: 'You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant.', key: 'dg7ah', type: 'unstyled'}, {data: {}, type: 'unstyled', text: 'The users must be prevented from backing up the app data to iCloud.', inlineStyleRanges: [], key: '11f59', depth: 0, entityRanges: []}, {inlineStyleRanges: [], depth: 0, key: '5dvm3', data: {}, type: 'unstyled', entityRanges: [], text: 'What should you create?'}], entityMap: {}}, id: 'S_-MhMLXM', answers: [{isCorrectAnswer: false, value: 'A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a device state condition'}, {isCorrectAnswer: true, value: 'An app protection policy in Microsoft Endpoint Manager'}, {value: 'A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a client apps condition', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'A device compliance policy in Microsoft Endpoint Manager'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

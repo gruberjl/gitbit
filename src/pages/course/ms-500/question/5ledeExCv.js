@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1"},"type":"LINK","mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins"}}},"blocks":[{"text":"You can view the sign-in logs from Azure Active Directory admin center > Enterprise applications > Sign-in logs.","inlineStyleRanges":[],"data":{},"key":"18nsd","depth":0,"type":"unstyled","entityRanges":[]},{"key":"7qvcs","entityRanges":[{"key":0,"length":105,"offset":0}],"type":"unstyled","depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1","data":{},"inlineStyleRanges":[]},{"data":{},"depth":0,"text":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins","inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"key":1,"length":91,"offset":0}],"key":"e7m5a"}]},"id":"5ledeExCv","question":{"entityMap":{},"blocks":[{"entityRanges":[],"type":"unstyled","depth":0,"key":"3d6td","inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant. Only some of your users are required to use an MFA to access Microsoft SharePoint Online.","data":{}},{"key":"f5jt4","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"text":"You need to view which users have used MFA to access SharePoint Online.","data":{},"depth":0},{"key":"9ses4","inlineStyleRanges":[],"text":"What do you do?","data":{},"type":"unstyled","entityRanges":[],"depth":0}]},"answers":[{"isCorrectAnswer":false,"value":"Go to the Security & Compliance admin center and download a report."},{"isCorrectAnswer":false,"value":"Go to the Azure Log Analytics and query the logs."},{"value":"Go to the Microsoft Defender admin center and perform an audit log search.","isCorrectAnswer":false},{"value":"Go to the Enterprise applications blade of the Azure AD admin center and view the sign-in logs.","isCorrectAnswer":true}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{inlineStyleRanges: [], text: 'You can view the sign-in logs from Azure Active Directory admin center > Enterprise applications > Sign-in logs.', type: 'unstyled', data: {}, key: '18nsd', depth: 0, entityRanges: []}, {inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1', entityRanges: [{key: 0, offset: 0, length: 105}], data: {}, depth: 0, key: '7qvcs', type: 'unstyled'}, {key: 'e7m5a', depth: 0, data: {}, text: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins', type: 'unstyled', entityRanges: [{key: 1, length: 91, offset: 0}], inlineStyleRanges: []}]}, answers: [{value: 'Go to the Security & Compliance admin center and download a report.', isCorrectAnswer: false}, {value: 'Go to the Azure Log Analytics and query the logs.', isCorrectAnswer: false}, {value: 'Go to the Microsoft Defender admin center and perform an audit log search.', isCorrectAnswer: false}, {value: 'Go to the Enterprise applications blade of the Azure AD admin center and view the sign-in logs.', isCorrectAnswer: true}], question: {entityMap: {}, blocks: [{inlineStyleRanges: [], text: 'Your organization has a Microsoft 365 tenant. Only some of your users are required to use an MFA to access Microsoft SharePoint Online.', depth: 0, data: {}, key: '3d6td', entityRanges: [], type: 'unstyled'}, {inlineStyleRanges: [], key: 'f5jt4', text: 'You need to view which users have used MFA to access SharePoint Online.', data: {}, entityRanges: [], type: 'unstyled', depth: 0}, {key: '9ses4', depth: 0, entityRanges: [], text: 'What do you do?', data: {}, inlineStyleRanges: [], type: 'unstyled'}]}, id: '5ledeExCv'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

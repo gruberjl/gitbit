@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Only Device1, and Device2.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Only Device1"},{"isCorrectAnswer":false,"value":"Only Device1, and Device3"},{"isCorrectAnswer":true,"value":"All three devices: Device1, Device2 and Device3"}],"id":"Omm8e1L_Q","references":{"blocks":[{"depth":0,"entityRanges":[],"type":"unstyled","data":{},"inlineStyleRanges":[],"key":"a7o7a","text":"Windows, macOS, Android, iOS, and iPad OS devices can all be evaluated for their risk levels."},{"inlineStyleRanges":[],"entityRanges":[],"data":{},"depth":0,"text":"Reference:","key":"a2h0b","type":"unstyled"},{"key":"4i1hk","depth":0,"inlineStyleRanges":[],"type":"unstyled","data":{},"entityRanges":[{"key":0,"offset":0,"length":129}],"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T"}],"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T"},"type":"LINK","mutability":"MUTABLE"},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/evaluation-lab"},"mutability":"MUTABLE"}}},"question":{"blocks":[{"inlineStyleRanges":[],"depth":0,"entityRanges":[],"type":"unstyled","key":"9cg9","data":{},"text":"You have a Microsoft 365 tenant that's licensed for Microsoft Defender for Endpoint."},{"data":{},"key":"8osik","type":"unstyled","text":"You have the following devices enrolled in Microsoft Endpoint Manager.","inlineStyleRanges":[],"depth":0,"entityRanges":[]},{"depth":0,"data":{},"type":"atomic","entityRanges":[{"offset":0,"key":0,"length":1}],"inlineStyleRanges":[],"key":"4narm","text":" "},{"type":"unstyled","text":"You've integrated Endpoint Manager and Microsoft Defender for Endpoint.","entityRanges":[],"key":"2ns91","depth":0,"data":{},"inlineStyleRanges":[]},{"depth":0,"type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{},"key":"4qdk2","text":"You plan to evaluate the risk level for all the devices listed above."},{"data":{},"key":"3dlb2","inlineStyleRanges":[],"entityRanges":[],"depth":0,"text":"Which devices can be evaluated?","type":"unstyled"}],"entityMap":{"0":{"data":{"width":"auto","src":"https://i.ibb.co/XVRnnsz/device-platform.png","height":"auto","alignment":"left","alt":"Device platform chart"},"mutability":"MUTABLE","type":"IMAGE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{entityRanges: [], data: {}, type: 'unstyled', depth: 0, key: '9cg9', text: 'You have a Microsoft 365 tenant that\'s licensed for Microsoft Defender for Endpoint.', inlineStyleRanges: []}, {data: {}, entityRanges: [], depth: 0, key: '8osik', inlineStyleRanges: [], text: 'You have the following devices enrolled in Microsoft Endpoint Manager.', type: 'unstyled'}, {data: {}, type: 'atomic', entityRanges: [{key: 0, length: 1, offset: 0}], depth: 0, text: ' ', key: '4narm', inlineStyleRanges: []}, {entityRanges: [], key: '2ns91', data: {}, text: 'You\'ve integrated Endpoint Manager and Microsoft Defender for Endpoint.', depth: 0, type: 'unstyled', inlineStyleRanges: []}, {entityRanges: [], depth: 0, type: 'unstyled', data: {}, text: 'You plan to evaluate the risk level for all the devices listed above.', inlineStyleRanges: [], key: '4qdk2'}, {depth: 0, data: {}, entityRanges: [], inlineStyleRanges: [], text: 'Which devices can be evaluated?', key: '3dlb2', type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', data: {height: 'auto', alt: 'Device platform chart', src: 'https://i.ibb.co/XVRnnsz/device-platform.png', width: 'auto', alignment: 'left'}, type: 'IMAGE'}}}, answers: [{value: 'Only Device1, and Device2.', isCorrectAnswer: false}, {value: 'Only Device1', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Only Device1, and Device3'}, {value: 'All three devices: Device1, Device2 and Device3', isCorrectAnswer: true}], id: 'Omm8e1L_Q', references: {entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/windows/security/threat-protection/microsoft-defender-atp/evaluation-lab'}, mutability: 'MUTABLE', type: 'LINK'}}, blocks: [{entityRanges: [], depth: 0, data: {}, type: 'unstyled', text: 'Windows, macOS, Android, iOS, and iPad OS devices can all be evaluated for their risk levels.', key: 'a7o7a', inlineStyleRanges: []}, {inlineStyleRanges: [], key: 'a2h0b', entityRanges: [], text: 'Reference:', data: {}, depth: 0, type: 'unstyled'}, {data: {}, depth: 0, inlineStyleRanges: [], key: '4i1hk', entityRanges: [{key: 0, length: 129, offset: 0}], type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -67,21 +67,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -89,8 +89,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -98,15 +98,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -120,16 +119,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -180,12 +179,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"nqg-OA0M5","question":{"entityMap":{},"blocks":[{"key":"3v3m9","depth":0,"data":{},"type":"unstyled","entityRanges":[],"text":"Your organization has a Microsoft 365 tenant. User accounts are synced from your organization's human resources system to Azure AD.","inlineStyleRanges":[]},{"key":"62b11","inlineStyleRanges":[],"text":"Your organization has five departments that each have there own Microsoft SharePoint Online site. Every user must be granted access to their own department's site. No users should be able to access a site that is not a member of the site's respective department.","data":{},"entityRanges":[],"depth":0,"type":"unstyled"},{"data":{},"type":"unstyled","entityRanges":[],"key":"a1nta","depth":0,"inlineStyleRanges":[],"text":"Your manager has asked you to configure the security of the SharePoint sites. He's given you the following requirements:"},{"data":{},"key":"7l3dd","entityRanges":[],"inlineStyleRanges":[],"type":"unordered-list-item","depth":0,"text":"Users should be automatically added to the security group corresponding to their department."},{"text":"All group owners must verify their group membership only contains their department's users once a month.","entityRanges":[],"key":"5pl79","depth":0,"type":"unordered-list-item","data":{},"inlineStyleRanges":[]},{"data":{},"type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"key":"fospn","text":"How do you configure Microsoft 365 to meet the security requirements?","depth":0}]},"references":{"blocks":[{"depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"key":"3gl08","text":"To automatically add users to groups the group type must be dynamic.","type":"unstyled"},{"text":"To have owners verify group members' monthly access reviews must be used.","type":"unstyled","depth":0,"key":"7habk","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"data":{},"key":"ao7qg","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","entityRanges":[{"offset":0,"key":0,"length":95}],"inlineStyleRanges":[],"type":"unstyled","depth":0}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","targetOption":"_blank"}}}},"answers":[{"isCorrectAnswer":true,"value":"Users should be automatically added to the security group corresponding to their department: dynamic groups"},{"value":"Users should be automatically added to the security group corresponding to their department: Access packages","isCorrectAnswer":false},{"value":"Users should be automatically added to the security group corresponding to their department: Conditional access policies","isCorrectAnswer":false},{"value":"Users should be automatically added to the security group corresponding to their department: Assigned groups","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"All group owners must verify their group membership: Access reviews"},{"isCorrectAnswer":false,"value":"All group owners must verify their group membership: Access packages"},{"isCorrectAnswer":false,"value":"All group owners must verify their group membership: Dynamic groups"},{"value":"All group owners must verify their group membership: Data loss prevention policies","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: true, value: 'Users should be automatically added to the security group corresponding to their department: dynamic groups'}, {value: 'Users should be automatically added to the security group corresponding to their department: Access packages', isCorrectAnswer: false}, {value: 'Users should be automatically added to the security group corresponding to their department: Conditional access policies', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Users should be automatically added to the security group corresponding to their department: Assigned groups'}, {isCorrectAnswer: true, value: 'All group owners must verify their group membership: Access reviews'}, {isCorrectAnswer: false, value: 'All group owners must verify their group membership: Access packages'}, {value: 'All group owners must verify their group membership: Dynamic groups', isCorrectAnswer: false}, {value: 'All group owners must verify their group membership: Data loss prevention policies', isCorrectAnswer: false}], question: {blocks: [{entityRanges: [], data: {}, inlineStyleRanges: [], depth: 0, key: '3v3m9', text: 'Your organization has a Microsoft 365 tenant. User accounts are synced from your organization\'s human resources system to Azure AD.', type: 'unstyled'}, {depth: 0, text: 'Your organization has five departments that each have there own Microsoft SharePoint Online site. Every user must be granted access to their own department\'s site. No users should be able to access a site that is not a member of the site\'s respective department.', key: '62b11', data: {}, inlineStyleRanges: [], entityRanges: [], type: 'unstyled'}, {key: 'a1nta', data: {}, depth: 0, text: 'Your manager has asked you to configure the security of the SharePoint sites. He\'s given you the following requirements:', type: 'unstyled', inlineStyleRanges: [], entityRanges: []}, {type: 'unordered-list-item', inlineStyleRanges: [], data: {}, depth: 0, text: 'Users should be automatically added to the security group corresponding to their department.', key: '7l3dd', entityRanges: []}, {entityRanges: [], data: {}, depth: 0, text: 'All group owners must verify their group membership only contains their department\'s users once a month.', inlineStyleRanges: [], key: '5pl79', type: 'unordered-list-item'}, {text: 'How do you configure Microsoft 365 to meet the security requirements?', inlineStyleRanges: [], type: 'unstyled', entityRanges: [], depth: 0, data: {}, key: 'fospn'}], entityMap: {}}, references: {blocks: [{depth: 0, key: '3gl08', text: 'To automatically add users to groups the group type must be dynamic.', data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: []}, {depth: 0, data: {}, inlineStyleRanges: [], key: '7habk', text: 'To have owners verify group members\' monthly access reviews must be used.', entityRanges: [], type: 'unstyled'}, {entityRanges: [{length: 95, offset: 0, key: 0}], inlineStyleRanges: [], type: 'unstyled', key: 'ao7qg', depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV', data: {}}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}}}, id: 'nqg-OA0M5'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

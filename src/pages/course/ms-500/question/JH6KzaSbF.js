@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"JH6KzaSbF","references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Locking-down-your-Microsoft-365-tenant-from-Microsoft-engineers-FldNualGC"},"type":"LINK","mutability":"MUTABLE"}},"blocks":[{"inlineStyleRanges":[],"key":"9rpkj","text":"https://www.gitbit.org/course/ms-500/learn/Locking-down-your-Microsoft-365-tenant-from-Microsoft-engineers-FldNualGC","depth":0,"data":{},"type":"unstyled","entityRanges":[{"offset":0,"length":116,"key":0}]},{"key":"b5ukr","entityRanges":[],"data":{},"type":"unstyled","inlineStyleRanges":[],"text":"Lockbox requests will appear in the Microsoft 365 admin center in the Customer lockbox requests section.","depth":0}]},"answers":[{"isCorrectAnswer":false,"value":"The Supervision section in the Microsoft Defender admin center"},{"isCorrectAnswer":true,"value":"The Customer lockbox requests section in the Microsoft 365 admin center"},{"isCorrectAnswer":false,"value":"The Security & privacy section in the Microsoft 365 admin center"},{"isCorrectAnswer":false,"value":"The Data subject requests in the Microsoft Compliance admin center"}],"question":{"blocks":[{"inlineStyleRanges":[],"text":"Where can you go to approve Customer Lockbox requests?","key":"6u0kf","depth":0,"data":{},"entityRanges":[],"type":"unstyled"}],"entityMap":{}}},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{depth: 0, type: 'unstyled', key: '6u0kf', data: {}, inlineStyleRanges: [], entityRanges: [], text: 'Where can you go to approve Customer Lockbox requests?'}]}, id: 'JH6KzaSbF', references: {blocks: [{key: '9rpkj', text: 'https://www.gitbit.org/course/ms-500/learn/Locking-down-your-Microsoft-365-tenant-from-Microsoft-engineers-FldNualGC', depth: 0, inlineStyleRanges: [], entityRanges: [{length: 116, key: 0, offset: 0}], data: {}, type: 'unstyled'}, {key: 'b5ukr', depth: 0, data: {}, inlineStyleRanges: [], text: 'Lockbox requests will appear in the Microsoft 365 admin center in the Customer lockbox requests section.', entityRanges: [], type: 'unstyled'}], entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Locking-down-your-Microsoft-365-tenant-from-Microsoft-engineers-FldNualGC', targetOption: '_blank'}, mutability: 'MUTABLE'}}}, answers: [{value: 'The Supervision section in the Microsoft Defender admin center', isCorrectAnswer: false}, {value: 'The Customer lockbox requests section in the Microsoft 365 admin center', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'The Security & privacy section in the Microsoft 365 admin center'}, {value: 'The Data subject requests in the Microsoft Compliance admin center', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -61,21 +61,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -83,8 +83,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -92,15 +92,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -114,16 +113,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -174,12 +173,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

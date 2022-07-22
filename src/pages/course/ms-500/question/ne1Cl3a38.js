@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"key":"d1ihq","depth":0,"text":"Three steps are required to set up VPN monitoring using Defender for Identity","inlineStyleRanges":[],"entityRanges":[],"type":"unstyled","data":{}},{"key":"1f1td","text":"1. Configure RADIUS Accounting on VPN1","depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"type":"unstyled"},{"depth":0,"inlineStyleRanges":[],"key":"dl9j3","type":"unstyled","entityRanges":[],"data":{},"text":"2. Enable VPN / RADIUS Accounts in Defender for Identity"},{"entityRanges":[],"key":"3va51","inlineStyleRanges":[],"text":"3. Enable inbound port 1813 on Server1","type":"unstyled","depth":0,"data":{}},{"key":"3ulat","inlineStyleRanges":[],"entityRanges":[{"key":0,"offset":0,"length":90}],"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA","type":"unstyled","depth":0},{"depth":0,"data":{},"inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/install-atp-step6-vpn","key":"9hq9g","entityRanges":[{"offset":0,"length":87,"key":1}],"type":"unstyled"}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA","targetOption":"_blank"}},"1":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/install-atp-step6-vpn"},"type":"LINK","mutability":"MUTABLE"}}},"answers":[{"value":"On VPN1: Configure and authentication provider.","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"On VPN1: Configure an accounting provider."},{"isCorrectAnswer":false,"value":"On VPN1: Create a connection request policy"},{"value":"On VPN1: Create a RADIUS client.","isCorrectAnswer":false},{"value":"One Server1, enabled the following inbound port: 443","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"One Server1, enabled the following inbound port: 1723"},{"value":"One Server1, enabled the following inbound port: 1813","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"One Server1, enabled the following inbound port: 8080"},{"isCorrectAnswer":false,"value":"One Server1, enabled the following inbound port: 8531"}],"question":{"blocks":[{"text":"Your network contains an Active Directory domain named GitBit.org. The domain contains a VPN server named VPN1 that runs Windows Server 2016 and has the Remote Access server role installed.","depth":0,"inlineStyleRanges":[],"key":"ctt8t","entityRanges":[],"type":"unstyled","data":{}},{"inlineStyleRanges":[],"entityRanges":[],"text":"You have a Microsoft Azure subscription.","data":{},"type":"unstyled","key":"1quvv","depth":0},{"depth":0,"type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"key":"am3ap","data":{},"text":"You are deploying Microsoft Defender for Identity."},{"entityRanges":[],"depth":0,"data":{},"text":"You install the Microsoft Defender for Identity sensor on a server named Server1 that runs Windows Server 2016.","key":"798kf","type":"unstyled","inlineStyleRanges":[]},{"depth":0,"type":"unstyled","entityRanges":[],"key":"df6j8","text":"You need to integrate the VPN and Defender for Identity.","data":{},"inlineStyleRanges":[]},{"text":"What should you do?","type":"unstyled","data":{},"entityRanges":[],"key":"3iban","inlineStyleRanges":[],"depth":0}],"entityMap":{}},"id":"ne1Cl3a38"},
+      test: {questions: [{answers: []}]},
+      question: {id: 'ne1Cl3a38', question: {entityMap: {}, blocks: [{data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', entityRanges: [], key: 'ctt8t', text: 'Your network contains an Active Directory domain named GitBit.org. The domain contains a VPN server named VPN1 that runs Windows Server 2016 and has the Remote Access server role installed.'}, {key: '1quvv', text: 'You have a Microsoft Azure subscription.', type: 'unstyled', entityRanges: [], data: {}, inlineStyleRanges: [], depth: 0}, {data: {}, inlineStyleRanges: [], depth: 0, key: 'am3ap', type: 'unstyled', text: 'You are deploying Microsoft Defender for Identity.', entityRanges: []}, {entityRanges: [], data: {}, inlineStyleRanges: [], type: 'unstyled', text: 'You install the Microsoft Defender for Identity sensor on a server named Server1 that runs Windows Server 2016.', key: '798kf', depth: 0}, {type: 'unstyled', entityRanges: [], data: {}, depth: 0, inlineStyleRanges: [], text: 'You need to integrate the VPN and Defender for Identity.', key: 'df6j8'}, {data: {}, inlineStyleRanges: [], text: 'What should you do?', entityRanges: [], key: '3iban', depth: 0, type: 'unstyled'}]}, answers: [{isCorrectAnswer: false, value: 'On VPN1: Configure and authentication provider.'}, {isCorrectAnswer: true, value: 'On VPN1: Configure an accounting provider.'}, {isCorrectAnswer: false, value: 'On VPN1: Create a connection request policy'}, {isCorrectAnswer: false, value: 'On VPN1: Create a RADIUS client.'}, {value: 'One Server1, enabled the following inbound port: 443', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'One Server1, enabled the following inbound port: 1723'}, {isCorrectAnswer: true, value: 'One Server1, enabled the following inbound port: 1813'}, {value: 'One Server1, enabled the following inbound port: 8080', isCorrectAnswer: false}, {value: 'One Server1, enabled the following inbound port: 8531', isCorrectAnswer: false}], references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/install-atp-step6-vpn'}, mutability: 'MUTABLE'}}, blocks: [{depth: 0, inlineStyleRanges: [], type: 'unstyled', key: 'd1ihq', data: {}, text: 'Three steps are required to set up VPN monitoring using Defender for Identity', entityRanges: []}, {inlineStyleRanges: [], text: '1. Configure RADIUS Accounting on VPN1', data: {}, key: '1f1td', type: 'unstyled', depth: 0, entityRanges: []}, {depth: 0, entityRanges: [], key: 'dl9j3', text: '2. Enable VPN / RADIUS Accounts in Defender for Identity', inlineStyleRanges: [], data: {}, type: 'unstyled'}, {entityRanges: [], data: {}, text: '3. Enable inbound port 1813 on Server1', depth: 0, inlineStyleRanges: [], type: 'unstyled', key: '3va51'}, {data: {}, type: 'unstyled', inlineStyleRanges: [], entityRanges: [{key: 0, length: 90, offset: 0}], key: '3ulat', text: 'https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA', depth: 0}, {entityRanges: [{offset: 0, key: 1, length: 87}], depth: 0, text: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/install-atp-step6-vpn', key: '9hq9g', type: 'unstyled', data: {}, inlineStyleRanges: []}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"text":"google.com is not listed in the \"allow only these domains\" list so they cannot access OneDrive files.","inlineStyleRanges":[],"depth":0,"data":{},"type":"unstyled","key":"52o7v","entityRanges":[]},{"key":"12jc2","text":"adatum.com is listed in the \"allow only these domains\" but OneDrive sharing is set to \"existing external users\" so a guest user account would be required. Once the guest account is created and the content is shared with the Adatum.com user then the Adatum user will be able to access the content.","depth":0,"inlineStyleRanges":[{"offset":225,"length":5,"style":"color-rgb(33,37,41)"},{"offset":250,"style":"color-rgb(33,37,41)","length":5},{"length":5,"offset":225,"style":"bgcolor-rgb(255,255,255)"},{"style":"bgcolor-rgb(255,255,255)","offset":250,"length":5},{"offset":225,"length":5,"style":"fontsize-16"},{"style":"fontsize-16","offset":250,"length":5},{"length":5,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":225},{"length":5,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":250}],"type":"unstyled","data":{},"entityRanges":[]},{"data":{},"inlineStyleRanges":[],"depth":0,"type":"unstyled","key":"2nc3v","text":"https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI ","entityRanges":[{"length":128,"key":0,"offset":0}]},{"data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0,"key":"1ti69","entityRanges":[{"offset":0,"key":1,"length":75}],"text":"https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off"}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"1":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off"},"type":"LINK"}}},"id":"4RvnhcEfy","question":{"blocks":[{"depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant with a domain of gitbit.org.","entityRanges":[],"key":"dnpo8","data":{}},{"data":{},"entityRanges":[],"text":"You configure the Sharing settings in Microsoft SharePoint Online as below.","type":"unstyled","depth":0,"inlineStyleRanges":[],"key":"2mcb0"},{"key":"8ogn7","entityRanges":[{"key":0,"offset":0,"length":1}],"text":" ","inlineStyleRanges":[],"depth":0,"data":{},"type":"atomic"},{"entityRanges":[],"type":"unstyled","data":{},"text":"Click the box next to each true statement","depth":0,"inlineStyleRanges":[],"key":"122r8"}],"entityMap":{"0":{"type":"IMAGE","mutability":"MUTABLE","data":{"alt":"OneDrive Sharing Settings","width":"auto","alignment":"left","height":"auto","src":"https://i.ibb.co/nP9z6jR/onedrive-sharing-settings.png"}}}},"answers":[{"isCorrectAnswer":true,"value":"A user with an email address of userA@google.com cannot access OneDrive files."},{"value":"A user with an email address of userA@google.com can access OneDrive files after a link is created.","isCorrectAnswer":false},{"value":"A user with an email address of userA@google.com must be added to a group before the user can access OneDrive content.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"If a new guest user is created for userB@adatum.com the user cannot access OneDrive files."},{"value":"If a new guest user is created for userB@adatum.com the user can access OneDrive content after a link is files.","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"If a new guest user is created for userB@adatum.com must be added to a group before the user can access OneDrive content."}]},
+      test: {questions: [{answers: []}]},
+      question: {id: '4RvnhcEfy', references: {blocks: [{key: '52o7v', data: {}, depth: 0, inlineStyleRanges: [], entityRanges: [], type: 'unstyled', text: 'google.com is not listed in the "allow only these domains" list so they cannot access OneDrive files.'}, {key: '12jc2', inlineStyleRanges: [{length: 5, style: 'color-rgb(33,37,41)', offset: 225}, {length: 5, style: 'color-rgb(33,37,41)', offset: 250}, {style: 'bgcolor-rgb(255,255,255)', length: 5, offset: 225}, {offset: 250, style: 'bgcolor-rgb(255,255,255)', length: 5}, {offset: 225, length: 5, style: 'fontsize-16'}, {offset: 250, length: 5, style: 'fontsize-16'}, {length: 5, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 225}, {length: 5, offset: 250, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], type: 'unstyled', entityRanges: [], depth: 0, text: 'adatum.com is listed in the "allow only these domains" but OneDrive sharing is set to "existing external users" so a guest user account would be required. Once the guest account is created and the content is shared with the Adatum.com user then the Adatum user will be able to access the content.', data: {}}, {key: '2nc3v', text: 'https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI ', data: {}, inlineStyleRanges: [], depth: 0, entityRanges: [{length: 128, key: 0, offset: 0}], type: 'unstyled'}, {type: 'unstyled', text: 'https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off', key: '1ti69', depth: 0, entityRanges: [{length: 75, offset: 0, key: 1}], inlineStyleRanges: [], data: {}}], entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI', targetOption: '_blank'}, type: 'LINK'}, 1: {mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off', targetOption: '_blank'}, type: 'LINK'}}}, question: {entityMap: {0: {data: {height: 'auto', width: 'auto', alignment: 'left', src: 'https://i.ibb.co/nP9z6jR/onedrive-sharing-settings.png', alt: 'OneDrive Sharing Settings'}, mutability: 'MUTABLE', type: 'IMAGE'}}, blocks: [{inlineStyleRanges: [], key: 'dnpo8', data: {}, text: 'Your organization has a Microsoft 365 tenant with a domain of gitbit.org.', depth: 0, type: 'unstyled', entityRanges: []}, {entityRanges: [], inlineStyleRanges: [], key: '2mcb0', text: 'You configure the Sharing settings in Microsoft SharePoint Online as below.', type: 'unstyled', data: {}, depth: 0}, {data: {}, key: '8ogn7', entityRanges: [{key: 0, offset: 0, length: 1}], inlineStyleRanges: [], type: 'atomic', depth: 0, text: ' '}, {inlineStyleRanges: [], entityRanges: [], type: 'unstyled', data: {}, depth: 0, text: 'Click the box next to each true statement', key: '122r8'}]}, answers: [{isCorrectAnswer: true, value: 'A user with an email address of userA@google.com cannot access OneDrive files.'}, {value: 'A user with an email address of userA@google.com can access OneDrive files after a link is created.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'A user with an email address of userA@google.com must be added to a group before the user can access OneDrive content.'}, {isCorrectAnswer: false, value: 'If a new guest user is created for userB@adatum.com the user cannot access OneDrive files.'}, {value: 'If a new guest user is created for userB@adatum.com the user can access OneDrive content after a link is files.', isCorrectAnswer: true}, {value: 'If a new guest user is created for userB@adatum.com must be added to a group before the user can access OneDrive content.', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

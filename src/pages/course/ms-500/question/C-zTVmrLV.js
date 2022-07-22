@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"C-zTVmrLV","answers":[{"value":"From the Azure AD admin center, create a conditional access policy and configure the group, the cloud app, and enable app enforced restrictions","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"From the Azure AD admin center, create a conditional access policy and configure the group, the cloud app, and set the conditions settings"},{"value":"From the Azure AD admin center, create a conditional access policy and configure the group, the conditions settings, and enable app enforced restrictions","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"From PowerShell connect to Exchange Online and run New-OwaMailboxPolicy and Set-OwaMailboxPolicy"},{"value":"From PowerShell connect to Exchange Online and run New-ClientAccessRule and Test-ClientAccessRule","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"From PowerShell connect to Exchange Online and run Get-CASMailbox and Set-CASMailbox"}],"references":{"blocks":[{"data":{},"inlineStyleRanges":[],"entityRanges":[],"depth":0,"text":"First, you need to create a conditional access policy that will set app-enforced restrictions in the sessions section. Then create an OWA Mailbox Policy and set the OWA Mailbox Policy. Finally, you assign the OWA Mailbox Policy to users.","key":"2cl7a","type":"unstyled"},{"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","entityRanges":[{"key":0,"length":98,"offset":0}],"data":{},"depth":0,"key":"8ravp","type":"unstyled"},{"data":{},"text":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/app-based-conditional-access","type":"unstyled","inlineStyleRanges":[],"depth":0,"entityRanges":[{"key":1,"length":103,"offset":0}],"key":"70gts"}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","targetOption":"_blank"}},"1":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/app-based-conditional-access"},"type":"LINK"}}},"question":{"blocks":[{"key":"b9tm7","text":"Your organization has a Microsoft 365 tenant. Your manager has asked you to set up app-enforced restrictions for 20 users so they can't download attachments unless they are on a compliant device. From the Azure AD admin center, you create a security group called GroupA.","entityRanges":[],"depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled"},{"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"key":"4ttei","data":{},"text":"What are the next two steps you need to take?","depth":0}],"entityMap":{}}},
+      test: {questions: [{answers: []}]},
+      question: {id: 'C-zTVmrLV', answers: [{value: 'From the Azure AD admin center, create a conditional access policy and configure the group, the cloud app, and enable app enforced restrictions', isCorrectAnswer: true}, {value: 'From the Azure AD admin center, create a conditional access policy and configure the group, the cloud app, and set the conditions settings', isCorrectAnswer: false}, {value: 'From the Azure AD admin center, create a conditional access policy and configure the group, the conditions settings, and enable app enforced restrictions', isCorrectAnswer: false}, {value: 'From PowerShell connect to Exchange Online and run New-OwaMailboxPolicy and Set-OwaMailboxPolicy', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'From PowerShell connect to Exchange Online and run New-ClientAccessRule and Test-ClientAccessRule'}, {isCorrectAnswer: false, value: 'From PowerShell connect to Exchange Online and run Get-CASMailbox and Set-CASMailbox'}], references: {entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx', targetOption: '_blank'}, mutability: 'MUTABLE'}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/app-based-conditional-access', targetOption: '_blank'}}}, blocks: [{type: 'unstyled', inlineStyleRanges: [], key: '2cl7a', text: 'First, you need to create a conditional access policy that will set app-enforced restrictions in the sessions section. Then create an OWA Mailbox Policy and set the OWA Mailbox Policy. Finally, you assign the OWA Mailbox Policy to users.', entityRanges: [], depth: 0, data: {}}, {key: '8ravp', data: {}, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx', depth: 0, inlineStyleRanges: [], entityRanges: [{offset: 0, key: 0, length: 98}]}, {depth: 0, entityRanges: [{length: 103, key: 1, offset: 0}], type: 'unstyled', data: {}, inlineStyleRanges: [], key: '70gts', text: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/app-based-conditional-access'}]}, question: {entityMap: {}, blocks: [{data: {}, entityRanges: [], key: 'b9tm7', text: 'Your organization has a Microsoft 365 tenant. Your manager has asked you to set up app-enforced restrictions for 20 users so they can\'t download attachments unless they are on a compliant device. From the Azure AD admin center, you create a security group called GroupA.', inlineStyleRanges: [], depth: 0, type: 'unstyled'}, {text: 'What are the next two steps you need to take?', depth: 0, type: 'unstyled', data: {}, key: '4ttei', inlineStyleRanges: [], entityRanges: []}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

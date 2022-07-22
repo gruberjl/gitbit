@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"depth":0,"data":{},"type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"key":"aa2i5","text":"Your organization has a Microsoft 365 but doesn't have the Azure AD premium licenses."},{"type":"unstyled","entityRanges":[],"key":"kn2b","inlineStyleRanges":[],"data":{},"depth":0,"text":"Your manager has asked you to configure MFA on John's user account. You need to ensure John has to use MFA for all authentication requests."},{"text":"What should you do to complete the task?","inlineStyleRanges":[{"offset":0,"length":40,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","offset":0,"length":40},{"offset":0,"style":"fontsize-16","length":40},{"length":40,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":0}],"entityRanges":[],"data":{},"key":"11aed","depth":0,"type":"unstyled"}]},"id":"iwmb-b0C2","answers":[{"value":"Open Microsoft 365 admin center. Go to Users > Active Users > Multi-factor authentication. Click the user. Click Enable.","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Open Azure AD admin center. Go to Users > Active Users > Multi-factor authentication. Click the user. Click Enable."},{"isCorrectAnswer":false,"value":"Open Endpoint admin center. Go to Users > Active Users > Multi-factor authentication. Click the user. Click Enable."}],"references":{"blocks":[{"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk","data":{},"key":"68vch","type":"unstyled","entityRanges":[{"offset":0,"length":128,"key":0}],"inlineStyleRanges":[]},{"data":{},"text":"https://www.iorad.com/player/1797275/MS-500---How-to-enable-MFA-for-a-single-user","inlineStyleRanges":[],"depth":0,"key":"7g1qc","type":"unstyled","entityRanges":[{"offset":0,"key":1,"length":81}]},{"data":{},"entityRanges":[],"text":"Open the Microsoft 365 admin center.","type":"ordered-list-item","inlineStyleRanges":[],"depth":0,"key":"8hnp0"},{"type":"ordered-list-item","key":"c1782","inlineStyleRanges":[],"data":{},"entityRanges":[],"depth":0,"text":"Go to Users > Active Users > Multi-factor authentication."},{"inlineStyleRanges":[],"key":"63mac","text":"Click the user.","depth":0,"type":"ordered-list-item","entityRanges":[],"data":{}},{"key":"fc25c","type":"ordered-list-item","inlineStyleRanges":[],"depth":0,"entityRanges":[],"text":"Click Enable / enforce.","data":{}}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"1":{"data":{"url":"https://www.iorad.com/player/1797275/MS-500---How-to-enable-MFA-for-a-single-user","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{key: '68vch', depth: 0, entityRanges: [{key: 0, length: 128, offset: 0}], inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk', data: {}, type: 'unstyled'}, {data: {}, type: 'unstyled', entityRanges: [{length: 81, offset: 0, key: 1}], depth: 0, text: 'https://www.iorad.com/player/1797275/MS-500---How-to-enable-MFA-for-a-single-user', inlineStyleRanges: [], key: '7g1qc'}, {inlineStyleRanges: [], data: {}, type: 'ordered-list-item', entityRanges: [], depth: 0, text: 'Open the Microsoft 365 admin center.', key: '8hnp0'}, {data: {}, key: 'c1782', text: 'Go to Users > Active Users > Multi-factor authentication.', type: 'ordered-list-item', depth: 0, inlineStyleRanges: [], entityRanges: []}, {depth: 0, type: 'ordered-list-item', entityRanges: [], data: {}, inlineStyleRanges: [], text: 'Click the user.', key: '63mac'}, {key: 'fc25c', inlineStyleRanges: [], type: 'ordered-list-item', data: {}, entityRanges: [], depth: 0, text: 'Click Enable / enforce.'}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {data: {targetOption: '_blank', url: 'https://www.iorad.com/player/1797275/MS-500---How-to-enable-MFA-for-a-single-user'}, type: 'LINK', mutability: 'MUTABLE'}}}, id: 'iwmb-b0C2', answers: [{isCorrectAnswer: true, value: 'Open Microsoft 365 admin center. Go to Users > Active Users > Multi-factor authentication. Click the user. Click Enable.'}, {isCorrectAnswer: false, value: 'Open Azure AD admin center. Go to Users > Active Users > Multi-factor authentication. Click the user. Click Enable.'}, {value: 'Open Endpoint admin center. Go to Users > Active Users > Multi-factor authentication. Click the user. Click Enable.', isCorrectAnswer: false}], question: {entityMap: {}, blocks: [{key: 'aa2i5', inlineStyleRanges: [], data: {}, entityRanges: [], type: 'unstyled', text: 'Your organization has a Microsoft 365 but doesn\'t have the Azure AD premium licenses.', depth: 0}, {type: 'unstyled', entityRanges: [], depth: 0, key: 'kn2b', inlineStyleRanges: [], text: 'Your manager has asked you to configure MFA on John\'s user account. You need to ensure John has to use MFA for all authentication requests.', data: {}}, {inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 40, offset: 0}, {length: 40, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {style: 'fontsize-16', offset: 0, length: 40}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 40, offset: 0}], entityRanges: [], text: 'What should you do to complete the task?', data: {}, type: 'unstyled', depth: 0, key: '11aed'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

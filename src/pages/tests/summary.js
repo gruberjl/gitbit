@@ -1,38 +1,26 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import Paper from '@mui/material/Paper'
-import { onAuthStateChanged } from "../../components/firebase/on-auth-state-changed"
+import {onAuthStateChanged} from '../../components/firebase/on-auth-state-changed'
 import {getDoc} from '../../components/firebase/get-doc'
-import saveDoc from '../../components/firebase/save-doc'
 import CheckBoxOutlineBlank from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBox from '@mui/icons-material/CheckBox'
 import IndeterminateCheckBox from '@mui/icons-material/IndeterminateCheckBox'
 import Page from '../../components/page'
 import QUESTIONS from '../../data/questions'
 
-const checkedBoxSyle = {
-  color: 'green',
-  marginRight: '12px'
-}
-
-const uncheckedBoxSyle = {
-  color: 'red',
-  marginRight: '12px'
-}
-
 const gradeQuestion = (question, answers) => {
-  let maxPoints = question.answers.filter((answer) => answer.isCorrectAnswer === true).length
+  const maxPoints = question.answers.filter((answer) => answer.isCorrectAnswer === true).length
   let pointsReceived = 0
 
-  question.answers.forEach(answer => {
+  question.answers.forEach((answer) => {
     const userMarkedCorrect = answers.includes(answer.value)
-    if (answer.isCorrectAnswer && userMarkedCorrect) {
+    if (answer.isCorrectAnswer && userMarkedCorrect)
       pointsReceived++
-    } else if (!answer.isCorrectAnswer && userMarkedCorrect) {
+    else if (!answer.isCorrectAnswer && userMarkedCorrect)
       pointsReceived--
-    }
   })
 
   if (pointsReceived < 0)
@@ -65,9 +53,8 @@ class TestsSummary extends Component {
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -82,7 +69,7 @@ class TestsSummary extends Component {
 
     this.setState({uid: user.uid})
 
-    getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
+    getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
       test.score = 0
       this.setState({test})
       this.setQuestions(test)
@@ -93,7 +80,7 @@ class TestsSummary extends Component {
     const questions = this.state.questions
 
     test.questions.forEach((testQuestion) => {
-      const QUESTION = QUESTIONS.find(q => q.id === testQuestion.id)
+      const QUESTION = QUESTIONS.find((q) => q.id === testQuestion.id)
       const question = {}
       if (!QUESTION)
         return
@@ -128,7 +115,7 @@ class TestsSummary extends Component {
     let maxPoints = 0
     let pointsReceived = 0
 
-    questions.forEach(question => {
+    questions.forEach((question) => {
       maxPoints += question.maxPoints
       pointsReceived += question.pointsReceived
     })
@@ -144,7 +131,7 @@ class TestsSummary extends Component {
       <Page title={'Microsoft 365 MS-500 practice test summary'} description={'Microsoft 365 MS-500 practice test summary'}>
         <main style={{backgroundColor: '#F3F6F9', paddingTop: '60px'}}>
           <Container>
-            <Paper elevation={3} sx={{p:4}}>
+            <Paper elevation={3} sx={{p: 4}}>
               <Grid container className='box' spacing={2}>
                 <Grid item xs={6} className='box-row'>
                   <strong>Exam Number:</strong> MS-500
@@ -177,18 +164,18 @@ class TestsSummary extends Component {
             </Grid>
             <Grid container>
               { questions.map((question, idx) => (
-                <Grid item style={{display:'flex', alignItems:'center', justifyContent:'start'}} xs={6} md={4} key={idx} title={question.status}>
-                  { question.status === 'Answered correctly'
-                    ? <CheckBox color='success'/>
-                    : ''
+                <Grid item style={{display: 'flex', alignItems: 'center', justifyContent: 'start'}} xs={6} md={4} key={idx} title={question.status}>
+                  { question.status === 'Answered correctly' ?
+                    <CheckBox color='success' /> :
+                    ''
                   }
-                  { question.status === 'Not answered'
-                    ? <CheckBoxOutlineBlank color="action"/>
-                    : ''
+                  { question.status === 'Not answered' ?
+                    <CheckBoxOutlineBlank color="action" /> :
+                    ''
                   }
-                  { question.status === 'Answered incorrectly'
-                    ? <IndeterminateCheckBox sx={{ color: 'red' }} />
-                    : ''
+                  { question.status === 'Answered incorrectly' ?
+                    <IndeterminateCheckBox sx={{color: 'red'}} /> :
+                    ''
                   }
 
                   <Button variant="text" size="large" href={`/course/ms-500/question/${question.id}?testId=${this.state.testId}`}>{idx+1}. {question.text}</Button>

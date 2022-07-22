@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"User 1 will be blocked from signing in","isCorrectAnswer":false},{"value":"User 1 will be able to sign in without MFA","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"User 1 will be prompted for MFA before signing in"},{"value":"User 2 will be blocked from signing in","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"User 2 will be able to sign in without MFA"},{"isCorrectAnswer":false,"value":"User 2 will be prompted for MFA before signing in"}],"references":{"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ"}}},"blocks":[{"data":{},"key":"9c8uc","inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"depth":0,"text":"User1 is excluded from the policy because excluding GroupB takes precedence over the inclusion of GroupA."},{"type":"unstyled","key":"d20ah","entityRanges":[],"data":{},"depth":0,"text":"User2 is blocked from signing in because the MFA status for the user is Disabled. Once User2 configures their MFA then they'll be able to log in with MFA.","inlineStyleRanges":[]},{"data":{},"key":"3ktpn","type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ","entityRanges":[{"key":0,"length":123,"offset":0}],"inlineStyleRanges":[],"depth":0}]},"question":{"blocks":[{"entityRanges":[],"text":"You have a Microsoft 365 tenant named GitBit.org that contains the following users:","inlineStyleRanges":[],"depth":0,"data":{},"key":"9h023","type":"unstyled"},{"text":" ","type":"atomic","key":"17ndt","data":{},"depth":0,"inlineStyleRanges":[],"entityRanges":[{"length":1,"key":0,"offset":0}]},{"text":"You create an Azure AD Identity Protection sign-in risk policy.","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled","key":"dn9c4","entityRanges":[]},{"data":{},"key":"crs1t","type":"unstyled","text":"You've assigned the policy to GroupA and excluded GroupB.","depth":0,"entityRanges":[],"inlineStyleRanges":[{"offset":30,"style":"BOLD","length":7},{"length":15,"style":"BOLD","offset":41}]},{"depth":0,"data":{},"key":"ceebf","entityRanges":[],"text":"You've set the sign-in risk condition to low and above.","type":"unstyled","inlineStyleRanges":[{"style":"BOLD","length":13,"offset":41}]},{"depth":0,"type":"unstyled","data":{},"inlineStyleRanges":[{"length":25,"offset":33,"style":"BOLD"}],"text":"You've set the access control to Allow access, require MFA","key":"de801","entityRanges":[]},{"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"text":"You need to understand how the policy will affect your users.","data":{},"depth":0,"key":"8daa5"},{"entityRanges":[],"depth":0,"data":{},"text":"What will happen when one of the user's signs in from an anonymous IP address?","inlineStyleRanges":[],"key":"84q3k","type":"unstyled"}],"entityMap":{"0":{"type":"IMAGE","mutability":"MUTABLE","data":{"src":"https://i.ibb.co/rtkchN3/user-groups.png","height":"auto","alt":"Char showing User1 and User2 that has Group memberships","width":"auto","alignment":"left"}}}},"id":"xJr5aqKGk"},
+      test: {questions: [{answers: []}]},
+      question: {id: 'xJr5aqKGk', references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}}, blocks: [{inlineStyleRanges: [], depth: 0, text: 'User1 is excluded from the policy because excluding GroupB takes precedence over the inclusion of GroupA.', key: '9c8uc', type: 'unstyled', entityRanges: [], data: {}}, {type: 'unstyled', key: 'd20ah', depth: 0, inlineStyleRanges: [], entityRanges: [], text: 'User2 is blocked from signing in because the MFA status for the user is Disabled. Once User2 configures their MFA then they\'ll be able to log in with MFA.', data: {}}, {depth: 0, entityRanges: [{key: 0, offset: 0, length: 123}], text: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ', key: '3ktpn', inlineStyleRanges: [], data: {}, type: 'unstyled'}]}, answers: [{value: 'User 1 will be blocked from signing in', isCorrectAnswer: false}, {value: 'User 1 will be able to sign in without MFA', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'User 1 will be prompted for MFA before signing in'}, {value: 'User 2 will be blocked from signing in', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'User 2 will be able to sign in without MFA'}, {isCorrectAnswer: false, value: 'User 2 will be prompted for MFA before signing in'}], question: {entityMap: {0: {mutability: 'MUTABLE', data: {height: 'auto', src: 'https://i.ibb.co/rtkchN3/user-groups.png', width: 'auto', alignment: 'left', alt: 'Char showing User1 and User2 that has Group memberships'}, type: 'IMAGE'}}, blocks: [{type: 'unstyled', key: '9h023', depth: 0, data: {}, text: 'You have a Microsoft 365 tenant named GitBit.org that contains the following users:', inlineStyleRanges: [], entityRanges: []}, {text: ' ', data: {}, key: '17ndt', type: 'atomic', depth: 0, entityRanges: [{offset: 0, length: 1, key: 0}], inlineStyleRanges: []}, {type: 'unstyled', inlineStyleRanges: [], depth: 0, data: {}, key: 'dn9c4', entityRanges: [], text: 'You create an Azure AD Identity Protection sign-in risk policy.'}, {type: 'unstyled', data: {}, key: 'crs1t', depth: 0, text: 'You\'ve assigned the policy to GroupA and excluded GroupB.', entityRanges: [], inlineStyleRanges: [{length: 7, style: 'BOLD', offset: 30}, {style: 'BOLD', length: 15, offset: 41}]}, {depth: 0, data: {}, key: 'ceebf', inlineStyleRanges: [{style: 'BOLD', offset: 41, length: 13}], type: 'unstyled', entityRanges: [], text: 'You\'ve set the sign-in risk condition to low and above.'}, {data: {}, text: 'You\'ve set the access control to Allow access, require MFA', type: 'unstyled', inlineStyleRanges: [{length: 25, offset: 33, style: 'BOLD'}], depth: 0, key: 'de801', entityRanges: []}, {entityRanges: [], inlineStyleRanges: [], data: {}, key: '8daa5', text: 'You need to understand how the policy will affect your users.', type: 'unstyled', depth: 0}, {type: 'unstyled', text: 'What will happen when one of the user\'s signs in from an anonymous IP address?', entityRanges: [], depth: 0, inlineStyleRanges: [], key: '84q3k', data: {}}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

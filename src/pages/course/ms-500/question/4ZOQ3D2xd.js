@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"type":"unstyled","key":"24ut7","entityRanges":[],"data":{},"inlineStyleRanges":[],"depth":0,"text":"Your organization has an Active Directory domain named gitbit.org. You've installed Azure AD Connect on ServerA which is a server running Windows 2016."},{"entityRanges":[],"depth":0,"data":{},"text":"There's an error syncing user accounts from your on-premises AD to Microsoft 365.","inlineStyleRanges":[],"key":"43e0t","type":"unstyled"},{"inlineStyleRanges":[],"text":"You've been tasked with resolving the error. To start, you RDP to ServerA and open the Directory Service event logs.","key":"4f9bd","data":{},"depth":0,"entityRanges":[],"type":"unstyled"},{"depth":0,"type":"unstyled","data":{},"inlineStyleRanges":[],"text":"What location can you use to troubleshoot the AD Connect sync errors?","entityRanges":[],"key":"6rnh3"}],"entityMap":{}},"id":"4ZOQ3D2xd","answers":[{"value":"Directory Service event logs","isCorrectAnswer":false},{"value":"Security event log","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Application event log"},{"value":"System event log","isCorrectAnswer":false}],"references":{"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","targetOption":"_blank"}},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off","targetOption":"_blank"}}},"blocks":[{"text":"Troubleshooting AD Connect cannot be performed from the Directory Service event logs. You'll need to access the Windows Application event logs.","depth":0,"entityRanges":[],"key":"cj3ba","type":"unstyled","data":{},"inlineStyleRanges":[{"length":87,"style":"color-rgb(33,37,41)","offset":56},{"style":"bgcolor-rgb(255,255,255)","offset":56,"length":87},{"length":87,"style":"fontsize-16","offset":56},{"length":87,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":56}]},{"data":{},"depth":0,"key":"fq0pe","inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"key":0,"offset":0,"length":69}],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P"},{"key":"c5fh0","depth":0,"entityRanges":[{"key":1,"length":93,"offset":0}],"inlineStyleRanges":[],"text":"https://support.pingidentity.com/s/article/PingOne-How-to-troubleshoot-an-AD-Connect-Instance","data":{},"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{entityRanges: [], depth: 0, key: '24ut7', type: 'unstyled', data: {}, inlineStyleRanges: [], text: 'Your organization has an Active Directory domain named gitbit.org. You\'ve installed Azure AD Connect on ServerA which is a server running Windows 2016.'}, {data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', text: 'There\'s an error syncing user accounts from your on-premises AD to Microsoft 365.', entityRanges: [], key: '43e0t'}, {entityRanges: [], text: 'You\'ve been tasked with resolving the error. To start, you RDP to ServerA and open the Directory Service event logs.', key: '4f9bd', depth: 0, inlineStyleRanges: [], type: 'unstyled', data: {}}, {inlineStyleRanges: [], text: 'What location can you use to troubleshoot the AD Connect sync errors?', type: 'unstyled', key: '6rnh3', entityRanges: [], data: {}, depth: 0}]}, id: '4ZOQ3D2xd', answers: [{value: 'Directory Service event logs', isCorrectAnswer: false}, {value: 'Security event log', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Application event log'}, {isCorrectAnswer: false, value: 'System event log'}], references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P'}, type: 'LINK'}, 1: {type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off', targetOption: '_blank'}, mutability: 'MUTABLE'}}, blocks: [{data: {}, entityRanges: [], depth: 0, text: 'Troubleshooting AD Connect cannot be performed from the Directory Service event logs. You\'ll need to access the Windows Application event logs.', type: 'unstyled', key: 'cj3ba', inlineStyleRanges: [{style: 'color-rgb(33,37,41)', offset: 56, length: 87}, {offset: 56, style: 'bgcolor-rgb(255,255,255)', length: 87}, {style: 'fontsize-16', offset: 56, length: 87}, {offset: 56, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 87}]}, {entityRanges: [{offset: 0, key: 0, length: 69}], data: {}, key: 'fq0pe', type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', depth: 0, inlineStyleRanges: []}, {key: 'c5fh0', type: 'unstyled', text: 'https://support.pingidentity.com/s/article/PingOne-How-to-troubleshoot-an-AD-Connect-Instance', data: {}, entityRanges: [{length: 93, offset: 0, key: 1}], depth: 0, inlineStyleRanges: []}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

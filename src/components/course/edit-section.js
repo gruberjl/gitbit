@@ -1,7 +1,6 @@
-import { h } from "preact"
-import Paper  from '@mui/material/Paper'
-import Stack from '@mui/material/Stack'
-import Grid from '@mui/material/Grid'
+/* eslint no-unused-vars: "off" */
+import {h} from 'preact'
+import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
 import DragIndicator from '@mui/icons-material/DragIndicator'
 import Delete from '@mui/icons-material/Delete'
@@ -12,23 +11,14 @@ import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
 import ListItemButton from '@mui/material/ListItemButton'
 import ListItemAvatar from '@mui/material/ListItemAvatar'
-import ListItemIcon from '@mui/material/ListItemIcon'
 import ListItemText from '@mui/material/ListItemText'
 import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 import shortid from 'shortid'
-import { EditorState, convertToRaw } from 'draft-js'
-
-const flexStyle = {
-  display: 'flex'
-}
+import {EditorState, convertToRaw} from 'draft-js'
 
 const marginRight16 = {
   marginRight: '16px'
-}
-
-const marginLeft16 = {
-  marginLeft: '16px'
 }
 
 const svgStyle = {
@@ -47,18 +37,22 @@ const resort = (arr) => {
 }
 
 const EditSection = ({section, updateSection, removeSection, allowDrop, onDrop, idx, courseId, contents, addContent, removeContent}) => {
-  const dragStartSection = (section) => {return (ev) => {
-    ev.dataTransfer.setData("sectionId", section.id)
-    ev.dataTransfer.setData("type", 'section')
-  }}
+  const dragStartSection = (section) => {
+    return (ev) => {
+      ev.dataTransfer.setData('sectionId', section.id)
+      ev.dataTransfer.setData('type', 'section')
+    }
+  }
 
-  const dragStartContent = (section, content) => {return (ev) => {
-    ev.dataTransfer.setData("sectionId", section.id)
-    ev.dataTransfer.setData("contentId", content.id)
-    ev.dataTransfer.setData("type", 'content')
-  }}
+  const dragStartContent = (section, content) => {
+    return (ev) => {
+      ev.dataTransfer.setData('sectionId', section.id)
+      ev.dataTransfer.setData('contentId', content.id)
+      ev.dataTransfer.setData('type', 'content')
+    }
+  }
 
-  const sectionContents = resort(contents.filter(content => content.sectionId === section.id))
+  const sectionContents = resort(contents.filter((content) => content.sectionId === section.id))
 
   const createContent = () => {
     const content = {
@@ -72,12 +66,10 @@ const EditSection = ({section, updateSection, removeSection, allowDrop, onDrop, 
       featuredImage: ''
     }
 
-    if (sectionContents.length > 0) {
+    if (sectionContents.length > 0)
       addContent(content, sectionContents[sectionContents.length-1].id)
-    } else {
+    else
       addContent(content)
-    }
-
   }
 
   return (
@@ -85,27 +77,27 @@ const EditSection = ({section, updateSection, removeSection, allowDrop, onDrop, 
       <List>
         <ListItem secondaryAction={
           <Button edge="end" variant="contained" onClick={removeSection(section)} data-section-idx={idx}>
-            <Delete data-section-idx={idx}/>
+            <Delete data-section-idx={idx} />
           </Button>
         }>
           <ListItemAvatar>
             <Avatar><DragIndicator style={svgStyle} data-section-idx={idx} /></Avatar>
           </ListItemAvatar>
-          <TextField fullWidth hiddenLabel placeholder="Section Title" variant="standard" value={section.title} name='section-title' onChange={updateSection} style={marginRight16} data-section-idx={idx}/>
+          <TextField fullWidth hiddenLabel placeholder="Section Title" variant="standard" value={section.title} name='section-title' onChange={updateSection} style={marginRight16} data-section-idx={idx} />
         </ListItem>
         { sectionContents.map((content, index) => (
-          <ListItem secondaryAction={
+          <ListItem key={index} secondaryAction={
             <IconButton edge="end" aria-label="delete" onClick={removeContent(content.id)} >
               <Delete />
             </IconButton>
           }>
             <ListItemAvatar>
-              <Avatar sx={{ bgcolor: '#ffffff', color: 'black' }} style={svgStyle}><DragIndicator /></Avatar>
+              <Avatar sx={{bgcolor: '#ffffff', color: 'black'}} style={svgStyle}><DragIndicator /></Avatar>
             </ListItemAvatar>
             <ListItemButton href={`/course/edit-content?courseId=${courseId}&contentId=${content.id}`}>
-              <ListItemText primary={content.title || 'New Content'}/>
+              <ListItemText primary={content.title || 'New Content'} />
             </ListItemButton>
-            {content.publish ? <Public title="published"/> : ''}
+            {content.publish ? <Public title="published" /> : ''}
           </ListItem>
         ))}
         <ListItem data-section-idx={idx}>
@@ -113,7 +105,7 @@ const EditSection = ({section, updateSection, removeSection, allowDrop, onDrop, 
             <Add data-section-idx={idx} /> Add Article
           </ListItemButton>
         </ListItem>
-    </List>
+      </List>
     </Paper>
   )
 }

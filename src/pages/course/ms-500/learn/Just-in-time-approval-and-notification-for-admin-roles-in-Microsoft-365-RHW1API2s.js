@@ -1,4 +1,5 @@
-import { h, Component } from "preact"
+/* eslint react/jsx-no-undef: "off", no-tabs: "off", no-irregular-whitespace: "off" */
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import ContentsRead from '../../../../components/contents-read'
 import Container from '@mui/material/Container'
@@ -13,18 +14,8 @@ import Box from '@mui/material/Box'
 
 const isBrowser = () => typeof window !== 'undefined'
 
-const removePaddingStyle = {
-  padding: '0px'
-}
-
 const marginTop24Style = {
   marginTop: '24px'
-}
-
-const listItemStyle = {
-  border: 'none',
-  paddingTop: '12px',
-  paddingBottom: '12px'
 }
 
 class ArticlePage extends Component {
@@ -32,11 +23,13 @@ class ArticlePage extends Component {
     super(props)
     this.trackScrolling = this.trackScrolling.bind(this)
     this.setHasCompletedContent = this.setHasCompletedContent.bind(this)
+    this.getUid = this.getUid.bind(this)
+    this.addScroll = this.addScroll.bind(this)
 
     this.state = {
       isTrackScrolling: false,
       path: '/course/ms-500/learn/Just-in-time-approval-and-notification-for-admin-roles-in-Microsoft-365-RHW1API2s',
-      article: {"sectionId":"AFV_acckJ","publish":true,"datePublished":"2022/5/26","images":["https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png","https://i.ibb.co/mtw4673/PIM-Add-Assignments.png","https://i.ibb.co/MGjzT0Q/add-user-assignments.png","https://i.ibb.co/dcb6XFN/Activate-a-Role.png","https://i.ibb.co/2d73qCQ/continue.png","https://i.ibb.co/ZxxcJW0/activate-role.png","https://i.ibb.co/XzvVpkv/activate-role.png","https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png","https://i.ibb.co/svCt0jy/PIM-assignments.png","https://i.ibb.co/t37zJqS/eligible-assignments.png","https://i.ibb.co/7btbR3M/active-pim-assignements.png","https://i.ibb.co/7btbR3M/active-pim-assignements.png","https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png","https://i.ibb.co/h1KfLY4/PIM-settings.png","https://i.ibb.co/G55hBDT/edit-PIM-role-assignments.png","https://i.ibb.co/2nWcPxZ/edit-PIM-role-settings.png","https://i.ibb.co/2nWcPxZ/edit-PIM-role-settings.png","https://i.ibb.co/DkrH6cb/edit-PIM-role-settings-assignments.png","https://i.ibb.co/C0MtxQc/approve-pim-role-assignment-email.png","https://i.ibb.co/6Nrtpt9/approve-pim-role-assignment.png","https://i.ibb.co/GkpLRJq/approve-request-justification.png","https://i.ibb.co/1r6Sv3c/edit-PIM-role-settings-assignments.png","https://i.ibb.co/pJdHDkz/Edit-role-settings-notifications.png"],"slug":"Just-in-time-approval-and-notification-for-admin-roles-in-Microsoft-365-RHW1API2s","featuredImage":"https://i.ibb.co/dcb6XFN/Activate-a-Role.png","description":"Just in time privileged access. Microsoft calls this Privileged Identity Management (PIM). With PIM users only have admin roles for a limited time. And before they activate the admin role they can be required to get approval.","id":"RHW1API2s","title":"Just in time, approval and notification for admin roles in Microsoft 365","article":{"entityMap":{"0":{"type":"IMAGE","mutability":"MUTABLE","data":{"src":"https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png","alt":"How to open Azure AD PIM","width":"auto","alignment":"none","height":"auto"}},"1":{"data":{"alt":"Add assignments in PIM","src":"https://i.ibb.co/mtw4673/PIM-Add-Assignments.png","height":"auto","alignment":"none","width":"auto"},"type":"IMAGE","mutability":"MUTABLE"},"2":{"data":{"src":"https://i.ibb.co/MGjzT0Q/add-user-assignments.png","height":"auto","alignment":"none","alt":"Add user assignments in PIM","width":"auto"},"mutability":"MUTABLE","type":"IMAGE"},"3":{"mutability":"MUTABLE","type":"IMAGE","data":{"height":"auto","alt":"Activate a PIM role","alignment":"none","width":"auto","src":"https://i.ibb.co/dcb6XFN/Activate-a-Role.png"}},"4":{"data":{"alignment":"left","src":"https://i.ibb.co/2d73qCQ/continue.png","height":"auto","width":"auto","alt":"additional-verification-click-to-continue"},"mutability":"MUTABLE","type":"IMAGE"},"5":{"data":{"height":"auto","src":"https://i.ibb.co/XzvVpkv/activate-role.png","alt":"Activate a role","alignment":"none","width":"auto"},"type":"IMAGE","mutability":"MUTABLE"},"6":{"type":"IMAGE","data":{"height":"auto","alt":"Azure AD PIM","width":"auto","alignment":"none","src":"https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png"},"mutability":"MUTABLE"},"7":{"data":{"alignment":"none","alt":"PIM assignments","width":"auto","height":"auto","src":"https://i.ibb.co/svCt0jy/PIM-assignments.png"},"type":"IMAGE","mutability":"MUTABLE"},"8":{"data":{"alignment":"left","alt":"Eligible assignements","width":"auto","src":"https://i.ibb.co/t37zJqS/eligible-assignments.png","height":"auto"},"mutability":"MUTABLE","type":"IMAGE"},"9":{"type":"IMAGE","data":{"alt":"Active PIM Assignements","alignment":"none","height":"auto","width":"auto","src":"https://i.ibb.co/7btbR3M/active-pim-assignements.png"},"mutability":"MUTABLE"},"10":{"type":"IMAGE","data":{"height":"auto","src":"https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png","alignment":"none","alt":"Azure AD PIM roles","width":"auto"},"mutability":"MUTABLE"},"11":{"type":"IMAGE","mutability":"MUTABLE","data":{"width":"auto","alt":"Open PIM settings","alignment":"none","height":"auto","src":"https://i.ibb.co/h1KfLY4/PIM-settings.png"}},"12":{"data":{"alt":"Edit PIM role assignments","src":"https://i.ibb.co/G55hBDT/edit-PIM-role-assignments.png","height":"auto","alignment":"none","width":"auto"},"type":"IMAGE","mutability":"MUTABLE"},"13":{"mutability":"MUTABLE","data":{"width":"auto","alt":"Edit PIM role settings","src":"https://i.ibb.co/2nWcPxZ/edit-PIM-role-settings.png","height":"auto","alignment":"none"},"type":"IMAGE"},"14":{"type":"IMAGE","data":{"height":"auto","width":"auto","src":"https://i.ibb.co/1r6Sv3c/edit-PIM-role-settings-assignments.png","alt":"Edit PIM role settings assignments","alignment":"none"},"mutability":"MUTABLE"},"15":{"type":"IMAGE","mutability":"MUTABLE","data":{"height":"auto","width":"auto","alignment":"left","alt":"Edit PIM role assignments","src":"https://i.ibb.co/DkrH6cb/edit-PIM-role-settings-assignments.png"}},"16":{"data":{"width":"auto","src":"https://i.ibb.co/pJdHDkz/Edit-role-settings-notifications.png","alignment":"none","height":"auto","alt":"Edit role settings notifications"},"type":"IMAGE","mutability":"MUTABLE"},"17":{"mutability":"MUTABLE","data":{"height":"auto","alt":"Approve PIM role assignment email","src":"https://i.ibb.co/C0MtxQc/approve-pim-role-assignment-email.png","width":"auto","alignment":"none"},"type":"IMAGE"},"18":{"type":"IMAGE","data":{"alt":"Approve the PIM role assignment","width":"auto","alignment":"left","height":"auto","src":"https://i.ibb.co/6Nrtpt9/approve-pim-role-assignment.png"},"mutability":"MUTABLE"},"19":{"type":"IMAGE","mutability":"MUTABLE","data":{"height":"auto","alignment":"none","src":"https://i.ibb.co/GkpLRJq/approve-request-justification.png","width":"auto","alt":"Approve request justification"}}},"blocks":[{"key":"bajq4","text":"Up until now, we've worked with permanent admin role assignments. Essentially, the user account is an admin until the user account is removed from the admin role. But there's another option. Just in time privileged access. Microsoft calls this Privileged Identity Management (PIM). With PIM users only have admin roles for a limited time. And before they activate the admin role they can be required to get approval.","type":"unstyled","inlineStyleRanges":[],"depth":0,"data":{},"entityRanges":[]},{"data":{},"inlineStyleRanges":[],"entityRanges":[],"key":"6kgn9","type":"header-two","depth":0,"text":"Licenses required"},{"text":"First things first. What licenses are required to use privileged identity management? You'll need an Azure AD Premium P2 license. It's also included in the Enterprise Mobility + Security (EMS) E5 license.","type":"unstyled","key":"bc2cu","data":{},"depth":0,"inlineStyleRanges":[],"entityRanges":[]},{"data":{},"type":"header-two","inlineStyleRanges":[],"entityRanges":[],"key":"eth4v","text":"Assign a role","depth":0},{"inlineStyleRanges":[],"key":"43gj9","type":"unstyled","text":"Now let's assign a role using PIM. By default, the role can only be active for 8 hours. So let's give a user a permanent role assignment.","depth":0,"entityRanges":[],"data":{}},{"text":"1. Go to Azure Active Directory admin center > All services > Azure AD Privileged Identity Management.","data":{},"key":"2ieu8","depth":0,"entityRanges":[],"type":"unstyled","inlineStyleRanges":[{"style":"BOLD","offset":9,"length":35},{"style":"BOLD","length":12,"offset":47},{"offset":62,"style":"BOLD","length":39}]},{"data":{},"type":"atomic","text":" ","key":"bi8jn","depth":0,"entityRanges":[{"offset":0,"length":1,"key":0}],"inlineStyleRanges":[]},{"type":"unstyled","entityRanges":[],"key":"et3sg","data":{},"depth":0,"text":"2. Click Azure AD roles > Assignments > Add assignments.","inlineStyleRanges":[{"length":14,"style":"BOLD","offset":9},{"length":11,"offset":26,"style":"BOLD"},{"offset":40,"style":"BOLD","length":15}]},{"key":"e0ate","type":"atomic","depth":0,"text":" ","inlineStyleRanges":[],"entityRanges":[{"key":1,"offset":0,"length":1}],"data":{}},{"key":"d3slc","entityRanges":[],"type":"unstyled","depth":0,"data":{},"inlineStyleRanges":[{"offset":9,"style":"BOLD","length":11},{"length":20,"style":"BOLD","offset":28},{"length":18,"style":"BOLD","offset":56},{"offset":87,"length":5,"style":"BOLD"},{"offset":115,"style":"BOLD","length":6},{"length":4,"offset":129,"style":"BOLD"}],"text":"3. Under Select role select Global Administrator. Click No member selected. Select the user you want to add. Click Select. Click Next."},{"inlineStyleRanges":[],"data":{},"key":"bam9n","entityRanges":[{"key":2,"length":1,"offset":0}],"text":" ","type":"atomic","depth":0},{"entityRanges":[],"key":"o5bp","text":"4. Click Assign.","depth":0,"type":"unstyled","inlineStyleRanges":[{"style":"BOLD","length":6,"offset":9}],"data":{}},{"key":"4m9k8","depth":0,"entityRanges":[],"type":"header-two","inlineStyleRanges":[],"text":"How to activate a role assignment","data":{}},{"depth":0,"data":{},"inlineStyleRanges":[],"text":"Once you assign a user as an eligible role the user will receive the following email:","entityRanges":[],"key":"a253m","type":"unstyled"},{"data":{},"key":"6rljl","inlineStyleRanges":[],"depth":0,"entityRanges":[{"key":3,"length":1,"offset":0}],"type":"atomic","text":" "},{"data":{},"inlineStyleRanges":[{"length":21,"style":"BOLD","offset":9}],"depth":0,"key":"bg93m","text":"1. Click View or activate role.","entityRanges":[],"type":"unstyled"},{"entityRanges":[],"depth":0,"key":"eup6h","inlineStyleRanges":[{"offset":9,"length":8,"style":"BOLD"}],"data":{},"text":"2. Click Activate.","type":"unstyled"},{"text":"3. If additional verification is required click continue. Finish the authentication.","type":"unstyled","entityRanges":[],"key":"bn43e","data":{},"depth":0,"inlineStyleRanges":[{"length":8,"style":"BOLD","offset":48}]},{"depth":0,"key":"r95r","inlineStyleRanges":[],"type":"atomic","entityRanges":[{"key":4,"offset":0,"length":1}],"data":{},"text":" "},{"inlineStyleRanges":[{"offset":9,"length":6,"style":"BOLD"},{"style":"BOLD","offset":23,"length":8}],"data":{},"type":"unstyled","entityRanges":[],"text":"4. Set a reason. Click Activate.","depth":0,"key":"9eu6o"},{"entityRanges":[{"offset":0,"length":1,"key":5}],"key":"62qtv","data":{},"text":" ","inlineStyleRanges":[],"type":"atomic","depth":0},{"entityRanges":[],"data":{},"type":"header-two","inlineStyleRanges":[],"depth":0,"text":"Review role assignments","key":"7thu2"},{"type":"unstyled","entityRanges":[],"key":"aakkc","depth":0,"data":{},"inlineStyleRanges":[],"text":"As an admin, you may need to review who's assigned what roles. Let's take a look."},{"entityRanges":[],"data":{},"inlineStyleRanges":[{"offset":3,"style":"color-rgb(33,37,41)","length":99},{"style":"bgcolor-rgb(255,255,255)","length":99,"offset":3},{"offset":3,"length":99,"style":"fontsize-16"},{"offset":3,"length":99,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"},{"length":35,"offset":9,"style":"BOLD"},{"style":"BOLD","offset":47,"length":12},{"offset":62,"style":"BOLD","length":39}],"key":"5sq6d","type":"unstyled","depth":0,"text":"1. Go to Azure Active Directory admin center > All services > Azure AD Privileged Identity Management."},{"key":"ertsa","data":{},"depth":0,"text":" ","type":"atomic","entityRanges":[{"key":6,"offset":0,"length":1}],"inlineStyleRanges":[]},{"depth":0,"type":"unstyled","inlineStyleRanges":[{"offset":9,"style":"BOLD","length":14},{"style":"BOLD","offset":26,"length":11}],"entityRanges":[],"text":"2. Click Azure AD roles > Assignments.","data":{},"key":"54gf"},{"inlineStyleRanges":[],"depth":0,"data":{},"entityRanges":[{"offset":0,"key":7,"length":1}],"key":"3ed4v","text":" ","type":"atomic"},{"data":{},"type":"unstyled","entityRanges":[],"depth":0,"key":"dimgd","text":"Under eligible assignments, you'll see the user you added. These users have a role assigned through PIM that needs to be activated.","inlineStyleRanges":[]},{"type":"atomic","entityRanges":[{"offset":0,"key":8,"length":1}],"depth":0,"key":"46ksa","inlineStyleRanges":[],"text":" ","data":{}},{"inlineStyleRanges":[{"length":18,"style":"BOLD","offset":6}],"entityRanges":[],"data":{},"text":"Click Active assignments. These users currently have roles. If you look under state you'll see two different states: \"Assigned\" and \"Active\". Assigned users have the role assigned to them permanently. They'll always have admin rights. Activated roles show users that are eligible for assignment and have activated the role.","depth":0,"type":"unstyled","key":"39ga7"},{"depth":0,"data":{},"key":"1ogi4","type":"atomic","entityRanges":[{"key":9,"length":1,"offset":0}],"inlineStyleRanges":[],"text":" "},{"data":{},"depth":0,"text":"Update Settings","entityRanges":[],"type":"header-two","inlineStyleRanges":[],"key":"d5v50"},{"key":"dsmcb","text":"So now we've configured a user and we know how they can activate the admin role. But we've got a problem. The activation should only be 1 hour and another admin needs to approve the activation before the role is activated. Next, we'll disable the permanent assignment of the role. Finally, we'll make sure an admin is notified when the PIM role is activated.","inlineStyleRanges":[],"data":{},"depth":0,"entityRanges":[],"type":"unstyled"},{"text":"1. Go to Azure Active Directory admin center > All services > Azure AD Privileged Identity Management.","entityRanges":[],"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":102,"offset":0},{"length":102,"offset":0,"style":"bgcolor-rgb(255,255,255)"},{"length":102,"offset":0,"style":"fontsize-16"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":102,"offset":0},{"style":"BOLD","offset":9,"length":35},{"length":12,"offset":47,"style":"BOLD"},{"style":"BOLD","length":39,"offset":62}],"type":"unstyled","key":"9se3f","data":{},"depth":0},{"depth":0,"type":"atomic","key":"5dqav","inlineStyleRanges":[],"data":{},"entityRanges":[{"key":10,"offset":0,"length":1}],"text":" "},{"key":"hfv4","depth":0,"data":{},"type":"unstyled","text":"2. Click Azure AD roles > Assignments > Settings.","entityRanges":[],"inlineStyleRanges":[{"style":"BOLD","offset":9,"length":15},{"length":11,"style":"BOLD","offset":26},{"offset":40,"style":"BOLD","length":8}]},{"depth":0,"inlineStyleRanges":[],"entityRanges":[{"key":11,"length":1,"offset":0}],"type":"atomic","key":"ei0mr","data":{},"text":" "},{"key":"3b3s5","inlineStyleRanges":[{"length":25,"style":"BOLD","offset":9},{"style":"BOLD","offset":37,"length":4}],"depth":0,"type":"unstyled","data":{},"entityRanges":[],"text":"3. Click Application Administrator > Edit."},{"entityRanges":[{"key":12,"offset":0,"length":1}],"key":"59j6s","data":{},"type":"atomic","depth":0,"inlineStyleRanges":[],"text":" "},{"depth":0,"entityRanges":[],"inlineStyleRanges":[{"style":"BOLD","offset":11,"length":36},{"length":1,"offset":50,"style":"BOLD"},{"style":"BOLD","length":28,"offset":59},{"style":"BOLD","offset":95,"length":20},{"offset":117,"style":"BOLD","length":6},{"style":"BOLD","offset":128,"length":5},{"length":6,"style":"BOLD","offset":152},{"length":16,"offset":166,"style":"BOLD"}],"type":"unstyled","key":"4s6lf","text":"4. Set the Activation maximum duration (hours) to 1. Click Require approval to activate. Click No approver selected. Select the admin to approve. Click Select. Click Next: Assignment.","data":{}},{"depth":0,"key":"8ok9o","data":{},"entityRanges":[{"key":13,"length":1,"offset":0}],"text":" ","inlineStyleRanges":[],"type":"atomic"},{"key":"eh9sc","type":"unstyled","inlineStyleRanges":[{"length":33,"offset":11,"style":"BOLD"},{"style":"BOLD","length":18,"offset":52}],"data":{},"text":"5. Uncheck Allow permanent active assignment. Click Next: Notification.","depth":0,"entityRanges":[]},{"key":"cqoda","depth":0,"entityRanges":[{"key":14,"length":1,"offset":0}],"data":{},"text":" ","inlineStyleRanges":[],"type":"atomic"},{"entityRanges":[{"offset":3,"key":15,"length":1}],"depth":0,"text":"6.  Set an email address in the Role activation alert additional recipients. Click Update.","data":{},"type":"unstyled","key":"3jaqk","inlineStyleRanges":[{"style":"BOLD","length":13,"offset":11},{"offset":32,"length":43,"style":"BOLD"},{"offset":83,"length":6,"style":"BOLD"}]},{"data":{},"key":"aik7l","entityRanges":[{"length":1,"key":16,"offset":0}],"type":"atomic","inlineStyleRanges":[],"text":" ","depth":0},{"text":"Who can approve the admin role assignment?","type":"header-two","depth":0,"data":{},"inlineStyleRanges":[],"entityRanges":[],"key":"a8044"},{"key":"7e4hm","depth":0,"text":"Only global administrators and privileged role administrators can approve the admin role assignments. Let's try it now. Walk through the \"Assign a role\" steps above but this time grant someone the application administrator role. Then login with the user you made eligible for the role and activate the role following the \"How to activate a role assignment steps above\".","data":{},"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled"},{"inlineStyleRanges":[],"data":{},"entityRanges":[],"key":"cs53r","type":"header-two","text":"How to approve activation of a role","depth":0},{"key":"8rop7","data":{},"inlineStyleRanges":[{"length":23,"style":"BOLD","offset":181}],"depth":0,"text":"1. Once a user requests a role the approver will receive an email with the subject \"PIM: Review User's request to activate the Application Administrator role\". In that email, click Approve or deny request.","type":"unstyled","entityRanges":[]},{"data":{},"depth":0,"key":"12a29","type":"atomic","text":" ","entityRanges":[{"key":17,"offset":0,"length":1}],"inlineStyleRanges":[]},{"depth":0,"inlineStyleRanges":[{"style":"BOLD","length":7,"offset":3},{"style":"BOLD","length":7,"offset":14},{"style":"BOLD","offset":37,"length":9},{"length":7,"offset":70,"style":"BOLD"}],"type":"unstyled","entityRanges":[],"text":"2. Review the request then click the checkbox next to the role. Click Approve.","key":"4b45i","data":{}},{"data":{},"inlineStyleRanges":[],"depth":0,"entityRanges":[{"key":18,"length":1,"offset":0}],"key":"9ir5","text":" ","type":"atomic"},{"depth":0,"key":"57pdu","entityRanges":[],"type":"unstyled","data":{},"inlineStyleRanges":[{"length":13,"offset":10,"style":"BOLD"},{"style":"BOLD","length":7,"offset":34}],"text":"3. Give a justification and click Confirm."},{"depth":0,"type":"atomic","key":"9m6a4","text":" ","entityRanges":[{"key":19,"length":1,"offset":0}],"inlineStyleRanges":[],"data":{}},{"inlineStyleRanges":[],"key":"ce8ot","type":"unstyled","depth":0,"data":{},"text":"","entityRanges":[]}]},"type":"article"},
+      article: {ARTICLE: true},
       nextContentSlug: 'Whats-Microsoft-365-Defender-z8EMM9Eu_',
       previousContentSlug: 'Automating-Access-Review-in-Microsoft-365-rK48f6iM2',
       hasCompletedContent: false,
@@ -45,17 +38,22 @@ class ArticlePage extends Component {
   }
 
   componentDidMount() {
-    this.onAuthStateChangedListener = onAuthStateChanged((user) => {
-      if (user) {
-        getDoc('courses/MS-500/users', user.uid).then((userAcct) => {
-          if (!userAcct.completedContent) {
-            userAcct.completedContent = []
-          }
-          this.setState({userAcct})
-        })
-      }
-    })
+    this.onAuthStateChangedListener = onAuthStateChanged(this.getUid)
+    this.addScroll()
+  }
 
+  getUid(user) {
+    if (user) {
+      getDoc('courses/MS-500/users', user.uid).then((userAcct) => {
+        if (!userAcct.completedContent)
+          userAcct.completedContent = []
+
+        this.setState({userAcct})
+      })
+    }
+  }
+
+  addScroll() {
     if (isBrowser()) {
       document.addEventListener('scroll', this.trackScrolling)
       this.setState({isTrackScrolling: true})
@@ -64,20 +62,19 @@ class ArticlePage extends Component {
 
   componentWillUnmount() {
     if (isBrowser() && this.state.isTrackScrolling)
-      document.removeEventListener('scroll', this.trackScrolling);
+      document.removeEventListener('scroll', this.trackScrolling)
 
     this.onAuthStateChangedListener()
   }
 
   trackScrolling() {
-    if (document.body.scrollHeight * .8 < window.innerHeight + window.scrollY) {
+    if (document.body.scrollHeight * .8 < window.innerHeight + window.scrollY)
       this.setHasCompletedContent(true)
-    }
   }
 
   setHasCompletedContent(val) {
     if (val === true) {
-      document.removeEventListener('scroll', this.trackScrolling);
+      document.removeEventListener('scroll', this.trackScrolling)
       this.setState({isTrackScrolling: false})
 
       if (this.state.userAcct.id) {
@@ -97,15 +94,15 @@ class ArticlePage extends Component {
       headline: this.state.article.title,
       datePublished: this.state.article.datePublished,
       keywords: [
-        "Microsoft",
-        "Microsoft 365",
-        "Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
       ],
-      "author": {
-        "@type": "Person",
-        "name": "John Gruber",
+      author: {
+        '@type': 'Person',
+        name: 'John Gruber',
         url: 'https://medium.com/@gruberjl'
       }
     }
@@ -160,67 +157,67 @@ class ArticlePage extends Component {
               <Grid item lg={9}>
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p>Up until now, we've worked with permanent admin role assignments. Essentially, the user account is an admin until the user account is removed from the admin role. But there's another option. Just in time privileged access. Microsoft calls this Privileged Identity Management (PIM). With PIM users only have admin roles for a limited time. And before they activate the admin role they can be required to get approval.</p>
-<h2>Licenses required</h2>
-<p>First things first. What licenses are required to use privileged identity management? You'll need an Azure AD Premium P2 license. It's also included in the Enterprise Mobility + Security (EMS) E5 license.</p>
-<h2>Assign a role</h2>
-<p>Now let's assign a role using PIM. By default, the role can only be active for 8 hours. So let's give a user a permanent role assignment.</p>
-<p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</p>
-<div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="How to open Azure AD PIM" style="height: auto;width: auto"/></div>
-<p>2. Click <strong>Azure AD roles</strong> &gt; <strong>Assignments</strong> &gt; <strong>Add assignments</strong>.</p>
-<div ><img src="https://i.ibb.co/mtw4673/PIM-Add-Assignments.png" alt="Add assignments in PIM" style="height: auto;width: auto"/></div>
-<p>3. Under <strong>Select role</strong> select <strong>Global Administrator</strong>. Click <strong>No member selected</strong>. Select the <strong>user </strong>you want to add. Click <strong>Select</strong>. Click <strong>Next</strong>.</p>
-<div ><img src="https://i.ibb.co/MGjzT0Q/add-user-assignments.png" alt="Add user assignments in PIM" style="height: auto;width: auto"/></div>
-<p>4. Click <strong>Assign</strong>.</p>
-<h2>How to activate a role assignment</h2>
-<p>Once you assign a user as an eligible role the user will receive the following email:</p>
-<div ><img src="https://i.ibb.co/dcb6XFN/Activate-a-Role.png" alt="Activate a PIM role" style="height: auto;width: auto"/></div>
-<p>1. Click <strong>View or activate role</strong>.</p>
-<p>2. Click <strong>Activate</strong>.</p>
-<p>3. If additional verification is required click <strong>continue</strong>. Finish the authentication.</p>
-<div ><img src="https://i.ibb.co/2d73qCQ/continue.png" alt="additional-verification-click-to-continue" style="height: auto;width: auto"/></div>
-<p>4. Set a <strong>reason</strong>. Click <strong>Activate</strong>.</p>
-<div ><img src="https://i.ibb.co/XzvVpkv/activate-role.png" alt="Activate a role" style="height: auto;width: auto"/></div>
-<h2>Review role assignments</h2>
-<p>As an admin, you may need to review who's assigned what roles. Let's take a look.</p>
-<p>1. <span >Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</span></p>
-<div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM" style="height: auto;width: auto"/></div>
-<p>2. Click <strong>Azure AD roles</strong> &gt; <strong>Assignments</strong>.</p>
-<div ><img src="https://i.ibb.co/svCt0jy/PIM-assignments.png" alt="PIM assignments" style="height: auto;width: auto"/></div>
-<p>Under eligible assignments, you'll see the user you added. These users have a role assigned through PIM that needs to be activated.</p>
-<div ><img src="https://i.ibb.co/t37zJqS/eligible-assignments.png" alt="Eligible assignements" style="height: auto;width: auto"/></div>
-<p>Click <strong>Active assignments</strong>. These users currently have roles. If you look under state you'll see two different states: "Assigned" and "Active". Assigned users have the role assigned to them permanently. They'll always have admin rights. Activated roles show users that are eligible for assignment and have activated the role.</p>
-<div ><img src="https://i.ibb.co/7btbR3M/active-pim-assignements.png" alt="Active PIM Assignements" style="height: auto;width: auto"/></div>
-<h2>Update Settings</h2>
-<p>So now we've configured a user and we know how they can activate the admin role. But we've got a problem. The activation should only be 1 hour and another admin needs to approve the activation before the role is activated. Next, we'll disable the permanent assignment of the role. Finally, we'll make sure an admin is notified when the PIM role is activated.</p>
-<p><span >1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</span></p>
-<div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM roles" style="height: auto;width: auto"/></div>
-<p>2. Click <strong>Azure AD roles </strong>&gt; <strong>Assignments</strong> &gt; <strong>Settings</strong>.</p>
-<div ><img src="https://i.ibb.co/h1KfLY4/PIM-settings.png" alt="Open PIM settings" style="height: auto;width: auto"/></div>
-<p>3. Click <strong>Application Administrator</strong> &gt; <strong>Edit</strong>.</p>
-<div ><img src="https://i.ibb.co/G55hBDT/edit-PIM-role-assignments.png" alt="Edit PIM role assignments" style="height: auto;width: auto"/></div>
-<p>4. Set the <strong>Activation maximum duration (hours) </strong>to <strong>1</strong>. Click <strong>Require approval to activate</strong>. Click <strong>No approver selected</strong>. <strong>Select</strong> the <strong>admin</strong> to approve. Click <strong>Select</strong>. Click <strong>Next: Assignment</strong>.</p>
-<div ><img src="https://i.ibb.co/2nWcPxZ/edit-PIM-role-settings.png" alt="Edit PIM role settings" style="height: auto;width: auto"/></div>
-<p>5. Uncheck <strong>Allow permanent active assignment</strong>. Click <strong>Next: Notification</strong>.</p>
-<div ><img src="https://i.ibb.co/1r6Sv3c/edit-PIM-role-settings-assignments.png" alt="Edit PIM role settings assignments" style="height: auto;width: auto"/></div>
-<p>6. <div ><img src="https://i.ibb.co/DkrH6cb/edit-PIM-role-settings-assignments.png" alt="Edit PIM role assignments" style="height: auto;width: auto"/></div>Set an <strong>email address</strong> in the <strong>Role activation alert additional recipients</strong>. Click <strong>Update</strong>.</p>
-<div ><img src="https://i.ibb.co/pJdHDkz/Edit-role-settings-notifications.png" alt="Edit role settings notifications" style="height: auto;width: auto"/></div>
-<h2>Who can approve the admin role assignment?</h2>
-<p>Only global administrators and privileged role administrators can approve the admin role assignments. Let's try it now. Walk through the "Assign a role" steps above but this time grant someone the application administrator role. Then login with the user you made eligible for the role and activate the role following the "How to activate a role assignment steps above".</p>
-<h2>How to approve activation of a role</h2>
-<p>1. Once a user requests a role the approver will receive an email with the subject "PIM: Review User's request to activate the Application Administrator role". In that email, click <strong>Approve or deny request</strong>.</p>
-<div ><img src="https://i.ibb.co/C0MtxQc/approve-pim-role-assignment-email.png" alt="Approve PIM role assignment email" style="height: auto;width: auto"/></div>
-<p>2. <strong>Review </strong>the <strong>request</strong> then click the <strong>checkbox </strong>next to the role. Click <strong>Approve</strong>.</p>
-<div ><img src="https://i.ibb.co/6Nrtpt9/approve-pim-role-assignment.png" alt="Approve the PIM role assignment" style="height: auto;width: auto"/></div>
-<p>3. Give a <strong>justification</strong> and click <strong>Confirm</strong>.</p>
-<div ><img src="https://i.ibb.co/GkpLRJq/approve-request-justification.png" alt="Approve request justification" style="height: auto;width: auto"/></div>
-<p></p>
-</div>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt:3 }}>
+                  <h2>Licenses required</h2>
+                  <p>First things first. What licenses are required to use privileged identity management? You'll need an Azure AD Premium P2 license. It's also included in the Enterprise Mobility + Security (EMS) E5 license.</p>
+                  <h2>Assign a role</h2>
+                  <p>Now let's assign a role using PIM. By default, the role can only be active for 8 hours. So let's give a user a permanent role assignment.</p>
+                  <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</p>
+                  <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="How to open Azure AD PIM" style="height: auto;width: auto" /></div>
+                  <p>2. Click <strong>Azure AD roles</strong> &gt; <strong>Assignments</strong> &gt; <strong>Add assignments</strong>.</p>
+                  <div ><img src="https://i.ibb.co/mtw4673/PIM-Add-Assignments.png" alt="Add assignments in PIM" style="height: auto;width: auto" /></div>
+                  <p>3. Under <strong>Select role</strong> select <strong>Global Administrator</strong>. Click <strong>No member selected</strong>. Select the <strong>user </strong>you want to add. Click <strong>Select</strong>. Click <strong>Next</strong>.</p>
+                  <div ><img src="https://i.ibb.co/MGjzT0Q/add-user-assignments.png" alt="Add user assignments in PIM" style="height: auto;width: auto" /></div>
+                  <p>4. Click <strong>Assign</strong>.</p>
+                  <h2>How to activate a role assignment</h2>
+                  <p>Once you assign a user as an eligible role the user will receive the following email:</p>
+                  <div ><img src="https://i.ibb.co/dcb6XFN/Activate-a-Role.png" alt="Activate a PIM role" style="height: auto;width: auto" /></div>
+                  <p>1. Click <strong>View or activate role</strong>.</p>
+                  <p>2. Click <strong>Activate</strong>.</p>
+                  <p>3. If additional verification is required click <strong>continue</strong>. Finish the authentication.</p>
+                  <div ><img src="https://i.ibb.co/2d73qCQ/continue.png" alt="additional-verification-click-to-continue" style="height: auto;width: auto" /></div>
+                  <p>4. Set a <strong>reason</strong>. Click <strong>Activate</strong>.</p>
+                  <div ><img src="https://i.ibb.co/XzvVpkv/activate-role.png" alt="Activate a role" style="height: auto;width: auto" /></div>
+                  <h2>Review role assignments</h2>
+                  <p>As an admin, you may need to review who's assigned what roles. Let's take a look.</p>
+                  <p>1. <span >Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</span></p>
+                  <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM" style="height: auto;width: auto" /></div>
+                  <p>2. Click <strong>Azure AD roles</strong> &gt; <strong>Assignments</strong>.</p>
+                  <div ><img src="https://i.ibb.co/svCt0jy/PIM-assignments.png" alt="PIM assignments" style="height: auto;width: auto" /></div>
+                  <p>Under eligible assignments, you'll see the user you added. These users have a role assigned through PIM that needs to be activated.</p>
+                  <div ><img src="https://i.ibb.co/t37zJqS/eligible-assignments.png" alt="Eligible assignements" style="height: auto;width: auto" /></div>
+                  <p>Click <strong>Active assignments</strong>. These users currently have roles. If you look under state you'll see two different states: "Assigned" and "Active". Assigned users have the role assigned to them permanently. They'll always have admin rights. Activated roles show users that are eligible for assignment and have activated the role.</p>
+                  <div ><img src="https://i.ibb.co/7btbR3M/active-pim-assignements.png" alt="Active PIM Assignements" style="height: auto;width: auto" /></div>
+                  <h2>Update Settings</h2>
+                  <p>So now we've configured a user and we know how they can activate the admin role. But we've got a problem. The activation should only be 1 hour and another admin needs to approve the activation before the role is activated. Next, we'll disable the permanent assignment of the role. Finally, we'll make sure an admin is notified when the PIM role is activated.</p>
+                  <p><span >1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</span></p>
+                  <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM roles" style="height: auto;width: auto" /></div>
+                  <p>2. Click <strong>Azure AD roles </strong>&gt; <strong>Assignments</strong> &gt; <strong>Settings</strong>.</p>
+                  <div ><img src="https://i.ibb.co/h1KfLY4/PIM-settings.png" alt="Open PIM settings" style="height: auto;width: auto" /></div>
+                  <p>3. Click <strong>Application Administrator</strong> &gt; <strong>Edit</strong>.</p>
+                  <div ><img src="https://i.ibb.co/G55hBDT/edit-PIM-role-assignments.png" alt="Edit PIM role assignments" style="height: auto;width: auto" /></div>
+                  <p>4. Set the <strong>Activation maximum duration (hours) </strong>to <strong>1</strong>. Click <strong>Require approval to activate</strong>. Click <strong>No approver selected</strong>. <strong>Select</strong> the <strong>admin</strong> to approve. Click <strong>Select</strong>. Click <strong>Next: Assignment</strong>.</p>
+                  <div ><img src="https://i.ibb.co/2nWcPxZ/edit-PIM-role-settings.png" alt="Edit PIM role settings" style="height: auto;width: auto" /></div>
+                  <p>5. Uncheck <strong>Allow permanent active assignment</strong>. Click <strong>Next: Notification</strong>.</p>
+                  <div ><img src="https://i.ibb.co/1r6Sv3c/edit-PIM-role-settings-assignments.png" alt="Edit PIM role settings assignments" style="height: auto;width: auto" /></div>
+                  <p>6. <div ><img src="https://i.ibb.co/DkrH6cb/edit-PIM-role-settings-assignments.png" alt="Edit PIM role assignments" style="height: auto;width: auto" /></div>Set an <strong>email address</strong> in the <strong>Role activation alert additional recipients</strong>. Click <strong>Update</strong>.</p>
+                  <div ><img src="https://i.ibb.co/pJdHDkz/Edit-role-settings-notifications.png" alt="Edit role settings notifications" style="height: auto;width: auto" /></div>
+                  <h2>Who can approve the admin role assignment?</h2>
+                  <p>Only global administrators and privileged role administrators can approve the admin role assignments. Let's try it now. Walk through the "Assign a role" steps above but this time grant someone the application administrator role. Then login with the user you made eligible for the role and activate the role following the "How to activate a role assignment steps above".</p>
+                  <h2>How to approve activation of a role</h2>
+                  <p>1. Once a user requests a role the approver will receive an email with the subject "PIM: Review User's request to activate the Application Administrator role". In that email, click <strong>Approve or deny request</strong>.</p>
+                  <div ><img src="https://i.ibb.co/C0MtxQc/approve-pim-role-assignment-email.png" alt="Approve PIM role assignment email" style="height: auto;width: auto" /></div>
+                  <p>2. <strong>Review </strong>the <strong>request</strong> then click the <strong>checkbox </strong>next to the role. Click <strong>Approve</strong>.</p>
+                  <div ><img src="https://i.ibb.co/6Nrtpt9/approve-pim-role-assignment.png" alt="Approve the PIM role assignment" style="height: auto;width: auto" /></div>
+                  <p>3. Give a <strong>justification</strong> and click <strong>Confirm</strong>.</p>
+                  <div ><img src="https://i.ibb.co/GkpLRJq/approve-request-justification.png" alt="Approve request justification" style="height: auto;width: auto" /></div>
+                  <p />
+                </div>
+                <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
                   <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
-                  <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos/>}>Next</Button>
+                  <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
                 </Box>
               </Grid>
-              <Grid item lg={3} sx={{ mt: 3 }}>
+              <Grid item lg={3} sx={{mt: 3}}>
                 <ContentsRead completedContent={this.state.userAcct.completedContent} />
               </Grid>
             </Grid>

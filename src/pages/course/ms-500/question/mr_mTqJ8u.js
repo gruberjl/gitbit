@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"entityRanges":[],"data":{},"inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant.","type":"unstyled","key":"3ik3u","depth":0},{"data":{},"text":"You need to include a sensitive information type in Data Subject Request cases.","entityRanges":[],"type":"unstyled","key":"crflb","depth":0,"inlineStyleRanges":[]},{"depth":0,"type":"unstyled","key":"e3rai","inlineStyleRanges":[],"entityRanges":[],"data":{},"text":"Which four actions should you perform in sequence?"}]},"id":"mr_mTqJ8u","answers":[{"isCorrectAnswer":true,"value":"Connect to the Security & Compliance admin center using PowerShell > Export the current rules as an XML file > Modify the file > Upload the file"},{"isCorrectAnswer":false,"value":"Go to the Security & Compliance admin center > Export the current rules as an XML file > Modify the file > Upload the file"},{"value":"Connect to the Security & Compliance admin center by using PowerShell > Export the current rules as a JSON file > Modify the file > Upload the file","isCorrectAnswer":false},{"value":"Go to the Security & Compliance admin center > Export the current rules as a JSON file > Modify the file > Upload the file","isCorrectAnswer":false}],"references":{"blocks":[{"depth":0,"type":"unstyled","data":{},"inlineStyleRanges":[],"text":"1. Connect to the Security & Compliance admin center using PowerShell. The command is \"Connect-IPPSSession\"","entityRanges":[],"key":"dkobb"},{"key":"bhkqv","data":{},"type":"unstyled","inlineStyleRanges":[],"text":"2. Export the current rules as an XML file. The command is \"Get-DlpSensitiveInformationTypeRulePackage | Export-Clixml .\\rules.xml\"","entityRanges":[],"depth":0},{"data":{},"key":"64qbf","inlineStyleRanges":[],"text":"3. Modify the file making the changes you desire","type":"unstyled","entityRanges":[],"depth":0},{"depth":0,"entityRanges":[],"text":"4. Upload the file. The command is \"New-DlpSensitiveInformationTypeRulePackage -FileData ([System.IO.File]::ReadAllBytes('PathToXml.xml'))\"","type":"unstyled","inlineStyleRanges":[],"key":"ds3ee","data":{}},{"entityRanges":[{"offset":0,"key":0,"length":116}],"inlineStyleRanges":[],"depth":0,"key":"46fov","data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w","type":"unstyled"},{"entityRanges":[{"key":1,"length":125,"offset":0}],"inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/microsoft-365/compliance/customize-a-built-in-sensitive-information-type?view=o365-worldwide","key":"ejiq","depth":0,"data":{},"type":"unstyled"}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w"}},"1":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/microsoft-365/compliance/customize-a-built-in-sensitive-information-type?view=o365-worldwide"},"type":"LINK"}}}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: true, value: 'Connect to the Security & Compliance admin center using PowerShell > Export the current rules as an XML file > Modify the file > Upload the file'}, {value: 'Go to the Security & Compliance admin center > Export the current rules as an XML file > Modify the file > Upload the file', isCorrectAnswer: false}, {value: 'Connect to the Security & Compliance admin center by using PowerShell > Export the current rules as a JSON file > Modify the file > Upload the file', isCorrectAnswer: false}, {value: 'Go to the Security & Compliance admin center > Export the current rules as a JSON file > Modify the file > Upload the file', isCorrectAnswer: false}], id: 'mr_mTqJ8u', question: {blocks: [{entityRanges: [], key: '3ik3u', depth: 0, type: 'unstyled', text: 'Your organization has a Microsoft 365 tenant.', inlineStyleRanges: [], data: {}}, {type: 'unstyled', inlineStyleRanges: [], key: 'crflb', depth: 0, data: {}, entityRanges: [], text: 'You need to include a sensitive information type in Data Subject Request cases.'}, {type: 'unstyled', entityRanges: [], inlineStyleRanges: [], key: 'e3rai', text: 'Which four actions should you perform in sequence?', depth: 0, data: {}}], entityMap: {}}, references: {blocks: [{depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [], key: 'dkobb', text: '1. Connect to the Security & Compliance admin center using PowerShell. The command is "Connect-IPPSSession"'}, {text: '2. Export the current rules as an XML file. The command is "Get-DlpSensitiveInformationTypeRulePackage | Export-Clixml .\\rules.xml"', inlineStyleRanges: [], data: {}, key: 'bhkqv', type: 'unstyled', entityRanges: [], depth: 0}, {type: 'unstyled', depth: 0, text: '3. Modify the file making the changes you desire', key: '64qbf', entityRanges: [], data: {}, inlineStyleRanges: []}, {text: '4. Upload the file. The command is "New-DlpSensitiveInformationTypeRulePackage -FileData ([System.IO.File]::ReadAllBytes(\'PathToXml.xml\'))"', type: 'unstyled', entityRanges: [], inlineStyleRanges: [], data: {}, key: 'ds3ee', depth: 0}, {type: 'unstyled', key: '46fov', data: {}, inlineStyleRanges: [], depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w', entityRanges: [{key: 0, length: 116, offset: 0}]}, {data: {}, type: 'unstyled', text: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/customize-a-built-in-sensitive-information-type?view=o365-worldwide', inlineStyleRanges: [], entityRanges: [{length: 125, key: 1, offset: 0}], key: 'ejiq', depth: 0}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/customize-a-built-in-sensitive-information-type?view=o365-worldwide', targetOption: '_blank'}}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -67,21 +67,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -89,8 +89,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -98,15 +98,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -120,16 +119,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -180,12 +179,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

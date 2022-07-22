@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition#:~:text=and%20IPv6%20addresses.-,Named%20locations,that%20you%20wish%20to%20block"}}},"blocks":[{"data":{},"inlineStyleRanges":[],"type":"unstyled","depth":0,"text":"The only trusted IP address is the New York office. So sales users connecting from the New York office will not be prompted for MFA. All other users will be prompted for MFA.","entityRanges":[],"key":"6icl3"},{"data":{},"key":"4236g","type":"unstyled","entityRanges":[{"key":0,"length":86,"offset":0}],"depth":0,"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh"},{"key":"4al6p","type":"unstyled","data":{},"text":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition#:~:text=and%20IPv6%20addresses.-,Named%20locations,that%20you%20wish%20to%20block","inlineStyleRanges":[],"entityRanges":[{"key":1,"length":175,"offset":0}],"depth":0}]},"id":"PUWxVj7lH","answers":[{"value":"A sales user who is logging in from the Montreal office will be prompted for MFA.","isCorrectAnswer":true},{"value":"A sales user who signs in from home with a public IP address of 193.77.140.140 will be prompted for MFA.","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"A sales user who is logging in from the New York office will be prompted for Azure MFA credentials."}],"question":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"alignment":"left","height":"auto","width":"auto","src":"https://i.ibb.co/tBQ9xgK/location-chart.png","alt":"Chart of locations and IP addresses"},"type":"IMAGE"},"1":{"type":"IMAGE","data":{"alignment":"left","width":"auto","height":"auto","alt":"Trusted Locations Chart","src":"https://i.ibb.co/dJnwkFX/trusted-locations-chart.png"},"mutability":"MUTABLE"}},"blocks":[{"depth":0,"inlineStyleRanges":[],"data":{},"key":"2qdub","entityRanges":[],"text":"Your organization has the offices in the following chart. Each office has the following IP addresses.","type":"unstyled"},{"depth":0,"text":" ","entityRanges":[{"key":0,"length":1,"offset":0}],"key":"5llr","inlineStyleRanges":[],"data":{},"type":"atomic"},{"depth":0,"key":"c07p6","data":{},"type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"text":"You've configured named locations in Azure AD as below."},{"type":"atomic","data":{},"text":" ","depth":0,"key":"a8u3o","entityRanges":[{"offset":0,"key":1,"length":1}],"inlineStyleRanges":[]},{"entityRanges":[],"text":"An address space of 198.35.3.0/24 is defined in the trusted IPs list on the Multi-Factor Authentication page.","type":"unstyled","data":{},"inlineStyleRanges":[{"length":33,"offset":76,"style":"color-rgb(33,37,41)"},{"offset":76,"length":33,"style":"bgcolor-rgb(255,255,255)"},{"offset":76,"style":"fontsize-16","length":33},{"length":33,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":76}],"depth":0,"key":"c772p"},{"inlineStyleRanges":[],"text":"MFA is enabled for the users in the sales department.","key":"8d983","data":{},"type":"unstyled","entityRanges":[],"depth":0},{"inlineStyleRanges":[],"depth":0,"entityRanges":[],"type":"unstyled","data":{},"text":"You are evaluating which sales department users will be prompted for MFA.","key":"bcs2k"},{"entityRanges":[],"data":{},"text":"Check the box for each true statement.","type":"unstyled","depth":0,"inlineStyleRanges":[],"key":"99kqm"}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{depth: 0, key: '6icl3', inlineStyleRanges: [], text: 'The only trusted IP address is the New York office. So sales users connecting from the New York office will not be prompted for MFA. All other users will be prompted for MFA.', entityRanges: [], type: 'unstyled', data: {}}, {data: {}, entityRanges: [{length: 86, offset: 0, key: 0}], key: '4236g', text: 'https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh', type: 'unstyled', inlineStyleRanges: [], depth: 0}, {text: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition#:~:text=and%20IPv6%20addresses.-,Named%20locations,that%20you%20wish%20to%20block', inlineStyleRanges: [], entityRanges: [{key: 1, length: 175, offset: 0}], data: {}, key: '4al6p', depth: 0, type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh', targetOption: '_blank'}}, 1: {data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/location-condition#:~:text=and%20IPv6%20addresses.-,Named%20locations,that%20you%20wish%20to%20block'}, type: 'LINK', mutability: 'MUTABLE'}}}, question: {entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {alt: 'Chart of locations and IP addresses', alignment: 'left', src: 'https://i.ibb.co/tBQ9xgK/location-chart.png', height: 'auto', width: 'auto'}}, 1: {mutability: 'MUTABLE', type: 'IMAGE', data: {height: 'auto', src: 'https://i.ibb.co/dJnwkFX/trusted-locations-chart.png', width: 'auto', alignment: 'left', alt: 'Trusted Locations Chart'}}}, blocks: [{entityRanges: [], data: {}, key: '2qdub', depth: 0, inlineStyleRanges: [], type: 'unstyled', text: 'Your organization has the offices in the following chart. Each office has the following IP addresses.'}, {type: 'atomic', entityRanges: [{key: 0, offset: 0, length: 1}], key: '5llr', data: {}, text: ' ', inlineStyleRanges: [], depth: 0}, {text: 'You\'ve configured named locations in Azure AD as below.', inlineStyleRanges: [], key: 'c07p6', entityRanges: [], depth: 0, data: {}, type: 'unstyled'}, {data: {}, text: ' ', entityRanges: [{offset: 0, key: 1, length: 1}], key: 'a8u3o', depth: 0, inlineStyleRanges: [], type: 'atomic'}, {inlineStyleRanges: [{length: 33, offset: 76, style: 'color-rgb(33,37,41)'}, {offset: 76, length: 33, style: 'bgcolor-rgb(255,255,255)'}, {style: 'fontsize-16', offset: 76, length: 33}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 33, offset: 76}], type: 'unstyled', depth: 0, data: {}, text: 'An address space of 198.35.3.0/24 is defined in the trusted IPs list on the Multi-Factor Authentication page.', entityRanges: [], key: 'c772p'}, {text: 'MFA is enabled for the users in the sales department.', depth: 0, entityRanges: [], inlineStyleRanges: [], type: 'unstyled', data: {}, key: '8d983'}, {key: 'bcs2k', text: 'You are evaluating which sales department users will be prompted for MFA.', data: {}, depth: 0, inlineStyleRanges: [], entityRanges: [], type: 'unstyled'}, {key: '99kqm', data: {}, type: 'unstyled', inlineStyleRanges: [], entityRanges: [], text: 'Check the box for each true statement.', depth: 0}]}, answers: [{isCorrectAnswer: true, value: 'A sales user who is logging in from the Montreal office will be prompted for MFA.'}, {value: 'A sales user who signs in from home with a public IP address of 193.77.140.140 will be prompted for MFA.', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'A sales user who is logging in from the New York office will be prompted for Azure MFA credentials.'}], id: 'PUWxVj7lH'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

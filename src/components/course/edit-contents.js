@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Button from '@mui/material/Button'
 import getAllDocs from '../firebase/get-all-docs'
 import {getDoc} from '../firebase/get-doc'
@@ -89,25 +89,25 @@ class EditContents extends Component {
   onDrop(ev) {
     ev.preventDefault()
     const type = ev.dataTransfer.getData('type')
-    const sectionId = ev.dataTransfer.getData("sectionId")
-    const contentId = ev.dataTransfer.getData("contentId")
+    const sectionId = ev.dataTransfer.getData('sectionId')
+    const contentId = ev.dataTransfer.getData('contentId')
     const course = JSON.parse(JSON.stringify(this.state.course))
 
     if (type === 'section') {
       const sections = course.sections
-      const oldPosition = sections.map(section => section.id).indexOf(sectionId)
-      const newPosition = ev.target.getAttribute("data-section-idx")
+      const oldPosition = sections.map((section) => section.id).indexOf(sectionId)
+      const newPosition = ev.target.getAttribute('data-section-idx')
       sections.splice(newPosition, 0, sections.splice(oldPosition, 1)[0])
       course.sections = reOrder(sections)
       this.setState({course})
     } else {
-      const movedContent = this.state.contents.find(content => content.id === contentId)
-      const newSectionId = this.state.course.sections[ev.target.getAttribute("data-section-idx")].id
+      const movedContent = this.state.contents.find((content) => content.id === contentId)
+      const newSectionId = this.state.course.sections[ev.target.getAttribute('data-section-idx')].id
 
       if (movedContent.sectionId !== newSectionId) {
         movedContent.sectionId = newSectionId
         this.updateContent(movedContent)
-        const newContents = this.state.contents.map(content => {
+        const newContents = this.state.contents.map((content) => {
           if (content.id === movedContent.id)
             return movedContent
 
@@ -119,7 +119,7 @@ class EditContents extends Component {
 
       const contents = JSON.parse(JSON.stringify(this.state.contents))
       const oldPosition = course.contentOrder.indexOf(contentId)
-      const newPositionId = ev.target.getAttribute("data-content-id")
+      const newPositionId = ev.target.getAttribute('data-content-id')
       if (newPositionId !== null) {
         const newPosition = course.contentOrder.indexOf(newPositionId)
         course.contentOrder.splice(newPosition, 0, course.contentOrder.splice(oldPosition, 1)[0])
@@ -145,14 +145,14 @@ class EditContents extends Component {
       })
 
       this.setState({course})
-      saveDoc('courses', course).catch(e => console.log(e))
+      saveDoc('courses', course).catch((e) => console.log(e))
     }
   }
 
   updateSection(sectionId) {
     return (event) => {
       const value = event.target.value
-      const sections = this.state.course.sections.map(section => {
+      const sections = this.state.course.sections.map((section) => {
         if (section.id === sectionId)
           section.title = value
 
@@ -168,7 +168,7 @@ class EditContents extends Component {
 
   removeSection(section) {
     return () => {
-      const sections = this.state.course.sections.filter(filteredSection => section.id !== filteredSection.id)
+      const sections = this.state.course.sections.filter((filteredSection) => section.id !== filteredSection.id)
       const course = this.state.course
       course.sections = reOrder(sections)
       this.setState({course})
@@ -184,9 +184,9 @@ class EditContents extends Component {
       if (afterContentId) {
         const position = course.contentOrder.indexOf(afterContentId)+1
         course.contentOrder.splice(position, 0, content.id)
-      } else {
+      } else
         course.contentOrder.push(content.id)
-      }
+
 
       this.setState({
         alert: 'content saved',
@@ -195,13 +195,16 @@ class EditContents extends Component {
       })
 
       this.saveCourse()
-      setTimeout(() => { this.setState({alert: ''}) }, 3000)
+      setTimeout(() => {
+        this.setState({alert: ''})
+      }, 3000)
 
       window.location.href = `/course/edit-content?courseId=${this.state.course.id}&contentId=${content.id}`
-
-    }).catch(err => {
+    }).catch((err) => {
       this.setState({alert: err})
-      setTimeout(() => { this.setState({alert: ''}) }, 3000)
+      setTimeout(() => {
+        this.setState({alert: ''})
+      }, 3000)
     })
   }
 
@@ -210,20 +213,22 @@ class EditContents extends Component {
       this.setState({
         alert: 'content saved'
       })
-    }).catch(err => {
+    }).catch((err) => {
       this.setState({alert: err})
     })
 
-    setTimeout(() => { this.setState({alert: ''}) }, 3000)
+    setTimeout(() => {
+      this.setState({alert: ''})
+    }, 3000)
   }
 
   removeContent(contentId) {
     return () => {
       deleteDoc(`courses/${this.state.course.id}/contents`, contentId).then(() => {
-        const contents = JSON.parse(JSON.stringify(this.state.contents)).filter(filteredContent => contentId !== filteredContent.id)
+        const contents = JSON.parse(JSON.stringify(this.state.contents)).filter((filteredContent) => contentId !== filteredContent.id)
 
         const course = this.state.course
-        course.contentOrder = course.contentOrder.filter(id => id !== contentId)
+        course.contentOrder = course.contentOrder.filter((id) => id !== contentId)
 
         this.setState({
           alert: 'content deleted',
@@ -233,12 +238,16 @@ class EditContents extends Component {
 
         this.saveCourse()
 
-        setTimeout(() => { this.setState({alert: ''}) }, 3000)
-      }).catch(err => {
+        setTimeout(() => {
+          this.setState({alert: ''})
+        }, 3000)
+      }).catch((err) => {
         this.setState({
           alert: err
         })
-        setTimeout(() => { this.setState({alert: ''}) }, 3000)
+        setTimeout(() => {
+          this.setState({alert: ''})
+        }, 3000)
       })
     }
   }
@@ -248,10 +257,14 @@ class EditContents extends Component {
 
     saveDoc('courses', course).then(() => {
       this.setState({alert: 'course saved'})
-      setTimeout(() => { this.setState({alert: ''}) }, 3000)
-    }).catch(err => {
+      setTimeout(() => {
+        this.setState({alert: ''})
+      }, 3000)
+    }).catch((err) => {
       this.setState({alert: err})
-      setTimeout(() => { this.setState({alert: ''}) }, 3000)
+      setTimeout(() => {
+        this.setState({alert: ''})
+      }, 3000)
     })
   }
 

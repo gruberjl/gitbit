@@ -1,11 +1,10 @@
 import './app'
 import {getAuth} from './auth'
-import { signOut as SignOut  } from 'firebase/auth'
+import {signOut as signOut2} from 'firebase/auth'
 
 const signOut = () => {
   const auth = getAuth()
-  return SignOut(auth)
+  return signOut2(auth)
 }
 
 export {signOut}
- 

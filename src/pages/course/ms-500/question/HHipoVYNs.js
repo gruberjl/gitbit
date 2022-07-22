@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"HHipoVYNs","question":{"blocks":[{"key":"312gb","depth":0,"type":"unstyled","text":"Security Requirements: GitBit identifies the following security requirements:","entityRanges":[],"data":{},"inlineStyleRanges":[{"offset":0,"length":23,"style":"BOLD"}]},{"data":{},"type":"unordered-list-item","inlineStyleRanges":[],"text":"Access to the Azure Active Directory admin center by the user administrators must be reviewed every seven days. If an administrator fails to respond to an access request within three days, access must be removed","entityRanges":[],"depth":0,"key":"c0t0v"},{"text":"Users who manage Microsoft 365 workloads must only be allowed to perform administrative tasks for up to three hours at a time. Global administrators must be exempt from this requirement","inlineStyleRanges":[],"type":"unordered-list-item","data":{},"depth":0,"entityRanges":[],"key":"4kl8j"},{"type":"unordered-list-item","data":{},"entityRanges":[],"text":"Users must be prevented from inviting external users to view company data. Only global administrators and a user named User1 must be able to send invitations","inlineStyleRanges":[],"depth":0,"key":"7n342"},{"type":"unordered-list-item","entityRanges":[],"text":"Azure Advanced Threat Protection (ATP) must capture security group modifications for sensitive groups, such as Domain Admins in Active Directory","inlineStyleRanges":[],"data":{},"key":"4v2gu","depth":0},{"depth":0,"data":{},"text":"Workload administrators must use multi-factor authentication (MFA) when signing in from an anonymous or an unfamiliar location","entityRanges":[],"type":"unordered-list-item","inlineStyleRanges":[],"key":"c5gnj"},{"inlineStyleRanges":[],"data":{},"type":"unordered-list-item","depth":0,"key":"cmhvm","text":"The location of the user administrators must be audited when the administrators authenticate to Azure AD","entityRanges":[]},{"depth":0,"entityRanges":[],"type":"unordered-list-item","key":"ad81j","data":{},"text":"Email messages that include attachments containing malware must be delivered without the attachment","inlineStyleRanges":[]},{"entityRanges":[],"type":"unordered-list-item","key":"3v1so","depth":0,"inlineStyleRanges":[],"text":"The principle of least privilege must be used whenever possible","data":{}},{"key":"f6ml2","inlineStyleRanges":[],"depth":0,"text":"You plan to configure an access review to meet the security requirements for the workload administrators. You create an access review policy and specify the scope and a group.","data":{},"type":"unstyled","entityRanges":[]},{"data":{},"text":"Which other settings should you configure? To answer, select the appropriate options in the answer area.","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"key":"8jjma","depth":0}],"entityMap":{}},"answers":[{"value":"Set the frequency to One time","isCorrectAnswer":false},{"value":"Set the frequency to Weekly","isCorrectAnswer":true},{"value":"Set the frequency to Monthly","isCorrectAnswer":false},{"value":"To ensure that access is removed if an administrator fails to respond, configure the: Upon completion settings","isCorrectAnswer":true},{"value":"To ensure that access is removed if an administrator fails to respond, configure the: Advanced settings","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"To ensure that access is removed if an administrator fails to respond, configure the: Programs"},{"isCorrectAnswer":false,"value":"To ensure that access is removed if an administrator fails to respond, configure the: Reviewers"}],"references":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2","targetOption":"_blank"},"type":"LINK"}},"blocks":[{"type":"unstyled","entityRanges":[],"text":"Setting the frequency to weekly allows you to review the roles every 7 days.","key":"ao1ti","data":{},"depth":0,"inlineStyleRanges":[]},{"entityRanges":[],"key":"a38rm","data":{},"type":"unstyled","depth":0,"text":"You set the access to be removed under \"Upon completion settings\"","inlineStyleRanges":[]},{"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2","depth":0,"key":"beg9g","inlineStyleRanges":[],"entityRanges":[{"length":94,"key":0,"offset":0}],"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'Set the frequency to One time', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Set the frequency to Weekly'}, {isCorrectAnswer: false, value: 'Set the frequency to Monthly'}, {value: 'To ensure that access is removed if an administrator fails to respond, configure the: Upon completion settings', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'To ensure that access is removed if an administrator fails to respond, configure the: Advanced settings'}, {value: 'To ensure that access is removed if an administrator fails to respond, configure the: Programs', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'To ensure that access is removed if an administrator fails to respond, configure the: Reviewers'}], references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}}, blocks: [{key: 'ao1ti', entityRanges: [], depth: 0, text: 'Setting the frequency to weekly allows you to review the roles every 7 days.', inlineStyleRanges: [], type: 'unstyled', data: {}}, {key: 'a38rm', type: 'unstyled', text: 'You set the access to be removed under "Upon completion settings"', entityRanges: [], data: {}, inlineStyleRanges: [], depth: 0}, {entityRanges: [{offset: 0, key: 0, length: 94}], depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2', key: 'beg9g', inlineStyleRanges: [], data: {}, type: 'unstyled'}]}, question: {blocks: [{inlineStyleRanges: [{style: 'BOLD', length: 23, offset: 0}], data: {}, type: 'unstyled', key: '312gb', text: 'Security Requirements: GitBit identifies the following security requirements:', entityRanges: [], depth: 0}, {data: {}, entityRanges: [], text: 'Access to the Azure Active Directory admin center by the user administrators must be reviewed every seven days. If an administrator fails to respond to an access request within three days, access must be removed', depth: 0, inlineStyleRanges: [], type: 'unordered-list-item', key: 'c0t0v'}, {key: '4kl8j', data: {}, type: 'unordered-list-item', depth: 0, text: 'Users who manage Microsoft 365 workloads must only be allowed to perform administrative tasks for up to three hours at a time. Global administrators must be exempt from this requirement', entityRanges: [], inlineStyleRanges: []}, {key: '7n342', inlineStyleRanges: [], data: {}, text: 'Users must be prevented from inviting external users to view company data. Only global administrators and a user named User1 must be able to send invitations', type: 'unordered-list-item', entityRanges: [], depth: 0}, {inlineStyleRanges: [], type: 'unordered-list-item', key: '4v2gu', depth: 0, data: {}, entityRanges: [], text: 'Azure Advanced Threat Protection (ATP) must capture security group modifications for sensitive groups, such as Domain Admins in Active Directory'}, {inlineStyleRanges: [], text: 'Workload administrators must use multi-factor authentication (MFA) when signing in from an anonymous or an unfamiliar location', type: 'unordered-list-item', data: {}, depth: 0, key: 'c5gnj', entityRanges: []}, {data: {}, entityRanges: [], key: 'cmhvm', text: 'The location of the user administrators must be audited when the administrators authenticate to Azure AD', inlineStyleRanges: [], depth: 0, type: 'unordered-list-item'}, {depth: 0, key: 'ad81j', inlineStyleRanges: [], entityRanges: [], data: {}, text: 'Email messages that include attachments containing malware must be delivered without the attachment', type: 'unordered-list-item'}, {key: '3v1so', data: {}, type: 'unordered-list-item', entityRanges: [], depth: 0, text: 'The principle of least privilege must be used whenever possible', inlineStyleRanges: []}, {text: 'You plan to configure an access review to meet the security requirements for the workload administrators. You create an access review policy and specify the scope and a group.', inlineStyleRanges: [], type: 'unstyled', depth: 0, entityRanges: [], key: 'f6ml2', data: {}}, {depth: 0, type: 'unstyled', key: '8jjma', entityRanges: [], inlineStyleRanges: [], text: 'Which other settings should you configure? To answer, select the appropriate options in the answer area.', data: {}}], entityMap: {}}, id: 'HHipoVYNs'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -74,21 +74,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -96,8 +96,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -105,15 +105,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -127,16 +126,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -187,12 +186,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

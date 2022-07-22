@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Open Azure Active Directory Admin Center > Devices > Manage Devices","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Open Exchange Admin Center > Mobile > Edit > Select options"},{"value":"Open Microsoft 365 Admin Center > Mobile > Edit > Select options","isCorrectAnswer":false}],"question":{"blocks":[{"entityRanges":[],"data":{},"text":"You need to ensure that unmanaged mobile devices are quarantined when the devices attempt to connect to Exchange Online.","key":"cc7cl","depth":0,"inlineStyleRanges":[],"type":"unstyled"},{"data":{},"text":"What steps should you take to complete the task?","entityRanges":[],"type":"unstyled","depth":0,"inlineStyleRanges":[{"length":48,"offset":0,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","length":48,"offset":0},{"style":"fontsize-16","length":48,"offset":0},{"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":48}],"key":"79hqh"}],"entityMap":{}},"references":{"blocks":[{"entityRanges":[{"key":0,"offset":0,"length":137}],"data":{},"text":"https://www.iorad.com/player/1796090/MS-500---Ensure-that-unmanaged-mobile-devices-are-quarantined-when-the-devices-attempt-to-connect-to ","inlineStyleRanges":[],"type":"unstyled","key":"f9d2a","depth":0},{"inlineStyleRanges":[],"text":"You need to configure the Exchange ActiveSync Access Settings.","entityRanges":[],"depth":0,"key":"4im1d","type":"unstyled","data":{}},{"text":"Go to the Exchange admin center.","inlineStyleRanges":[],"key":"jnrn","type":"ordered-list-item","depth":0,"data":{},"entityRanges":[]},{"text":"Click on Mobile in the left navigation pane.","entityRanges":[],"key":"29jo5","inlineStyleRanges":[],"depth":0,"type":"ordered-list-item","data":{}},{"key":"8f6v5","depth":0,"inlineStyleRanges":[],"data":{},"type":"ordered-list-item","text":"On the Mobile Device Access page, click the Edit button in the Exchange ActiveSync Access Settings area.","entityRanges":[]},{"key":"crv1m","depth":0,"type":"ordered-list-item","inlineStyleRanges":[],"entityRanges":[],"data":{},"text":"Select the Quarantine option under When a mobile device that isn't managed by a rule or personal exemption connects to Exchange."},{"key":"7fd0k","inlineStyleRanges":[],"depth":0,"text":"Optionally, you can configure notifications to be sent to administrators and a message to be sent to the mobile device user when a device is quarantined.","data":{},"entityRanges":[],"type":"ordered-list-item"},{"type":"ordered-list-item","data":{},"depth":0,"inlineStyleRanges":[],"entityRanges":[],"key":"2q57v","text":"Click Save to save the changes."},{"type":"unstyled","depth":0,"entityRanges":[{"length":86,"key":1,"offset":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN","data":{},"key":"h6vu","inlineStyleRanges":[]}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1796090/MS-500---Ensure-that-unmanaged-mobile-devices-are-quarantined-when-the-devices-attempt-to-connect-to"}},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN","targetOption":"_blank"}}}},"id":"s4pkyL5r0"},
+      test: {questions: [{answers: []}]},
+      question: {id: 's4pkyL5r0', references: {blocks: [{text: 'https://www.iorad.com/player/1796090/MS-500---Ensure-that-unmanaged-mobile-devices-are-quarantined-when-the-devices-attempt-to-connect-to ', entityRanges: [{key: 0, length: 137, offset: 0}], data: {}, key: 'f9d2a', depth: 0, inlineStyleRanges: [], type: 'unstyled'}, {type: 'unstyled', depth: 0, data: {}, text: 'You need to configure the Exchange ActiveSync Access Settings.', entityRanges: [], inlineStyleRanges: [], key: '4im1d'}, {text: 'Go to the Exchange admin center.', depth: 0, type: 'ordered-list-item', entityRanges: [], data: {}, key: 'jnrn', inlineStyleRanges: []}, {entityRanges: [], text: 'Click on Mobile in the left navigation pane.', type: 'ordered-list-item', depth: 0, data: {}, key: '29jo5', inlineStyleRanges: []}, {depth: 0, type: 'ordered-list-item', data: {}, entityRanges: [], inlineStyleRanges: [], text: 'On the Mobile Device Access page, click the Edit button in the Exchange ActiveSync Access Settings area.', key: '8f6v5'}, {entityRanges: [], text: 'Select the Quarantine option under When a mobile device that isn\'t managed by a rule or personal exemption connects to Exchange.', type: 'ordered-list-item', depth: 0, key: 'crv1m', data: {}, inlineStyleRanges: []}, {inlineStyleRanges: [], key: '7fd0k', data: {}, text: 'Optionally, you can configure notifications to be sent to administrators and a message to be sent to the mobile device user when a device is quarantined.', type: 'ordered-list-item', entityRanges: [], depth: 0}, {key: '2q57v', data: {}, type: 'ordered-list-item', inlineStyleRanges: [], depth: 0, text: 'Click Save to save the changes.', entityRanges: []}, {entityRanges: [{length: 86, key: 1, offset: 0}], inlineStyleRanges: [], type: 'unstyled', key: 'h6vu', text: 'https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN', depth: 0, data: {}}], entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.iorad.com/player/1796090/MS-500---Ensure-that-unmanaged-mobile-devices-are-quarantined-when-the-devices-attempt-to-connect-to'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Understanding-compliance-policies-qDRA4jjoN', targetOption: '_blank'}}}}, answers: [{isCorrectAnswer: false, value: 'Open Azure Active Directory Admin Center > Devices > Manage Devices'}, {isCorrectAnswer: true, value: 'Open Exchange Admin Center > Mobile > Edit > Select options'}, {isCorrectAnswer: false, value: 'Open Microsoft 365 Admin Center > Mobile > Edit > Select options'}], question: {blocks: [{key: 'cc7cl', text: 'You need to ensure that unmanaged mobile devices are quarantined when the devices attempt to connect to Exchange Online.', entityRanges: [], depth: 0, type: 'unstyled', inlineStyleRanges: [], data: {}}, {key: '79hqh', depth: 0, data: {}, inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 48, offset: 0}, {style: 'bgcolor-rgb(255,255,255)', offset: 0, length: 48}, {offset: 0, length: 48, style: 'fontsize-16'}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 48, offset: 0}], type: 'unstyled', text: 'What steps should you take to complete the task?', entityRanges: []}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -71,21 +71,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -93,8 +93,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -102,15 +102,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -124,16 +123,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -184,12 +183,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

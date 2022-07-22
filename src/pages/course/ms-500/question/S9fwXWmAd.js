@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"key":"dspqb","depth":0,"text":"Policy2 is in effect because retention wins over deletion. Content won't be permanently deleted when it also has retention settings to retain it.","data":{},"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled"},{"depth":0,"key":"4emjm","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f","type":"unstyled","data":{},"entityRanges":[{"key":0,"offset":0,"length":114}]},{"data":{},"type":"unstyled","key":"326tf","depth":0,"text":"https://docs.microsoft.com/en-us/office365/securitycompliance/retention-policies?redirectSourcePath=%252fen-us%252farticle%252fOverview-of-retention- policies-5e377752-700d-4870-9b6d-12bfc12d2423#the-principles-of-retention-or-what-takes-precedence ","entityRanges":[{"length":248,"key":1,"offset":0}],"inlineStyleRanges":[]}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/office365/securitycompliance/retention-policies?redirectSourcePath=%252fen-us%252farticle%252fOverview-of-retention-","targetOption":"_blank"},"mutability":"MUTABLE"}}},"question":{"blocks":[{"depth":0,"type":"unstyled","text":"You have a Microsoft 365 subscription. From the Security & Compliance admin center, you create the retention policies shown in the following table.","data":{},"inlineStyleRanges":[],"key":"4nfs6","entityRanges":[]},{"key":"3upt2","inlineStyleRanges":[],"data":{},"entityRanges":[{"key":0,"offset":0,"length":1}],"type":"atomic","depth":0,"text":" "},{"data":{},"text":"Policy1 is configured as showing in the following exhibit.","depth":0,"type":"unstyled","key":"ds2hq","inlineStyleRanges":[],"entityRanges":[]},{"key":"1n74n","entityRanges":[{"length":1,"key":1,"offset":0}],"inlineStyleRanges":[],"type":"atomic","depth":0,"data":{},"text":" "},{"inlineStyleRanges":[],"text":"Policy2 is configured as shown in the following exhibit.","depth":0,"data":{},"entityRanges":[],"type":"unstyled","key":"1bram"},{"key":"fi15k","type":"atomic","inlineStyleRanges":[],"text":" ","entityRanges":[{"key":2,"length":1,"offset":0}],"data":{},"depth":0},{"entityRanges":[],"type":"unstyled","text":"For each of the following statements, check the box if the statement is true.","data":{},"inlineStyleRanges":[],"depth":0,"key":"2chn0"}],"entityMap":{"0":{"mutability":"MUTABLE","type":"IMAGE","data":{"src":"https://i.ibb.co/VTTN5M2/policy-locations.png","alignment":"left","alt":"Policy locations chart","width":"auto","height":"auto"}},"1":{"data":{"height":"auto","src":"https://i.ibb.co/Z825ptq/Policy1-Retention-Policy.png","alt":"Policy1 Retention Policy","alignment":"left","width":"auto"},"mutability":"MUTABLE","type":"IMAGE"},"2":{"mutability":"MUTABLE","data":{"width":"auto","alt":"Policy2 Retention Policy","height":"auto","src":"https://i.ibb.co/dKBJVmq/Policy2-Retention-Policy.png","alignment":"left"},"type":"IMAGE"}}},"answers":[{"value":"If a user creates a file in Microsoft OneDrive on January 1, 2018, users can access the file on January 15, 2019","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"If a user deletes a file in Microsoft OneDrive on January 1, 2018, an administrator can recover the file on April 15, 2019"},{"isCorrectAnswer":false,"value":"If a user creates a file in Microsoft OneDrive on January 1, 2018, an administrator can recover the file on April 15, 2022"}],"id":"S9fwXWmAd"},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f', targetOption: '_blank'}}, 1: {data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/retention-policies?redirectSourcePath=%252fen-us%252farticle%252fOverview-of-retention-'}, mutability: 'MUTABLE', type: 'LINK'}}, blocks: [{depth: 0, type: 'unstyled', entityRanges: [], inlineStyleRanges: [], text: 'Policy2 is in effect because retention wins over deletion. Content won\'t be permanently deleted when it also has retention settings to retain it.', key: 'dspqb', data: {}}, {depth: 0, inlineStyleRanges: [], data: {}, entityRanges: [{offset: 0, key: 0, length: 114}], type: 'unstyled', key: '4emjm', text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f'}, {key: '326tf', data: {}, inlineStyleRanges: [], type: 'unstyled', depth: 0, entityRanges: [{key: 1, length: 248, offset: 0}], text: 'https://docs.microsoft.com/en-us/office365/securitycompliance/retention-policies?redirectSourcePath=%252fen-us%252farticle%252fOverview-of-retention- policies-5e377752-700d-4870-9b6d-12bfc12d2423#the-principles-of-retention-or-what-takes-precedence '}]}, answers: [{value: 'If a user creates a file in Microsoft OneDrive on January 1, 2018, users can access the file on January 15, 2019', isCorrectAnswer: true}, {isCorrectAnswer: true, value: 'If a user deletes a file in Microsoft OneDrive on January 1, 2018, an administrator can recover the file on April 15, 2019'}, {value: 'If a user creates a file in Microsoft OneDrive on January 1, 2018, an administrator can recover the file on April 15, 2022', isCorrectAnswer: false}], question: {entityMap: {0: {type: 'IMAGE', data: {src: 'https://i.ibb.co/VTTN5M2/policy-locations.png', alt: 'Policy locations chart', alignment: 'left', width: 'auto', height: 'auto'}, mutability: 'MUTABLE'}, 1: {type: 'IMAGE', data: {alignment: 'left', height: 'auto', src: 'https://i.ibb.co/Z825ptq/Policy1-Retention-Policy.png', width: 'auto', alt: 'Policy1 Retention Policy'}, mutability: 'MUTABLE'}, 2: {type: 'IMAGE', data: {height: 'auto', alignment: 'left', width: 'auto', alt: 'Policy2 Retention Policy', src: 'https://i.ibb.co/dKBJVmq/Policy2-Retention-Policy.png'}, mutability: 'MUTABLE'}}, blocks: [{text: 'You have a Microsoft 365 subscription. From the Security & Compliance admin center, you create the retention policies shown in the following table.', entityRanges: [], inlineStyleRanges: [], data: {}, type: 'unstyled', depth: 0, key: '4nfs6'}, {inlineStyleRanges: [], text: ' ', type: 'atomic', data: {}, key: '3upt2', depth: 0, entityRanges: [{key: 0, length: 1, offset: 0}]}, {depth: 0, data: {}, key: 'ds2hq', type: 'unstyled', inlineStyleRanges: [], entityRanges: [], text: 'Policy1 is configured as showing in the following exhibit.'}, {depth: 0, data: {}, key: '1n74n', type: 'atomic', entityRanges: [{offset: 0, length: 1, key: 1}], inlineStyleRanges: [], text: ' '}, {key: '1bram', depth: 0, type: 'unstyled', entityRanges: [], text: 'Policy2 is configured as shown in the following exhibit.', inlineStyleRanges: [], data: {}}, {inlineStyleRanges: [], key: 'fi15k', data: {}, type: 'atomic', text: ' ', entityRanges: [{length: 1, offset: 0, key: 2}], depth: 0}, {entityRanges: [], key: '2chn0', data: {}, text: 'For each of the following statements, check the box if the statement is true.', depth: 0, type: 'unstyled', inlineStyleRanges: []}]}, id: 'S9fwXWmAd'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

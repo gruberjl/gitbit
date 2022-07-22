@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"An Azure Active Directory Authentication Library (ADAL) token.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"The public key."},{"value":"The Username and password for a global admin account.","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"The URL of the Microsoft Defender for Identity admin center."}],"question":{"entityMap":{},"blocks":[{"type":"unstyled","data":{},"key":"etukd","depth":0,"text":"A colleague has been asked to deploy several Microsoft Defender for Identity sensors.","entityRanges":[],"inlineStyleRanges":[]},{"text":"He's asked you to give him the Azure information required to deploy the sensors.","inlineStyleRanges":[],"entityRanges":[],"data":{},"key":"8orth","type":"unstyled","depth":0},{"data":{},"key":"aqlp3","entityRanges":[],"text":"What information should you provide?","inlineStyleRanges":[],"depth":0,"type":"unstyled"}]},"references":{"entityMap":{"0":{"data":{"targetOption":"_self","url":"https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA"},"type":"LINK","mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/workspace-portal","targetOption":"_blank"},"type":"LINK"}},"blocks":[{"inlineStyleRanges":[],"text":"The URL is specific to every tenant so the admin will need the URL: https://*instancename*.atp.azure.com. The admin will also need the installation files and the access key but both of which can be downloaded from the Microsoft Defender for Identity admin center.","entityRanges":[],"data":{},"key":"67e5s","depth":0,"type":"unstyled"},{"type":"unstyled","inlineStyleRanges":[],"key":"bb6us","data":{},"entityRanges":[{"offset":0,"key":0,"length":90}],"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA"},{"text":"https://docs.microsoft.com/en-us/azure-advanced-threat-protection/workspace-portal","key":"951j7","depth":0,"entityRanges":[{"key":1,"offset":0,"length":82}],"data":{},"inlineStyleRanges":[],"type":"unstyled"}]},"id":"Si5gtzjjY"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: false, value: 'An Azure Active Directory Authentication Library (ADAL) token.'}, {value: 'The public key.', isCorrectAnswer: false}, {value: 'The Username and password for a global admin account.', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'The URL of the Microsoft Defender for Identity admin center.'}], id: 'Si5gtzjjY', references: {blocks: [{key: '67e5s', depth: 0, text: 'The URL is specific to every tenant so the admin will need the URL: https://*instancename*.atp.azure.com. The admin will also need the installation files and the access key but both of which can be downloaded from the Microsoft Defender for Identity admin center.', type: 'unstyled', data: {}, entityRanges: [], inlineStyleRanges: []}, {type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA', entityRanges: [{key: 0, offset: 0, length: 90}], inlineStyleRanges: [], depth: 0, data: {}, key: 'bb6us'}, {depth: 0, data: {}, type: 'unstyled', key: '951j7', text: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/workspace-portal', entityRanges: [{length: 82, key: 1, offset: 0}], inlineStyleRanges: []}], entityMap: {0: {type: 'LINK', data: {targetOption: '_self', url: 'https://www.gitbit.org/course/ms-500/learn/Whats-Microsoft-Defender-for-identity-Kye_yNLxA'}, mutability: 'MUTABLE'}, 1: {type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/azure-advanced-threat-protection/workspace-portal', targetOption: '_blank'}, mutability: 'MUTABLE'}}}, question: {blocks: [{depth: 0, text: 'A colleague has been asked to deploy several Microsoft Defender for Identity sensors.', type: 'unstyled', entityRanges: [], data: {}, key: 'etukd', inlineStyleRanges: []}, {depth: 0, inlineStyleRanges: [], data: {}, type: 'unstyled', text: 'He\'s asked you to give him the Azure information required to deploy the sensors.', entityRanges: [], key: '8orth'}, {inlineStyleRanges: [], depth: 0, data: {}, type: 'unstyled', text: 'What information should you provide?', key: 'aqlp3', entityRanges: []}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

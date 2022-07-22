@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T","targetOption":"_blank"}},"1":{"data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/integrate-office-365-ti-with-mde?view=o365-worldwide","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"depth":0,"inlineStyleRanges":[{"offset":0,"length":115,"style":"color-rgb(33,37,41)"},{"length":115,"offset":0,"style":"bgcolor-rgb(255,255,255)"},{"length":115,"style":"fontsize-16","offset":0},{"offset":0,"length":115,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"},{"offset":9,"style":"BOLD","length":35},{"style":"BOLD","length":8,"offset":47},{"length":12,"offset":58,"style":"BOLD"},{"offset":76,"style":"BOLD","length":32},{"style":"BOLD","length":2,"offset":112}],"key":"8c33j","data":{},"text":"1. Go to Microsoft 365 Defender admin center > Explorer > MDE Settings. Set Connect to Defender for Endpoint to On.","type":"unstyled","entityRanges":[]},{"type":"unstyled","depth":0,"data":{},"entityRanges":[{"key":0,"offset":0,"length":129}],"key":"eq35r","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T"},{"inlineStyleRanges":[],"type":"unstyled","key":"29m1o","data":{},"entityRanges":[{"length":128,"key":1,"offset":0}],"text":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/integrate-office-365-ti-with-mde?view=o365-worldwide","depth":0}]},"id":"cVymLs8Fp","answers":[{"value":"In the Microsoft 365 admin center > Settings > Services & add-ins.","isCorrectAnswer":false},{"value":"In the Microsoft Defender admin center > Threat management > Explorer.","isCorrectAnswer":true},{"value":"In the Microsoft 365 admin center > Reports > Security & Compliance.","isCorrectAnswer":false},{"value":"In the Security & Compliance admin center > Threat management > Threat tracker.","isCorrectAnswer":false}],"question":{"blocks":[{"depth":0,"data":{},"text":"Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses assigned to everyone.","type":"unstyled","inlineStyleRanges":[],"key":"6kb7k","entityRanges":[]},{"depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"key":"d5jcm","type":"unstyled","text":"Your organization is currently using Microsoft Defender for Endpoint."},{"inlineStyleRanges":[],"key":"d0r85","depth":0,"entityRanges":[],"text":"You've been tasked with integrating Microsoft Defender for Office 365 and Microsoft Defender for Endpoint.","data":{},"type":"unstyled"},{"entityRanges":[],"data":{},"inlineStyleRanges":[],"key":"es6q7","depth":0,"type":"unstyled","text":"Where do you configure the integration?"}],"entityMap":{}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 115, offset: 0}, {style: 'bgcolor-rgb(255,255,255)', length: 115, offset: 0}, {length: 115, style: 'fontsize-16', offset: 0}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 115, offset: 0}, {style: 'BOLD', offset: 9, length: 35}, {style: 'BOLD', length: 8, offset: 47}, {style: 'BOLD', length: 12, offset: 58}, {offset: 76, style: 'BOLD', length: 32}, {style: 'BOLD', offset: 112, length: 2}], text: '1. Go to Microsoft 365 Defender admin center > Explorer > MDE Settings. Set Connect to Defender for Endpoint to On.', entityRanges: [], key: '8c33j', depth: 0, data: {}, type: 'unstyled'}, {depth: 0, type: 'unstyled', inlineStyleRanges: [], data: {}, entityRanges: [{offset: 0, key: 0, length: 129}], key: 'eq35r', text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T'}, {depth: 0, data: {}, entityRanges: [{key: 1, offset: 0, length: 128}], inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/integrate-office-365-ti-with-mde?view=o365-worldwide', key: '29m1o', type: 'unstyled'}], entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T', targetOption: '_blank'}, mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/integrate-office-365-ti-with-mde?view=o365-worldwide', targetOption: '_blank'}, type: 'LINK'}}}, question: {blocks: [{inlineStyleRanges: [], key: '6kb7k', type: 'unstyled', data: {}, depth: 0, entityRanges: [], text: 'Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses assigned to everyone.'}, {entityRanges: [], key: 'd5jcm', depth: 0, inlineStyleRanges: [], text: 'Your organization is currently using Microsoft Defender for Endpoint.', data: {}, type: 'unstyled'}, {entityRanges: [], text: 'You\'ve been tasked with integrating Microsoft Defender for Office 365 and Microsoft Defender for Endpoint.', key: 'd0r85', depth: 0, type: 'unstyled', data: {}, inlineStyleRanges: []}, {text: 'Where do you configure the integration?', inlineStyleRanges: [], entityRanges: [], key: 'es6q7', depth: 0, data: {}, type: 'unstyled'}], entityMap: {}}, id: 'cVymLs8Fp', answers: [{value: 'In the Microsoft 365 admin center > Settings > Services & add-ins.', isCorrectAnswer: false}, {value: 'In the Microsoft Defender admin center > Threat management > Explorer.', isCorrectAnswer: true}, {value: 'In the Microsoft 365 admin center > Reports > Security & Compliance.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'In the Security & Compliance admin center > Threat management > Threat tracker.'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

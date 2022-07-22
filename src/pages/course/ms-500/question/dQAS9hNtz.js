@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"dQAS9hNtz","references":{"blocks":[{"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"a5td0","data":{},"type":"unstyled","text":"The Intune EndPoint Protection group is included in the policy so SmartScreen will be enabled and display a warning."},{"text":"The Intune Help Desk Operators group is excluded from the policy so SmartScreen will be disabled so no warning will be displayed.","type":"unstyled","inlineStyleRanges":[],"data":{},"key":"eqvfi","entityRanges":[],"depth":0},{"entityRanges":[{"key":0,"offset":0,"length":87}],"data":{},"type":"unstyled","depth":0,"key":"1p6g1","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO"}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO","targetOption":"_blank"}}}},"answers":[{"isCorrectAnswer":false,"value":"When a member of the Intune Endpoint Protection group opens a site that's flagged as dangerous, the webpage will open without warning"},{"isCorrectAnswer":false,"value":"When a member of the Intune Endpoint Protection group opens a site that's flagged as dangerous, the webpage will be blocked from opening"},{"value":"When a member of the Intune Endpoint Protection group opens a site that's flagged as dangerous, the user will receive a security warning","isCorrectAnswer":true},{"value":"When a member of the group opens a site that's flagged as dangerous, the webpage will open without warning","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"When a member of the Intune Help Desk Operators group opens a site that's flagged as dangerous, the webpage will be blocked from opening"},{"isCorrectAnswer":false,"value":"When a member of the Intune Help Desk Operators group opens a site that's flagged as dangerous, the user will receive a security warning"}],"question":{"entityMap":{"0":{"data":{"alignment":"left","src":"https://i.ibb.co/vqt40MF/endpoint-security.png","height":"auto","width":"auto","alt":"Endpoint security settings"},"mutability":"MUTABLE","type":"IMAGE"}},"blocks":[{"entityRanges":[],"text":"You have a Microsoft 365 tenant with Defender for Endpoint. Intune is set up and installed on your Windows 10 devices.","key":"asi2d","data":{},"depth":0,"type":"unstyled","inlineStyleRanges":[]},{"key":"22bt7","entityRanges":[],"data":{},"type":"unstyled","text":"You open the Microsoft Endpoint Manager admin center and create an attack surface reduction policy. The policy is shown in the image below.","inlineStyleRanges":[],"depth":0},{"depth":0,"entityRanges":[{"key":0,"length":1,"offset":0}],"inlineStyleRanges":[],"text":" ","key":"dn69q","data":{},"type":"atomic"},{"data":{},"entityRanges":[],"depth":0,"key":"8i6ka","type":"unstyled","inlineStyleRanges":[],"text":"Check the box next to each statement that's true."}]}},
+      test: {questions: [{answers: []}]},
+      question: {id: 'dQAS9hNtz', answers: [{isCorrectAnswer: false, value: 'When a member of the Intune Endpoint Protection group opens a site that\'s flagged as dangerous, the webpage will open without warning'}, {value: 'When a member of the Intune Endpoint Protection group opens a site that\'s flagged as dangerous, the webpage will be blocked from opening', isCorrectAnswer: false}, {value: 'When a member of the Intune Endpoint Protection group opens a site that\'s flagged as dangerous, the user will receive a security warning', isCorrectAnswer: true}, {value: 'When a member of the group opens a site that\'s flagged as dangerous, the webpage will open without warning', isCorrectAnswer: true}, {value: 'When a member of the Intune Help Desk Operators group opens a site that\'s flagged as dangerous, the webpage will be blocked from opening', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'When a member of the Intune Help Desk Operators group opens a site that\'s flagged as dangerous, the user will receive a security warning'}], references: {blocks: [{data: {}, inlineStyleRanges: [], type: 'unstyled', text: 'The Intune EndPoint Protection group is included in the policy so SmartScreen will be enabled and display a warning.', key: 'a5td0', entityRanges: [], depth: 0}, {inlineStyleRanges: [], type: 'unstyled', entityRanges: [], depth: 0, text: 'The Intune Help Desk Operators group is excluded from the policy so SmartScreen will be disabled so no warning will be displayed.', data: {}, key: 'eqvfi'}, {inlineStyleRanges: [], entityRanges: [{length: 87, offset: 0, key: 0}], depth: 0, type: 'unstyled', data: {}, key: '1p6g1', text: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO'}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO', targetOption: '_blank'}}}}, question: {blocks: [{entityRanges: [], depth: 0, key: 'asi2d', data: {}, inlineStyleRanges: [], type: 'unstyled', text: 'You have a Microsoft 365 tenant with Defender for Endpoint. Intune is set up and installed on your Windows 10 devices.'}, {text: 'You open the Microsoft Endpoint Manager admin center and create an attack surface reduction policy. The policy is shown in the image below.', key: '22bt7', entityRanges: [], data: {}, depth: 0, inlineStyleRanges: [], type: 'unstyled'}, {depth: 0, type: 'atomic', text: ' ', entityRanges: [{length: 1, key: 0, offset: 0}], key: 'dn69q', inlineStyleRanges: [], data: {}}, {depth: 0, key: '8i6ka', inlineStyleRanges: [], text: 'Check the box next to each statement that\'s true.', type: 'unstyled', entityRanges: [], data: {}}], entityMap: {0: {type: 'IMAGE', data: {width: 'auto', src: 'https://i.ibb.co/vqt40MF/endpoint-security.png', height: 'auto', alt: 'Endpoint security settings', alignment: 'left'}, mutability: 'MUTABLE'}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

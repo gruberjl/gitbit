@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"type":"unstyled","key":"cam7v","inlineStyleRanges":[],"text":"Where can you go to review the location (IP address) when administrators log in to your Microsoft 365 tenant?","entityRanges":[],"data":{},"depth":0}],"entityMap":{}},"references":{"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1","targetOption":"_blank"},"mutability":"MUTABLE"},"1":{"data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"}},"blocks":[{"type":"unstyled","depth":0,"text":"The sign-in logs will tell you where users have logged in from.","key":"2sq8u","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"entityRanges":[{"key":0,"length":105,"offset":0}],"key":"3ob8v","text":"https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled"},{"depth":0,"text":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins","key":"fkqml","inlineStyleRanges":[],"entityRanges":[{"length":91,"offset":0,"key":1}],"data":{},"type":"unstyled"}]},"id":"CpxByA3QU","answers":[{"value":"Sign-ins","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Azure AD Identity Protection"},{"isCorrectAnswer":false,"value":"Authentication methods"},{"isCorrectAnswer":false,"value":"Access review"}]},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{data: {}, text: 'Where can you go to review the location (IP address) when administrators log in to your Microsoft 365 tenant?', key: 'cam7v', entityRanges: [], depth: 0, inlineStyleRanges: [], type: 'unstyled'}], entityMap: {}}, id: 'CpxByA3QU', references: {blocks: [{inlineStyleRanges: [], data: {}, depth: 0, type: 'unstyled', key: '2sq8u', entityRanges: [], text: 'The sign-in logs will tell you where users have logged in from.'}, {depth: 0, data: {}, key: '3ob8v', inlineStyleRanges: [], type: 'unstyled', entityRanges: [{offset: 0, key: 0, length: 105}], text: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1'}, {entityRanges: [{key: 1, offset: 0, length: 91}], type: 'unstyled', depth: 0, key: 'fkqml', inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins', data: {}}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Auditing-sign-ins-and-other-actions-in-Microsoft-365-sH_Ee1DW1', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins', targetOption: '_blank'}}}}, answers: [{isCorrectAnswer: true, value: 'Sign-ins'}, {value: 'Azure AD Identity Protection', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Authentication methods'}, {value: 'Access review', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -62,21 +62,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -84,8 +84,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -93,15 +93,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -115,16 +114,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -175,12 +174,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

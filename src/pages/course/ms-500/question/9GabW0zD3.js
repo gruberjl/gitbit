@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"From the Azure AD admin center, create an Azure AD user risk policy.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"From the Azure AD admin center, create an Azure AD conditional access policy."},{"isCorrectAnswer":true,"value":"Configure the Access control settings in the SharePoint admin center"},{"value":"From the Azure AD admin center, create an Azure AD sign-in risk policy.","isCorrectAnswer":false}],"question":{"blocks":[{"text":"your organization has a Microsoft 365 tenant.","type":"unstyled","key":"btii1","data":{},"entityRanges":[],"inlineStyleRanges":[],"depth":0},{"type":"unstyled","depth":0,"text":"Most of your users access Microsoft SharePoint Online from unmanaged personal devices.","data":{},"key":"f0q3a","inlineStyleRanges":[],"entityRanges":[]},{"type":"unstyled","data":{},"text":"You've been tasked with preventing users from downloading, printing, and syncing files to unmanaged devices.","key":"9rcj2","depth":0,"inlineStyleRanges":[],"entityRanges":[]},{"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","key":"705ao","depth":0,"data":{},"text":"What should you do to fulfill the task?"}],"entityMap":{}},"id":"9GabW0zD3","references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI"},"type":"LINK","mutability":"MUTABLE"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps","targetOption":"_blank"}}},"blocks":[{"type":"unstyled","text":"You can use the SharePoint admin center > Access control page or the Set-SPOTenant PowerShell cmdlet to block or limit access to SharePoint and OneDrive content from unmanaged devices.","key":"ds6so","data":{},"entityRanges":[],"depth":0,"inlineStyleRanges":[]},{"key":"62ne3","entityRanges":[{"length":128,"offset":0,"key":0}],"depth":0,"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI","type":"unstyled","inlineStyleRanges":[]},{"key":"9k50n","text":"https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps https://docs.microsoft.com/en-us/sharepoint/control-access-from-unmanaged-devices","entityRanges":[{"offset":0,"key":1,"length":183}],"inlineStyleRanges":[],"depth":0,"data":{},"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI'}, type: 'LINK'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps', targetOption: '_blank'}}}, blocks: [{key: 'ds6so', inlineStyleRanges: [], text: 'You can use the SharePoint admin center > Access control page or the Set-SPOTenant PowerShell cmdlet to block or limit access to SharePoint and OneDrive content from unmanaged devices.', depth: 0, data: {}, entityRanges: [], type: 'unstyled'}, {key: '62ne3', type: 'unstyled', depth: 0, inlineStyleRanges: [], data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Everything-you-need-to-know-about-securing-SharePoint-Online-for-the-MS-500-wv2PbXnhI', entityRanges: [{length: 128, key: 0, offset: 0}]}, {key: '9k50n', text: 'https://docs.microsoft.com/en-us/powershell/module/sharepoint-online/set-spotenant?view=sharepoint-ps https://docs.microsoft.com/en-us/sharepoint/control-access-from-unmanaged-devices', data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [{length: 183, offset: 0, key: 1}], depth: 0}]}, id: '9GabW0zD3', answers: [{isCorrectAnswer: false, value: 'From the Azure AD admin center, create an Azure AD user risk policy.'}, {value: 'From the Azure AD admin center, create an Azure AD conditional access policy.', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Configure the Access control settings in the SharePoint admin center'}, {isCorrectAnswer: false, value: 'From the Azure AD admin center, create an Azure AD sign-in risk policy.'}], question: {blocks: [{data: {}, text: 'your organization has a Microsoft 365 tenant.', depth: 0, type: 'unstyled', key: 'btii1', inlineStyleRanges: [], entityRanges: []}, {inlineStyleRanges: [], entityRanges: [], data: {}, key: 'f0q3a', depth: 0, type: 'unstyled', text: 'Most of your users access Microsoft SharePoint Online from unmanaged personal devices.'}, {data: {}, entityRanges: [], inlineStyleRanges: [], type: 'unstyled', depth: 0, key: '9rcj2', text: 'You\'ve been tasked with preventing users from downloading, printing, and syncing files to unmanaged devices.'}, {inlineStyleRanges: [], text: 'What should you do to fulfill the task?', entityRanges: [], type: 'unstyled', key: '705ao', depth: 0, data: {}}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

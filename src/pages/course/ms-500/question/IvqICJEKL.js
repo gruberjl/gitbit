@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{"0":{"type":"IMAGE","data":{"height":"auto","src":"https://i.ibb.co/Lk75D86/user-and-group-membership.png","width":"auto","alt":"Chart showing 2 users with their group membership","alignment":"left"},"mutability":"MUTABLE"},"1":{"type":"IMAGE","data":{"width":"auto","height":"auto","src":"https://i.ibb.co/cTP8vKV/device-chart.png","alignment":"left","alt":"Chart showing devices, platform, and membership"},"mutability":"MUTABLE"},"2":{"data":{"src":"https://i.ibb.co/GnwXkhx/App-Protection-Policies-Assignment.png","height":"auto","alt":"Chart showing the app protection policies and their assignments","alignment":"left","width":"auto"},"type":"IMAGE","mutability":"MUTABLE"},"3":{"data":{"alt":"Policy Chart","alignment":"left","src":"https://i.ibb.co/JC9cYZS/policy-chart.png","height":"auto","width":"auto"},"type":"IMAGE","mutability":"MUTABLE"}},"blocks":[{"entityRanges":[],"key":"1v5dd","data":{},"text":"Your organization has a Microsoft 365 tenant named GitBit.org that contains the following users.","type":"unstyled","depth":0,"inlineStyleRanges":[]},{"entityRanges":[{"length":1,"offset":0,"key":0}],"depth":0,"inlineStyleRanges":[],"text":" ","data":{},"type":"atomic","key":"c346s"},{"type":"unstyled","data":{},"entityRanges":[],"inlineStyleRanges":[],"text":"Your organization has registered the following devices in Azure AD.","key":"5k82i","depth":0},{"entityRanges":[{"key":1,"offset":0,"length":1}],"inlineStyleRanges":[],"text":" ","type":"atomic","depth":0,"data":{},"key":"970fs"},{"type":"unstyled","key":"8vtdt","depth":0,"text":"You create the app protection policies in the Microsoft Endpoint Manager admin center as shown below.","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"depth":0,"inlineStyleRanges":[],"type":"atomic","entityRanges":[{"key":2,"length":1,"offset":0}],"key":"e5k92","data":{},"text":" "},{"data":{},"entityRanges":[],"key":"8cifv","inlineStyleRanges":[],"type":"unstyled","text":"Check the box next to each true statement below.","depth":0}]},"id":"IvqICJEKL","references":{"blocks":[{"depth":0,"inlineStyleRanges":[],"key":"4pcat","text":"Since PolicyC applies to iOS and DeviceA is a Windows 10 device PolicyC does not apply.","entityRanges":[],"data":{},"type":"unstyled"},{"text":"Since UserB is a member of GroupB and PolicyB does apply to Windows 10 devices, PolicyB applies to UserB on DeviceA.","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{},"depth":0,"key":"6gnh7"},{"depth":0,"key":"dkqsg","type":"unstyled","inlineStyleRanges":[],"text":"UserB isn't a member of GroupB and since you need to have users as part of the protected group PolicyD does not apply to DeviceB / UserB.","entityRanges":[],"data":{}},{"inlineStyleRanges":[],"entityRanges":[{"offset":0,"length":98,"key":0}],"type":"unstyled","key":"7eipd","depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","data":{}},{"depth":0,"entityRanges":[{"key":1,"offset":0,"length":66}],"key":"d8arv","text":"https://docs.microsoft.com/en-us/intune/apps/app-protection-policy","type":"unstyled","data":{},"inlineStyleRanges":[]}],"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx"},"type":"LINK","mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/intune/apps/app-protection-policy","targetOption":"_blank"},"type":"LINK"}}},"answers":[{"value":"If UserA uses DeviceA, PolicyC applies","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"When UserB uses DeviceA, PolicyB applies"},{"isCorrectAnswer":false,"value":"When UserB uses DeviceB, PolicyD applies"}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{depth: 0, inlineStyleRanges: [], data: {}, text: 'Since PolicyC applies to iOS and DeviceA is a Windows 10 device PolicyC does not apply.', entityRanges: [], type: 'unstyled', key: '4pcat'}, {entityRanges: [], inlineStyleRanges: [], data: {}, type: 'unstyled', depth: 0, text: 'Since UserB is a member of GroupB and PolicyB does apply to Windows 10 devices, PolicyB applies to UserB on DeviceA.', key: '6gnh7'}, {inlineStyleRanges: [], key: 'dkqsg', depth: 0, text: 'UserB isn\'t a member of GroupB and since you need to have users as part of the protected group PolicyD does not apply to DeviceB / UserB.', entityRanges: [], type: 'unstyled', data: {}}, {text: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx', depth: 0, type: 'unstyled', data: {}, key: '7eipd', entityRanges: [{length: 98, key: 0, offset: 0}], inlineStyleRanges: []}, {entityRanges: [{offset: 0, key: 1, length: 66}], type: 'unstyled', depth: 0, data: {}, inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/intune/apps/app-protection-policy', key: 'd8arv'}], entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx', targetOption: '_blank'}, mutability: 'MUTABLE'}, 1: {type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/intune/apps/app-protection-policy'}, mutability: 'MUTABLE'}}}, answers: [{value: 'If UserA uses DeviceA, PolicyC applies', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'When UserB uses DeviceA, PolicyB applies'}, {value: 'When UserB uses DeviceB, PolicyD applies', isCorrectAnswer: false}], question: {entityMap: {0: {data: {alignment: 'left', height: 'auto', src: 'https://i.ibb.co/Lk75D86/user-and-group-membership.png', alt: 'Chart showing 2 users with their group membership', width: 'auto'}, mutability: 'MUTABLE', type: 'IMAGE'}, 1: {mutability: 'MUTABLE', type: 'IMAGE', data: {alignment: 'left', width: 'auto', src: 'https://i.ibb.co/cTP8vKV/device-chart.png', alt: 'Chart showing devices, platform, and membership', height: 'auto'}}, 2: {type: 'IMAGE', data: {alt: 'Chart showing the app protection policies and their assignments', src: 'https://i.ibb.co/GnwXkhx/App-Protection-Policies-Assignment.png', width: 'auto', height: 'auto', alignment: 'left'}, mutability: 'MUTABLE'}, 3: {type: 'IMAGE', data: {alignment: 'left', height: 'auto', width: 'auto', src: 'https://i.ibb.co/JC9cYZS/policy-chart.png', alt: 'Policy Chart'}, mutability: 'MUTABLE'}}, blocks: [{depth: 0, text: 'Your organization has a Microsoft 365 tenant named GitBit.org that contains the following users.', entityRanges: [], type: 'unstyled', key: '1v5dd', data: {}, inlineStyleRanges: []}, {inlineStyleRanges: [], text: ' ', data: {}, type: 'atomic', entityRanges: [{key: 0, length: 1, offset: 0}], key: 'c346s', depth: 0}, {data: {}, text: 'Your organization has registered the following devices in Azure AD.', type: 'unstyled', key: '5k82i', inlineStyleRanges: [], depth: 0, entityRanges: []}, {text: ' ', key: '970fs', data: {}, type: 'atomic', depth: 0, inlineStyleRanges: [], entityRanges: [{offset: 0, key: 1, length: 1}]}, {data: {}, depth: 0, inlineStyleRanges: [], key: '8vtdt', entityRanges: [], text: 'You create the app protection policies in the Microsoft Endpoint Manager admin center as shown below.', type: 'unstyled'}, {entityRanges: [{offset: 0, key: 2, length: 1}], type: 'atomic', text: ' ', depth: 0, key: 'e5k92', data: {}, inlineStyleRanges: []}, {entityRanges: [], key: '8cifv', depth: 0, text: 'Check the box next to each true statement below.', type: 'unstyled', data: {}, inlineStyleRanges: []}]}, id: 'IvqICJEKL'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

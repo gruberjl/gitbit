@@ -1,14 +1,13 @@
-import { getAuth as GetAuth  } from 'firebase/auth'
+import {getAuth as getAuth2} from 'firebase/auth'
 import './app'
 
 let auth
 
 const getAuth = () => {
   if (!auth)
-    auth = GetAuth()
+    auth = getAuth2()
 
   return auth
 }
 
 export {getAuth}
- 

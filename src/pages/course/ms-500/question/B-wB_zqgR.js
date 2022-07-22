@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":true,"value":"Synchronization Service Manager"},{"isCorrectAnswer":false,"value":"Azure AD Connect wizard"},{"isCorrectAnswer":false,"value":"Synchronization Rules Editor"},{"value":"IdFix","isCorrectAnswer":false}],"references":{"blocks":[{"text":"To review the error in more detail log on to the server that has the AD Connect service running then open the Synchronization Service Manager application. From there you'll see one of the profiles with a status of Completed-export-error. Click on it. Then click the error (in the bottom right corner. Click Detail. You can also click the CN=GUID to view the account that changed and what attributes have changed.","data":{},"inlineStyleRanges":[],"entityRanges":[],"key":"7fdiu","depth":0,"type":"unstyled"},{"inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"length":69,"offset":0,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","key":"1sh5q","depth":0,"data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P"}}}},"question":{"entityMap":{},"blocks":[{"key":"4ufo4","depth":0,"type":"unstyled","inlineStyleRanges":[],"data":{},"text":"The network contains an Active Directory forest named gitbit.org. GitBit has a hybrid Microsoft Azure Active Directory (Azure AD) environment.","entityRanges":[]},{"type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{},"key":"c4img","depth":0,"text":"The company maintains some on-premises servers for specific applications, but most end-user applications are provided by a Microsoft 365 E5 subscription."},{"key":"45i9j","depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"text":"GitBit identifies the following issues:","type":"unstyled"},{"inlineStyleRanges":[],"type":"unordered-list-item","depth":0,"text":"Since last Friday, the IT team has been receiving automated email messages that contain \"Unhealthy Identity Synchronization Notification\" in the subject line.","data":{},"key":"fe0i","entityRanges":[]},{"depth":0,"key":"aa9gq","text":"Several users recently opened email attachments that contained malware. The process to remove the malware was time-consuming.","entityRanges":[],"data":{},"inlineStyleRanges":[],"type":"unordered-list-item"},{"entityRanges":[],"text":"You need to resolve the issue that generates the automated email messages to the IT team.","type":"unstyled","data":{},"inlineStyleRanges":[],"key":"8ofra","depth":0},{"text":"Which tool should you run first?","key":"96grf","depth":0,"data":{},"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled"}]},"id":"B-wB_zqgR"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'Synchronization Service Manager', isCorrectAnswer: true}, {value: 'Azure AD Connect wizard', isCorrectAnswer: false}, {value: 'Synchronization Rules Editor', isCorrectAnswer: false}, {value: 'IdFix', isCorrectAnswer: false}], question: {entityMap: {}, blocks: [{depth: 0, key: '4ufo4', type: 'unstyled', data: {}, entityRanges: [], inlineStyleRanges: [], text: 'The network contains an Active Directory forest named gitbit.org. GitBit has a hybrid Microsoft Azure Active Directory (Azure AD) environment.'}, {type: 'unstyled', inlineStyleRanges: [], data: {}, entityRanges: [], key: 'c4img', depth: 0, text: 'The company maintains some on-premises servers for specific applications, but most end-user applications are provided by a Microsoft 365 E5 subscription.'}, {entityRanges: [], data: {}, text: 'GitBit identifies the following issues:', type: 'unstyled', key: '45i9j', depth: 0, inlineStyleRanges: []}, {depth: 0, entityRanges: [], inlineStyleRanges: [], data: {}, text: 'Since last Friday, the IT team has been receiving automated email messages that contain "Unhealthy Identity Synchronization Notification" in the subject line.', type: 'unordered-list-item', key: 'fe0i'}, {key: 'aa9gq', data: {}, inlineStyleRanges: [], text: 'Several users recently opened email attachments that contained malware. The process to remove the malware was time-consuming.', depth: 0, type: 'unordered-list-item', entityRanges: []}, {text: 'You need to resolve the issue that generates the automated email messages to the IT team.', entityRanges: [], key: '8ofra', data: {}, inlineStyleRanges: [], type: 'unstyled', depth: 0}, {text: 'Which tool should you run first?', entityRanges: [], key: '96grf', inlineStyleRanges: [], data: {}, depth: 0, type: 'unstyled'}]}, id: 'B-wB_zqgR', references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{depth: 0, entityRanges: [], inlineStyleRanges: [], type: 'unstyled', data: {}, key: '7fdiu', text: 'To review the error in more detail log on to the server that has the AD Connect service running then open the Synchronization Service Manager application. From there you\'ll see one of the profiles with a status of Completed-export-error. Click on it. Then click the error (in the bottom right corner. Click Detail. You can also click the CN=GUID to view the account that changed and what attributes have changed.'}, {entityRanges: [{key: 0, offset: 0, length: 69}], inlineStyleRanges: [], key: '1sh5q', depth: 0, data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', type: 'unstyled'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

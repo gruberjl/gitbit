@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"key":"2u085","depth":0,"type":"unstyled","data":{},"entityRanges":[],"inlineStyleRanges":[],"text":"your organization has a Microsoft 365 tenant with the following users."},{"data":{},"inlineStyleRanges":[],"type":"atomic","key":"7nj32","entityRanges":[{"length":1,"key":0,"offset":0}],"text":" ","depth":0},{"data":{},"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","key":"q8g8","depth":0,"text":"Your organization has implemented Azure Active Directory (Azure AD) Privileged Identity Management (PIM)."},{"entityRanges":[],"key":"9t9i0","inlineStyleRanges":[],"text":"From PIM, you see the Application Administrator role has the following users.","type":"unstyled","depth":0,"data":{}},{"entityRanges":[{"length":1,"key":1,"offset":0}],"inlineStyleRanges":[],"type":"atomic","key":"4e1ch","depth":0,"data":{},"text":" "},{"key":"dqtr5","entityRanges":[],"data":{},"depth":0,"inlineStyleRanges":[],"type":"unstyled","text":"PIM is configured to use the following settings for users with the Application Administrator role assigned."},{"entityRanges":[],"key":"fs7s9","type":"unordered-list-item","depth":0,"inlineStyleRanges":[],"text":"Require approval to activate: Yes","data":{}},{"key":"aqgof","entityRanges":[],"text":"Approvers: None","data":{},"type":"unordered-list-item","inlineStyleRanges":[],"depth":0},{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"text":"Check the box next to each true statement.","data":{},"type":"unstyled","key":"bpudn"}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"height":"auto","alignment":"left","width":"auto","src":"https://i.ibb.co/Cs1cMM8/Chart5.png","alt":"Name Role Chart"},"type":"IMAGE"},"1":{"type":"IMAGE","data":{"width":"auto","alignment":"left","alt":"Name Assignment Type Chart","src":"https://i.ibb.co/FVBbzdZ/Chart6.png","height":"auto"},"mutability":"MUTABLE"}}},"id":"i2EPEDfe7","references":{"blocks":[{"data":{},"type":"unstyled","key":"jsce","text":"Only global administrators and privileged role administrators can approve the admin role assignments.","depth":0,"inlineStyleRanges":[],"entityRanges":[]},{"data":{},"key":"4ru2o","text":"https://www.gitbit.org/course/ms-500/learn/Just-in-time-approval-and-notification-for-admin-roles-in-Microsoft-365-RHW1API2s ","inlineStyleRanges":[],"entityRanges":[{"offset":0,"key":0,"length":124}],"type":"unstyled","depth":0}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Just-in-time-approval-and-notification-for-admin-roles-in-Microsoft-365-RHW1API2s"},"type":"LINK"}}},"answers":[{"isCorrectAnswer":true,"value":"When UserB submits a request to activate the role, User1 can approve the request."},{"isCorrectAnswer":true,"value":"When UserB submits a request to activate the role, User2 can approve the request."},{"value":"When UserC submits a request to activate the role, User3 can approve the request.","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'When UserB submits a request to activate the role, User1 can approve the request.', isCorrectAnswer: true}, {value: 'When UserB submits a request to activate the role, User2 can approve the request.', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'When UserC submits a request to activate the role, User3 can approve the request.'}], id: 'i2EPEDfe7', references: {blocks: [{text: 'Only global administrators and privileged role administrators can approve the admin role assignments.', key: 'jsce', data: {}, inlineStyleRanges: [], depth: 0, entityRanges: [], type: 'unstyled'}, {inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Just-in-time-approval-and-notification-for-admin-roles-in-Microsoft-365-RHW1API2s ', data: {}, type: 'unstyled', depth: 0, entityRanges: [{length: 124, key: 0, offset: 0}], key: '4ru2o'}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Just-in-time-approval-and-notification-for-admin-roles-in-Microsoft-365-RHW1API2s'}}}}, question: {entityMap: {0: {data: {alt: 'Name Role Chart', src: 'https://i.ibb.co/Cs1cMM8/Chart5.png', height: 'auto', alignment: 'left', width: 'auto'}, type: 'IMAGE', mutability: 'MUTABLE'}, 1: {data: {height: 'auto', src: 'https://i.ibb.co/FVBbzdZ/Chart6.png', alt: 'Name Assignment Type Chart', alignment: 'left', width: 'auto'}, type: 'IMAGE', mutability: 'MUTABLE'}}, blocks: [{inlineStyleRanges: [], key: '2u085', depth: 0, type: 'unstyled', data: {}, entityRanges: [], text: 'your organization has a Microsoft 365 tenant with the following users.'}, {inlineStyleRanges: [], text: ' ', depth: 0, key: '7nj32', entityRanges: [{key: 0, offset: 0, length: 1}], type: 'atomic', data: {}}, {entityRanges: [], key: 'q8g8', text: 'Your organization has implemented Azure Active Directory (Azure AD) Privileged Identity Management (PIM).', depth: 0, type: 'unstyled', inlineStyleRanges: [], data: {}}, {type: 'unstyled', key: '9t9i0', depth: 0, data: {}, inlineStyleRanges: [], entityRanges: [], text: 'From PIM, you see the Application Administrator role has the following users.'}, {type: 'atomic', entityRanges: [{offset: 0, key: 1, length: 1}], data: {}, text: ' ', depth: 0, key: '4e1ch', inlineStyleRanges: []}, {key: 'dqtr5', text: 'PIM is configured to use the following settings for users with the Application Administrator role assigned.', data: {}, type: 'unstyled', entityRanges: [], depth: 0, inlineStyleRanges: []}, {type: 'unordered-list-item', data: {}, inlineStyleRanges: [], depth: 0, entityRanges: [], key: 'fs7s9', text: 'Require approval to activate: Yes'}, {entityRanges: [], text: 'Approvers: None', data: {}, depth: 0, type: 'unordered-list-item', inlineStyleRanges: [], key: 'aqgof'}, {inlineStyleRanges: [], key: 'bpudn', text: 'Check the box next to each true statement.', type: 'unstyled', depth: 0, entityRanges: [], data: {}}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -71,21 +71,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -93,8 +93,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -102,15 +102,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -124,16 +123,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -184,12 +183,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

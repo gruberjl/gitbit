@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU"},"type":"LINK","mutability":"MUTABLE"},"1":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"data":{},"type":"unstyled","depth":0,"entityRanges":[],"key":"4bds8","text":"User 1 is a global admin so they can perform any action on the user risk policy.","inlineStyleRanges":[]},{"data":{},"entityRanges":[],"key":"12r6a","depth":0,"inlineStyleRanges":[],"type":"unstyled","text":"Compliance administrators don't have access to the user risk / risky users area so User 2 can't perform anything."},{"key":"5t2vd","type":"unstyled","text":"Security administrators can manage user risk policies so User 3 can perform both actions.","depth":0,"data":{},"inlineStyleRanges":[],"entityRanges":[]},{"text":"Security Readers can view the user risk reports but can't make changes so User 4 can view but not update.","data":{},"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"depth":0,"key":"4qh94"},{"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"key":0,"length":95,"offset":0}],"data":{},"key":"amh74","depth":0},{"data":{},"type":"unstyled","depth":0,"key":"ac94i","inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection","entityRanges":[{"key":1,"length":104,"offset":0}]}]},"answers":[{"value":"User 1 can update any user risk policy","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"User 2 can update any user risk policy"},{"isCorrectAnswer":true,"value":"User 3 can update any user risk policy"},{"value":"User 4 can update any user risk policy","isCorrectAnswer":false},{"value":"User 1 can review any user risk reports","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"User 2 can review any user risk reports"},{"value":"User 3 can review any user risk reports","isCorrectAnswer":true},{"value":"User 4 can review any user risk reports","isCorrectAnswer":true}],"question":{"entityMap":{"0":{"data":{"src":"https://i.ibb.co/WPhc9R4/user-role-chart.png","width":"auto","height":"auto","alignment":"left","alt":"User role chart"},"mutability":"MUTABLE","type":"IMAGE"}},"blocks":[{"entityRanges":[],"type":"unstyled","inlineStyleRanges":[{"length":104,"offset":0,"style":"color-rgb(33,37,41)"},{"offset":0,"length":104,"style":"bgcolor-rgb(255,255,255)"},{"offset":0,"length":104,"style":"fontsize-16"},{"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":104}],"depth":0,"data":{},"key":"3v2ja","text":"You have a Microsoft 365 tenant with Microsoft 365 E5 licenses. The tenant contains the following users."},{"type":"atomic","inlineStyleRanges":[],"depth":0,"text":" ","entityRanges":[{"length":1,"offset":0,"key":0}],"data":{},"key":"d45re"},{"depth":0,"inlineStyleRanges":[],"key":"drcns","entityRanges":[],"text":"You've been tasked with implementing Azure Active Directory (Azure AD) Identity Protection.","data":{},"type":"unstyled"},{"key":"3l75e","type":"unstyled","text":"Before you can implement it your manager has asked you which users can perform the following actions:","inlineStyleRanges":[],"data":{},"depth":0,"entityRanges":[]},{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"type":"unordered-list-item","data":{},"key":"8fh21","text":"Configure a user risk policy."},{"text":"View the risky users' report.","type":"unordered-list-item","entityRanges":[],"depth":0,"data":{},"inlineStyleRanges":[],"key":"cvls6"},{"depth":0,"key":"4caqj","inlineStyleRanges":[],"text":"Which users can perform the tasks listed below?","entityRanges":[],"data":{},"type":"unstyled"}]},"id":"4Fm6TwtSS"},
+      test: {questions: [{answers: []}]},
+      question: {id: '4Fm6TwtSS', answers: [{isCorrectAnswer: true, value: 'User 1 can update any user risk policy'}, {value: 'User 2 can update any user risk policy', isCorrectAnswer: false}, {value: 'User 3 can update any user risk policy', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'User 4 can update any user risk policy'}, {value: 'User 1 can review any user risk reports', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'User 2 can review any user risk reports'}, {value: 'User 3 can review any user risk reports', isCorrectAnswer: true}, {isCorrectAnswer: true, value: 'User 4 can review any user risk reports'}], references: {blocks: [{entityRanges: [], inlineStyleRanges: [], data: {}, type: 'unstyled', depth: 0, text: 'User 1 is a global admin so they can perform any action on the user risk policy.', key: '4bds8'}, {type: 'unstyled', entityRanges: [], key: '12r6a', depth: 0, inlineStyleRanges: [], text: 'Compliance administrators don\'t have access to the user risk / risky users area so User 2 can\'t perform anything.', data: {}}, {type: 'unstyled', entityRanges: [], data: {}, text: 'Security administrators can manage user risk policies so User 3 can perform both actions.', key: '5t2vd', inlineStyleRanges: [], depth: 0}, {type: 'unstyled', data: {}, depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'Security Readers can view the user risk reports but can\'t make changes so User 4 can view but not update.', key: '4qh94'}, {entityRanges: [{length: 95, key: 0, offset: 0}], key: 'amh74', data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', depth: 0, type: 'unstyled', inlineStyleRanges: []}, {text: 'https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection', type: 'unstyled', key: 'ac94i', inlineStyleRanges: [], entityRanges: [{key: 1, offset: 0, length: 104}], data: {}, depth: 0}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/sharepoint/turn-external-sharing-on-or-off'}}}}, question: {blocks: [{data: {}, inlineStyleRanges: [{length: 104, style: 'color-rgb(33,37,41)', offset: 0}, {length: 104, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {style: 'fontsize-16', offset: 0, length: 104}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 104, offset: 0}], key: '3v2ja', depth: 0, entityRanges: [], type: 'unstyled', text: 'You have a Microsoft 365 tenant with Microsoft 365 E5 licenses. The tenant contains the following users.'}, {key: 'd45re', depth: 0, inlineStyleRanges: [], entityRanges: [{offset: 0, length: 1, key: 0}], text: ' ', data: {}, type: 'atomic'}, {entityRanges: [], inlineStyleRanges: [], type: 'unstyled', text: 'You\'ve been tasked with implementing Azure Active Directory (Azure AD) Identity Protection.', key: 'drcns', data: {}, depth: 0}, {type: 'unstyled', data: {}, text: 'Before you can implement it your manager has asked you which users can perform the following actions:', depth: 0, key: '3l75e', inlineStyleRanges: [], entityRanges: []}, {inlineStyleRanges: [], data: {}, text: 'Configure a user risk policy.', depth: 0, key: '8fh21', type: 'unordered-list-item', entityRanges: []}, {data: {}, entityRanges: [], text: 'View the risky users\' report.', depth: 0, type: 'unordered-list-item', inlineStyleRanges: [], key: 'cvls6'}, {text: 'Which users can perform the tasks listed below?', type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: [], data: {}, key: '4caqj'}], entityMap: {0: {data: {src: 'https://i.ibb.co/WPhc9R4/user-role-chart.png', alignment: 'left', alt: 'User role chart', height: 'auto', width: 'auto'}, mutability: 'MUTABLE', type: 'IMAGE'}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -73,21 +73,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -95,8 +95,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -104,15 +104,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -126,16 +125,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -186,12 +185,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"text":"You have a Microsoft 365 tenant.","type":"unstyled","entityRanges":[],"key":"fnci6","depth":0,"data":{},"inlineStyleRanges":[]},{"data":{},"type":"unstyled","inlineStyleRanges":[],"text":"You have 500 computers that run Windows 10.","key":"cvijs","depth":0,"entityRanges":[]},{"key":"cui53","depth":0,"inlineStyleRanges":[],"entityRanges":[],"text":"You plan to monitor the computers by using Microsoft Defender for Endpoint after the computers are enrolled in Microsoft Intune.","type":"unstyled","data":{}},{"inlineStyleRanges":[],"text":"You need to ensure that the computers connect to Microsoft Defender for Endpoint.","depth":0,"entityRanges":[],"type":"unstyled","key":"4v75r","data":{}},{"text":"How should you prepare Intune for Microsoft Defender for Endpoint?","data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0,"entityRanges":[],"key":"ekj0t"}],"entityMap":{}},"id":"vOR7508wn","references":{"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T","targetOption":"_blank"}},"1":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/intune/advanced-threat-protection","targetOption":"_blank"},"mutability":"MUTABLE"}},"blocks":[{"key":"5t9hf","text":"Create a device configuration profile to deploy Defender for Endpoint.","type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"depth":0,"data":{}},{"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T","inlineStyleRanges":[],"key":"4a27d","type":"unstyled","data":{},"depth":0,"entityRanges":[{"key":0,"offset":0,"length":129}]},{"entityRanges":[{"offset":0,"key":1,"length":66}],"data":{},"depth":0,"key":"aunfb","text":"https://docs.microsoft.com/en-us/intune/advanced-threat-protection","inlineStyleRanges":[],"type":"unstyled"}]},"answers":[{"isCorrectAnswer":false,"value":"Configure an enrollment restriction"},{"value":"Create a device configuration profile","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Create a conditional access policy"},{"isCorrectAnswer":false,"value":"Create a Windows Autopilot deployment profile"}]},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{inlineStyleRanges: [], entityRanges: [], key: 'fnci6', data: {}, type: 'unstyled', depth: 0, text: 'You have a Microsoft 365 tenant.'}, {data: {}, entityRanges: [], depth: 0, text: 'You have 500 computers that run Windows 10.', key: 'cvijs', inlineStyleRanges: [], type: 'unstyled'}, {inlineStyleRanges: [], text: 'You plan to monitor the computers by using Microsoft Defender for Endpoint after the computers are enrolled in Microsoft Intune.', type: 'unstyled', data: {}, key: 'cui53', entityRanges: [], depth: 0}, {inlineStyleRanges: [], type: 'unstyled', entityRanges: [], text: 'You need to ensure that the computers connect to Microsoft Defender for Endpoint.', key: '4v75r', data: {}, depth: 0}, {text: 'How should you prepare Intune for Microsoft Defender for Endpoint?', inlineStyleRanges: [], data: {}, depth: 0, entityRanges: [], type: 'unstyled', key: 'ekj0t'}]}, references: {blocks: [{key: '5t9hf', inlineStyleRanges: [], type: 'unstyled', data: {}, depth: 0, text: 'Create a device configuration profile to deploy Defender for Endpoint.', entityRanges: []}, {text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T', depth: 0, inlineStyleRanges: [], entityRanges: [{length: 129, offset: 0, key: 0}], data: {}, key: '4a27d', type: 'unstyled'}, {key: 'aunfb', inlineStyleRanges: [], data: {}, entityRanges: [{length: 66, key: 1, offset: 0}], depth: 0, text: 'https://docs.microsoft.com/en-us/intune/advanced-threat-protection', type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/intune/advanced-threat-protection'}}}}, answers: [{value: 'Configure an enrollment restriction', isCorrectAnswer: false}, {value: 'Create a device configuration profile', isCorrectAnswer: true}, {value: 'Create a conditional access policy', isCorrectAnswer: false}, {value: 'Create a Windows Autopilot deployment profile', isCorrectAnswer: false}], id: 'vOR7508wn'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

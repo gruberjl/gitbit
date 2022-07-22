@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1795886/MS-500---Limit-user-devices-to-5"}},"1":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Introduction-to-Intune-7gR3L122b","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"2":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/devices/device-management-azure-portal","targetOption":"_blank"}}},"blocks":[{"inlineStyleRanges":[],"key":"2re38","entityRanges":[{"length":69,"offset":0,"key":0}],"depth":0,"data":{},"type":"unstyled","text":"https://www.iorad.com/player/1795886/MS-500---Limit-user-devices-to-5"},{"depth":0,"inlineStyleRanges":[],"text":"Go to Azure AD admin center > Devices > Device Settings. Set the Maximum number of devices setting to 5. Click Save.","key":"6aiko","type":"unstyled","entityRanges":[],"data":{}},{"data":{},"inlineStyleRanges":[],"key":"44v53","type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Introduction-to-Intune-7gR3L122b","entityRanges":[{"offset":0,"length":75,"key":1}],"depth":0},{"depth":0,"entityRanges":[{"key":2,"length":222,"offset":0}],"inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/azure/active-directory/devices/device-management-azure-portal https://docs.microsoft.com/en-us/microsoft-365/compliance/use-your-free-azure-ad-subscription-in-office-365?view=o365-worldwide","type":"unstyled","key":"fpptk","data":{}}]},"answers":[{"value":"From Microsoft 365 Admin Center go to Users > Select the user > Devices > Device Settings","isCorrectAnswer":false},{"value":"From the Azure Active Directory Admin Center > Enterprise Admin > Devices > Device Settings","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"From the Azure Active Directory Admin Center > Azure Active Directory > Devices > Device Settings"},{"value":"From the Endpoint manager > Devices > Compliance Policies","isCorrectAnswer":false}],"question":{"entityMap":{},"blocks":[{"data":{},"inlineStyleRanges":[],"entityRanges":[],"key":"4uj8k","type":"unstyled","depth":0,"text":"Your manager has asked you to set up the Microsoft 365 tenant so users can only join 5 devices to the tenant."},{"inlineStyleRanges":[{"offset":0,"style":"color-rgb(33,37,41)","length":39},{"offset":0,"length":39,"style":"bgcolor-rgb(255,255,255)"},{"style":"fontsize-16","offset":0,"length":39},{"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":39}],"key":"al4ck","depth":0,"text":"What do you need to do to configure it?","type":"unstyled","entityRanges":[],"data":{}}]},"id":"ZbLh7P-wZ"},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {type: 'LINK', data: {url: 'https://www.iorad.com/player/1795886/MS-500---Limit-user-devices-to-5', targetOption: '_blank'}, mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Introduction-to-Intune-7gR3L122b'}}, 2: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/active-directory/devices/device-management-azure-portal'}}}, blocks: [{inlineStyleRanges: [], key: '2re38', type: 'unstyled', text: 'https://www.iorad.com/player/1795886/MS-500---Limit-user-devices-to-5', depth: 0, data: {}, entityRanges: [{key: 0, offset: 0, length: 69}]}, {type: 'unstyled', key: '6aiko', depth: 0, inlineStyleRanges: [], text: 'Go to Azure AD admin center > Devices > Device Settings. Set the Maximum number of devices setting to 5. Click Save.', entityRanges: [], data: {}}, {type: 'unstyled', entityRanges: [{offset: 0, length: 75, key: 1}], depth: 0, inlineStyleRanges: [], key: '44v53', data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Introduction-to-Intune-7gR3L122b'}, {entityRanges: [{key: 2, offset: 0, length: 222}], text: 'https://docs.microsoft.com/en-us/azure/active-directory/devices/device-management-azure-portal https://docs.microsoft.com/en-us/microsoft-365/compliance/use-your-free-azure-ad-subscription-in-office-365?view=o365-worldwide', depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled', key: 'fpptk'}]}, id: 'ZbLh7P-wZ', answers: [{isCorrectAnswer: false, value: 'From Microsoft 365 Admin Center go to Users > Select the user > Devices > Device Settings'}, {isCorrectAnswer: false, value: 'From the Azure Active Directory Admin Center > Enterprise Admin > Devices > Device Settings'}, {isCorrectAnswer: true, value: 'From the Azure Active Directory Admin Center > Azure Active Directory > Devices > Device Settings'}, {value: 'From the Endpoint manager > Devices > Compliance Policies', isCorrectAnswer: false}], question: {entityMap: {}, blocks: [{text: 'Your manager has asked you to set up the Microsoft 365 tenant so users can only join 5 devices to the tenant.', key: '4uj8k', type: 'unstyled', data: {}, entityRanges: [], depth: 0, inlineStyleRanges: []}, {depth: 0, data: {}, inlineStyleRanges: [{style: 'color-rgb(33,37,41)', offset: 0, length: 39}, {style: 'bgcolor-rgb(255,255,255)', length: 39, offset: 0}, {length: 39, offset: 0, style: 'fontsize-16'}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 39, offset: 0}], entityRanges: [], text: 'What do you need to do to configure it?', type: 'unstyled', key: 'al4ck'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

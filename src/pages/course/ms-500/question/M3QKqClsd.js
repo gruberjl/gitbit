@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Be a member of the global admins role","isCorrectAnswer":true},{"value":"Configure Office 365 Advanced Threat Protection (ATP)","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Create a Conditional Access App Control policy for accessing Office 365"},{"isCorrectAnswer":false,"value":"Integrate Office 365 Threat Intelligence and Microsoft Defender ATP"}],"question":{"entityMap":{},"blocks":[{"depth":0,"inlineStyleRanges":[],"data":{},"key":"c9ri4","text":"You have a Microsoft 365 Enterprise E5 subscription.","entityRanges":[],"type":"unstyled"},{"type":"unstyled","inlineStyleRanges":[],"data":{},"key":"jni0","entityRanges":[],"depth":0,"text":"You use Microsoft Defender Advanced Threat Protection (Microsoft Defender ATP). You plan to use Microsoft Office 365 Attack simulator."},{"depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{},"key":"1i915","type":"unstyled","text":"What is a prerequisite for running an Attack simulator?"}]},"references":{"entityMap":{"0":{"type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK"},"mutability":"MUTABLE"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/office365/securitycompliance/attack-simulator","targetOption":"_blank"}}},"blocks":[{"key":"214ch","entityRanges":[],"data":{},"inlineStyleRanges":[],"type":"unstyled","text":"To setup the attack simulator you need to be part of one of the following roles:","depth":0},{"entityRanges":[],"depth":0,"text":"Global Administrator","data":{},"inlineStyleRanges":[],"key":"bdad","type":"unordered-list-item"},{"key":"22c3t","entityRanges":[],"depth":0,"inlineStyleRanges":[],"type":"unordered-list-item","data":{},"text":"Security Administrator"},{"depth":0,"text":"Attack Simulation Administrators","data":{},"entityRanges":[],"inlineStyleRanges":[],"key":"bs5nt","type":"unordered-list-item"},{"type":"unordered-list-item","key":"1jac5","depth":0,"text":"Attack Payload Author","inlineStyleRanges":[],"entityRanges":[],"data":{}},{"type":"unstyled","key":"bgsqk","data":{},"entityRanges":[{"length":90,"offset":0,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK","depth":0,"inlineStyleRanges":[]},{"text":"https://docs.microsoft.com/en-us/office365/securitycompliance/attack-simulator","key":"1uebk","inlineStyleRanges":[],"type":"unstyled","data":{},"depth":0,"entityRanges":[{"length":78,"key":1,"offset":0}]}]},"id":"M3QKqClsd"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'Be a member of the global admins role', isCorrectAnswer: true}, {value: 'Configure Office 365 Advanced Threat Protection (ATP)', isCorrectAnswer: false}, {value: 'Create a Conditional Access App Control policy for accessing Office 365', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Integrate Office 365 Threat Intelligence and Microsoft Defender ATP'}], question: {entityMap: {}, blocks: [{text: 'You have a Microsoft 365 Enterprise E5 subscription.', data: {}, type: 'unstyled', inlineStyleRanges: [], entityRanges: [], key: 'c9ri4', depth: 0}, {key: 'jni0', depth: 0, type: 'unstyled', text: 'You use Microsoft Defender Advanced Threat Protection (Microsoft Defender ATP). You plan to use Microsoft Office 365 Attack simulator.', entityRanges: [], inlineStyleRanges: [], data: {}}, {text: 'What is a prerequisite for running an Attack simulator?', data: {}, depth: 0, entityRanges: [], inlineStyleRanges: [], key: '1i915', type: 'unstyled'}]}, references: {entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/attack-simulator', targetOption: '_blank'}}}, blocks: [{text: 'To setup the attack simulator you need to be part of one of the following roles:', type: 'unstyled', entityRanges: [], data: {}, depth: 0, inlineStyleRanges: [], key: '214ch'}, {text: 'Global Administrator', key: 'bdad', depth: 0, data: {}, entityRanges: [], type: 'unordered-list-item', inlineStyleRanges: []}, {key: '22c3t', inlineStyleRanges: [], text: 'Security Administrator', type: 'unordered-list-item', depth: 0, data: {}, entityRanges: []}, {key: 'bs5nt', inlineStyleRanges: [], depth: 0, type: 'unordered-list-item', text: 'Attack Simulation Administrators', data: {}, entityRanges: []}, {key: '1jac5', data: {}, depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'Attack Payload Author', type: 'unordered-list-item'}, {depth: 0, entityRanges: [{offset: 0, length: 90, key: 0}], key: 'bgsqk', inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Simulating-attacks-with-Microsoft-365-GG4cMY8pK', data: {}, type: 'unstyled'}, {depth: 0, data: {}, type: 'unstyled', key: '1uebk', inlineStyleRanges: [], entityRanges: [{length: 78, key: 1, offset: 0}], text: 'https://docs.microsoft.com/en-us/office365/securitycompliance/attack-simulator'}]}, id: 'M3QKqClsd'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

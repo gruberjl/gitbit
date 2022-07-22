@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f","targetOption":"_blank"},"mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/office365/securitycompliance/set-up-a-custom-blocked-urls-list-wtih-atp"}}},"blocks":[{"depth":0,"text":"Run the following PowerShell Command: \"Get-Mailbox -ResultSize unlimited | ?{$_.Name -notlike \"DiscoverySearchMailbox*\"} | %{ Start-ManagedFolderAssistant $_.UserPrincipalName }\"","key":"cug0","entityRanges":[],"inlineStyleRanges":[],"data":{},"type":"unstyled"},{"data":{},"type":"unstyled","text":"Note: If you only need to publish the labels to one user immediately you can use \"Start-ManagedFolderAssistant UPN\" and replace UPN with the user's sign-in name","entityRanges":[],"key":"4ce7u","depth":0,"inlineStyleRanges":[]},{"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f","inlineStyleRanges":[],"depth":0,"type":"unstyled","data":{},"entityRanges":[{"length":114,"key":0,"offset":0}],"key":"63al3"},{"text":"https://docs.microsoft.com/en-us/powershell/module/exchange/start-managedfolderassistant?view=exchange-ps","depth":0,"key":"9t9k7","inlineStyleRanges":[],"entityRanges":[{"key":1,"offset":0,"length":105}],"type":"unstyled","data":{}}]},"id":"729OQC7lL","question":{"entityMap":{},"blocks":[{"data":{},"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"text":"You have a Microsoft 365 subscription.","depth":0,"key":"63nes"},{"type":"unstyled","text":"Yesterday, you created retention labels and published the labels to Microsoft Exchange Online mailboxes.","data":{},"entityRanges":[],"key":"670mu","inlineStyleRanges":[],"depth":0},{"entityRanges":[],"type":"unstyled","depth":0,"data":{},"key":"3jhv4","text":"You need to ensure that the labels will be available for manual assignment as soon as possible.","inlineStyleRanges":[]},{"depth":0,"inlineStyleRanges":[],"entityRanges":[],"text":"What should you do?","key":"4qe14","data":{},"type":"unstyled"}]},"answers":[{"value":"From the Security & Compliance admin center, create a label policy","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"From Exchange Online PowerShell, run Start-RetentionAutoTagLearning"},{"value":"From Exchange Online PowerShell, run Start-ManagedFolderAssistant","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"From the Security & Compliance admin center, create a data loss prevention (DLP) policy"}]},
+      test: {questions: [{answers: []}]},
+      question: {id: '729OQC7lL', question: {blocks: [{text: 'You have a Microsoft 365 subscription.', key: '63nes', type: 'unstyled', entityRanges: [], depth: 0, data: {}, inlineStyleRanges: []}, {data: {}, entityRanges: [], key: '670mu', depth: 0, type: 'unstyled', text: 'Yesterday, you created retention labels and published the labels to Microsoft Exchange Online mailboxes.', inlineStyleRanges: []}, {text: 'You need to ensure that the labels will be available for manual assignment as soon as possible.', entityRanges: [], type: 'unstyled', key: '3jhv4', data: {}, inlineStyleRanges: [], depth: 0}, {data: {}, inlineStyleRanges: [], key: '4qe14', text: 'What should you do?', type: 'unstyled', entityRanges: [], depth: 0}], entityMap: {}}, references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f', targetOption: '_blank'}, type: 'LINK'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/set-up-a-custom-blocked-urls-list-wtih-atp'}}}, blocks: [{data: {}, text: 'Run the following PowerShell Command: "Get-Mailbox -ResultSize unlimited | ?{$_.Name -notlike "DiscoverySearchMailbox*"} | %{ Start-ManagedFolderAssistant $_.UserPrincipalName }"', key: 'cug0', type: 'unstyled', depth: 0, entityRanges: [], inlineStyleRanges: []}, {data: {}, text: 'Note: If you only need to publish the labels to one user immediately you can use "Start-ManagedFolderAssistant UPN" and replace UPN with the user\'s sign-in name', depth: 0, inlineStyleRanges: [], type: 'unstyled', key: '4ce7u', entityRanges: []}, {data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f', depth: 0, entityRanges: [{key: 0, offset: 0, length: 114}], type: 'unstyled', key: '63al3', inlineStyleRanges: []}, {key: '9t9k7', entityRanges: [{key: 1, length: 105, offset: 0}], depth: 0, inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'https://docs.microsoft.com/en-us/powershell/module/exchange/start-managedfolderassistant?view=exchange-ps'}]}, answers: [{isCorrectAnswer: false, value: 'From the Security & Compliance admin center, create a label policy'}, {isCorrectAnswer: false, value: 'From Exchange Online PowerShell, run Start-RetentionAutoTagLearning'}, {isCorrectAnswer: true, value: 'From Exchange Online PowerShell, run Start-ManagedFolderAssistant'}, {value: 'From the Security & Compliance admin center, create a data loss prevention (DLP) policy', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

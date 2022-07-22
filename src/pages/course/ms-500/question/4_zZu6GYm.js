@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w","targetOption":"_blank"}},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1801811/MS-500---Prevent-any-email-messages-that-contain-data-covered-by-the-U-K--Data-Protection-Act"},"mutability":"MUTABLE"}},"blocks":[{"depth":0,"text":"A Data loss prevention (DLP) policy would prevent data from leaving the company that is covered under the U.K. Data Protection Act.","entityRanges":[],"key":"efejo","type":"unstyled","data":{},"inlineStyleRanges":[{"offset":24,"length":5,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","length":5,"offset":24},{"offset":24,"length":5,"style":"fontsize-16"},{"offset":24,"length":5,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}]},{"type":"unstyled","key":"67ehb","text":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w ","entityRanges":[{"key":0,"offset":0,"length":116}],"inlineStyleRanges":[],"depth":0,"data":{}},{"entityRanges":[{"offset":0,"key":1,"length":130}],"inlineStyleRanges":[],"text":"https://www.iorad.com/player/1801811/MS-500---Prevent-any-email-messages-that-contain-data-covered-by-the-U-K--Data-Protection-Act","depth":0,"type":"unstyled","key":"9uen4","data":{}},{"entityRanges":[],"type":"ordered-list-item","data":{},"key":"3ekuh","text":"Open the Microsoft 365 Compliance admin center > Policies > Data loss prevention > Policies > Create policy > Privacy > U.K. Data Protection Act > Next > Disable all locations except Exchange email > Create or customize advanced DLP rules > add an exception and block emails from going outbound > Save your new policy.","depth":0,"inlineStyleRanges":[]}]},"answers":[{"value":"In the compliance admin center create a Data Loss Prevention Policy that blocks users from sending information covered under the U.K. Data Protection Act with an exception for gitbit.org","isCorrectAnswer":true},{"value":"In the Exchange Admin center create a mail flow rule to block inbound emails that contain information covered in the U.K. Data Protection Act with an exception for gitbit.org","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"In the Azure Active Ad admin center create a label that marks emails that contain information covered in the U.K. Data Protection Actwith an exception for gitbit.org"}],"question":{"blocks":[{"entityRanges":[],"inlineStyleRanges":[],"key":"2mndm","text":"You need to prevent any emails that contain information covered by the U.K. Data Protection Act from being sent to people outside of your organization unless the messages are sent to an external domain named gitbit.org.","type":"unstyled","depth":0,"data":{}},{"depth":0,"data":{},"type":"unstyled","key":"a99n8","inlineStyleRanges":[{"length":32,"style":"color-rgb(33,37,41)","offset":0},{"length":32,"style":"bgcolor-rgb(255,255,255)","offset":0},{"style":"fontsize-16","length":32,"offset":0},{"offset":0,"length":32,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}],"text":"What should you do to set it up?","entityRanges":[]}],"entityMap":{}},"id":"4_zZu6GYm"},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{inlineStyleRanges: [{length: 5, style: 'color-rgb(33,37,41)', offset: 24}, {length: 5, style: 'bgcolor-rgb(255,255,255)', offset: 24}, {style: 'fontsize-16', offset: 24, length: 5}, {length: 5, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 24}], entityRanges: [], type: 'unstyled', key: 'efejo', data: {}, text: 'A Data loss prevention (DLP) policy would prevent data from leaving the company that is covered under the U.K. Data Protection Act.', depth: 0}, {entityRanges: [{length: 116, key: 0, offset: 0}], key: '67ehb', text: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w ', type: 'unstyled', inlineStyleRanges: [], data: {}, depth: 0}, {data: {}, depth: 0, text: 'https://www.iorad.com/player/1801811/MS-500---Prevent-any-email-messages-that-contain-data-covered-by-the-U-K--Data-Protection-Act', inlineStyleRanges: [], type: 'unstyled', entityRanges: [{key: 1, offset: 0, length: 130}], key: '9uen4'}, {entityRanges: [], depth: 0, type: 'ordered-list-item', text: 'Open the Microsoft 365 Compliance admin center > Policies > Data loss prevention > Policies > Create policy > Privacy > U.K. Data Protection Act > Next > Disable all locations except Exchange email > Create or customize advanced DLP rules > add an exception and block emails from going outbound > Save your new policy.', data: {}, inlineStyleRanges: [], key: '3ekuh'}], entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w'}, mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.iorad.com/player/1801811/MS-500---Prevent-any-email-messages-that-contain-data-covered-by-the-U-K--Data-Protection-Act'}}}}, answers: [{value: 'In the compliance admin center create a Data Loss Prevention Policy that blocks users from sending information covered under the U.K. Data Protection Act with an exception for gitbit.org', isCorrectAnswer: true}, {value: 'In the Exchange Admin center create a mail flow rule to block inbound emails that contain information covered in the U.K. Data Protection Act with an exception for gitbit.org', isCorrectAnswer: false}, {value: 'In the Azure Active Ad admin center create a label that marks emails that contain information covered in the U.K. Data Protection Actwith an exception for gitbit.org', isCorrectAnswer: false}], id: '4_zZu6GYm', question: {entityMap: {}, blocks: [{text: 'You need to prevent any emails that contain information covered by the U.K. Data Protection Act from being sent to people outside of your organization unless the messages are sent to an external domain named gitbit.org.', depth: 0, data: {}, entityRanges: [], inlineStyleRanges: [], key: '2mndm', type: 'unstyled'}, {inlineStyleRanges: [{style: 'color-rgb(33,37,41)', offset: 0, length: 32}, {style: 'bgcolor-rgb(255,255,255)', offset: 0, length: 32}, {style: 'fontsize-16', length: 32, offset: 0}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0, length: 32}], data: {}, entityRanges: [], key: 'a99n8', text: 'What should you do to set it up?', type: 'unstyled', depth: 0}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

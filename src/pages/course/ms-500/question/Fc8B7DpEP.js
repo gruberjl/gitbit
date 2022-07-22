@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"type":"unstyled","depth":0,"key":"5ipu7","data":{},"entityRanges":[],"text":"To ensure that all domain-joined computers are registered to Azure AD Hybrid Azure AD Join would need to be configured.","inlineStyleRanges":[]},{"type":"unstyled","text":"To prevent users locked out of Active Directory from signing in to Azure AD and Active Directory pass-through authentication would need to be configured.","key":"2hgvf","depth":0,"data":{},"entityRanges":[],"inlineStyleRanges":[]},{"key":"ho77","data":{},"depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","entityRanges":[{"key":0,"length":69,"offset":0}]}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"}}},"id":"Fc8B7DpEP","question":{"blocks":[{"inlineStyleRanges":[],"entityRanges":[],"type":"unstyled","key":"2eoh4","data":{},"depth":0,"text":"Your organization has a Microsoft 365 tenant and an on-premises Active Directory (AD) domain. Your organization has installed AD Connect but hasn't enabled the syncing of your on-premises AD to Microsoft 365. Your organization is currently using the default authentication settings."},{"inlineStyleRanges":[],"data":{},"depth":0,"key":"doc92","entityRanges":[],"type":"unstyled","text":"Your manager has asked you to perform the following"},{"inlineStyleRanges":[],"key":"f92hp","type":"unordered-list-item","text":"Have all domain joined computers registered in Azure AD.","depth":0,"data":{},"entityRanges":[]},{"depth":0,"key":"8gce","text":"Configure Microsoft 365 to lock out any user that's currently locked out of the on-premises AD.","type":"unordered-list-item","data":{},"entityRanges":[],"inlineStyleRanges":[]},{"depth":0,"entityRanges":[],"type":"unstyled","key":"51pq4","data":{},"inlineStyleRanges":[],"text":"What two settings will you need to configure to meet the goals listed above?"}],"entityMap":{}},"answers":[{"value":"User sign-in settings: Password Synchronization with single-sign on","isCorrectAnswer":false},{"value":"User sign-in settings: Pass-through authentication with single-sign on","isCorrectAnswer":true},{"value":"User sign-in settings: Federation with Active Directory Federation Services (AD FS)","isCorrectAnswer":false},{"value":"Device options: Hybrid Azure AD Join","isCorrectAnswer":true},{"value":"Device options: Enable Device writeback","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Device options: Disable Device writeback"}]},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{text: 'Your organization has a Microsoft 365 tenant and an on-premises Active Directory (AD) domain. Your organization has installed AD Connect but hasn\'t enabled the syncing of your on-premises AD to Microsoft 365. Your organization is currently using the default authentication settings.', entityRanges: [], depth: 0, inlineStyleRanges: [], type: 'unstyled', key: '2eoh4', data: {}}, {key: 'doc92', inlineStyleRanges: [], data: {}, text: 'Your manager has asked you to perform the following', type: 'unstyled', depth: 0, entityRanges: []}, {inlineStyleRanges: [], type: 'unordered-list-item', entityRanges: [], key: 'f92hp', depth: 0, data: {}, text: 'Have all domain joined computers registered in Azure AD.'}, {inlineStyleRanges: [], key: '8gce', data: {}, entityRanges: [], text: 'Configure Microsoft 365 to lock out any user that\'s currently locked out of the on-premises AD.', type: 'unordered-list-item', depth: 0}, {inlineStyleRanges: [], text: 'What two settings will you need to configure to meet the goals listed above?', key: '51pq4', depth: 0, data: {}, entityRanges: [], type: 'unstyled'}], entityMap: {}}, answers: [{isCorrectAnswer: false, value: 'User sign-in settings: Password Synchronization with single-sign on'}, {isCorrectAnswer: true, value: 'User sign-in settings: Pass-through authentication with single-sign on'}, {value: 'User sign-in settings: Federation with Active Directory Federation Services (AD FS)', isCorrectAnswer: false}, {value: 'Device options: Hybrid Azure AD Join', isCorrectAnswer: true}, {value: 'Device options: Enable Device writeback', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Device options: Disable Device writeback'}], references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P'}, type: 'LINK'}}, blocks: [{key: '5ipu7', type: 'unstyled', entityRanges: [], data: {}, depth: 0, text: 'To ensure that all domain-joined computers are registered to Azure AD Hybrid Azure AD Join would need to be configured.', inlineStyleRanges: []}, {data: {}, depth: 0, entityRanges: [], inlineStyleRanges: [], type: 'unstyled', text: 'To prevent users locked out of Active Directory from signing in to Azure AD and Active Directory pass-through authentication would need to be configured.', key: '2hgvf'}, {data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', type: 'unstyled', depth: 0, inlineStyleRanges: [], key: 'ho77', entityRanges: [{key: 0, offset: 0, length: 69}]}]}, id: 'Fc8B7DpEP'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

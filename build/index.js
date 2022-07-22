@@ -8,6 +8,7 @@ import buildSitemap from './build-sitemap'
 import buildRoot from './build-root'
 import buildQuestionPages from './build-question-pages'
 import buildLearnArticles from './build-learn-articles'
+import buildFeeds from './build-feeds'
 const debug = require('debug')('gitbit:build')
 
 const build = async () => {
@@ -21,6 +22,8 @@ const build = async () => {
   deleteDocs()
   debug(`buildRoot`)
   buildRoot()
+  debug('buildFeeds')
+  buildFeeds()
   debug(`buildSitemap`)
   buildSitemap()
 

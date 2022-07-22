@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO"}},"1":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/deployoffice/compat/manage-the-privacy-of-data-monitored-by-telemetry-in-office"},"type":"LINK"}},"blocks":[{"depth":0,"text":"To obscure files / telemetry data sent to Microsoft create the following registry dword on each computer:","data":{},"inlineStyleRanges":[{"length":9,"offset":20,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","offset":20,"length":9},{"style":"fontsize-16","offset":20,"length":9},{"offset":20,"length":9,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}],"entityRanges":[],"key":"4udkg","type":"unstyled"},{"data":{},"text":"Path: HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Office\\16.0\\osm","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"depth":0,"key":"92ndq"},{"depth":0,"inlineStyleRanges":[],"entityRanges":[],"key":"799j","text":"Value Name: EnableFileObfuscation","data":{},"type":"unstyled"},{"inlineStyleRanges":[],"type":"unstyled","key":"abdh6","depth":0,"text":"Value: 00000001","entityRanges":[],"data":{}},{"entityRanges":[{"key":0,"length":87,"offset":0}],"key":"do7oj","type":"unstyled","depth":0,"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO","data":{}},{"depth":0,"inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/deployoffice/compat/manage-the-privacy-of-data-monitored-by-telemetry-in-office ","type":"unstyled","key":"djdfo","entityRanges":[{"key":1,"offset":0,"length":112}],"data":{}}]},"question":{"blocks":[{"text":"Your organization has Microsoft 365 tenant configured with a hybrid on-premises Exchange server.","entityRanges":[],"type":"unstyled","key":"8bh71","inlineStyleRanges":[],"depth":0,"data":{}},{"key":"8v7g9","data":{},"inlineStyleRanges":[],"text":"All computers in the organization run Windows 10 Enterprise, are joined to the domain, and use Microsoft Office 365 ProPlus. ","entityRanges":[],"depth":0,"type":"unstyled"},{"key":"4gi3g","depth":0,"data":{},"inlineStyleRanges":[],"text":"You have a server named ServerA that runs Windows Server 2016 and hosts the telemetry database. You've been tasked with preventing private details in the telemetry data from being sent to Microsoft.","entityRanges":[],"type":"unstyled"},{"depth":0,"text":"What should you do?","inlineStyleRanges":[],"key":"d5hjs","data":{},"entityRanges":[],"type":"unstyled"}],"entityMap":{}},"answers":[{"value":"On ServerA, run readiness-report-creator.exe","isCorrectAnswer":false},{"value":"Configure a registry value on ServerA","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Configure a registry value on all the computers"},{"isCorrectAnswer":false,"value":"Run tdadm.exe on all the computers, "}],"id":"Jihi_uZ6R"},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{data: {}, depth: 0, type: 'unstyled', key: '8bh71', entityRanges: [], inlineStyleRanges: [], text: 'Your organization has Microsoft 365 tenant configured with a hybrid on-premises Exchange server.'}, {inlineStyleRanges: [], data: {}, key: '8v7g9', depth: 0, text: 'All computers in the organization run Windows 10 Enterprise, are joined to the domain, and use Microsoft Office 365 ProPlus. ', entityRanges: [], type: 'unstyled'}, {inlineStyleRanges: [], type: 'unstyled', entityRanges: [], data: {}, key: '4gi3g', depth: 0, text: 'You have a server named ServerA that runs Windows Server 2016 and hosts the telemetry database. You\'ve been tasked with preventing private details in the telemetry data from being sent to Microsoft.'}, {entityRanges: [], key: 'd5hjs', inlineStyleRanges: [], data: {}, type: 'unstyled', depth: 0, text: 'What should you do?'}], entityMap: {}}, id: 'Jihi_uZ6R', answers: [{isCorrectAnswer: false, value: 'On ServerA, run readiness-report-creator.exe'}, {isCorrectAnswer: false, value: 'Configure a registry value on ServerA'}, {isCorrectAnswer: true, value: 'Configure a registry value on all the computers'}, {value: 'Run tdadm.exe on all the computers, ', isCorrectAnswer: false}], references: {blocks: [{data: {}, depth: 0, key: '4udkg', inlineStyleRanges: [{offset: 20, length: 9, style: 'color-rgb(33,37,41)'}, {length: 9, style: 'bgcolor-rgb(255,255,255)', offset: 20}, {style: 'fontsize-16', length: 9, offset: 20}, {offset: 20, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 9}], entityRanges: [], text: 'To obscure files / telemetry data sent to Microsoft create the following registry dword on each computer:', type: 'unstyled'}, {entityRanges: [], depth: 0, key: '92ndq', text: 'Path: HKEY_CURRENT_USER\\Software\\Policies\\Microsoft\\Office\\16.0\\osm', type: 'unstyled', data: {}, inlineStyleRanges: []}, {key: '799j', data: {}, inlineStyleRanges: [], text: 'Value Name: EnableFileObfuscation', entityRanges: [], depth: 0, type: 'unstyled'}, {data: {}, text: 'Value: 00000001', key: 'abdh6', inlineStyleRanges: [], type: 'unstyled', entityRanges: [], depth: 0}, {depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO', entityRanges: [{key: 0, offset: 0, length: 87}], data: {}, inlineStyleRanges: [], key: 'do7oj', type: 'unstyled'}, {entityRanges: [{offset: 0, key: 1, length: 112}], text: 'https://docs.microsoft.com/en-us/deployoffice/compat/manage-the-privacy-of-data-monitored-by-telemetry-in-office ', data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', key: 'djdfo'}], entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO'}, mutability: 'MUTABLE'}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/deployoffice/compat/manage-the-privacy-of-data-monitored-by-telemetry-in-office', targetOption: '_blank'}}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

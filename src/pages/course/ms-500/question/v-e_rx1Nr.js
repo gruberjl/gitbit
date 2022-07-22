@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"depth":0,"key":"57g3g","inlineStyleRanges":[],"type":"unstyled","text":"Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses.","data":{},"entityRanges":[]},{"data":{},"key":"cv9u9","entityRanges":[],"depth":0,"inlineStyleRanges":[],"text":"Your manager has asked you to reconfigure the email filter to deliver any emails that contain malware without the attachment.","type":"unstyled"},{"inlineStyleRanges":[],"key":"d7b8i","data":{},"type":"unstyled","entityRanges":[],"text":"What two options do you need to configure?","depth":0}]},"id":"v-e_rx1Nr","answers":[{"value":"Policy to create: safe attachments","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Policy to create: Safe Links"},{"isCorrectAnswer":false,"value":"Policy to create: Anti-spam"},{"value":"Policy to create: Anti-malware","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Option to configure: Block"},{"value":"Option to configure: Replace","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Option to configure: Dynamic delivery"},{"isCorrectAnswer":false,"value":"Option to configure: Monitor"},{"isCorrectAnswer":false,"value":"Option to configure: Off"}],"references":{"blocks":[{"data":{},"depth":0,"type":"unstyled","text":"You'll need to create a safe attachments policy with the replace option.","inlineStyleRanges":[],"entityRanges":[],"key":"a4dok"},{"inlineStyleRanges":[],"type":"unstyled","depth":0,"data":{},"key":"cb23c","entityRanges":[{"length":105,"offset":0,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL"}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: true, value: 'Policy to create: safe attachments'}, {value: 'Policy to create: Safe Links', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Policy to create: Anti-spam'}, {isCorrectAnswer: false, value: 'Policy to create: Anti-malware'}, {value: 'Option to configure: Block', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Option to configure: Replace'}, {value: 'Option to configure: Dynamic delivery', isCorrectAnswer: false}, {value: 'Option to configure: Monitor', isCorrectAnswer: false}, {value: 'Option to configure: Off', isCorrectAnswer: false}], id: 'v-e_rx1Nr', question: {blocks: [{text: 'Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses.', type: 'unstyled', depth: 0, inlineStyleRanges: [], data: {}, entityRanges: [], key: '57g3g'}, {inlineStyleRanges: [], depth: 0, text: 'Your manager has asked you to reconfigure the email filter to deliver any emails that contain malware without the attachment.', key: 'cv9u9', entityRanges: [], data: {}, type: 'unstyled'}, {text: 'What two options do you need to configure?', inlineStyleRanges: [], key: 'd7b8i', type: 'unstyled', entityRanges: [], depth: 0, data: {}}], entityMap: {}}, references: {blocks: [{text: 'You\'ll need to create a safe attachments policy with the replace option.', key: 'a4dok', entityRanges: [], data: {}, inlineStyleRanges: [], type: 'unstyled', depth: 0}, {depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', data: {}, key: 'cb23c', entityRanges: [{offset: 0, key: 0, length: 105}], type: 'unstyled', inlineStyleRanges: []}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', targetOption: '_blank'}}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

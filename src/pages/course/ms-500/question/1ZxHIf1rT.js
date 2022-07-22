@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"entityRanges":[{"offset":0,"length":91,"key":0}],"inlineStyleRanges":[],"text":"https://www.iorad.com/player/1797326/MS-500---You-need-to-protect-against-phishing-attacks-","type":"unstyled","key":"42jki","data":{},"depth":0},{"key":"aj23h","text":"Open the Security & Compliance Admin center","entityRanges":[],"data":{},"depth":0,"type":"ordered-list-item","inlineStyleRanges":[]},{"entityRanges":[],"type":"ordered-list-item","inlineStyleRanges":[],"key":"8i7t1","data":{},"depth":0,"text":"Click Threat Management > Policy > Anti-Phishing > Default policy"},{"type":"ordered-list-item","data":{},"text":"Click Edit impersonation policy","depth":0,"entityRanges":[],"key":"1g8r0","inlineStyleRanges":[]},{"inlineStyleRanges":[],"type":"ordered-list-item","data":{},"depth":0,"key":"3t9je","text":"Go to Add domains to protect.","entityRanges":[]},{"data":{},"type":"ordered-list-item","entityRanges":[],"depth":0,"text":"Enable Automatically include the domains I own","inlineStyleRanges":[],"key":"6u4eq"},{"entityRanges":[],"inlineStyleRanges":[],"type":"ordered-list-item","key":"7dag8","depth":0,"data":{},"text":"Go to actions"},{"depth":0,"key":"d694b","inlineStyleRanges":[],"type":"ordered-list-item","text":"Click Don't apply any action and set to Quarantine the message","entityRanges":[],"data":{}},{"depth":0,"type":"ordered-list-item","key":"c4vv5","inlineStyleRanges":[],"data":{},"entityRanges":[],"text":"Go to Mailbox Intelligence"},{"data":{},"inlineStyleRanges":[],"type":"ordered-list-item","text":"Click Enable mailbox intelligence-based impersonation protection.","depth":0,"entityRanges":[],"key":"17lmp"},{"type":"ordered-list-item","entityRanges":[],"depth":0,"key":"c2c11","inlineStyleRanges":[],"text":"Click If email is sent by an impersonated user. Set to Quarantine the message.","data":{}},{"key":"egrsb","type":"ordered-list-item","text":"Save","inlineStyleRanges":[],"entityRanges":[],"depth":0,"data":{}},{"entityRanges":[{"length":94,"key":1,"offset":0}],"key":"egh8a","depth":0,"data":{},"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT ","type":"unstyled"},{"depth":0,"entityRanges":[{"key":2,"length":146,"offset":0}],"key":"8jkc1","type":"unstyled","inlineStyleRanges":[],"data":{},"text":"https://support.office.com/en-us/article/protect-against-phishing-attempts-in-microsoft-365-86c425e1-1686-430a-9151-f7176cce4f2c#ID0EAABAAA=Try_it "},{"key":"9dqq3","type":"unstyled","data":{},"text":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-anti-phishing-policies?view=o365-worldwide#example-anti-phishing-policy-to- protect-a-user-and-a-domain ","entityRanges":[{"offset":0,"length":186,"key":3}],"depth":0,"inlineStyleRanges":[]}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1797326/MS-500---You-need-to-protect-against-phishing-attacks-"}},"1":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT","targetOption":"_blank"},"type":"LINK"},"2":{"data":{"targetOption":"_blank","url":"https://support.office.com/en-us/article/protect-against-phishing-attempts-in-microsoft-365-86c425e1-1686-430a-9151-f7176cce4f2c#ID0EAABAAA=Try_it"},"type":"LINK","mutability":"MUTABLE"},"3":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-anti-phishing-policies?view=o365-worldwide#example-anti-phishing-policy-to-"},"mutability":"MUTABLE","type":"LINK"}}},"answers":[{"isCorrectAnswer":false,"value":"In the Microsoft 365 admin center enable threat management."},{"value":"In the Exchange Admin center create a mail flow rule to block phishing attempts","isCorrectAnswer":false},{"value":"In Security & compliance admin center > Threat Management > Policy > Anti-phishing. Enable the settings.","isCorrectAnswer":true}],"id":"1ZxHIf1rT","question":{"entityMap":{},"blocks":[{"inlineStyleRanges":[],"text":"You need to protect against phishing attacks. The solution must meet the following requirements:","key":"d3cc3","data":{},"depth":0,"entityRanges":[],"type":"unstyled"},{"type":"unordered-list-item","inlineStyleRanges":[],"key":"93hsr","text":"Phishing email messages must be quarantined if the messages are sent from a spoofed domain.","depth":0,"data":{},"entityRanges":[]},{"depth":0,"key":"88pl3","type":"unordered-list-item","text":"As many phishing email messages as possible must be identified.","inlineStyleRanges":[],"entityRanges":[],"data":{}},{"inlineStyleRanges":[],"entityRanges":[],"depth":0,"key":"3hl1m","data":{},"type":"unstyled","text":"The solution must apply to the current SMTP domain names and any domain names added later."},{"inlineStyleRanges":[],"key":"41bh9","depth":0,"type":"unstyled","data":{},"entityRanges":[],"text":"What steps should you take to complete the task?"}]}},
+      test: {questions: [{answers: []}]},
+      question: {id: '1ZxHIf1rT', references: {blocks: [{type: 'unstyled', data: {}, entityRanges: [{length: 91, offset: 0, key: 0}], depth: 0, text: 'https://www.iorad.com/player/1797326/MS-500---You-need-to-protect-against-phishing-attacks-', key: '42jki', inlineStyleRanges: []}, {text: 'Open the Security & Compliance Admin center', depth: 0, inlineStyleRanges: [], key: 'aj23h', entityRanges: [], data: {}, type: 'ordered-list-item'}, {depth: 0, data: {}, text: 'Click Threat Management > Policy > Anti-Phishing > Default policy', key: '8i7t1', type: 'ordered-list-item', entityRanges: [], inlineStyleRanges: []}, {depth: 0, data: {}, text: 'Click Edit impersonation policy', entityRanges: [], inlineStyleRanges: [], key: '1g8r0', type: 'ordered-list-item'}, {data: {}, depth: 0, inlineStyleRanges: [], key: '3t9je', text: 'Go to Add domains to protect.', entityRanges: [], type: 'ordered-list-item'}, {data: {}, entityRanges: [], depth: 0, inlineStyleRanges: [], type: 'ordered-list-item', text: 'Enable Automatically include the domains I own', key: '6u4eq'}, {key: '7dag8', inlineStyleRanges: [], type: 'ordered-list-item', text: 'Go to actions', depth: 0, data: {}, entityRanges: []}, {key: 'd694b', inlineStyleRanges: [], type: 'ordered-list-item', entityRanges: [], data: {}, text: 'Click Don\'t apply any action and set to Quarantine the message', depth: 0}, {data: {}, inlineStyleRanges: [], entityRanges: [], depth: 0, text: 'Go to Mailbox Intelligence', key: 'c4vv5', type: 'ordered-list-item'}, {entityRanges: [], inlineStyleRanges: [], type: 'ordered-list-item', key: '17lmp', data: {}, text: 'Click Enable mailbox intelligence-based impersonation protection.', depth: 0}, {depth: 0, data: {}, text: 'Click If email is sent by an impersonated user. Set to Quarantine the message.', key: 'c2c11', entityRanges: [], type: 'ordered-list-item', inlineStyleRanges: []}, {entityRanges: [], type: 'ordered-list-item', key: 'egrsb', depth: 0, data: {}, inlineStyleRanges: [], text: 'Save'}, {text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT ', data: {}, entityRanges: [{key: 1, offset: 0, length: 94}], key: 'egh8a', type: 'unstyled', inlineStyleRanges: [], depth: 0}, {text: 'https://support.office.com/en-us/article/protect-against-phishing-attempts-in-microsoft-365-86c425e1-1686-430a-9151-f7176cce4f2c#ID0EAABAAA=Try_it ', type: 'unstyled', inlineStyleRanges: [], key: '8jkc1', depth: 0, entityRanges: [{length: 146, offset: 0, key: 2}], data: {}}, {type: 'unstyled', key: '9dqq3', text: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-anti-phishing-policies?view=o365-worldwide#example-anti-phishing-policy-to- protect-a-user-and-a-domain ', entityRanges: [{key: 3, offset: 0, length: 186}], data: {}, depth: 0, inlineStyleRanges: []}], entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.iorad.com/player/1797326/MS-500---You-need-to-protect-against-phishing-attacks-'}, type: 'LINK'}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT', targetOption: '_blank'}}, 2: {type: 'LINK', data: {targetOption: '_blank', url: 'https://support.office.com/en-us/article/protect-against-phishing-attempts-in-microsoft-365-86c425e1-1686-430a-9151-f7176cce4f2c#ID0EAABAAA=Try_it'}, mutability: 'MUTABLE'}, 3: {data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-anti-phishing-policies?view=o365-worldwide#example-anti-phishing-policy-to-'}, type: 'LINK', mutability: 'MUTABLE'}}}, question: {blocks: [{data: {}, inlineStyleRanges: [], entityRanges: [], depth: 0, key: 'd3cc3', text: 'You need to protect against phishing attacks. The solution must meet the following requirements:', type: 'unstyled'}, {key: '93hsr', data: {}, inlineStyleRanges: [], entityRanges: [], text: 'Phishing email messages must be quarantined if the messages are sent from a spoofed domain.', depth: 0, type: 'unordered-list-item'}, {text: 'As many phishing email messages as possible must be identified.', entityRanges: [], depth: 0, inlineStyleRanges: [], data: {}, type: 'unordered-list-item', key: '88pl3'}, {inlineStyleRanges: [], key: '3hl1m', depth: 0, type: 'unstyled', entityRanges: [], text: 'The solution must apply to the current SMTP domain names and any domain names added later.', data: {}}, {key: '41bh9', depth: 0, text: 'What steps should you take to complete the task?', entityRanges: [], type: 'unstyled', inlineStyleRanges: [], data: {}}], entityMap: {}}, answers: [{value: 'In the Microsoft 365 admin center enable threat management.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'In the Exchange Admin center create a mail flow rule to block phishing attempts'}, {value: 'In Security & compliance admin center > Threat Management > Policy > Anti-phishing. Enable the settings.', isCorrectAnswer: true}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -82,21 +82,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -104,8 +104,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -113,15 +113,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -135,16 +134,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -195,12 +194,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

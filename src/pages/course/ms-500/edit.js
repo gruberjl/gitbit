@@ -1,5 +1,5 @@
-import { h, Component } from "preact"
-import { convertFromRaw } from 'draft-js'
+import {h, Component} from 'preact'
+import {convertFromRaw} from 'draft-js'
 import Page from '../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -19,9 +19,9 @@ class EditPage extends Component {
 
     const isBrowser = () => typeof window !== 'undefined'
 
-    if (isBrowser()) {
+    if (isBrowser())
       getAllDocs('Tests/MS-500/Questions').then(this.addDocs)
-    }
+
 
     this.state = {
       docs: []
@@ -29,7 +29,7 @@ class EditPage extends Component {
   }
 
   addDocs(docs) {
-    const newDocs = docs.map(doc => {
+    const newDocs = docs.map((doc) => {
       doc.question = convertFromRaw(doc.question).getPlainText()
       return doc
     })
@@ -51,8 +51,8 @@ class EditPage extends Component {
               <Grid item xs={2} className='text-end'>
                 <Button href="/course/ms-500/question/edit">Add</Button>
               </Grid>
-              </Grid>
-              <Grid container>
+            </Grid>
+            <Grid container>
               <Grid item>
                 <TableContainer>
                   <Table striped bordered hover>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"data":{},"text":"your organization has a Microsoft 365 tenant that contains the following users.","key":"9gu7q","inlineStyleRanges":[],"depth":0,"entityRanges":[],"type":"unstyled"},{"key":"99lev","inlineStyleRanges":[],"type":"atomic","text":" ","data":{},"depth":0,"entityRanges":[{"key":0,"length":1,"offset":0}]},{"inlineStyleRanges":[],"data":{},"type":"unstyled","text":"You configure an Azure AD Identity Protection sign-in risk policy with the following settings:","entityRanges":[],"key":"dv9re","depth":0},{"inlineStyleRanges":[],"entityRanges":[],"key":"ej5j1","depth":0,"text":"Assigned to Group1 and excludes Group2.","data":{},"type":"unordered-list-item"},{"text":"Only apply if the user risk level is medium or above.","key":"f82ql","type":"unordered-list-item","inlineStyleRanges":[],"data":{},"entityRanges":[],"depth":0},{"entityRanges":[],"type":"unordered-list-item","key":"5kuqa","text":"If the user risk level is medium or above allow access but require a password change.","data":{},"depth":0,"inlineStyleRanges":[]},{"text":"The risk level for each user is shown below.","key":"d3chi","inlineStyleRanges":[],"data":{},"entityRanges":[],"depth":0,"type":"unstyled"},{"key":"5naop","depth":0,"entityRanges":[{"offset":0,"key":1,"length":1}],"inlineStyleRanges":[],"text":" ","type":"atomic","data":{}},{"depth":0,"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"data":{},"key":"38vb7","text":"Which users will be required to change their password?"}],"entityMap":{"0":{"type":"IMAGE","data":{"src":"https://i.ibb.co/WVjQP2K/chart7.png","height":"auto","alt":"Chart showing users and groups","width":"auto","alignment":"left"},"mutability":"MUTABLE"},"1":{"type":"IMAGE","mutability":"MUTABLE","data":{"alignment":"left","height":"auto","alt":"Chart showing user risk level","width":"auto","src":"https://i.ibb.co/LxsWp5S/Chart8.png"}}}},"references":{"blocks":[{"text":"User1 will be required to change his password","entityRanges":[],"inlineStyleRanges":[{"length":45,"offset":0,"style":"BOLD"}],"data":{},"type":"unstyled","depth":0,"key":"44apb"},{"text":"User1 is in Group1 which the policy applies.","entityRanges":[],"type":"unstyled","key":"192u7","inlineStyleRanges":[],"depth":0,"data":{}},{"key":"8vpnm","inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":49,"offset":0},{"style":"bgcolor-rgb(255,255,255)","offset":0,"length":49},{"length":49,"style":"fontsize-16","offset":0},{"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":49},{"offset":0,"style":"BOLD","length":50}],"text":"User2 will not be required to change his password ","entityRanges":[],"depth":0,"data":{},"type":"unstyled"},{"key":"48tc0","type":"unstyled","depth":0,"data":{},"text":"User2 is in Group2 which is excluded from the policy.","entityRanges":[],"inlineStyleRanges":[]},{"entityRanges":[],"depth":0,"inlineStyleRanges":[{"offset":0,"length":49,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","length":49,"offset":0},{"length":49,"style":"fontsize-16","offset":0},{"offset":0,"length":49,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"},{"length":49,"style":"BOLD","offset":0}],"text":"User3 will not be required to change his password  ","type":"unstyled","key":"17c30","data":{}},{"entityRanges":[],"type":"unstyled","data":{},"inlineStyleRanges":[],"text":"User3 is in Group1 which is included in the policy but is also in Group2 which is excluded from the policy. In this case, the exclusion wins so the policy does not apply to User3.","depth":0,"key":"97snb"},{"depth":0,"inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"offset":0,"length":123,"key":0}],"key":"1ijpn","text":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ","data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ"}}}},"id":"DCx8K1f29","answers":[{"isCorrectAnswer":true,"value":"User1"},{"value":"User2","isCorrectAnswer":false},{"value":"User3","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {id: 'DCx8K1f29', answers: [{value: 'User1', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'User2'}, {isCorrectAnswer: false, value: 'User3'}], question: {blocks: [{inlineStyleRanges: [], text: 'your organization has a Microsoft 365 tenant that contains the following users.', data: {}, type: 'unstyled', entityRanges: [], key: '9gu7q', depth: 0}, {data: {}, entityRanges: [{key: 0, offset: 0, length: 1}], type: 'atomic', key: '99lev', inlineStyleRanges: [], text: ' ', depth: 0}, {inlineStyleRanges: [], text: 'You configure an Azure AD Identity Protection sign-in risk policy with the following settings:', entityRanges: [], depth: 0, data: {}, key: 'dv9re', type: 'unstyled'}, {text: 'Assigned to Group1 and excludes Group2.', entityRanges: [], depth: 0, type: 'unordered-list-item', inlineStyleRanges: [], key: 'ej5j1', data: {}}, {entityRanges: [], text: 'Only apply if the user risk level is medium or above.', depth: 0, key: 'f82ql', type: 'unordered-list-item', data: {}, inlineStyleRanges: []}, {depth: 0, key: '5kuqa', entityRanges: [], type: 'unordered-list-item', data: {}, inlineStyleRanges: [], text: 'If the user risk level is medium or above allow access but require a password change.'}, {text: 'The risk level for each user is shown below.', key: 'd3chi', depth: 0, inlineStyleRanges: [], type: 'unstyled', data: {}, entityRanges: []}, {depth: 0, data: {}, type: 'atomic', entityRanges: [{key: 1, offset: 0, length: 1}], key: '5naop', inlineStyleRanges: [], text: ' '}, {depth: 0, data: {}, inlineStyleRanges: [], key: '38vb7', type: 'unstyled', text: 'Which users will be required to change their password?', entityRanges: []}], entityMap: {0: {type: 'IMAGE', mutability: 'MUTABLE', data: {height: 'auto', src: 'https://i.ibb.co/WVjQP2K/chart7.png', width: 'auto', alt: 'Chart showing users and groups', alignment: 'left'}}, 1: {mutability: 'MUTABLE', type: 'IMAGE', data: {height: 'auto', alt: 'Chart showing user risk level', src: 'https://i.ibb.co/LxsWp5S/Chart8.png', alignment: 'left', width: 'auto'}}}}, references: {entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ', targetOption: '_blank'}}}, blocks: [{entityRanges: [], text: 'User1 will be required to change his password', key: '44apb', inlineStyleRanges: [{offset: 0, style: 'BOLD', length: 45}], depth: 0, type: 'unstyled', data: {}}, {entityRanges: [], inlineStyleRanges: [], type: 'unstyled', key: '192u7', depth: 0, text: 'User1 is in Group1 which the policy applies.', data: {}}, {depth: 0, data: {}, key: '8vpnm', entityRanges: [], type: 'unstyled', inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 49, offset: 0}, {style: 'bgcolor-rgb(255,255,255)', offset: 0, length: 49}, {offset: 0, length: 49, style: 'fontsize-16'}, {length: 49, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0}, {length: 50, style: 'BOLD', offset: 0}], text: 'User2 will not be required to change his password '}, {depth: 0, inlineStyleRanges: [], key: '48tc0', data: {}, type: 'unstyled', entityRanges: [], text: 'User2 is in Group2 which is excluded from the policy.'}, {depth: 0, text: 'User3 will not be required to change his password  ', data: {}, type: 'unstyled', key: '17c30', inlineStyleRanges: [{offset: 0, style: 'color-rgb(33,37,41)', length: 49}, {style: 'bgcolor-rgb(255,255,255)', offset: 0, length: 49}, {style: 'fontsize-16', offset: 0, length: 49}, {length: 49, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0}, {offset: 0, length: 49, style: 'BOLD'}], entityRanges: []}, {type: 'unstyled', text: 'User3 is in Group1 which is included in the policy but is also in Group2 which is excluded from the policy. In this case, the exclusion wins so the policy does not apply to User3.', depth: 0, entityRanges: [], key: '97snb', inlineStyleRanges: [], data: {}}, {data: {}, type: 'unstyled', entityRanges: [{key: 0, length: 123, offset: 0}], depth: 0, inlineStyleRanges: [], key: '1ijpn', text: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -76,21 +76,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -98,8 +98,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -107,15 +107,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -129,16 +128,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -189,12 +188,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

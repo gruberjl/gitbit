@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":false,"value":" ATP anti-phishing"},{"isCorrectAnswer":false,"value":"DKIM"},{"isCorrectAnswer":true,"value":"Anti-spam"},{"value":"Anti-malware","isCorrectAnswer":false}],"question":{"entityMap":{},"blocks":[{"inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant and you've already created a Microsoft Defender Safe Attachments policy. You've configured the policy to quarantine malware.","data":{},"entityRanges":[],"type":"unstyled","key":"3934o","depth":0},{"text":"You've been asked to change the retention duration for the attachments that end up in the quarantine.","type":"unstyled","key":"7cpeu","entityRanges":[],"depth":0,"data":{},"inlineStyleRanges":[]},{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"data":{},"type":"unstyled","key":"bfn55","text":"Which threat management policy should you update from the Microsoft Defender admin center?"}]},"id":"AajbeBaEy","references":{"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","targetOption":"_blank"},"mutability":"MUTABLE"}},"blocks":[{"depth":0,"text":"In the anti-spam policies > Anti-spam inbound policy (default). The actions section will tell Microsoft 365 what to do when it finds a message that's spam, phishing, or bulk email. For example, you may want the email to go to the user's junk email folder or you may want the email to go to the quarantine. The actions section is where you'll find the retain spam in quarantine for this many days setting.","inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"key":"4pqn4","data":{}},{"data":{},"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","type":"unstyled","key":"9udm8","entityRanges":[{"length":105,"key":0,"offset":0}],"inlineStyleRanges":[]}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', targetOption: '_blank'}, mutability: 'MUTABLE'}}, blocks: [{text: 'In the anti-spam policies > Anti-spam inbound policy (default). The actions section will tell Microsoft 365 what to do when it finds a message that\'s spam, phishing, or bulk email. For example, you may want the email to go to the user\'s junk email folder or you may want the email to go to the quarantine. The actions section is where you\'ll find the retain spam in quarantine for this many days setting.', type: 'unstyled', entityRanges: [], depth: 0, key: '4pqn4', inlineStyleRanges: [], data: {}}, {entityRanges: [{offset: 0, length: 105, key: 0}], type: 'unstyled', depth: 0, inlineStyleRanges: [], key: '9udm8', text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', data: {}}]}, answers: [{value: ' ATP anti-phishing', isCorrectAnswer: false}, {value: 'DKIM', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Anti-spam'}, {isCorrectAnswer: false, value: 'Anti-malware'}], id: 'AajbeBaEy', question: {blocks: [{type: 'unstyled', entityRanges: [], data: {}, depth: 0, key: '3934o', inlineStyleRanges: [], text: 'Your organization has a Microsoft 365 tenant and you\'ve already created a Microsoft Defender Safe Attachments policy. You\'ve configured the policy to quarantine malware.'}, {text: 'You\'ve been asked to change the retention duration for the attachments that end up in the quarantine.', depth: 0, data: {}, inlineStyleRanges: [], key: '7cpeu', type: 'unstyled', entityRanges: []}, {entityRanges: [], key: 'bfn55', data: {}, text: 'Which threat management policy should you update from the Microsoft Defender admin center?', type: 'unstyled', depth: 0, inlineStyleRanges: []}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

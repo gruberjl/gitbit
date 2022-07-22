@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"ADGroup1: User1","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"ADGroup1: User2"},{"isCorrectAnswer":true,"value":"ADGroup1: User3"},{"isCorrectAnswer":true,"value":"ADGroup1: User4"},{"isCorrectAnswer":true,"value":"ADGroup2: User1"},{"isCorrectAnswer":true,"value":"ADGroup2: User2"},{"value":"ADGroup2: User3","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"ADGroup2: User4"}],"references":{"blocks":[{"key":"b95ee","inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"text":"The membership rule \"contains\" isn't case-sensitive. It matches any city that contains the chars \"sea\" so users 1 - 4 are all added.","depth":0,"data":{}},{"type":"unstyled","key":"7cppa","data":{},"inlineStyleRanges":[],"text":"The membership rule \"match\" isn't case-sensitive. It matches any city that starts with \"sea\" so users 1 - 4 are all added.","entityRanges":[],"depth":0},{"inlineStyleRanges":[],"type":"unstyled","depth":0,"key":"48apm","entityRanges":[{"length":95,"offset":0,"key":0}],"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV"},{"key":"5k4cn","inlineStyleRanges":[],"depth":0,"data":{},"entityRanges":[{"length":98,"offset":0,"key":1}],"type":"unstyled","text":"https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership"}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV"},"type":"LINK"},"1":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership"},"type":"LINK","mutability":"MUTABLE"}}},"id":"C29rzn6aM","question":{"blocks":[{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"type":"unstyled","key":"eb6b1","text":"You organization has a Microsoft 365 tenant with the following users.","data":{}},{"entityRanges":[{"length":1,"offset":0,"key":0}],"data":{},"type":"atomic","inlineStyleRanges":[],"depth":0,"key":"b36r0","text":" "},{"type":"unstyled","depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"text":"The Microsoft 365 tenant contains the following dynamic groups.","key":"4s9rt"},{"entityRanges":[{"length":1,"offset":0,"key":1}],"type":"atomic","inlineStyleRanges":[],"data":{},"key":"635cj","depth":0,"text":" "},{"entityRanges":[],"type":"unstyled","data":{},"text":"Which users are members of ADGroup1 and ADGroup2?","depth":0,"inlineStyleRanges":[],"key":"60b80"}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"width":"auto","alt":"Users chart","alignment":"left","height":"auto","src":"https://i.ibb.co/r5zkJWT/Users-chart.png"},"type":"IMAGE"},"1":{"type":"IMAGE","mutability":"MUTABLE","data":{"height":"auto","width":"auto","alt":"Dynamic group chart","src":"https://i.ibb.co/R91f09F/group-membership-chart.png","alignment":"left"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: true, value: 'ADGroup1: User1'}, {isCorrectAnswer: true, value: 'ADGroup1: User2'}, {isCorrectAnswer: true, value: 'ADGroup1: User3'}, {value: 'ADGroup1: User4', isCorrectAnswer: true}, {value: 'ADGroup2: User1', isCorrectAnswer: true}, {isCorrectAnswer: true, value: 'ADGroup2: User2'}, {isCorrectAnswer: true, value: 'ADGroup2: User3'}, {value: 'ADGroup2: User4', isCorrectAnswer: true}], id: 'C29rzn6aM', question: {blocks: [{key: 'eb6b1', inlineStyleRanges: [], entityRanges: [], depth: 0, data: {}, type: 'unstyled', text: 'You organization has a Microsoft 365 tenant with the following users.'}, {text: ' ', type: 'atomic', depth: 0, entityRanges: [{key: 0, offset: 0, length: 1}], key: 'b36r0', data: {}, inlineStyleRanges: []}, {key: '4s9rt', depth: 0, entityRanges: [], text: 'The Microsoft 365 tenant contains the following dynamic groups.', type: 'unstyled', data: {}, inlineStyleRanges: []}, {depth: 0, text: ' ', inlineStyleRanges: [], type: 'atomic', entityRanges: [{length: 1, key: 1, offset: 0}], key: '635cj', data: {}}, {inlineStyleRanges: [], text: 'Which users are members of ADGroup1 and ADGroup2?', depth: 0, entityRanges: [], key: '60b80', data: {}, type: 'unstyled'}], entityMap: {0: {data: {alignment: 'left', height: 'auto', width: 'auto', alt: 'Users chart', src: 'https://i.ibb.co/r5zkJWT/Users-chart.png'}, type: 'IMAGE', mutability: 'MUTABLE'}, 1: {type: 'IMAGE', data: {src: 'https://i.ibb.co/R91f09F/group-membership-chart.png', height: 'auto', width: 'auto', alt: 'Dynamic group chart', alignment: 'left'}, mutability: 'MUTABLE'}}}, references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership', targetOption: '_blank'}}}, blocks: [{inlineStyleRanges: [], type: 'unstyled', key: 'b95ee', depth: 0, data: {}, entityRanges: [], text: 'The membership rule "contains" isn\'t case-sensitive. It matches any city that contains the chars "sea" so users 1 - 4 are all added.'}, {inlineStyleRanges: [], entityRanges: [], type: 'unstyled', depth: 0, key: '7cppa', data: {}, text: 'The membership rule "match" isn\'t case-sensitive. It matches any city that starts with "sea" so users 1 - 4 are all added.'}, {text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV', key: '48apm', depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [{length: 95, offset: 0, key: 0}]}, {entityRanges: [{length: 98, key: 1, offset: 0}], type: 'unstyled', inlineStyleRanges: [], depth: 0, text: 'https://docs.microsoft.com/en-us/azure/active-directory/enterprise-users/groups-dynamic-membership', key: '5k4cn', data: {}}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -67,21 +67,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -89,8 +89,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -98,15 +98,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -120,16 +119,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -180,12 +179,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

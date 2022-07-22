@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"EPxtY1Mal","answers":[{"value":"Must change their password: User1 only","isCorrectAnswer":true},{"value":"Must change their password: User2 only","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Must change their password: Both User1 and User2"},{"value":"Must change their password: Neither User1 nor User2","isCorrectAnswer":false},{"value":"Prompted for MFA: User1 only","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Prompted for MFA: User2 only"},{"value":"Prompted for MFA: Both User1 and User2","isCorrectAnswer":false},{"value":"Prompted for MFA: Neither User1 nor User2","isCorrectAnswer":false}],"question":{"blocks":[{"key":"c9a3h","text":"You have a Microsoft Azure Active Directory (Azure AD) tenant named contoso.com that contains the users shown in the following table.","entityRanges":[],"depth":0,"type":"unstyled","data":{},"inlineStyleRanges":[]},{"depth":0,"entityRanges":[{"key":0,"length":1,"offset":0}],"key":"83o7o","inlineStyleRanges":[],"type":"atomic","data":{},"text":" "},{"text":"You create and enforce an Azure AD Identity Protection user risk policy that has the following settings:","inlineStyleRanges":[],"key":"biqrr","depth":0,"type":"unstyled","entityRanges":[],"data":{}},{"text":"Assignments: Include Group1, Exclude Group2","inlineStyleRanges":[],"key":"350er","type":"unordered-list-item","data":{},"entityRanges":[],"depth":0},{"data":{},"depth":0,"type":"unordered-list-item","entityRanges":[],"text":"Conditions: Sign-in risk of Low and above","inlineStyleRanges":[],"key":"9unnq"},{"type":"unordered-list-item","inlineStyleRanges":[],"data":{},"entityRanges":[],"key":"g8gt","text":"Access: Allow access, Require password change","depth":0},{"depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"type":"unstyled","text":"You need to identify how the policy affects User1 and User2.","key":"90j"},{"type":"unstyled","key":"950ob","entityRanges":[],"text":"What occurs when User1 and User2 sign in from an unfamiliar location?","depth":0,"data":{},"inlineStyleRanges":[]}],"entityMap":{"0":{"data":{"height":"auto","width":"auto","alt":"User, group, MFA status chart","alignment":"left","src":"https://i.ibb.co/ctNx9tq/Chart3.png"},"mutability":"MUTABLE","type":"IMAGE"}}},"references":{"blocks":[{"inlineStyleRanges":[],"data":{},"depth":0,"entityRanges":[],"type":"unstyled","key":"chcdi","text":"Unfamiliar location sign-in is considered a low risk so the user risk policy would initiate. Group1 is assigned in the user risk policy and Group2 is excluded so only User1 is affected by the policy so only User1 will be required to change their password."},{"type":"unstyled","key":"da7a5","depth":0,"inlineStyleRanges":[],"entityRanges":[],"data":{},"text":"User1 isn't configured for MFA but User2 is so only User2 will be prompted for MFA."},{"key":"b542b","inlineStyleRanges":[],"depth":0,"type":"unstyled","data":{},"entityRanges":[{"length":123,"offset":0,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ"},{"type":"unstyled","data":{},"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk ","entityRanges":[{"offset":0,"length":128,"key":1}],"key":"ag5bh","inlineStyleRanges":[]},{"text":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-users-groups","key":"f3bq1","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"length":114,"offset":0,"key":2}]}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ","targetOption":"_blank"},"mutability":"MUTABLE"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk","targetOption":"_blank"}},"2":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-users-groups","targetOption":"_blank"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{depth: 0, text: 'You have a Microsoft Azure Active Directory (Azure AD) tenant named contoso.com that contains the users shown in the following table.', inlineStyleRanges: [], key: 'c9a3h', data: {}, type: 'unstyled', entityRanges: []}, {type: 'atomic', depth: 0, key: '83o7o', inlineStyleRanges: [], entityRanges: [{key: 0, length: 1, offset: 0}], text: ' ', data: {}}, {inlineStyleRanges: [], key: 'biqrr', entityRanges: [], text: 'You create and enforce an Azure AD Identity Protection user risk policy that has the following settings:', type: 'unstyled', depth: 0, data: {}}, {data: {}, text: 'Assignments: Include Group1, Exclude Group2', type: 'unordered-list-item', inlineStyleRanges: [], entityRanges: [], key: '350er', depth: 0}, {depth: 0, entityRanges: [], type: 'unordered-list-item', inlineStyleRanges: [], key: '9unnq', text: 'Conditions: Sign-in risk of Low and above', data: {}}, {type: 'unordered-list-item', inlineStyleRanges: [], text: 'Access: Allow access, Require password change', entityRanges: [], depth: 0, data: {}, key: 'g8gt'}, {depth: 0, text: 'You need to identify how the policy affects User1 and User2.', key: '90j', type: 'unstyled', inlineStyleRanges: [], entityRanges: [], data: {}}, {type: 'unstyled', data: {}, depth: 0, inlineStyleRanges: [], entityRanges: [], text: 'What occurs when User1 and User2 sign in from an unfamiliar location?', key: '950ob'}], entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {height: 'auto', width: 'auto', alt: 'User, group, MFA status chart', src: 'https://i.ibb.co/ctNx9tq/Chart3.png', alignment: 'left'}}}}, id: 'EPxtY1Mal', answers: [{value: 'Must change their password: User1 only', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Must change their password: User2 only'}, {isCorrectAnswer: false, value: 'Must change their password: Both User1 and User2'}, {isCorrectAnswer: false, value: 'Must change their password: Neither User1 nor User2'}, {value: 'Prompted for MFA: User1 only', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Prompted for MFA: User2 only'}, {value: 'Prompted for MFA: Both User1 and User2', isCorrectAnswer: false}, {value: 'Prompted for MFA: Neither User1 nor User2', isCorrectAnswer: false}], references: {blocks: [{depth: 0, data: {}, text: 'Unfamiliar location sign-in is considered a low risk so the user risk policy would initiate. Group1 is assigned in the user risk policy and Group2 is excluded so only User1 is affected by the policy so only User1 will be required to change their password.', inlineStyleRanges: [], entityRanges: [], key: 'chcdi', type: 'unstyled'}, {entityRanges: [], text: 'User1 isn\'t configured for MFA but User2 is so only User2 will be prompted for MFA.', inlineStyleRanges: [], key: 'da7a5', depth: 0, data: {}, type: 'unstyled'}, {data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [{length: 123, offset: 0, key: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ', key: 'b542b', depth: 0}, {key: 'ag5bh', text: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk ', entityRanges: [{offset: 0, key: 1, length: 128}], type: 'unstyled', data: {}, depth: 0, inlineStyleRanges: []}, {inlineStyleRanges: [], entityRanges: [{key: 2, length: 114, offset: 0}], text: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-users-groups', key: 'f3bq1', depth: 0, type: 'unstyled', data: {}}], entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ'}, mutability: 'MUTABLE'}, 1: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk'}, type: 'LINK', mutability: 'MUTABLE'}, 2: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/conditional-access/concept-conditional-access-users-groups', targetOption: '_blank'}}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -73,21 +73,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -95,8 +95,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -104,15 +104,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -126,16 +125,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -186,12 +185,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

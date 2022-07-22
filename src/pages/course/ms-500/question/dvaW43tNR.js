@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"File1 triggers an alert from Policy1","isCorrectAnswer":true},{"value":"File3 triggers an alert from Policy1","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"File9 triggers an alert from Policy1"}],"references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"1":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/cloud-app-security/data-protection-policies"}}},"blocks":[{"key":"bmkuh","data":{},"depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"File1 will trigger the alert because it is in Folder1. Then File4, File6, File7, and File8 will trigger the alerts. File 9 won't trigger the alert because the daily alert limit is set to 5.","entityRanges":[]},{"depth":0,"type":"unstyled","key":"elndc","text":"https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP","data":{},"entityRanges":[{"offset":0,"key":0,"length":107}],"inlineStyleRanges":[]},{"entityRanges":[{"length":76,"offset":0,"key":1}],"text":"https://docs.microsoft.com/en-us/cloud-app-security/data-protection-policies","key":"7erjo","inlineStyleRanges":[],"type":"unstyled","depth":0,"data":{}}]},"question":{"blocks":[{"inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant with a SharePoint Online site named SiteA. SiteA has the following files/folders.","entityRanges":[],"type":"unstyled","data":{},"key":"7riqo","depth":0},{"data":{},"text":" ","depth":0,"type":"atomic","inlineStyleRanges":[],"key":"dq7a1","entityRanges":[{"offset":0,"key":0,"length":1}]},{"depth":0,"type":"unstyled","entityRanges":[],"data":{},"key":"ba1kt","text":"At 9:00, you create a Microsoft Cloud App Security policy named PolicyA shown below.","inlineStyleRanges":[]},{"inlineStyleRanges":[],"depth":0,"entityRanges":[{"offset":0,"length":1,"key":1}],"type":"atomic","data":{},"text":" ","key":"14nv1"},{"depth":0,"data":{},"text":"Then you upload the files to SiteA","type":"unstyled","entityRanges":[],"key":"9eqph","inlineStyleRanges":[]},{"inlineStyleRanges":[],"data":{},"key":"61lv3","entityRanges":[{"length":1,"offset":0,"key":2}],"depth":0,"text":" ","type":"atomic"},{"text":"Mark the checkbox next to each true statement.","inlineStyleRanges":[{"length":20,"offset":26,"style":"color-rgb(80,80,80)"},{"length":20,"offset":26,"style":"bgcolor-rgb(255,255,255)"},{"style":"fontsize-16","offset":26,"length":20},{"length":20,"style":"fontfamily-Roboto Condensed\", sans-serif","offset":26}],"data":{},"entityRanges":[],"key":"dpuu0","type":"unstyled","depth":0}],"entityMap":{"0":{"data":{"width":"auto","alt":"Folder File Chart","src":"https://i.ibb.co/3fcDZQY/Folder-File-Chart.png","height":"auto","alignment":"left"},"type":"IMAGE","mutability":"MUTABLE"},"1":{"type":"IMAGE","mutability":"MUTABLE","data":{"alignment":"left","width":"auto","src":"https://www.examtopics.com/assets/media/exam-media/03686/0016100001.jpg","alt":"Cloud App Security Settings","height":"auto"}},"2":{"type":"IMAGE","mutability":"MUTABLE","data":{"src":"https://i.ibb.co/k9YYtBy/file-upload-times-chart.png","alt":"Files upload times chart","width":"auto","height":"auto","alignment":"left"}}}},"id":"dvaW43tNR"},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{type: 'unstyled', key: '7riqo', text: 'Your organization has a Microsoft 365 tenant with a SharePoint Online site named SiteA. SiteA has the following files/folders.', depth: 0, inlineStyleRanges: [], data: {}, entityRanges: []}, {depth: 0, key: 'dq7a1', entityRanges: [{length: 1, key: 0, offset: 0}], data: {}, text: ' ', type: 'atomic', inlineStyleRanges: []}, {entityRanges: [], depth: 0, inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'At 9:00, you create a Microsoft Cloud App Security policy named PolicyA shown below.', key: 'ba1kt'}, {depth: 0, key: '14nv1', inlineStyleRanges: [], text: ' ', type: 'atomic', data: {}, entityRanges: [{length: 1, key: 1, offset: 0}]}, {text: 'Then you upload the files to SiteA', type: 'unstyled', entityRanges: [], key: '9eqph', data: {}, depth: 0, inlineStyleRanges: []}, {key: '61lv3', entityRanges: [{offset: 0, length: 1, key: 2}], depth: 0, type: 'atomic', inlineStyleRanges: [], text: ' ', data: {}}, {type: 'unstyled', text: 'Mark the checkbox next to each true statement.', data: {}, entityRanges: [], depth: 0, key: 'dpuu0', inlineStyleRanges: [{length: 20, offset: 26, style: 'color-rgb(80,80,80)'}, {offset: 26, style: 'bgcolor-rgb(255,255,255)', length: 20}, {style: 'fontsize-16', offset: 26, length: 20}, {length: 20, style: 'fontfamily-Roboto Condensed", sans-serif', offset: 26}]}], entityMap: {0: {data: {alt: 'Folder File Chart', height: 'auto', width: 'auto', alignment: 'left', src: 'https://i.ibb.co/3fcDZQY/Folder-File-Chart.png'}, mutability: 'MUTABLE', type: 'IMAGE'}, 1: {mutability: 'MUTABLE', data: {src: 'https://www.examtopics.com/assets/media/exam-media/03686/0016100001.jpg', alignment: 'left', width: 'auto', height: 'auto', alt: 'Cloud App Security Settings'}, type: 'IMAGE'}, 2: {type: 'IMAGE', data: {src: 'https://i.ibb.co/k9YYtBy/file-upload-times-chart.png', alt: 'Files upload times chart', alignment: 'left', width: 'auto', height: 'auto'}, mutability: 'MUTABLE'}}}, references: {blocks: [{entityRanges: [], type: 'unstyled', key: 'bmkuh', depth: 0, data: {}, text: 'File1 will trigger the alert because it is in Folder1. Then File4, File6, File7, and File8 will trigger the alerts. File 9 won\'t trigger the alert because the daily alert limit is set to 5.', inlineStyleRanges: []}, {entityRanges: [{length: 107, key: 0, offset: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP', key: 'elndc', data: {}, inlineStyleRanges: [], type: 'unstyled', depth: 0}, {inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/cloud-app-security/data-protection-policies', data: {}, entityRanges: [{offset: 0, key: 1, length: 76}], depth: 0, type: 'unstyled', key: '7erjo'}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/cloud-app-security/data-protection-policies'}}}}, answers: [{isCorrectAnswer: true, value: 'File1 triggers an alert from Policy1'}, {isCorrectAnswer: false, value: 'File3 triggers an alert from Policy1'}, {value: 'File9 triggers an alert from Policy1', isCorrectAnswer: false}], id: 'dvaW43tNR'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

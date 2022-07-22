@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"smKhO3hD_","question":{"blocks":[{"data":{},"key":"f6avo","depth":0,"text":"You have a Microsoft 365 tenant with Microsoft 365 E5 licenses.","entityRanges":[],"inlineStyleRanges":[],"type":"unstyled"},{"depth":0,"entityRanges":[],"key":"8qbsp","inlineStyleRanges":[],"text":"Most of your users are required to use an authenticator app to access Microsoft 365.","data":{},"type":"unstyled"},{"key":"fb7q","depth":0,"data":{},"entityRanges":[],"inlineStyleRanges":[],"text":"You need to view which users have used an authenticator app to access Microsoft 365.","type":"unstyled"},{"type":"unstyled","entityRanges":[],"key":"2adq3","data":{},"depth":0,"inlineStyleRanges":[],"text":"What should you do?"}],"entityMap":{}},"references":{"blocks":[{"inlineStyleRanges":[],"key":"4at2l","text":"The user sign-in logs located in the Azure AD admin center provides information on the user sign-ins. The logs contain the information about the MFA authentication status.","type":"unstyled","data":{},"entityRanges":[],"depth":0},{"text":"Reference:","data":{},"entityRanges":[],"depth":0,"type":"unstyled","key":"ds5vt","inlineStyleRanges":[{"length":9,"offset":0,"style":"BOLD"}]},{"depth":0,"text":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins ","key":"4pavl","data":{},"type":"unstyled","entityRanges":[{"offset":0,"length":91,"key":0}],"inlineStyleRanges":[]}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins","targetOption":"_blank"},"mutability":"MUTABLE"}}},"answers":[{"isCorrectAnswer":true,"value":"Go to Azure Active Directory admin center and review the sign-in logs."},{"value":"From the Microsoft Defender admin center download a report.","isCorrectAnswer":false},{"value":"Go to Azure Active Directory admin center and review the audit logs.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Go to Azure Active Directory admin center and review the authentication methods."}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins', targetOption: '_blank'}}}, blocks: [{text: 'The user sign-in logs located in the Azure AD admin center provides information on the user sign-ins. The logs contain the information about the MFA authentication status.', data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', entityRanges: [], key: '4at2l'}, {depth: 0, data: {}, inlineStyleRanges: [{style: 'BOLD', offset: 0, length: 9}], type: 'unstyled', key: 'ds5vt', entityRanges: [], text: 'Reference:'}, {entityRanges: [{offset: 0, key: 0, length: 91}], depth: 0, data: {}, key: '4pavl', text: 'https://docs.microsoft.com/en-us/azure/active-directory/reports-monitoring/concept-sign-ins ', type: 'unstyled', inlineStyleRanges: []}]}, id: 'smKhO3hD_', answers: [{value: 'Go to Azure Active Directory admin center and review the sign-in logs.', isCorrectAnswer: true}, {value: 'From the Microsoft Defender admin center download a report.', isCorrectAnswer: false}, {value: 'Go to Azure Active Directory admin center and review the audit logs.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Go to Azure Active Directory admin center and review the authentication methods.'}], question: {entityMap: {}, blocks: [{type: 'unstyled', inlineStyleRanges: [], text: 'You have a Microsoft 365 tenant with Microsoft 365 E5 licenses.', depth: 0, key: 'f6avo', data: {}, entityRanges: []}, {text: 'Most of your users are required to use an authenticator app to access Microsoft 365.', type: 'unstyled', depth: 0, entityRanges: [], data: {}, key: '8qbsp', inlineStyleRanges: []}, {entityRanges: [], data: {}, type: 'unstyled', depth: 0, text: 'You need to view which users have used an authenticator app to access Microsoft 365.', inlineStyleRanges: [], key: 'fb7q'}, {entityRanges: [], type: 'unstyled', key: '2adq3', text: 'What should you do?', depth: 0, data: {}, inlineStyleRanges: []}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU"},"type":"LINK","mutability":"MUTABLE"},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1796220/MS-500---Ensure-that-a-user-named-Joe-Gruber-can-monitor-the-service-health-of-your-Microsoft-365-t"},"mutability":"MUTABLE"},"2":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/office365/enterprise/view-service-health"}}},"blocks":[{"entityRanges":[],"depth":0,"type":"unstyled","key":"4e9b4","text":"From the Microsoft admin center > Users > grant the user the Service Support admin role","data":{},"inlineStyleRanges":[]},{"entityRanges":[{"key":0,"length":95,"offset":0}],"inlineStyleRanges":[],"depth":0,"data":{},"type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU ","key":"ev7ts"},{"key":"fersh","depth":0,"data":{},"inlineStyleRanges":[],"text":"https://www.iorad.com/player/1796220/MS-500---Ensure-that-a-user-named-Joe-Gruber-can-monitor-the-service-health-of-your-Microsoft-365-t ","type":"unstyled","entityRanges":[{"length":136,"key":1,"offset":0}]},{"data":{},"text":"You need to assign the Service Administrator role to Joe Gruber:","type":"unstyled","key":"3mvdh","depth":0,"inlineStyleRanges":[],"entityRanges":[]},{"data":{},"depth":0,"entityRanges":[],"key":"42o8h","type":"ordered-list-item","inlineStyleRanges":[],"text":"In the Microsoft 365 Admin Center, type Joe Gruber into the Search for users, groups, settings or tasks search box."},{"entityRanges":[],"inlineStyleRanges":[],"depth":0,"text":"Select the Joe Gruber user account from the search results.","data":{},"type":"ordered-list-item","key":"fnu33"},{"type":"ordered-list-item","entityRanges":[],"data":{},"key":"e9182","depth":0,"text":"In the Roles section of the user account properties, click Manage roles.","inlineStyleRanges":[]},{"depth":0,"inlineStyleRanges":[],"type":"ordered-list-item","data":{},"key":"eb8m3","text":"Click the Admin center access radio box.","entityRanges":[]},{"inlineStyleRanges":[],"depth":0,"text":"click the Service support admin role.","key":"eob91","data":{},"entityRanges":[],"type":"ordered-list-item"},{"key":"ceo5r","type":"ordered-list-item","text":"Click Save to save the changes.","entityRanges":[],"inlineStyleRanges":[],"data":{},"depth":0},{"entityRanges":[{"length":73,"key":2,"offset":11}],"data":{},"inlineStyleRanges":[],"key":"95ko3","text":"Reference: https://docs.microsoft.com/en-us/office365/enterprise/view-service-health ","type":"unstyled","depth":0}]},"answers":[{"isCorrectAnswer":false,"value":"Global Administrator role"},{"value":"Service Support Administrator role","isCorrectAnswer":true},{"value":"User Administrator role","isCorrectAnswer":false}],"question":{"blocks":[{"key":"ciu80","depth":0,"inlineStyleRanges":[{"style":"color-rgb(80,80,80)","offset":179,"length":135},{"length":135,"offset":179,"style":"bgcolor-rgb(255,255,255)"},{"offset":179,"length":135,"style":"fontsize-16"},{"offset":179,"style":"fontfamily-Roboto Condensed\", sans-serif","length":135}],"data":{},"entityRanges":[],"text":"Your organization has a Microsoft 365 tenant. You've hired a new employee named John Gruber. You manager has asked you to assign John a role in Microsoft 365. John is required to monitor the service health in Microsoft 365 and create service requests. Your organization adheres to the principle of least privilege.","type":"unstyled"},{"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","offset":0,"length":28},{"style":"bgcolor-rgb(255,255,255)","offset":0,"length":28},{"length":28,"offset":0,"style":"fontsize-16"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":28,"offset":0}],"data":{},"text":"What role should you assign?","type":"unstyled","entityRanges":[],"depth":0,"key":"fkb4t"}],"entityMap":{}},"id":"26vLPgDay"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: false, value: 'Global Administrator role'}, {value: 'Service Support Administrator role', isCorrectAnswer: true}, {value: 'User Administrator role', isCorrectAnswer: false}], references: {blocks: [{entityRanges: [], inlineStyleRanges: [], key: '4e9b4', depth: 0, data: {}, text: 'From the Microsoft admin center > Users > grant the user the Service Support admin role', type: 'unstyled'}, {depth: 0, data: {}, type: 'unstyled', entityRanges: [{key: 0, length: 95, offset: 0}], inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU ', key: 'ev7ts'}, {data: {}, text: 'https://www.iorad.com/player/1796220/MS-500---Ensure-that-a-user-named-Joe-Gruber-can-monitor-the-service-health-of-your-Microsoft-365-t ', depth: 0, inlineStyleRanges: [], entityRanges: [{key: 1, length: 136, offset: 0}], type: 'unstyled', key: 'fersh'}, {text: 'You need to assign the Service Administrator role to Joe Gruber:', type: 'unstyled', inlineStyleRanges: [], depth: 0, entityRanges: [], key: '3mvdh', data: {}}, {type: 'ordered-list-item', depth: 0, data: {}, text: 'In the Microsoft 365 Admin Center, type Joe Gruber into the Search for users, groups, settings or tasks search box.', inlineStyleRanges: [], key: '42o8h', entityRanges: []}, {key: 'fnu33', type: 'ordered-list-item', data: {}, depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'Select the Joe Gruber user account from the search results.'}, {type: 'ordered-list-item', depth: 0, text: 'In the Roles section of the user account properties, click Manage roles.', key: 'e9182', entityRanges: [], data: {}, inlineStyleRanges: []}, {key: 'eb8m3', inlineStyleRanges: [], depth: 0, data: {}, type: 'ordered-list-item', entityRanges: [], text: 'Click the Admin center access radio box.'}, {data: {}, inlineStyleRanges: [], depth: 0, text: 'click the Service support admin role.', entityRanges: [], key: 'eob91', type: 'ordered-list-item'}, {depth: 0, type: 'ordered-list-item', entityRanges: [], key: 'ceo5r', data: {}, inlineStyleRanges: [], text: 'Click Save to save the changes.'}, {depth: 0, text: 'Reference: https://docs.microsoft.com/en-us/office365/enterprise/view-service-health ', data: {}, type: 'unstyled', entityRanges: [{offset: 11, key: 2, length: 73}], inlineStyleRanges: [], key: '95ko3'}], entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.iorad.com/player/1796220/MS-500---Ensure-that-a-user-named-Joe-Gruber-can-monitor-the-service-health-of-your-Microsoft-365-t', targetOption: '_blank'}}, 2: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/office365/enterprise/view-service-health'}}}}, id: '26vLPgDay', question: {blocks: [{text: 'Your organization has a Microsoft 365 tenant. You\'ve hired a new employee named John Gruber. You manager has asked you to assign John a role in Microsoft 365. John is required to monitor the service health in Microsoft 365 and create service requests. Your organization adheres to the principle of least privilege.', inlineStyleRanges: [{style: 'color-rgb(80,80,80)', length: 135, offset: 179}, {offset: 179, style: 'bgcolor-rgb(255,255,255)', length: 135}, {style: 'fontsize-16', offset: 179, length: 135}, {style: 'fontfamily-Roboto Condensed", sans-serif', offset: 179, length: 135}], type: 'unstyled', depth: 0, entityRanges: [], data: {}, key: 'ciu80'}, {data: {}, text: 'What role should you assign?', type: 'unstyled', inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 28, offset: 0}, {offset: 0, style: 'bgcolor-rgb(255,255,255)', length: 28}, {length: 28, style: 'fontsize-16', offset: 0}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 28, offset: 0}], depth: 0, entityRanges: [], key: 'fkb4t'}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -73,21 +73,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -95,8 +95,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -104,15 +104,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -126,16 +125,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -186,12 +185,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -5,6 +5,7 @@ import { h } from 'preact'
 import ejs from 'ejs'
 import Helmet from 'preact-helmet'
 import buildWebpack from './build-webpack'
+import getImageDimensions from './get-image-dimensions'
 const debug = require('debug')('gitbit:build-page')
 
 const template = fs.readFileSync(`${__dirname}\\template.ejs`, 'utf8')
@@ -27,9 +28,24 @@ const buildPage = async (pageFile) => {
     pageFile
   }
 
+  if (pageFile !== './src/pages/404.js') {
+    const imageUrl = getImageUrl(data.helmet.meta.toString())
+    const imageDimensions = await getImageDimensions(imageUrl)
+    data.imageDimensions = imageDimensions
+  } else {
+    data.imageDimensions = {width:500, height:500}
+  }
+
   const content = ejs.render(template, data)
   data.jsOutputPath = writeBundle(data.jsBundlePath, content)
   await buildWebpack(data)
+}
+
+const getImageUrl = (meta) => {
+  return meta.match(/image primaryImageOfPage" content=".*?">/g)[0]
+    .replace('image primaryImageOfPage" content="', '')
+    .replace('">', '')
+    .replace('https://www.gitbit.org', '')
 }
 
 const getOutputPath = (pageFile) => {

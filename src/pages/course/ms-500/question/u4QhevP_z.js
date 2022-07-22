@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"u4QhevP_z","references":{"blocks":[{"entityRanges":[],"data":{},"text":"Policy 1 will have Exchange selected as a location.","type":"unstyled","inlineStyleRanges":[],"key":"e3nvr","depth":0},{"depth":0,"entityRanges":[],"type":"unordered-list-item","data":{},"text":"Rule 1: Condition contains EU Social Security number. Action Notify the user and admin","key":"b49sa","inlineStyleRanges":[]},{"type":"unordered-list-item","key":"fa55s","inlineStyleRanges":[],"entityRanges":[],"data":{},"text":"Rule 2: Condition contains Credit card numbers. Action Restrict access to the content for external users. Notify admin","depth":0},{"entityRanges":[],"text":"Policy 2 Will have OneDrive selected as a location.","data":{},"key":"2365d","inlineStyleRanges":[],"type":"unstyled","depth":0},{"depth":0,"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","offset":27,"length":91},{"offset":27,"length":91,"style":"bgcolor-rgb(255,255,255)"},{"offset":27,"style":"fontsize-16","length":91},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":91,"offset":27}],"entityRanges":[],"key":"csbk","text":"Rule 3: Condition contains EU passport numbers. Action Restrict access to the content for external users. Notify admin","type":"unordered-list-item","data":{}},{"type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w","entityRanges":[{"length":116,"key":0,"offset":0}],"depth":0,"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","offset":0,"length":116},{"style":"bgcolor-rgb(255,255,255)","length":116,"offset":0},{"style":"fontsize-16","length":116,"offset":0},{"length":116,"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}],"data":{},"key":"8g2jb"}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w"}}}},"answers":[{"isCorrectAnswer":false,"value":"Policies: 1"},{"value":"Policies: 2","isCorrectAnswer":true},{"value":"Policies: 3","isCorrectAnswer":false},{"value":"Rules: 1","isCorrectAnswer":false},{"value":"Rules: 2","isCorrectAnswer":false},{"value":"Rules: 3","isCorrectAnswer":true},{"value":"Rules: 4","isCorrectAnswer":false}],"question":{"entityMap":{},"blocks":[{"key":"b1abo","type":"unstyled","depth":0,"data":{},"text":"You have a Microsoft 365 subscription.","entityRanges":[],"inlineStyleRanges":[]},{"data":{},"inlineStyleRanges":[],"type":"unstyled","text":"You identify the following data loss prevention (DLP) requirements:","key":"7ie60","entityRanges":[],"depth":0},{"key":"11d6","inlineStyleRanges":[],"entityRanges":[],"data":{},"type":"unordered-list-item","depth":0,"text":"Send notifications to users if they attempt to send attachments that contain EU Social Security Numbers (SSN) or Equivalent ID."},{"inlineStyleRanges":[],"entityRanges":[],"data":{},"type":"unordered-list-item","key":"7421v","depth":0,"text":"Prevent any email messages that contain credit card numbers from being sent outside your organization."},{"data":{},"entityRanges":[],"type":"unordered-list-item","depth":0,"key":"d0gr9","inlineStyleRanges":[],"text":"Block the external sharing of Microsoft OneDrive content that contains EU passport numbers."},{"type":"unordered-list-item","key":"917t","data":{},"text":"Send administrators email alerts if any rule matches occur.","depth":0,"entityRanges":[],"inlineStyleRanges":[]},{"entityRanges":[],"key":"ervpb","type":"unstyled","data":{},"depth":0,"text":"What is the minimum number of DLP policies and rules you must create to meet the requirements? To answer, select the appropriate options in the answer area.","inlineStyleRanges":[]}]}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'Policies: 1', isCorrectAnswer: false}, {value: 'Policies: 2', isCorrectAnswer: true}, {value: 'Policies: 3', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Rules: 1'}, {isCorrectAnswer: false, value: 'Rules: 2'}, {value: 'Rules: 3', isCorrectAnswer: true}, {value: 'Rules: 4', isCorrectAnswer: false}], references: {entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w'}, mutability: 'MUTABLE'}}, blocks: [{depth: 0, key: 'e3nvr', text: 'Policy 1 will have Exchange selected as a location.', inlineStyleRanges: [], type: 'unstyled', entityRanges: [], data: {}}, {inlineStyleRanges: [], key: 'b49sa', depth: 0, entityRanges: [], type: 'unordered-list-item', text: 'Rule 1: Condition contains EU Social Security number. Action Notify the user and admin', data: {}}, {entityRanges: [], data: {}, text: 'Rule 2: Condition contains Credit card numbers. Action Restrict access to the content for external users. Notify admin', key: 'fa55s', inlineStyleRanges: [], depth: 0, type: 'unordered-list-item'}, {text: 'Policy 2 Will have OneDrive selected as a location.', type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: [], data: {}, key: '2365d'}, {depth: 0, text: 'Rule 3: Condition contains EU passport numbers. Action Restrict access to the content for external users. Notify admin', inlineStyleRanges: [{style: 'color-rgb(33,37,41)', offset: 27, length: 91}, {style: 'bgcolor-rgb(255,255,255)', offset: 27, length: 91}, {length: 91, offset: 27, style: 'fontsize-16'}, {length: 91, offset: 27, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], key: 'csbk', entityRanges: [], data: {}, type: 'unordered-list-item'}, {key: '8g2jb', type: 'unstyled', data: {}, depth: 0, entityRanges: [{key: 0, length: 116, offset: 0}], inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 116, offset: 0}, {length: 116, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {style: 'fontsize-16', length: 116, offset: 0}, {offset: 0, length: 116, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], text: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w'}]}, question: {blocks: [{key: 'b1abo', inlineStyleRanges: [], type: 'unstyled', depth: 0, entityRanges: [], data: {}, text: 'You have a Microsoft 365 subscription.'}, {type: 'unstyled', inlineStyleRanges: [], entityRanges: [], key: '7ie60', depth: 0, data: {}, text: 'You identify the following data loss prevention (DLP) requirements:'}, {type: 'unordered-list-item', entityRanges: [], inlineStyleRanges: [], data: {}, depth: 0, key: '11d6', text: 'Send notifications to users if they attempt to send attachments that contain EU Social Security Numbers (SSN) or Equivalent ID.'}, {entityRanges: [], text: 'Prevent any email messages that contain credit card numbers from being sent outside your organization.', inlineStyleRanges: [], key: '7421v', type: 'unordered-list-item', data: {}, depth: 0}, {key: 'd0gr9', type: 'unordered-list-item', data: {}, entityRanges: [], inlineStyleRanges: [], text: 'Block the external sharing of Microsoft OneDrive content that contains EU passport numbers.', depth: 0}, {type: 'unordered-list-item', text: 'Send administrators email alerts if any rule matches occur.', data: {}, entityRanges: [], key: '917t', inlineStyleRanges: [], depth: 0}, {depth: 0, text: 'What is the minimum number of DLP policies and rules you must create to meet the requirements? To answer, select the appropriate options in the answer area.', entityRanges: [], key: 'ervpb', data: {}, type: 'unstyled', inlineStyleRanges: []}], entityMap: {}}, id: 'u4QhevP_z'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -77,21 +77,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -99,8 +99,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -108,15 +108,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -130,16 +129,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -190,12 +189,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

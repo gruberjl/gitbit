@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"Edn5MZXVu","references":{"blocks":[{"entityRanges":[],"data":{},"inlineStyleRanges":[{"offset":0,"style":"color-rgb(33,37,41)","length":201},{"style":"bgcolor-rgb(255,255,255)","length":201,"offset":0},{"length":201,"style":"fontsize-16","offset":0},{"length":201,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":0}],"text":"There are two places to see what happens to emails/attachments. The first is the Message Trace in the Exchange admin center. The second is in the reports section of the Microsoft Defender admin center.","type":"unstyled","depth":0,"key":"4ueuo"},{"data":{},"key":"dffpm","type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","depth":0,"inlineStyleRanges":[{"length":105,"offset":0,"style":"color-rgb(33,37,41)"},{"style":"bgcolor-rgb(255,255,255)","length":105,"offset":0},{"style":"fontsize-16","length":105,"offset":0},{"offset":0,"length":105,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}],"entityRanges":[{"key":0,"length":105,"offset":0}]},{"key":"fn06u","type":"unstyled","entityRanges":[{"offset":0,"length":99,"key":1}],"text":"https://docs.microsoft.com/en-us/office365/securitycompliance/manage-quarantined-messages-and-files","data":{},"inlineStyleRanges":[],"depth":0}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","targetOption":"_blank"}},"1":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_self","url":"https://docs.microsoft.com/en-us/office365/securitycompliance/manage-quarantined-messages-and-files"}}}},"question":{"entityMap":{},"blocks":[{"depth":0,"data":{},"key":"3k5j1","text":"Several users in your organization have called in reporting they received an email that should have had an attachment but there was no attachment.","entityRanges":[],"inlineStyleRanges":[],"type":"unstyled"},{"depth":0,"key":"3egbd","inlineStyleRanges":[],"text":"You've been tasked with tracking down why the email attachment has been removed.","entityRanges":[],"data":{},"type":"unstyled"},{"entityRanges":[],"data":{},"type":"unstyled","text":"What two places can you go to review the missing attachments?","depth":0,"inlineStyleRanges":[],"key":"avpt3"}]},"answers":[{"isCorrectAnswer":true,"value":"The Exchange admin center"},{"isCorrectAnswer":false,"value":"The Azure ATP admin center"},{"value":"Outlook on the web","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Microsoft 365 Defender admin center"},{"isCorrectAnswer":false,"value":"Microsoft Azure Security Center"}]},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: true, value: 'The Exchange admin center'}, {value: 'The Azure ATP admin center', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Outlook on the web'}, {value: 'Microsoft 365 Defender admin center', isCorrectAnswer: true}, {value: 'Microsoft Azure Security Center', isCorrectAnswer: false}], question: {blocks: [{data: {}, depth: 0, entityRanges: [], inlineStyleRanges: [], key: '3k5j1', type: 'unstyled', text: 'Several users in your organization have called in reporting they received an email that should have had an attachment but there was no attachment.'}, {data: {}, entityRanges: [], inlineStyleRanges: [], text: 'You\'ve been tasked with tracking down why the email attachment has been removed.', depth: 0, key: '3egbd', type: 'unstyled'}, {key: 'avpt3', inlineStyleRanges: [], entityRanges: [], text: 'What two places can you go to review the missing attachments?', type: 'unstyled', depth: 0, data: {}}], entityMap: {}}, references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL'}, type: 'LINK'}, 1: {data: {url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/manage-quarantined-messages-and-files', targetOption: '_self'}, mutability: 'MUTABLE', type: 'LINK'}}, blocks: [{key: '4ueuo', depth: 0, data: {}, inlineStyleRanges: [{offset: 0, style: 'color-rgb(33,37,41)', length: 201}, {style: 'bgcolor-rgb(255,255,255)', length: 201, offset: 0}, {length: 201, style: 'fontsize-16', offset: 0}, {offset: 0, length: 201, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], type: 'unstyled', text: 'There are two places to see what happens to emails/attachments. The first is the Message Trace in the Exchange admin center. The second is in the reports section of the Microsoft Defender admin center.', entityRanges: []}, {data: {}, inlineStyleRanges: [{length: 105, offset: 0, style: 'color-rgb(33,37,41)'}, {length: 105, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {style: 'fontsize-16', length: 105, offset: 0}, {offset: 0, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 105}], type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', entityRanges: [{length: 105, key: 0, offset: 0}], depth: 0, key: 'dffpm'}, {key: 'fn06u', data: {}, depth: 0, text: 'https://docs.microsoft.com/en-us/office365/securitycompliance/manage-quarantined-messages-and-files', type: 'unstyled', entityRanges: [{length: 99, offset: 0, key: 1}], inlineStyleRanges: []}]}, id: 'Edn5MZXVu'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

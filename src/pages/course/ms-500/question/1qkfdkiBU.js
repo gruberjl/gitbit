@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":true,"value":"Privileged role administrator"},{"isCorrectAnswer":false,"value":"Compliance administrator"},{"value":"Security administrator","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Global administrator"}],"id":"1qkfdkiBU","question":{"blocks":[{"key":"571u","depth":0,"entityRanges":[],"text":"Your organization has hired a new admin named John Gruber. Your manager has asked you to give John Gruber the ability to enable and configure Azure AD Privileged Identity Management. Your organization adhere's to the principle of least privilege","inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":75,"offset":142},{"length":75,"style":"bgcolor-rgb(255,255,255)","offset":142},{"length":75,"style":"fontsize-16","offset":142},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":142,"length":75}],"type":"unstyled","data":{}},{"data":{},"entityRanges":[],"depth":0,"text":"What role should you assign to John Gruber","type":"unstyled","key":"543ar","inlineStyleRanges":[]}],"entityMap":{}},"references":{"blocks":[{"depth":0,"key":"33tk7","type":"unstyled","entityRanges":[],"text":"Privileged role administrators can enable, configure, and manage the Azure AD Privileged Identity Management. Global admins can also but using the global admin roles would break the principle of least privilege.","inlineStyleRanges":[],"data":{}},{"data":{},"type":"unstyled","inlineStyleRanges":[],"depth":0,"entityRanges":[{"length":95,"offset":0,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU ","key":"f2o0a"},{"data":{},"key":"2sgfr","text":"https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure ","depth":0,"entityRanges":[{"key":1,"length":100,"offset":0}],"type":"unstyled","inlineStyleRanges":[]},{"text":"https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference?view=o365-worldwide#privileged-role-administrator ","depth":0,"data":{},"key":"du7c","type":"unstyled","entityRanges":[{"offset":0,"length":133,"key":2}],"inlineStyleRanges":[]}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU"}},"1":{"data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"2":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference?view=o365-worldwide#privileged-role-administrator","targetOption":"_blank"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{depth: 0, data: {}, entityRanges: [], type: 'unstyled', key: '571u', inlineStyleRanges: [{offset: 142, length: 75, style: 'color-rgb(33,37,41)'}, {style: 'bgcolor-rgb(255,255,255)', length: 75, offset: 142}, {style: 'fontsize-16', offset: 142, length: 75}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 75, offset: 142}], text: 'Your organization has hired a new admin named John Gruber. Your manager has asked you to give John Gruber the ability to enable and configure Azure AD Privileged Identity Management. Your organization adhere\'s to the principle of least privilege'}, {depth: 0, inlineStyleRanges: [], data: {}, entityRanges: [], key: '543ar', text: 'What role should you assign to John Gruber', type: 'unstyled'}]}, references: {blocks: [{inlineStyleRanges: [], depth: 0, entityRanges: [], text: 'Privileged role administrators can enable, configure, and manage the Azure AD Privileged Identity Management. Global admins can also but using the global admin roles would break the principle of least privilege.', key: '33tk7', data: {}, type: 'unstyled'}, {depth: 0, type: 'unstyled', data: {}, key: 'f2o0a', inlineStyleRanges: [], entityRanges: [{key: 0, length: 95, offset: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU '}, {inlineStyleRanges: [], key: '2sgfr', type: 'unstyled', depth: 0, entityRanges: [{length: 100, offset: 0, key: 1}], data: {}, text: 'https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure '}, {depth: 0, key: 'du7c', inlineStyleRanges: [], data: {}, type: 'unstyled', entityRanges: [{key: 2, offset: 0, length: 133}], text: 'https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference?view=o365-worldwide#privileged-role-administrator '}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/active-directory/privileged-identity-management/pim-configure'}}, 2: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/roles/permissions-reference?view=o365-worldwide#privileged-role-administrator', targetOption: '_blank'}}}}, id: '1qkfdkiBU', answers: [{value: 'Privileged role administrator', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Compliance administrator'}, {isCorrectAnswer: false, value: 'Security administrator'}, {value: 'Global administrator', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

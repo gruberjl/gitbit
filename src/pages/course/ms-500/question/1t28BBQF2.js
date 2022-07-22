@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"type":"unstyled","inlineStyleRanges":[],"key":"56ko9","data":{},"depth":0,"text":"You create a data loss prevention (DLP) policy as shown in the following exhibit:","entityRanges":[]},{"key":"7l9vs","depth":0,"type":"atomic","inlineStyleRanges":[],"text":" ","entityRanges":[{"key":0,"length":1,"offset":0}],"data":{}},{"key":"fn926","inlineStyleRanges":[{"style":"color-rgb(80,80,80)","offset":0,"length":115},{"length":115,"style":"bgcolor-rgb(255,255,255)","offset":0},{"style":"fontsize-16","offset":0,"length":115},{"length":115,"offset":0,"style":"fontfamily-Roboto Condensed\", sans-serif"}],"text":"What is the effect of the policy when a user attempts to send an email message that contains sensitive information? ","entityRanges":[],"type":"unstyled","data":{},"depth":0}],"entityMap":{"0":{"data":{"width":"auto","height":"auto","alt":"DLP Policy","src":"https://i.ibb.co/yps31hV/DLP.png"},"mutability":"MUTABLE","type":"IMAGE"}}},"answers":[{"isCorrectAnswer":true,"value":"The user receives a notification and can send the email message"},{"value":"The user receives a notification and cannot send the email message","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"The email message is sent without a notification"},{"value":"The email message is blocked silently","isCorrectAnswer":false}],"id":"1t28BBQF2","references":{"blocks":[{"type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"depth":0,"key":"2voqv","data":{},"text":"Since \"use notifications to inform your users\" is enabled the user will receive a notification. Since \"Let people who see the tip override the policy\" is enabled the users can still send the email."},{"key":"5dif5","type":"unstyled","depth":0,"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w","inlineStyleRanges":[],"entityRanges":[{"key":0,"length":116,"offset":0}]},{"data":{},"inlineStyleRanges":[],"entityRanges":[{"key":1,"offset":0,"length":91}],"type":"unstyled","key":"5rj2r","text":"https://docs.microsoft.com/en-us/office365/securitycompliance/data-loss-prevention-policies","depth":0}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w","targetOption":"_blank"}},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/office365/securitycompliance/data-loss-prevention-policies","targetOption":"_blank"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {alt: 'DLP Policy', src: 'https://i.ibb.co/yps31hV/DLP.png', width: 'auto', height: 'auto'}}}, blocks: [{type: 'unstyled', text: 'You create a data loss prevention (DLP) policy as shown in the following exhibit:', entityRanges: [], data: {}, depth: 0, inlineStyleRanges: [], key: '56ko9'}, {inlineStyleRanges: [], entityRanges: [{offset: 0, length: 1, key: 0}], key: '7l9vs', type: 'atomic', text: ' ', depth: 0, data: {}}, {data: {}, depth: 0, inlineStyleRanges: [{offset: 0, style: 'color-rgb(80,80,80)', length: 115}, {length: 115, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {style: 'fontsize-16', offset: 0, length: 115}, {offset: 0, style: 'fontfamily-Roboto Condensed", sans-serif', length: 115}], type: 'unstyled', text: 'What is the effect of the policy when a user attempts to send an email message that contains sensitive information? ', entityRanges: [], key: 'fn926'}]}, id: '1t28BBQF2', references: {entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/data-loss-prevention-policies'}, type: 'LINK', mutability: 'MUTABLE'}}, blocks: [{data: {}, key: '2voqv', entityRanges: [], type: 'unstyled', text: 'Since "use notifications to inform your users" is enabled the user will receive a notification. Since "Let people who see the tip override the policy" is enabled the users can still send the email.', inlineStyleRanges: [], depth: 0}, {data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', key: '5dif5', text: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w', entityRanges: [{key: 0, length: 116, offset: 0}]}, {inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/office365/securitycompliance/data-loss-prevention-policies', depth: 0, type: 'unstyled', data: {}, key: '5rj2r', entityRanges: [{length: 91, offset: 0, key: 1}]}]}, answers: [{value: 'The user receives a notification and can send the email message', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'The user receives a notification and cannot send the email message'}, {isCorrectAnswer: false, value: 'The email message is sent without a notification'}, {isCorrectAnswer: false, value: 'The email message is blocked silently'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

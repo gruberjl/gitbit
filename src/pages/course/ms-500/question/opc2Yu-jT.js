@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"opc2Yu-jT","question":{"blocks":[{"key":"1nlh3","depth":0,"text":"Your organization has a Microsoft 365 tenant and a database that stores customer information. Each customer has a unique 10-digit ID that starts with Git- and then has the 10 digit ID.","entityRanges":[],"type":"unstyled","data":{},"inlineStyleRanges":[]},{"inlineStyleRanges":[],"depth":0,"data":{},"entityRanges":[],"text":"Your manager has asked you to implement a data loss prevention (DLP) policy that meets the following security requirements:","type":"unstyled","key":"7ie4s"},{"type":"unordered-list-item","inlineStyleRanges":[],"depth":0,"data":{},"key":"mnnq","entityRanges":[],"text":"Emails that contain a single customer ID can be sent."},{"data":{},"text":"Emails that contain more than 2 customer IDs must not be sent until they are approved by the company's data privacy team.","type":"unordered-list-item","depth":0,"entityRanges":[],"key":"3mela","inlineStyleRanges":[]},{"key":"3avs6","data":{},"type":"unstyled","depth":0,"inlineStyleRanges":[],"entityRanges":[],"text":"Which two components should you configure?"}],"entityMap":{}},"references":{"blocks":[{"type":"unstyled","key":"6hh2b","depth":0,"data":{},"text":"A sensitive info type is required to be created to match the 10-digit ID. A DLP policy is then required to block the messages from leaving the company.","inlineStyleRanges":[],"entityRanges":[]},{"entityRanges":[{"key":0,"length":116,"offset":0}],"key":"9beno","data":{},"inlineStyleRanges":[],"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w","type":"unstyled"},{"inlineStyleRanges":[],"entityRanges":[{"length":123,"key":1,"offset":0}],"data":{},"text":"https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitive-information-type-entity-definitions?view=o365-worldwide","depth":0,"type":"unstyled","key":"4ao8s"}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w"},"type":"LINK"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitive-information-type-entity-definitions?view=o365-worldwide","targetOption":"_blank"}}}},"answers":[{"isCorrectAnswer":true,"value":"Sensitive information type"},{"value":"Sensitivity label","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Retention label"},{"isCorrectAnswer":true,"value":"DLP policy"},{"isCorrectAnswer":false,"value":"Mail flow rule"}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{inlineStyleRanges: [], key: '6hh2b', entityRanges: [], depth: 0, data: {}, text: 'A sensitive info type is required to be created to match the 10-digit ID. A DLP policy is then required to block the messages from leaving the company.', type: 'unstyled'}, {type: 'unstyled', entityRanges: [{length: 116, offset: 0, key: 0}], data: {}, depth: 0, key: '9beno', inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w'}, {type: 'unstyled', entityRanges: [{key: 1, length: 123, offset: 0}], key: '4ao8s', inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitive-information-type-entity-definitions?view=o365-worldwide', data: {}, depth: 0}], entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w', targetOption: '_blank'}}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitive-information-type-entity-definitions?view=o365-worldwide', targetOption: '_blank'}}}}, answers: [{value: 'Sensitive information type', isCorrectAnswer: true}, {value: 'Sensitivity label', isCorrectAnswer: false}, {value: 'Retention label', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'DLP policy'}, {value: 'Mail flow rule', isCorrectAnswer: false}], question: {blocks: [{type: 'unstyled', inlineStyleRanges: [], key: '1nlh3', depth: 0, entityRanges: [], text: 'Your organization has a Microsoft 365 tenant and a database that stores customer information. Each customer has a unique 10-digit ID that starts with Git- and then has the 10 digit ID.', data: {}}, {key: '7ie4s', entityRanges: [], text: 'Your manager has asked you to implement a data loss prevention (DLP) policy that meets the following security requirements:', depth: 0, data: {}, type: 'unstyled', inlineStyleRanges: []}, {key: 'mnnq', type: 'unordered-list-item', depth: 0, text: 'Emails that contain a single customer ID can be sent.', inlineStyleRanges: [], data: {}, entityRanges: []}, {inlineStyleRanges: [], type: 'unordered-list-item', depth: 0, entityRanges: [], key: '3mela', data: {}, text: 'Emails that contain more than 2 customer IDs must not be sent until they are approved by the company\'s data privacy team.'}, {type: 'unstyled', data: {}, key: '3avs6', text: 'Which two components should you configure?', entityRanges: [], inlineStyleRanges: [], depth: 0}], entityMap: {}}, id: 'opc2Yu-jT'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

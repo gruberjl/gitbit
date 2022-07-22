@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Open Microsoft Azure Active Directory Connect (Azure AD Connect) and configure attribute filtering.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Purchase a Enterprise Mobility + Security E5 license for every user."},{"value":"Open Microsoft Azure Active Directory Connect (Azure AD Connect) and select Directory extension attribute sync.","isCorrectAnswer":false},{"value":"Migrate all of the mailboxes hosted on-premises Microsoft 365","isCorrectAnswer":true}],"question":{"entityMap":{},"blocks":[{"key":"3bsgp","entityRanges":[],"inlineStyleRanges":[],"depth":0,"data":{},"type":"unstyled","text":"All user users have a Microsoft 365 E5 license. You have a hybrid Microsoft Exchange Server. Some of your user's mailboxes are located in Microsoft 365 while others are located in the on-premises Exchange server"},{"data":{},"inlineStyleRanges":[],"key":"69ltf","text":"You are tasked with setting up and configuring Microsoft Defender for Office 365 anti-phishing policy.","depth":0,"entityRanges":[],"type":"unstyled"},{"entityRanges":[],"data":{},"inlineStyleRanges":[],"type":"unstyled","text":"Management has asked you to enable mailbox intelligence for all users.","depth":0,"key":"1o6pn"},{"data":{},"text":"What do you need to do to verify all mailboxes have mailbox intelligence enabled and working?","key":"d4hu7","type":"unstyled","depth":0,"entityRanges":[],"inlineStyleRanges":[]}]},"references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"key":"fvnj6","type":"unstyled","inlineStyleRanges":[],"depth":0,"text":"Mailbox intelligence will scan a user's mailbox to see if the user has sent or received emails from the sender of an email before. For mailbox intelligence to scan a mailbox then mailbox must be located in Microsoft 365's Exchange Online","data":{},"entityRanges":[]},{"inlineStyleRanges":[],"key":"7qat6","entityRanges":[{"length":94,"offset":0,"key":0}],"data":{},"depth":0,"type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT "}]},"id":"19TOYt4la"},
+      test: {questions: [{answers: []}]},
+      question: {id: '19TOYt4la', references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}}, blocks: [{depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'Mailbox intelligence will scan a user\'s mailbox to see if the user has sent or received emails from the sender of an email before. For mailbox intelligence to scan a mailbox then mailbox must be located in Microsoft 365\'s Exchange Online', type: 'unstyled', data: {}, key: 'fvnj6'}, {inlineStyleRanges: [], entityRanges: [{key: 0, length: 94, offset: 0}], depth: 0, key: '7qat6', type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-email-against-phishing-attacks-GCOOUsSBT ', data: {}}]}, answers: [{isCorrectAnswer: false, value: 'Open Microsoft Azure Active Directory Connect (Azure AD Connect) and configure attribute filtering.'}, {value: 'Purchase a Enterprise Mobility + Security E5 license for every user.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Open Microsoft Azure Active Directory Connect (Azure AD Connect) and select Directory extension attribute sync.'}, {value: 'Migrate all of the mailboxes hosted on-premises Microsoft 365', isCorrectAnswer: true}], question: {blocks: [{depth: 0, key: '3bsgp', text: 'All user users have a Microsoft 365 E5 license. You have a hybrid Microsoft Exchange Server. Some of your user\'s mailboxes are located in Microsoft 365 while others are located in the on-premises Exchange server', data: {}, entityRanges: [], inlineStyleRanges: [], type: 'unstyled'}, {entityRanges: [], data: {}, text: 'You are tasked with setting up and configuring Microsoft Defender for Office 365 anti-phishing policy.', type: 'unstyled', depth: 0, key: '69ltf', inlineStyleRanges: []}, {inlineStyleRanges: [], data: {}, entityRanges: [], key: '1o6pn', depth: 0, text: 'Management has asked you to enable mailbox intelligence for all users.', type: 'unstyled'}, {depth: 0, key: 'd4hu7', inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'What do you need to do to verify all mailboxes have mailbox intelligence enabled and working?', entityRanges: []}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

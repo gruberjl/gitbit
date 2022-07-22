@@ -1,4 +1,4 @@
-import { collection, getDocs } from 'firebase/firestore/lite'
+import {collection, getDocs} from 'firebase/firestore/lite'
 import {getDb} from './get-db'
 
 const getAllDocs = (path) => {
@@ -7,7 +7,9 @@ const getAllDocs = (path) => {
 
 const snapshotToDocs = (snapshot) => {
   const docs = []
-  snapshot.forEach(doc => { docs.push(doc.data()) })
+  snapshot.forEach((doc) => {
+    docs.push(doc.data())
+  })
   return docs
 }
 

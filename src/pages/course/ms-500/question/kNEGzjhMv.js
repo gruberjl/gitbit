@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"depth":0,"key":"amujj","text":"Your organization has an on-premises Active Directory domain named gitbit.org","entityRanges":[],"data":{},"type":"unstyled","inlineStyleRanges":[]},{"entityRanges":[],"depth":0,"data":{},"type":"unstyled","key":"7lpjg","inlineStyleRanges":[],"text":"Your organization has installed Azure AD Connect on a server to sync your on-premises AD to Microsoft 365."},{"depth":0,"data":{},"text":"There's an error in the sync. You've been tasked with finding and resolving the error. You need to view Azure AD Connect events.","entityRanges":[],"type":"unstyled","inlineStyleRanges":[],"key":"ehi8s"},{"entityRanges":[],"key":"a5bre","depth":0,"data":{},"type":"unstyled","inlineStyleRanges":[],"text":"What event logs do you use?"}],"entityMap":{}},"id":"kNEGzjhMv","answers":[{"value":"Application","isCorrectAnswer":true},{"value":"System","isCorrectAnswer":false},{"value":"Security","isCorrectAnswer":false},{"value":"Application and Services Logs/Microsoft/Windows/Security-Adminless","isCorrectAnswer":false}],"references":{"blocks":[{"data":{},"text":"Troubleshooting AD Connect can be a bit complicated Because there are four places that you may need to check to view the errors (although the data is usually redundant)","entityRanges":[],"depth":0,"key":"4b2ct","type":"unstyled","inlineStyleRanges":[]},{"inlineStyleRanges":[],"text":"Directory Sync status in the Microsoft 365 admin center.","data":{},"depth":0,"type":"unordered-list-item","key":"9hcj3","entityRanges":[]},{"depth":0,"entityRanges":[],"key":"7b51j","text":"Sync errors in the Azure AD admin center (found under Azure Active Directory Connect health)","inlineStyleRanges":[],"type":"unordered-list-item","data":{}},{"key":"2q5rk","depth":0,"type":"unordered-list-item","text":"The synchronization service app on the AD Connect server","inlineStyleRanges":[],"data":{},"entityRanges":[]},{"text":"The application event logs on the AD Connect server","inlineStyleRanges":[],"entityRanges":[],"key":"41ns8","depth":0,"type":"unordered-list-item","data":{}},{"key":"f9c6l","type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","depth":0,"inlineStyleRanges":[],"entityRanges":[{"key":0,"length":69,"offset":0}],"data":{}},{"inlineStyleRanges":[],"text":"https://support.pingidentity.com/s/article/PingOne-How-to-troubleshoot-an-AD-Connect-Instance","entityRanges":[{"key":1,"offset":0,"length":93}],"key":"352q2","depth":0,"data":{},"type":"unstyled"}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P"},"type":"LINK"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://support.pingidentity.com/s/article/PingOne-How-to-troubleshoot-an-AD-Connect-Instance","targetOption":"_blank"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {id: 'kNEGzjhMv', question: {entityMap: {}, blocks: [{type: 'unstyled', depth: 0, text: 'Your organization has an on-premises Active Directory domain named gitbit.org', inlineStyleRanges: [], data: {}, entityRanges: [], key: 'amujj'}, {text: 'Your organization has installed Azure AD Connect on a server to sync your on-premises AD to Microsoft 365.', entityRanges: [], data: {}, key: '7lpjg', inlineStyleRanges: [], depth: 0, type: 'unstyled'}, {entityRanges: [], type: 'unstyled', depth: 0, inlineStyleRanges: [], text: 'There\'s an error in the sync. You\'ve been tasked with finding and resolving the error. You need to view Azure AD Connect events.', key: 'ehi8s', data: {}}, {key: 'a5bre', inlineStyleRanges: [], depth: 0, type: 'unstyled', entityRanges: [], text: 'What event logs do you use?', data: {}}]}, answers: [{isCorrectAnswer: true, value: 'Application'}, {isCorrectAnswer: false, value: 'System'}, {isCorrectAnswer: false, value: 'Security'}, {value: 'Application and Services Logs/Microsoft/Windows/Security-Adminless', isCorrectAnswer: false}], references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://support.pingidentity.com/s/article/PingOne-How-to-troubleshoot-an-AD-Connect-Instance', targetOption: '_blank'}}}, blocks: [{data: {}, text: 'Troubleshooting AD Connect can be a bit complicated Because there are four places that you may need to check to view the errors (although the data is usually redundant)', entityRanges: [], depth: 0, inlineStyleRanges: [], key: '4b2ct', type: 'unstyled'}, {type: 'unordered-list-item', text: 'Directory Sync status in the Microsoft 365 admin center.', key: '9hcj3', depth: 0, data: {}, inlineStyleRanges: [], entityRanges: []}, {inlineStyleRanges: [], depth: 0, entityRanges: [], type: 'unordered-list-item', key: '7b51j', text: 'Sync errors in the Azure AD admin center (found under Azure Active Directory Connect health)', data: {}}, {data: {}, type: 'unordered-list-item', text: 'The synchronization service app on the AD Connect server', inlineStyleRanges: [], depth: 0, entityRanges: [], key: '2q5rk'}, {text: 'The application event logs on the AD Connect server', entityRanges: [], inlineStyleRanges: [], depth: 0, key: '41ns8', type: 'unordered-list-item', data: {}}, {inlineStyleRanges: [], key: 'f9c6l', text: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', depth: 0, data: {}, type: 'unstyled', entityRanges: [{offset: 0, key: 0, length: 69}]}, {text: 'https://support.pingidentity.com/s/article/PingOne-How-to-troubleshoot-an-AD-Connect-Instance', entityRanges: [{offset: 0, key: 1, length: 93}], key: '352q2', depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -71,21 +71,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -93,8 +93,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -102,15 +102,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -124,16 +123,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -184,12 +183,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

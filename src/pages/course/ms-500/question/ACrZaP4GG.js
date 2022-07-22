@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"key":"722d9","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"text":"You need to ensure that all users must change their passwords every 100 days."},{"key":"c0511","data":{},"inlineStyleRanges":[{"length":48,"style":"color-rgb(33,37,41)","offset":0},{"offset":0,"length":48,"style":"bgcolor-rgb(255,255,255)"},{"offset":0,"length":48,"style":"fontsize-16"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":48,"offset":0}],"text":"What steps should you take to complete the task?","type":"unstyled","entityRanges":[],"depth":0}]},"id":"ACrZaP4GG","references":{"blocks":[{"data":{},"key":"4c9n6","inlineStyleRanges":[],"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH","type":"unstyled","entityRanges":[{"length":90,"offset":0,"key":0}]},{"key":"a7c8c","depth":0,"text":"https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day","inlineStyleRanges":[],"entityRanges":[{"length":108,"offset":0,"key":1}],"data":{},"type":"unstyled"},{"data":{},"inlineStyleRanges":[],"type":"ordered-list-item","text":"Sign in to the Microsoft 365 Admin Center.","depth":0,"entityRanges":[],"key":"aacr"},{"inlineStyleRanges":[],"data":{},"entityRanges":[],"text":"In the left navigation pane, expand Show All > Settings > Org Settings.","depth":0,"type":"ordered-list-item","key":"64psl"},{"depth":0,"entityRanges":[],"text":"Click on Security and Privacy.","key":"ch3mn","type":"ordered-list-item","data":{},"inlineStyleRanges":[]},{"data":{},"inlineStyleRanges":[],"text":"Select the Password Expiration Policy.","depth":0,"type":"ordered-list-item","entityRanges":[],"key":"d1j1g"},{"depth":0,"type":"ordered-list-item","data":{},"inlineStyleRanges":[],"key":"428jq","entityRanges":[],"text":"Ensure that the checkbox labeled Set user passwords to expire after a number of days is ticked."},{"depth":0,"text":"Enter 100 in the Days before passwords expire field.","inlineStyleRanges":[],"type":"ordered-list-item","entityRanges":[],"key":"2loqj","data":{}},{"text":"Click Save changes to save the changes.","type":"ordered-list-item","data":{},"key":"b5gtt","inlineStyleRanges":[],"entityRanges":[],"depth":0}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day"},"type":"LINK"}}},"answers":[{"value":"From the Microsoft 365 Admin Center go to users > Select the user > Set the password expiration policy","isCorrectAnswer":false},{"value":"From the Azure Active Directory Admin Center > Enterprise Admin > Password settings > Device Settings","isCorrectAnswer":false},{"value":"From the Microsoft 365 Admin Center go to Settings > Org Settings > Security and Privacy > Password Expiration policy","isCorrectAnswer":true}]},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: false, value: 'From the Microsoft 365 Admin Center go to users > Select the user > Set the password expiration policy'}, {value: 'From the Azure Active Directory Admin Center > Enterprise Admin > Password settings > Device Settings', isCorrectAnswer: false}, {value: 'From the Microsoft 365 Admin Center go to Settings > Org Settings > Security and Privacy > Password Expiration policy', isCorrectAnswer: true}], id: 'ACrZaP4GG', question: {blocks: [{entityRanges: [], depth: 0, text: 'You need to ensure that all users must change their passwords every 100 days.', inlineStyleRanges: [], key: '722d9', data: {}, type: 'unstyled'}, {type: 'unstyled', data: {}, text: 'What steps should you take to complete the task?', entityRanges: [], inlineStyleRanges: [{length: 48, offset: 0, style: 'color-rgb(33,37,41)'}, {length: 48, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {style: 'fontsize-16', length: 48, offset: 0}, {length: 48, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0}], key: 'c0511', depth: 0}], entityMap: {}}, references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH', targetOption: '_blank'}, type: 'LINK'}, 1: {data: {url: 'https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}}, blocks: [{data: {}, type: 'unstyled', key: '4c9n6', depth: 0, entityRanges: [{key: 0, offset: 0, length: 90}], text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Passwords-in-Microsoft-365-i9pJIjTNH', inlineStyleRanges: []}, {depth: 0, inlineStyleRanges: [], text: 'https://www.iorad.com/player/1796164/MS-500---Ensure-that-all-users-must-change-their-password-every-100-day', data: {}, type: 'unstyled', entityRanges: [{length: 108, offset: 0, key: 1}], key: 'a7c8c'}, {entityRanges: [], depth: 0, data: {}, key: 'aacr', type: 'ordered-list-item', text: 'Sign in to the Microsoft 365 Admin Center.', inlineStyleRanges: []}, {text: 'In the left navigation pane, expand Show All > Settings > Org Settings.', depth: 0, type: 'ordered-list-item', inlineStyleRanges: [], data: {}, entityRanges: [], key: '64psl'}, {inlineStyleRanges: [], entityRanges: [], key: 'ch3mn', depth: 0, data: {}, text: 'Click on Security and Privacy.', type: 'ordered-list-item'}, {type: 'ordered-list-item', key: 'd1j1g', data: {}, inlineStyleRanges: [], text: 'Select the Password Expiration Policy.', entityRanges: [], depth: 0}, {key: '428jq', type: 'ordered-list-item', entityRanges: [], text: 'Ensure that the checkbox labeled Set user passwords to expire after a number of days is ticked.', depth: 0, data: {}, inlineStyleRanges: []}, {depth: 0, text: 'Enter 100 in the Days before passwords expire field.', type: 'ordered-list-item', inlineStyleRanges: [], entityRanges: [], data: {}, key: '2loqj'}, {entityRanges: [], inlineStyleRanges: [], depth: 0, text: 'Click Save changes to save the changes.', type: 'ordered-list-item', data: {}, key: 'b5gtt'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -71,21 +71,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -93,8 +93,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -102,15 +102,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -124,16 +123,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -184,12 +183,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

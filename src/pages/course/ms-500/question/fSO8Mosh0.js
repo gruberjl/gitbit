@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Open Exchange Online admin center. navigate to Threat management, choose Policy > Safe Links. Edit the default policy. In the block the following URLs section, add the malware.contoso.com link.","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Open Azure AD admin center. navigate to Threat management, choose Policy > Safe Links. Edit the default policy. In the block the following URLs section, add the malware.contoso.com link."},{"isCorrectAnswer":false,"value":"Open Endpoint admin center. navigate to Threat management, choose Policy > Safe Links. Edit the default policy. In the block the following URLs section, add the malware.contoso.com link."},{"value":"Open the Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs","isCorrectAnswer":true}],"question":{"blocks":[{"entityRanges":[],"inlineStyleRanges":[],"text":"Your manager has asked you to block any access to the site malware.gitbit.org. He wants to ensure you block the site from being opened from within an email or any Microsoft Office application.","data":{},"type":"unstyled","key":"b8ar9","depth":0},{"key":"9f4c1","data":{},"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","offset":0,"length":32},{"style":"bgcolor-rgb(255,255,255)","length":32,"offset":0},{"length":32,"style":"fontsize-16","offset":0},{"offset":0,"length":32,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}],"text":"How can you fulfill his request?","type":"unstyled","depth":0,"entityRanges":[]}],"entityMap":{}},"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","targetOption":"_blank"}},"1":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-atp-safe-links-policies?view=o365-worldwide"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"key":"9cim8","type":"unstyled","depth":0,"entityRanges":[],"data":{},"text":"1. Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs > Block. Add the URL to the \"Add URLs with wildcards\" section. Set the Remove block entry after the number of days to block the URL. Click Add.","inlineStyleRanges":[]},{"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","type":"unstyled","entityRanges":[{"key":0,"length":105,"offset":0}],"depth":0,"key":"1cu7d","data":{}},{"type":"unstyled","depth":0,"data":{},"entityRanges":[{"key":1,"offset":0,"length":126}],"text":"https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-atp-safe-links-policies?view=o365-worldwide","key":"a6dqh","inlineStyleRanges":[]}]},"id":"fSO8Mosh0"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'Open Exchange Online admin center. navigate to Threat management, choose Policy > Safe Links. Edit the default policy. In the block the following URLs section, add the malware.contoso.com link.', isCorrectAnswer: false}, {value: 'Open Azure AD admin center. navigate to Threat management, choose Policy > Safe Links. Edit the default policy. In the block the following URLs section, add the malware.contoso.com link.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Open Endpoint admin center. navigate to Threat management, choose Policy > Safe Links. Edit the default policy. In the block the following URLs section, add the malware.contoso.com link.'}, {value: 'Open the Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs', isCorrectAnswer: true}], question: {entityMap: {}, blocks: [{entityRanges: [], data: {}, text: 'Your manager has asked you to block any access to the site malware.gitbit.org. He wants to ensure you block the site from being opened from within an email or any Microsoft Office application.', type: 'unstyled', depth: 0, inlineStyleRanges: [], key: 'b8ar9'}, {key: '9f4c1', text: 'How can you fulfill his request?', inlineStyleRanges: [{offset: 0, style: 'color-rgb(33,37,41)', length: 32}, {offset: 0, style: 'bgcolor-rgb(255,255,255)', length: 32}, {offset: 0, length: 32, style: 'fontsize-16'}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0, length: 32}], type: 'unstyled', entityRanges: [], data: {}, depth: 0}]}, id: 'fSO8Mosh0', references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-atp-safe-links-policies?view=o365-worldwide', targetOption: '_blank'}}}, blocks: [{entityRanges: [], data: {}, depth: 0, type: 'unstyled', key: '9cim8', inlineStyleRanges: [], text: '1. Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs > Block. Add the URL to the "Add URLs with wildcards" section. Set the Remove block entry after the number of days to block the URL. Click Add.'}, {type: 'unstyled', inlineStyleRanges: [], entityRanges: [{key: 0, length: 105, offset: 0}], data: {}, depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', key: '1cu7d'}, {text: 'https://docs.microsoft.com/en-us/microsoft-365/security/office-365-security/set-up-atp-safe-links-policies?view=o365-worldwide', data: {}, type: 'unstyled', entityRanges: [{length: 126, key: 1, offset: 0}], depth: 0, inlineStyleRanges: [], key: 'a6dqh'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

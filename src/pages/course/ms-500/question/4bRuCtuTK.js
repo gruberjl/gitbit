@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"data":{},"depth":0,"type":"unstyled","key":"55r32","inlineStyleRanges":[],"text":"You have a Microsoft 365 subscription that contains a user named User1.","entityRanges":[]},{"entityRanges":[],"depth":0,"text":"You plan to use Compliance Manager.","key":"cdcn4","type":"unstyled","data":{},"inlineStyleRanges":[]},{"type":"unstyled","key":"7dnsm","data":{},"depth":0,"text":"You need to ensure that User1 can assign Compliance Manager roles to users. The solution must use the principle of least privilege.","entityRanges":[],"inlineStyleRanges":[]},{"inlineStyleRanges":[],"text":"Which role should you assign to User1?","key":"6ercr","depth":0,"entityRanges":[],"data":{},"type":"unstyled"}],"entityMap":{}},"references":{"blocks":[{"key":"52v6e","data":{},"type":"unstyled","depth":0,"text":"Compliance Manager Assessor can Create assessments, implement improvement actions, and update test status for improvement actions but they can't assign roles.","inlineStyleRanges":[],"entityRanges":[]},{"inlineStyleRanges":[],"type":"unstyled","depth":0,"key":"7d54g","data":{},"text":"Portal admin isn't a role in Microsoft 365 or the compliance admin center.","entityRanges":[]},{"key":"co4ct","entityRanges":[],"text":"Compliance Manager administrators can manage template creation and modification but cannot assign roles.","inlineStyleRanges":[],"depth":0,"type":"unstyled","data":{}},{"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"depth":0,"data":{},"key":"7iklp","text":"Global admin is the only role listed that can assign compliance manager roles."},{"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU ","type":"unstyled","depth":0,"key":"5d67o","entityRanges":[{"length":95,"key":0,"offset":0}],"data":{}},{"depth":0,"type":"unstyled","text":"https://docs.microsoft.com/en-us/microsoft-365/compliance/working-with-compliance-manager?view=o365-worldwide ","key":"dq98i","entityRanges":[{"length":109,"key":1,"offset":0}],"inlineStyleRanges":[],"data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/microsoft-365/compliance/working-with-compliance-manager?view=o365-worldwide"},"mutability":"MUTABLE"}}},"answers":[{"isCorrectAnswer":false,"value":"Compliance Manager Assessor"},{"value":"Global Administrator","isCorrectAnswer":true},{"value":"Portal Admin","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Compliance Manager Administrator"}],"id":"4bRuCtuTK"},
+      test: {questions: [{answers: []}]},
+      question: {id: '4bRuCtuTK', question: {entityMap: {}, blocks: [{depth: 0, text: 'You have a Microsoft 365 subscription that contains a user named User1.', inlineStyleRanges: [], data: {}, key: '55r32', type: 'unstyled', entityRanges: []}, {inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'You plan to use Compliance Manager.', entityRanges: [], depth: 0, key: 'cdcn4'}, {type: 'unstyled', text: 'You need to ensure that User1 can assign Compliance Manager roles to users. The solution must use the principle of least privilege.', key: '7dnsm', entityRanges: [], data: {}, depth: 0, inlineStyleRanges: []}, {text: 'Which role should you assign to User1?', entityRanges: [], depth: 0, key: '6ercr', inlineStyleRanges: [], type: 'unstyled', data: {}}]}, references: {entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU'}}, 1: {mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/working-with-compliance-manager?view=o365-worldwide', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{entityRanges: [], inlineStyleRanges: [], type: 'unstyled', data: {}, key: '52v6e', text: 'Compliance Manager Assessor can Create assessments, implement improvement actions, and update test status for improvement actions but they can\'t assign roles.', depth: 0}, {entityRanges: [], type: 'unstyled', depth: 0, inlineStyleRanges: [], key: '7d54g', data: {}, text: 'Portal admin isn\'t a role in Microsoft 365 or the compliance admin center.'}, {key: 'co4ct', entityRanges: [], depth: 0, data: {}, text: 'Compliance Manager administrators can manage template creation and modification but cannot assign roles.', type: 'unstyled', inlineStyleRanges: []}, {entityRanges: [], data: {}, inlineStyleRanges: [], depth: 0, key: '7iklp', type: 'unstyled', text: 'Global admin is the only role listed that can assign compliance manager roles.'}, {type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU ', key: '5d67o', data: {}, inlineStyleRanges: [], depth: 0, entityRanges: [{key: 0, length: 95, offset: 0}]}, {key: 'dq98i', inlineStyleRanges: [], data: {}, entityRanges: [{length: 109, key: 1, offset: 0}], text: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/working-with-compliance-manager?view=o365-worldwide ', type: 'unstyled', depth: 0}]}, answers: [{isCorrectAnswer: false, value: 'Compliance Manager Assessor'}, {isCorrectAnswer: true, value: 'Global Administrator'}, {value: 'Portal Admin', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Compliance Manager Administrator'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"key":"5mu1d","text":"The MFA Status Enabled means the user must set up MFA during the next login.","inlineStyleRanges":[],"type":"unstyled","depth":0,"data":{},"entityRanges":[]},{"text":"Since \"Allow users to create app passwords to sign in to non-browser apps\" is checked that means a user can use the app password to log in when MFA is not an available option.","type":"unstyled","inlineStyleRanges":[],"depth":0,"key":"d3ojg","entityRanges":[],"data":{}},{"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk","entityRanges":[{"length":128,"offset":0,"key":0}],"data":{},"inlineStyleRanges":[],"key":"9clot","type":"unstyled"},{"inlineStyleRanges":[],"type":"unstyled","text":"https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates","entityRanges":[{"key":1,"length":91,"offset":0}],"data":{},"depth":0,"key":"dnvn8"}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk","targetOption":"_blank"}},"1":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates","targetOption":"_blank"},"mutability":"MUTABLE"}}},"id":"-T7jiUFfR","question":{"entityMap":{"0":{"mutability":"MUTABLE","type":"IMAGE","data":{"width":"auto","height":"auto","alignment":"left","alt":"Multi-Factor Authentication","src":"https://i.ibb.co/pQps3R2/MFA.png"}},"1":{"data":{"height":"auto","width":"auto","src":"https://i.ibb.co/bmTyW56/user-chart.png","alignment":"left","alt":"User chart showing 3 users"},"mutability":"MUTABLE","type":"IMAGE"}},"blocks":[{"inlineStyleRanges":[],"data":{},"type":"unstyled","key":"2h8s2","text":"Your organization has a Microsoft 365 tenant with the domain name gitbit.org.","depth":0,"entityRanges":[]},{"text":"The MFA configuration is shown below.","key":"2t9f1","entityRanges":[],"inlineStyleRanges":[],"depth":0,"data":{},"type":"unstyled"},{"data":{},"type":"atomic","text":" ","inlineStyleRanges":[],"entityRanges":[{"length":1,"key":0,"offset":0}],"depth":0,"key":"2317e"},{"key":"ccd7r","depth":0,"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"data":{},"text":"Your Microsoft 365 tenant has the following users."},{"inlineStyleRanges":[],"type":"atomic","depth":0,"text":" ","data":{},"entityRanges":[{"offset":0,"key":1,"length":1}],"key":"lvbg"},{"entityRanges":[],"type":"unstyled","inlineStyleRanges":[],"data":{},"key":"4b9b1","depth":0,"text":"What will happen when User1 and User2 log in?"}]},"answers":[{"value":"User1 can sign in without MFA","isCorrectAnswer":false},{"value":"User1 has completed the MFA registration","isCorrectAnswer":false},{"value":"User1 will be prompted to complete the MFA registration at the next sign-in","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"User2 can sign in without MFA"},{"value":"User2 will be required to use app passwords for any apps that don't support MFA","isCorrectAnswer":true},{"value":"User2 will be required to use their app password to sign into Microsoft 365 apps","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{inlineStyleRanges: [], text: 'The MFA Status Enabled means the user must set up MFA during the next login.', data: {}, type: 'unstyled', key: '5mu1d', depth: 0, entityRanges: []}, {text: 'Since "Allow users to create app passwords to sign in to non-browser apps" is checked that means a user can use the app password to log in when MFA is not an available option.', key: 'd3ojg', type: 'unstyled', entityRanges: [], depth: 0, data: {}, inlineStyleRanges: []}, {data: {}, entityRanges: [{key: 0, offset: 0, length: 128}], inlineStyleRanges: [], key: '9clot', depth: 0, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk'}, {data: {}, inlineStyleRanges: [], key: 'dnvn8', entityRanges: [{key: 1, length: 91, offset: 0}], depth: 0, type: 'unstyled', text: 'https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates'}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/active-directory/authentication/howto-mfa-userstates'}, mutability: 'MUTABLE'}}}, answers: [{isCorrectAnswer: false, value: 'User1 can sign in without MFA'}, {value: 'User1 has completed the MFA registration', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'User1 will be prompted to complete the MFA registration at the next sign-in'}, {isCorrectAnswer: false, value: 'User2 can sign in without MFA'}, {isCorrectAnswer: true, value: 'User2 will be required to use app passwords for any apps that don\'t support MFA'}, {value: 'User2 will be required to use their app password to sign into Microsoft 365 apps', isCorrectAnswer: false}], question: {blocks: [{text: 'Your organization has a Microsoft 365 tenant with the domain name gitbit.org.', key: '2h8s2', depth: 0, inlineStyleRanges: [], entityRanges: [], data: {}, type: 'unstyled'}, {entityRanges: [], inlineStyleRanges: [], type: 'unstyled', key: '2t9f1', data: {}, depth: 0, text: 'The MFA configuration is shown below.'}, {entityRanges: [{offset: 0, key: 0, length: 1}], depth: 0, inlineStyleRanges: [], type: 'atomic', key: '2317e', data: {}, text: ' '}, {text: 'Your Microsoft 365 tenant has the following users.', entityRanges: [], data: {}, key: 'ccd7r', depth: 0, inlineStyleRanges: [], type: 'unstyled'}, {inlineStyleRanges: [], text: ' ', depth: 0, entityRanges: [{key: 1, length: 1, offset: 0}], key: 'lvbg', type: 'atomic', data: {}}, {key: '4b9b1', inlineStyleRanges: [], text: 'What will happen when User1 and User2 log in?', data: {}, type: 'unstyled', depth: 0, entityRanges: []}], entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {src: 'https://i.ibb.co/pQps3R2/MFA.png', alignment: 'left', height: 'auto', width: 'auto', alt: 'Multi-Factor Authentication'}}, 1: {type: 'IMAGE', data: {alt: 'User chart showing 3 users', width: 'auto', height: 'auto', alignment: 'left', src: 'https://i.ibb.co/bmTyW56/user-chart.png'}, mutability: 'MUTABLE'}}}, id: '-T7jiUFfR'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

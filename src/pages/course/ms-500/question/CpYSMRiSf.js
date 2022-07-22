@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"CpYSMRiSf","answers":[{"value":"File1.docx","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"ImportantFile2.docx"},{"isCorrectAnswer":true,"value":"File_Important3.docx"}],"question":{"blocks":[{"entityRanges":[],"key":"alja5","data":{},"depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"One of your Microsoft 365 users stores the following files in Microsoft OneDrive."},{"data":{},"entityRanges":[],"type":"unordered-list-item","key":"47kp0","inlineStyleRanges":[],"depth":0,"text":"File1.docx"},{"depth":0,"data":{},"type":"unordered-list-item","entityRanges":[],"inlineStyleRanges":[],"key":"8ejcs","text":"ImportantFile2.docx"},{"entityRanges":[],"data":{},"key":"3fb8u","inlineStyleRanges":[],"type":"unordered-list-item","depth":0,"text":"File_Important3.docx"},{"entityRanges":[],"depth":0,"key":"fjqmq","data":{},"text":"Your Microsoft 365 tenant has a Microsoft Cloud App Security file policy that has the filter shown below.","type":"unstyled","inlineStyleRanges":[]},{"depth":0,"data":{},"key":"4qgqa","inlineStyleRanges":[],"text":" ","entityRanges":[{"key":0,"length":1,"offset":0}],"type":"atomic"},{"type":"unstyled","depth":0,"data":{},"entityRanges":[],"text":"Your manager asks you which files with the above policy apply. Check the box next to each file the policy will apply.","key":"c6ujm","inlineStyleRanges":[{"style":"color-rgb(80,80,80)","offset":0,"length":117},{"length":117,"style":"bgcolor-rgb(255,255,255)","offset":0},{"offset":0,"length":117,"style":"fontsize-16"},{"offset":0,"style":"fontfamily-Roboto Condensed\", sans-serif","length":117}]}],"entityMap":{"0":{"data":{"src":"https://i.ibb.co/r2286TH/File-Filter.png","width":"auto","height":"auto","alignment":"left","alt":"Cloud App Security File Filter"},"mutability":"MUTABLE","type":"IMAGE"}}},"references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP"},"mutability":"MUTABLE","type":"LINK"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/cloud-app-security/file-filters","targetOption":"_blank"}}},"blocks":[{"key":"f1nc0","data":{},"type":"unstyled","text":"A filter of \"File name contains File\" will match every file that has the word \"file\" in the name so all three files will match.","entityRanges":[],"depth":0,"inlineStyleRanges":[]},{"type":"unstyled","data":{},"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP","key":"fod9p","inlineStyleRanges":[],"entityRanges":[{"offset":0,"key":0,"length":107}]},{"text":"https://docs.microsoft.com/en-us/cloud-app-security/file-filters","type":"unstyled","key":"9gn3b","depth":0,"data":{},"inlineStyleRanges":[],"entityRanges":[{"length":64,"offset":0,"key":1}]}]}},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{text: 'One of your Microsoft 365 users stores the following files in Microsoft OneDrive.', key: 'alja5', entityRanges: [], depth: 0, inlineStyleRanges: [], type: 'unstyled', data: {}}, {inlineStyleRanges: [], text: 'File1.docx', type: 'unordered-list-item', entityRanges: [], data: {}, key: '47kp0', depth: 0}, {inlineStyleRanges: [], entityRanges: [], type: 'unordered-list-item', text: 'ImportantFile2.docx', data: {}, key: '8ejcs', depth: 0}, {depth: 0, inlineStyleRanges: [], data: {}, text: 'File_Important3.docx', type: 'unordered-list-item', entityRanges: [], key: '3fb8u'}, {inlineStyleRanges: [], key: 'fjqmq', entityRanges: [], text: 'Your Microsoft 365 tenant has a Microsoft Cloud App Security file policy that has the filter shown below.', type: 'unstyled', depth: 0, data: {}}, {type: 'atomic', data: {}, inlineStyleRanges: [], text: ' ', key: '4qgqa', entityRanges: [{length: 1, offset: 0, key: 0}], depth: 0}, {entityRanges: [], inlineStyleRanges: [{length: 117, offset: 0, style: 'color-rgb(80,80,80)'}, {style: 'bgcolor-rgb(255,255,255)', length: 117, offset: 0}, {style: 'fontsize-16', length: 117, offset: 0}, {style: 'fontfamily-Roboto Condensed", sans-serif', length: 117, offset: 0}], text: 'Your manager asks you which files with the above policy apply. Check the box next to each file the policy will apply.', type: 'unstyled', data: {}, key: 'c6ujm', depth: 0}], entityMap: {0: {mutability: 'MUTABLE', data: {height: 'auto', alignment: 'left', src: 'https://i.ibb.co/r2286TH/File-Filter.png', alt: 'Cloud App Security File Filter', width: 'auto'}, type: 'IMAGE'}}}, answers: [{isCorrectAnswer: true, value: 'File1.docx'}, {value: 'ImportantFile2.docx', isCorrectAnswer: true}, {value: 'File_Important3.docx', isCorrectAnswer: true}], references: {entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP'}}, 1: {mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/cloud-app-security/file-filters', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{data: {}, type: 'unstyled', entityRanges: [], inlineStyleRanges: [], text: 'A filter of "File name contains File" will match every file that has the word "file" in the name so all three files will match.', depth: 0, key: 'f1nc0'}, {data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Implement-and-manage-Microsoft-Defender-for-Cloud-Apps-7MQ3wE4wP', type: 'unstyled', depth: 0, entityRanges: [{length: 107, key: 0, offset: 0}], key: 'fod9p', inlineStyleRanges: []}, {key: '9gn3b', data: {}, entityRanges: [{key: 1, offset: 0, length: 64}], type: 'unstyled', depth: 0, text: 'https://docs.microsoft.com/en-us/cloud-app-security/file-filters', inlineStyleRanges: []}]}, id: 'CpYSMRiSf'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

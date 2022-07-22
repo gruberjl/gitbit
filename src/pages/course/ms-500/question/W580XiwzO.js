@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Admins need to be informed when the Security administrator role is activated: Alerts","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Admins need to be informed when the Security administrator role is activated: Roles"},{"isCorrectAnswer":false,"value":"Admins need to be informed when the Security administrator role is activated: Access reviews"},{"isCorrectAnswer":false,"value":"Users assigned the Security Administrator role need to be automatically removed if they don't log in for 30 days: Alerts"},{"value":"Users assigned the Security Administrator role need to be automatically removed if they don't log in for 30 days: Roles","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Users assigned the Security Administrator role need to be automatically removed if they don't log in for 30 days: Access reviews"}],"id":"W580XiwzO","question":{"blocks":[{"inlineStyleRanges":[],"entityRanges":[],"depth":0,"key":"dpurb","data":{},"text":"Your organization has a Microsoft 365 tenant.","type":"unstyled"},{"key":"f4ag1","data":{},"depth":0,"text":"Your manager has asked you to re-configure the Microsoft 365 tenant to meet the following security requirements:","inlineStyleRanges":[],"entityRanges":[],"type":"unstyled"},{"depth":0,"entityRanges":[],"key":"5sdi4","text":"Admins need to be informed when the Security administrator role is activated.","inlineStyleRanges":[],"type":"unordered-list-item","data":{}},{"text":"Users assigned the Security Administrator role need to be automatically removed if they don't log in for 30 days.","entityRanges":[],"depth":0,"data":{},"key":"a2d7n","inlineStyleRanges":[],"type":"unordered-list-item"},{"data":{},"key":"s219","inlineStyleRanges":[],"text":"Which Azure AD PIM setting should you re-configure to meet the security requirements.","type":"unstyled","entityRanges":[],"depth":0}],"entityMap":{}},"references":{"blocks":[{"inlineStyleRanges":[],"key":"3mim0","text":"\"Admins need to be informed when the Security administrator role is activated\" is located under the Roles section.","type":"unstyled","entityRanges":[],"data":{},"depth":0},{"data":{},"key":"2or5v","depth":0,"text":"\"Users assigned the Security Administrator role need to be automatically removed if they don't log in for 30 days\" is located in the Access reviews section.","type":"unstyled","entityRanges":[],"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":114,"offset":0},{"offset":0,"style":"bgcolor-rgb(255,255,255)","length":114},{"length":114,"offset":0,"style":"fontsize-16"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":114,"offset":0}]},{"data":{},"type":"unstyled","entityRanges":[{"length":94,"offset":0,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2","key":"57ek3","inlineStyleRanges":[],"depth":0},{"depth":0,"key":"75s50","inlineStyleRanges":[],"data":{},"type":"unstyled","entityRanges":[{"key":1,"offset":0,"length":137}],"text":"https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-configure-security-alerts?tabs=new"},{"text":"https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings?tabs=new","type":"unstyled","depth":0,"inlineStyleRanges":[],"data":{},"key":"5pn4h","entityRanges":[{"offset":0,"key":2,"length":135}]}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-configure-security-alerts?tabs=new","targetOption":"_blank"}},"2":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings?tabs=new"},"type":"LINK"}}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{depth: 0, text: '"Admins need to be informed when the Security administrator role is activated" is located under the Roles section.', data: {}, type: 'unstyled', entityRanges: [], key: '3mim0', inlineStyleRanges: []}, {text: '"Users assigned the Security Administrator role need to be automatically removed if they don\'t log in for 30 days" is located in the Access reviews section.', inlineStyleRanges: [{style: 'color-rgb(33,37,41)', offset: 0, length: 114}, {length: 114, offset: 0, style: 'bgcolor-rgb(255,255,255)'}, {style: 'fontsize-16', offset: 0, length: 114}, {offset: 0, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 114}], data: {}, type: 'unstyled', entityRanges: [], key: '2or5v', depth: 0}, {data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2', key: '57ek3', inlineStyleRanges: [], entityRanges: [{key: 0, length: 94, offset: 0}], depth: 0, type: 'unstyled'}, {key: '75s50', inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-configure-security-alerts?tabs=new', entityRanges: [{length: 137, key: 1, offset: 0}], depth: 0}, {text: 'https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings?tabs=new', key: '5pn4h', entityRanges: [{key: 2, offset: 0, length: 135}], inlineStyleRanges: [], depth: 0, data: {}, type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2', targetOption: '_blank'}, type: 'LINK'}, 1: {type: 'LINK', data: {url: 'https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-configure-security-alerts?tabs=new', targetOption: '_blank'}, mutability: 'MUTABLE'}, 2: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/bs-latn-ba/azure/active-directory/privileged-identity-management/pim-how-to-change-default-settings?tabs=new'}}}}, id: 'W580XiwzO', answers: [{value: 'Admins need to be informed when the Security administrator role is activated: Alerts', isCorrectAnswer: false}, {value: 'Admins need to be informed when the Security administrator role is activated: Roles', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Admins need to be informed when the Security administrator role is activated: Access reviews'}, {isCorrectAnswer: false, value: 'Users assigned the Security Administrator role need to be automatically removed if they don\'t log in for 30 days: Alerts'}, {isCorrectAnswer: false, value: 'Users assigned the Security Administrator role need to be automatically removed if they don\'t log in for 30 days: Roles'}, {value: 'Users assigned the Security Administrator role need to be automatically removed if they don\'t log in for 30 days: Access reviews', isCorrectAnswer: true}], question: {blocks: [{type: 'unstyled', depth: 0, inlineStyleRanges: [], data: {}, entityRanges: [], key: 'dpurb', text: 'Your organization has a Microsoft 365 tenant.'}, {data: {}, type: 'unstyled', entityRanges: [], text: 'Your manager has asked you to re-configure the Microsoft 365 tenant to meet the following security requirements:', inlineStyleRanges: [], depth: 0, key: 'f4ag1'}, {type: 'unordered-list-item', inlineStyleRanges: [], text: 'Admins need to be informed when the Security administrator role is activated.', entityRanges: [], data: {}, depth: 0, key: '5sdi4'}, {data: {}, key: 'a2d7n', depth: 0, type: 'unordered-list-item', text: 'Users assigned the Security Administrator role need to be automatically removed if they don\'t log in for 30 days.', entityRanges: [], inlineStyleRanges: []}, {data: {}, text: 'Which Azure AD PIM setting should you re-configure to meet the security requirements.', depth: 0, entityRanges: [], key: 's219', inlineStyleRanges: [], type: 'unstyled'}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

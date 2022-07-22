@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":true,"value":"If a user creates a file in Microsoft SharePoint library on January 1, 2019, and modifies the file every six months, the file will be retained"},{"value":"If a user creates a file in Microsoft SharePoint library on January 1, 2019, and modifies the file every six months, the file will be deleted on January 1, 2021","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"If a user creates a file in Microsoft SharePoint library on January 1, 2019, and modifies the file every six months, the file will be deleted on July 1, 2021"},{"value":"If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user cannot recover the file","isCorrectAnswer":false},{"value":"If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user can recover the file until January 1, 2020","isCorrectAnswer":false},{"value":"If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user can recover the file on March 1, 2020","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user can recover the file until May 1, 2020"}],"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f"}}},"blocks":[{"depth":0,"data":{},"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","key":"379s8","text":"Since \"Start the retention policy\" \"When items were last modified\" is selected and the retention period is for 2 years if a file is modified every 6 months it will be retained forever."},{"entityRanges":[],"key":"c8rrf","inlineStyleRanges":[{"offset":0,"style":"color-rgb(33,37,41)","length":200},{"length":200,"offset":0,"style":"bgcolor-rgb(255,255,255)"},{"offset":0,"style":"fontsize-16","length":200},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":200,"offset":0}],"text":"Since \"Start the retention policy\" \"When items were last modified\" is selected and the retention period is for 2 years if a file is modified March 1, 2019 the file can be recovered until March 1, 2021","data":{},"depth":0,"type":"unstyled"},{"key":"1hs6j","data":{},"inlineStyleRanges":[],"type":"unstyled","depth":0,"entityRanges":[{"offset":0,"length":114,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f"}]},"id":"oruqDlMbD","question":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"height":"auto","alignment":"left","src":"https://i.ibb.co/z5WW2Mr/retention-policy.png","width":"auto","alt":"Retention Policy"},"type":"IMAGE"}},"blocks":[{"data":{},"type":"unstyled","text":"You have a Microsoft 365 subscription.","inlineStyleRanges":[],"entityRanges":[],"depth":0,"key":"dc37t"},{"entityRanges":[],"type":"unstyled","key":"31hsb","text":"You are creating a retention policy named Retention1 as shown in the following exhibit.","inlineStyleRanges":[],"depth":0,"data":{}},{"data":{},"entityRanges":[{"key":0,"length":1,"offset":0}],"key":"e2hp3","depth":0,"inlineStyleRanges":[],"type":"atomic","text":" "},{"data":{},"text":"You apply Retention1 to SharePoint sites and OneDrive accounts.","entityRanges":[],"depth":0,"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":63,"offset":0},{"style":"bgcolor-rgb(255,255,255)","length":63,"offset":0},{"offset":0,"style":"fontsize-16","length":63},{"length":63,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":0}],"type":"unstyled","key":"3kqre"}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f', targetOption: '_blank'}, mutability: 'MUTABLE'}}, blocks: [{depth: 0, key: '379s8', entityRanges: [], text: 'Since "Start the retention policy" "When items were last modified" is selected and the retention period is for 2 years if a file is modified every 6 months it will be retained forever.', data: {}, inlineStyleRanges: [], type: 'unstyled'}, {entityRanges: [], key: 'c8rrf', data: {}, text: 'Since "Start the retention policy" "When items were last modified" is selected and the retention period is for 2 years if a file is modified March 1, 2019 the file can be recovered until March 1, 2021', inlineStyleRanges: [{offset: 0, style: 'color-rgb(33,37,41)', length: 200}, {offset: 0, style: 'bgcolor-rgb(255,255,255)', length: 200}, {style: 'fontsize-16', length: 200, offset: 0}, {offset: 0, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 200}], depth: 0, type: 'unstyled'}, {data: {}, key: '1hs6j', inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f', type: 'unstyled', entityRanges: [{length: 114, key: 0, offset: 0}], depth: 0}]}, question: {blocks: [{inlineStyleRanges: [], text: 'You have a Microsoft 365 subscription.', data: {}, depth: 0, entityRanges: [], type: 'unstyled', key: 'dc37t'}, {text: 'You are creating a retention policy named Retention1 as shown in the following exhibit.', entityRanges: [], type: 'unstyled', inlineStyleRanges: [], data: {}, depth: 0, key: '31hsb'}, {type: 'atomic', entityRanges: [{length: 1, key: 0, offset: 0}], data: {}, depth: 0, key: 'e2hp3', text: ' ', inlineStyleRanges: []}, {data: {}, type: 'unstyled', depth: 0, entityRanges: [], inlineStyleRanges: [{length: 63, offset: 0, style: 'color-rgb(33,37,41)'}, {style: 'bgcolor-rgb(255,255,255)', length: 63, offset: 0}, {style: 'fontsize-16', length: 63, offset: 0}, {length: 63, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0}], text: 'You apply Retention1 to SharePoint sites and OneDrive accounts.', key: '3kqre'}], entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {src: 'https://i.ibb.co/z5WW2Mr/retention-policy.png', width: 'auto', alt: 'Retention Policy', height: 'auto', alignment: 'left'}}}}, id: 'oruqDlMbD', answers: [{isCorrectAnswer: true, value: 'If a user creates a file in Microsoft SharePoint library on January 1, 2019, and modifies the file every six months, the file will be retained'}, {isCorrectAnswer: false, value: 'If a user creates a file in Microsoft SharePoint library on January 1, 2019, and modifies the file every six months, the file will be deleted on January 1, 2021'}, {isCorrectAnswer: false, value: 'If a user creates a file in Microsoft SharePoint library on January 1, 2019, and modifies the file every six months, the file will be deleted on July 1, 2021'}, {value: 'If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user cannot recover the file', isCorrectAnswer: false}, {value: 'If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user can recover the file until January 1, 2020', isCorrectAnswer: false}, {value: 'If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user can recover the file on March 1, 2020', isCorrectAnswer: true}, {value: 'If a user creates a file in Microsoft OneDrive on January 1, 2019, modifies the file on March 1, 2019, and deletes the file on May 1, 2019, the user can recover the file until May 1, 2020', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

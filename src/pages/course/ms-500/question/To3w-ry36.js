@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"To3w-ry36","question":{"entityMap":{},"blocks":[{"inlineStyleRanges":[],"text":"Your organization is using a Microsoft 365 tenant. From the Microsoft 365 admin center, you create a new user named John Gruber. You were requested to assign the User Administrator role to John Gruber but before you do your boss wants to know everything the role will give John access to.","depth":0,"data":{},"entityRanges":[],"key":"7c56s","type":"unstyled"},{"text":"Which admin centers could you use to view the permissions of an administrator role?","type":"unstyled","entityRanges":[],"depth":0,"inlineStyleRanges":[],"key":"aphun","data":{}}]},"references":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"},"type":"LINK"},"1":{"type":"LINK","data":{"url":"https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators","targetOption":"_blank"},"mutability":"MUTABLE"}},"blocks":[{"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"data":{},"depth":0,"key":"7etnr","text":"The best place to view the rights of an admin role is Azure Active Directory but some of the details can also be found in the Microsoft 365 admin center"},{"entityRanges":[{"length":95,"offset":0,"key":0}],"data":{},"type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","inlineStyleRanges":[],"depth":0,"key":"2ct22"},{"type":"unstyled","key":"dk8qi","inlineStyleRanges":[],"text":"https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators > click on a role.","entityRanges":[{"offset":0,"length":101,"key":1}],"depth":0,"data":{}}]},"answers":[{"value":"Azure Active Directory admin center","isCorrectAnswer":true},{"value":"Cloud App Security admin center","isCorrectAnswer":false},{"value":"Security & Compliance admin center","isCorrectAnswer":false},{"value":"Microsoft 365 admin center","isCorrectAnswer":true}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU'}, type: 'LINK', mutability: 'MUTABLE'}, 1: {data: {targetOption: '_blank', url: 'https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators'}, type: 'LINK', mutability: 'MUTABLE'}}, blocks: [{depth: 0, type: 'unstyled', entityRanges: [], data: {}, inlineStyleRanges: [], key: '7etnr', text: 'The best place to view the rights of an admin role is Azure Active Directory but some of the details can also be found in the Microsoft 365 admin center'}, {inlineStyleRanges: [], type: 'unstyled', key: '2ct22', depth: 0, data: {}, entityRanges: [{offset: 0, length: 95, key: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU'}, {text: 'https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators > click on a role.', key: 'dk8qi', depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled', entityRanges: [{key: 1, length: 101, offset: 0}]}]}, id: 'To3w-ry36', answers: [{value: 'Azure Active Directory admin center', isCorrectAnswer: true}, {value: 'Cloud App Security admin center', isCorrectAnswer: false}, {value: 'Security & Compliance admin center', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Microsoft 365 admin center'}], question: {entityMap: {}, blocks: [{type: 'unstyled', key: '7c56s', entityRanges: [], data: {}, depth: 0, inlineStyleRanges: [], text: 'Your organization is using a Microsoft 365 tenant. From the Microsoft 365 admin center, you create a new user named John Gruber. You were requested to assign the User Administrator role to John Gruber but before you do your boss wants to know everything the role will give John access to.'}, {data: {}, entityRanges: [], depth: 0, inlineStyleRanges: [], text: 'Which admin centers could you use to view the permissions of an administrator role?', key: 'aphun', type: 'unstyled'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

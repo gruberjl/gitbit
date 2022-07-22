@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"entityRanges":[],"depth":0,"data":{},"key":"8f8r7","inlineStyleRanges":[],"type":"unstyled","text":"You have an Azure AD tenant named GitBit.org that contains the following users."},{"text":" ","depth":0,"inlineStyleRanges":[],"entityRanges":[{"key":0,"offset":0,"length":1}],"key":"ddeu2","data":{},"type":"atomic"},{"key":"ei4n7","type":"unstyled","entityRanges":[],"depth":0,"inlineStyleRanges":[],"data":{},"text":"You add configure the following group naming policies:"},{"inlineStyleRanges":[{"style":"BOLD","length":9,"offset":9}],"entityRanges":[],"key":"bo0g0","depth":0,"type":"unordered-list-item","data":{},"text":"The word internal is added to the list of blocked words."},{"depth":0,"entityRanges":[],"key":"d26uu","data":{},"inlineStyleRanges":[{"offset":8,"length":7,"style":"BOLD"}],"type":"unordered-list-item","text":"You set GitBit- as a prefix."},{"key":"6pac7","data":{},"type":"unstyled","depth":0,"entityRanges":[],"text":"Check the box next to each true statement below.","inlineStyleRanges":[]}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"width":"auto","height":"auto","src":"https://i.ibb.co/fGL2dQn/Users-and-roles2.png","alignment":"left","alt":"Users and Roles"},"type":"IMAGE"}}},"id":"mJBFDIVrJ","references":{"blocks":[{"inlineStyleRanges":[],"type":"unstyled","key":"8fq1t","text":"The following admin roles are exempt from the group naming policy:","entityRanges":[],"data":{},"depth":0},{"entityRanges":[],"key":"1ukc","depth":0,"inlineStyleRanges":[],"data":{},"type":"unordered-list-item","text":"Global admin"},{"depth":0,"data":{},"key":"8lsf2","inlineStyleRanges":[],"entityRanges":[],"type":"unordered-list-item","text":"User account admin"},{"type":"unordered-list-item","key":"co28m","text":"Partner Tier 1 Support","entityRanges":[],"depth":0,"inlineStyleRanges":[{"offset":0,"length":22,"style":"color-rgb(33,37,41)"},{"offset":0,"style":"bgcolor-rgb(255,255,255)","length":22},{"style":"fontsize-16","length":22,"offset":0},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":22,"offset":0}],"data":{"margin-left":"1.5em"}},{"text":"Partner Tier 2 Support","key":"9s2n4","entityRanges":[],"depth":0,"inlineStyleRanges":[{"length":22,"style":"color-rgb(33,37,41)","offset":0},{"offset":0,"style":"bgcolor-rgb(255,255,255)","length":22},{"offset":0,"style":"fontsize-16","length":22},{"length":22,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":0}],"data":{"margin-left":"1.5em"},"type":"unordered-list-item"},{"type":"unstyled","depth":0,"data":{},"key":"3em5e","inlineStyleRanges":[],"entityRanges":[],"text":"Therefore User1 and User2 don't need to follow the group naming policies"},{"inlineStyleRanges":[],"text":"Reference:","depth":0,"type":"unstyled","data":{},"key":"7ilk2","entityRanges":[]},{"key":"3jdj9","data":{},"type":"unstyled","depth":0,"inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV ","entityRanges":[{"offset":0,"key":0,"length":95}]},{"inlineStyleRanges":[],"text":"https://docs.microsoft.com/en-us/microsoft-365/solutions/groups-naming-policy?view=o365-worldwide","type":"unstyled","key":"65oq6","data":{},"entityRanges":[{"key":1,"length":97,"offset":0}],"depth":0}],"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV"},"type":"LINK","mutability":"MUTABLE"},"1":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/solutions/groups-naming-policy?view=o365-worldwide","targetOption":"_blank"},"mutability":"MUTABLE"}}},"answers":[{"isCorrectAnswer":true,"value":"User1 can create a distribution group named Distribution"},{"value":"User2 can create a distribution group named GitBit-Internal","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"User2 can create a security group named InternalOnly"}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{data: {}, type: 'unstyled', text: 'The following admin roles are exempt from the group naming policy:', inlineStyleRanges: [], entityRanges: [], depth: 0, key: '8fq1t'}, {key: '1ukc', entityRanges: [], depth: 0, text: 'Global admin', data: {}, inlineStyleRanges: [], type: 'unordered-list-item'}, {depth: 0, entityRanges: [], key: '8lsf2', inlineStyleRanges: [], text: 'User account admin', data: {}, type: 'unordered-list-item'}, {inlineStyleRanges: [{length: 22, offset: 0, style: 'color-rgb(33,37,41)'}, {style: 'bgcolor-rgb(255,255,255)', length: 22, offset: 0}, {style: 'fontsize-16', length: 22, offset: 0}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0, length: 22}], depth: 0, type: 'unordered-list-item', text: 'Partner Tier 1 Support', entityRanges: [], data: {'margin-left': '1.5em'}, key: 'co28m'}, {type: 'unordered-list-item', text: 'Partner Tier 2 Support', inlineStyleRanges: [{offset: 0, length: 22, style: 'color-rgb(33,37,41)'}, {style: 'bgcolor-rgb(255,255,255)', length: 22, offset: 0}, {length: 22, offset: 0, style: 'fontsize-16'}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 22, offset: 0}], data: {'margin-left': '1.5em'}, entityRanges: [], key: '9s2n4', depth: 0}, {type: 'unstyled', text: 'Therefore User1 and User2 don\'t need to follow the group naming policies', data: {}, entityRanges: [], inlineStyleRanges: [], key: '3em5e', depth: 0}, {key: '7ilk2', text: 'Reference:', type: 'unstyled', depth: 0, data: {}, entityRanges: [], inlineStyleRanges: []}, {entityRanges: [{length: 95, offset: 0, key: 0}], data: {}, key: '3jdj9', inlineStyleRanges: [], depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV ', type: 'unstyled'}, {text: 'https://docs.microsoft.com/en-us/microsoft-365/solutions/groups-naming-policy?view=o365-worldwide', inlineStyleRanges: [], data: {}, depth: 0, type: 'unstyled', entityRanges: [{key: 1, offset: 0, length: 97}], key: '65oq6'}], entityMap: {0: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/solutions/groups-naming-policy?view=o365-worldwide', targetOption: '_blank'}}}}, id: 'mJBFDIVrJ', question: {entityMap: {0: {type: 'IMAGE', data: {width: 'auto', alt: 'Users and Roles', height: 'auto', alignment: 'left', src: 'https://i.ibb.co/fGL2dQn/Users-and-roles2.png'}, mutability: 'MUTABLE'}}, blocks: [{entityRanges: [], inlineStyleRanges: [], text: 'You have an Azure AD tenant named GitBit.org that contains the following users.', type: 'unstyled', depth: 0, data: {}, key: '8f8r7'}, {data: {}, text: ' ', type: 'atomic', inlineStyleRanges: [], key: 'ddeu2', entityRanges: [{offset: 0, key: 0, length: 1}], depth: 0}, {type: 'unstyled', entityRanges: [], depth: 0, text: 'You add configure the following group naming policies:', data: {}, inlineStyleRanges: [], key: 'ei4n7'}, {inlineStyleRanges: [{offset: 9, length: 9, style: 'BOLD'}], text: 'The word internal is added to the list of blocked words.', entityRanges: [], depth: 0, type: 'unordered-list-item', key: 'bo0g0', data: {}}, {inlineStyleRanges: [{style: 'BOLD', length: 7, offset: 8}], key: 'd26uu', text: 'You set GitBit- as a prefix.', entityRanges: [], data: {}, depth: 0, type: 'unordered-list-item'}, {key: '6pac7', type: 'unstyled', entityRanges: [], depth: 0, inlineStyleRanges: [], text: 'Check the box next to each true statement below.', data: {}}]}, answers: [{value: 'User1 can create a distribution group named Distribution', isCorrectAnswer: true}, {isCorrectAnswer: true, value: 'User2 can create a distribution group named GitBit-Internal'}, {value: 'User2 can create a security group named InternalOnly', isCorrectAnswer: true}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -77,21 +77,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -99,8 +99,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -108,15 +108,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -130,16 +129,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -190,12 +189,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"From the Security and compliance admin center grant the user eDiscovery Manager role","isCorrectAnswer":true},{"value":"From the Security and compliance admin center grant the user Data Investigator role","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"From the Microsoft 365 admin center grant the user global admin permissions"}],"question":{"entityMap":{},"blocks":[{"depth":0,"key":"e6u20","inlineStyleRanges":[],"data":{},"text":"You need to ensure that a user named Joe Gruber can perform searches and place holds on mailboxes, SharePoint Online sites, and OneDrive for Business locations. The solution must use the principle of least privilege.","type":"unstyled","entityRanges":[]},{"depth":0,"entityRanges":[],"key":"vvka","type":"unstyled","text":"What steps should you take to complete the task?","inlineStyleRanges":[{"length":48,"offset":0,"style":"color-rgb(33,37,41)"},{"length":48,"style":"bgcolor-rgb(255,255,255)","offset":0},{"style":"fontsize-16","length":48,"offset":0},{"length":48,"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji"}],"data":{}}]},"references":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"},"type":"LINK"},"1":{"mutability":"MUTABLE","data":{"url":"https://www.iorad.com/player/1801786/MS-500---ensure-that-a-user-can-perform-searches-and-place-holds-on-mailboxes-","targetOption":"_blank"},"type":"LINK"}},"blocks":[{"text":"Global admins can perform what the question is asking but wouldn't use the principle of least privilege. Data investigators can perform searches on mailboxes, SharePoint Online sites, and OneDrive for Business locations but they can't place holds on mailboxes.","depth":0,"data":{},"type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"key":"1olit"},{"key":"abr","entityRanges":[{"key":0,"length":95,"offset":0}],"data":{},"depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU"},{"key":"1jdf1","depth":0,"data":{},"inlineStyleRanges":[],"text":"https://www.iorad.com/player/1801786/MS-500---ensure-that-a-user-can-perform-searches-and-place-holds-on-mailboxes- ","entityRanges":[{"offset":0,"key":1,"length":115}],"type":"unstyled"},{"inlineStyleRanges":[],"data":{},"depth":0,"text":"Open the security and compliance admin center","entityRanges":[],"key":"e2k9i","type":"ordered-list-item"},{"key":"6gepr","data":{},"depth":0,"type":"ordered-list-item","entityRanges":[],"inlineStyleRanges":[],"text":"Click Permissions"},{"data":{},"depth":0,"entityRanges":[],"key":"2fhrh","inlineStyleRanges":[],"type":"ordered-list-item","text":"Scroll down to the eDiscovery Manager role and click on it."},{"data":{},"text":"Click Edit next to the eDiscovery Manager role.","entityRanges":[],"type":"ordered-list-item","depth":0,"inlineStyleRanges":[],"key":"85enr"},{"inlineStyleRanges":[],"data":{},"depth":0,"text":"Click Choose eDiscovery Manager.","type":"ordered-list-item","key":"buq8g","entityRanges":[]},{"depth":0,"entityRanges":[],"inlineStyleRanges":[],"type":"ordered-list-item","text":"Click Add. Add Jo Gruber the role.","data":{},"key":"96amj"},{"entityRanges":[],"inlineStyleRanges":[],"key":"3s761","text":"Click Done then Save then Close.","data":{},"depth":0,"type":"ordered-list-item"}]},"id":"2n-EJrfdv"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'From the Security and compliance admin center grant the user eDiscovery Manager role', isCorrectAnswer: true}, {value: 'From the Security and compliance admin center grant the user Data Investigator role', isCorrectAnswer: false}, {value: 'From the Microsoft 365 admin center grant the user global admin permissions', isCorrectAnswer: false}], question: {blocks: [{key: 'e6u20', type: 'unstyled', inlineStyleRanges: [], data: {}, entityRanges: [], depth: 0, text: 'You need to ensure that a user named Joe Gruber can perform searches and place holds on mailboxes, SharePoint Online sites, and OneDrive for Business locations. The solution must use the principle of least privilege.'}, {text: 'What steps should you take to complete the task?', data: {}, type: 'unstyled', inlineStyleRanges: [{style: 'color-rgb(33,37,41)', offset: 0, length: 48}, {style: 'bgcolor-rgb(255,255,255)', length: 48, offset: 0}, {style: 'fontsize-16', length: 48, offset: 0}, {offset: 0, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 48}], depth: 0, entityRanges: [], key: 'vvka'}], entityMap: {}}, references: {blocks: [{key: '1olit', text: 'Global admins can perform what the question is asking but wouldn\'t use the principle of least privilege. Data investigators can perform searches on mailboxes, SharePoint Online sites, and OneDrive for Business locations but they can\'t place holds on mailboxes.', inlineStyleRanges: [], depth: 0, type: 'unstyled', data: {}, entityRanges: []}, {entityRanges: [{length: 95, offset: 0, key: 0}], inlineStyleRanges: [], key: 'abr', depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', type: 'unstyled', data: {}}, {inlineStyleRanges: [], data: {}, entityRanges: [{length: 115, key: 1, offset: 0}], key: '1jdf1', text: 'https://www.iorad.com/player/1801786/MS-500---ensure-that-a-user-can-perform-searches-and-place-holds-on-mailboxes- ', depth: 0, type: 'unstyled'}, {inlineStyleRanges: [], type: 'ordered-list-item', entityRanges: [], data: {}, key: 'e2k9i', depth: 0, text: 'Open the security and compliance admin center'}, {data: {}, key: '6gepr', entityRanges: [], text: 'Click Permissions', depth: 0, inlineStyleRanges: [], type: 'ordered-list-item'}, {inlineStyleRanges: [], key: '2fhrh', text: 'Scroll down to the eDiscovery Manager role and click on it.', data: {}, type: 'ordered-list-item', entityRanges: [], depth: 0}, {depth: 0, data: {}, text: 'Click Edit next to the eDiscovery Manager role.', type: 'ordered-list-item', key: '85enr', entityRanges: [], inlineStyleRanges: []}, {depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'Click Choose eDiscovery Manager.', key: 'buq8g', type: 'ordered-list-item', data: {}}, {key: '96amj', text: 'Click Add. Add Jo Gruber the role.', type: 'ordered-list-item', entityRanges: [], inlineStyleRanges: [], data: {}, depth: 0}, {depth: 0, inlineStyleRanges: [], key: '3s761', entityRanges: [], text: 'Click Done then Save then Close.', type: 'ordered-list-item', data: {}}], entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}, type: 'LINK'}, 1: {data: {url: 'https://www.iorad.com/player/1801786/MS-500---ensure-that-a-user-can-perform-searches-and-place-holds-on-mailboxes-', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}}}, id: '2n-EJrfdv'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -72,21 +72,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -94,8 +94,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -103,15 +103,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -125,16 +124,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -185,12 +184,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

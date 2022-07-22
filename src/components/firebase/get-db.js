@@ -1,4 +1,4 @@
-import { getFirestore } from 'firebase/firestore/lite'
+import {getFirestore} from 'firebase/firestore/lite'
 import {app} from './app'
 import {getAuth} from './auth'
 

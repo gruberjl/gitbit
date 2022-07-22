@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":true,"value":"UserA can start an antivirus scan on Device1."},{"value":"UserB can collect an investigation package from Device2.","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"UserC can isolate Device1."}],"question":{"entityMap":{"0":{"mutability":"MUTABLE","data":{"width":"auto","alt":"Role Permissions chart","src":"https://i.ibb.co/Mkq6rTY/role-permissions.png","height":"auto","alignment":"left"},"type":"IMAGE"},"1":{"data":{"src":"https://i.ibb.co/5h01sfF/machine-group-access.png","height":"auto","alt":"Machine group access","alignment":"left","width":"auto"},"mutability":"MUTABLE","type":"IMAGE"},"2":{"type":"IMAGE","mutability":"MUTABLE","data":{"alignment":"left","src":"https://i.ibb.co/5h01sfF/machine-group-access.png","height":"auto","alt":"Machine group access","width":"auto"}}},"blocks":[{"entityRanges":[],"inlineStyleRanges":[],"key":"dljoj","type":"unstyled","text":"Your organization has a Microsoft 365 tenant with the following users.","depth":0,"data":{}},{"type":"unordered-list-item","key":"fcdhd","depth":0,"entityRanges":[],"text":"UserA is a member of Group1","inlineStyleRanges":[],"data":{}},{"key":"8sgha","depth":0,"entityRanges":[],"data":{},"inlineStyleRanges":[],"type":"unordered-list-item","text":"UserB is a member of Group2"},{"type":"unordered-list-item","key":"qhd1","inlineStyleRanges":[],"depth":0,"data":{},"entityRanges":[],"text":"UserC is a member of Group3"},{"inlineStyleRanges":[],"key":"960sq","type":"unstyled","data":{},"entityRanges":[],"text":"Your organization implements Microsoft Defender for Endpoints. Microsoft Defender for Endpoints is configured with the following roles.","depth":0},{"depth":0,"entityRanges":[{"offset":0,"length":1,"key":0}],"data":{},"text":" ","key":"476d9","inlineStyleRanges":[],"type":"atomic"},{"entityRanges":[],"text":"Microsoft Defender for Endpoints contains the following machine groups.","key":"1lkcp","depth":0,"inlineStyleRanges":[],"type":"unstyled","data":{}},{"entityRanges":[{"offset":0,"key":1,"length":1}],"key":"3hlpj","inlineStyleRanges":[],"depth":0,"data":{},"text":" ","type":"atomic"},{"type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"key":"f5ss2","depth":0,"data":{},"text":"check the box next to each true statement."}]},"references":{"blocks":[{"text":"UserA has alerts investigation so AserA can run anti-virus scans.","entityRanges":[],"type":"unstyled","inlineStyleRanges":[],"data":{},"key":"9f4m1","depth":0},{"data":{},"entityRanges":[],"text":"UserB does not have the alerts investigation permission so UserB cannot collect an investigation package","key":"cpdh6","depth":0,"inlineStyleRanges":[],"type":"unstyled"},{"text":"UserC has Active remediation actions so User3 can isolate Device1","inlineStyleRanges":[],"data":{},"key":"e6oda","type":"unstyled","depth":0,"entityRanges":[]},{"type":"unstyled","data":{},"entityRanges":[{"offset":0,"length":129,"key":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T","depth":0,"key":"deele","inlineStyleRanges":[]}],"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T"},"type":"LINK","mutability":"MUTABLE"}}},"id":"g0o9Osqtw"},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{key: 'dljoj', text: 'Your organization has a Microsoft 365 tenant with the following users.', entityRanges: [], type: 'unstyled', data: {}, depth: 0, inlineStyleRanges: []}, {data: {}, key: 'fcdhd', type: 'unordered-list-item', entityRanges: [], text: 'UserA is a member of Group1', depth: 0, inlineStyleRanges: []}, {data: {}, text: 'UserB is a member of Group2', entityRanges: [], key: '8sgha', depth: 0, type: 'unordered-list-item', inlineStyleRanges: []}, {key: 'qhd1', text: 'UserC is a member of Group3', entityRanges: [], data: {}, inlineStyleRanges: [], depth: 0, type: 'unordered-list-item'}, {depth: 0, key: '960sq', inlineStyleRanges: [], entityRanges: [], data: {}, type: 'unstyled', text: 'Your organization implements Microsoft Defender for Endpoints. Microsoft Defender for Endpoints is configured with the following roles.'}, {data: {}, type: 'atomic', inlineStyleRanges: [], key: '476d9', depth: 0, entityRanges: [{key: 0, length: 1, offset: 0}], text: ' '}, {depth: 0, entityRanges: [], key: '1lkcp', type: 'unstyled', text: 'Microsoft Defender for Endpoints contains the following machine groups.', data: {}, inlineStyleRanges: []}, {depth: 0, type: 'atomic', inlineStyleRanges: [], data: {}, key: '3hlpj', text: ' ', entityRanges: [{length: 1, offset: 0, key: 1}]}, {key: 'f5ss2', entityRanges: [], inlineStyleRanges: [], type: 'unstyled', data: {}, text: 'check the box next to each true statement.', depth: 0}], entityMap: {0: {mutability: 'MUTABLE', data: {width: 'auto', alt: 'Role Permissions chart', height: 'auto', src: 'https://i.ibb.co/Mkq6rTY/role-permissions.png', alignment: 'left'}, type: 'IMAGE'}, 1: {mutability: 'MUTABLE', type: 'IMAGE', data: {alignment: 'left', alt: 'Machine group access', src: 'https://i.ibb.co/5h01sfF/machine-group-access.png', height: 'auto', width: 'auto'}}, 2: {type: 'IMAGE', mutability: 'MUTABLE', data: {height: 'auto', width: 'auto', src: 'https://i.ibb.co/5h01sfF/machine-group-access.png', alignment: 'left', alt: 'Machine group access'}}}}, id: 'g0o9Osqtw', references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}}, blocks: [{depth: 0, data: {}, text: 'UserA has alerts investigation so AserA can run anti-virus scans.', type: 'unstyled', key: '9f4m1', entityRanges: [], inlineStyleRanges: []}, {entityRanges: [], text: 'UserB does not have the alerts investigation permission so UserB cannot collect an investigation package', inlineStyleRanges: [], data: {}, depth: 0, key: 'cpdh6', type: 'unstyled'}, {key: 'e6oda', inlineStyleRanges: [], text: 'UserC has Active remediation actions so User3 can isolate Device1', entityRanges: [], type: 'unstyled', depth: 0, data: {}}, {inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T', type: 'unstyled', key: 'deele', entityRanges: [{offset: 0, length: 129, key: 0}], depth: 0, data: {}}]}, answers: [{value: 'UserA can start an antivirus scan on Device1.', isCorrectAnswer: true}, {value: 'UserB can collect an investigation package from Device2.', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'UserC can isolate Device1.'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -73,21 +73,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -95,8 +95,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -104,15 +104,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -126,16 +125,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -186,12 +185,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

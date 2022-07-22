@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"kFwtQkqEy","answers":[{"isCorrectAnswer":true,"value":"From Device2, User2 can copy data from AppA to AppC"},{"value":"From Device2, User1 can copy data from AppA to AppB","isCorrectAnswer":true},{"value":"From Device2, User1 can copy data from AppA to AppC","isCorrectAnswer":false}],"question":{"entityMap":{"0":{"mutability":"MUTABLE","type":"IMAGE","data":{"height":"auto","alignment":"left","alt":"User Group membership chart","src":"https://i.ibb.co/KxwDstM/user-group.png","width":"auto"}},"1":{"data":{"width":"auto","src":"https://i.ibb.co/c6d1kCM/device-chart.png","alt":"Device chart","alignment":"left","height":"auto"},"type":"IMAGE","mutability":"MUTABLE"}},"blocks":[{"type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"key":"1jrtu","text":"Your organization has a Microsoft 365 tenant with a default domain of gitbit.org","depth":0,"data":{}},{"inlineStyleRanges":[],"type":"unstyled","text":"Your organization's Azure AD contains the following users.","data":{},"entityRanges":[],"depth":0,"key":"2p5f2"},{"text":" ","key":"5mpad","depth":0,"type":"atomic","inlineStyleRanges":[],"entityRanges":[{"key":0,"length":1,"offset":0}],"data":{}},{"text":"Your organization's Microsoft Endpoint Manager admin center shows the following devices enrolled.","data":{},"inlineStyleRanges":[],"entityRanges":[],"depth":0,"key":"abq0p","type":"unstyled"},{"depth":0,"type":"atomic","data":{},"text":" ","entityRanges":[{"length":1,"offset":0,"key":1}],"key":"55lm4","inlineStyleRanges":[]},{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"data":{},"key":"doaun","text":"Both devices have three apps named AppA, AppB, and AppC installed.","type":"unstyled"},{"entityRanges":[],"key":"4p6gt","data":{},"inlineStyleRanges":[],"type":"unstyled","depth":0,"text":"You create an app protection policy named ProtectionPolicyA that has the following settings:"},{"key":"5betb","type":"unordered-list-item","inlineStyleRanges":[],"text":"Protected apps: AppA","depth":0,"data":{},"entityRanges":[]},{"data":{},"depth":0,"inlineStyleRanges":[],"entityRanges":[],"key":"ai8uj","text":"Exempt apps: AppB","type":"unordered-list-item"},{"type":"unordered-list-item","entityRanges":[],"data":{},"depth":0,"inlineStyleRanges":[],"key":"2mjj5","text":"Windows Information Protection mode: Block"},{"entityRanges":[],"inlineStyleRanges":[],"text":"You apply ProtectionPolicyA to Group1 and Group3. You exclude Group2 from ProtectionPolicyA.","key":"bnbu5","data":{},"depth":0,"type":"unstyled"},{"inlineStyleRanges":[],"key":"1u2nf","type":"unstyled","entityRanges":[],"depth":0,"data":{},"text":"Check the box next to each true statement"}]},"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","targetOption":"_blank"}}},"blocks":[{"inlineStyleRanges":[],"depth":0,"data":{},"key":"copgf","text":"Since User2 is a member of Group2 and Group2 is excluded from the policy User2 can copy data from AppA to AppC.","entityRanges":[],"type":"unstyled"},{"data":{},"text":"Since AppB is exempt from the policy User1 can copy data from AppA to AppB.","key":"4l7r0","inlineStyleRanges":[],"depth":0,"entityRanges":[],"type":"unstyled"},{"inlineStyleRanges":[],"text":"Since User1 is a member of Group1 and Group1 is included in the app protection policy and User1 is not a member of Group2. And since AppA is protected by the app protection policy and AppC is not exempt User1 cannot copy data from AppA to AppC.","entityRanges":[],"depth":0,"type":"unstyled","key":"dhmt3","data":{}},{"entityRanges":[{"key":0,"length":98,"offset":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","depth":0,"key":"c7d6c","type":"unstyled","inlineStyleRanges":[],"data":{}}]}},
+      test: {questions: [{answers: []}]},
+      question: {id: 'kFwtQkqEy', answers: [{isCorrectAnswer: true, value: 'From Device2, User2 can copy data from AppA to AppC'}, {value: 'From Device2, User1 can copy data from AppA to AppB', isCorrectAnswer: true}, {value: 'From Device2, User1 can copy data from AppA to AppC', isCorrectAnswer: false}], question: {blocks: [{data: {}, inlineStyleRanges: [], text: 'Your organization has a Microsoft 365 tenant with a default domain of gitbit.org', depth: 0, entityRanges: [], key: '1jrtu', type: 'unstyled'}, {data: {}, inlineStyleRanges: [], type: 'unstyled', key: '2p5f2', entityRanges: [], text: 'Your organization\'s Azure AD contains the following users.', depth: 0}, {data: {}, key: '5mpad', entityRanges: [{length: 1, offset: 0, key: 0}], inlineStyleRanges: [], type: 'atomic', text: ' ', depth: 0}, {text: 'Your organization\'s Microsoft Endpoint Manager admin center shows the following devices enrolled.', data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', key: 'abq0p', entityRanges: []}, {key: '55lm4', type: 'atomic', data: {}, depth: 0, entityRanges: [{key: 1, length: 1, offset: 0}], inlineStyleRanges: [], text: ' '}, {text: 'Both devices have three apps named AppA, AppB, and AppC installed.', data: {}, depth: 0, key: 'doaun', inlineStyleRanges: [], type: 'unstyled', entityRanges: []}, {key: '4p6gt', depth: 0, text: 'You create an app protection policy named ProtectionPolicyA that has the following settings:', entityRanges: [], data: {}, inlineStyleRanges: [], type: 'unstyled'}, {inlineStyleRanges: [], text: 'Protected apps: AppA', entityRanges: [], depth: 0, key: '5betb', type: 'unordered-list-item', data: {}}, {entityRanges: [], key: 'ai8uj', type: 'unordered-list-item', depth: 0, data: {}, inlineStyleRanges: [], text: 'Exempt apps: AppB'}, {inlineStyleRanges: [], key: '2mjj5', depth: 0, data: {}, text: 'Windows Information Protection mode: Block', type: 'unordered-list-item', entityRanges: []}, {inlineStyleRanges: [], text: 'You apply ProtectionPolicyA to Group1 and Group3. You exclude Group2 from ProtectionPolicyA.', key: 'bnbu5', type: 'unstyled', entityRanges: [], data: {}, depth: 0}, {entityRanges: [], type: 'unstyled', inlineStyleRanges: [], text: 'Check the box next to each true statement', key: '1u2nf', depth: 0, data: {}}], entityMap: {0: {type: 'IMAGE', mutability: 'MUTABLE', data: {height: 'auto', alignment: 'left', width: 'auto', src: 'https://i.ibb.co/KxwDstM/user-group.png', alt: 'User Group membership chart'}}, 1: {mutability: 'MUTABLE', type: 'IMAGE', data: {height: 'auto', width: 'auto', alt: 'Device chart', src: 'https://i.ibb.co/c6d1kCM/device-chart.png', alignment: 'left'}}}}, references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx'}, type: 'LINK'}}, blocks: [{type: 'unstyled', inlineStyleRanges: [], data: {}, entityRanges: [], key: 'copgf', depth: 0, text: 'Since User2 is a member of Group2 and Group2 is excluded from the policy User2 can copy data from AppA to AppC.'}, {type: 'unstyled', data: {}, entityRanges: [], key: '4l7r0', inlineStyleRanges: [], text: 'Since AppB is exempt from the policy User1 can copy data from AppA to AppB.', depth: 0}, {text: 'Since User1 is a member of Group1 and Group1 is included in the app protection policy and User1 is not a member of Group2. And since AppA is protected by the app protection policy and AppC is not exempt User1 cannot copy data from AppA to AppC.', entityRanges: [], key: 'dhmt3', type: 'unstyled', data: {}, depth: 0, inlineStyleRanges: []}, {inlineStyleRanges: [], entityRanges: [{key: 0, length: 98, offset: 0}], key: 'c7d6c', text: 'https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx', type: 'unstyled', data: {}, depth: 0}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -76,21 +76,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -98,8 +98,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -107,15 +107,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -129,16 +128,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -189,12 +188,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

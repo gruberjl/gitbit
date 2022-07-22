@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -25,9 +25,8 @@ class TestPage extends Component {
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -40,15 +39,14 @@ class TestPage extends Component {
         uid: user.uid
       })
 
-      getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
+      getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
         this.setState({
           test,
           nextQuestionId: test.questions[0].id
         })
       })
-    } else {
+    } else
       window.location.href = '/login'
-    }
   }
 
   render() {

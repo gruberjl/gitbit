@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"entityRanges":[],"depth":0,"data":{},"inlineStyleRanges":[],"key":"eo9e2","text":"You need to go to the Microsoft 365 compliance center > Information Protection > Create label. Configure your label then publish your label","type":"unstyled"},{"data":{},"inlineStyleRanges":[],"type":"unstyled","key":"e436e","text":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf","entityRanges":[{"length":103,"offset":0,"key":0}],"depth":0},{"depth":0,"text":"https://ior.ad/7BnF","key":"euq0m","entityRanges":[{"key":1,"offset":0,"length":19}],"type":"unstyled","data":{},"inlineStyleRanges":[]}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf","targetOption":"_blank"},"mutability":"MUTABLE"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://ior.ad/7BnF","targetOption":"_blank"}}}},"question":{"entityMap":{},"blocks":[{"key":"8645j","type":"unstyled","depth":0,"data":{},"inlineStyleRanges":[],"entityRanges":[],"text":"Your manager has asked you to create a sensitivity label. Where do you go to create the label?"}]},"id":"31s5SNJQt","answers":[{"isCorrectAnswer":false,"value":"Open Azure AD admin center > Labels > Create a label"},{"value":"Open the Microsoft 365 Compliance admin center > Create Retention Policy Label","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Open the Microsoft 365 Compliance admin center > Information Protection > Create Label"}]},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{key: '8645j', data: {}, inlineStyleRanges: [], text: 'Your manager has asked you to create a sensitivity label. Where do you go to create the label?', type: 'unstyled', entityRanges: [], depth: 0}]}, id: '31s5SNJQt', references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://ior.ad/7BnF', targetOption: '_blank'}}}, blocks: [{entityRanges: [], inlineStyleRanges: [], data: {}, text: 'You need to go to the Microsoft 365 compliance center > Information Protection > Create label. Configure your label then publish your label', type: 'unstyled', key: 'eo9e2', depth: 0}, {key: 'e436e', depth: 0, inlineStyleRanges: [], type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf', data: {}, entityRanges: [{length: 103, key: 0, offset: 0}]}, {text: 'https://ior.ad/7BnF', data: {}, entityRanges: [{offset: 0, key: 1, length: 19}], type: 'unstyled', key: 'euq0m', depth: 0, inlineStyleRanges: []}]}, answers: [{isCorrectAnswer: false, value: 'Open Azure AD admin center > Labels > Create a label'}, {value: 'Open the Microsoft 365 Compliance admin center > Create Retention Policy Label', isCorrectAnswer: false}, {value: 'Open the Microsoft 365 Compliance admin center > Information Protection > Create Label', isCorrectAnswer: true}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -62,21 +62,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -84,8 +84,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -93,15 +93,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -115,16 +114,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -175,12 +174,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"depth":0,"data":{},"key":"6i5qo","entityRanges":[],"type":"unstyled","text":"Leaked credentials detection can only work if the password hash is synced/stored in Microsoft 365.","inlineStyleRanges":[{"style":"color-rgb(23,23,23)","offset":0,"length":19},{"length":98,"style":"bgcolor-rgb(255,255,255)","offset":0},{"length":98,"style":"fontsize-16","offset":0},{"offset":0,"length":19,"style":"fontfamily-Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif"},{"length":79,"offset":19,"style":"color-rgb(33,37,41)"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":79,"offset":19}]},{"depth":0,"data":{},"inlineStyleRanges":[{"style":"color-rgb(23,23,23)","length":69,"offset":0},{"style":"bgcolor-rgb(255,255,255)","length":69,"offset":0},{"offset":0,"length":69,"style":"fontsize-16"},{"length":69,"style":"fontfamily-Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif","offset":0}],"entityRanges":[{"length":69,"key":0,"offset":0}],"key":"fmtgm","text":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","type":"unstyled"},{"inlineStyleRanges":[],"depth":0,"data":{},"key":"27bbv","text":"https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#password-hash-synchronization","entityRanges":[{"key":1,"length":139,"offset":0}],"type":"unstyled"}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"1":{"data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#password-hash-synchronization","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"}}},"question":{"blocks":[{"entityRanges":[],"type":"unstyled","data":{},"depth":0,"key":"fla6r","inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses. Your organization currently uses AD Connect to sync your user accounts from the on-premises AD to Microsoft 365. Your organization is also using Active Directory Federation Services (AD FS) to federate between the on-premises Active Directory (AD) and the Microsoft 365 tenant. Azure AD Connect has the following settings:"},{"key":"e9s9s","type":"atomic","depth":0,"entityRanges":[{"length":1,"key":0,"offset":0}],"text":" ","inlineStyleRanges":[],"data":{}},{"depth":0,"text":"Your manager has asked if you can update the configuration so leaked credentials detection can run properly.","data":{},"type":"unstyled","key":"2bd7q","entityRanges":[],"inlineStyleRanges":[]},{"entityRanges":[],"depth":0,"inlineStyleRanges":[],"type":"unstyled","text":"Solution: You modify the Source Anchor settings.","data":{},"key":"5g4g7"},{"data":{},"depth":0,"type":"unstyled","entityRanges":[],"key":"f1f2e","inlineStyleRanges":[],"text":"Does that meet the goal?"}],"entityMap":{"0":{"data":{"height":"auto","alignment":"left","alt":"AD Connect settings","width":"auto","src":"https://i.ibb.co/Y87wd88/AD-Connect-Settings.png"},"type":"IMAGE","mutability":"MUTABLE"}}},"id":"695aFlD-J","answers":[{"isCorrectAnswer":false,"value":"attribute filtering settings"},{"isCorrectAnswer":false,"value":"Source Anchor settings"},{"value":"Password Hash Synchronization settings","isCorrectAnswer":true},{"value":"Azure AD app and attribute filtering settings","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"User principal name settings"}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', targetOption: '_blank'}}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#password-hash-synchronization'}}}, blocks: [{entityRanges: [], inlineStyleRanges: [{style: 'color-rgb(23,23,23)', length: 19, offset: 0}, {length: 98, style: 'bgcolor-rgb(255,255,255)', offset: 0}, {style: 'fontsize-16', offset: 0, length: 98}, {style: 'fontfamily-Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif', length: 19, offset: 0}, {style: 'color-rgb(33,37,41)', length: 79, offset: 19}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 79, offset: 19}], key: '6i5qo', depth: 0, data: {}, text: 'Leaked credentials detection can only work if the password hash is synced/stored in Microsoft 365.', type: 'unstyled'}, {depth: 0, type: 'unstyled', data: {}, inlineStyleRanges: [{length: 69, style: 'color-rgb(23,23,23)', offset: 0}, {offset: 0, style: 'bgcolor-rgb(255,255,255)', length: 69}, {style: 'fontsize-16', offset: 0, length: 69}, {length: 69, style: 'fontfamily-Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif', offset: 0}], key: 'fmtgm', entityRanges: [{length: 69, key: 0, offset: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P'}, {text: 'https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/concept-identity-protection-risks#password-hash-synchronization', inlineStyleRanges: [], type: 'unstyled', entityRanges: [{offset: 0, length: 139, key: 1}], data: {}, depth: 0, key: '27bbv'}]}, id: '695aFlD-J', answers: [{value: 'attribute filtering settings', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Source Anchor settings'}, {value: 'Password Hash Synchronization settings', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Azure AD app and attribute filtering settings'}, {value: 'User principal name settings', isCorrectAnswer: false}], question: {entityMap: {0: {mutability: 'MUTABLE', data: {src: 'https://i.ibb.co/Y87wd88/AD-Connect-Settings.png', alt: 'AD Connect settings', alignment: 'left', height: 'auto', width: 'auto'}, type: 'IMAGE'}}, blocks: [{entityRanges: [], text: 'Your organization has a Microsoft 365 tenant with Microsoft 365 E5 licenses. Your organization currently uses AD Connect to sync your user accounts from the on-premises AD to Microsoft 365. Your organization is also using Active Directory Federation Services (AD FS) to federate between the on-premises Active Directory (AD) and the Microsoft 365 tenant. Azure AD Connect has the following settings:', type: 'unstyled', key: 'fla6r', depth: 0, data: {}, inlineStyleRanges: []}, {entityRanges: [{offset: 0, key: 0, length: 1}], key: 'e9s9s', text: ' ', depth: 0, inlineStyleRanges: [], type: 'atomic', data: {}}, {depth: 0, text: 'Your manager has asked if you can update the configuration so leaked credentials detection can run properly.', entityRanges: [], inlineStyleRanges: [], key: '2bd7q', type: 'unstyled', data: {}}, {entityRanges: [], key: '5g4g7', type: 'unstyled', text: 'Solution: You modify the Source Anchor settings.', inlineStyleRanges: [], depth: 0, data: {}}, {entityRanges: [], key: 'f1f2e', text: 'Does that meet the goal?', type: 'unstyled', data: {}, inlineStyleRanges: [], depth: 0}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

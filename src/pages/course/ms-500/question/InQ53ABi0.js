@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"data":{},"key":"5b1fh","text":"Your organization has a Microsoft 365 tenant with all computers running Windows 10 and are onboarded to Microsoft Defender for Endpoint.","type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"depth":0},{"entityRanges":[],"data":{},"text":"Your organization has a device group named DeviceGroupA.","key":"72tpa","depth":0,"inlineStyleRanges":[],"type":"unstyled"},{"type":"unstyled","depth":0,"data":{},"text":"Your manager has asked you to enable delegation for the security settings of the devices in DeviceGroupA.","entityRanges":[],"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","offset":92,"length":12},{"offset":92,"style":"bgcolor-rgb(255,255,255)","length":12},{"length":12,"style":"fontsize-16","offset":92},{"offset":92,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":12}],"key":"8lp0l"},{"data":{},"text":"What do you need to do?","key":"4v18a","depth":0,"inlineStyleRanges":[],"type":"unstyled","entityRanges":[]}],"entityMap":{}},"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T","targetOption":"_blank"}}},"blocks":[{"data":{},"type":"unstyled","text":"To delegate permissions to a set of devices in Defender for Endpoint you need to do 3 things:","inlineStyleRanges":[],"entityRanges":[],"depth":0,"key":"18lg0"},{"depth":0,"data":{},"text":"Create a device group to specify the devices that will be delegated.","key":"fkce2","inlineStyleRanges":[],"entityRanges":[],"type":"unordered-list-item"},{"type":"unordered-list-item","key":"62cah","entityRanges":[],"data":{},"depth":0,"inlineStyleRanges":[],"text":"Create a user group to specify who can manage the devices."},{"key":"31ir5","text":"Create a role to specify what the users can do.","inlineStyleRanges":[],"entityRanges":[],"type":"unordered-list-item","depth":0,"data":{}},{"data":{},"entityRanges":[{"length":129,"offset":0,"key":0}],"key":"7sh1n","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T","depth":0,"type":"unstyled"}]},"id":"InQ53ABi0","answers":[{"value":"Go to the Microsoft Azure admin center and create an Azure AD group. Go to the Microsoft Defender admin center and create a role. Then configure the permissions for DeviceGroupA.","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Go to the Microsoft Defender Security center and create a role. Go to the Microsoft Defender Security center and configure the permissions for DeviceGroupA. Go to the Microsoft Azure AD admin center and create an Azure AD group."},{"isCorrectAnswer":false,"value":"Go to the Microsoft Defender Security center and create a role. Go to the Microsoft Azure AD admin center and create an Azure AD group. Go to the Microsoft Defender admin center and configure the permissions for DeviceGroupA."}]},
+      test: {questions: [{answers: []}]},
+      question: {id: 'InQ53ABi0', question: {blocks: [{key: '5b1fh', inlineStyleRanges: [], text: 'Your organization has a Microsoft 365 tenant with all computers running Windows 10 and are onboarded to Microsoft Defender for Endpoint.', type: 'unstyled', depth: 0, entityRanges: [], data: {}}, {key: '72tpa', data: {}, inlineStyleRanges: [], entityRanges: [], text: 'Your organization has a device group named DeviceGroupA.', type: 'unstyled', depth: 0}, {data: {}, key: '8lp0l', type: 'unstyled', inlineStyleRanges: [{offset: 92, style: 'color-rgb(33,37,41)', length: 12}, {length: 12, offset: 92, style: 'bgcolor-rgb(255,255,255)'}, {style: 'fontsize-16', length: 12, offset: 92}, {length: 12, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 92}], entityRanges: [], text: 'Your manager has asked you to enable delegation for the security settings of the devices in DeviceGroupA.', depth: 0}, {inlineStyleRanges: [], entityRanges: [], data: {}, depth: 0, key: '4v18a', text: 'What do you need to do?', type: 'unstyled'}], entityMap: {}}, references: {blocks: [{text: 'To delegate permissions to a set of devices in Defender for Endpoint you need to do 3 things:', data: {}, inlineStyleRanges: [], key: '18lg0', entityRanges: [], depth: 0, type: 'unstyled'}, {entityRanges: [], depth: 0, text: 'Create a device group to specify the devices that will be delegated.', inlineStyleRanges: [], data: {}, type: 'unordered-list-item', key: 'fkce2'}, {key: '62cah', entityRanges: [], depth: 0, inlineStyleRanges: [], type: 'unordered-list-item', data: {}, text: 'Create a user group to specify who can manage the devices.'}, {inlineStyleRanges: [], key: '31ir5', depth: 0, type: 'unordered-list-item', text: 'Create a role to specify what the users can do.', entityRanges: [], data: {}}, {entityRanges: [{length: 129, key: 0, offset: 0}], key: '7sh1n', text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T', data: {}, type: 'unstyled', inlineStyleRanges: [], depth: 0}], entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}}}, answers: [{isCorrectAnswer: true, value: 'Go to the Microsoft Azure admin center and create an Azure AD group. Go to the Microsoft Defender admin center and create a role. Then configure the permissions for DeviceGroupA.'}, {isCorrectAnswer: false, value: 'Go to the Microsoft Defender Security center and create a role. Go to the Microsoft Defender Security center and configure the permissions for DeviceGroupA. Go to the Microsoft Azure AD admin center and create an Azure AD group.'}, {isCorrectAnswer: false, value: 'Go to the Microsoft Defender Security center and create a role. Go to the Microsoft Azure AD admin center and create an Azure AD group. Go to the Microsoft Defender admin center and configure the permissions for DeviceGroupA.'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -69,21 +69,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -91,8 +91,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -100,15 +100,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -122,16 +121,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -182,12 +181,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

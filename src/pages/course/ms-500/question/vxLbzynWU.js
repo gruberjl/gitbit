@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{"0":{"data":{"alt":"Users at Risk screenshot","height":"auto","width":"auto","src":"https://i.ibb.co/RTNLdyM/Users-At-Risk.png","alignment":"left"},"type":"IMAGE","mutability":"MUTABLE"},"1":{"data":{"width":"auto","alt":"User role chart","height":"auto","alignment":"left","src":"https://i.ibb.co/wzLBtGJ/user-role-chart.png"},"type":"IMAGE","mutability":"MUTABLE"},"2":{"data":{"alignment":"left","width":"auto","alt":"User RIsk Chart","height":"auto","src":"https://i.ibb.co/dDHb6VK/user-risk-chart.png"},"type":"IMAGE","mutability":"MUTABLE"}},"blocks":[{"data":{},"entityRanges":[],"depth":0,"text":"You have a Microsoft 365 tenant with Microsoft 365 E5 licenses.","key":"957rl","inlineStyleRanges":[],"type":"unstyled"},{"data":{},"entityRanges":[],"key":"8uunj","depth":0,"inlineStyleRanges":[{"length":106,"style":"color-rgb(33,37,41)","offset":0},{"style":"bgcolor-rgb(255,255,255)","length":106,"offset":0},{"offset":0,"style":"fontsize-16","length":106},{"length":106,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":0}],"type":"unstyled","text":"A user named John Gruber is configured to receive alerts from Azure AD Identity Protection as shown below."},{"text":" ","entityRanges":[{"key":0,"length":1,"offset":0}],"inlineStyleRanges":[],"depth":0,"type":"atomic","key":"d1p7o","data":{}},{"text":"Your tenant contains the following users.","depth":0,"data":{},"key":"deom4","inlineStyleRanges":[],"type":"unstyled","entityRanges":[]},{"key":"bd174","inlineStyleRanges":[],"depth":0,"entityRanges":[{"length":1,"key":1,"offset":0}],"data":{},"text":" ","type":"atomic"},{"data":{},"inlineStyleRanges":[],"depth":0,"text":"The user sign-in log is shown below","entityRanges":[],"key":"10fuk","type":"unstyled"},{"type":"atomic","depth":0,"text":" ","key":"1pjgg","data":{},"entityRanges":[{"key":2,"offset":0,"length":1}],"inlineStyleRanges":[]},{"inlineStyleRanges":[],"data":{},"entityRanges":[],"key":"6nlr4","type":"unstyled","depth":0,"text":"Check the box next to each true statement."}]},"id":"vxLbzynWU","answers":[{"value":"John Gruber receives 3 email alerts from Azure AD Identity Protection","isCorrectAnswer":false},{"value":"User2 receives 3 email alerts from Azure AD Identity Protection","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"User3 receives 2 email alerts from Azure AD Identity Protection"}],"references":{"blocks":[{"type":"unstyled","inlineStyleRanges":[{"style":"BOLD","length":16,"offset":0}],"entityRanges":[],"depth":0,"data":{},"text":"Box 1: Unchecked","key":"b4n82"},{"type":"unstyled","key":"a4q6n","data":{},"entityRanges":[],"text":"John Gruber will receive two alerts.","depth":0,"inlineStyleRanges":[]},{"data":{},"key":"fnuqh","inlineStyleRanges":[],"depth":0,"text":"Sign-ins from an infected device are classified as low. John Gruber will receive alerts on the unfamiliar location and anonymous IP address though.","type":"unstyled","entityRanges":[]},{"data":{},"entityRanges":[],"inlineStyleRanges":[{"offset":0,"style":"BOLD","length":9}],"depth":0,"text":"Box 2: No","key":"fc3ej","type":"unstyled"},{"entityRanges":[],"depth":0,"data":{},"type":"unstyled","inlineStyleRanges":[],"text":"User2 will receive two alerts. Email alerts are sent to all global admins, security admins, and security readers","key":"3shng"},{"text":"Sign-ins from the infected device are classified as low.","type":"unstyled","entityRanges":[],"key":"2hg9v","depth":0,"inlineStyleRanges":[],"data":{}},{"entityRanges":[],"text":"Box 3: No","depth":0,"key":"shoc","data":{},"inlineStyleRanges":[{"length":9,"offset":0,"style":"BOLD"}],"type":"unstyled"},{"inlineStyleRanges":[],"depth":0,"text":"User3 will not receive alerts. Email alerts are sent to all global admins, security admins, and security readers by default.","type":"unstyled","key":"9benb","entityRanges":[],"data":{}},{"depth":0,"type":"unstyled","inlineStyleRanges":[],"key":"49c2a","data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ","entityRanges":[{"offset":0,"key":0,"length":123}]},{"key":"btri2","text":"https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection","type":"unstyled","depth":0,"entityRanges":[{"length":104,"key":1,"offset":0}],"data":{},"inlineStyleRanges":[]},{"key":"6d4nq","depth":0,"text":"https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies","data":{},"type":"unstyled","inlineStyleRanges":[],"entityRanges":[{"offset":0,"key":2,"length":125}]}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ"}},"1":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection"}},"2":{"data":{"url":"https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'John Gruber receives 3 email alerts from Azure AD Identity Protection', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'User2 receives 3 email alerts from Azure AD Identity Protection'}, {isCorrectAnswer: false, value: 'User3 receives 2 email alerts from Azure AD Identity Protection'}], references: {entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ', targetOption: '_blank'}}, 1: {data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}, 2: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection', targetOption: '_blank'}}}, blocks: [{entityRanges: [], text: 'Box 1: Unchecked', data: {}, depth: 0, type: 'unstyled', key: 'b4n82', inlineStyleRanges: [{offset: 0, length: 16, style: 'BOLD'}]}, {entityRanges: [], depth: 0, text: 'John Gruber will receive two alerts.', key: 'a4q6n', type: 'unstyled', inlineStyleRanges: [], data: {}}, {entityRanges: [], key: 'fnuqh', type: 'unstyled', depth: 0, data: {}, inlineStyleRanges: [], text: 'Sign-ins from an infected device are classified as low. John Gruber will receive alerts on the unfamiliar location and anonymous IP address though.'}, {depth: 0, key: 'fc3ej', text: 'Box 2: No', entityRanges: [], data: {}, type: 'unstyled', inlineStyleRanges: [{offset: 0, style: 'BOLD', length: 9}]}, {key: '3shng', depth: 0, type: 'unstyled', inlineStyleRanges: [], data: {}, text: 'User2 will receive two alerts. Email alerts are sent to all global admins, security admins, and security readers', entityRanges: []}, {inlineStyleRanges: [], type: 'unstyled', key: '2hg9v', data: {}, text: 'Sign-ins from the infected device are classified as low.', depth: 0, entityRanges: []}, {key: 'shoc', type: 'unstyled', entityRanges: [], data: {}, text: 'Box 3: No', inlineStyleRanges: [{offset: 0, length: 9, style: 'BOLD'}], depth: 0}, {key: '9benb', depth: 0, inlineStyleRanges: [], data: {}, type: 'unstyled', entityRanges: [], text: 'User3 will not receive alerts. Email alerts are sent to all global admins, security admins, and security readers by default.'}, {data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Implementing-intelligent-security-using-risk-policies-in-Microsoft-365-NFQ6rYFeQ', type: 'unstyled', depth: 0, entityRanges: [{offset: 0, length: 123, key: 0}], key: '49c2a', inlineStyleRanges: []}, {entityRanges: [{key: 1, length: 104, offset: 0}], data: {}, type: 'unstyled', depth: 0, inlineStyleRanges: [], key: 'btri2', text: 'https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/overview-identity-protection'}, {entityRanges: [{key: 2, length: 125, offset: 0}], depth: 0, data: {}, key: '6d4nq', inlineStyleRanges: [], type: 'unstyled', text: 'https://docs.microsoft.com/en-us/azure/active-directory/identity-protection/howto-identity-protection-configure-risk-policies'}]}, id: 'vxLbzynWU', question: {entityMap: {0: {type: 'IMAGE', data: {width: 'auto', alignment: 'left', alt: 'Users at Risk screenshot', height: 'auto', src: 'https://i.ibb.co/RTNLdyM/Users-At-Risk.png'}, mutability: 'MUTABLE'}, 1: {type: 'IMAGE', mutability: 'MUTABLE', data: {height: 'auto', alt: 'User role chart', width: 'auto', alignment: 'left', src: 'https://i.ibb.co/wzLBtGJ/user-role-chart.png'}}, 2: {type: 'IMAGE', data: {alt: 'User RIsk Chart', src: 'https://i.ibb.co/dDHb6VK/user-risk-chart.png', width: 'auto', height: 'auto', alignment: 'left'}, mutability: 'MUTABLE'}}, blocks: [{type: 'unstyled', text: 'You have a Microsoft 365 tenant with Microsoft 365 E5 licenses.', entityRanges: [], inlineStyleRanges: [], depth: 0, data: {}, key: '957rl'}, {inlineStyleRanges: [{length: 106, style: 'color-rgb(33,37,41)', offset: 0}, {offset: 0, length: 106, style: 'bgcolor-rgb(255,255,255)'}, {offset: 0, length: 106, style: 'fontsize-16'}, {length: 106, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 0}], data: {}, depth: 0, text: 'A user named John Gruber is configured to receive alerts from Azure AD Identity Protection as shown below.', type: 'unstyled', entityRanges: [], key: '8uunj'}, {data: {}, key: 'd1p7o', inlineStyleRanges: [], entityRanges: [{key: 0, offset: 0, length: 1}], text: ' ', depth: 0, type: 'atomic'}, {entityRanges: [], depth: 0, inlineStyleRanges: [], data: {}, key: 'deom4', text: 'Your tenant contains the following users.', type: 'unstyled'}, {inlineStyleRanges: [], depth: 0, text: ' ', data: {}, entityRanges: [{key: 1, offset: 0, length: 1}], key: 'bd174', type: 'atomic'}, {entityRanges: [], type: 'unstyled', key: '10fuk', depth: 0, data: {}, text: 'The user sign-in log is shown below', inlineStyleRanges: []}, {data: {}, entityRanges: [{offset: 0, length: 1, key: 2}], depth: 0, key: '1pjgg', type: 'atomic', text: ' ', inlineStyleRanges: []}, {entityRanges: [], data: {}, type: 'unstyled', inlineStyleRanges: [], text: 'Check the box next to each true statement.', key: '6nlr4', depth: 0}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -77,21 +77,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -99,8 +99,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -108,15 +108,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -130,16 +129,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -190,12 +189,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

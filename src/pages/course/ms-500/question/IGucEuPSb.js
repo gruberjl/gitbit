@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"A Microsoft 365 group.","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"A mail-enabled security group."},{"value":"A security group.","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"A distribution list."},{"isCorrectAnswer":false,"value":"A security group created in the Azure AD admin center."}],"references":{"blocks":[{"type":"unstyled","inlineStyleRanges":[],"key":"db1d8","depth":0,"data":{},"text":"You can publish labels to users but only to groups that have email addresses (Distribution groups, Microsoft 365 groups, and mail-enabled security groups). You can't publish a label to a security group. The group can have assigned or dynamic membership.","entityRanges":[]},{"data":{},"type":"unstyled","entityRanges":[{"offset":0,"length":103,"key":0}],"depth":0,"inlineStyleRanges":[],"key":"dfv85","text":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf"},{"key":"eb83a","entityRanges":[{"offset":0,"length":130,"key":1}],"type":"unstyled","inlineStyleRanges":[],"data":{},"text":"https://docs.microsoft.com/en-us/azure/information-protection/prepare#azure-information-protection-requirements-for-group-accounts","depth":0}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf","targetOption":"_blank"},"type":"LINK"},"1":{"data":{"targetOption":"_self","url":"https://docs.microsoft.com/en-us/azure/information-protection/prepare#azure-information-protection-requirements-for-group-accounts"},"type":"LINK","mutability":"MUTABLE"}}},"question":{"blocks":[{"type":"unstyled","data":{},"depth":0,"text":"You've been tasked to create a group that will be used for publishing sensitivity labels. The group must only contain user accounts. What are the possible ways to create the group?","entityRanges":[],"key":"bevg6","inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":63,"offset":70},{"offset":70,"style":"bgcolor-rgb(255,255,255)","length":63},{"style":"fontsize-16","length":63,"offset":70},{"offset":70,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":63}]}],"entityMap":{}},"id":"IGucEuPSb"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: true, value: 'A Microsoft 365 group.'}, {isCorrectAnswer: true, value: 'A mail-enabled security group.'}, {isCorrectAnswer: false, value: 'A security group.'}, {value: 'A distribution list.', isCorrectAnswer: true}, {value: 'A security group created in the Azure AD admin center.', isCorrectAnswer: false}], question: {blocks: [{entityRanges: [], data: {}, type: 'unstyled', key: 'bevg6', depth: 0, inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 63, offset: 70}, {style: 'bgcolor-rgb(255,255,255)', length: 63, offset: 70}, {offset: 70, length: 63, style: 'fontsize-16'}, {offset: 70, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 63}], text: 'You\'ve been tasked to create a group that will be used for publishing sensitivity labels. The group must only contain user accounts. What are the possible ways to create the group?'}], entityMap: {}}, id: 'IGucEuPSb', references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf', targetOption: '_blank'}, type: 'LINK'}, 1: {type: 'LINK', data: {url: 'https://docs.microsoft.com/en-us/azure/information-protection/prepare#azure-information-protection-requirements-for-group-accounts', targetOption: '_self'}, mutability: 'MUTABLE'}}, blocks: [{text: 'You can publish labels to users but only to groups that have email addresses (Distribution groups, Microsoft 365 groups, and mail-enabled security groups). You can\'t publish a label to a security group. The group can have assigned or dynamic membership.', inlineStyleRanges: [], data: {}, key: 'db1d8', entityRanges: [], type: 'unstyled', depth: 0}, {entityRanges: [{offset: 0, key: 0, length: 103}], key: 'dfv85', inlineStyleRanges: [], depth: 0, data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf', type: 'unstyled'}, {key: 'eb83a', type: 'unstyled', data: {}, inlineStyleRanges: [], depth: 0, text: 'https://docs.microsoft.com/en-us/azure/information-protection/prepare#azure-information-protection-requirements-for-group-accounts', entityRanges: [{key: 1, offset: 0, length: 130}]}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -62,21 +62,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -84,8 +84,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -93,15 +93,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -115,16 +114,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -175,12 +174,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

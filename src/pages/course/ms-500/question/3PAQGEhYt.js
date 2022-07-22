@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"blocks":[{"data":{},"key":"9lhm","text":"Your organization has a Microsoft 365 tenant with AD Connect syncing your on-premises AD to Microsoft 365. All computers are running Windows 10 and are configured to use Microsoft Intune.","entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","depth":0},{"type":"unstyled","entityRanges":[],"text":"You've been tasked with protecting the VPN. Your manager has asked you to require every computer connecting to the VPN is marked as compliant.","key":"9r3c","depth":0,"data":{},"inlineStyleRanges":[]},{"depth":0,"text":"What do you need to do first?","data":{},"entityRanges":[],"key":"74po4","type":"unstyled","inlineStyleRanges":[]}],"entityMap":{}},"references":{"blocks":[{"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":64,"offset":143},{"offset":143,"length":64,"style":"bgcolor-rgb(255,255,255)"},{"style":"fontsize-16","length":64,"offset":143},{"offset":143,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":64}],"entityRanges":[],"key":"br3cc","text":"It's not very common so it's not included in the documents in this training but the correct steps are: Create a root certificate in Azure AD > Deploy the conditional access root certificate to on-premises AD > Configure the Conditional Access policy in Azure AD > Create an OMA-DM based VPNv2 Profile for Windows 10 devices.","data":{},"type":"unstyled","depth":0},{"entityRanges":[{"key":0,"length":105,"offset":0}],"inlineStyleRanges":[],"data":{},"text":"https://docs.microsoft.com/en-us/windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10","depth":0,"key":"777jm","type":"unstyled"}],"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10"},"type":"LINK","mutability":"MUTABLE"}}},"id":"3PAQGEhYt","answers":[{"isCorrectAnswer":true,"value":"From the Azure AD admin center, create a new certificate."},{"value":"From the Azure AD admin center, enable Application Proxy.","isCorrectAnswer":false},{"value":"Create a Dynamic Access Control policy in the Azure AD admin center.","isCorrectAnswer":false},{"value":"Configure authentication methods in the Azure AD admin center.","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{data: {}, type: 'unstyled', key: 'br3cc', entityRanges: [], inlineStyleRanges: [{style: 'color-rgb(33,37,41)', length: 64, offset: 143}, {length: 64, offset: 143, style: 'bgcolor-rgb(255,255,255)'}, {offset: 143, style: 'fontsize-16', length: 64}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 64, offset: 143}], text: 'It\'s not very common so it\'s not included in the documents in this training but the correct steps are: Create a root certificate in Azure AD > Deploy the conditional access root certificate to on-premises AD > Configure the Conditional Access policy in Azure AD > Create an OMA-DM based VPNv2 Profile for Windows 10 devices.', depth: 0}, {entityRanges: [{length: 105, key: 0, offset: 0}], type: 'unstyled', data: {}, depth: 0, inlineStyleRanges: [], text: 'https://docs.microsoft.com/en-us/windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10', key: '777jm'}], entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/windows-server/remote/remote-access/vpn/ad-ca-vpn-connectivity-windows10', targetOption: '_blank'}, type: 'LINK'}}}, answers: [{isCorrectAnswer: true, value: 'From the Azure AD admin center, create a new certificate.'}, {value: 'From the Azure AD admin center, enable Application Proxy.', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Create a Dynamic Access Control policy in the Azure AD admin center.'}, {value: 'Configure authentication methods in the Azure AD admin center.', isCorrectAnswer: false}], id: '3PAQGEhYt', question: {blocks: [{data: {}, type: 'unstyled', depth: 0, inlineStyleRanges: [], text: 'Your organization has a Microsoft 365 tenant with AD Connect syncing your on-premises AD to Microsoft 365. All computers are running Windows 10 and are configured to use Microsoft Intune.', entityRanges: [], key: '9lhm'}, {text: 'You\'ve been tasked with protecting the VPN. Your manager has asked you to require every computer connecting to the VPN is marked as compliant.', inlineStyleRanges: [], entityRanges: [], type: 'unstyled', key: '9r3c', data: {}, depth: 0}, {entityRanges: [], key: '74po4', data: {}, type: 'unstyled', text: 'What do you need to do first?', depth: 0, inlineStyleRanges: []}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

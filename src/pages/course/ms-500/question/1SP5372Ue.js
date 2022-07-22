@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"depth":0,"inlineStyleRanges":[],"type":"unstyled","data":{},"entityRanges":[],"text":"Computer1 has a tag of Kiosk1 which makes Computer1 part of Group1. Group1 is blocked from accessing http://www.contoso.com","key":"5tlk3"},{"inlineStyleRanges":[],"depth":0,"entityRanges":[],"data":{},"key":"5gq38","text":"All machines are allowed to access http://litwareinc.com/public so Computer1 can access http://litwareinc.com/public.","type":"unstyled"},{"key":"9rtqg","type":"unstyled","inlineStyleRanges":[],"data":{},"depth":0,"text":"Computer2's name ends with 2 and has a tag of tag1 so computer2 is part of Group2. Group2 is blocked from accessing http://litwareinc.com","entityRanges":[]},{"key":"c4854","text":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T ","depth":0,"entityRanges":[{"key":0,"length":129,"offset":0}],"data":{},"inlineStyleRanges":[],"type":"unstyled"}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T","targetOption":"_blank"}}}},"question":{"blocks":[{"text":"You have a Microsoft Defender for Endpoint deployment that has the custom network indicators turned on.","entityRanges":[],"depth":0,"inlineStyleRanges":[],"key":"4i6uh","data":{},"type":"unstyled"},{"data":{},"type":"unstyled","entityRanges":[],"text":"Microsoft Defender for Endpoint protects two computers that run Windows 10 as shown in the following table.","depth":0,"key":"8ikhv","inlineStyleRanges":[]},{"entityRanges":[{"key":0,"offset":0,"length":1}],"type":"atomic","depth":0,"data":{},"text":" ","key":"8bf9d","inlineStyleRanges":[]},{"inlineStyleRanges":[],"text":"Microsoft Defender for Endpoint has the machine groups shown in the following table.","entityRanges":[],"type":"unstyled","key":"8g8is","depth":0,"data":{}},{"depth":0,"data":{},"text":" ","type":"atomic","entityRanges":[{"key":1,"offset":0,"length":1}],"key":"2u05u","inlineStyleRanges":[]},{"key":"1etnr","entityRanges":[],"text":"From the Microsoft Defender admin center, you create the URLs/Domains indicators shown in the following table.","depth":0,"data":{},"inlineStyleRanges":[],"type":"unstyled"},{"key":"2qlef","entityRanges":[{"offset":0,"length":1,"key":2}],"inlineStyleRanges":[],"data":{},"text":" ","type":"atomic","depth":0},{"key":"1neb1","depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"For each of the following statements, check the box if the statement is true.","entityRanges":[],"data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"alt":"Table showing Computer names and tags","width":"auto","src":"https://i.ibb.co/7yyjVHL/table1.png","alignment":"left","height":"auto"},"type":"IMAGE"},"1":{"mutability":"MUTABLE","data":{"alignment":"left","alt":"Machine groups showing name and rules","width":"auto","src":"https://i.ibb.co/Gcc2Bz3/machine-groups.png","height":"auto"},"type":"IMAGE"},"2":{"data":{"alignment":"left","width":"auto","alt":"Domain chart","src":"https://i.ibb.co/9pcMnNM/domain-chart.png","height":"auto"},"mutability":"MUTABLE","type":"IMAGE"}}},"answers":[{"value":"From a web browser on Computer1, you can open http://www.contoso.com","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"From a web browser on Computer1, you can open http://litwareinc.com/public"},{"isCorrectAnswer":false,"value":"From a web browser on Computer2, you can open http://litwareinc.com"}],"id":"1SP5372Ue"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{isCorrectAnswer: false, value: 'From a web browser on Computer1, you can open http://www.contoso.com'}, {value: 'From a web browser on Computer1, you can open http://litwareinc.com/public', isCorrectAnswer: true}, {value: 'From a web browser on Computer2, you can open http://litwareinc.com', isCorrectAnswer: false}], id: '1SP5372Ue', references: {entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T', targetOption: '_blank'}}}, blocks: [{data: {}, entityRanges: [], type: 'unstyled', key: '5tlk3', text: 'Computer1 has a tag of Kiosk1 which makes Computer1 part of Group1. Group1 is blocked from accessing http://www.contoso.com', inlineStyleRanges: [], depth: 0}, {type: 'unstyled', text: 'All machines are allowed to access http://litwareinc.com/public so Computer1 can access http://litwareinc.com/public.', inlineStyleRanges: [], entityRanges: [], depth: 0, data: {}, key: '5gq38'}, {entityRanges: [], data: {}, depth: 0, inlineStyleRanges: [], key: '9rtqg', type: 'unstyled', text: 'Computer2\'s name ends with 2 and has a tag of tag1 so computer2 is part of Group2. Group2 is blocked from accessing http://litwareinc.com'}, {entityRanges: [{length: 129, key: 0, offset: 0}], data: {}, depth: 0, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Protecting-Windows-10-and-other-devices-with-Microsoft-Defender-for-Endpoint-z0qPG6v4T ', inlineStyleRanges: [], key: 'c4854'}]}, question: {blocks: [{data: {}, text: 'You have a Microsoft Defender for Endpoint deployment that has the custom network indicators turned on.', key: '4i6uh', depth: 0, entityRanges: [], inlineStyleRanges: [], type: 'unstyled'}, {type: 'unstyled', key: '8ikhv', entityRanges: [], inlineStyleRanges: [], depth: 0, text: 'Microsoft Defender for Endpoint protects two computers that run Windows 10 as shown in the following table.', data: {}}, {type: 'atomic', depth: 0, entityRanges: [{key: 0, offset: 0, length: 1}], key: '8bf9d', inlineStyleRanges: [], data: {}, text: ' '}, {entityRanges: [], depth: 0, key: '8g8is', inlineStyleRanges: [], data: {}, text: 'Microsoft Defender for Endpoint has the machine groups shown in the following table.', type: 'unstyled'}, {entityRanges: [{key: 1, offset: 0, length: 1}], key: '2u05u', depth: 0, data: {}, inlineStyleRanges: [], text: ' ', type: 'atomic'}, {entityRanges: [], text: 'From the Microsoft Defender admin center, you create the URLs/Domains indicators shown in the following table.', data: {}, inlineStyleRanges: [], depth: 0, key: '1etnr', type: 'unstyled'}, {entityRanges: [{key: 2, length: 1, offset: 0}], type: 'atomic', text: ' ', inlineStyleRanges: [], key: '2qlef', depth: 0, data: {}}, {text: 'For each of the following statements, check the box if the statement is true.', key: '1neb1', inlineStyleRanges: [], entityRanges: [], type: 'unstyled', depth: 0, data: {}}], entityMap: {0: {data: {alt: 'Table showing Computer names and tags', height: 'auto', alignment: 'left', width: 'auto', src: 'https://i.ibb.co/7yyjVHL/table1.png'}, type: 'IMAGE', mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'IMAGE', data: {alt: 'Machine groups showing name and rules', src: 'https://i.ibb.co/Gcc2Bz3/machine-groups.png', height: 'auto', alignment: 'left', width: 'auto'}}, 2: {mutability: 'MUTABLE', data: {alt: 'Domain chart', alignment: 'left', height: 'auto', src: 'https://i.ibb.co/9pcMnNM/domain-chart.png', width: 'auto'}, type: 'IMAGE'}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,6 +1,5 @@
-import { h, Component } from "preact"
-import {Editor, RichUtils, Modifier, EditorState, convertToRaw, AtomicBlockUtils} from 'draft-js'
-import ButtonGroup from '@mui/material/ButtonGroup'
+import {h, Component} from 'preact'
+import {Editor, RichUtils, EditorState, AtomicBlockUtils} from 'draft-js'
 import IconButton from '@mui/material/IconButton'
 import FormatBold from '@mui/icons-material/FormatBold'
 import FormatItalic from '@mui/icons-material/FormatItalic'
@@ -29,8 +28,8 @@ const getLinkUrl = (editorState) => {
     const linkKey = blockWithLinkAtBeginning.getEntityAt(startOffset)
 
     if (linkKey) {
-      const linkInstance = contentState.getEntity(linkKey);
-      linkUrl = linkInstance.getData().url;
+      const linkInstance = contentState.getEntity(linkKey)
+      linkUrl = linkInstance.getData().url
     }
   }
 
@@ -42,11 +41,11 @@ const getText = (editorState) => {
 
   const selection = editorState.getSelection()
   if (!selection.isCollapsed()) {
-    const anchorKey = selection.getAnchorKey();
-    const currentContent = editorState.getCurrentContent();
-    const currentContentBlock = currentContent.getBlockForKey(anchorKey);
-    const start = selection.getStartOffset();
-    const end = selection.getEndOffset();
+    const anchorKey = selection.getAnchorKey()
+    const currentContent = editorState.getCurrentContent()
+    const currentContentBlock = currentContent.getBlockForKey(anchorKey)
+    const start = selection.getStartOffset()
+    const end = selection.getEndOffset()
     linkText = currentContentBlock.getText().slice(start, end)
   }
 
@@ -83,14 +82,14 @@ class Wysiwyg extends Component {
   }
 
   handleKeyCommand(command, editorState) {
-    const newState = RichUtils.handleKeyCommand(editorState, command);
+    const newState = RichUtils.handleKeyCommand(editorState, command)
 
     if (newState) {
-      this.props.onEditorStateChange(newState);
-      return 'handled';
+      this.props.onEditorStateChange(newState)
+      return 'handled'
     }
 
-    return 'not-handled';
+    return 'not-handled'
   }
 
   hasSelection() {
@@ -106,28 +105,27 @@ class Wysiwyg extends Component {
   }
 
   toggleBlockType(blockType) {
-    this.props.onEditorStateChange(RichUtils.toggleBlockType(this.props.editorState, blockType));
+    this.props.onEditorStateChange(RichUtils.toggleBlockType(this.props.editorState, blockType))
   }
 
   openLinkDialog() {
     const {editorState} = this.props
-    const selection = editorState.getSelection()
     const linkUrl = getLinkUrl(editorState)
     const linkText = getText(editorState)
 
-    this.setState({linkDialogOpen:true, linkUrl, linkText})
+    this.setState({linkDialogOpen: true, linkUrl, linkText})
   }
 
   closeLinkDialog() {
     this.setState({
-      linkDialogOpen:false,
+      linkDialogOpen: false,
       linkText: '',
       linkUrl: ''
     })
   }
 
   setLinkText(e) {
-    const linkText =  e.target.value
+    const linkText = e.target.value
     this.setState({linkText})
   }
 
@@ -147,7 +145,7 @@ class Wysiwyg extends Component {
     const contentState = this.props.editorState.getCurrentContent()
     const contentStateWithEntity = contentState.createEntity('LINK', 'MUTABLE', {url: this.state.linkUrl})
     const entityKey = contentStateWithEntity.getLastCreatedEntityKey()
-    let nextEditorState = EditorState.set(this.props.editorState, { currentContent: contentStateWithEntity })
+    let nextEditorState = EditorState.set(this.props.editorState, {currentContent: contentStateWithEntity})
     nextEditorState = RichUtils.toggleLink(nextEditorState, nextEditorState.getSelection(), entityKey)
     this.props.onEditorStateChange(nextEditorState)
     this.closeLinkDialog()
@@ -159,25 +157,25 @@ class Wysiwyg extends Component {
     formData.append('image', file)
 
     fetch('https://api.imgbb.com/1/upload?key=9cfb93e196063ad9f35c823c94231095', {
-      method: "POST",
+      method: 'POST',
       body: formData,
       headers: {
-        Accept: "application/json"
+        Accept: 'application/json'
       }
-    }).then(response => response.json())
-    .then(json => {
-      this.props.addImage(json)
-      this.openImageDialog(json.data.url)
-    })
-    .catch(e => {
-      console.log('Error uploading image')
-      console.log(e)
-    })
+    }).then((response) => response.json())
+        .then((json) => {
+          this.props.addImage(json)
+          this.openImageDialog(json.data.url)
+        })
+        .catch((e) => {
+          console.log('Error uploading image')
+          console.log(e)
+        })
   }
 
   openImageDialog(url) {
     this.setState({
-      imageSrc:url,
+      imageSrc: url,
       imageAlt: '',
       imageDialogOpen: true
     })
@@ -195,58 +193,35 @@ class Wysiwyg extends Component {
 
   insertImage() {
     const contentState = this.props.editorState.getCurrentContent()
-    const contentStateWithEntity = contentState.createEntity('IMAGE', 'IMMUTABLE', {src: this.state.imageSrc, alt:this.state.imageAlt})
+    const contentStateWithEntity = contentState.createEntity('IMAGE', 'IMMUTABLE', {src: this.state.imageSrc, alt: this.state.imageAlt})
     const entityKey = contentStateWithEntity.getLastCreatedEntityKey()
     const newEditorState = EditorState.set(this.props.editorState, {currentContent: contentStateWithEntity})
 
     this.props.onEditorStateChange(AtomicBlockUtils.insertAtomicBlock(newEditorState, entityKey, ' '))
-    this.setState({imageDialogOpen:false})
+    this.setState({imageDialogOpen: false})
   }
 
   render() {
-    const uploadImageCallBack = async (file) => {
-      const formData = new FormData();
-      formData.append('image', file)
-      try {
-        const response = await fetch('https://api.imgbb.com/1/upload?key=9cfb93e196063ad9f35c823c94231095', {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json"
-          }
-        })
-        const json = await response.json()
-
-        const content = JSON.parse(JSON.stringify(this.state.content))
-        content.images.push(json.data.url)
-
-        this.setState({content})
-        return { data: { link: json.data.url}}
-      } catch(uploadError) {
-        this.setState({alert: uploadError})
-      }
-    }
-
     return (
       <div>
         <link rel="stylesheet" type="text/css" href="/assets/Draft.css" />
         <div>
-          <IconButton onClick={() => this.toggleInlineStyle('BOLD')}><FormatBold/></IconButton>
-          <IconButton onClick={() => this.toggleInlineStyle('ITALIC')}><FormatItalic/></IconButton>
-          <IconButton onClick={() => this.toggleInlineStyle('UNDERLINE')}><FormatUnderlined/></IconButton>
-          <IconButton onClick={this.openLinkDialog} disabled={!this.hasSelection()}><Link/></IconButton>
-          <IconButton variant="text" sx={{fontWeight:'bolder', fontSize:20}} onClick={() => this.toggleBlockType('header-two')}>H2</IconButton>
-          <IconButton variant="text" sx={{fontWeight:'bolder', fontSize:20}} onClick={() => this.toggleBlockType('header-three')}>H3</IconButton>
-          <IconButton variant="text" sx={{fontWeight:'bolder', fontSize:20}} onClick={() => this.toggleBlockType('header-four')}>H4</IconButton>
-          <IconButton variant="text" sx={{fontWeight:'bolder', fontSize:20}} onClick={() => this.toggleBlockType('header-five')}>H5</IconButton>
-          <IconButton variant="text" sx={{fontWeight:'bolder', fontSize:20}} onClick={() => this.toggleBlockType('header-six')}>H6</IconButton>
+          <IconButton onClick={() => this.toggleInlineStyle('BOLD')}><FormatBold /></IconButton>
+          <IconButton onClick={() => this.toggleInlineStyle('ITALIC')}><FormatItalic /></IconButton>
+          <IconButton onClick={() => this.toggleInlineStyle('UNDERLINE')}><FormatUnderlined /></IconButton>
+          <IconButton onClick={this.openLinkDialog} disabled={!this.hasSelection()}><Link /></IconButton>
+          <IconButton variant="text" sx={{fontWeight: 'bolder', fontSize: 20}} onClick={() => this.toggleBlockType('header-two')}>H2</IconButton>
+          <IconButton variant="text" sx={{fontWeight: 'bolder', fontSize: 20}} onClick={() => this.toggleBlockType('header-three')}>H3</IconButton>
+          <IconButton variant="text" sx={{fontWeight: 'bolder', fontSize: 20}} onClick={() => this.toggleBlockType('header-four')}>H4</IconButton>
+          <IconButton variant="text" sx={{fontWeight: 'bolder', fontSize: 20}} onClick={() => this.toggleBlockType('header-five')}>H5</IconButton>
+          <IconButton variant="text" sx={{fontWeight: 'bolder', fontSize: 20}} onClick={() => this.toggleBlockType('header-six')}>H6</IconButton>
 
-          <IconButton onClick={() => this.toggleBlockType('blockquote')}><FormatQuote/></IconButton>
-          <IconButton onClick={() => this.toggleBlockType('unordered-list-item')}><FormatListBulleted/></IconButton>
-          <IconButton onClick={() => this.toggleBlockType('ordered-list-item')}><FormatListNumbered/></IconButton>
-          <IconButton onClick={() => this.toggleBlockType('code-block')}><Code/></IconButton>
+          <IconButton onClick={() => this.toggleBlockType('blockquote')}><FormatQuote /></IconButton>
+          <IconButton onClick={() => this.toggleBlockType('unordered-list-item')}><FormatListBulleted /></IconButton>
+          <IconButton onClick={() => this.toggleBlockType('ordered-list-item')}><FormatListNumbered /></IconButton>
+          <IconButton onClick={() => this.toggleBlockType('code-block')}><Code /></IconButton>
 
-          <IconButton component="label"><Image/><input type="file" hidden accept="image/*" onChange={this.uploadImage}/></IconButton>
+          <IconButton component="label"><Image /><input type="file" hidden accept="image/*" onChange={this.uploadImage} /></IconButton>
         </div>
         <Editor
           editorState={this.props.editorState}
@@ -255,8 +230,8 @@ class Wysiwyg extends Component {
         />
 
         <Dialog onClose={this.closeLinkDialog} open={this.state.linkDialogOpen}>
-          <Stack spacing={2} sx={{p:2, width: 500}}>
-            <TextField value={this.state.linkUrl} onChange={this.setLinkUrl} label="URL" variant="standard" fullWidth="true"  />
+          <Stack spacing={2} sx={{p: 2, width: 500}}>
+            <TextField value={this.state.linkUrl} onChange={this.setLinkUrl} label="URL" variant="standard" fullWidth="true" />
             <Stack spacing={2} direction="row">
               <Button variant="outlined" onClick={this.removeLink}>Remove</Button>
               <Button variant="contained" onClick={this.addLink}>Save</Button>
@@ -265,9 +240,9 @@ class Wysiwyg extends Component {
         </Dialog>
 
         <Dialog open={this.state.imageDialogOpen}>
-          <Stack spacing={2} sx={{p:2, width: 500}}>
-            <TextField value={this.state.imageSrc} onChange={this.setImageSrc} label="Image src" variant="standard" fullWidth="true"  />
-            <TextField value={this.state.imageAlt} onChange={this.setImageAlt} label="Image alt" variant="standard" fullWidth="true"  />
+          <Stack spacing={2} sx={{p: 2, width: 500}}>
+            <TextField value={this.state.imageSrc} onChange={this.setImageSrc} label="Image src" variant="standard" fullWidth="true" />
+            <TextField value={this.state.imageAlt} onChange={this.setImageAlt} label="Image alt" variant="standard" fullWidth="true" />
             <Stack spacing={2} direction="row">
               <Button variant="contained" onClick={this.insertImage}>Save</Button>
             </Stack>

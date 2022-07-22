@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"inlineStyleRanges":[],"entityRanges":[],"type":"unstyled","text":"Go to Microsoft Endpoint Manager admin center > Devices > Windows > Configuration profiles. Click Create profile. Set the platform to Windows 10 and later. Set the profile type to templates. Select Device restriction under Template name. Click Create.","depth":0,"key":"7sspj","data":{}},{"entityRanges":[{"length":87,"key":0,"offset":0}],"depth":0,"type":"unstyled","key":"e8kfh","text":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO","inlineStyleRanges":[],"data":{}},{"inlineStyleRanges":[],"entityRanges":[{"length":94,"key":1,"offset":0}],"depth":0,"key":"e14v9","text":"https://docs.microsoft.com/en-us/intune/device-restrictions-windows-10#reporting-and-telemetry","type":"unstyled","data":{}}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO","targetOption":"_blank"}},"1":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://docs.microsoft.com/en-us/intune/device-restrictions-windows-10#reporting-and-telemetry","targetOption":"_blank"}}}},"id":"Pj7NKZZY6","answers":[{"value":"A device configuration profile that has device restrictions configured","isCorrectAnswer":true},{"value":"A device configuration profile that has the Endpoint Protection settings configured","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"A device configuration policy that has the System Security settings configured"},{"value":"A device compliance policy that has the Device Health settings configured","isCorrectAnswer":false}],"question":{"blocks":[{"inlineStyleRanges":[],"key":"k7l7","depth":0,"data":{},"text":"You have a Microsoft 365 subscription.","type":"unstyled","entityRanges":[]},{"entityRanges":[],"data":{},"type":"unstyled","key":"2u8na","inlineStyleRanges":[],"text":"All computers run Windows 10 Enterprise and are managed by using Microsoft Intune.","depth":0},{"type":"unstyled","data":{},"key":"ftuo9","depth":0,"text":"You plan to view only security-related Windows telemetry data.","entityRanges":[],"inlineStyleRanges":[]},{"type":"unstyled","inlineStyleRanges":[],"key":"ce2sa","entityRanges":[],"data":{},"depth":0,"text":"You need to ensure that only Windows security data is sent to Microsoft."},{"depth":0,"type":"unstyled","inlineStyleRanges":[],"key":"arrfp","data":{},"entityRanges":[],"text":"What should you create from the Intune admin center?"}],"entityMap":{}}},
+      test: {questions: [{answers: []}]},
+      question: {id: 'Pj7NKZZY6', answers: [{isCorrectAnswer: true, value: 'A device configuration profile that has device restrictions configured'}, {isCorrectAnswer: false, value: 'A device configuration profile that has the Endpoint Protection settings configured'}, {value: 'A device configuration policy that has the System Security settings configured', isCorrectAnswer: false}, {value: 'A device compliance policy that has the Device Health settings configured', isCorrectAnswer: false}], references: {blocks: [{entityRanges: [], key: '7sspj', data: {}, inlineStyleRanges: [], text: 'Go to Microsoft Endpoint Manager admin center > Devices > Windows > Configuration profiles. Click Create profile. Set the platform to Windows 10 and later. Set the profile type to templates. Select Device restriction under Template name. Click Create.', type: 'unstyled', depth: 0}, {key: 'e8kfh', data: {}, entityRanges: [{length: 87, key: 0, offset: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO', depth: 0, type: 'unstyled', inlineStyleRanges: []}, {depth: 0, text: 'https://docs.microsoft.com/en-us/intune/device-restrictions-windows-10#reporting-and-telemetry', data: {}, inlineStyleRanges: [], entityRanges: [{offset: 0, length: 94, key: 1}], type: 'unstyled', key: 'e14v9'}], entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO', targetOption: '_blank'}, mutability: 'MUTABLE'}, 1: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/intune/device-restrictions-windows-10#reporting-and-telemetry'}}}}, question: {entityMap: {}, blocks: [{data: {}, text: 'You have a Microsoft 365 subscription.', type: 'unstyled', key: 'k7l7', entityRanges: [], inlineStyleRanges: [], depth: 0}, {inlineStyleRanges: [], text: 'All computers run Windows 10 Enterprise and are managed by using Microsoft Intune.', entityRanges: [], data: {}, depth: 0, key: '2u8na', type: 'unstyled'}, {entityRanges: [], type: 'unstyled', key: 'ftuo9', inlineStyleRanges: [], depth: 0, text: 'You plan to view only security-related Windows telemetry data.', data: {}}, {text: 'You need to ensure that only Windows security data is sent to Microsoft.', key: 'ce2sa', data: {}, inlineStyleRanges: [], depth: 0, type: 'unstyled', entityRanges: []}, {data: {}, inlineStyleRanges: [], entityRanges: [], type: 'unstyled', depth: 0, key: 'arrfp', text: 'What should you create from the Intune admin center?'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO"},"mutability":"MUTABLE"}},"blocks":[{"text":"PolicyA includes Group3 and only affects Android devices so it only affects DeviceA and DeviceC.","key":"9tmbm","depth":0,"type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{}},{"data":{},"text":"PolicyB includes Group2 and excludes Group3 and only affects Windows 10 devices so it only affects DeviceD.","entityRanges":[],"key":"1bj1c","inlineStyleRanges":[],"depth":0,"type":"unstyled"},{"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO","depth":0,"entityRanges":[{"length":87,"key":0,"offset":0}],"inlineStyleRanges":[],"type":"unstyled","key":"5pp2f"}]},"question":{"blocks":[{"depth":0,"key":"ap89k","type":"unstyled","inlineStyleRanges":[],"text":"You have a Microsoft 365 tenant with the following devices enrolled in Intune.","entityRanges":[],"data":{}},{"key":"8jmrd","type":"atomic","inlineStyleRanges":[],"data":{},"text":" ","depth":0,"entityRanges":[{"offset":0,"key":0,"length":1}]},{"depth":0,"type":"unstyled","data":{},"text":"You've configured the following compliance policies in Intune including the groups they are assigned to:","key":"5o7ps","entityRanges":[],"inlineStyleRanges":[]},{"key":"avhph","depth":0,"entityRanges":[{"length":1,"key":1,"offset":0}],"data":{},"type":"atomic","inlineStyleRanges":[],"text":" "},{"entityRanges":[],"data":{},"type":"unstyled","key":"6onik","text":"What policies will apply to which devices?","depth":0,"inlineStyleRanges":[]}],"entityMap":{"0":{"type":"IMAGE","data":{"alt":"Devices and group memberships","alignment":"left","src":"https://i.ibb.co/zNwz1nM/Device-Group-Membership.png","height":"auto","width":"auto"},"mutability":"MUTABLE"},"1":{"type":"IMAGE","data":{"alt":"Policy assignments","height":"auto","src":"https://i.ibb.co/LQ99dsG/Policy-assignments.png","width":"auto","alignment":"left"},"mutability":"MUTABLE"},"2":{"type":"IMAGE","data":{"width":"auto","alignment":"left","alt":"Device policy assignments","src":"https://i.ibb.co/FsvMcnQ/Device-Policy-Assignments.png","height":"auto"},"mutability":"MUTABLE"}}},"id":"KlRqVmpqA","answers":[{"value":"PolicyA will not apply to any devices","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"PolicyA will apply to DeviceA"},{"isCorrectAnswer":false,"value":"PolicyA will apply to DeviceC"},{"isCorrectAnswer":false,"value":"PolicyA will apply to Device2 and Device3"},{"isCorrectAnswer":true,"value":"PolicyB will apply to Device1 and Device3"},{"value":"PolicyB will apply to Device1, Device2, Device3","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"PolicyB will not apply to any devices"},{"value":"PolicyB will apply to Device4 only","isCorrectAnswer":true},{"value":"PolicyB will apply to Device2 and Device4","isCorrectAnswer":false},{"value":"PolicyB will apply to Device2, Device3, and Device4","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {id: 'KlRqVmpqA', references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{entityRanges: [], data: {}, key: '9tmbm', type: 'unstyled', depth: 0, text: 'PolicyA includes Group3 and only affects Android devices so it only affects DeviceA and DeviceC.', inlineStyleRanges: []}, {depth: 0, type: 'unstyled', data: {}, entityRanges: [], inlineStyleRanges: [], key: '1bj1c', text: 'PolicyB includes Group2 and excludes Group3 and only affects Windows 10 devices so it only affects DeviceD.'}, {key: '5pp2f', entityRanges: [{offset: 0, length: 87, key: 0}], depth: 0, inlineStyleRanges: [], data: {}, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO'}]}, question: {blocks: [{depth: 0, text: 'You have a Microsoft 365 tenant with the following devices enrolled in Intune.', type: 'unstyled', inlineStyleRanges: [], data: {}, entityRanges: [], key: 'ap89k'}, {entityRanges: [{length: 1, offset: 0, key: 0}], inlineStyleRanges: [], key: '8jmrd', depth: 0, type: 'atomic', text: ' ', data: {}}, {key: '5o7ps', depth: 0, data: {}, entityRanges: [], inlineStyleRanges: [], type: 'unstyled', text: 'You\'ve configured the following compliance policies in Intune including the groups they are assigned to:'}, {type: 'atomic', depth: 0, data: {}, entityRanges: [{key: 1, offset: 0, length: 1}], text: ' ', key: 'avhph', inlineStyleRanges: []}, {depth: 0, entityRanges: [], text: 'What policies will apply to which devices?', key: '6onik', data: {}, inlineStyleRanges: [], type: 'unstyled'}], entityMap: {0: {data: {width: 'auto', src: 'https://i.ibb.co/zNwz1nM/Device-Group-Membership.png', alt: 'Devices and group memberships', height: 'auto', alignment: 'left'}, type: 'IMAGE', mutability: 'MUTABLE'}, 1: {type: 'IMAGE', mutability: 'MUTABLE', data: {alignment: 'left', alt: 'Policy assignments', width: 'auto', src: 'https://i.ibb.co/LQ99dsG/Policy-assignments.png', height: 'auto'}}, 2: {type: 'IMAGE', mutability: 'MUTABLE', data: {alt: 'Device policy assignments', height: 'auto', alignment: 'left', width: 'auto', src: 'https://i.ibb.co/FsvMcnQ/Device-Policy-Assignments.png'}}}}, answers: [{isCorrectAnswer: false, value: 'PolicyA will not apply to any devices'}, {isCorrectAnswer: false, value: 'PolicyA will apply to DeviceA'}, {value: 'PolicyA will apply to DeviceC', isCorrectAnswer: false}, {value: 'PolicyA will apply to Device2 and Device3', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'PolicyB will apply to Device1 and Device3'}, {value: 'PolicyB will apply to Device1, Device2, Device3', isCorrectAnswer: false}, {value: 'PolicyB will not apply to any devices', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'PolicyB will apply to Device4 only'}, {value: 'PolicyB will apply to Device2 and Device4', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'PolicyB will apply to Device2, Device3, and Device4'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

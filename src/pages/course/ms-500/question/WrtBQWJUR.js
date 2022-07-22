@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"data":{},"text":"You can use any group type that has an email address. That includes a mail-enabled security group, a distribution group, or a Microsoft 365 group. You cannot use a security group because it doesn't have an email address.","entityRanges":[],"key":"c2nmj","inlineStyleRanges":[{"style":"color-rgb(23,23,23)","length":220,"offset":0},{"style":"bgcolor-rgb(255,255,255)","length":220,"offset":0},{"offset":0,"style":"fontsize-16","length":220},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":220,"offset":0}],"depth":0,"type":"unstyled"},{"depth":0,"type":"unstyled","data":{},"key":"7dkcn","inlineStyleRanges":[{"style":"color-rgb(23,23,23)","length":140,"offset":0},{"length":140,"offset":0,"style":"bgcolor-rgb(255,255,255)"},{"offset":0,"style":"fontsize-16","length":140},{"style":"fontfamily-Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif","offset":0,"length":140}],"text":"You can set up a rule for dynamic membership on security groups or Microsoft 365 groups. The criteria should be set to userType -eq \"Member\"","entityRanges":[]},{"key":"ap4ld","data":{},"type":"unstyled","inlineStyleRanges":[{"style":"color-rgb(23,23,23)","length":104,"offset":0},{"style":"bgcolor-rgb(255,255,255)","offset":0,"length":104},{"length":104,"style":"fontsize-16","offset":0},{"style":"fontfamily-Segoe UI\", SegoeUI, \"Helvetica Neue\", Helvetica, Arial, sans-serif","offset":0,"length":104}],"text":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf ","entityRanges":[{"offset":0,"length":103,"key":0}],"depth":0},{"key":"2fgcr","entityRanges":[{"key":1,"length":69,"offset":0}],"text":"https://docs.microsoft.com/en-us/azure/information-protection/prepare ","type":"unstyled","data":{},"depth":0,"inlineStyleRanges":[]}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"},"1":{"type":"LINK","data":{"url":"https://docs.microsoft.com/en-us/azure/information-protection/prepare","targetOption":"_blank"},"mutability":"MUTABLE"}}},"question":{"blocks":[{"type":"unstyled","entityRanges":[],"depth":0,"data":{},"key":"99a05","inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant that's syncing the users and groups from an on-premises AD."},{"entityRanges":[],"text":"You've been asked to configure a new group that will be used for publishing sensitivity labels to pilot users. The group must contain only user accounts (excluding guest accounts). The membership of the group should be automatically updated.","data":{},"type":"unstyled","key":"95ska","depth":0,"inlineStyleRanges":[]}],"entityMap":{}},"answers":[{"isCorrectAnswer":true,"value":"A Microsoft 365 group in the Azure Active Directory admin center"},{"value":"A security group in your on-premises Active Directory Users and Computers","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"A security group in the Azure Active Directory admin center"},{"value":"Membership criteria: A dynamic distribution group","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Membership criteria: A dynamic membership rule set to accountEnabled Equals true"},{"value":"Membership criteria:  A dynamic membership rule set to userType Equals Member","isCorrectAnswer":true}],"id":"WrtBQWJUR"},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {}, blocks: [{data: {}, text: 'Your organization has a Microsoft 365 tenant that\'s syncing the users and groups from an on-premises AD.', inlineStyleRanges: [], type: 'unstyled', entityRanges: [], key: '99a05', depth: 0}, {data: {}, entityRanges: [], text: 'You\'ve been asked to configure a new group that will be used for publishing sensitivity labels to pilot users. The group must contain only user accounts (excluding guest accounts). The membership of the group should be automatically updated.', key: '95ska', type: 'unstyled', depth: 0, inlineStyleRanges: []}]}, references: {blocks: [{depth: 0, data: {}, type: 'unstyled', inlineStyleRanges: [{offset: 0, style: 'color-rgb(23,23,23)', length: 220}, {offset: 0, length: 220, style: 'bgcolor-rgb(255,255,255)'}, {style: 'fontsize-16', length: 220, offset: 0}, {length: 220, offset: 0, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], entityRanges: [], key: 'c2nmj', text: 'You can use any group type that has an email address. That includes a mail-enabled security group, a distribution group, or a Microsoft 365 group. You cannot use a security group because it doesn\'t have an email address.'}, {key: '7dkcn', entityRanges: [], inlineStyleRanges: [{offset: 0, style: 'color-rgb(23,23,23)', length: 140}, {length: 140, offset: 0, style: 'bgcolor-rgb(255,255,255)'}, {length: 140, style: 'fontsize-16', offset: 0}, {length: 140, style: 'fontfamily-Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif', offset: 0}], depth: 0, text: 'You can set up a rule for dynamic membership on security groups or Microsoft 365 groups. The criteria should be set to userType -eq "Member"', type: 'unstyled', data: {}}, {inlineStyleRanges: [{offset: 0, style: 'color-rgb(23,23,23)', length: 104}, {style: 'bgcolor-rgb(255,255,255)', length: 104, offset: 0}, {style: 'fontsize-16', length: 104, offset: 0}, {length: 104, offset: 0, style: 'fontfamily-Segoe UI", SegoeUI, "Helvetica Neue", Helvetica, Arial, sans-serif'}], key: 'ap4ld', type: 'unstyled', entityRanges: [{key: 0, offset: 0, length: 103}], data: {}, depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf '}, {inlineStyleRanges: [], data: {}, entityRanges: [{length: 69, offset: 0, key: 1}], type: 'unstyled', key: '2fgcr', depth: 0, text: 'https://docs.microsoft.com/en-us/azure/information-protection/prepare '}], entityMap: {0: {type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf'}, mutability: 'MUTABLE'}, 1: {type: 'LINK', data: {targetOption: '_blank', url: 'https://docs.microsoft.com/en-us/azure/information-protection/prepare'}, mutability: 'MUTABLE'}}}, id: 'WrtBQWJUR', answers: [{isCorrectAnswer: true, value: 'A Microsoft 365 group in the Azure Active Directory admin center'}, {value: 'A security group in your on-premises Active Directory Users and Computers', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'A security group in the Azure Active Directory admin center'}, {value: 'Membership criteria: A dynamic distribution group', isCorrectAnswer: false}, {value: 'Membership criteria: A dynamic membership rule set to accountEnabled Equals true', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Membership criteria:  A dynamic membership rule set to userType Equals Member'}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

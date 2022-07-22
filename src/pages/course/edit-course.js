@@ -1,10 +1,9 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Tabs from '@mui/material/Tabs'
 import Tab from '@mui/material/Tab'
-import Typography from '@mui/material/Typography'
 import Box from '@mui/material/Box'
 import {getDoc} from '../../components/firebase/get-doc'
 import saveDoc from '../../components/firebase/save-doc'
@@ -50,10 +49,10 @@ class EditCourse extends Component {
   }
 
   handleFieldChange(event) {
-    const value = event.target.value;
+    const value = event.target.value
     const name = event.target.name
     this.setState({
-      [name]:value
+      [name]: value
     })
   }
 
@@ -67,7 +66,7 @@ class EditCourse extends Component {
 
     saveDoc('courses', data).then(() => {
       this.setState({success: true})
-    }).catch(err => {
+    }).catch((err) => {
       this.setState({err})
     })
   }
@@ -83,8 +82,8 @@ class EditCourse extends Component {
           <Container>
             <Grid container>
               <Grid item xs={12}>
-                <Box sx={{ width: '100%' }}>
-                  <Box sx={{ borderBottom: 1, borderColor: 'divider' }}>
+                <Box sx={{width: '100%'}}>
+                  <Box sx={{borderBottom: 1, borderColor: 'divider'}}>
                     <Tabs value={this.state.tab} onChange={this.setTab} aria-label="navigation">
                       <Tab label="Edit Course" />
                       <Tab label="View People" />

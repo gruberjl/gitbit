@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"data":{"targetOption":"_blank","url":"https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-device-writeback"},"type":"LINK","mutability":"MUTABLE"}},"blocks":[{"entityRanges":[],"text":"Since password writeback is disabled any time you reset a password in Azure AD of a synced user the password will be overwritten by the on-premises password during the next password sync.","key":"5pnii","inlineStyleRanges":[],"type":"unstyled","depth":0,"data":{}},{"entityRanges":[],"key":"37vgi","depth":0,"text":"Since Device Writeback is enabled any Azure AD joined computer will automatically be written back to the RegisteredDevices OU in on-premises AD.","data":{},"inlineStyleRanges":[],"type":"unstyled"},{"key":"4onqo","entityRanges":[{"key":0,"offset":0,"length":69}],"depth":0,"inlineStyleRanges":[],"type":"unstyled","text":"https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P","data":{}},{"inlineStyleRanges":[],"entityRanges":[{"key":1,"length":94,"offset":0}],"key":"bnc7e","text":"https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-device-writeback","data":{},"depth":0,"type":"unstyled"}]},"id":"LfUmfiPLE","answers":[{"isCorrectAnswer":true,"value":"If you reset a password in Azure AD of a synced user, the password will be overwritten"},{"value":"If you reset a password in Azure AD of a synced user, the password will be synced to Active Directory","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"If you reset a password in Azure AD of a synced user, the password will be subject to the Active Directory password policy"},{"isCorrectAnswer":false,"value":"If you join a computer to Azure AD, an object will be provisioned in the computers container"},{"value":"If you join a computer to Azure AD, an object will be provisioned in the RegisteredDevices container","isCorrectAnswer":true},{"value":"If you join a computer to Azure AD, the device object in Azure will be deleted during synchronization","isCorrectAnswer":false}],"question":{"entityMap":{"0":{"data":{"src":"https://i.ibb.co/WGJ169y/AD-Connect-Settings2.png","width":"auto","height":"auto","alt":"AD Connect Settings","alignment":"left"},"type":"IMAGE","mutability":"MUTABLE"}},"blocks":[{"inlineStyleRanges":[],"depth":0,"key":"6jgl1","type":"unstyled","data":{},"text":"You configure Microsoft Azure Active Directory (Azure AD) Connect as shown in the following exhibit.","entityRanges":[]},{"type":"atomic","inlineStyleRanges":[],"key":"9pkn","depth":0,"entityRanges":[{"length":1,"key":0,"offset":0}],"data":{},"text":" "},{"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"ac3l0","text":"Check the box next to each correct statement","data":{},"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{entityRanges: [], depth: 0, inlineStyleRanges: [], data: {}, key: '5pnii', type: 'unstyled', text: 'Since password writeback is disabled any time you reset a password in Azure AD of a synced user the password will be overwritten by the on-premises password during the next password sync.'}, {text: 'Since Device Writeback is enabled any Azure AD joined computer will automatically be written back to the RegisteredDevices OU in on-premises AD.', key: '37vgi', inlineStyleRanges: [], depth: 0, data: {}, entityRanges: [], type: 'unstyled'}, {key: '4onqo', depth: 0, data: {}, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', entityRanges: [{key: 0, length: 69, offset: 0}], inlineStyleRanges: []}, {text: 'https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-device-writeback', depth: 0, type: 'unstyled', data: {}, inlineStyleRanges: [], entityRanges: [{length: 94, key: 1, offset: 0}], key: 'bnc7e'}], entityMap: {0: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Whats-AD-Connect-ky5W0Lz5P', targetOption: '_blank'}, mutability: 'MUTABLE'}, 1: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/azure/active-directory/hybrid/how-to-connect-device-writeback', targetOption: '_blank'}}}}, answers: [{value: 'If you reset a password in Azure AD of a synced user, the password will be overwritten', isCorrectAnswer: true}, {value: 'If you reset a password in Azure AD of a synced user, the password will be synced to Active Directory', isCorrectAnswer: false}, {value: 'If you reset a password in Azure AD of a synced user, the password will be subject to the Active Directory password policy', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'If you join a computer to Azure AD, an object will be provisioned in the computers container'}, {value: 'If you join a computer to Azure AD, an object will be provisioned in the RegisteredDevices container', isCorrectAnswer: true}, {value: 'If you join a computer to Azure AD, the device object in Azure will be deleted during synchronization', isCorrectAnswer: false}], question: {blocks: [{text: 'You configure Microsoft Azure Active Directory (Azure AD) Connect as shown in the following exhibit.', depth: 0, key: '6jgl1', data: {}, inlineStyleRanges: [], entityRanges: [], type: 'unstyled'}, {data: {}, entityRanges: [{key: 0, offset: 0, length: 1}], key: '9pkn', text: ' ', depth: 0, type: 'atomic', inlineStyleRanges: []}, {depth: 0, key: 'ac3l0', data: {}, entityRanges: [], type: 'unstyled', inlineStyleRanges: [], text: 'Check the box next to each correct statement'}], entityMap: {0: {mutability: 'MUTABLE', data: {height: 'auto', src: 'https://i.ibb.co/WGJ169y/AD-Connect-Settings2.png', width: 'auto', alt: 'AD Connect Settings', alignment: 'left'}, type: 'IMAGE'}}}, id: 'LfUmfiPLE'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -65,21 +65,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -87,8 +87,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -96,15 +96,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -118,16 +117,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -178,12 +177,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"key":"2p2s2","depth":0,"entityRanges":[],"inlineStyleRanges":[],"text":"You've been tasked with updating the safe links policy. Your manager gives you the following 2 requirements:","type":"unstyled","data":{}},{"depth":0,"data":{},"text":"Block any access to the GitBit.org domain","key":"93qsd","inlineStyleRanges":[],"entityRanges":[],"type":"unordered-list-item"},{"text":"Track user clicks on any links to gitbit.org.","type":"unordered-list-item","entityRanges":[],"data":{},"inlineStyleRanges":[],"depth":0,"key":"8b4p7"},{"entityRanges":[],"key":"42lo8","type":"unstyled","data":{},"inlineStyleRanges":[],"depth":0,"text":"What steps need to be completed to fulfill the requirements?"}]},"answers":[{"isCorrectAnswer":true,"value":"Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs > Block. Add the URL to the \"Add URLs with wildcards\" section. Set the Remove block entry after to the number of days to block the URL. Click Add."},{"isCorrectAnswer":false,"value":"From the Azure AD admin center, go to safe links > add the link to the blocked list."},{"isCorrectAnswer":false,"value":"From the Microsoft Compliance admin center go to Data Loss Prevention > add the link to the blocked list."},{"isCorrectAnswer":true,"value":"Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Safe links > Global settings. Uncheck Do not track when users click protected links in Office 365 apps"}],"references":{"blocks":[{"data":{},"depth":0,"text":"To block URLs: Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs > Block. Add the URL to the \"Add URLs with wildcards\" section. Set the Remove block entry after to the number of days to block the URL. Click Add.","entityRanges":[],"inlineStyleRanges":[],"type":"unstyled","key":"c5kns"},{"entityRanges":[],"text":"To set up tracking: Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Safe links > Global settings. Disable Do not track when users click protected links in Office 365 apps. Click Save.","depth":0,"inlineStyleRanges":[],"key":"b5702","data":{},"type":"unstyled"},{"type":"unstyled","key":"5s5au","data":{},"entityRanges":[{"offset":0,"key":0,"length":105}],"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","inlineStyleRanges":[]},{"key":"bpoog","text":"https://www.iorad.com/player/1797489/MS-500---Block-access-to-a-domain-named-fabrikam-com","type":"unstyled","entityRanges":[{"key":1,"length":89,"offset":0}],"depth":0,"inlineStyleRanges":[],"data":{}}],"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","data":{"url":"https://www.iorad.com/player/1797489/MS-500---Block-access-to-a-domain-named-fabrikam-com","targetOption":"_blank"},"type":"LINK"}}},"id":"HnDt94N5E"},
+      test: {questions: [{answers: []}]},
+      question: {id: 'HnDt94N5E', question: {entityMap: {}, blocks: [{text: 'You\'ve been tasked with updating the safe links policy. Your manager gives you the following 2 requirements:', type: 'unstyled', key: '2p2s2', entityRanges: [], depth: 0, inlineStyleRanges: [], data: {}}, {text: 'Block any access to the GitBit.org domain', key: '93qsd', inlineStyleRanges: [], depth: 0, type: 'unordered-list-item', entityRanges: [], data: {}}, {type: 'unordered-list-item', entityRanges: [], data: {}, depth: 0, text: 'Track user clicks on any links to gitbit.org.', inlineStyleRanges: [], key: '8b4p7'}, {key: '42lo8', data: {}, inlineStyleRanges: [], text: 'What steps need to be completed to fulfill the requirements?', depth: 0, type: 'unstyled', entityRanges: []}]}, references: {blocks: [{inlineStyleRanges: [], key: 'c5kns', text: 'To block URLs: Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs > Block. Add the URL to the "Add URLs with wildcards" section. Set the Remove block entry after to the number of days to block the URL. Click Add.', data: {}, entityRanges: [], type: 'unstyled', depth: 0}, {inlineStyleRanges: [], entityRanges: [], text: 'To set up tracking: Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Safe links > Global settings. Disable Do not track when users click protected links in Office 365 apps. Click Save.', depth: 0, data: {}, key: 'b5702', type: 'unstyled'}, {text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', inlineStyleRanges: [], depth: 0, data: {}, type: 'unstyled', entityRanges: [{length: 105, offset: 0, key: 0}], key: '5s5au'}, {key: 'bpoog', depth: 0, entityRanges: [{offset: 0, length: 89, key: 1}], text: 'https://www.iorad.com/player/1797489/MS-500---Block-access-to-a-domain-named-fabrikam-com', type: 'unstyled', inlineStyleRanges: [], data: {}}], entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL'}}, 1: {type: 'LINK', data: {url: 'https://www.iorad.com/player/1797489/MS-500---Block-access-to-a-domain-named-fabrikam-com', targetOption: '_blank'}, mutability: 'MUTABLE'}}}, answers: [{isCorrectAnswer: true, value: 'Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Tenant Allow/Block List > URLs > Block. Add the URL to the "Add URLs with wildcards" section. Set the Remove block entry after to the number of days to block the URL. Click Add.'}, {isCorrectAnswer: false, value: 'From the Azure AD admin center, go to safe links > add the link to the blocked list.'}, {value: 'From the Microsoft Compliance admin center go to Data Loss Prevention > add the link to the blocked list.', isCorrectAnswer: false}, {value: 'Go to Microsoft 365 Defender admin center > Policies & rules > Threat policies > Safe links > Global settings. Uncheck Do not track when users click protected links in Office 365 apps', isCorrectAnswer: true}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

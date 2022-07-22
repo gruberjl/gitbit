@@ -1,10 +1,10 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
 import {onAuthStateChanged} from '../../../components/firebase/on-auth-state-changed'
-import Table from '@mui/material/Table';
+import Table from '@mui/material/Table'
 import TableBody from '@mui/material/TableBody'
 import TableCell from '@mui/material/TableCell'
 import TableContainer from '@mui/material/TableContainer'
@@ -21,9 +21,8 @@ class BrowseQuestionsPage extends Component {
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -53,8 +52,8 @@ class BrowseQuestionsPage extends Component {
                   ''
                 }
               </Grid>
-              </Grid>
-              <Grid container>
+            </Grid>
+            <Grid container>
               <Grid item>
                 <TableContainer>
                   <Table>

@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"nem2vQvYa","answers":[{"isCorrectAnswer":false,"value":"Change Admin2's Assignment Type to Permanent"},{"isCorrectAnswer":false,"value":"Assign Admin2 the Exchange administrator role"},{"isCorrectAnswer":false,"value":"Remove Admin1 from the Exchange administrator role"},{"value":"Set Admin1's Assignment Type to Eligible","isCorrectAnswer":true}],"question":{"blocks":[{"key":"39hpc","inlineStyleRanges":[],"depth":0,"text":"Your organization has a Microsoft 365 tenant. The security requirements have changed and any admins who manage Microsoft 365 must be limited in their administrative actions for three hours at a time. Global administrators must be exempt from this requirement","data":{},"entityRanges":[],"type":"unstyled"},{"depth":0,"inlineStyleRanges":[],"text":"Your organizations current configuration of Azure AD Privileged Identity Management is shown below.","data":{},"entityRanges":[],"type":"unstyled","key":"fvj4u"},{"inlineStyleRanges":[],"text":" ","data":{},"entityRanges":[{"key":0,"offset":0,"length":1}],"key":"faafp","type":"atomic","depth":0},{"type":"unstyled","data":{},"entityRanges":[],"key":"c4u9i","inlineStyleRanges":[],"text":"What changes do you need to make to meet the new security requirements?","depth":0}],"entityMap":{"0":{"type":"IMAGE","mutability":"MUTABLE","data":{"height":"auto","alignment":"left","alt":"PIM Role Assignments","width":"auto","src":"https://i.ibb.co/jTttwqF/PIM.png"}}}},"references":{"blocks":[{"entityRanges":[],"key":"4v7ki","data":{},"text":"Admin1 has an End time of permanent which means he is allowed to perform administrative tasks for over three hours.","inlineStyleRanges":[],"depth":0,"type":"unstyled"},{"inlineStyleRanges":[],"depth":0,"type":"unstyled","key":"c2sh1","entityRanges":[{"offset":0,"key":0,"length":94}],"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Time-limited-admin-roles-in-Microsoft-365-rZzausKJ1"}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Time-limited-admin-roles-in-Microsoft-365-rZzausKJ1","targetOption":"_blank"},"mutability":"MUTABLE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{depth: 0, data: {}, text: 'Your organization has a Microsoft 365 tenant. The security requirements have changed and any admins who manage Microsoft 365 must be limited in their administrative actions for three hours at a time. Global administrators must be exempt from this requirement', entityRanges: [], key: '39hpc', inlineStyleRanges: [], type: 'unstyled'}, {entityRanges: [], data: {}, key: 'fvj4u', inlineStyleRanges: [], type: 'unstyled', depth: 0, text: 'Your organizations current configuration of Azure AD Privileged Identity Management is shown below.'}, {text: ' ', inlineStyleRanges: [], depth: 0, data: {}, entityRanges: [{length: 1, offset: 0, key: 0}], type: 'atomic', key: 'faafp'}, {entityRanges: [], key: 'c4u9i', data: {}, text: 'What changes do you need to make to meet the new security requirements?', depth: 0, inlineStyleRanges: [], type: 'unstyled'}], entityMap: {0: {data: {alignment: 'left', alt: 'PIM Role Assignments', src: 'https://i.ibb.co/jTttwqF/PIM.png', width: 'auto', height: 'auto'}, mutability: 'MUTABLE', type: 'IMAGE'}}}, id: 'nem2vQvYa', answers: [{isCorrectAnswer: false, value: 'Change Admin2\'s Assignment Type to Permanent'}, {value: 'Assign Admin2 the Exchange administrator role', isCorrectAnswer: false}, {value: 'Remove Admin1 from the Exchange administrator role', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Set Admin1\'s Assignment Type to Eligible'}], references: {blocks: [{depth: 0, type: 'unstyled', key: '4v7ki', data: {}, inlineStyleRanges: [], entityRanges: [], text: 'Admin1 has an End time of permanent which means he is allowed to perform administrative tasks for over three hours.'}, {inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Time-limited-admin-roles-in-Microsoft-365-rZzausKJ1', type: 'unstyled', key: 'c2sh1', entityRanges: [{key: 0, offset: 0, length: 94}], data: {}, depth: 0}], entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Time-limited-admin-roles-in-Microsoft-365-rZzausKJ1', targetOption: '_blank'}, type: 'LINK'}}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

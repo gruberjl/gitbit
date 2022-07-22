@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"data":{},"depth":0,"key":"4t5vp","inlineStyleRanges":[],"text":"You need to ensure that a user named Joe Gruber receives incident reports when email messages that contain data covered by the U.K. Data Protection Act are sent outside of your organization.","type":"unstyled","entityRanges":[]},{"data":{},"entityRanges":[],"depth":0,"type":"unstyled","inlineStyleRanges":[{"length":48,"style":"color-rgb(33,37,41)","offset":0},{"style":"bgcolor-rgb(255,255,255)","offset":0,"length":48},{"length":48,"offset":0,"style":"fontsize-16"},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":0,"length":48}],"key":"43bu","text":"What steps should you take to complete the task?"}]},"references":{"entityMap":{"0":{"type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w"},"mutability":"MUTABLE"},"1":{"mutability":"MUTABLE","type":"LINK","data":{"targetOption":"_blank","url":"https://www.iorad.com/player/1802115/MS-500---ensure-that-a-user-named-Joe-Gruber-receives-incident-reports-when-email-messages"}}},"blocks":[{"text":"https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w ","key":"7ofpi","inlineStyleRanges":[],"entityRanges":[{"offset":0,"key":0,"length":116}],"type":"unstyled","depth":0,"data":{}},{"entityRanges":[{"key":1,"length":127,"offset":0}],"inlineStyleRanges":[],"key":"a70lu","type":"unstyled","data":{},"text":"https://www.iorad.com/player/1802115/MS-500---ensure-that-a-user-named-Joe-Gruber-receives-incident-reports-when-email-messages","depth":0},{"type":"ordered-list-item","depth":0,"inlineStyleRanges":[],"key":"esne0","data":{},"entityRanges":[],"text":"Open the Microsoft 365 compliance center."},{"depth":0,"type":"ordered-list-item","entityRanges":[],"text":"Go to Policies > Data loss prevention > Policies > Create policy.","inlineStyleRanges":[],"data":{},"key":"86orm"},{"depth":0,"type":"ordered-list-item","key":"11ml6","inlineStyleRanges":[],"entityRanges":[],"text":"Select the U.K. Data Protection Act.","data":{}},{"key":"8cgea","depth":0,"entityRanges":[],"type":"ordered-list-item","data":{},"inlineStyleRanges":[],"text":"Unselect every location except Exchange email."},{"inlineStyleRanges":[],"entityRanges":[],"key":"cg844","text":"Customize the alert configuration > add Joe Gruber and remove John Gruber.","type":"ordered-list-item","data":{},"depth":0},{"text":"Save the changes.","key":"ultc","data":{},"inlineStyleRanges":[],"depth":0,"entityRanges":[],"type":"ordered-list-item"}]},"id":"H8rYT4gCH","answers":[{"isCorrectAnswer":true,"value":"From the Microsoft 365 compliance center create a new Data loss prevention policy with a customized alert notification"},{"value":"From the Microsoft 365 admin center edit the default Data loss prevention policy with custom notification to Joe Gruber","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"From the Azure AD admin center > Sharing > Block sharing > Customize alert notifications."}]},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'From the Microsoft 365 compliance center create a new Data loss prevention policy with a customized alert notification', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'From the Microsoft 365 admin center edit the default Data loss prevention policy with custom notification to Joe Gruber'}, {isCorrectAnswer: false, value: 'From the Azure AD admin center > Sharing > Block sharing > Customize alert notifications.'}], id: 'H8rYT4gCH', references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w'}, type: 'LINK'}, 1: {type: 'LINK', data: {url: 'https://www.iorad.com/player/1802115/MS-500---ensure-that-a-user-named-Joe-Gruber-receives-incident-reports-when-email-messages', targetOption: '_blank'}, mutability: 'MUTABLE'}}, blocks: [{data: {}, text: 'https://www.gitbit.org/course/ms-500/learn/Preventing-accidental-and-malicious-data-loss-with-DLP-policies-IsPGsme8w ', depth: 0, inlineStyleRanges: [], entityRanges: [{offset: 0, key: 0, length: 116}], type: 'unstyled', key: '7ofpi'}, {data: {}, key: 'a70lu', type: 'unstyled', depth: 0, entityRanges: [{length: 127, key: 1, offset: 0}], text: 'https://www.iorad.com/player/1802115/MS-500---ensure-that-a-user-named-Joe-Gruber-receives-incident-reports-when-email-messages', inlineStyleRanges: []}, {entityRanges: [], key: 'esne0', depth: 0, type: 'ordered-list-item', data: {}, inlineStyleRanges: [], text: 'Open the Microsoft 365 compliance center.'}, {key: '86orm', inlineStyleRanges: [], text: 'Go to Policies > Data loss prevention > Policies > Create policy.', entityRanges: [], data: {}, type: 'ordered-list-item', depth: 0}, {entityRanges: [], inlineStyleRanges: [], data: {}, key: '11ml6', depth: 0, type: 'ordered-list-item', text: 'Select the U.K. Data Protection Act.'}, {data: {}, type: 'ordered-list-item', key: '8cgea', text: 'Unselect every location except Exchange email.', depth: 0, inlineStyleRanges: [], entityRanges: []}, {entityRanges: [], key: 'cg844', type: 'ordered-list-item', text: 'Customize the alert configuration > add Joe Gruber and remove John Gruber.', data: {}, inlineStyleRanges: [], depth: 0}, {type: 'ordered-list-item', inlineStyleRanges: [], key: 'ultc', depth: 0, text: 'Save the changes.', entityRanges: [], data: {}}]}, question: {blocks: [{depth: 0, key: '4t5vp', data: {}, entityRanges: [], inlineStyleRanges: [], type: 'unstyled', text: 'You need to ensure that a user named Joe Gruber receives incident reports when email messages that contain data covered by the U.K. Data Protection Act are sent outside of your organization.'}, {data: {}, entityRanges: [], inlineStyleRanges: [{length: 48, style: 'color-rgb(33,37,41)', offset: 0}, {length: 48, offset: 0, style: 'bgcolor-rgb(255,255,255)'}, {style: 'fontsize-16', length: 48, offset: 0}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', length: 48, offset: 0}], type: 'unstyled', key: '43bu', depth: 0, text: 'What steps should you take to complete the task?'}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

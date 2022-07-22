@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -9,11 +9,10 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
-import { getDoc } from '../../components/firebase/get-doc'
+import {getDoc} from '../../components/firebase/get-doc'
 import saveDoc from '../../components/firebase/save-doc'
 import Snackbar from '@mui/material/Snackbar'
-import { EditorState, convertToRaw, convertFromRaw } from 'draft-js'
-// import {Editor} from 'react-draft-wysiwyg'
+import {EditorState, convertToRaw, convertFromRaw} from 'draft-js'
 import Wysiwyg from '../../components/wysiwyg'
 import decorators from '../../components/wysiwyg-decorators'
 const isBrowser = () => typeof window !== 'undefined'
@@ -93,9 +92,9 @@ class EditContentPage extends Component {
   }
 
   setContent(content) {
-    if (!content.publish) {
+    if (!content.publish)
       content.publish = false
-    }
+
 
     this.setState({
       content,
@@ -105,7 +104,7 @@ class EditContentPage extends Component {
 
   setEditorState(editorState) {
     this.setState({
-      editorState,
+      editorState
     })
 
     this.debounceSave()
@@ -120,14 +119,16 @@ class EditContentPage extends Component {
       alert: 'Content saved'
     })
 
-    setTimeout(() => { this.setState({alert: ''}) }, 3000)
+    setTimeout(() => {
+      this.setState({alert: ''})
+    }, 3000)
   }
 
   setSlug(e) {
     const content = this.state.content
     let slug = e.target.value.split(' ').join('-')
-    slug = slug.replace('-' + this.state.content.id, '')
-    slug = encodeURI(slug).replace(/[^\w-]+/g, '') + '-' + this.state.content.id
+    slug = slug.replace(`-${ this.state.content.id}`, '')
+    slug = `${encodeURI(slug).replace(/[^\w-]+/g, '') }-${ this.state.content.id}`
     content.slug = slug
     this.setState({content})
   }
@@ -158,12 +159,12 @@ class EditContentPage extends Component {
     const content = this.state.content
     content.publish = value
     if (content.publish) {
-      const dateObj = new Date();
-      const month = dateObj.getUTCMonth() + 1;
-      const day = dateObj.getUTCDate();
-      const year = dateObj.getUTCFullYear();
+      const dateObj = new Date()
+      const month = dateObj.getUTCMonth() + 1
+      const day = dateObj.getUTCDate()
+      const year = dateObj.getUTCFullYear()
 
-      content.datePublished = year + "/" + month + "/" + day
+      content.datePublished = `${year }/${ month }/${ day}`
     }
 
     this.setState({content})
@@ -176,29 +177,6 @@ class EditContentPage extends Component {
   }
 
   render() {
-    const uploadImageCallBack = async (file) => {
-      const formData = new FormData();
-      formData.append('image', file)
-      try {
-        const response = await fetch('https://api.imgbb.com/1/upload?key=9cfb93e196063ad9f35c823c94231095', {
-          method: "POST",
-          body: formData,
-          headers: {
-            Accept: "application/json"
-          }
-        })
-        const json = await response.json()
-
-        const content = JSON.parse(JSON.stringify(this.state.content))
-        content.images.push(json.data.url)
-
-        this.setState({content})
-        return { data: { link: json.data.url}}
-      } catch(uploadError) {
-        this.setState({alert: uploadError})
-      }
-    }
-
     return (
       <Page title={'Edit Content'}>
         <main style={{paddingTop: '24px'}}>
@@ -224,7 +202,7 @@ class EditContentPage extends Component {
                     </div>
                   )) }
                 </Grid>
-                <Grid item  xs={12}>
+                <Grid item xs={12}>
                   <Wysiwyg editorState={this.state.editorState} onEditorStateChange={this.setEditorState} addImage={this.addImage} />
                 </Grid>
                 <Grid item container justifyContent="space-between" alignItems="center">

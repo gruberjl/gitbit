@@ -1,4 +1,5 @@
-import { h, Component } from "preact"
+/* eslint react/jsx-no-undef: "off", no-tabs: "off", no-irregular-whitespace: "off" */
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import ContentsRead from '../../../../components/contents-read'
 import Container from '@mui/material/Container'
@@ -13,18 +14,8 @@ import Box from '@mui/material/Box'
 
 const isBrowser = () => typeof window !== 'undefined'
 
-const removePaddingStyle = {
-  padding: '0px'
-}
-
 const marginTop24Style = {
   marginTop: '24px'
-}
-
-const listItemStyle = {
-  border: 'none',
-  paddingTop: '12px',
-  paddingBottom: '12px'
 }
 
 class ArticlePage extends Component {
@@ -32,11 +23,13 @@ class ArticlePage extends Component {
     super(props)
     this.trackScrolling = this.trackScrolling.bind(this)
     this.setHasCompletedContent = this.setHasCompletedContent.bind(this)
+    this.getUid = this.getUid.bind(this)
+    this.addScroll = this.addScroll.bind(this)
 
     this.state = {
       isTrackScrolling: false,
       path: '/course/ms-500/learn/CURRENT_SLUG',
-      article: {ARTICLE:true},
+      article: {ARTICLE: true},
       nextContentSlug: 'NEXT_CONTENT',
       previousContentSlug: 'PREVIOUS_CONTENT',
       hasCompletedContent: false,
@@ -45,17 +38,22 @@ class ArticlePage extends Component {
   }
 
   componentDidMount() {
-    this.onAuthStateChangedListener = onAuthStateChanged((user) => {
-      if (user) {
-        getDoc('courses/MS-500/users', user.uid).then((userAcct) => {
-          if (!userAcct.completedContent) {
-            userAcct.completedContent = []
-          }
-          this.setState({userAcct})
-        })
-      }
-    })
+    this.onAuthStateChangedListener = onAuthStateChanged(this.getUid)
+    this.addScroll()
+  }
 
+  getUid(user) {
+    if (user) {
+      getDoc('courses/MS-500/users', user.uid).then((userAcct) => {
+        if (!userAcct.completedContent)
+          userAcct.completedContent = []
+
+        this.setState({userAcct})
+      })
+    }
+  }
+
+  addScroll() {
     if (isBrowser()) {
       document.addEventListener('scroll', this.trackScrolling)
       this.setState({isTrackScrolling: true})
@@ -64,20 +62,19 @@ class ArticlePage extends Component {
 
   componentWillUnmount() {
     if (isBrowser() && this.state.isTrackScrolling)
-      document.removeEventListener('scroll', this.trackScrolling);
+      document.removeEventListener('scroll', this.trackScrolling)
 
     this.onAuthStateChangedListener()
   }
 
   trackScrolling() {
-    if (document.body.scrollHeight * .8 < window.innerHeight + window.scrollY) {
+    if (document.body.scrollHeight * .8 < window.innerHeight + window.scrollY)
       this.setHasCompletedContent(true)
-    }
   }
 
   setHasCompletedContent(val) {
     if (val === true) {
-      document.removeEventListener('scroll', this.trackScrolling);
+      document.removeEventListener('scroll', this.trackScrolling)
       this.setState({isTrackScrolling: false})
 
       if (this.state.userAcct.id) {
@@ -97,15 +94,15 @@ class ArticlePage extends Component {
       headline: this.state.article.title,
       datePublished: this.state.article.datePublished,
       keywords: [
-        "Microsoft",
-        "Microsoft 365",
-        "Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
       ],
-      "author": {
-        "@type": "Person",
-        "name": "John Gruber",
+      author: {
+        '@type': 'Person',
+        name: 'John Gruber',
         url: 'https://medium.com/@gruberjl'
       }
     }
@@ -159,13 +156,13 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
-                <div><ARTICLE/></div>
-                <Box sx={{ display: 'flex', justifyContent: 'space-between', mt:3 }}>
+                <div><ARTICLE /></div>
+                <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
                   <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
-                  <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos/>}>Next</Button>
+                  <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
                 </Box>
               </Grid>
-              <Grid item lg={3} sx={{ mt: 3 }}>
+              <Grid item lg={3} sx={{mt: 3}}>
                 <ContentsRead completedContent={this.state.userAcct.completedContent} />
               </Grid>
             </Grid>

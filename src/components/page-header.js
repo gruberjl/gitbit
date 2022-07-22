@@ -1,5 +1,5 @@
-import { h } from "preact"
-import { useState, useEffect } from 'preact/hooks'
+import {h} from 'preact'
+import {useState, useEffect} from 'preact/hooks'
 import {onAuthStateChanged} from './firebase/on-auth-state-changed'
 import {signOut} from './firebase/sign-out'
 import AppBar from '@mui/material/AppBar'
@@ -11,11 +11,11 @@ import IconButton from '@mui/material/IconButton'
 import MenuIcon from '@mui/icons-material/Menu'
 import Container from '@mui/material/Container'
 import Drawer from '@mui/material/Drawer'
-import List from '@mui/material/List';
-import Divider from '@mui/material/Divider';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemText from '@mui/material/ListItemText';
+import List from '@mui/material/List'
+import Divider from '@mui/material/Divider'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
 
 const gitBitImg = '/assets/gitbit-icon-light-80x80.png'
 const appBarNameStyle = {
@@ -33,25 +33,24 @@ export default function PageHeader() {
   const [openDrawer, toggleDrawer] = useState(false)
   const isBrowser = () => typeof window !== 'undefined'
 
-  let pathname, search, hash
+  let pathname; let search; let hash
   if (isBrowser()) {
     pathname = window.location.pathname
     search = window.location.search
     hash = window.location.hash
     if (pathname !== '/' && pathname.endsWith('/')) {
-      console.log(`redirecting from: ${pathname} to ${pathname.slice(0,-1) + search + hash}`)
-      window.location.href = pathname.slice(0,-1) + search + hash
+      console.log(`redirecting from: ${pathname} to ${pathname.slice(0, -1) + search + hash}`)
+      window.location.href = pathname.slice(0, -1) + search + hash
     }
   }
 
   useEffect(() => {
     if (isBrowser()) {
       const unsubscribe = onAuthStateChanged((user) => {
-        if (user) {
+        if (user)
           setUid(user.uid)
-        } else {
+        else
           setUid('')
-        }
       })
 
       return () => unsubscribe()
@@ -61,7 +60,7 @@ export default function PageHeader() {
 
   const signout = () => {
     signOut().then(() => {
-      window.location.href = "/"
+      window.location.href = '/'
     }).catch((error) => {
       console.log(error)
     })
@@ -69,12 +68,12 @@ export default function PageHeader() {
 
   return (
     <div>
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{flexGrow: 1}}>
         <AppBar position="static">
           <Container maxWidth="xl">
             <Toolbar disableGutters>
               <a href='/' style={appBarNameStyle}>
-                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{ mr: 2 }}>
+                <IconButton size="large" edge="start" color="inherit" aria-label="menu" sx={{mr: 2}}>
                   <img src={gitBitImg} alt="GitBit Logo" width='40' height='40' />
                 </IconButton>
 
@@ -82,16 +81,16 @@ export default function PageHeader() {
                   GitBit
                 </Typography>
               </a>
-              <Box sx={{ flexGrow: 1 }}>
-                <Button href='/dashboard'  sx={{ my: 2, color: 'white', display: { xs: 'none', md: 'inline-flex' } }}>Dashboard</Button>
-                <Button href='/tests'  sx={{ my: 2, color: 'white', display: { xs: 'none', md: 'inline-flex' } }}>My Tests</Button>
-                <Button href='/blog'  sx={{ my: 2, color: 'white', display: { xs: 'none', md: 'inline-flex' } }}>Blog</Button>
+              <Box sx={{flexGrow: 1}}>
+                <Button href='/dashboard' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Dashboard</Button>
+                <Button href='/tests' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>My Tests</Button>
+                <Button href='/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
               </Box>
               { uid ?
-                <Button sx={{ display: { xs: 'none', md: 'inline-flex' } }} color="inherit" onClick={signout}>Sign Out</Button> :
-                <Button sx={{ display: { xs: 'none', md: 'inline-flex' } }} color="inherit" href='/sign-up'>Sign Up</Button>
+                <Button sx={{display: {xs: 'none', md: 'inline-flex'}}} color="inherit" onClick={signout}>Sign Out</Button> :
+                <Button sx={{display: {xs: 'none', md: 'inline-flex'}}} color="inherit" href='/sign-up'>Sign Up</Button>
               }
-              <IconButton onClick={() => toggleDrawer(!openDrawer)} aria-label="menu" color="inherit" sx={{ display: { xs: 'inline-flex', sm: 'none' } }}>
+              <IconButton onClick={() => toggleDrawer(!openDrawer)} aria-label="menu" color="inherit" sx={{display: {xs: 'inline-flex', sm: 'none'}}}>
                 <MenuIcon />
               </IconButton>
             </Toolbar>
@@ -99,7 +98,7 @@ export default function PageHeader() {
         </AppBar>
       </Box>
       <Drawer anchor="right" open={openDrawer} onClose={() => toggleDrawer(!openDrawer)}>
-        <Box sx={{ width: 250 }} role="presentation" onClick={() => toggleDrawer(!openDrawer)} onKeyDown={() => toggleDrawer(!openDrawer)}>
+        <Box sx={{width: 250}} role="presentation" onClick={() => toggleDrawer(!openDrawer)} onKeyDown={() => toggleDrawer(!openDrawer)}>
           <List>
             <ListItem disablePadding>
               <ListItemButton href='/dashboard'>

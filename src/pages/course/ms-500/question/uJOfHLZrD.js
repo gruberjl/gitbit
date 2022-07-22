@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"uJOfHLZrD","references":{"blocks":[{"inlineStyleRanges":[],"depth":0,"data":{},"type":"unstyled","entityRanges":[],"key":"6rt7g","text":"By default emails that contain word-filtered content is considered spam and are directed to the user's junk email folder."},{"key":"c1h28","text":"Phishing messages are directed to the junk folder or the quarantine depending on the confidence level. High confidence phishing emails, in other words, emails that Microsoft 365 is confident it is phishing will go to the quarantine while messages that Microsoft 365 is not 100% positive is phishing will go to the junk email folder.","depth":0,"data":{},"entityRanges":[],"inlineStyleRanges":[],"type":"unstyled"},{"text":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL","type":"unstyled","data":{},"inlineStyleRanges":[],"entityRanges":[{"key":0,"length":105,"offset":0}],"key":"4oks5","depth":0}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL"},"type":"LINK"}}},"question":{"entityMap":{},"blocks":[{"depth":0,"key":"566gf","data":{},"inlineStyleRanges":[],"text":"Your organization has a Microsoft 365 tenant with all users hosted in Exchange Online. It's a new tenant and all the defaults are still in place.","type":"unstyled","entityRanges":[]},{"data":{},"text":"You manage email security. Where do suspicious emails go?","depth":0,"inlineStyleRanges":[],"type":"unstyled","key":"9ap27","entityRanges":[]}]},"answers":[{"value":"Message that contain word-filtered content go to the ATP quarantine.","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Message that contain word-filtered content go to the user's junk email folder."},{"isCorrectAnswer":false,"value":"Message that contain word-filtered content go to the user's focused inbox."},{"value":"Messages that are flagged as high confidence phishing go to the ATP quarantine.","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Messages that are flagged as phishing go to the user's junk email folder."},{"value":"Messages that are flagged as phishing go to the user's focused inbox.","isCorrectAnswer":false}]},
+      test: {questions: [{answers: []}]},
+      question: {id: 'uJOfHLZrD', answers: [{value: 'Message that contain word-filtered content go to the ATP quarantine.', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Message that contain word-filtered content go to the user\'s junk email folder.'}, {isCorrectAnswer: false, value: 'Message that contain word-filtered content go to the user\'s focused inbox.'}, {value: 'Messages that are flagged as high confidence phishing go to the ATP quarantine.', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Messages that are flagged as phishing go to the user\'s junk email folder.'}, {value: 'Messages that are flagged as phishing go to the user\'s focused inbox.', isCorrectAnswer: false}], references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL'}, type: 'LINK'}}, blocks: [{data: {}, entityRanges: [], inlineStyleRanges: [], key: '6rt7g', depth: 0, type: 'unstyled', text: 'By default emails that contain word-filtered content is considered spam and are directed to the user\'s junk email folder.'}, {type: 'unstyled', depth: 0, inlineStyleRanges: [], data: {}, entityRanges: [], text: 'Phishing messages are directed to the junk folder or the quarantine depending on the confidence level. High confidence phishing emails, in other words, emails that Microsoft 365 is confident it is phishing will go to the quarantine while messages that Microsoft 365 is not 100% positive is phishing will go to the junk email folder.', key: 'c1h28'}, {text: 'https://www.gitbit.org/course/ms-500/learn/Protect-your-email-environment-from-malicious-actors-6HUOr7qbL', depth: 0, data: {}, inlineStyleRanges: [], entityRanges: [{key: 0, offset: 0, length: 105}], key: '4oks5', type: 'unstyled'}]}, question: {blocks: [{data: {}, key: '566gf', depth: 0, text: 'Your organization has a Microsoft 365 tenant with all users hosted in Exchange Online. It\'s a new tenant and all the defaults are still in place.', type: 'unstyled', inlineStyleRanges: [], entityRanges: []}, {depth: 0, entityRanges: [], key: '9ap27', type: 'unstyled', inlineStyleRanges: [], text: 'You manage email security. Where do suspicious emails go?', data: {}}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

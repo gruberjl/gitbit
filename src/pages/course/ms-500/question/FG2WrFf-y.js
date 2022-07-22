@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"FG2WrFf-y","question":{"blocks":[{"key":"dt717","type":"unstyled","entityRanges":[],"depth":0,"text":"You have a Microsoft 365 tenant with Microsoft E5 licenses.","data":{},"inlineStyleRanges":[]},{"entityRanges":[],"data":{},"key":"5p1iu","depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"Users and devices are added/removed daily. Users in the sales department change their devices frequently."},{"entityRanges":[],"text":"You've been asked to create three groups with the following requirements.","key":"14noi","type":"unstyled","inlineStyleRanges":[],"depth":0,"data":{}},{"text":" ","entityRanges":[{"key":0,"length":1,"offset":0}],"type":"atomic","depth":0,"data":{},"key":"d6mp2","inlineStyleRanges":[]},{"data":{},"entityRanges":[],"text":"The solution must minimize administrative effort.","depth":0,"key":"9mb72","type":"unstyled","inlineStyleRanges":[]},{"entityRanges":[],"type":"unstyled","key":"80hct","depth":0,"text":"How many assigned groups and how many dynamic groups should be created?","inlineStyleRanges":[],"data":{}}],"entityMap":{"0":{"data":{"width":"auto","alignment":"left","height":"auto","src":"https://i.ibb.co/fdScjrV/Chart2.png","alt":"Group Names and Requirements"},"mutability":"MUTABLE","type":"IMAGE"}}},"references":{"entityMap":{"0":{"data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV"},"mutability":"MUTABLE","type":"LINK"},"1":{"data":{"targetOption":"_blank","url":"https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"key":"55t4k","type":"unstyled","entityRanges":[],"inlineStyleRanges":[],"data":{},"depth":0,"text":"Group1 has to be assigned because you can't create a device group based on the device owners' attributes."},{"text":"Group 2 can be dynamic because a user does have a department attribute.","data":{},"entityRanges":[],"inlineStyleRanges":[],"depth":0,"type":"unstyled","key":"d7oo1"},{"inlineStyleRanges":[],"type":"unstyled","entityRanges":[],"key":"ekcqp","text":"Group 3 can be dynamic because a device does have a deviceownership attribute.","data":{},"depth":0},{"data":{},"entityRanges":[],"depth":0,"type":"unstyled","inlineStyleRanges":[],"text":"References:","key":"47cii"},{"entityRanges":[{"key":0,"length":95,"offset":0}],"inlineStyleRanges":[],"key":"7or3i","data":{},"depth":0,"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV","type":"unstyled"},{"inlineStyleRanges":[],"entityRanges":[{"offset":0,"key":1,"length":129}],"key":"7tlkv","type":"unstyled","data":{},"text":"https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md","depth":0}]},"answers":[{"isCorrectAnswer":false,"value":"Assigned membership groups: 0"},{"isCorrectAnswer":true,"value":"Assigned membership groups: 1"},{"value":"Assigned membership groups: 2","isCorrectAnswer":false},{"value":"Assigned membership groups: 3","isCorrectAnswer":false},{"value":"Dynamic membership groups: 0","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Dynamic membership groups: 1"},{"isCorrectAnswer":true,"value":"Dynamic membership groups: 2"},{"isCorrectAnswer":false,"value":"Dynamic membership groups: 3"}]},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV', targetOption: '_blank'}, mutability: 'MUTABLE', type: 'LINK'}, 1: {mutability: 'MUTABLE', data: {url: 'https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{type: 'unstyled', data: {}, key: '55t4k', depth: 0, inlineStyleRanges: [], text: 'Group1 has to be assigned because you can\'t create a device group based on the device owners\' attributes.', entityRanges: []}, {text: 'Group 2 can be dynamic because a user does have a department attribute.', depth: 0, type: 'unstyled', inlineStyleRanges: [], entityRanges: [], key: 'd7oo1', data: {}}, {data: {}, text: 'Group 3 can be dynamic because a device does have a deviceownership attribute.', depth: 0, inlineStyleRanges: [], type: 'unstyled', entityRanges: [], key: 'ekcqp'}, {type: 'unstyled', key: '47cii', depth: 0, data: {}, entityRanges: [], inlineStyleRanges: [], text: 'References:'}, {entityRanges: [{key: 0, offset: 0, length: 95}], depth: 0, text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-users-through-groups-S1hQgFOMV', data: {}, inlineStyleRanges: [], key: '7or3i', type: 'unstyled'}, {inlineStyleRanges: [], entityRanges: [{offset: 0, length: 129, key: 1}], key: '7tlkv', data: {}, text: 'https://github.com/MicrosoftDocs/azure-docs/blob/master/articles/active-directory/users-groups-roles/groups-dynamic-membership.md', type: 'unstyled', depth: 0}]}, id: 'FG2WrFf-y', answers: [{value: 'Assigned membership groups: 0', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Assigned membership groups: 1'}, {isCorrectAnswer: false, value: 'Assigned membership groups: 2'}, {value: 'Assigned membership groups: 3', isCorrectAnswer: false}, {value: 'Dynamic membership groups: 0', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Dynamic membership groups: 1'}, {isCorrectAnswer: true, value: 'Dynamic membership groups: 2'}, {value: 'Dynamic membership groups: 3', isCorrectAnswer: false}], question: {entityMap: {0: {mutability: 'MUTABLE', data: {alignment: 'left', height: 'auto', alt: 'Group Names and Requirements', width: 'auto', src: 'https://i.ibb.co/fdScjrV/Chart2.png'}, type: 'IMAGE'}}, blocks: [{depth: 0, entityRanges: [], key: 'dt717', type: 'unstyled', text: 'You have a Microsoft 365 tenant with Microsoft E5 licenses.', data: {}, inlineStyleRanges: []}, {key: '5p1iu', data: {}, depth: 0, text: 'Users and devices are added/removed daily. Users in the sales department change their devices frequently.', entityRanges: [], type: 'unstyled', inlineStyleRanges: []}, {data: {}, key: '14noi', entityRanges: [], depth: 0, inlineStyleRanges: [], type: 'unstyled', text: 'You\'ve been asked to create three groups with the following requirements.'}, {text: ' ', entityRanges: [{length: 1, offset: 0, key: 0}], depth: 0, type: 'atomic', data: {}, key: 'd6mp2', inlineStyleRanges: []}, {key: '9mb72', inlineStyleRanges: [], entityRanges: [], text: 'The solution must minimize administrative effort.', depth: 0, data: {}, type: 'unstyled'}, {text: 'How many assigned groups and how many dynamic groups should be created?', entityRanges: [], inlineStyleRanges: [], depth: 0, key: '80hct', data: {}, type: 'unstyled'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

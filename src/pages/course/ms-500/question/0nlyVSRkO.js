@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"0nlyVSRkO","answers":[{"isCorrectAnswer":false,"value":"The compliance report in the Microsoft Endpoint Manager admin center"},{"value":"Sign-ins logs located in the Azure Active Directory admin center","isCorrectAnswer":true},{"value":"Activity logs located in the Cloud App Security admin center","isCorrectAnswer":false},{"value":"Audit logs located in the Azure Active Directory admin center","isCorrectAnswer":false}],"question":{"entityMap":{},"blocks":[{"text":"Your organization has configured multiple conditional access policies to block non-compliant devices from connecting to Microsoft 365 and other services.","key":"ef37h","inlineStyleRanges":[{"length":153,"offset":0,"style":"color-rgb(80,80,80)"},{"length":153,"style":"bgcolor-rgb(255,255,255)","offset":0},{"offset":0,"style":"fontsize-16","length":153},{"length":153,"offset":0,"style":"fontfamily-Roboto Condensed\", sans-serif"}],"data":{},"entityRanges":[],"depth":0,"type":"unstyled"},{"data":{},"type":"unstyled","key":"8p3ir","depth":0,"entityRanges":[],"text":"Some users complain that they cannot access some services due to their devices being non-compliant.","inlineStyleRanges":[]},{"entityRanges":[],"data":{},"text":"Where can you go to check which conditional access policy is blocking the users' login?","type":"unstyled","depth":0,"inlineStyleRanges":[],"key":"488tc"}]},"references":{"blocks":[{"depth":0,"inlineStyleRanges":[{"offset":0,"length":135,"style":"color-rgb(33,37,41)"},{"offset":0,"style":"bgcolor-rgb(255,255,255)","length":135},{"offset":0,"style":"fontsize-16","length":135},{"offset":0,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", Arial, \"Noto Sans\", \"Liberation Sans\", sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":135},{"style":"BOLD","offset":11,"length":35},{"style":"BOLD","length":6,"offset":49},{"offset":57,"length":12,"style":"BOLD"},{"style":"BOLD","length":18,"offset":116}],"entityRanges":[],"data":{},"text":"Sign in to Azure Active Directory admin center > Users > Sign in logs > click the sign-in you want to investigate > Conditional access.","type":"unstyled","key":"7q72o"},{"depth":0,"inlineStyleRanges":[],"type":"unstyled","entityRanges":[{"key":0,"length":86,"offset":0}],"text":"https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh","data":{},"key":"2i6l1"}],"entityMap":{"0":{"type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh","targetOption":"_blank"},"mutability":"MUTABLE"}}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{inlineStyleRanges: [{offset: 0, style: 'color-rgb(33,37,41)', length: 135}, {style: 'bgcolor-rgb(255,255,255)', offset: 0, length: 135}, {style: 'fontsize-16', length: 135, offset: 0}, {offset: 0, length: 135, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}, {style: 'BOLD', offset: 11, length: 35}, {length: 6, style: 'BOLD', offset: 49}, {style: 'BOLD', length: 12, offset: 57}, {style: 'BOLD', length: 18, offset: 116}], key: '7q72o', depth: 0, entityRanges: [], data: {}, text: 'Sign in to Azure Active Directory admin center > Users > Sign in logs > click the sign-in you want to investigate > Conditional access.', type: 'unstyled'}, {data: {}, key: '2i6l1', inlineStyleRanges: [], entityRanges: [{length: 86, key: 0, offset: 0}], text: 'https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh', depth: 0, type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Whats-a-conditional-access-policy-V1en9Iugh'}, type: 'LINK'}}}, id: '0nlyVSRkO', answers: [{isCorrectAnswer: false, value: 'The compliance report in the Microsoft Endpoint Manager admin center'}, {isCorrectAnswer: true, value: 'Sign-ins logs located in the Azure Active Directory admin center'}, {isCorrectAnswer: false, value: 'Activity logs located in the Cloud App Security admin center'}, {isCorrectAnswer: false, value: 'Audit logs located in the Azure Active Directory admin center'}], question: {blocks: [{key: 'ef37h', inlineStyleRanges: [{offset: 0, length: 153, style: 'color-rgb(80,80,80)'}, {style: 'bgcolor-rgb(255,255,255)', length: 153, offset: 0}, {offset: 0, style: 'fontsize-16', length: 153}, {offset: 0, style: 'fontfamily-Roboto Condensed", sans-serif', length: 153}], data: {}, depth: 0, entityRanges: [], type: 'unstyled', text: 'Your organization has configured multiple conditional access policies to block non-compliant devices from connecting to Microsoft 365 and other services.'}, {entityRanges: [], inlineStyleRanges: [], depth: 0, text: 'Some users complain that they cannot access some services due to their devices being non-compliant.', type: 'unstyled', data: {}, key: '8p3ir'}, {type: 'unstyled', depth: 0, inlineStyleRanges: [], entityRanges: [], data: {}, text: 'Where can you go to check which conditional access policy is blocking the users\' login?', key: '488tc'}], entityMap: {}}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

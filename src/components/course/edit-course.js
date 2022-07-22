@@ -1,19 +1,10 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Button from '@mui/material/Button'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
 import Alert from '@mui/material/Alert'
-
 import {getDoc} from '../../components/firebase/get-doc'
 import saveDoc from '../../components/firebase/save-doc'
-
-const formStyles = {
-  marginBottom: '16px',
-}
-
-const emailStyles = {
-  marginBottom: '12px'
-}
 
 class EditCourseTab extends Component {
   constructor(props) {
@@ -41,10 +32,10 @@ class EditCourseTab extends Component {
   }
 
   handleFieldChange(event) {
-    const value = event.target.value;
+    const value = event.target.value
     const name = event.target.name
     this.setState({
-      [name]:value
+      [name]: value
     })
   }
 
@@ -58,7 +49,7 @@ class EditCourseTab extends Component {
 
     saveDoc('courses', data).then(() => {
       this.setState({success: true})
-    }).catch(err => {
+    }).catch((err) => {
       this.setState({err})
     })
   }
@@ -77,11 +68,11 @@ class EditCourseTab extends Component {
           <TextField name='description' multiline label="Describe the course" variant="standard" value={this.state.description} onChange={this.handleFieldChange} />
           <TextField name='audience' label="Who's the course for?" variant="standard" value={this.state.audience} onChange={this.handleFieldChange} />
 
-          <Alert severity="error" sx={{ display: (this.state.err === '' ? 'none' : 'flex') }}>
+          <Alert severity="error" sx={{display: (this.state.err === '' ? 'none' : 'flex')}}>
             {this.state.err}
           </Alert>
 
-          <Alert severity='success' sx={{ display: (this.state.success === true ? 'flex' : 'none') }} className={this.state.success === false ? 'd-none' : ''}>
+          <Alert severity='success' sx={{display: (this.state.success === true ? 'flex' : 'none')}} className={this.state.success === false ? 'd-none' : ''}>
             Saved successully
           </Alert>
 

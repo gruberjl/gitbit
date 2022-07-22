@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"references":{"blocks":[{"depth":0,"inlineStyleRanges":[],"key":"1cs9r","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","data":{},"type":"unstyled","entityRanges":[{"key":0,"offset":0,"length":95}]},{"type":"unstyled","text":"The security administrator role is assigned to users that manage the security of your Microsoft 365 tenant. The security administrator users will have all the permissions that the security reader has plus the ability to edit the security settings. It gives the users the permission to perform the following:","data":{},"entityRanges":[],"inlineStyleRanges":[],"key":"94i76","depth":0},{"entityRanges":[],"data":{},"inlineStyleRanges":[],"key":"ap49o","type":"unordered-list-item","depth":0,"text":"View ATP reports in the Threat management dashboard"},{"inlineStyleRanges":[],"depth":0,"key":"c9p1k","text":"https://docs.microsoft.com/en-us/office365/securitycompliance/view-reports-for-atp#what-permissions-are-needed-to-view-the-atp-reports","data":{},"type":"unstyled","entityRanges":[{"length":134,"offset":0,"key":1}]}],"entityMap":{"0":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"}},"1":{"data":{"url":"https://docs.microsoft.com/en-us/office365/securitycompliance/view-reports-for-atp#what-permissions-are-needed-to-view-the-atp-reports","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"}}},"id":"h4yPrFZ3V","question":{"entityMap":{},"blocks":[{"depth":0,"type":"unstyled","data":{},"entityRanges":[],"text":"You configure several Advanced Threat Protection (ATP) policies in a Microsoft 365 subscription.","key":"e5ho9","inlineStyleRanges":[]},{"text":"You need to allow a user named User1 to view ATP reports in the Threat management dashboard.","data":{},"inlineStyleRanges":[],"entityRanges":[],"key":"2sj5n","depth":0,"type":"unstyled"},{"type":"unstyled","depth":0,"key":"2mlrp","text":"Which role provides User1 with the required role permissions?","entityRanges":[],"inlineStyleRanges":[],"data":{}}]},"answers":[{"isCorrectAnswer":true,"value":"Security administrators"},{"isCorrectAnswer":false,"value":"Exchange administrator"},{"value":"Compliance administrator","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Message center reader"}]},
+      test: {questions: [{answers: []}]},
+      question: {question: {blocks: [{key: 'e5ho9', depth: 0, inlineStyleRanges: [], entityRanges: [], type: 'unstyled', data: {}, text: 'You configure several Advanced Threat Protection (ATP) policies in a Microsoft 365 subscription.'}, {entityRanges: [], depth: 0, type: 'unstyled', key: '2sj5n', text: 'You need to allow a user named User1 to view ATP reports in the Threat management dashboard.', data: {}, inlineStyleRanges: []}, {entityRanges: [], inlineStyleRanges: [], depth: 0, key: '2mlrp', text: 'Which role provides User1 with the required role permissions?', type: 'unstyled', data: {}}], entityMap: {}}, references: {blocks: [{text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', key: '1cs9r', depth: 0, inlineStyleRanges: [], entityRanges: [{length: 95, offset: 0, key: 0}], data: {}, type: 'unstyled'}, {type: 'unstyled', entityRanges: [], text: 'The security administrator role is assigned to users that manage the security of your Microsoft 365 tenant. The security administrator users will have all the permissions that the security reader has plus the ability to edit the security settings. It gives the users the permission to perform the following:', depth: 0, inlineStyleRanges: [], data: {}, key: '94i76'}, {inlineStyleRanges: [], text: 'View ATP reports in the Threat management dashboard', entityRanges: [], depth: 0, type: 'unordered-list-item', key: 'ap49o', data: {}}, {inlineStyleRanges: [], key: 'c9p1k', text: 'https://docs.microsoft.com/en-us/office365/securitycompliance/view-reports-for-atp#what-permissions-are-needed-to-view-the-atp-reports', type: 'unstyled', entityRanges: [{offset: 0, length: 134, key: 1}], depth: 0, data: {}}], entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU'}, type: 'LINK'}, 1: {data: {url: 'https://docs.microsoft.com/en-us/office365/securitycompliance/view-reports-for-atp#what-permissions-are-needed-to-view-the-atp-reports', targetOption: '_blank'}, type: 'LINK', mutability: 'MUTABLE'}}}, id: 'h4yPrFZ3V', answers: [{isCorrectAnswer: true, value: 'Security administrators'}, {value: 'Exchange administrator', isCorrectAnswer: false}, {value: 'Compliance administrator', isCorrectAnswer: false}, {value: 'Message center reader', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -67,21 +67,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -89,8 +89,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -98,15 +98,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -120,16 +119,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -180,12 +179,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

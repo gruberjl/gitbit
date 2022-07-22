@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"question":{"entityMap":{},"blocks":[{"text":"Your organization has a Microsoft 365 tenant with a user named John Gruber.","inlineStyleRanges":[],"entityRanges":[],"data":{},"type":"unstyled","depth":0,"key":"9jr76"},{"entityRanges":[],"type":"unstyled","depth":0,"inlineStyleRanges":[{"style":"color-rgb(33,37,41)","offset":38,"length":11},{"offset":94,"length":6,"style":"color-rgb(33,37,41)"},{"offset":38,"length":11,"style":"bgcolor-rgb(255,255,255)"},{"offset":94,"length":6,"style":"bgcolor-rgb(255,255,255)"},{"offset":38,"style":"fontsize-16","length":11},{"offset":94,"style":"fontsize-16","length":6},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":11,"offset":38},{"length":6,"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","offset":94}],"text":"The CEO of your organization believes John Gruber may have sent email messages to one of your rivals with company secrets.","key":"dvut0","data":{}},{"text":"You must provide a way to review any emails sent by User1 to the rival, even those that were deleted after being sent.","depth":0,"entityRanges":[],"key":"jcsq","type":"unstyled","inlineStyleRanges":[],"data":{}}]},"references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f","targetOption":"_blank"}}},"blocks":[{"entityRanges":[],"depth":0,"type":"unstyled","key":"blhm1","data":{},"inlineStyleRanges":[],"text":"Everything in a mailbox will be kept after a ligration hold is enabled. Including items deleted, modified, and in the archive mailbox."},{"key":"ec0u0","text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f","depth":0,"entityRanges":[{"key":0,"length":114,"offset":0}],"data":{},"type":"unstyled","inlineStyleRanges":[]}]},"answers":[{"value":"Enable and configure In-Place Archiving for John Gruber's mailbox","isCorrectAnswer":false},{"value":"From the Compliance admin center, perform a content search of John Gruber's mailbox","isCorrectAnswer":false},{"value":"Place John Gruber's mailbox on Litigation Hold","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Set a message delivery restriction on John Gruber's mailbox"}],"id":"Vtdx16cCp"},
+      test: {questions: [{answers: []}]},
+      question: {answers: [{value: 'Enable and configure In-Place Archiving for John Gruber\'s mailbox', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'From the Compliance admin center, perform a content search of John Gruber\'s mailbox'}, {value: 'Place John Gruber\'s mailbox on Litigation Hold', isCorrectAnswer: true}, {isCorrectAnswer: false, value: 'Set a message delivery restriction on John Gruber\'s mailbox'}], question: {entityMap: {}, blocks: [{type: 'unstyled', key: '9jr76', entityRanges: [], depth: 0, text: 'Your organization has a Microsoft 365 tenant with a user named John Gruber.', inlineStyleRanges: [], data: {}}, {text: 'The CEO of your organization believes John Gruber may have sent email messages to one of your rivals with company secrets.', data: {}, type: 'unstyled', inlineStyleRanges: [{length: 11, style: 'color-rgb(33,37,41)', offset: 38}, {offset: 94, length: 6, style: 'color-rgb(33,37,41)'}, {length: 11, style: 'bgcolor-rgb(255,255,255)', offset: 38}, {style: 'bgcolor-rgb(255,255,255)', length: 6, offset: 94}, {style: 'fontsize-16', length: 11, offset: 38}, {offset: 94, style: 'fontsize-16', length: 6}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 38, length: 11}, {length: 6, offset: 94, style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji'}], depth: 0, entityRanges: [], key: 'dvut0'}, {key: 'jcsq', text: 'You must provide a way to review any emails sent by User1 to the rival, even those that were deleted after being sent.', entityRanges: [], data: {}, depth: 0, inlineStyleRanges: [], type: 'unstyled'}]}, references: {blocks: [{entityRanges: [], data: {}, key: 'blhm1', depth: 0, inlineStyleRanges: [], text: 'Everything in a mailbox will be kept after a ligration hold is enabled. Including items deleted, modified, and in the archive mailbox.', type: 'unstyled'}, {inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f', key: 'ec0u0', entityRanges: [{length: 114, offset: 0, key: 0}], depth: 0, data: {}, type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', type: 'LINK', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-data-retention-to-conform-to-compliance-NsF7No40f'}}}}, id: 'Vtdx16cCp'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -63,21 +63,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -85,8 +85,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -94,15 +94,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -116,16 +115,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -176,12 +175,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

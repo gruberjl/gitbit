@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"id":"GlZ4QRRz5","references":{"entityMap":{"0":{"data":{"url":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf","targetOption":"_blank"},"type":"LINK","mutability":"MUTABLE"},"1":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"http://localhost:8000/course/ms-500/question/edit/?docid=GSRw6_3Xv"}}},"blocks":[{"key":"cg4bf","data":{},"entityRanges":[{"key":0,"offset":0,"length":103}],"text":"https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf","type":"unstyled","inlineStyleRanges":[],"depth":0},{"type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"key":"esf1l","depth":0,"data":{},"text":"The groups must be mail-enabled."},{"data":{},"inlineStyleRanges":[],"entityRanges":[],"depth":0,"type":"unstyled","text":"Labels can be published to any specific user or email-enabled group. The group can be a security group, distribution group, or Microsoft 365 group. The group can have assigned or dynamic membership.","key":"604a5"},{"type":"unstyled","data":{},"text":"https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide ","entityRanges":[{"key":1,"offset":0,"length":96}],"key":"49c1","inlineStyleRanges":[],"depth":0}]},"answers":[{"value":"Group1","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Group2"},{"value":"Group3","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Group4"},{"value":"Group11","isCorrectAnswer":false},{"value":"Group12","isCorrectAnswer":false},{"isCorrectAnswer":true,"value":"Group13"},{"isCorrectAnswer":true,"value":"Group14"}],"question":{"blocks":[{"text":"Your organization has a Microsoft 365 tenant and an on-premises Active Directory domain named gitbit.org. Your on-premises domain is synced to Microsoft 365. Your on-premises domain has the following groups that are being synced to Microsoft 365.","entityRanges":[],"key":"d19n8","inlineStyleRanges":[{"style":"color-rgb(33,37,41)","length":140,"offset":106},{"style":"bgcolor-rgb(255,255,255)","length":140,"offset":106},{"offset":106,"style":"fontsize-16","length":140},{"style":"fontfamily-system-ui, -apple-system, \"Segoe UI\", Roboto, \"Helvetica Neue\", \"Noto Sans\", \"Liberation Sans\", Arial, sans-serif, \"Apple Color Emoji\", \"Segoe UI Emoji\", \"Segoe UI Symbol\", \"Noto Color Emoji","length":140,"offset":106}],"type":"unstyled","depth":0,"data":{}},{"data":{},"depth":0,"entityRanges":[{"offset":0,"key":0,"length":1}],"text":" ","key":"5r2qb","type":"atomic","inlineStyleRanges":[]},{"depth":0,"text":"Your organization has the following cloud-only groups in Azure AD.","entityRanges":[],"type":"unstyled","key":"9fvb7","data":{},"inlineStyleRanges":[]},{"inlineStyleRanges":[],"data":{},"depth":0,"text":" ","entityRanges":[{"key":1,"length":1,"offset":0}],"key":"b3k1q","type":"atomic"},{"type":"unstyled","inlineStyleRanges":[],"depth":0,"text":"You've been tasked with creating an information protection label named LabelA. You've created the label and now need to publish the label.","entityRanges":[],"key":"1dj79","data":{}},{"entityRanges":[],"type":"unstyled","key":"aoue8","text":"What groups can you publish LabelA to?","data":{},"inlineStyleRanges":[],"depth":0}],"entityMap":{"0":{"mutability":"MUTABLE","data":{"alt":"Group type chart","height":"auto","src":"https://i.ibb.co/ysp7Thd/group-type-chart2.png","alignment":"left","width":"auto"},"type":"IMAGE"},"1":{"mutability":"MUTABLE","type":"IMAGE","data":{"alignment":"left","width":"auto","src":"https://i.ibb.co/VgcSY26/group-type-chart2.png","height":"auto","alt":"Group type chart"}}}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf'}, type: 'LINK'}, 1: {type: 'LINK', data: {url: 'http://localhost:8000/course/ms-500/question/edit/?docid=GSRw6_3Xv', targetOption: '_blank'}, mutability: 'MUTABLE'}}, blocks: [{depth: 0, entityRanges: [{key: 0, length: 103, offset: 0}], key: 'cg4bf', text: 'https://www.gitbit.org/course/ms-500/learn/How-to-classify-data-using-labels-in-Microsoft-365-vLweLmxZf', data: {}, inlineStyleRanges: [], type: 'unstyled'}, {key: 'esf1l', data: {}, text: 'The groups must be mail-enabled.', depth: 0, entityRanges: [], inlineStyleRanges: [], type: 'unstyled'}, {data: {}, type: 'unstyled', key: '604a5', depth: 0, inlineStyleRanges: [], entityRanges: [], text: 'Labels can be published to any specific user or email-enabled group. The group can be a security group, distribution group, or Microsoft 365 group. The group can have assigned or dynamic membership.'}, {depth: 0, type: 'unstyled', data: {}, entityRanges: [{offset: 0, key: 1, length: 96}], text: 'https://docs.microsoft.com/en-us/microsoft-365/compliance/sensitivity-labels?view=o365-worldwide ', inlineStyleRanges: [], key: '49c1'}]}, answers: [{value: 'Group1', isCorrectAnswer: true}, {value: 'Group2', isCorrectAnswer: false}, {value: 'Group3', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Group4'}, {value: 'Group11', isCorrectAnswer: false}, {value: 'Group12', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Group13'}, {value: 'Group14', isCorrectAnswer: true}], question: {blocks: [{depth: 0, inlineStyleRanges: [{length: 140, style: 'color-rgb(33,37,41)', offset: 106}, {offset: 106, style: 'bgcolor-rgb(255,255,255)', length: 140}, {offset: 106, style: 'fontsize-16', length: 140}, {style: 'fontfamily-system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", "Noto Sans", "Liberation Sans", Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji', offset: 106, length: 140}], entityRanges: [], data: {}, key: 'd19n8', type: 'unstyled', text: 'Your organization has a Microsoft 365 tenant and an on-premises Active Directory domain named gitbit.org. Your on-premises domain is synced to Microsoft 365. Your on-premises domain has the following groups that are being synced to Microsoft 365.'}, {type: 'atomic', entityRanges: [{key: 0, offset: 0, length: 1}], key: '5r2qb', depth: 0, inlineStyleRanges: [], text: ' ', data: {}}, {depth: 0, text: 'Your organization has the following cloud-only groups in Azure AD.', key: '9fvb7', type: 'unstyled', entityRanges: [], data: {}, inlineStyleRanges: []}, {text: ' ', entityRanges: [{length: 1, key: 1, offset: 0}], type: 'atomic', inlineStyleRanges: [], key: 'b3k1q', depth: 0, data: {}}, {key: '1dj79', data: {}, depth: 0, text: 'You\'ve been tasked with creating an information protection label named LabelA. You\'ve created the label and now need to publish the label.', entityRanges: [], type: 'unstyled', inlineStyleRanges: []}, {type: 'unstyled', data: {}, key: 'aoue8', depth: 0, text: 'What groups can you publish LabelA to?', inlineStyleRanges: [], entityRanges: []}], entityMap: {0: {mutability: 'MUTABLE', type: 'IMAGE', data: {height: 'auto', alignment: 'left', width: 'auto', alt: 'Group type chart', src: 'https://i.ibb.co/ysp7Thd/group-type-chart2.png'}}, 1: {mutability: 'MUTABLE', type: 'IMAGE', data: {alignment: 'left', height: 'auto', width: 'auto', alt: 'Group type chart', src: 'https://i.ibb.co/VgcSY26/group-type-chart2.png'}}}}, id: 'GlZ4QRRz5'},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -68,21 +68,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -90,8 +90,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -99,15 +99,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -121,16 +120,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -181,12 +180,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

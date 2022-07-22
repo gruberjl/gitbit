@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"isCorrectAnswer":true,"value":"BitLocker to Go: Device1"},{"value":"BitLocker to Go: Device2","isCorrectAnswer":true},{"value":"BitLocker to Go: Device3","isCorrectAnswer":true},{"isCorrectAnswer":true,"value":"BitLocker to Go: Device4"},{"value":"Auto-unlock: Device1","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Auto-unlock: Device2"},{"value":"Auto-unlock: Device3","isCorrectAnswer":true},{"isCorrectAnswer":false,"value":"Auto-unlock: Device4"}],"references":{"blocks":[{"data":{},"inlineStyleRanges":[],"key":"f7cr5","type":"unstyled","depth":0,"text":"Bitlocker to Go is Bitlocker for removable media. It is possible to encrypt removable media with Intune. You don't even need TPM on the Windows device. In short, you use Intune to protect removable media and then configure Bitlocker to require a passcode.","entityRanges":[]},{"depth":0,"data":{},"entityRanges":[],"key":"bbfpm","inlineStyleRanges":[],"type":"unstyled","text":"Bitlocker auto-unlock is also available through Intune. Bitlocker auto-unlock will automatically unlock data drives (for example a D: drive) when the OS drive (for example a C: drive) is unlocked. Bitlocker auto-unlock does not require TPM but it does require the OS drive to be encrypted."},{"key":"705u","text":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO","inlineStyleRanges":[],"data":{},"depth":0,"entityRanges":[{"key":0,"length":87,"offset":0}],"type":"unstyled"}],"entityMap":{"0":{"type":"LINK","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO"},"mutability":"MUTABLE"}}},"id":"ggzFq0qp8","question":{"entityMap":{"0":{"type":"IMAGE","data":{"alt":"Device security chart","src":"https://i.ibb.co/1fcDXhY/Device-Security-Chart2.png","height":"auto","alignment":"left","width":"auto"},"mutability":"MUTABLE"}},"blocks":[{"text":"Your organization has a Microsoft 365 tenant with a primary domain of gitbit.org","type":"unstyled","data":{},"entityRanges":[],"key":"169ub","inlineStyleRanges":[],"depth":0},{"key":"2gp80","depth":0,"text":"The following Windows 10 devices are joined to Azure AD.","type":"unstyled","entityRanges":[],"data":{},"inlineStyleRanges":[]},{"type":"atomic","entityRanges":[{"offset":0,"key":0,"length":1}],"data":{},"key":"8nh71","depth":0,"inlineStyleRanges":[],"text":" "},{"key":"2cuqn","type":"unstyled","inlineStyleRanges":[],"entityRanges":[],"depth":0,"data":{},"text":"What devices can you use BitLocker to Go?"},{"inlineStyleRanges":[],"key":"d00jm","text":"What devices can you turn on auto-unlock?","data":{},"entityRanges":[],"depth":0,"type":"unstyled"}]}},
+      test: {questions: [{answers: []}]},
+      question: {question: {entityMap: {0: {type: 'IMAGE', data: {alt: 'Device security chart', height: 'auto', width: 'auto', src: 'https://i.ibb.co/1fcDXhY/Device-Security-Chart2.png', alignment: 'left'}, mutability: 'MUTABLE'}}, blocks: [{depth: 0, data: {}, entityRanges: [], inlineStyleRanges: [], text: 'Your organization has a Microsoft 365 tenant with a primary domain of gitbit.org', type: 'unstyled', key: '169ub'}, {type: 'unstyled', depth: 0, inlineStyleRanges: [], data: {}, text: 'The following Windows 10 devices are joined to Azure AD.', key: '2gp80', entityRanges: []}, {depth: 0, type: 'atomic', key: '8nh71', text: ' ', entityRanges: [{length: 1, key: 0, offset: 0}], data: {}, inlineStyleRanges: []}, {depth: 0, key: '2cuqn', text: 'What devices can you use BitLocker to Go?', entityRanges: [], inlineStyleRanges: [], type: 'unstyled', data: {}}, {depth: 0, data: {}, inlineStyleRanges: [], type: 'unstyled', text: 'What devices can you turn on auto-unlock?', entityRanges: [], key: 'd00jm'}]}, id: 'ggzFq0qp8', answers: [{isCorrectAnswer: true, value: 'BitLocker to Go: Device1'}, {isCorrectAnswer: true, value: 'BitLocker to Go: Device2'}, {value: 'BitLocker to Go: Device3', isCorrectAnswer: true}, {value: 'BitLocker to Go: Device4', isCorrectAnswer: true}, {isCorrectAnswer: true, value: 'Auto-unlock: Device1'}, {value: 'Auto-unlock: Device2', isCorrectAnswer: false}, {isCorrectAnswer: true, value: 'Auto-unlock: Device3'}, {value: 'Auto-unlock: Device4', isCorrectAnswer: false}], references: {entityMap: {0: {mutability: 'MUTABLE', data: {url: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO', targetOption: '_blank'}, type: 'LINK'}}, blocks: [{data: {}, key: 'f7cr5', entityRanges: [], inlineStyleRanges: [], depth: 0, text: 'Bitlocker to Go is Bitlocker for removable media. It is possible to encrypt removable media with Intune. You don\'t even need TPM on the Windows device. In short, you use Intune to protect removable media and then configure Bitlocker to require a passcode.', type: 'unstyled'}, {key: 'bbfpm', depth: 0, entityRanges: [], inlineStyleRanges: [], text: 'Bitlocker auto-unlock is also available through Intune. Bitlocker auto-unlock will automatically unlock data drives (for example a D: drive) when the OS drive (for example a C: drive) is unlocked. Bitlocker auto-unlock does not require TPM but it does require the OS drive to be encrypted.', data: {}, type: 'unstyled'}, {type: 'unstyled', inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/How-to-manage-devices-using-Intune-_LL9VqGZO', entityRanges: [{offset: 0, key: 0, length: 87}], key: '705u', depth: 0, data: {}}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -66,21 +66,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -88,8 +88,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -97,15 +97,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -119,16 +118,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -179,12 +178,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

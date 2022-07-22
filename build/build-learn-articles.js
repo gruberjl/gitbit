@@ -52,7 +52,7 @@ const buildLearnArticles = async () => {
 
       const newFile = template.replace('{COURSE:true, sections:[]}', JSON.stringify(course))
         .replace('{ARTICLE:true}', JSON.stringify(article))
-        .replace('<ARTICLE/>', articleHtml)
+        .replace('<ARTICLE />', articleHtml)
         .replace('NEXT_CONTENT', nextArticle)
         .replace('PREVIOUS_CONTENT', previousArticle)
         .replace('CURRENT_SLUG', article.slug)

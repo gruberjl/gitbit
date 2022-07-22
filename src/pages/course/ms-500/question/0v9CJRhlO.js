@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Set the frequency to one time","isCorrectAnswer":false},{"isCorrectAnswer":false,"value":"Set the frequency to weekly"},{"isCorrectAnswer":true,"value":"Set the frequency to monthly"},{"value":"Configure the Upon completion settings to verify access is removed if the admin doesn't respond","isCorrectAnswer":true},{"value":"Configure the Advanced settings to verify access is removed if the admin doesn't respond","isCorrectAnswer":false},{"value":"Configure the Programs settings to verify access is removed if the admin doesn't respond","isCorrectAnswer":false},{"value":"Configure the Reviewers settings to verify access is removed if the admin doesn't respond","isCorrectAnswer":false}],"references":{"blocks":[{"entityRanges":[],"key":"7fnl0","data":{},"type":"unstyled","depth":0,"inlineStyleRanges":[],"text":"A frequency of monthly allows you to set the number of days the user has to respond (between 1-30)"},{"inlineStyleRanges":[],"entityRanges":[],"depth":0,"data":{},"key":"1cf04","type":"unstyled","text":"The upon completion settings allows you to remove the permissions/role from a user if they don't respond in time."},{"inlineStyleRanges":[],"data":{},"text":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2","entityRanges":[{"length":94,"offset":0,"key":0}],"key":"8vq2","depth":0,"type":"unstyled"}],"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"targetOption":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2"}}}},"id":"0v9CJRhlO","question":{"entityMap":{},"blocks":[{"inlineStyleRanges":[],"text":"Access to the Azure AD admin center by any user administrators must be reviewed once a month. The user must lose access if they don't respond within 7 days of the access request.","entityRanges":[],"depth":0,"type":"unstyled","data":{},"key":"19r1m"},{"data":{},"type":"unstyled","key":"fsnaa","depth":0,"inlineStyleRanges":[],"text":"You create an access review policy and specify the scope and a group.","entityRanges":[]},{"key":"2qg2v","data":{},"inlineStyleRanges":[],"text":"What other settings do you need to configure?","entityRanges":[],"type":"unstyled","depth":0}]}},
+      test: {questions: [{answers: []}]},
+      question: {references: {entityMap: {0: {data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2'}, mutability: 'MUTABLE', type: 'LINK'}}, blocks: [{data: {}, entityRanges: [], inlineStyleRanges: [], text: 'A frequency of monthly allows you to set the number of days the user has to respond (between 1-30)', key: '7fnl0', depth: 0, type: 'unstyled'}, {entityRanges: [], data: {}, text: 'The upon completion settings allows you to remove the permissions/role from a user if they don\'t respond in time.', type: 'unstyled', depth: 0, key: '1cf04', inlineStyleRanges: []}, {data: {}, type: 'unstyled', key: '8vq2', depth: 0, entityRanges: [{length: 94, key: 0, offset: 0}], inlineStyleRanges: [], text: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2'}]}, answers: [{isCorrectAnswer: false, value: 'Set the frequency to one time'}, {isCorrectAnswer: false, value: 'Set the frequency to weekly'}, {isCorrectAnswer: true, value: 'Set the frequency to monthly'}, {isCorrectAnswer: true, value: 'Configure the Upon completion settings to verify access is removed if the admin doesn\'t respond'}, {isCorrectAnswer: false, value: 'Configure the Advanced settings to verify access is removed if the admin doesn\'t respond'}, {value: 'Configure the Programs settings to verify access is removed if the admin doesn\'t respond', isCorrectAnswer: false}, {isCorrectAnswer: false, value: 'Configure the Reviewers settings to verify access is removed if the admin doesn\'t respond'}], id: '0v9CJRhlO', question: {entityMap: {}, blocks: [{key: '19r1m', depth: 0, text: 'Access to the Azure AD admin center by any user administrators must be reviewed once a month. The user must lose access if they don\'t respond within 7 days of the access request.', entityRanges: [], data: {}, inlineStyleRanges: [], type: 'unstyled'}, {entityRanges: [], type: 'unstyled', key: 'fsnaa', text: 'You create an access review policy and specify the scope and a group.', inlineStyleRanges: [], data: {}, depth: 0}, {type: 'unstyled', entityRanges: [], inlineStyleRanges: [], data: {}, key: '2qg2v', depth: 0, text: 'What other settings do you need to configure?'}]}},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -64,21 +64,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -86,8 +86,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -95,15 +95,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -117,16 +116,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -177,12 +176,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

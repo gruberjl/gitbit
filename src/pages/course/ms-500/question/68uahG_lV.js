@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Page from '../../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
@@ -42,8 +42,8 @@ class EditQuestionPage extends Component {
     this.state = {
       uid: '',
       testId: params.get('testId'),
-      test: {questions:[{answers:[]}]},
-      question: {"answers":[{"value":"Create an access review policy.","isCorrectAnswer":true},{"value":"Grant John Gruber the global admin role.","isCorrectAnswer":false},{"value":"Grant John Gruber the Guest inviter role.","isCorrectAnswer":true},{"value":"In Azure Active Directory admin center modify the external collaboration settings.","isCorrectAnswer":false}],"id":"68uahG_lV","references":{"entityMap":{"0":{"type":"LINK","mutability":"MUTABLE","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2","targetOption":"_blank"}},"1":{"mutability":"MUTABLE","type":"LINK","data":{"url":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","targetOption":"_blank"}},"2":{"data":{"url":"https://docs.microsoft.com/en-us/microsoft-365/solutions/create-secure-guest-sharing-environment?view=o365-worldwide#set-up-guest-access-reviews","targetOption":"_blank"},"mutability":"MUTABLE","type":"LINK"}},"blocks":[{"depth":0,"text":"To configure guest access review you must create an access review policy.","key":"f88oc","entityRanges":[],"data":{},"type":"unstyled","inlineStyleRanges":[]},{"key":"89v07","text":"https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2","data":{},"inlineStyleRanges":[],"depth":0,"entityRanges":[{"length":94,"key":0,"offset":0}],"type":"unstyled"},{"inlineStyleRanges":[],"data":{},"text":"Assigning the Guest invited role to John Gruber will give him the ability to invite guests. Global admins can also invite guests but that would give John Gruber way too many permissions.","type":"unstyled","entityRanges":[],"key":"8osgc","depth":0},{"key":"f6dp9","inlineStyleRanges":[],"text":"https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU","entityRanges":[{"key":1,"length":95,"offset":0}],"depth":0,"data":{},"type":"unstyled"},{"entityRanges":[{"length":144,"key":2,"offset":0}],"text":"https://docs.microsoft.com/en-us/microsoft-365/solutions/create-secure-guest-sharing-environment?view=o365-worldwide#set-up-guest-access-reviews","type":"unstyled","depth":0,"key":"f8u8p","data":{},"inlineStyleRanges":[]}]},"question":{"blocks":[{"entityRanges":[],"key":"347i8","inlineStyleRanges":[],"type":"unstyled","depth":0,"data":{},"text":"Your manager has asked you to configure the following in Microsoft 365."},{"key":"e44co","text":"Set guest access to be reviewed every 30 days.","type":"unordered-list-item","entityRanges":[],"data":{},"inlineStyleRanges":[],"depth":0},{"key":"am7ii","depth":0,"inlineStyleRanges":[],"data":{},"entityRanges":[],"text":"Grant John Gruber the ability to invite guests to the Microsoft 365 tenant.","type":"unordered-list-item"},{"key":"9mktc","data":{},"type":"unstyled","depth":0,"inlineStyleRanges":[],"text":"Your organization adheres to the principle of least privilege.","entityRanges":[]},{"text":"What should you do?","type":"unstyled","depth":0,"key":"39v8l","inlineStyleRanges":[],"entityRanges":[],"data":{}}],"entityMap":{}}},
+      test: {questions: [{answers: []}]},
+      question: {references: {blocks: [{entityRanges: [], data: {}, key: 'f88oc', inlineStyleRanges: [], text: 'To configure guest access review you must create an access review policy.', type: 'unstyled', depth: 0}, {type: 'unstyled', depth: 0, data: {}, inlineStyleRanges: [], entityRanges: [{offset: 0, key: 0, length: 94}], key: '89v07', text: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2'}, {inlineStyleRanges: [], entityRanges: [], type: 'unstyled', data: {}, text: 'Assigning the Guest invited role to John Gruber will give him the ability to invite guests. Global admins can also invite guests but that would give John Gruber way too many permissions.', depth: 0, key: '8osgc'}, {entityRanges: [{key: 1, length: 95, offset: 0}], key: 'f6dp9', data: {}, type: 'unstyled', text: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', depth: 0, inlineStyleRanges: []}, {depth: 0, key: 'f8u8p', text: 'https://docs.microsoft.com/en-us/microsoft-365/solutions/create-secure-guest-sharing-environment?view=o365-worldwide#set-up-guest-access-reviews', entityRanges: [{offset: 0, length: 144, key: 2}], data: {}, inlineStyleRanges: [], type: 'unstyled'}], entityMap: {0: {mutability: 'MUTABLE', data: {targetOption: '_blank', url: 'https://www.gitbit.org/course/ms-500/learn/Automating-Access-Review-in-Microsoft-365-rK48f6iM2'}, type: 'LINK'}, 1: {type: 'LINK', data: {url: 'https://www.gitbit.org/course/ms-500/learn/Creating-and-managing-admins-through-roles-7CpqFkPZU', targetOption: '_blank'}, mutability: 'MUTABLE'}, 2: {type: 'LINK', mutability: 'MUTABLE', data: {url: 'https://docs.microsoft.com/en-us/microsoft-365/solutions/create-secure-guest-sharing-environment?view=o365-worldwide#set-up-guest-access-reviews', targetOption: '_blank'}}}}, question: {blocks: [{inlineStyleRanges: [], text: 'Your manager has asked you to configure the following in Microsoft 365.', entityRanges: [], data: {}, depth: 0, key: '347i8', type: 'unstyled'}, {inlineStyleRanges: [], type: 'unordered-list-item', data: {}, text: 'Set guest access to be reviewed every 30 days.', entityRanges: [], key: 'e44co', depth: 0}, {data: {}, inlineStyleRanges: [], entityRanges: [], key: 'am7ii', text: 'Grant John Gruber the ability to invite guests to the Microsoft 365 tenant.', type: 'unordered-list-item', depth: 0}, {depth: 0, data: {}, type: 'unstyled', entityRanges: [], key: '9mktc', inlineStyleRanges: [], text: 'Your organization adheres to the principle of least privilege.'}, {depth: 0, entityRanges: [], key: '39v8l', data: {}, text: 'What should you do?', inlineStyleRanges: [], type: 'unstyled'}], entityMap: {}}, id: '68uahG_lV', answers: [{isCorrectAnswer: true, value: 'Create an access review policy.'}, {isCorrectAnswer: false, value: 'Grant John Gruber the global admin role.'}, {value: 'Grant John Gruber the Guest inviter role.', isCorrectAnswer: true}, {value: 'In Azure Active Directory admin center modify the external collaboration settings.', isCorrectAnswer: false}]},
       previousQuestionId: '',
       nextQuestionId: '',
       questionIdx: 0,
@@ -70,21 +70,21 @@ class EditQuestionPage extends Component {
     this.state.jsonLd = {
       datePublished: '9-8-2021',
       keywords: [
-  			"Microsoft",
-  			"Microsoft 365",
-  			"Office 365",
+        'Microsoft',
+        'Microsoft 365',
+        'Office 365',
         'MS-500',
         'Microsoft 365 Security Administration'
-  		],
+      ],
       mainEntity: {
-        '@type': "Question",
+        '@type': 'Question',
         name: this.state.questionText.substring(0, 150),
         text: this.state.questionText,
         answerCount: this.state.question.answers ? this.state.question.answers.length : 0,
-        dateCreated: "2021-09-08T16:52:31Z",
+        dateCreated: '2021-09-08T16:52:31Z',
         author: {
-          "@type": "Person",
-          "name": "John Gruber",
+          '@type': 'Person',
+          name: 'John Gruber',
           url: 'https://medium.com/@gruberjl'
         }
       }
@@ -92,8 +92,8 @@ class EditQuestionPage extends Component {
 
     if (this.state.question.answers) {
       this.state.jsonLd.mainEntity.acceptedAnswer = {
-        "@type": "Answer",
-        "text": this.state.question.answers ? this.state.question.answers.filter(answer => answer.isCorrectAnswer).map(a => a.value).join('; ') : 'None',
+        '@type': 'Answer',
+        text: this.state.question.answers ? this.state.question.answers.filter((answer) => answer.isCorrectAnswer).map((a) => a.value).join('; ') : 'None',
         url: `https://www.gitbit.org/course/ms-500/question/${this.state.question.id}`,
         author: {
           type: 'Person',
@@ -101,15 +101,14 @@ class EditQuestionPage extends Component {
           url: 'https://medium.com/@gruberjl'
         },
         upvoteCount: 1,
-        dateCreated: "2021-09-08T16:52:31Z"
+        dateCreated: '2021-09-08T16:52:31Z'
       }
     }
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -123,16 +122,16 @@ class EditQuestionPage extends Component {
       })
 
       if (this.state.testId) {
-        getDoc(`users/${user.uid}/tests`, this.state.testId).then(test => {
-          const questionIdx = test.questions.findIndex(question => question.id === this.state.question.id)
+        getDoc(`users/${user.uid}/tests`, this.state.testId).then((test) => {
+          const questionIdx = test.questions.findIndex((question) => question.id === this.state.question.id)
           const previousQuestionId = questionIdx > 0 ? test.questions[questionIdx-1].id : ''
           const nextQuestionId = test.questions.length-1 == questionIdx ? '' : test.questions[questionIdx+1].id
 
           this.setState({
             test,
-            questionIdx: questionIdx,
-            nextQuestionId: nextQuestionId,
-            previousQuestionId: previousQuestionId
+            questionIdx,
+            nextQuestionId,
+            previousQuestionId
           })
         })
       }
@@ -183,12 +182,12 @@ class EditQuestionPage extends Component {
           <style>{universalStyles}</style>
           <div>
             <Container>
-              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam}/>
+              <Header questionIdx={this.state.questionIdx} previousQuestionId={this.state.previousQuestionId} nextQuestionId={this.state.nextQuestionId} testId={this.state.testId} toggleEndExam={this.toggleEndExam} />
               <Choice questionHtml={this.state.questionHtml} question={this.state.question} testQuestion={this.state.test.questions[this.state.questionIdx]} onTestQuestionChange={this.onTestQuestionChange} showAnswer={this.state.answerShown} />
               <Grid container>
                 <Grid item xs={12}>
                   { this.state.answerShown ?
-                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}}></div> :
+                    <div dangerouslySetInnerHTML={{__html: this.state.referencesHtml}} /> :
                     ''
                   }
                 </Grid>

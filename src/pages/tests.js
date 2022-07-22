@@ -1,4 +1,4 @@
-import { h, Component } from "preact"
+import {h, Component} from 'preact'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
@@ -19,9 +19,8 @@ class Tests extends Component {
   }
 
   componentDidMount() {
-    if (isBrowser()) {
+    if (isBrowser())
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-    }
   }
 
   componentWillUnmount() {
@@ -33,9 +32,8 @@ class Tests extends Component {
       this.setState({
         uid: user.uid
       })
-    } else {
+    } else
       window.location.href = '/login'
-    }
   }
 
   render() {
@@ -53,7 +51,7 @@ class Tests extends Component {
             </Grid>
             <Grid container sx={{mx: 'auto'}}>
               <Grid item sx={{mx: 'auto'}}>
-                <MyTests/>
+                <MyTests />
               </Grid>
             </Grid>
           </Container>
