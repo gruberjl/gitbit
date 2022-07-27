@@ -41,8 +41,8 @@ const margin12px = {
 
 const jsonLd = {
   '@type': 'Course',
-  headline: 'Training for MS-500: Microsoft Office 365 Security Admin',
-  name: 'Training for MS-500: Microsoft Office 365 Security Admin',
+  headline: 'Training for MS-500: Microsoft 365 Security Admin',
+  name: 'Training for MS-500: Microsoft 365 Security Administration',
   description: 'Get Certified in MS-500 Microsoft 365 Security Administration',
   provider: {
     '@type': 'Organization',

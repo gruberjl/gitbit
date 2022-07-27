@@ -10,7 +10,7 @@ const getDescription = (propsDescription) => {
     return description
   }
 
-  return 'Learn, prepare and training for the Microsoft Microsoft Office 365 Exam MS-500: Microsoft 365 Security Administration MS-500 exam'
+  return 'Learn, prepare and training for the Microsoft Microsoft 365 Exam MS-500: Microsoft 365 Security Administration MS-500 exam'
 }
 
 const getTitle = (propsTitle) => {
