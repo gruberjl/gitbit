@@ -154,6 +154,9 @@ class ArticlePage extends Component {
                 margin: 0 auto;
                 display: block;
               }
+              pre {
+                white-space: pre-wrap;
+              }
             `}
           </style>
           <Container>
