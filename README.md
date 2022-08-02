@@ -1,5 +1,21 @@
 # Welcome to Gitbit
 
+GitBit is an online course that teaches you the ins and outs of securing Microsoft 365 from basics to Microsoft 365 Defender in about thirty lessons.
+
+Microsoft 365 is critical for your business, but sometimes Microsoft 365 isn't secure.
+
+If you want to become a Microsoft 365 security guru but aren’t sure how, GitBit is here to save for you!
+
+With GitBit, you’ll learn how to become a Microsoft 365 guru with 5 modules that give you a step-by-step guide for securing your Microsoft 365 tenant.
+
+In addition to the lessons, you’ll get over 100 questions that are very similar to the MS-500.
+
+Complete the lessons and take a couple practice tests and you'll be ready to pass your Microsoft 365 Security Administration certification.
+
+GitBit gives you everything you need to become a Microsoft 365 security expert.
+
+Access GitBit today!
+
 GitBit was created to help the world get better at securing their Microsoft 365 tenants. A lot of organizations are now using Microsoft 365 but how many of them are secure? Not many!
 
 Go to https://www.gitbit.org to get started. Or you can jump right into one of our lessons. Or jump right into the practice questions. The practice questions are very similar to the questions you'll find on the MS-500 certification by Microsoft.
@@ -186,4 +202,3 @@ Go to https://www.gitbit.org to get started. Or you can jump right into one of o
 * [You configure several Advanced Threat Protection (ATP) policies in a Microsoft 365 subscription. You need to allow a user named User1 to view ATP reports in the Threat management dashboard. Which role provides User1 with the required role permissions?](https://www.gitbit.org/course/ms-500/question/wnqlH4Tww)
 * [You have a Microsoft 365 tenant named GitBit.org that contains the following users: You create an Azure AD Identity Protection sign-in risk policy. You've assigned the policy to GroupA and excluded GroupB. You've set the sign-in risk condition to low and above. You've set the access control to Allow access, require MFA You need to understand how the policy will affect your users. What will happen when one of the user's signs in from an anonymous IP address?](https://www.gitbit.org/course/ms-500/question/xJr5aqKGk)
 * [Your network contains an on-premises Active Directory domain named contoso.com. The domain contains the groups shown in the following table. The domain is synced to a Microsoft Azure Active Directory (Azure AD) tenant that contains the groups shown in the following table. You create an Information Protection label policy named Policy1. You need to apply Policy1. To which groups can you apply Policy1?](https://www.gitbit.org/course/ms-500/question/ztPrHQ9d8)
-
