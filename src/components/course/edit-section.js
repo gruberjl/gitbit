@@ -1,5 +1,5 @@
 /* eslint no-unused-vars: "off" */
-import {h} from 'preact'
+import {h, Component, createRef} from 'preact'
 import Paper from '@mui/material/Paper'
 import TextField from '@mui/material/TextField'
 import DragIndicator from '@mui/icons-material/DragIndicator'
@@ -16,6 +16,7 @@ import Avatar from '@mui/material/Avatar'
 import IconButton from '@mui/material/IconButton'
 import shortid from 'shortid'
 import {EditorState, convertToRaw} from 'draft-js'
+import Sortable from 'sortablejs'
 
 const marginRight16 = {
   marginRight: '16px'
@@ -25,89 +26,96 @@ const svgStyle = {
   cursor: 'move'
 }
 
-const resort = (arr) => {
-  return arr.sort((firstEl, secondEl) => {
-    if (firstEl.order < secondEl.order)
-      return -1
-    if (firstEl.order > secondEl.order)
-      return 1
+class EditSection extends Component {
+  list = createRef()
 
-    return 0
-  })
-}
-
-const EditSection = ({section, updateSection, removeSection, allowDrop, onDrop, idx, courseId, contents, addContent, removeContent}) => {
-  const dragStartSection = (section) => {
-    return (ev) => {
-      ev.dataTransfer.setData('sectionId', section.id)
-      ev.dataTransfer.setData('type', 'section')
-    }
+  componentDidMount() {
+    const sortable = Sortable.create(this.list.current, {
+      handle: '.handle',
+      group: 'contents',
+      draggable: '.content',
+      onEnd: this.props.onContentSortChange
+    })
   }
 
-  const dragStartContent = (section, content) => {
-    return (ev) => {
-      ev.dataTransfer.setData('sectionId', section.id)
-      ev.dataTransfer.setData('contentId', content.id)
-      ev.dataTransfer.setData('type', 'content')
+  render() {
+    const {section, updateSection, removeSection, courseId, contents, addContent, removeContent} = this.props
+    const sectionContents = contents.filter((content) => content.sectionId === section.id)
+
+    const createContent = (e) => {
+      let content
+      if (e.target.getAttribute('data-content-type') == 'article') {
+        content = {
+          id: shortid.generate().split('-').join('1'),
+          title: '',
+          sectionId: section.id,
+          type: e.target.getAttribute('data-content-type'),
+          article: convertToRaw(EditorState.createEmpty().getCurrentContent()),
+          images: [],
+          description: '',
+          featuredImage: '',
+          publish: false
+        }
+      } else {
+        content = {
+          id: shortid.generate().split('-').join('1'),
+          title: '',
+          sectionId: section.id,
+          type: e.target.getAttribute('data-content-type'),
+          questions: [],
+          images: [],
+          description: '',
+          featuredImage: '',
+          publish: false
+        }
+      }
+
+      if (sectionContents.length > 0)
+        addContent(content, sectionContents[sectionContents.length-1].id)
+      else
+        addContent(content)
     }
-  }
 
-  const sectionContents = resort(contents.filter((content) => content.sectionId === section.id))
-
-  const createContent = () => {
-    const content = {
-      id: shortid.generate().split('-').join('1'),
-      title: '',
-      sectionId: section.id,
-      type: 'article',
-      article: convertToRaw(EditorState.createEmpty().getCurrentContent()),
-      images: [],
-      description: '',
-      featuredImage: ''
-    }
-
-    if (sectionContents.length > 0)
-      addContent(content, sectionContents[sectionContents.length-1].id)
-    else
-      addContent(content)
-  }
-
-  return (
-    <Paper elevation={3} onDragOver={allowDrop} onDrop={onDrop} data-section-idx={idx}>
-      <List>
-        <ListItem secondaryAction={
-          <Button edge="end" variant="contained" onClick={removeSection(section)} data-section-idx={idx}>
-            <Delete data-section-idx={idx} />
-          </Button>
-        }>
-          <ListItemAvatar>
-            <Avatar><DragIndicator style={svgStyle} data-section-idx={idx} /></Avatar>
-          </ListItemAvatar>
-          <TextField fullWidth hiddenLabel placeholder="Section Title" variant="standard" value={section.title} name='section-title' onChange={updateSection} style={marginRight16} data-section-idx={idx} />
-        </ListItem>
-        { sectionContents.map((content, index) => (
-          <ListItem key={index} secondaryAction={
-            <IconButton edge="end" aria-label="delete" onClick={removeContent(content.id)} >
+    return (
+      <Paper elevation={3}>
+        <List ref={this.list} data-section={section.id}>
+          <ListItem secondaryAction={
+            <Button edge="end" variant="contained" onClick={removeSection(section)}>
               <Delete />
-            </IconButton>
+            </Button>
           }>
             <ListItemAvatar>
-              <Avatar sx={{bgcolor: '#ffffff', color: 'black'}} style={svgStyle}><DragIndicator /></Avatar>
+              <Avatar className="section-handle"><DragIndicator style={svgStyle} /></Avatar>
             </ListItemAvatar>
-            <ListItemButton href={`/course/edit-content?courseId=${courseId}&contentId=${content.id}`}>
-              <ListItemText primary={content.title || 'New Content'} />
-            </ListItemButton>
-            {content.publish ? <Public title="published" /> : ''}
+            <TextField fullWidth hiddenLabel placeholder="Section Title" variant="standard" value={section.title} name='section-title' onChange={updateSection} style={marginRight16} />
           </ListItem>
-        ))}
-        <ListItem data-section-idx={idx}>
-          <ListItemButton onClick={createContent} variant="text" data-section-idx={idx}>
-            <Add data-section-idx={idx} /> Add Article
-          </ListItemButton>
-        </ListItem>
-      </List>
-    </Paper>
-  )
+          { sectionContents.map((content, index) => (
+            <ListItem className='content' key={index} data-content-id={content.id} secondaryAction={
+              <IconButton edge="end" aria-label="delete" onClick={removeContent(content.id)} data-content-id={content.id} >
+                <Delete data-content-id={content.id} />
+              </IconButton>
+            }>
+              <ListItemAvatar>
+                <Avatar sx={{bgcolor: '#ffffff', color: 'black'}} style={svgStyle} className="handle"><DragIndicator /></Avatar>
+              </ListItemAvatar>
+              <ListItemButton href={`/course/edit-${content.type}?courseId=${courseId}&contentId=${content.id}`}>
+                <ListItemText primary={content.title || 'New Content'} />
+              </ListItemButton>
+              {content.publish ? <Public title="published" /> : ''}
+            </ListItem>
+          ))}
+          <ListItem>
+            <ListItemButton onClick={createContent} variant="text" data-content-type="article">
+              <Add /> Add Article
+            </ListItemButton>
+            <ListItemButton onClick={createContent} variant="text" data-content-type="test">
+              <Add /> Add Test
+            </ListItemButton>
+          </ListItem>
+        </List>
+      </Paper>
+    )
+  }
 }
 
 export default EditSection

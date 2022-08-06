@@ -12,9 +12,6 @@ import Typography from '@mui/material/Typography'
 import {getDoc} from '../../components/firebase/get-doc'
 import saveDoc from '../../components/firebase/save-doc'
 import Snackbar from '@mui/material/Snackbar'
-import {EditorState, convertToRaw, convertFromRaw} from 'draft-js'
-import Wysiwyg from '../../components/wysiwyg'
-import decorators from '../../components/wysiwyg-decorators'
 const isBrowser = () => typeof window !== 'undefined'
 
 import debounce from 'debounce'
@@ -46,7 +43,6 @@ class EditContentPage extends Component {
     super()
     this.setCourse = this.setCourse.bind(this)
     this.setContent = this.setContent.bind(this)
-    this.setEditorState = this.setEditorState.bind(this)
     this.save = this.save.bind(this)
     this.setTitle = this.setTitle.bind(this)
     this.setDescription = this.setDescription.bind(this)
@@ -63,21 +59,19 @@ class EditContentPage extends Component {
       course: {},
       content: {
         id: params.get('contentId'),
-        type: 'article',
-        article: EditorState.createEmpty(),
+        type: 'test',
+        questions: [],
         title: '',
         images: [],
         description: '',
         featuredImage: '',
         publish: false,
+        sectionId: '',
         slug: ''
       },
       courseId: params.get('courseId'),
-      editorState: EditorState.createEmpty(decorators),
       alert: ''
     }
-
-    this.debounceSave = debounce(this.save, 5000)
   }
 
   componentDidMount() {
@@ -95,24 +89,24 @@ class EditContentPage extends Component {
     if (!content.publish)
       content.publish = false
 
-
     this.setState({
-      content,
-      editorState: EditorState.createWithContent(convertFromRaw(content.article), decorators)
+      content
     })
   }
 
-  setEditorState(editorState) {
+  setQuestions(questions) {
     this.setState({
-      editorState
+      questions
     })
+
+    if (!this.debounceSave)
+      this.debounceSave = debounce(this.save, 5000)
 
     this.debounceSave()
   }
 
   save() {
     const data = JSON.parse(JSON.stringify(this.state.content))
-    data.article = JSON.parse(JSON.stringify(convertToRaw(this.state.editorState.getCurrentContent())))
 
     saveDoc(`courses/${this.state.course.id}/contents`, data)
     this.setState({
@@ -203,7 +197,7 @@ class EditContentPage extends Component {
                   )) }
                 </Grid>
                 <Grid item xs={12}>
-                  <Wysiwyg editorState={this.state.editorState} onEditorStateChange={this.setEditorState} addImage={this.addImage} />
+                  <h1>Questions</h1>
                 </Grid>
                 <Grid item container justifyContent="space-between" alignItems="center">
                   <Grid item>

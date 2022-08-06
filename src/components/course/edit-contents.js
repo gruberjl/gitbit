@@ -1,4 +1,4 @@
-import {h, Component} from 'preact'
+import {h, Component, createRef} from 'preact'
 import Button from '@mui/material/Button'
 import getAllDocs from '../firebase/get-all-docs'
 import {getDoc} from '../firebase/get-doc'
@@ -8,7 +8,7 @@ import AddSection from './add-section'
 import EditSection from './edit-section'
 import shortid from 'shortid'
 import Snackbar from '@mui/material/Snackbar'
-import debounce from 'debounce'
+import Sortable from 'sortablejs'
 
 const flexStyle = {
   display: 'flex',
@@ -41,6 +41,8 @@ const resortContent = (contents, contentOrder) => {
 }
 
 class EditContents extends Component {
+  section = createRef()
+
   constructor(props) {
     super(props)
     this.setContents = this.setContents.bind(this)
@@ -49,12 +51,12 @@ class EditContents extends Component {
     this.updateSection = this.updateSection.bind(this)
     this.removeSection = this.removeSection.bind(this)
     this.saveCourse = this.saveCourse.bind(this)
-    this.onDrop = this.onDrop.bind(this)
+    this.onContentSortChange = this.onContentSortChange.bind(this)
+    this.onSectionSortChange = this.onSectionSortChange.bind(this)
     this.addContent = this.addContent.bind(this)
     this.updateContent = this.updateContent.bind(this)
     this.removeContent = this.removeContent.bind(this)
-
-    this.debounceSaveCourse = debounce(this.saveCourse, 5000)
+    this.closeAlert = this.closeAlert.bind(this)
 
     this.state ={
       contents: [],
@@ -74,6 +76,14 @@ class EditContents extends Component {
     this.setState({
       contents: resortContent(contents, this.state.course.contentOrder)
     })
+
+    setTimeout(() => {
+      const sortableSections = Sortable.create(this.section.current, {
+        handle: '.section-handle',
+        draggable: '.section',
+        onEnd: this.onSectionSortChange
+      })
+    }, 0)
   }
 
   setCourse(course) {
@@ -82,55 +92,129 @@ class EditContents extends Component {
     getAllDocs(`courses/${course.id}/contents`).then(this.setContents)
   }
 
-  allowDrop(ev) {
-    ev.preventDefault()
+  onContentSortChange(ev) {
+    const oldSectionId = ev.from.dataset.section
+    const newSectionId = ev.to.dataset.section
+    const newIdx = ev.newDraggableIndex
+
+    const content = this.state.contents.find((content) => content.id === ev.item.dataset.contentId)
+    if (!content) {
+      this.setState({alert: `Could not find content ${ev.item.dataset.contentId}`})
+      return
+    }
+
+    if (oldSectionId !== newSectionId) {
+      content.sectionId = newSectionId
+      this.updateContent(content)
+    }
+
+    const idxOfFirstContentInSection = this.state.course.contentOrder.findIndex((id) => {
+      const c = this.state.contents.find((co) => co.id === id)
+      if (c.sectionId === newSectionId)
+        return true
+
+      return false
+    })
+
+    if (idxOfFirstContentInSection === -1) {
+      this.setState({alert: `couldn't find idxOfFirstContentInSection for ${content.id}`})
+      return
+    }
+
+    const newPosition = idxOfFirstContentInSection + newIdx
+    const course = JSON.parse(JSON.stringify(this.state.course))
+    course.contentOrder = course.contentOrder.reduce((arr, current, idx) => {
+      if (idx === newPosition)
+        arr.push(content.id)
+
+
+      if (current !== content.id)
+        arr.push(current)
+
+      return arr
+    }, [])
+
+    this.setState({
+      course,
+      contents: resortContent(this.state.contents, course.contentOrder)
+    })
+
+    this.saveCourse(course)
   }
 
-  onDrop(ev) {
-    ev.preventDefault()
-    const type = ev.dataTransfer.getData('type')
-    const sectionId = ev.dataTransfer.getData('sectionId')
-    const contentId = ev.dataTransfer.getData('contentId')
+  onSectionSortChange(ev) {
+    const sections = JSON.parse(JSON.stringify(this.state.course.sections))
+    const oldIdx = ev.oldDraggableIndex
+    const newIdx = ev.newDraggableIndex
+
+    const newSections = sections.map((section, idx) => {
+      let order = idx
+
+      if (idx == oldIdx)
+        order = newIdx
+
+      if (idx > oldIdx && idx <= newIdx)
+        order--
+
+      if (idx < oldIdx && idx >= newIdx)
+        order++
+
+      section.order = order
+
+      return section
+    })
+
     const course = JSON.parse(JSON.stringify(this.state.course))
+    course.sections = resort(newSections)
+    const contentOrder = JSON.parse(JSON.stringify(course.contentOrder))
+    let failed = false
 
-    if (type === 'section') {
-      const sections = course.sections
-      const oldPosition = sections.map((section) => section.id).indexOf(sectionId)
-      const newPosition = ev.target.getAttribute('data-section-idx')
-      sections.splice(newPosition, 0, sections.splice(oldPosition, 1)[0])
-      course.sections = reOrder(sections)
+    contentOrder.sort((a, b) => {
+      const contentA = this.state.contents.find((content) => content.id === a)
+      const contentB = this.state.contents.find((content) => content.id === b)
+
+      if (!contentA) {
+        this.setState({alert: `couldn't find ${a}`})
+        failed = true
+        return
+      }
+
+      if (!contentB) {
+        this.setState({alert: `couldn't find ${b}`})
+        failed = true
+        return
+      }
+
+      const sectionA = course.sections.find((section) => section.id === contentA.sectionId)
+      const sectionB = course.sections.find((section) => section.id === contentB.sectionId)
+
+      if (!sectionA) {
+        this.setState({alert: `couldn't find section ${contentA.sectionId}`})
+        failed = true
+        return
+      }
+
+      if (!sectionB) {
+        this.setState({alert: `couldn't find section ${contentB.sectionId}`})
+        failed = true
+        return
+      }
+
+      if (sectionA.order < sectionB.order)
+        return -1
+
+      if (sectionA.order > sectionB.order)
+        return 1
+
+      return 0
+    })
+
+    course.contentOrder = contentOrder
+
+    if (!failed) {
+      console.log(course)
       this.setState({course})
-    } else {
-      const movedContent = this.state.contents.find((content) => content.id === contentId)
-      const newSectionId = this.state.course.sections[ev.target.getAttribute('data-section-idx')].id
-
-      if (movedContent.sectionId !== newSectionId) {
-        movedContent.sectionId = newSectionId
-        this.updateContent(movedContent)
-        const newContents = this.state.contents.map((content) => {
-          if (content.id === movedContent.id)
-            return movedContent
-
-          return content
-        })
-
-        this.setState({contents: newContents})
-      }
-
-      const contents = JSON.parse(JSON.stringify(this.state.contents))
-      const oldPosition = course.contentOrder.indexOf(contentId)
-      const newPositionId = ev.target.getAttribute('data-content-id')
-      if (newPositionId !== null) {
-        const newPosition = course.contentOrder.indexOf(newPositionId)
-        course.contentOrder.splice(newPosition, 0, course.contentOrder.splice(oldPosition, 1)[0])
-
-        this.setState({
-          course,
-          contents: resortContent(contents, course.contentOrder)
-        })
-
-        this.saveCourse()
-      }
+      this.saveCourse(course)
     }
   }
 
@@ -145,7 +229,7 @@ class EditContents extends Component {
       })
 
       this.setState({course})
-      saveDoc('courses', course).catch((e) => console.log(e))
+      saveDoc('courses', course).catch((e) => this.setState({alert: e}))
     }
   }
 
@@ -162,16 +246,23 @@ class EditContents extends Component {
       const course = this.state.course
       course.sections = sections
       this.setState({course})
-      this.debounceSaveCourse()
+      this.saveCourse(course)
     }
   }
 
   removeSection(section) {
     return () => {
-      const sections = this.state.course.sections.filter((filteredSection) => section.id !== filteredSection.id)
-      const course = this.state.course
-      course.sections = reOrder(sections)
-      this.setState({course})
+      const contents = this.state.contents.filter((c) => c.sectionId === section.id)
+      if (window.confirm(`Are you sure you want to delete a section and ${contents.length} content items?`)) {
+        const sections = this.state.course.sections.filter((filteredSection) => section.id !== filteredSection.id)
+        const course = this.state.course
+        course.sections = reOrder(sections)
+        this.setState({course})
+        this.saveCourse(course).then(async () => {
+          for (let i = 0; i < contents.length; i++)
+            await this.removeContent(contents[i].id, true)()
+        })
+      }
     }
   }
 
@@ -194,17 +285,12 @@ class EditContents extends Component {
         course
       })
 
-      this.saveCourse()
+      this.saveCourse(course)
       setTimeout(() => {
-        this.setState({alert: ''})
-      }, 3000)
-
-      window.location.href = `/course/edit-content?courseId=${this.state.course.id}&contentId=${content.id}`
+        window.location.href = `/course/edit-${content.type}?courseId=${this.state.course.id}&contentId=${content.id}`
+      }, 3500)
     }).catch((err) => {
       this.setState({alert: err})
-      setTimeout(() => {
-        this.setState({alert: ''})
-      }, 3000)
     })
   }
 
@@ -217,54 +303,49 @@ class EditContents extends Component {
       this.setState({alert: err})
     })
 
-    setTimeout(() => {
-      this.setState({alert: ''})
-    }, 3000)
+    const newContents = this.state.contents.map((oldContent) => {
+      if (oldContent.id === content.id)
+        return content
+
+      return oldContent
+    })
+
+    this.setState({contents: newContents})
   }
 
-  removeContent(contentId) {
+  removeContent(contentId, confirmed) {
     return () => {
-      deleteDoc(`courses/${this.state.course.id}/contents`, contentId).then(() => {
-        const contents = JSON.parse(JSON.stringify(this.state.contents)).filter((filteredContent) => contentId !== filteredContent.id)
+      if (confirmed || window.confirm(`Are you sure you want to delete the content?`)) {
+        return deleteDoc(`courses/${this.state.course.id}/contents`, contentId).then(() => {
+          const contents = JSON.parse(JSON.stringify(this.state.contents)).filter((filteredContent) => contentId !== filteredContent.id)
 
-        const course = this.state.course
-        course.contentOrder = course.contentOrder.filter((id) => id !== contentId)
+          const course = this.state.course
+          course.contentOrder = course.contentOrder.filter((id) => id !== contentId)
 
-        this.setState({
-          alert: 'content deleted',
-          contents,
-          course
+          this.setState({
+            alert: 'content deleted',
+            contents,
+            course
+          })
+
+          this.saveCourse(course)
+        }).catch((err) => {
+          this.setState({
+            alert: err
+          })
         })
-
-        this.saveCourse()
-
-        setTimeout(() => {
-          this.setState({alert: ''})
-        }, 3000)
-      }).catch((err) => {
-        this.setState({
-          alert: err
-        })
-        setTimeout(() => {
-          this.setState({alert: ''})
-        }, 3000)
-      })
+      }
     }
   }
 
-  saveCourse() {
-    const course = this.state.course
+  saveCourse(course) {
+    if (!course)
+      course = this.state.course
 
-    saveDoc('courses', course).then(() => {
+    return saveDoc('courses', course).then(() => {
       this.setState({alert: 'course saved'})
-      setTimeout(() => {
-        this.setState({alert: ''})
-      }, 3000)
     }).catch((err) => {
       this.setState({alert: err})
-      setTimeout(() => {
-        this.setState({alert: ''})
-      }, 3000)
     })
   }
 
@@ -277,16 +358,18 @@ class EditContents extends Component {
       <div>
         <div style={flexStyle}>
           <h1>Edit Contents</h1>
-          <Button onClick={this.saveCourse} variant="contained">Save</Button>
+          <Button onClick={() => this.saveCourse()} variant="contained">Save</Button>
         </div>
-        { this.state.course.sections.map((section, idx) => (
-          <div key={idx} data-section-idx={idx}>
-            <AddSection addSection={this.addSection(idx)} hidden={true} allowDrop={this.allowDrop} onDrop={this.onDrop} idx={idx} />
-            <EditSection section={section} updateSection={this.updateSection(section.id)} removeSection={this.removeSection} allowDrop={this.allowDrop} onDrop={this.onDrop} idx={idx} courseId={this.state.course.id} contents={this.state.contents} addContent={this.addContent} removeContent={this.removeContent} />
-          </div>
-        ))}
+        <div ref={this.section}>
+          { this.state.course.sections.map((section, idx) => (
+            <div key={idx} data-section-idx={idx} className="section">
+              <AddSection addSection={this.addSection(idx)} hidden={true} />
+              <EditSection section={section} updateSection={this.updateSection(section.id)} removeSection={this.removeSection} onContentSortChange={this.onContentSortChange} courseId={this.state.course.id} contents={this.state.contents} addContent={this.addContent} removeContent={this.removeContent} />
+            </div>
+          ))}
 
-        <AddSection addSection={this.addSection(this.state.course.sections.length)} allowDrop={this.allowDrop} onDrop={this.onDrop} idx={this.state.course.sections.length} />
+          <AddSection addSection={this.addSection(this.state.course.sections.length)} idx={this.state.course.sections.length} />
+        </div>
         <Snackbar open={this.state.alert !== ''} autoHideDuration={3000} onClose={this.closeAlert} message={this.state.alert} />
       </div>
     )

@@ -63,6 +63,7 @@
     "preact-render-to-string": "^5.2.1",
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
-    "shortid": "^2.2.16"
+    "shortid": "^2.2.16",
+    "sortablejs": "^1.15.0"
   }
 }
