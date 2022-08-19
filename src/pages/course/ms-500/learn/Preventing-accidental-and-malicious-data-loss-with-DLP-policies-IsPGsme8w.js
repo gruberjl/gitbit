@@ -165,12 +165,18 @@ class ArticlePage extends Component {
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p>Your organization will surely have data you don't want to be sent outside the environment. It may be HIPPA data, credit cards, social security numbers, or maybe all three. No matter what your organization does it will have data that needs to stay inside the environment. So how do you make sure users don't maliciously or accidentally send data to the world that they shouldn't? Data Loss Prevention (DLP) policies.</p>
                   <p>DLP policies are a way to scan data that is being saved or sent from your Microsoft 365 environment and then you can block it, warn the user, or warn someone else that the data is being sent. But enough chit-chat, let's jump in.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>3 parts of a DLP policy</h2>
                   <p>There are 3 important parts of a DLP policy. First is the DLP policy itself. The second is the rules. Lastly, is the sensitive info types. We are going to take these backward.</p>
                   <p>The <strong>Sensitive info type</strong> is the content that is being looked for. It can be a keyword, for example: "credit card number" or "cc", or it can be a regular expression, for example, "\d&#123;3&#125;-\d&#123;5&#125;-\d&#123;5&#125;", which tells Microsoft to look for 3 digits, a dash (-), 5 digits, a dash (-), and then 5 digits. There are also built-in functions that Microsoft has provided. Microsoft has provided several sensitive info types to help you get started.</p>
                   <p>Next, is the <strong>Rule. </strong>Rules combine the sensitive info types and what happens when you find it. For example, you can create a rule that searches for the sensitive info type or credit card information, and when it's found, it blocks it from being sent outside the organization. Or you can create a rule that searches for passport ID numbers and notifies the sender and admins that the content is being sent. A Rule can contain multiple sensitive info types but the actions that are applied when the content is found must be the same.</p>
                   <p>Finally is the <strong>DLP policy</strong>. The DLP policy says "where to search for" and what rules to apply to that location. For example, I can create a DLP policy that searches all Exchange emails for a rule that searches for credit card information and blocks it from going outside the organization. Or I can create a DLP policy that has multiple rules in it. For example, I can create a DLP policy that searches all of OneDrive. Then have 1 rule that looks for and blocks any social security numbers from being sent outside the company. And another rule that searches for credit card numbers and allows the content to be sent but notifies admins that it's being sent.</p>
                   <p>In short, a sensitive info type is "what to search for". Rules say "When content contains these sensitive info types apply these actions". DLP policies define what rules are applied to what locations.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to set up a DLP Policy</h2>
                   <p>1. Open the <strong>Compliance admin center</strong> &gt; <strong>Data loss prevention</strong> &gt; <a href="https://compliance.microsoft.com/datalossprevention?viewid=policies" target="_blank" rel="noreferrer"><strong>Policies</strong></a><strong> </strong>&gt; <strong>Create policy</strong>.</p>
                   <div ><img src="https://i.ibb.co/n8WcqKM/Create-a-DLP-policy.png" alt="Create a DLP policy" style="height: auto;width: auto" /></div>
@@ -193,6 +199,9 @@ class ArticlePage extends Component {
                   <p>Click <strong>Next</strong>.</p>
                   <p>8. On the "Customize access and override settings" page you have some more options. If you check "Restrict access or encrypt the content in Microsoft 365 locations even more options will appear! I believe all the options on this page are pretty well explained so I won't waste our time. Click <strong>Next</strong>.</p>
                   <p>9. Verify <strong>Turn it on right away </strong>is selected and click <strong>Next</strong>. Click <strong>Submit</strong>. Click <strong>Done</strong>.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to edit a DLP policy</h2>
                   <p>Now we'll break down how the DLP policy is applied. Let's open a DLP policy to edit the settings.</p>
                   <p>1. Go to <strong>Compliance admin center</strong> &gt; <strong>Data loss prevention</strong> &gt; <strong>Policies</strong>. Click the <strong>checkbox</strong> next to the policy and click <strong>Edit policy</strong>.</p>
@@ -231,6 +240,9 @@ class ArticlePage extends Component {
                   <h3>Additional options</h3>
                   <p>Finally, there are additional options. that are designed for when multiple DLP rules match the content. The first option is the ability to stop processing more rules. This is a good option if you have multiple DLP policies that may match the same content but you only want to apply this DLP policy. Next is the priority. The lowest priority is executed first. So a priority of 0 is executed first.</p>
                   <div ><img src="https://i.ibb.co/8djBScJ/Additional-options.png" alt="Additional options" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to create a sensitive info type</h2>
                   <p>Finally, we're on to the sensitive info types. Remember when we used the credit card numbers, bank accounts, and routing numbers? We'll Microsoft allows us to create personalized sensitive info types. Let's pretend the company we work for has assigned every customer a 13-digit Company ID. They typically look like this "111-12345-12345". Let's create a sensitive info type to detect that type.</p>
                   <p>1. Go to <strong>Compliance admin center</strong> &gt; <strong>Data classification</strong> &gt; <a href="https://compliance.microsoft.com/dataclassification?viewid=sensitiveinfotypes" target="_blank" rel="noreferrer"><strong>Sensitive info types</strong></a>. Click <strong>Create sensitive info type</strong>.</p>
@@ -257,6 +269,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/B3xy841/search-and-offline-availability.png" alt="Search and offline availability" style="height: auto;width: auto" /></div>
                   <p>3. Click <strong>Reindex site</strong> &gt; <strong>Reindex site</strong></p>
                   <div ><img src="https://i.ibb.co/yfH32BX/reindex-site.png" alt="Reindex site" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Priority in which rules are applied</h2>
                   <p>If content matches multiple rules, the rule that is the most restrictive action is enforced. Let's take an example of two rules:</p>
                   <p>Rule 1: notify users</p>

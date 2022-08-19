@@ -169,6 +169,9 @@ class ArticlePage extends Component {
                     <li><strong>Sign-in risk policy</strong></li>
                   </ul>
                   <div ><img src="https://i.ibb.co/0cyQJ7j/Risk-Detections.png" alt="Risk detections" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>What’s a user risk policy?</h2>
                   <p>User risk is a calculation of the risk level that a user account has been compromised in Microsoft 365. The risk level is determined based on threat intelligence by reviewing normal behavior for the user. Some of the things that can be detected are the following:</p>
                   <ul>
@@ -179,6 +182,9 @@ class ArticlePage extends Component {
                     <li><strong>Suspicious inbox manipulation rules</strong>: Detected by Microsoft Defender for Cloud Apps this detection is triggered when a suspicious rule is created in the user’s inbox. Typically, the rule will automatically delete or hide messages.</li>
                     <li><strong>Impossible travel</strong>: Detected by Microsoft Defender for Cloud Apps this detection type is detected when the user logs in or performs another activity from two geographically distant locations. For example, the user logs in from the U.S.A. then ten minutes later logs in from Russia.</li>
                   </ul>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>What’s a sign-in risk policy?</h2>
                   <p>Sign-in risk policies show when a suspicious login happens in your Microsoft 365 environment. Microsoft 365 has a number of built-in sign-in risk policies.</p>
                   <ul>
@@ -187,12 +193,24 @@ class ArticlePage extends Component {
                     <li>Impossible travel: Detected by Microsoft Defender for Cloud Apps this detection type is detected when the user logs in or performs another activity from two geographically distant locations. For example, the user logs in from the U.S.A. then ten minutes later logs in from Russia.</li>
                     <li>Atypical travel: This machine learning method recognizes two sign-ins that originated from geographically different locations, one of which may be uncommon for the individual, based on previous behavior. The machine learning system takes into account the sign-in time slot, among other things.</li>
                   </ul>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Licensing Requirements</h2>
                   <p>Sign-in risk policies and User risk policies require an Azure AD Premium P2 license for each user. The Azure AD Premium P2 license is bundled with Enterprise Mobility &amp; Security E5 licenses as well.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Who can configure user risk policies and view users’ reports?</h2>
                   <p>Global admins and Security admins can configure a user risk policy. Global admins, security admins, and security operators can view the user’s reports.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Different levels of risk</h2>
                   <p>There are 4 different levels of user risk / sign-in risk. No risk, in which the user sign-in / activity appears to pose no threat. Low risk, which says there is a low chance the user has been compromised. Medium risk which says there’s a moderate chance the user is compromised. And finally, high risk. You guessed it, it means there is a high chance the user is compromised.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to configure User Risk policies</h2>
                   <p>1. Open the <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Identity Protection</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/UserPolicy" target="_blank" rel="noreferrer"><strong>User risk policy</strong></a>.</p>
                   <div ><img src="https://i.ibb.co/2WG7SG2/user-at-risk-policy.png" alt="User risk policy" style="height: auto;width: auto" /></div>
@@ -202,6 +220,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/fkmvH7B/user-risk-set-level.png" alt="User risk set level" style="height: auto;width: auto" /></div>
                   <p>4. Click <strong>On </strong>(found under Enforce policy). Click <strong>Save</strong>.</p>
                   <div ><img src="https://i.ibb.co/qdNmFDh/enable-user-risk-policy.png" alt="Enable user risk policy" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to configure Sign-in Risk policies</h2>
                   <p>1. Open the <strong>Azure Active Directory admin center</strong> &gt; <strong>Security</strong> &gt; <strong>Identity Protection</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/SignInPolicy" target="_blank" rel="noreferrer"><strong>Sign-in risk policy</strong></a>.</p>
                   <div ><img src="https://i.ibb.co/80BCmFm/Sign-in-risk-policy.png" alt="Access the sign-in risk policy" style="height: auto;width: auto" /></div>
@@ -211,6 +232,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/7GGmxWd/sign-in-risk-set-level.png" alt="Set sign-in risk to high" style="height: auto;width: auto" /></div>
                   <p>4. Click <strong>On </strong>(found under Enforce policy). Click <strong>Save</strong>.</p>
                   <div ><img src="https://i.ibb.co/6JHJtSL/enable-sign-in-risk-policy.png" alt="Enable sign in risk policy" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Understanding the settings</h2>
                   <h3>Users</h3>
                   <p>Under assignments, you can choose which users are included and which users are excluded. Exclusions take precedence so if you select All users then exclude a group of users then the group of users in the excluded list will be excluded from the policy.</p>
@@ -223,6 +247,9 @@ class ArticlePage extends Component {
                   <p ><span >To see what the end-user will experience download the TOR Brower and attempt to login to your portal using any account that isn’t excluded from the policy. You should see a “Your sign-in was blocked”.</span></p>
                   <p ><span >Once the account is blocked then even when they attempt to sign in without the triggering event they’ll receive “Your account is blocked”</span></p>
                   <div ><img src="https://i.ibb.co/hVvD5Dz/sign-in-blocked.png" alt="Sign-in blocked" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How do you configure risk policies using conditional access policies?</h2>
                   <p>So, blocking access or requiring password change / MFA isn’t enough. You need to get a little more detailed. You want to exclude your Hybrid Azure AD joined devices from being blocked. Let’s look at how to do that.</p>
                   <p>1. Open the <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Conditional Access</strong> &gt; <strong>New policy</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/PolicyBlade" target="_blank" rel="noreferrer"><strong>Create new policy</strong></a>.</p>
@@ -238,6 +265,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/qN96mM6/set-device-state-to-exclude-hybrid-azure-ad-joined.png" alt="Set the conditional access policy device state to exclude Hybrid Azure AD joined devices" style="height: auto;width: auto" /></div>
                   <p>7. Click <strong>0 controls selected</strong> (found under Grant). Click <strong>Grant access</strong> &gt; <strong>Require multi-factor authentication</strong> &gt; <strong>Select</strong>. Click <strong>On </strong>(found under enable policy) &gt; <strong>Create</strong>.</p>
                   <div ><img src="https://i.ibb.co/yPz0x63/require-mfa-enable-policy.png" alt="Require MFA for High risk users" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Investigate risk</h2>
                   <p>Now you have policies in place how do we check to see if there are any malicious users getting blocked or any false positives where users are getting blocked but shouldn’t be?</p>
                   <p>There are three locations to review for risks: risky users, risky sign-ins, and risk detections.</p>
@@ -252,6 +282,9 @@ class ArticlePage extends Component {
                   <p>1. Open <strong>Azure Active Directory admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <strong>Security</strong> &gt; <strong>Identity Protection</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/RiskyUsers" target="_blank" rel="noreferrer"><strong>Risky users</strong></a><strong>.</strong></p>
                   <p>2. Click the username to review the report.</p>
                   <div ><img src="https://i.ibb.co/qgWx4BP/risky-users-report.png" alt="View the risky users report" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Risky sign-ins</h2>
                   <p>The risky sign-ins report shows every sign-in for the last 30 days that had a low or higher risk. From the risky sign-ins report administrators can view:</p>
                   <ul>
@@ -278,6 +311,9 @@ class ArticlePage extends Component {
                     <li>Click the date/time of the detection you want to view</li>
                   </ol>
                   <div ><img src="https://i.ibb.co/xDMZYDd/risky-detections-report.png" alt="Risk detections report" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Remediate risk and manage accounts</h2>
                   <p>Now you’ve set up the policy and a user can’t log in! You’ve checked and they are blocked based on their own behavior. Maybe they logged into Microsoft 365 using the TOR browser. Not a problem. We can easily unblock the account. I do have one warning though. You can’t train the intelligent security policy to not block certain behavior. For example, even after you dismiss the user risk, they won’t be able to log in using the TOR browser. The TOR browser will still be blocked. If a user is required to perform some risky behavior, for example, they are required to use the TOR browser to login to Microsoft 365 then they’ll need to be excluded from the policy.</p>
                   <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <strong>Security</strong> &gt; <strong>Identity protection</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/IdentityProtectionMenuBlade/RiskyUsers" target="_blank" rel="noreferrer"><strong>Risky users</strong></a>. Click the user risk that you want to dismiss.</p>
@@ -290,6 +326,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/Fmz4JHP/confirm-risky-sign-in-safe.png" alt="Confirm risky sign-in is safe" style="height: auto;width: auto" /></div>
                   <p>6. Click <strong>Yes</strong></p>
                   <p>Wait five to ten minutes and have the user try to log in again.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Whitelist IP addresses to help train the intelligent risk policies</h2>
                   <p>One other thing you can do is flag your IP addresses as trusted. Once your organization's public IP addresses are flagged as trusted users will be less likely to be blocked in a false positive scenario.</p>
                   <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <strong>Security</strong> &gt; <strong>Risky sign-ins</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/NamedLocationsBlade" target="_blank" rel="noreferrer"><strong>Configure trusted IPs</strong></a>.</p>

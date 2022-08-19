@@ -9,12 +9,19 @@ import FormControlLabel from '@mui/material/FormControlLabel'
 import Checkbox from '@mui/material/Checkbox'
 import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
+import List from '@mui/material/List'
+import ListItem from '@mui/material/ListItem'
+import ListItemButton from '@mui/material/ListItemButton'
+import ListItemText from '@mui/material/ListItemText'
+import IconButton from '@mui/material/IconButton'
+import DeleteIcon from '@mui/icons-material/Delete'
 import {getDoc} from '../../components/firebase/get-doc'
 import saveDoc from '../../components/firebase/save-doc'
 import Snackbar from '@mui/material/Snackbar'
 const isBrowser = () => typeof window !== 'undefined'
-
-import debounce from 'debounce'
+import shortid from 'shortid'
+import {EditorState, convertToRaw} from 'draft-js'
+import decorators from '../../components/wysiwyg-decorators'
 
 const featuredImageStyle = {
   padding: '3px'
@@ -41,7 +48,6 @@ const featuredImageSelectedStyle = {
 class EditContentPage extends Component {
   constructor() {
     super()
-    this.setCourse = this.setCourse.bind(this)
     this.setContent = this.setContent.bind(this)
     this.save = this.save.bind(this)
     this.setTitle = this.setTitle.bind(this)
@@ -50,17 +56,20 @@ class EditContentPage extends Component {
     this.handlePublishChange = this.handlePublishChange.bind(this)
     this.setSlug = this.setSlug.bind(this)
     this.addImage = this.addImage.bind(this)
+    this.addQuestion = this.addQuestion.bind(this)
+    this.closeAlert = this.closeAlert.bind(this)
+    this.deleteQuestion = this.deleteQuestion.bind(this)
 
     let params = new URLSearchParams()
     if (isBrowser())
       params = new URLSearchParams(location.search)
 
     this.state = {
-      course: {},
       content: {
         id: params.get('contentId'),
         type: 'test',
-        questions: [],
+        questions: {},
+        answers: {},
         title: '',
         images: [],
         description: '',
@@ -75,14 +84,7 @@ class EditContentPage extends Component {
   }
 
   componentDidMount() {
-    getDoc('courses', this.state.courseId).then(this.setCourse)
     getDoc(`courses/${this.state.courseId}/contents`, this.state.content.id).then(this.setContent)
-  }
-
-  setCourse(course) {
-    this.setState({
-      course
-    })
   }
 
   setContent(content) {
@@ -94,28 +96,37 @@ class EditContentPage extends Component {
     })
   }
 
-  setQuestions(questions) {
-    this.setState({
-      questions
+  addQuestion() {
+    const content = JSON.parse(JSON.stringify(this.state.content))
+    const question = {
+      id: shortid.generate().toLowerCase(),
+      question: convertToRaw(EditorState.createEmpty(decorators).getCurrentContent()),
+      references: convertToRaw(EditorState.createEmpty(decorators).getCurrentContent()),
+      type: '',
+      images: [],
+      answerOptions: {}
+    }
+    content.questions[question.id] = question
+    content.answers[question.id] = {}
+    this.setState({content})
+    this.save(content).then(() => {
+      window.location.href = `/course/edit-question?courseId=${this.state.courseId}&testId=${this.state.content.id}&questionId=${question.id}`
     })
-
-    if (!this.debounceSave)
-      this.debounceSave = debounce(this.save, 5000)
-
-    this.debounceSave()
   }
 
-  save() {
-    const data = JSON.parse(JSON.stringify(this.state.content))
+  save(content) {
+    if (!content)
+      content = JSON.parse(JSON.stringify(this.state.content))
+    return saveDoc(`courses/${this.state.courseId}/contents`, content)
+        .then(() => {
+          this.setState({
+            alert: 'Content saved'
+          })
+        })
+  }
 
-    saveDoc(`courses/${this.state.course.id}/contents`, data)
-    this.setState({
-      alert: 'Content saved'
-    })
-
-    setTimeout(() => {
-      this.setState({alert: ''})
-    }, 3000)
+  closeAlert() {
+    this.setState({alert: ''})
   }
 
   setSlug(e) {
@@ -137,6 +148,19 @@ class EditContentPage extends Component {
     const content = this.state.content
     content.description = e.target.value
     this.setState({content})
+  }
+
+  deleteQuestion(question) {
+    return () => {
+      if (window.confirm(`Are you sure you want to delete the question?`)) {
+        const content = JSON.parse(JSON.stringify(this.state.content))
+
+        delete content.questions[question.id]
+        delete content.answers[question.id]
+        this.setState({content})
+        this.save(content)
+      }
+    }
   }
 
   selectFeaturedImage(image) {
@@ -199,6 +223,20 @@ class EditContentPage extends Component {
                 <Grid item xs={12}>
                   <h1>Questions</h1>
                 </Grid>
+                <Grid item xs={12}>
+                  <List>
+                    {Object.values(this.state.content.questions).map((question, idx) => (
+                      <ListItem key={idx} secondaryAction={<IconButton aria-label="delete question" onClick={this.deleteQuestion(question)}><DeleteIcon /></IconButton>}>
+                        <ListItemButton href={`/course/edit-question?courseId=${this.state.courseId}&testId=${this.state.content.id}&questionId=${question.id}`}>
+                          <ListItemText primary={question.id} />
+                        </ListItemButton>
+                      </ListItem>
+                    ))}
+                  </List>
+                </Grid>
+                <Grid item xs={12}>
+                  <Button onClick={this.addQuestion}>Add question</Button>
+                </Grid>
                 <Grid item container justifyContent="space-between" alignItems="center">
                   <Grid item>
                     <FormGroup>
@@ -206,14 +244,14 @@ class EditContentPage extends Component {
                     </FormGroup>
                   </Grid>
                   <Grid item>
-                    <Button variant="contained" onClick={this.save}>Save</Button>
+                    <Button variant="contained" onClick={() => this.save()}>Save</Button>
                   </Grid>
                 </Grid>
               </Grid>
             </Box>
           </Container>
         </main>
-        <Snackbar message={this.state.alert} open={this.state.alert !== ''} />
+        <Snackbar message={this.state.alert} open={this.state.alert !== ''} autoHideDuration={3000} onClose={this.closeAlert} />
       </Page>
     )
   }

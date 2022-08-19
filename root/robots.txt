@@ -10,5 +10,6 @@ Disallow: /tests/summary$
 Disallow: /course/edit-course$
 Disallow: /course/edit-article$
 Disallow: /course/edit-test$
+Disallow: /course/edit-question$
 
 Sitemap: https://www.gitbit.org/sitemap/sitemap-index.xml

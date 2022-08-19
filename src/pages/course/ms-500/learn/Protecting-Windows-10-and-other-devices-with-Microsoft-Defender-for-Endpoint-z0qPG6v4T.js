@@ -165,6 +165,9 @@ class ArticlePage extends Component {
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><blockquote>Microsoft Defender for Endpoint is an enterprise endpoint security platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats. - Microsoft (What is Microsoft Defender for Endpoint?)</blockquote>
                   <p>Microsoft Defender for Endpoint secures your endpoints (Windows 10, Windows Server, macOS, Linux, Android, and iOS). It's anti-malware on steroids. Microsoft Defender for Endpoint can be easily deployed through your Microsoft 365 admin centers and once it's deployed it will protect and recommend enhancing the security of your devices. Microsoft Defender for Endpoint allows you to protect, investigate, and responds to risks and security threats across all your endpoint.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>What licenses are required to set up Defender for Endpoint?</h2>
                   <p>First, there are two plans for Microsoft Defender for Endpoint: Microsoft Defender for Endpoint Plan 1 (P1) &amp; Microsoft Defender for Endpoint Plan 2 (P2).</p>
                   <ul>
@@ -176,6 +179,9 @@ class ArticlePage extends Component {
                     <li>Microsoft 365 E5 &amp; <span >Microsoft 365 </span>A5 &amp; <span >Microsoft 365 </span>G5 &amp; <span >Microsoft 365 </span>F5 Security</li>
                     <li>Microsoft 365 F5 Security &amp; Compliance</li>
                   </ul>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Setup Microsoft Defender for Endpoint</h2>
                   <p>Before we can install Defender for Endpoint on our endpoint we'll need to perform some setup on the back end.</p>
                   <h3>Setup a connection from Endpoint to other services</h3>
@@ -200,6 +206,9 @@ class ArticlePage extends Component {
                   <p>Last but not least, integrate Microsoft Defender for Office 365 with Microsoft Defender for Endpoint. It's in a different place than the rest of the settings.</p>
                   <p>1. Go to <strong>Microsoft 365 Defender admin center</strong> &gt; <strong>Explorer</strong> &gt; <strong>MDE Settings</strong>. Set <strong>Connect to Defender for Endpoint</strong> to <strong>On</strong>.</p>
                   <div ><img src="https://i.ibb.co/Z8wc4gr/integrate-Microsoft-Defender-for-Office-365-with-Microsoft-Defender-for-Endpoint.png" alt="integrate Microsoft Defender for Office 365 with Microsoft Defender for Endpoint" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Onboard Windows devices</h2>
                   <p>Next, we'll create a device configuration profile to onboard the Windows devices.</p>
                   <p>1. Go to <strong>Microsoft Endpoint admin center</strong> &gt; <strong>Devices</strong> &gt; <strong>Windows</strong> &gt; <a href="https://endpoint.microsoft.com/?ref=AdminCenter#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/configProfiles" target="_blank" rel="noreferrer"><strong>Configuration profiles</strong></a> &gt; <strong>Create Policy</strong>. Select <strong>Windows 10 and later</strong> as the <strong>platform </strong>and set the profile type to <strong>Templates</strong>. Lastly, click <strong>Microsoft Defender for Endpoint</strong> then click <strong>Create</strong>.</p>
@@ -218,6 +227,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/jDkpDvj/Create-Defender-for-Endpoint-policy.png" alt="Create Defender for Endpoint policy" style="height: auto;width: auto" /></div>
                   <p>2. Name the policy <strong>Microsoft Defender Antivirus</strong>. Click <strong>Next</strong>.</p>
                   <p>Now you'll see a whole slew of configuration settings to configure Defender Antivirus. Make a few setting configurations and finish the profile setup!</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to set up and manage Web content filtering</h2>
                   <p>Okay, so now how do we block users from accessing certain sites on your Windows 10 / Windows 11 computers? It's multiple steps in multiple locations. First, we need to enable the web content filtering and network indicators on our tenant. Then we need to make sure SmartScreen and Network Protection are enabled on our devices. Finally, we can create a policy to allow or block certain categories, and/or we can block certain sites. First, let's enable Microsoft Defender SmartScreen and Network Protection on the devices.</p>
                   <h3>Turn on web content filtering and network indicators</h3>
@@ -248,9 +260,15 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/KrQpJCR/Block-URL-action.png" alt="Choose an action for the URL" style="height: auto;width: auto" /></div>
                   <p>3. Click <strong>Next </strong>&gt;<strong>Save</strong>.</p>
                   <p>Lastly, remember a couple of things. Block rules will block all subpages. So if you create a block rule for bing.com that will block bing.com and all subpages (for example bing.com/images). If you block bing.com/images then your users will still be able to access bing.com and bing.com/videos, etc. Finally, allow rules take precedence so if you create a block rule for bing.com and an allow rule for bing.com/images then users won't be able to go to bing.com (or it's subpages) except for bing.com/images.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to setup Defender for Endpoint to work with other antivirus programs</h2>
                   <p>Okay, so you're thinking of deploying Defender for Endpoint but you're still using a different antivirus program. How do you get the information and the advantage of using Defender for Endpoint without the antivirus scanning? Microsoft calls this passive mode. Passive mode will still send data from your devices to Microsoft 365 for tracking and analysis but it won't scan the computer for viruses. To set the computer in passive mode simply create a registry file on the computer:</p>
                   <p>Path: HKLM\SOFTWARE\Policies\Microsoft\Windows Advanced Threat Protection<br />Name: ForceDefenderPassiveMode<br />Type: REG_DWORD<br />Value: 1</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to configure automatic remediation using Microsoft Defender for Endpoint</h2>
                   <p>So now we have Microsoft Defender for Endpoint setup and detecting threats but how do we set up Microsoft Defender for Endpoint to simply resolve the threats for us? With automated remediation! And don't worry, we can turn off automated remediation for a group of devices, for example, executives. There's a multi-step process for setting up automated remediation. One, turn on automated remediation on the tenant level. Two setup groups to enable/disable automated remediation.</p>
                   <h3>How to enable automated remediation for the tenant</h3>
@@ -264,6 +282,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/TbzQdFz/Filter-device-group.png" alt="set the device group filter" style="height: auto;width: auto" /></div>
                   <p>3. On the next page verify the devices in the group and click <strong>Next</strong>. Click <strong>Done</strong>.</p>
                   <p>Now go and create another group for your executives with no automated remediation.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How do we delegate permissions to certain users per group?</h2>
                   <p>Let's take it a step further. Maybe some of your admins aren't allowed to work with all the devices in your organization. Maybe they can work with all devices but your executives. How do we delegate permissions so the admins can work with some of the computers but not all? First, create a user group in Azure AD. Let's call this group <strong>standard admins</strong>. Then we'll need to set up roles in Microsoft 365 Defender. Finally, we'll assign permissions to the standard admins.</p>
                   <p><em>Note: The following can only be done by a user that's assigned the Global Administrator role or Security Administrator role.</em></p>
@@ -290,16 +311,25 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/hs7RZTS/assign-admins-to-device-group.png" alt="Assign the admin roles to the device group" style="height: auto;width: auto" /></div>
                   <p>2. Click <strong>Apply Changes</strong>.</p>
                   <div ><img src="https://i.ibb.co/t8Wzqr3/Apply-changes.png" alt="Apply changes" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to run anti-virus scans on a computer</h2>
                   <p>Now that Defender for Endpoint is deployed and configured let's run an anti-virus scan on a computer.</p>
                   <p>1. Open <strong>Microsoft 365 Defender admin center</strong> &gt; <a href="https://security.microsoft.com/machines" target="_blank" rel="noreferrer"><strong>Device inventory</strong></a>. Click the device you want to run a scan on.</p>
                   <div ><img src="https://i.ibb.co/ZXY7kzG/open-a-device-in-microsoft-365-defender.png" alt="Open a device in Microsoft 365 defender" style="height: auto;width: auto" /></div>
                   <p>2. Click <strong>Run antivirus scan</strong> &gt; Select the <strong>scan type</strong> &gt; Type a <strong>comment </strong>in the section provided. Click <strong>Confirm</strong>.</p>
                   <div ><img src="https://i.ibb.co/8bdCZGN/run-a-full-scan.png" alt="Run a full scan" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Let's review devices</h2>
                   <p>So now we have all our devices in Defender for Endpoint let's take a look at the alerts and risk levels.</p>
                   <p>1. Go to Microsoft 365 Defender admin center &gt; Device inventory.</p>
                   <p>Here you'll see all the devices that have been onboarded with Defender for Endpoint.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Understanding Risk Levels</h2>
                   <p>Now, let's talk about risk levels.</p>
                   <p>The risk level reflects the overall risk assessment of the device based on a combination of factors, including the types and severity of active alerts on the device. Resolving active alerts, approving remediation activities, and suppressing subsequent alerts can lower the risk level.</p>

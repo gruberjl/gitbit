@@ -62,8 +62,8 @@ class EditSection extends Component {
           title: '',
           sectionId: section.id,
           type: e.target.getAttribute('data-content-type'),
-          questions: [],
-          images: [],
+          questions: {},
+          answers: {},
           description: '',
           featuredImage: '',
           publish: false

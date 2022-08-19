@@ -165,6 +165,9 @@ class ArticlePage extends Component {
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p>Managing devices using Intune is typically done through configuration policies. Configuration policies are like group policies but more. If you don't know group policy, don't worry, I'll explain without the example.</p>
                   <p>Configuration policies allow you to configure the Intune connected devices. You can set all sorts of things. For example, you can require a password on the device. Configure BitLocker on Windows 10 devices and a whole lot more. Since Microsoft makes Windows (and Windows is more complicated than Android and iOS devices), there's more you can do with Windows devices than other manufacturers. So let's dig into managing Windows 10 devices Intune.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Create a Windows 10 Device Configuration profile to set Telemetry data</h2>
                   <p>So let's start off easy. Let's say your boss (or a question on the MS-500) wants you to disable telemetry data from being sent to Microsoft. How do you do it? With a device configuration profile that has device restrictions configured! Let's jump in.</p>
                   <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Devices</strong> &gt; <strong>Windows </strong>&gt; <a href="https://endpoint.microsoft.com/?ref=AdminCenter#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/configProfiles" target="_blank" rel="noreferrer"><strong>Configuration profiles</strong></a>. Click <strong>Create profile</strong>. Set the <strong>platform </strong>to <strong>Windows 10 and later</strong>. Set the <strong>profile type</strong> to <strong>templates</strong>. Select <strong>Device restriction</strong> under <strong>Template name</strong>. Click <strong>Create</strong>.</p>
@@ -177,6 +180,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/Df0QCPN/set-the-assignments.png" alt="Set the assignments in Intune" style="height: auto;width: auto" /></div>
                   <p>5. Click <strong>Next </strong>&gt; <strong>Create</strong>.</p>
                   <p>That's it. Now you just need to wait until your devices check-in and the policy will be applied.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Understanding assignments in Intune</h2>
                   <div ><img src="https://i.ibb.co/X3X4qWz/Device-restrictions-assignments.png" alt="Device restrictions assignments" style="height: auto;width: auto" /></div>
                   <p />
@@ -189,6 +195,9 @@ class ArticlePage extends Component {
                   <p>Windows Registry Editor Version 5.00</p>
                   <p>[HKEY_CURRENT_USER\Software\Policies\Microsoft\Office\16.0\osm]</p>
                   <p>"EnableFileObfuscation"=dword:00000001</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to enable SmartScreen</h2>
                   <p>So now that we've configured a basic configuration profile let's talk about Endpoint security. As you saw under the template name when creating the device configuration profile there are a ton of options available in the Device Configuration profiles section. Surprisingly, that's not the only place to perform device configuration. There are even more settings! So now let's enable SmartScreen.</p>
                   <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Endpoint security</strong> &gt; <strong>Attack surface reduction</strong>. Click <strong>Create Policy</strong>. Set the <strong>Platform </strong>to <strong>Windows 10 and later</strong>. Set the <strong>Profile </strong>to <strong>Application control</strong>. Click <strong>Create</strong>.</p>
@@ -198,6 +207,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/pQHYhXN/Enable-Smart-Screen.png" alt="Enable SmartScreen" style="height: auto;width: auto" /></div>
                   <p>4. Click <strong>Next </strong>on the scope tags page. On the Assignments page set the Included groups to whatever group you want, for example, Intune Endpoint Protection. Set the excluded groups to whatever groups you want, for example, Intune Help Desk Operators. Click <strong>Next</strong>.</p>
                   <p>Now with that policy configured every user that is a member of the Included group above that is not a member of the Excluded group will have SmartScreen turned on. So in the example above every user that is a member of the Intune Endpoint Protection group that isn't a member of the Intune Help Desk Operators group will have SmartScreen enabled. Lastly, we configured SmartScreen to only warn users. The users can still bypass SmartScreen.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to enable Windows Defender Exploit Guard</h2>
                   <p><span >Windows Defender Exploit Guard</span> is another great way to reduce the attack surface of your Windows 10 devices. Let's enable Windows Defender Exploit Guard using an Endpoint protection device configuration.</p>
                   <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Devices </strong>&gt; <strong>Windows </strong>&gt; <a href="https://endpoint.microsoft.com/?ref=AdminCenter#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/configProfiles" target="_blank" rel="noreferrer"><strong>Configuration profiles</strong></a>. Click <strong>Create profile</strong>. Set <strong>Platform </strong>to <strong>Windows 10 and later</strong>. Set <strong>Profile type</strong> to <strong>Templates</strong>. Set the <strong>Template name</strong> to <strong>Endpoint protection</strong>. Click <strong>Create</strong>.</p>
@@ -210,6 +222,9 @@ class ArticlePage extends Component {
                   <p>5. Set the following to <strong>Enable</strong>: <strong>Microsoft Defender Exploit Guard</strong> &gt; <strong>Network filtering</strong> &gt; <strong>Network protection</strong>.</p>
                   <div ><img src="https://i.ibb.co/9TfVy5z/Enable-Network-Protection.png" alt="Enable Network protection" style="height: auto;width: auto" /></div>
                   <p>6. On the Assignments page click Add all users or select the user group you want to enable it for. Click <strong>Next</strong>. On the Applicability Rules page click <strong>Next</strong>. Click <strong>Create</strong>.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Notes about Bitlocker</h2>
                   <p>Enabling and configuring Bitlocker is possible with Intune. In short, you can encrypt a computer using Intune / Bitlocker and the user won't even know it's happening. Unfortunately, configuring Bitlocker would make this article too long but you may experience some questions about Bitlocker on the MS-500 so I'll answer those questions quickly below:</p>
                   <ul>

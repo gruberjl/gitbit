@@ -78,7 +78,7 @@ class EditContents extends Component {
     })
 
     setTimeout(() => {
-      const sortableSections = Sortable.create(this.section.current, {
+      Sortable.create(this.section.current, {
         handle: '.section-handle',
         draggable: '.section',
         onEnd: this.onSectionSortChange

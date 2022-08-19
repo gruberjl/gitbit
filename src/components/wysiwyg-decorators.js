@@ -45,6 +45,26 @@ const Image = (props) => {
   )
 }
 
+function findEmbedEntities(contentBlock, callback, contentState) {
+  contentBlock.findEntityRanges(
+      (character) => {
+        const entityKey = character.getEntity()
+        return (
+          entityKey !== null &&
+        contentState.getEntity(entityKey).getType() === 'EMBEDDED_LINK'
+        )
+      },
+      callback
+  )
+}
+
+const Iframe = (props) => {
+  const {src, width, height} = props.contentState.getEntity(props.entityKey).getData()
+  return (
+    <iframe width={width} height={height} src={src} frameBorder="0" />
+  )
+}
+
 export default (new CompositeDecorator([
   {
     strategy: findLinkEntities,
@@ -53,5 +73,9 @@ export default (new CompositeDecorator([
   {
     strategy: findImageEntities,
     component: Image
+  },
+  {
+    strategy: findEmbedEntities,
+    component: Iframe
   }
 ]))

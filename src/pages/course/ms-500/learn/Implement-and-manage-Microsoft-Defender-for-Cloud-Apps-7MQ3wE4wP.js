@@ -165,10 +165,16 @@ class ArticlePage extends Component {
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p>"Microsoft Defender for Cloud Apps is a Cloud Access Security Broker (CASB) that operates on multiple clouds. It provides rich visibility, control over data travel, and sophisticated analytics to identify and combat cyber threats across all your cloud services." - <a href="https://docs.microsoft.com/en-us/defender-cloud-apps/" target="_blank" rel="noreferrer">Microsoft</a></p>
                   <p>In short, The Microsoft Defender for Cloud Apps portal is a place where you can integrate your Azure AD user accounts, devices, and other third-party cloud apps to see what your users are using and then potentially put a stop to it.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Open the Microsoft Defender for Cloud Apps admin center</h2>
                   <p>The Defender for Cloud Apps has an admin center. You can access it by performing the following:</p>
                   <p>1. Open the Microsoft 365 Defender admin center &gt; More resources &gt; Click <a href="https://go.microsoft.com/fwlink/?linkid=2058038" target="_blank" rel="noreferrer">Open</a> under Microsoft Defender for Cloud Apps.</p>
                   <div ><img src="https://i.ibb.co/wdyzFt9/open-microsoft-defender-for-cloud-apps.png" alt="Open Microsoft Defender for Cloud Apps Admin Center" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Enable Microsoft Defender for Identity data integration</h2>
                   <p>The first thing you'll want to do is enable Microsoft Defender for Identity data integration. In short, you'll be allowing Microsoft Defender for Cloud Apps access to your user accounts in Azure AD. Defender for Identity collects and holds information from your configured servers. It will collect the following information:</p>
                   <ul>
@@ -197,12 +203,18 @@ class ArticlePage extends Component {
                   <p>10. On the Sensor deployment type page click <strong>Next</strong>.</p>
                   <p>11. On the Configure the sensor page enter the <strong>access key</strong> you received from step 7. Click <strong>Install</strong>.</p>
                   <div ><img src="https://i.ibb.co/c888GgC/enter-access-key.png" alt="Enter the sensor access key" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Review servers with the sensor installed</h2>
                   <p>Now let's review which servers have the sensors installed.</p>
                   <p>1. Click the <strong>gear </strong>in the top right corner. Click <strong>Settings</strong>.</p>
                   <div ><img src="https://i.ibb.co/D7mLYH2/cloud-apps-settings.png" alt="Click the gear then click Settings" style="height: auto;width: auto" /></div>
                   <p>2. Click <strong>Microsoft Defender for Identity</strong> &gt; <strong>Configure Microsoft Defender for Identity sensors.</strong></p>
                   <div ><img src="https://i.ibb.co/RYMnJLT/Configure-Microsoft-Defender-for-Identity-sensors.png" alt="Configure Microsoft Defender for Identity sensors" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Create a file alert</h2>
                   <p>Now we may need to alert us on file activity. Let's say we want to receive an alert on any file that has a name that contains the word File. Let's set it up. First, we'll need to enable file monitoring in the Office 365 connector. Then we'll need to create a policy.</p>
                   <p><em>The policy below will match any file located in OneDrive or SharePoint with the file name containing the word or phrase you add. In the example below it will match any file with the file name of File. So it will match the following files: File.docx, ImportantFile.docx, and File_Important.docx</em></p>
@@ -221,6 +233,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/tLQ6q3r/set-filter-match-to-contains-words.png" alt="Set file filter match to contain the words File" style="height: auto;width: auto" /></div>
                   <p>7. Check the box next to <strong>Create an alert for each matching file</strong>. Check the box next to <strong>Send alert as email</strong>. Enter your <strong>email address</strong> in the box provided. Click <strong>Create</strong>.</p>
                   <div ><img src="https://i.ibb.co/q9cjDjz/set-alert.png" alt="Set alert to email" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Understanding Cloud Apps policies</h2>
                   <p>Understanding the Cloud App policies can be a bit tricky. In short, you always have 4 parts.</p>
                   <h3>Meta-information</h3>
@@ -235,6 +250,9 @@ class ArticlePage extends Component {
                   <h3>Alerts</h3>
                   <p>Alerts are sent when a user performs the actions that match the filters. You can send an email, text message, simply create an alert in Defender for Cloud Apps or send alerts to Power Automate.</p>
                   <div ><img src="https://i.ibb.co/VH7H7kw/Alerts.png" alt="Microsoft Defender for cloud apps Alerts" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Block printing from Exchange Online</h2>
                   <p>Alright, now we've configured some basic alerting let's get more technical. Let's create a session policy that blocks printing from Exchange Online. We'll need a conditional access policy, then we'll create the app access control to block printing.</p>
                   <h3>Create the conditional access policy</h3>
@@ -248,6 +266,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/3zwTtWD/session-controls.png" alt="Session controls" style="height: auto;width: auto" /></div>
                   <p>5. Set the Enable policy to <strong>On</strong>. Click <strong>Create</strong>.</p>
                   <div ><img src="https://i.ibb.co/ckcDbJn/enable-the-conditional-access-policy.png" alt="Enable the conditional access policy" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Login to Exchange Online</h2>
                   <p>Now that the conditional access policy is set up we'll need to have someone log into Exchange Online. Someone that is part of the conditional access policy you set up above. Anyone will do. It can even be you. Simply open <a href="https://outlook.office.com/mail/" target="_blank" rel="noreferrer">https://outlook.office.com/mail/</a>.</p>
                   <h3>Enable the app in your organization</h3>
@@ -265,6 +286,9 @@ class ArticlePage extends Component {
                   <p>4. Scroll down to the actions section. Click <strong>Block</strong>. Click <strong>Create</strong>.</p>
                   <div ><img src="https://i.ibb.co/yg2Z6Jf/block-session-policy.png" alt="Set the session policy to block" style="height: auto;width: auto" /></div>
                   <p>The above policy doesn't only apply to Microsoft 365 apps. Any app that's registered in Azure AD that supports session controls can be managed in the same fashion.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Review the logs</h2>
                   <p>So now we have a few apps set up in Cloud App Security. Let's dive in and see how to review the logs to see how to track who's doing what.</p>
                   <p>1. Open the <strong>Microsoft 365 Cloud App Security admin center</strong>. Click <strong>Investigate </strong>&gt; <strong>Activity log</strong>.</p>

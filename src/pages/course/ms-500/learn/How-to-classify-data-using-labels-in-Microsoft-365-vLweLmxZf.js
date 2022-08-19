@@ -165,6 +165,9 @@ class ArticlePage extends Component {
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p>Information protection labels are a great way to add a layer of security to certain files, SharePoint sites, and emails. After the document or email is labeled the label can encrypt or apply a watermark. A label can be manually applied to documents or emails or automatically based on a sensitive info type. For example, you can configure a label to be automatically applied if the document contains a credit card number.</p>
                   <p>But let's dig in and start the setup.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Enable labeling for Teams, SharePoint sites, and Microsoft 365 Groups</h2>
                   <p>Before you can apply labels to Teams, SharePoint sites, or Microsoft groups you first need to do some one-time configuration of your Microsoft 365 tenant.</p>
                   <p>1. Open PowerShell on your computer as an administrator.</p>
@@ -191,6 +194,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/4K1CVCL/Azure-Purview.png" alt="Azure purview" style="height: auto;width: auto" /></div>
                   <p>12. Click <strong>Yes</strong>.</p>
                   <div ><img src="https://i.ibb.co/TRCQ937/Turn-On-Labeling-for-Azure-Purview.png" alt="Turn on labeling for Azure Purview" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Setting up a label</h2>
                   <p>Before we begin setting up the label you'll need to know 1 more thing. There are two parts to setting up the label. The first is the label configuration. This includes the name, details the users see, and what happens when something is marked with the label. The next part is publishing the label. This includes who can use the label.</p>
                   <h3>How to create a label</h3>
@@ -223,6 +229,9 @@ class ArticlePage extends Component {
                   <div ><img src="https://i.ibb.co/hCFTQDd/name-your-policy.png" alt="Name your policy" style="height: auto;width: auto" /></div>
                   <p>5. Click <strong>Submit</strong>.</p>
                   <p>That's it. Wait 24 hours for your label to be published. Or you can skip the wait time...</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Skip the 24-hour delay and use your labels immediately</h2>
                   <p>So you just published a label or maybe you made a change to a label and you need to make the label available immediately. What do you do? Have no fear, PowerShell is here!</p>
                   <p>1. Open PowerShell as an admin.</p>
@@ -233,11 +242,17 @@ class ArticlePage extends Component {
                   <p>4. Run the following PowerShell Command: "Get-Mailbox -ResultSize unlimited | ?&#123;$_.Name -notlike "DiscoverySearchMailbox*"&#125; | %&#123; Start-ManagedFolderAssistant $_.UserPrincipalName &#125;"</p>
                   <div ><img src="https://i.ibb.co/hfKjqhq/Start-Managed-Folder-Assistant.png" alt="Start-ManagedFolderAssistant" style="height: auto;width: auto" /></div>
                   <p>5. Wait a couple of minutes and close and re-open your Office app.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Manually apply the label</h2>
                   <p>So now we've published the label but how do we manually apply it to a document? Well, it's pretty easy.</p>
                   <p>1. Open Word on a computer that is connected to your Microsoft 365 tenant.</p>
                   <p>2. Click <strong>Sensitivity</strong> &gt; <strong>Company employees only</strong>.</p>
                   <div ><img src="https://i.ibb.co/Mp6qGxb/Apply-sensitivity-label.png" alt="Apply sensitivity label" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Automatically applied labels</h2>
                   <p>Remember earlier when we created the label we set up the "Auto apply the label" if the content contained a credit card? Let's test it out now.</p>
                   <p>1. Open a new Microsoft Word document.</p>
@@ -246,6 +261,9 @@ class ArticlePage extends Component {
                   <p>3. Save the document to your OneDrive</p>
                   <p>You should automatically see the following:</p>
                   <div ><img src="https://i.ibb.co/NKqDtvB/your-organization-automatically-applied-the-sensitivity-label.png" alt="your organization automatically applied the sensitivity label" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Review the settings</h2>
                   <p>Now that we've created our first label let's go back and review some of the settings.</p>
                   <p>1. Go to the <strong>Microsoft 365 Compliance admin center</strong> &gt; <strong>Information protection</strong> &gt; <strong>Labels </strong>&gt; click the label you just created. Click <strong>Edit label</strong>.</p>
@@ -298,6 +316,9 @@ class ArticlePage extends Component {
                   <h3>Define external sharing and conditional access settings</h3>
                   <p>You'll only see this page if you had "External sharing and Conditional Access settings" checked on the "Define protection settings for groups and sites" page. <em>Note: this page only affects SharePoint sites. </em>This page will set the external sharing allowed on SharePoint sites flagged with this label. In short, you can force a SharePoint site to only be allowed to be shared with specific users. <em>Note: these settings won't stop someone from attaching a document to an email and sending it out that way.</em> It works similarly to how the privacy and external user settings worked on the previous page.</p>
                   <p>SharePoint sites have one other option though: you can set them to only be accessible by computers that are hybrid Azure AD joined to your environment. In short, you can make SharePoint sites only accessible by domain-joined computer. By checking the <strong>Use Azure AD Conditional Access to protect labeled SharePoint sites</strong> checkbox you can set up what devices can access the SharePoint site.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Label policies</h2>
                   <p>Next, let's go over all the policy options for a label. Go to <strong>Microsoft Compliance admin center</strong> &gt; <strong>Information protection</strong> &gt; <a href="https://compliance.microsoft.com/informationprotection?viewid=sensitivitylabelpolicies" target="_blank" rel="noreferrer"><strong>label policies</strong></a>. Click the label policy you created earlier and click <strong>Edit policy</strong>.</p>
                   <div ><img src="https://i.ibb.co/vdpnDHY/Label-policy.png" alt="How to edit a label policy" style="height: auto;width: auto" /></div>
@@ -334,6 +355,9 @@ class ArticlePage extends Component {
                   <h3 ><span >Name your policy</span></h3>
                   <div ><img src="https://i.ibb.co/x8F4pgV/Name-your-policy.png" alt="Name your policy" style="height: auto;width: auto" /></div>
                   <p><span >On this page, you'll see the policy name but it's greyed out. In short, you can't change the name of a label policy once it's set up. You can set the description though.</span></p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Label Priority</h2>
                   <p>The last thing you'll need to know about information protection labels is the label priority. The first thing you need to know is a piece of content can only have one label. In short, it's because the labels will "fight" each other. What if you had one label encrypting a document and another decrypting the document? It would be a nightmare.</p>
                   <p>Second, default labels will always take priority over mandatory labels. In short, setting a label as the default will be applied before the sensitivity info automatically applies a label so the default label will be applied first and won't be automatically removed.</p>
@@ -342,6 +366,9 @@ class ArticlePage extends Component {
                   <p>1. Go to the <strong>Compliance admin center</strong> &gt; <strong>Information protection</strong> &gt; <a href="https://compliance.microsoft.com/informationprotection?viewid=sensitivitylabels" target="_blank" rel="noreferrer"><strong>Labels</strong></a><strong> </strong>page.</p>
                   <p>2. Click the <strong>ellipsis (...)</strong> next to the label. Click <strong>Move up </strong>or <strong>Move down</strong>.</p>
                   <div ><img src="https://i.ibb.co/bLqBxBQ/Change-the-label-priority.png" alt="How to change the label priority" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>See how labels are applied</h2>
                   <div ><img src="https://i.ibb.co/pJ4s9TL/how-labels-are-applied.png" alt="Reporting on how labels are applied" style="height: auto;width: auto" /></div>
                   <p>Lastly, auditing. Let's take a look at who's applying labels and how many labels are being automatically applied. From the Compliance admin center &gt; <a href="https://compliance.microsoft.com/reports" target="_blank" rel="noreferrer">Reports</a>. From this page, you can see several reports. Typically, the reports will take 24 hours to populate though so you may need to wait a day or so before you see any data. To see if labels are being applied manually or automatically click "How Labels Were Applied".</p>

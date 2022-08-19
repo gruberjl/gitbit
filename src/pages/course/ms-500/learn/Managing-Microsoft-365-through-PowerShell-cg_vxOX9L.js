@@ -163,16 +163,28 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
-                <div><h2>What's PowerShell?</h2>
+                <div><script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
+                  <h2>What's PowerShell?</h2>
                   <p>The best way to explain PowerShell is directly from Microsoft:</p>
                   <blockquote>PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework. PowerShell runs on Windows, Linux, and macOS.</blockquote>
                   <p>To put it another way, PowerShell is a command-line + a scripting language combined. It's a powerful tool that can be used to automate actions on your computer as well as actions in Microsoft 365. But it doesn't manage Microsoft 365 out of the box. You first have to extend it which can be done using modules.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>Why PowerShell?</h2>
                   <p>From PowerShell, you can make changes in bulk. For example, you can connect to Microsoft 365 using PowerShell, get a list of unlicensed users and license them all. All from a single script. You can also export data. Need a list of all the users or all the mailboxes? It's no problem with PowerShell. Get the data and export it to CSV. Or maybe you need to give a lot of users access to a SharePoint site. That's no problem with PowerShell.</p>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How do you access PowerShell?</h2>
                   <p>PowerShell is automatically installed on all the latest versions of Windows. To access PowerShell on your computer click in the search box then type PowerShell. Finally, click PowerShell in the start menu.</p>
                   <p />
                   <div ><img src="https://i.ibb.co/31fXgzV/Power-Shell.png" alt="Access PowerShell" style="height: auto;width: auto" /></div>
+                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
+                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
+                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
                   <h2>How to connect to Microsoft 365 using PowerShell</h2>
                   <h3>One time setup</h3>
                   <p><em>The following instructions need to be performed once per user on the machine.</em></p>

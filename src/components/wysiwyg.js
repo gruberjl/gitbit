@@ -10,6 +10,7 @@ import FormatListNumbered from '@mui/icons-material/FormatListNumbered'
 import Image from '@mui/icons-material/Image'
 import Code from '@mui/icons-material/Code'
 import Link from '@mui/icons-material/Link'
+import YouTube from '@mui/icons-material/YouTube'
 import Dialog from '@mui/material/Dialog'
 import Stack from '@mui/material/Stack'
 import TextField from '@mui/material/TextField'
@@ -58,11 +59,17 @@ class Wysiwyg extends Component {
     this.handleKeyCommand = this.handleKeyCommand.bind(this)
     this.onTab = this.onTab.bind(this)
     this.openLinkDialog = this.openLinkDialog.bind(this)
+    this.openIframeDialog = this.openIframeDialog.bind(this)
+    this.closeIframeDialog = this.closeIframeDialog.bind(this)
     this.closeLinkDialog = this.closeLinkDialog.bind(this)
     this.setLinkText = this.setLinkText.bind(this)
     this.setLinkUrl = this.setLinkUrl.bind(this)
+    this.setIframeSrc = this.setIframeSrc.bind(this)
+    this.setIframeWidth = this.setIframeWidth.bind(this)
+    this.setIframeHeight = this.setIframeHeight.bind(this)
     this.removeLink = this.removeLink.bind(this)
     this.addLink = this.addLink.bind(this)
+    this.addIframe = this.addIframe.bind(this)
     this.hasSelection = this.hasSelection.bind(this)
     this.toggleBlockType = this.toggleBlockType.bind(this)
     this.toggleInlineStyle = this.toggleInlineStyle.bind(this)
@@ -77,7 +84,11 @@ class Wysiwyg extends Component {
       linkUrl: '',
       imageDialogOpen: false,
       imageSrc: '',
-      imageAlt: ''
+      imageAlt: '',
+      iframeSrc: '',
+      iframeWidth: '',
+      iframeHeight: '',
+      iframeDialogOpen: false
     }
   }
 
@@ -116,11 +127,29 @@ class Wysiwyg extends Component {
     this.setState({linkDialogOpen: true, linkUrl, linkText})
   }
 
+  openIframeDialog() {
+    this.setState({
+      iframeSrc: '',
+      iframeWidth: '',
+      iframeHeight: '',
+      iframeDialogOpen: true
+    })
+  }
+
   closeLinkDialog() {
     this.setState({
       linkDialogOpen: false,
       linkText: '',
       linkUrl: ''
+    })
+  }
+
+  closeIframeDialog() {
+    this.setState({
+      iframeDialogOpen: false,
+      iframeSrc: '',
+      iframeWidth: '',
+      iframeHeight: ''
     })
   }
 
@@ -132,6 +161,21 @@ class Wysiwyg extends Component {
   setLinkUrl(e) {
     const linkUrl = e.target.value
     this.setState({linkUrl})
+  }
+
+  setIframeSrc(e) {
+    const iframeSrc = e.target.value
+    this.setState({iframeSrc})
+  }
+
+  setIframeWidth(e) {
+    const iframeWidth = e.target.value
+    this.setState({iframeWidth})
+  }
+
+  setIframeHeight(e) {
+    const iframeHeight = e.target.value
+    this.setState({iframeHeight})
   }
 
   removeLink() {
@@ -149,6 +193,17 @@ class Wysiwyg extends Component {
     nextEditorState = RichUtils.toggleLink(nextEditorState, nextEditorState.getSelection(), entityKey)
     this.props.onEditorStateChange(nextEditorState)
     this.closeLinkDialog()
+  }
+
+  addIframe() {
+    const contentState = this.props.editorState.getCurrentContent()
+    const entity = {src: this.state.iframeSrc, height: this.state.iframeHeight, width: this.state.iframeWidth}
+    const contentStateWithEntity = contentState.createEntity('EMBEDDED_LINK', 'IMMUTABLE', entity)
+    const entityKey = contentStateWithEntity.getLastCreatedEntityKey()
+    const newEditorState = EditorState.set(this.props.editorState, {currentContent: contentStateWithEntity})
+
+    this.props.onEditorStateChange(AtomicBlockUtils.insertAtomicBlock(newEditorState, entityKey, ' '))
+    this.closeIframeDialog()
   }
 
   uploadImage(e) {
@@ -222,6 +277,7 @@ class Wysiwyg extends Component {
           <IconButton onClick={() => this.toggleBlockType('code-block')}><Code /></IconButton>
 
           <IconButton component="label"><Image /><input type="file" hidden accept="image/*" onChange={this.uploadImage} /></IconButton>
+          <IconButton component="label" onClick={this.openIframeDialog}><YouTube /></IconButton>
         </div>
         <Editor
           editorState={this.props.editorState}
@@ -235,6 +291,17 @@ class Wysiwyg extends Component {
             <Stack spacing={2} direction="row">
               <Button variant="outlined" onClick={this.removeLink}>Remove</Button>
               <Button variant="contained" onClick={this.addLink}>Save</Button>
+            </Stack>
+          </Stack>
+        </Dialog>
+
+        <Dialog onClose={this.closeIframeDialog} open={this.state.iframeDialogOpen}>
+          <Stack spacing={2} sx={{p: 2, width: 500}}>
+            <TextField value={this.state.iframeSrc} onChange={this.setIframeSrc} label="Source" variant="standard" fullWidth="true" helperText="https://www.youtube.com/embed/S92fTz_-kQE?autoplay=1&mute=1" />
+            <TextField value={this.state.iframeWidth} onChange={this.setIframeWidth} label="Width" variant="standard" fullWidth="true" helperText="560" />
+            <TextField value={this.state.iframeHeight} onChange={this.setIframeHeight} label="Height" variant="standard" fullWidth="true" helperText="315" />
+            <Stack spacing={2} direction="row">
+              <Button variant="contained" onClick={this.addIframe}>Save</Button>
             </Stack>
           </Stack>
         </Dialog>
