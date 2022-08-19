@@ -113,7 +113,7 @@ class ArticlePage extends Component {
 
     return (
       <Page jsonLdType={'BlogPosting'} jsonLd={jsonLd} image={this.state.article.featuredImage} canonical={this.state.path} title={this.state.article.title} description={this.state.article.description}>
-        <main>
+        <div>
           <style>
             {`main, h1, h2, h3, h4, h5, h6, p, span, li, a {
                 font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -162,89 +162,76 @@ class ArticlePage extends Component {
           <Container>
             <Grid container spacing={2}>
               <Grid item lg={9}>
-                <h1 style={marginTop24Style}>{this.state.article.title}</h1>
-                <div><img src="https://i.ibb.co/RhBg5HR/What-s-in-the-MS-500.jpg" alt="What's in the Microsoft 365 Security Administration (MS-500) certificate?" style="height: undefined;width: undefined" />
-                  <p>Have you ever wondered how to effectively and efficiently manage your organization’s security? If so, you are not alone. When it comes to information security, there are many challenges that businesses face. For example, security professionals must constantly keep up with the latest cyber threats, update their security measures and protocols regularly, train their employees on best practices regarding security protocols, and much more. These responsibilities can be extremely challenging for any administrator or team of administrators in any business. Fortunately, there are many certifications related to information security that can help you stand out from your peers when searching for a job. One certification that is worth getting is the Microsoft 365 Security Administration certificate. This article will provide you with many details about this certification and why you should get one if you are considering pursuing it as a secondary career objective or something similar in the future.</p>
-                  <p>Without further ado, welcome to the MS-500 course on GitBit! In this course, you'll learn everything you need to know to pass the MS-500: Microsoft 365 Security Administration certification. You'll also learn everything you need to know to secure your Microsoft 365 tenant. Within this course, there are three things: lessons, hands-on guides, and practice tests. For a hands-on experience, we'll be using a free Microsoft 365 tenant which I'll help you set up in the next lesson. Before we jump in let's discuss the test.</p>
-                  <p />
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>Is the MS-500 Worth It?</h2>
-                  <img src="https://i.ibb.co/rHBNrBp/Slide2.jpg" alt="Microsoft 365 is everywhere!" style="height: 315;width: 560" />
-                  <p>Microsoft 365 is everywhere. With over 90% of fortune 500 companies using Microsoft 365 managing and securing Microsoft 365 is an in-demand skill. It isn't just used by large businesses. Over a million companies are using Microsoft 365. That's a lot of organizations that have security requirements. But that's not the only reason to hire someone with a Microsoft 365 Security Administration certificate.</p>
-                  <p>Microsoft partners also need to hire employees that have their Microsoft 365 Security Administration certificate. For Microsoft partners to have a silver partnership they need at least one employee that has passed the MS-500. Microsoft gold partners need at least four employees that have passed the MS-500.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>How much can you expect to earn?</h2>
-                  <img src="https://i.ibb.co/rQR1z85/Slide3.jpg" alt="You can earn over $100,000 as a Microsoft 365 security administrator" style="height: undefined;width: undefined" />
-                  <p>The amount of money you can make with the certification varies depending on the industry and the company you work for. However, on average, you can expect to make around $100,000 a year with this certification. As a matter of fact, the average pay for a Microsoft 365 Security Administrator is $100,053 - <a href="https://www.ziprecruiter.com/Salaries/Microsoft-365-Security-Administrator-Salary" target="_self">Zip Recruiter</a>. This amount can increase depending on the industry you get a job in and your position. If you are just starting in the field, you can earn around $60,000 a year.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>Who should take the MS-500?</h2>
-                  <p>Anyone that's starting their career in IT or information technology security should look to pass the MS-500 and achieve their Microsoft 365 Security Administration certificate. But it isn't just for beginners.</p>
-                  <p>Since Microsoft partners are required to have at least four employees with the Microsoft 365 Security Administration certificate it's a great way to get hired or stand out above your peers.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>How to Obtain a Microsoft Cloud Security Administration Certificate?</h2>
-                  <img src="https://i.ibb.co/mqzLBKJ/Slide4.jpg" alt="How to obtain the MS-500 certificate?" style="height: undefined;width: undefined" />
-                  <p>To obtain this certification, you must first take and pass the exam. The MS-500 exam comprises 40-60 questions and you have 120 minutes to finish the exam. The exam costs roughly $165. You need a score of at least 700 out of 1000 to pass.  To prepare for the exam, you can use this site! Surprised right? GitBit has everything you need to pass the MS-500 and receive your Microsoft 365 Security Administration certificate. First, go through the lessons provided. Once you've completed the lessons take a couple of practice exams. I recommend waiting to schedule the exam until after you receive a 90% on our practice exams.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>What's in the MS-500</h2>
-                  <img src="https://i.ibb.co/mCyG8j3/Slide5.jpg" alt="What's in the MS-500 test?" style="height: undefined;width: undefined" />
-                  <p>The MS-500: Microsoft 365 Security Administration is a 40-60 question exam that includes multiple-choice, drag and drop, as well as, hands-on labs. It covers a wide variety of security and administration topics on Microsoft 365.</p>
-                  <p>Here's a quick break-down from Microsoft on what's covered in the MS-500:</p>
-                  <h3>Implement and manage identity and access (35-40%)</h3>
-                  <ul>
-                    <li>Secure Microsoft 365 hybrid environments</li>
-                    <li>Secure Identities</li>
-                    <li>Implement authentication methods</li>
-                    <li>Implement conditional access</li>
-                    <li>Implement roles and role groups</li>
-                    <li>Configure and manage identity governance</li>
-                    <li>Implement Azure AD Identity Protection&nbsp;</li>
-                  </ul>
-                  <h3>Implement and manage threat protection (25-30%)</h3>
-                  <ul>
-                    <li>Implement and manage Microsoft Defender for Identity</li>
-                    <li>Implement device threat protection</li>
-                    <li>Implement and manage device and application protection</li>
-                    <li>Implement and manage Microsoft Defender for Office 365</li>
-                    <li>Monitor Microsoft 365 Security with Azure Sentinel</li>
-                    <li>Implement and manage Microsoft Cloud App Security</li>
-                  </ul>
-                  <h3>Implement and manage information protection (10-15%)</h3>
-                  <ul>
-                    <li>Manage sensitive information</li>
-                    <li>Manage Data Loss Prevention (DLP)</li>
-                    <li>Manage data governance and retention</li>
-                  </ul>
-                  <h3>Manage governance and compliance features in Microsoft 365 (20-25%)</h3>
-                  <ul>
-                    <li>Configure and analyze security reporting</li>
-                    <li>Manage and analyze audit logs and reports</li>
-                    <li>Discover and respond to compliance queries in Microsoft 365</li>
-                    <li>Manage regulatory compliance</li>
-                    <li>Manage insider risk solutions in Microsoft 365</li>
-                  </ul>
-                </div>
-                <div id="bottom-of-article" />
-                <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
-                  <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
-                  <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
-                </Box>
+                <main>
+                  <h1 style={marginTop24Style}>{this.state.article.title}</h1>
+                  <div><img src="https://i.ibb.co/RhBg5HR/What-s-in-the-MS-500.jpg" alt="What's in the Microsoft 365 Security Administration (MS-500) certificate?" style="height: undefined;width: undefined" />
+                    <p>Have you ever wondered how to effectively and efficiently manage your organization’s security? If so, you are not alone. When it comes to information security, there are many challenges that businesses face. For example, security professionals must constantly keep up with the latest cyber threats, update their security measures and protocols regularly, train their employees on best practices regarding security protocols, and much more. These responsibilities can be extremely challenging for any administrator or team of administrators in any business. Fortunately, there are many certifications related to information security that can help you stand out from your peers when searching for a job. One certification that is worth getting is the Microsoft 365 Security Administration certificate. This article will provide you with many details about this certification and why you should get one if you are considering pursuing it as a secondary career objective or something similar in the future.</p>
+                    <p>Without further ado, welcome to the MS-500 course on GitBit! In this course, you'll learn everything you need to know to pass the MS-500: Microsoft 365 Security Administration certification. You'll also learn everything you need to know to secure your Microsoft 365 tenant. Within this course, there are three things: lessons, hands-on guides, and practice tests. For a hands-on experience, we'll be using a free Microsoft 365 tenant which I'll help you set up in the next lesson. Before we jump in let's discuss the test.</p>
+                    <p />
+                    <h2>Is the MS-500 Worth It?</h2>
+                    <img src="https://i.ibb.co/rHBNrBp/Slide2.jpg" alt="Microsoft 365 is everywhere!" style="height: 315;width: 560" />
+                    <p>Microsoft 365 is everywhere. With over 90% of fortune 500 companies using Microsoft 365 managing and securing Microsoft 365 is an in-demand skill. It isn't just used by large businesses. Over a million companies are using Microsoft 365. That's a lot of organizations that have security requirements. But that's not the only reason to hire someone with a Microsoft 365 Security Administration certificate.</p>
+                    <p>Microsoft partners also need to hire employees that have their Microsoft 365 Security Administration certificate. For Microsoft partners to have a silver partnership they need at least one employee that has passed the MS-500. Microsoft gold partners need at least four employees that have passed the MS-500.</p>
+                    <h2>How much can you expect to earn?</h2>
+                    <img src="https://i.ibb.co/rQR1z85/Slide3.jpg" alt="You can earn over $100,000 as a Microsoft 365 security administrator" style="height: undefined;width: undefined" />
+                    <p>The amount of money you can make with the certification varies depending on the industry and the company you work for. However, on average, you can expect to make around $100,000 a year with this certification. As a matter of fact, the average pay for a Microsoft 365 Security Administrator is $100,053 - <a href="https://www.ziprecruiter.com/Salaries/Microsoft-365-Security-Administrator-Salary" target="_self">Zip Recruiter</a>. This amount can increase depending on the industry you get a job in and your position. If you are just starting in the field, you can earn around $60,000 a year.</p>
+                    <h2>Who should take the MS-500?</h2>
+                    <p>Anyone that's starting their career in IT or information technology security should look to pass the MS-500 and achieve their Microsoft 365 Security Administration certificate. But it isn't just for beginners.</p>
+                    <p>Since Microsoft partners are required to have at least four employees with the Microsoft 365 Security Administration certificate it's a great way to get hired or stand out above your peers.</p>
+                    <h2>How to Obtain a Microsoft Cloud Security Administration Certificate?</h2>
+                    <img src="https://i.ibb.co/mqzLBKJ/Slide4.jpg" alt="How to obtain the MS-500 certificate?" style="height: undefined;width: undefined" />
+                    <p>To obtain this certification, you must first take and pass the exam. The MS-500 exam comprises 40-60 questions and you have 120 minutes to finish the exam. The exam costs roughly $165. You need a score of at least 700 out of 1000 to pass.  To prepare for the exam, you can use this site! Surprised right? GitBit has everything you need to pass the MS-500 and receive your Microsoft 365 Security Administration certificate. First, go through the lessons provided. Once you've completed the lessons take a couple of practice exams. I recommend waiting to schedule the exam until after you receive a 90% on our practice exams.</p>
+                    <h2>What's in the MS-500</h2>
+                    <img src="https://i.ibb.co/mCyG8j3/Slide5.jpg" alt="What's in the MS-500 test?" style="height: undefined;width: undefined" />
+                    <p>The MS-500: Microsoft 365 Security Administration is a 40-60 question exam that includes multiple-choice, drag and drop, as well as, hands-on labs. It covers a wide variety of security and administration topics on Microsoft 365.</p>
+                    <p>Here's a quick break-down from Microsoft on what's covered in the MS-500:</p>
+                    <h3>Implement and manage identity and access (35-40%)</h3>
+                    <ul>
+                      <li>Secure Microsoft 365 hybrid environments</li>
+                      <li>Secure Identities</li>
+                      <li>Implement authentication methods</li>
+                      <li>Implement conditional access</li>
+                      <li>Implement roles and role groups</li>
+                      <li>Configure and manage identity governance</li>
+                      <li>Implement Azure AD Identity Protection&nbsp;</li>
+                    </ul>
+                    <h3>Implement and manage threat protection (25-30%)</h3>
+                    <ul>
+                      <li>Implement and manage Microsoft Defender for Identity</li>
+                      <li>Implement device threat protection</li>
+                      <li>Implement and manage device and application protection</li>
+                      <li>Implement and manage Microsoft Defender for Office 365</li>
+                      <li>Monitor Microsoft 365 Security with Azure Sentinel</li>
+                      <li>Implement and manage Microsoft Cloud App Security</li>
+                    </ul>
+                    <h3>Implement and manage information protection (10-15%)</h3>
+                    <ul>
+                      <li>Manage sensitive information</li>
+                      <li>Manage Data Loss Prevention (DLP)</li>
+                      <li>Manage data governance and retention</li>
+                    </ul>
+                    <h3>Manage governance and compliance features in Microsoft 365 (20-25%)</h3>
+                    <ul>
+                      <li>Configure and analyze security reporting</li>
+                      <li>Manage and analyze audit logs and reports</li>
+                      <li>Discover and respond to compliance queries in Microsoft 365</li>
+                      <li>Manage regulatory compliance</li>
+                      <li>Manage insider risk solutions in Microsoft 365</li>
+                    </ul>
+                  </div>
+                  <div id="bottom-of-article" />
+                  <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
+                    <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
+                    <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
+                  </Box>
+                </main>
               </Grid>
               <Grid item lg={3} sx={{mt: 3}}>
                 <ContentsRead completedContent={this.state.userAcct.completedContent} />
               </Grid>
             </Grid>
           </Container>
-        </main>
+        </div>
       </Page>
     )
   }

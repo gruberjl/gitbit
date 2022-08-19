@@ -44,16 +44,11 @@ const buildLearnArticles = async () => {
     const previousArticle = i > 0 ? sortedArticles[i - 1].slug : 'PREVIOUS_CONTENT'
 
     if (!article.error) {
-      let articleHtml = draftToHtml(article.article)
+      const articleHtml = draftToHtml(article.article)
         .replace(/style=".*?">/g, '>')
         .replaceAll('<br>', '<br/>')
         .replaceAll('{', '&#123;')
         .replaceAll('}', '&#125;')
-
-      articleHtml = articleHtml.replaceAll('<h2>', `<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous"></script>
-<ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456"></ins>
-<script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-<h2>`)
 
       const newFile = template.replace('{COURSE:true, sections:[]}', stringify(course))
         .replace('{ARTICLE: true}', stringify(article))

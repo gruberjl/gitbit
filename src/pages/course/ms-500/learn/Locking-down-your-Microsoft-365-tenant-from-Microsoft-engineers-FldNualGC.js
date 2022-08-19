@@ -113,7 +113,7 @@ class ArticlePage extends Component {
 
     return (
       <Page jsonLdType={'BlogPosting'} jsonLd={jsonLd} image={this.state.article.featuredImage} canonical={this.state.path} title={this.state.article.title} description={this.state.article.description}>
-        <main>
+        <div>
           <style>
             {`main, h1, h2, h3, h4, h5, h6, p, span, li, a {
                 font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -162,64 +162,54 @@ class ArticlePage extends Component {
           <Container>
             <Grid container spacing={2}>
               <Grid item lg={9}>
-                <h1 style={marginTop24Style}>{this.state.article.title}</h1>
-                <div><p>I've never had any issues with Microsoft engineers accessing my data or changing my tenant without my explicit approval. Nevertheless, Microsoft has developed a way to lock out Microsoft engineers from your tenant. If you open a support ticket with Microsoft and they require access to your tenant they will need to send you an explicit request. Microsoft calls this feature Customer Lockbox.</p>
-                  <p>Customer Lockbox allows you and your admins to secure your Microsoft 365 tenant from Microsoft engineers. That's right. The engineers at the organization hosting your data won't be able to access your data. Not without your explicit permission. Once a request is approved the Microsoft engineers will only be able to access your data for a limited window. Typically, 4 hours but it may be longer or shorter depending on your service issues.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>Lockbox workflow</h2>
-                  <p>Before we jump into configuring Customer Lockbox let's discuss the broad strokes or take a bird's eye view of the workflow. So Let's say you've enabled Customer Lockbox. A month goes by and all of a sudden you have an issue with your Microsoft 365 tenant. Uh-oh. You open a service request with Microsoft and then they tell you they need access to your tenant. With Lockbox enabled the following will take place:</p>
-                  <p>1. You open a support ticket with Microsoft.</p>
-                  <p>2. Microsoft views the request and verifies they need to access your tenant.</p>
-                  <p>3. The Microsoft engineer and their manager will send the Lockbox request to you and your other Customer Lockbox admins.</p>
-                  <p>4. You or another admin in your organization will approve the request.</p>
-                  <p>5. The Microsoft engineer will review your tenant.</p>
-                  <p>6. The request will time out and the Microsoft engineer will be automatically locked out of your data again.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>License requirements</h2>
-                  <p>Your users will need one of the following licenses to enable the Customer Lockbox feature:</p>
-                  <ul>
-                    <li>Office 365 E5</li>
-                    <li>Microsoft 365 E5</li>
-                    <li>Microsoft 365 E5 Compliance</li>
-                    <li>Office 365 Advanced Compliance</li>
-                  </ul>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>Enable Customer Lockbox</h2>
-                  <p>So now that we've reviewed the overview and talked about licensing let's get into it. How do we enable Customer Lockbox? It's pretty simple, just click the right check box and the right place.</p>
-                  <p>1. Log in to the <strong>Microsoft 365 admin center</strong> &gt; <strong>Settings</strong> &gt; <strong>Org settings</strong> &gt; <strong>Security &amp; privacy</strong> &gt; <strong>Customer Lockbox</strong>.</p>
-                  <p>2. Click <strong>Require approval for all data access requests</strong>. Click <strong>Save</strong>.</p>
-                  <div ><img src="https://i.ibb.co/DCmpnT9/Enable-Customer-Lockbox.png" alt="Enable customer lockbox" style="height: auto;width: auto" /></div>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>Approving Customer Lockbox requests</h2>
-                  <p>So now you have Customer Lockbox enabled let's talk about the Customer Lockbox requests because eventually, you'll get one... Maybe. Maybe not. Who knows. But either way, you'll need to know how to approve the requests in case you get one. So, how do you know if they have a request and how do you approve it once the request is opened?</p>
-                  <p>In short, you'll receive an email that looks like the following:</p>
-                  <div ><img src="https://i.ibb.co/RzpwWs3/Customer-Lockbox-Request.png" alt="Customer Lockbox request email" style="height: auto;width: auto" /></div>
-                  <p>Now that we have a Customer Lockbox request how do we approve the request so the Microsoft engineer can access our tenant and fix it? It's simple, just find the right button and click it.</p>
-                  <p>1. <strong>Log in to the Microsoft 365 admin center</strong> &gt; <strong>Support</strong> &gt; <strong>Customer Lockbox Requests</strong>.</p>
-                  <p>2. Click the request you wish to approve.</p>
-                  <div ><img src="https://i.ibb.co/P6KjrNK/data-access-request.png" alt="Customer Lockbox data access requests" style="height: auto;width: auto" /></div>
-                  <p>3. Click <strong>Approve</strong>.</p>
-                </div>
-                <div id="bottom-of-article" />
-                <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
-                  <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
-                  <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
-                </Box>
+                <main>
+                  <h1 style={marginTop24Style}>{this.state.article.title}</h1>
+                  <div><p>I've never had any issues with Microsoft engineers accessing my data or changing my tenant without my explicit approval. Nevertheless, Microsoft has developed a way to lock out Microsoft engineers from your tenant. If you open a support ticket with Microsoft and they require access to your tenant they will need to send you an explicit request. Microsoft calls this feature Customer Lockbox.</p>
+                    <p>Customer Lockbox allows you and your admins to secure your Microsoft 365 tenant from Microsoft engineers. That's right. The engineers at the organization hosting your data won't be able to access your data. Not without your explicit permission. Once a request is approved the Microsoft engineers will only be able to access your data for a limited window. Typically, 4 hours but it may be longer or shorter depending on your service issues.</p>
+                    <h2>Lockbox workflow</h2>
+                    <p>Before we jump into configuring Customer Lockbox let's discuss the broad strokes or take a bird's eye view of the workflow. So Let's say you've enabled Customer Lockbox. A month goes by and all of a sudden you have an issue with your Microsoft 365 tenant. Uh-oh. You open a service request with Microsoft and then they tell you they need access to your tenant. With Lockbox enabled the following will take place:</p>
+                    <p>1. You open a support ticket with Microsoft.</p>
+                    <p>2. Microsoft views the request and verifies they need to access your tenant.</p>
+                    <p>3. The Microsoft engineer and their manager will send the Lockbox request to you and your other Customer Lockbox admins.</p>
+                    <p>4. You or another admin in your organization will approve the request.</p>
+                    <p>5. The Microsoft engineer will review your tenant.</p>
+                    <p>6. The request will time out and the Microsoft engineer will be automatically locked out of your data again.</p>
+                    <h2>License requirements</h2>
+                    <p>Your users will need one of the following licenses to enable the Customer Lockbox feature:</p>
+                    <ul>
+                      <li>Office 365 E5</li>
+                      <li>Microsoft 365 E5</li>
+                      <li>Microsoft 365 E5 Compliance</li>
+                      <li>Office 365 Advanced Compliance</li>
+                    </ul>
+                    <h2>Enable Customer Lockbox</h2>
+                    <p>So now that we've reviewed the overview and talked about licensing let's get into it. How do we enable Customer Lockbox? It's pretty simple, just click the right check box and the right place.</p>
+                    <p>1. Log in to the <strong>Microsoft 365 admin center</strong> &gt; <strong>Settings</strong> &gt; <strong>Org settings</strong> &gt; <strong>Security &amp; privacy</strong> &gt; <strong>Customer Lockbox</strong>.</p>
+                    <p>2. Click <strong>Require approval for all data access requests</strong>. Click <strong>Save</strong>.</p>
+                    <div ><img src="https://i.ibb.co/DCmpnT9/Enable-Customer-Lockbox.png" alt="Enable customer lockbox" style="height: auto;width: auto" /></div>
+                    <h2>Approving Customer Lockbox requests</h2>
+                    <p>So now you have Customer Lockbox enabled let's talk about the Customer Lockbox requests because eventually, you'll get one... Maybe. Maybe not. Who knows. But either way, you'll need to know how to approve the requests in case you get one. So, how do you know if they have a request and how do you approve it once the request is opened?</p>
+                    <p>In short, you'll receive an email that looks like the following:</p>
+                    <div ><img src="https://i.ibb.co/RzpwWs3/Customer-Lockbox-Request.png" alt="Customer Lockbox request email" style="height: auto;width: auto" /></div>
+                    <p>Now that we have a Customer Lockbox request how do we approve the request so the Microsoft engineer can access our tenant and fix it? It's simple, just find the right button and click it.</p>
+                    <p>1. <strong>Log in to the Microsoft 365 admin center</strong> &gt; <strong>Support</strong> &gt; <strong>Customer Lockbox Requests</strong>.</p>
+                    <p>2. Click the request you wish to approve.</p>
+                    <div ><img src="https://i.ibb.co/P6KjrNK/data-access-request.png" alt="Customer Lockbox data access requests" style="height: auto;width: auto" /></div>
+                    <p>3. Click <strong>Approve</strong>.</p>
+                  </div>
+                  <div id="bottom-of-article" />
+                  <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
+                    <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
+                    <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
+                  </Box>
+                </main>
               </Grid>
               <Grid item lg={3} sx={{mt: 3}}>
                 <ContentsRead completedContent={this.state.userAcct.completedContent} />
               </Grid>
             </Grid>
           </Container>
-        </main>
+        </div>
       </Page>
     )
   }

@@ -113,7 +113,7 @@ class ArticlePage extends Component {
 
     return (
       <Page jsonLdType={'BlogPosting'} jsonLd={jsonLd} image={this.state.article.featuredImage} canonical={this.state.path} title={this.state.article.title} description={this.state.article.description}>
-        <main>
+        <div>
           <style>
             {`main, h1, h2, h3, h4, h5, h6, p, span, li, a {
                 font-family: Roboto, Helvetica, Arial, sans-serif;
@@ -162,64 +162,57 @@ class ArticlePage extends Component {
           <Container>
             <Grid container spacing={2}>
               <Grid item lg={9}>
-                <h1 style={marginTop24Style}>{this.state.article.title}</h1>
-                <div><p>You will see questions about Microsoft Intune, configuration profiles, and compliance policies. You won't see any questions about how to set up a device in Intune but I thought it was important for you to see so I've created a lesson. If you already set up Intune to work with Windows devices or are only concerned about passing the MS-500 feel free to skip this lesson.</p>
-                  <p>There are three common ways to join a Windows computer to Intune.</p>
-                  <ul>
-                    <li>First, manually. In short, you tell the Windows computer to join.</li>
-                    <li>Second, automatically through the domain. In short, we can sync all the domain-joined devices to Azure AD and then tell Azure AD to join all the computers to Intune.</li>
-                    <li>Third, by using AutoPilot. We won't be reviewing Autopilot in this lesson.</li>
-                  </ul>
-                  <p>Before we can do anything, there's a bit of configuration to do on the back end. We'll need to configure a user scope. The user scope will tell which Azure AD joined computers should receive Intune.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>How to configure auto-enrollment</h2>
-                  <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Devices </strong>&gt; <strong>Enroll devices</strong> &gt; <strong>Windows enrollment</strong> &gt; <strong>Automatic Enrollment</strong>. Set the <strong>MDM user scope</strong> to <strong>All</strong>. Click <strong>Save</strong>.</p>
-                  <div ><img src="https://i.ibb.co/1XbTJ8n/Auto-enroll-Windows-in-Intune.png" alt="Auto-enroll Windows devices in Intune" style="height: auto;width: auto" /></div>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>How to manually join a Windows computer to Intune</h2>
-                  <p>First things first. Let's manually join a Windows computer to Azure AD and then let Azure AD automatically join the computer to Intune.</p>
-                  <p>1. On the Windows device you want to join click Start menu &gt; Settings.</p>
-                  <div ><img src="https://i.ibb.co/gjXKgrp/Open-Settings-on-Windows-computer.png" alt="How to open settings on a Windows computer" style="height: auto;width: auto" /></div>
-                  <p>2. Click Accounts.</p>
-                  <div ><img src="https://i.ibb.co/fqpJV7z/accounts-button.png" alt="Accounts" style="height: auto;width: auto" /></div>
-                  <p>3. Click <strong>Access work or school</strong> &gt; <strong>Connect</strong>. Enter your <strong>Microsoft 365 username and password</strong>. Complete the <strong>MFA prompt</strong> if required.</p>
-                  <div ><img src="https://i.ibb.co/3vL0pvV/Connect-Windows-10-to-Azure-AD.png" alt="Connect your Windows 10 device to Intune" style="height: auto;width: auto" /></div>
-                  <p>That's it! Simply wait 15 minutes or so and you'll see the device in the Endpoint Manager admin center.</p>
-                  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868" crossorigin="anonymous" />
-                  <ins class="adsbygoogle" style="display:block; text-align:center;" data-ad-layout="in-article" data-ad-format="fluid" data-ad-client="ca-pub-8622067882965868" data-ad-slot="7727101456" />
-                  <script>(adsbygoogle = window.adsbygoogle || []).push({});</script>
-                  <h2>How to sync all your computers from the domain to Intune</h2>
-                  <p>Since we have auto-enrollment configured in Intune any devices that show up in Azure AD will automatically be enrolled in Intune. So how about we sync all of our domain-joined computers to Azure AD?</p>
-                  <p>1. Log on to the server that is running AD Connect.</p>
-                  <p>2. Run the Azure AD Connect wizard. (typically it's an icon on the desktop but its default location is "C:\Program Files\Microsoft Azure Active Directory Connect\AzureADConnect.exe"</p>
-                  <p>3. Click <strong>Configure</strong>.</p>
-                  <p>4. Click <strong>Configure device options</strong> &gt; <strong>Next</strong>.</p>
-                  <div ><img src="https://i.ibb.co/WDXKVjW/configure-device-options.png" alt="Configure device options" style="height: auto;width: auto" /></div>
-                  <p>5. Click <strong>Next </strong>&gt; Enter your Microsoft 365 global admin <strong>username </strong>and <strong>password</strong>. Click <strong>Next</strong>.</p>
-                  <div ><img src="https://i.ibb.co/C0B6mNX/enter-your-global-admin-credentials.png" alt="Enter your global admin credentials" style="height: auto;width: auto" /></div>
-                  <p>6. Verify <strong>Configure Hybrid Azure AD join</strong> is checked. Click <strong>Next</strong>. Check the <strong>Windows 10 or later domain-joined devices</strong> checkbox. Click <strong>Next</strong>.</p>
-                  <div ><img src="https://i.ibb.co/1r2tRWm/Windows-10-or-later-domain-joined-devices.png" alt="Windows 10 or later domain-joined devices" style="height: auto;width: auto" /></div>
-                  <p>7. Check the box <strong>next to your forest</strong>. Set the <strong>Authentication Service</strong> to <strong>Azure Active Directory</strong>. Click <strong>Add</strong>. Enter your <strong>on-premises Enterprise admin credentials</strong>. Click <strong>OK</strong>. Click <strong>Next</strong>.</p>
-                  <div ><img src="https://i.ibb.co/x7QWR3b/SCP-Configuration.png" alt="SCP Configuration" style="height: auto;width: auto" /></div>
-                  <p>8. Click <strong>Configure</strong>. Click <strong>Exit</strong>.</p>
-                  <p>That should be it. During the next sync, you should see all the devices sync from your on-premises AD to Azure AD.</p>
-                </div>
-                <div id="bottom-of-article" />
-                <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
-                  <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
-                  <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
-                </Box>
+                <main>
+                  <h1 style={marginTop24Style}>{this.state.article.title}</h1>
+                  <div><p>You will see questions about Microsoft Intune, configuration profiles, and compliance policies. You won't see any questions about how to set up a device in Intune but I thought it was important for you to see so I've created a lesson. If you already set up Intune to work with Windows devices or are only concerned about passing the MS-500 feel free to skip this lesson.</p>
+                    <p>There are three common ways to join a Windows computer to Intune.</p>
+                    <ul>
+                      <li>First, manually. In short, you tell the Windows computer to join.</li>
+                      <li>Second, automatically through the domain. In short, we can sync all the domain-joined devices to Azure AD and then tell Azure AD to join all the computers to Intune.</li>
+                      <li>Third, by using AutoPilot. We won't be reviewing Autopilot in this lesson.</li>
+                    </ul>
+                    <p>Before we can do anything, there's a bit of configuration to do on the back end. We'll need to configure a user scope. The user scope will tell which Azure AD joined computers should receive Intune.</p>
+                    <h2>How to configure auto-enrollment</h2>
+                    <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Devices </strong>&gt; <strong>Enroll devices</strong> &gt; <strong>Windows enrollment</strong> &gt; <strong>Automatic Enrollment</strong>. Set the <strong>MDM user scope</strong> to <strong>All</strong>. Click <strong>Save</strong>.</p>
+                    <div ><img src="https://i.ibb.co/1XbTJ8n/Auto-enroll-Windows-in-Intune.png" alt="Auto-enroll Windows devices in Intune" style="height: auto;width: auto" /></div>
+                    <h2>How to manually join a Windows computer to Intune</h2>
+                    <p>First things first. Let's manually join a Windows computer to Azure AD and then let Azure AD automatically join the computer to Intune.</p>
+                    <p>1. On the Windows device you want to join click Start menu &gt; Settings.</p>
+                    <div ><img src="https://i.ibb.co/gjXKgrp/Open-Settings-on-Windows-computer.png" alt="How to open settings on a Windows computer" style="height: auto;width: auto" /></div>
+                    <p>2. Click Accounts.</p>
+                    <div ><img src="https://i.ibb.co/fqpJV7z/accounts-button.png" alt="Accounts" style="height: auto;width: auto" /></div>
+                    <p>3. Click <strong>Access work or school</strong> &gt; <strong>Connect</strong>. Enter your <strong>Microsoft 365 username and password</strong>. Complete the <strong>MFA prompt</strong> if required.</p>
+                    <div ><img src="https://i.ibb.co/3vL0pvV/Connect-Windows-10-to-Azure-AD.png" alt="Connect your Windows 10 device to Intune" style="height: auto;width: auto" /></div>
+                    <p>That's it! Simply wait 15 minutes or so and you'll see the device in the Endpoint Manager admin center.</p>
+                    <h2>How to sync all your computers from the domain to Intune</h2>
+                    <p>Since we have auto-enrollment configured in Intune any devices that show up in Azure AD will automatically be enrolled in Intune. So how about we sync all of our domain-joined computers to Azure AD?</p>
+                    <p>1. Log on to the server that is running AD Connect.</p>
+                    <p>2. Run the Azure AD Connect wizard. (typically it's an icon on the desktop but its default location is "C:\Program Files\Microsoft Azure Active Directory Connect\AzureADConnect.exe"</p>
+                    <p>3. Click <strong>Configure</strong>.</p>
+                    <p>4. Click <strong>Configure device options</strong> &gt; <strong>Next</strong>.</p>
+                    <div ><img src="https://i.ibb.co/WDXKVjW/configure-device-options.png" alt="Configure device options" style="height: auto;width: auto" /></div>
+                    <p>5. Click <strong>Next </strong>&gt; Enter your Microsoft 365 global admin <strong>username </strong>and <strong>password</strong>. Click <strong>Next</strong>.</p>
+                    <div ><img src="https://i.ibb.co/C0B6mNX/enter-your-global-admin-credentials.png" alt="Enter your global admin credentials" style="height: auto;width: auto" /></div>
+                    <p>6. Verify <strong>Configure Hybrid Azure AD join</strong> is checked. Click <strong>Next</strong>. Check the <strong>Windows 10 or later domain-joined devices</strong> checkbox. Click <strong>Next</strong>.</p>
+                    <div ><img src="https://i.ibb.co/1r2tRWm/Windows-10-or-later-domain-joined-devices.png" alt="Windows 10 or later domain-joined devices" style="height: auto;width: auto" /></div>
+                    <p>7. Check the box <strong>next to your forest</strong>. Set the <strong>Authentication Service</strong> to <strong>Azure Active Directory</strong>. Click <strong>Add</strong>. Enter your <strong>on-premises Enterprise admin credentials</strong>. Click <strong>OK</strong>. Click <strong>Next</strong>.</p>
+                    <div ><img src="https://i.ibb.co/x7QWR3b/SCP-Configuration.png" alt="SCP Configuration" style="height: auto;width: auto" /></div>
+                    <p>8. Click <strong>Configure</strong>. Click <strong>Exit</strong>.</p>
+                    <p>That should be it. During the next sync, you should see all the devices sync from your on-premises AD to Azure AD.</p>
+                  </div>
+                  <div id="bottom-of-article" />
+                  <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
+                    <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
+                    <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
+                  </Box>
+                </main>
               </Grid>
               <Grid item lg={3} sx={{mt: 3}}>
                 <ContentsRead completedContent={this.state.userAcct.completedContent} />
               </Grid>
             </Grid>
           </Container>
-        </main>
+        </div>
       </Page>
     )
   }

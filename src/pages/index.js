@@ -168,7 +168,7 @@ const IndexPage = () => {
               </Grid>
               <Grid container>
                 <Grid item>
-                  <ContentsRead />
+                  <ContentsRead comp={'div'} />
                 </Grid>
               </Grid>
             </Container>

@@ -18,7 +18,14 @@ import contents from '../data/contents'
 
 const isBrowser = () => typeof window !== 'undefined'
 
-const ContentsRead = ({completedContent}) => {
+const Comp = ({children, comp}) => {
+  if (comp === 'div')
+    return <div>{children}</div>
+
+  return <aside>{children}</aside>
+}
+
+const ContentsRead = ({completedContent, comp='aside'}) => {
   const [userAcct, setUserAcct] = useState({completedContent: completedContent || []})
 
   useEffect(() => {
@@ -41,7 +48,7 @@ const ContentsRead = ({completedContent}) => {
   }, [completedContent])
 
   return (
-    <div>
+    <Comp comp={comp}>
       {course.sections.map((section, idx) => (
         <Accordion key={idx} defaultExpanded>
           <AccordionSummary expandIcon={<ExpandMoreIcon />} aria-controls="panel1a-content">
@@ -65,7 +72,7 @@ const ContentsRead = ({completedContent}) => {
           </AccordionDetails>
         </Accordion>
       ))}
-    </div>
+    </Comp>
   )
 }
 
