@@ -46,7 +46,7 @@ class EditSection extends Component {
       let content
       if (e.target.getAttribute('data-content-type') == 'article') {
         content = {
-          id: shortid.generate().split('-').join('1'),
+          id: shortid.generate().split('-').join('1').toLowerCase(),
           title: '',
           sectionId: section.id,
           type: e.target.getAttribute('data-content-type'),
@@ -58,11 +58,12 @@ class EditSection extends Component {
         }
       } else {
         content = {
-          id: shortid.generate().split('-').join('1'),
+          id: shortid.generate().split('-').join('1').toLowerCase(),
           title: '',
           sectionId: section.id,
           type: e.target.getAttribute('data-content-type'),
           questions: {},
+          images: [],
           answers: {},
           description: '',
           featuredImage: '',

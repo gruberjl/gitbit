@@ -134,7 +134,7 @@ class EditContentPage extends Component {
     let slug = e.target.value.split(' ').join('-')
     slug = slug.replace(`-${ this.state.content.id}`, '')
     slug = `${encodeURI(slug).replace(/[^\w-]+/g, '') }-${ this.state.content.id}`
-    content.slug = slug
+    content.slug = slug.toLowerCase()
     this.setState({content})
   }
 
