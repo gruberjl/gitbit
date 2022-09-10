@@ -143,7 +143,7 @@ const BlogArticle = () => {
                 <section>
                   <div>
                     <div>
-                      <Typography variant="body1" gutterBottom>Thank you for taking the time to read my article. I hope you found it beneficial. Feel free to contact me on <a href="https://twitter.com/@gruberjl" rel="noopener">Twitter</a> or <a href="http://www.linkedin.com/in/gruberjl" rel="noopener">LinkedIn</a> with any questions.</Typography>
+                      <Typography variant="body1" gutterBottom>Thank you for taking the time to read my article. I hope you found it beneficial. Feel free to contact me on <a href="https://twitter.com/@gruberjl" rel="noopener">Twitter</a> or <a href="https://www.linkedin.com/in/gruberjl/" rel="noopener">LinkedIn</a> with any questions.</Typography>
                     </div>
                   </div>
                 </section>

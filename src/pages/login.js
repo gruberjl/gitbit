@@ -19,9 +19,15 @@ const LoginPage = () => {
   const submit = () => {
     signInWithEmailAndPassword(email, password)
         .then((userCredential) => {
-          window.location.href = '/dashboard'
+          const params = new URLSearchParams(location.search)
+          const goto = params.get('goto')
+          if (goto)
+            window.location.href = goto
+          else
+            window.location.href = '/dashboard'
         })
         .catch((error) => {
+          console.log(error.code)
           setErr(error.message)
         })
   }

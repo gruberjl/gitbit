@@ -228,7 +228,7 @@ class EditContentPage extends Component {
                     {Object.values(this.state.content.questions).map((question, idx) => (
                       <ListItem key={idx} secondaryAction={<IconButton aria-label="delete question" onClick={this.deleteQuestion(question)}><DeleteIcon /></IconButton>}>
                         <ListItemButton href={`/course/edit-question?courseId=${this.state.courseId}&testId=${this.state.content.id}&questionId=${question.id}`}>
-                          <ListItemText primary={question.id} />
+                          <ListItemText primary={question.title || question.id} />
                         </ListItemButton>
                       </ListItem>
                     ))}

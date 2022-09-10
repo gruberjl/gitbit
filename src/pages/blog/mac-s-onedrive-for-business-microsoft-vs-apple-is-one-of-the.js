@@ -169,7 +169,7 @@ const BlogArticle = () => {
                           </div>
                         </div>
                       </div>
-                      <figcaption>source: <a href="https://nerdist.com/what-skin-condition-did-captain-planet-have/" rel="noopener">nerdist</a></figcaption>
+                      <figcaption>source: nerdist</figcaption>
                     </figure>
                     <Typography variant="body1" gutterBottom>How often do you still run into the “This file is locked for editing; Locked By: George”. Gone are the days where you need to track down George (who knows which one) because he accidentally left the Excel spreadsheet open that you need to update. Or worse, you’re the one who accidentally left the document open and someone else is looking for you!</Typography>
                     <Typography variant="body1" gutterBottom><em>Thanks to Co-Authoring, and the boom in power for personal computers, I rarely close anything anymore.</em></Typography>

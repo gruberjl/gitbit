@@ -36,7 +36,7 @@ const BlogArticle = () => {
                   <div role="button" tabIndex="0">
                     <div><img style={{maxWidth: '100%', height: 'auto'}} alt="Desktop with Windows 10 start menu open" src="https://miro.medium.com/max/700/1*5WDkCFfsNRXviWiQReDefw.jpeg" width="700" height="394" role="presentation" /></div>
                   </div>
-                  <figcaption>source: <a href="https://www.pexels.com/@jay-kunwar-55532" rel="noopener">Jay Kunwar</a></figcaption>
+                  <figcaption>source: <a href="https://www.pexels.com/@jay-kunwar-55532/" rel="noopener">Jay Kunwar</a></figcaption>
                 </figure>
                 <Typography variant="body1" gutterBottom>Before I get started I’d like to note: This isn’t a G-Suite vs Office 365 or anything else vs Office 365. This is a breakdown of the best parts of Office 365. There’s a lot of great options for startups and it’s up to founders to be informed an pick the best one for their organization.</Typography>
                 <Typography variant="h4" component="h2" gutterBottom>1. Hyper-Growth</Typography>
@@ -231,7 +231,7 @@ const BlogArticle = () => {
                 <section>
                   <div>
                     <div>
-                      <Typography variant="body1" gutterBottom>And that’s just the tip of the iceberg. Check out the <a href="https://microsoft-us.evyy.net/c/1313195/190407/3327" rel="noopener">most popular Office 365 plans for startups</a>. If you have any questions don’t hesitate to reach out below or find me on <a href="https://twitter.com/gruberjl" rel="noopener">Twitter @gruberjl</a> and <a href="https://www.linkedin.com/in/gruberjl/" rel="noopener">LinkedIn</a>.</Typography>
+                      <Typography variant="body1" gutterBottom>And that’s just the tip of the iceberg. Check out the <a href="https://microsoft-us.evyy.net/c/1313195/190407/3327" rel="noopener">most popular Office 365 plans for startups</a>. If you have any questions don’t hesitate to reach out below or find me on <a href="https://twitter.com/gruberjl" rel="noopener">Twitter @gruberjl</a> and <a href="https://www.linkedin.com/in/gruberjl" rel="noopener">LinkedIn</a>.</Typography>
                     </div>
                   </div>
                 </section>

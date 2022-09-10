@@ -100,15 +100,6 @@ const BlogArticle = () => {
                 </figure>
                 <Typography variant="body1" gutterBottom>Get notifications for approval processes and all sort of integrations! Microsoft Flow is one of the most complex yet powerful workflow apps on the market. Pairing Microsoft Flow with Microsoft Teams can mean the automated passing of tickets, notifications when documents are updated, the list goes on and on. While complex, the options are practically endless.</Typography>
                 <Typography variant="body1" gutterBottom><strong>Pro Tip:</strong> Leave the complex flows to the experts. Stick to the templates for a while. Flows can be literally do parts of your job for you but you can easily get lost and frustrated going down the rabbits hole.</Typography>
-                <div role="separator"><span /><span /><span /></div>
-                <section>
-                  <div>
-                    <div>
-                      <Typography variant="body1" gutterBottom>Thank you for taking the time to read my article. I hope you found it beneficial. If you have any questions or feedback, please don’t hesitate to reach out. Don’t forget to sign up for the newsletter at <a href="https://businesscenter.office.com/b/gitbit/signup" rel="noopener">https://businesscenter.office.com/b/gitbit/signup</a></Typography>
-                      <Typography variant="body1" gutterBottom>— <a href="https://www.linkedin.com/in/johnlgruber/" rel="noopener">John Gruber</a> — <a href="https://www.tierpoint.com/managed-services/office365/" rel="noopener">TierPoint Collaboration Engineer</a></Typography>
-                    </div>
-                  </div>
-                </section>
               </Grid>
             </Grid>
           </Container>

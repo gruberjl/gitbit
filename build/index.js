@@ -41,4 +41,4 @@ const deleteDocs = () => {
   fs.mkdirSync('./docs')
 }
 
-build()
+buildData()

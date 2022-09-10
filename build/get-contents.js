@@ -19,7 +19,7 @@ const getContents = async (course) => {
 
   const contents = []
 
-  const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('type', '==', 'article').where('publish', '==', true).get()
+  const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('publish', '==', true).get()
 
   querySnapshot.forEach((doc) => {
     const content = doc.data()
@@ -29,6 +29,8 @@ const getContents = async (course) => {
   // Test the contents to verify all content is there
   for (let i = 0; i < contents.length; i++) {
     const content = contents[i]
+    if (content.id === '32ubyzyen')
+      console.log(JSON.stringify(content, null, 2))
     if (content.title === '' || content.title === null) {
       content.error = `Title is blank in ${content.id}`
       console.error(content.error)

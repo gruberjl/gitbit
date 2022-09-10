@@ -8,7 +8,7 @@
     "build:webpack": "webpack",
     "post:push": "node build/post-push",
     "eslint": "eslint src/** --fix",
-    "start": "babel-node dev-server",
+    "start": "set NODE_ENV=development&&babel-node dev-server",
     "test:dev": "node test/test-dev"
   },
   "repository": {

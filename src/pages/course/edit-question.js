@@ -19,6 +19,8 @@ import Button from '@mui/material/Button'
 import saveDoc from '../../components/firebase/save-doc'
 import {getDoc} from '../../components/firebase/get-doc'
 import Snackbar from '@mui/material/Snackbar'
+import TextField from '@mui/material/TextField'
+import draftToHtml from 'draftjs-to-html'
 const clone = require('clone')
 
 const isBrowser = () => typeof window !== 'undefined'
@@ -33,6 +35,7 @@ class EditQuestionPage extends Component {
     this.closeAlert = this.closeAlert.bind(this)
     this.setAnswers = this.setAnswers.bind(this)
     this.setReferencesState = this.setReferencesState.bind(this)
+    this.setTitle = this.setTitle.bind(this)
 
     let params = new URLSearchParams()
     if (isBrowser())
@@ -78,6 +81,12 @@ class EditQuestionPage extends Component {
     this.setState({question})
   }
 
+  setTitle(e) {
+    const question = clone(this.state.question)
+    question.title = e.target.value
+    this.setState({question})
+  }
+
   setAnswers(answers) {
     const test = clone(this.state.test)
     test.answers[this.state.question.id] = answers
@@ -102,6 +111,17 @@ class EditQuestionPage extends Component {
   save() {
     const test = clone(this.state.test)
     const question = this.state.question
+
+    const questionHtml = draftToHtml(question.question)
+    const referencesHtml = draftToHtml(question.references).replace(/\\/g, '\\\\')
+    const questionText = convertFromRaw(question.question).getPlainText().replace(/\r?\n|\r/g, ' ').replace(/\s\s+/g, ' ')
+    const answerOptions = Object.values(question.answerOptions)
+    
+    for (let i = 0; i < answerOptions.length; i++) {
+      const answerOption = answerOptions[i]
+      question.answerOptions[answerOption.id].answerHtml = draftToHtml(answerOption.answer)
+    }
+
     const state = EditorState.createWithContent(convertFromRaw(this.state.question.question), decorators)
     const slug = `${state.getCurrentContent().getPlainText()
         .replaceAll(/[^a-zA-Z0-9 ]/g, '')
@@ -109,7 +129,11 @@ class EditQuestionPage extends Component {
         .replaceAll(/ /g, '-')
         .toLowerCase()
         .slice(0, 25) }-${question.id}`
+
     question.slug = slug
+    question.questionText = questionText
+    question.questionHtml = questionHtml
+    question.referencesHtml = referencesHtml
     test.questions[question.id] = question
     // test.questions[this.state.question.id].question = convertToRaw(this.state.questionState.getCurrentContent())
     // test.questions[this.state.question.id].references = convertToRaw(this.state.referencesState.getCurrentContent())
@@ -147,6 +171,9 @@ class EditQuestionPage extends Component {
                 </Grid>
                 <Grid xs={2}>
                   <Button onClick={this.save}>Save</Button>
+                </Grid>
+                <Grid xs={12}>
+                  <TextField id="title" label="Question title" variant="standard" onChange={this.setTitle} value={this.state.question.title} fullWidth />
                 </Grid>
                 <Grid xs={12}>
                   {

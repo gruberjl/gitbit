@@ -26,7 +26,12 @@ const SignUpPage = () => {
             uid: userCredential.user.uid
           }
           saveDoc('courses/MS-500/users/', data)
-          window.location.href = '/dashboard'
+          const params = new URLSearchParams(location.search)
+          const goto = params.get('goto')
+          if (goto)
+            window.location.href = goto
+          else
+            window.location.href = '/dashboard'
         })
         .catch((error) => {
           console.log(error.code)
