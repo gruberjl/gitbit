@@ -39,12 +39,7 @@ class EditPage extends Component {
 
     this.state = {
       uid: '',
-      test: {
-        id: '',
-        title: 'Title',
-        questions: {g6n0inlbp: {id: 'g6n0inlbp', title:'What is in a wonder ball?', slug:'slug'}},
-        slug: 'microsoft-365-powershell-administration-cmb96x4a2'
-      },
+      test: {TEST: true},
       showLoginModal: false,
       showRestartModal: false
     }
@@ -102,7 +97,21 @@ class EditPage extends Component {
   }
 
   gotoLatestQuestion() {
+    const questions = Object.values(this.state.test.questions)
+    const test = this.state.userAcct.tests[this.state.test.id]
+    let redirecting = false
 
+    for(let i = 0; i < questions.length; i++) {
+      const question = questions[i]
+      if (!test[question.id] || !test[question.id].answers) {
+        redirecting = true
+        window.location.href = `/course/ms-500/test/${this.state.test.slug}/question/${question.slug}`
+      }
+    }
+
+    if (!redirecting) {
+      window.location.href = `/course/ms-500/test/${this.state.test.slug}/question/${questions[0].slug}`
+    }
   }
 
   render() {

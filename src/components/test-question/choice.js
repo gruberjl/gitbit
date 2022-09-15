@@ -22,7 +22,7 @@ const answerStyle = {
   marginTop: '6px'
 }
 
-const Header = ({question, answers, setAnswer, testAnswers, showAnswers}) => {
+const Choice = ({question, answers, setAnswer, testAnswers, showAnswers}) => {
   const selectAnswer = (answerOption) => {
     return () => {
       const newAnswers = clone(answers)
@@ -58,4 +58,4 @@ const Header = ({question, answers, setAnswer, testAnswers, showAnswers}) => {
   )
 }
 
-export default Header
+export default Choice

@@ -1,17 +1,32 @@
 import {h, Component, createRef} from 'preact'
 import Grid from '@mui/material/Grid'
-import Wysiwyg from '../wysiwyg'
 import Button from '@mui/material/Button'
-import shortid from 'shortid'
-import decorators from '../wysiwyg-decorators'
+import ButtonGroup from '@mui/material/ButtonGroup'
+import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import DeleteIcon from '@mui/icons-material/Delete'
-import {EditorState, convertToRaw, convertFromRaw} from 'draft-js'
+import Checkbox from '@mui/material/Checkbox'
 import DragIcon from '@mui/icons-material/DragIndicator'
 import ChevronRight from '@mui/icons-material/ChevronRight'
 import ChevronLeft from '@mui/icons-material/ChevronLeft'
-const clone = require('clone')
+import Error from '@mui/icons-material/Error'
 import Sortable from 'sortablejs'
+const clone = require('clone')
+
+const marginTop24Style = {
+  marginTop: '24px'
+}
+
+const correctAnswerStyle = {
+  background: 'rgb(237, 247, 237)',
+  color: 'rgb(30, 70, 32)',
+  paddingBottom: '6px',
+  marginTop: '6px'
+}
+
+const answerStyle = {
+  paddingBottom: '6px',
+  marginTop: '6px'
+}
 
 const answerContainerStyle = {
   display: 'flex',
@@ -31,15 +46,9 @@ class BuildList extends Component {
 
   constructor(props) {
     super()
-    this.addAnswerOption = this.addAnswerOption.bind(this)
-    this.setQuestionState = this.setQuestionState.bind(this)
-    this.deleteAnswerOption = this.deleteAnswerOption.bind(this)
-    this.setAnswers = this.setAnswers.bind(this)
+    this.selectAnswer = this.selectAnswer.bind(this)
     this.onAnswerSortChange = this.onAnswerSortChange.bind(this)
-
-    this.state = {
-      questionState: EditorState.createWithContent(convertFromRaw(props.question.question), decorators)
-    }
+    this.showAnswerStyle = this.showAnswerStyle.bind(this)
   }
 
   componentDidMount() {
@@ -57,6 +66,22 @@ class BuildList extends Component {
         onEnd: this.onAnswerSortChange
       })
     }, 1000)
+  }
+
+  selectAnswer(answerOption) {
+    return () => {
+      const newAnswers = clone(this.props.answers)
+
+      if (newAnswers[answerOption.id]) {
+        delete newAnswers[answerOption.id]
+      } else {
+        newAnswers[answerOption.id] = {
+          id: answerOption.id
+        }
+      }
+
+      this.props.setAnswer(newAnswers)
+    }
   }
 
   onAnswerSortChange(ev) {
@@ -98,80 +123,42 @@ class BuildList extends Component {
       answers[ev.item.dataset.answerOptionId].idx = newIdx
     }
 
-    console.log(answers)
-    this.props.setAnswers(answers)
+    this.props.setAnswer(answers)
   }
 
-  setQuestionState(questionState) {
-    this.setState({questionState})
-    const question = clone(this.props.question)
-    question.question = convertToRaw(questionState.getCurrentContent())
-    this.props.setQuestion(question)
-  }
+  showAnswerStyle(answer) {
+    const newAnswerContainerStyle = clone(answerContainerStyle)
+    if (!this.props.showAnswers)
+      return newAnswerContainerStyle
 
-  addAnswerOption() {
-    const answerOption = {
-      id: shortid.generate().toLowerCase(),
-      answer: ''
-    }
+    const correctAnswer = this.props.testAnswers[answer.id]
 
-    const question = clone(this.props.question)
-    question.answerOptions[answerOption.id] = answerOption
+    if (correctAnswer && correctAnswer.id === answer.id && correctAnswer.idx === answer.idx)
+      newAnswerContainerStyle.background = 'rgb(237, 247, 237)'
+    else
+      newAnswerContainerStyle.background = 'rgb(253, 237, 237)'
 
-    this.props.setQuestion(question)
-  }
-
-  setAnswerOption(answerOption) {
-    return (event) => {
-      const question = clone(this.props.question)
-      question.answerOptions[answerOption.id].answer = event.target.value
-      this.props.setQuestion(question)
-    }
-  }
-
-  deleteAnswerOption(answerOption) {
-    return () => {
-      const question = clone(this.props.question)
-      delete question.answerOptions[answerOption.id]
-      this.props.setQuestion(question)
-
-      const answers = clone(this.props.answers)
-      delete answers[answerOption.id]
-      this.props.setAnswers(answers)
-    }
-  }
-
-  setAnswers(answerOption) {
-    return (event) => {
-      const answers = clone(this.props.answers)
-      answers[answerOption.id] = event.target.checked
-      this.props.setAnswers(answers)
-    }
+    return newAnswerContainerStyle
   }
 
   render() {
-    const optionalAnswers = Object.values(this.props.question.answerOptions).filter((answerOption) => !Object.keys(this.props.answers).includes(answerOption.id))
-    const correctAnswers = Object.values(this.props.question.answerOptions).filter((answerOption) => Object.keys(this.props.answers).includes(answerOption.id))
-        .sort((a, b) => {
-          const answerA = this.props.answers[a.id]
-          const answerB = this.props.answers[b.id]
-          return answerA.idx - answerB.idx
-        })
+    const answerOptions = Object.values(this.props.question.answerOptions).filter((answerOption) => !Object.keys(this.props.answers).includes(answerOption.id))
+    const answers = Object.values(this.props.answers).sort((a, b) => {
+      return a.idx - b.idx
+    })
+    const testAnswers = Object.values(this.props.testAnswers).sort((a, b) => a.idx - b.idx)
 
     return (
       <Grid container>
         <Grid item xs={12}>
-          <Wysiwyg editorState={this.state.questionState} onEditorStateChange={this.setQuestionState} addImage={this.props.addImage} />
+          <div dangerouslySetInnerHTML={{__html: this.props.question.questionHtml}} />
         </Grid>
         <Grid item xs={12} md={5} ref={this.container} data-list='optional'>
-          <h2>Optional answers</h2>
-          {optionalAnswers.map((answerOption) => (
+          <Typography variant="h4" component="h2" gutterBottom>Optional answers</Typography>
+          {answerOptions.map((answerOption) => (
             <div style={answerContainerStyle} className="answer" data-answer-option-id={answerOption.id} key={answerOption.id}>
               <IconButton className="answer-handle"><DragIcon /></IconButton>
-              <input type="text" value={answerOption.answer} onChange={this.setAnswerOption(answerOption)} key={answerOption.id} style={{flexGrow: 2}} />
-              <IconButton onClick={this.deleteAnswerOption(answerOption)}>
-                <DeleteIcon />
-              </IconButton>
+              <Typography variant="body1" style={{display: 'flex', alignItems: 'center'}}>{answerOption.answer}</Typography>
             </div>
           ))}
           <Button onClick={this.addAnswerOption}>Add</Button>
@@ -185,15 +172,28 @@ class BuildList extends Component {
           </IconButton>
         </Grid>
         <Grid item xs={12} md={5} ref={this.correctAnswerContainer} data-list='correct'>
-          <h2>correct answer</h2>
-          {correctAnswers.map((answerOption) => (
-            <div style={answerContainerStyle} className="answer" data-answer-option-id={answerOption.id} key={answerOption.id}>
+          <Typography variant="h4" component="h2" gutterBottom>Correct answers</Typography>
+          {answers.map((answer) => (
+            <div style={answerContainerStyle} className="answer" data-answer-option-id={answer.id} key={answer.id} style={this.showAnswerStyle(answer)}>
               <IconButton className="answer-handle"><DragIcon /></IconButton>
-              <input type="text" value={answerOption.answer} onChange={this.setAnswerOption(answerOption)} key={answerOption.id} style={{flexGrow: 2}} />
-              <IconButton onClick={this.deleteAnswerOption(answerOption)}>
-                <DeleteIcon />
-              </IconButton>
+              <Typography variant="body1" style={{display: 'flex', alignItems: 'center'}}>{this.props.question.answerOptions[answer.id].answer}</Typography>
             </div>
+          ))}
+          { this.props.showAnswers && answers.length < testAnswers.length ? (
+              <div style={answerContainerStyle} style={Object.assign({}, answerContainerStyle, {color: 'rgb(95, 33, 32)'})}>
+                <IconButton><Error /></IconButton>
+                <Typography variant="body1" style={{display: 'flex', alignItems: 'center'}}>Missing answer</Typography>
+              </div>
+            ) :
+            ''
+          }
+        </Grid>
+        <Grid item xs={12} style={this.props.showAnswers ? {display:'block'} : {display:'none'}}>
+          <Typography variant="h4" component="h2" gutterBottom>Answer</Typography>
+          { testAnswers.map((testAnswer) => (
+            <span>
+              <Typography variant="body1" gutterBottom>{this.props.question.answerOptions[testAnswer.id].answer}</Typography>
+            </span>
           ))}
         </Grid>
       </Grid>

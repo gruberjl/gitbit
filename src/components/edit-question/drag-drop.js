@@ -34,7 +34,7 @@ class DragDrop extends Component {
     this.deleteAnswerOption = this.deleteAnswerOption.bind(this)
     this.addAnswer = this.addAnswer.bind(this)
     this.deleteAnswer = this.deleteAnswer.bind(this)
-    this.setAnswerText = this.setAnswerText.bind(this)
+    this.setQuestionText = this.setQuestionText.bind(this)
     this.onDrop = this.onDrop.bind(this)
     this.onDragStart = this.onDragStart.bind(this)
 
@@ -82,39 +82,53 @@ class DragDrop extends Component {
     }
   }
 
-  deleteAnswer(answer) {
+  deleteAnswer(question) {
     return () => {
       const answers = clone(this.props.answers)
-      delete answers[answer.id]
+      delete answers[question.id]
       this.props.setAnswers(answers)
+
+      const question = clone(this.props.question)
+      delete question.questions[question.id]
+      this.props.setQuestion(question)
     }
   }
 
-  setAnswerText(answer) {
+  setQuestionText(questionText) {
     return (event) => {
-      const answers = clone(this.props.answers)
-      answers[answer.id].text = event.target.value
-      this.props.setAnswers(answers)
+      const question = clone(this.props.question)
+      question.questions[questionText.id].text = event.target.value
+      this.props.setQuestion(question)
     }
   }
 
   addAnswer() {
-    const answers = clone(this.props.answers)
-    const newAnswer = {
+    const question = clone(this.props.question)
+    const newQuestion = {
       id: shortid.generate().toLowerCase(),
       text: '',
       answerId: ''
     }
-    answers[newAnswer.id] = newAnswer
+    if (!question.questions)
+      question.questions = {}
+
+    question.questions[newQuestion.id] = newQuestion
+    this.props.setQuestion(question)
+
+    const answers = clone(this.props.answers)
+    answers[newQuestion.id] = {
+      id: newQuestion.id,
+      answerId: ''
+    }
     this.props.setAnswers(answers)
   }
 
-  onDrop(answer) {
+  onDrop(questionText) {
     return (ev) => {
       ev.preventDefault()
       const answerOptionId = ev.dataTransfer.getData('answerOptionId')
       const answers = clone(this.props.answers)
-      answers[answer.id].answerId = answerOptionId
+      answers[questionText.id].answerId = answerOptionId
       this.props.setAnswers(answers)
     }
   }
@@ -127,6 +141,7 @@ class DragDrop extends Component {
 
   render() {
     const optionalAnswers = Object.values(this.props.question.answerOptions)
+    const questions = this.props.question.questions ? Object.values(this.props.question.questions) : []
     const answers = Object.values(this.props.answers)
 
     return (
@@ -151,18 +166,18 @@ class DragDrop extends Component {
           <Grid item xs={12}>
             <h2>Answer labels</h2>
           </Grid>
-          { answers.map((answer) => (
-            <Grid container item xs={12} key={answer.id}>
+          { questions.map((question) => (
+            <Grid container item xs={12} key={question.id}>
               <Grid item xs={6}>
-                <input style={{height: '32px', width: 'calc(100% - 12px)'}} value={answer.text} onChange={this.setAnswerText(answer)} placeholder="answer text" />
+                <input style={{height: '32px', width: 'calc(100% - 12px)'}} value={question.text} onChange={this.setQuestionText(question)} placeholder="answer text" />
               </Grid>
               <Grid item xs={5}>
-                <div style={{border: '1px solid black'}} ondrop={this.onDrop(answer)} ondragover={(ev) => ev.preventDefault()}>
-                  <p style={placeholderStyle}>{answer.answerId ? this.props.question.answerOptions[answer.answerId].answer : 'correct answer here'}</p>
+                <div style={{border: '1px solid black'}} ondrop={this.onDrop(question)} ondragover={(ev) => ev.preventDefault()}>
+                  <p style={placeholderStyle}>{this.props.answers[question.id].answerId ? this.props.question.answerOptions[this.props.answers[question.id].answerId].answer : 'correct answer here'}</p>
                 </div>
               </Grid>
               <Grid item xs={1}>
-                <IconButton onClick={this.deleteAnswer(answer)}>
+                <IconButton onClick={this.deleteAnswer(question)}>
                   <DeleteIcon />
                 </IconButton>
               </Grid>

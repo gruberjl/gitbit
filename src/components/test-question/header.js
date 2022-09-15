@@ -8,7 +8,7 @@ const marginTop24Style = {
   marginTop: '24px'
 }
 
-const Header = ({uid, questionIdx, previousQuestionSlug, nextQuestionSlug, testSlug, toggleEndExam, numOfQuestions}) => {
+const Header = ({uid, questionIdx, previousQuestionSlug, nextQuestionSlug, testSlug, toggleEndExam, numOfQuestions, navigateTo}) => {
   return (
     <Grid container sx={{alignItems: 'center'}}>
       <Grid item md={6} xs={12} lg={8}>
@@ -17,11 +17,11 @@ const Header = ({uid, questionIdx, previousQuestionSlug, nextQuestionSlug, testS
       <Grid item xs={12} md={6} lg={4} sx={{display: 'flex', justifyContent: 'end'}}>
         <ButtonGroup variant="text" aria-label="text button group" style={marginTop24Style}>
           { previousQuestionSlug ?
-            <Button variant="text" href={`/course/ms-500/test/${testSlug}/question/${previousQuestionSlug}`}>Previous Question</Button> :
+            <Button variant="text" href={`/course/ms-500/test/${testSlug}/question/${previousQuestionSlug}`} onClick={navigateTo(`/course/ms-500/test/${testSlug}/question/${previousQuestionSlug}`)}>Previous Question</Button> :
             ''
           }
           { nextQuestionSlug ?
-            <Button variant="text" href={`/course/ms-500/test/${testSlug}/question/${nextQuestionSlug}`}>Next Question</Button> :
+            <Button variant="text" href={`/course/ms-500/test/${testSlug}/question/${nextQuestionSlug}`} onClick={navigateTo(`/course/ms-500/test/${testSlug}/question/${nextQuestionSlug}`)}>Next Question</Button> :
             ''
           }
           { uid ?

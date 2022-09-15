@@ -22,6 +22,7 @@ const isBrowser = () => typeof window !== 'undefined'
 import shortid from 'shortid'
 import {EditorState, convertToRaw} from 'draft-js'
 import decorators from '../../components/wysiwyg-decorators'
+const clone = require('clone')
 
 const featuredImageStyle = {
   padding: '3px'
@@ -97,7 +98,7 @@ class EditContentPage extends Component {
   }
 
   addQuestion() {
-    const content = JSON.parse(JSON.stringify(this.state.content))
+    const content = clone(this.state.content)
     const question = {
       id: shortid.generate().toLowerCase(),
       question: convertToRaw(EditorState.createEmpty(decorators).getCurrentContent()),
@@ -116,8 +117,8 @@ class EditContentPage extends Component {
 
   save(content) {
     if (!content)
-      content = JSON.parse(JSON.stringify(this.state.content))
-    return saveDoc(`courses/${this.state.courseId}/contents`, content)
+      content = clone(this.state.content)
+    return saveDoc(`courses/${this.state.courseId}/contents`, content, false)
         .then(() => {
           this.setState({
             alert: 'Content saved'
@@ -153,12 +154,14 @@ class EditContentPage extends Component {
   deleteQuestion(question) {
     return () => {
       if (window.confirm(`Are you sure you want to delete the question?`)) {
-        const content = JSON.parse(JSON.stringify(this.state.content))
-
+        const content = clone(this.state.content)
+        console.log(question)
+        console.log(content)
         delete content.questions[question.id]
         delete content.answers[question.id]
-        this.setState({content})
-        this.save(content)
+        this.setState({content}, () => {
+          this.save(content)
+        })
       }
     }
   }
@@ -189,7 +192,7 @@ class EditContentPage extends Component {
   }
 
   addImage(json) {
-    const content = JSON.parse(JSON.stringify(this.state.content))
+    const content = clone(this.state.content)
     content.images.push(json.data.url)
     this.setState({content})
   }

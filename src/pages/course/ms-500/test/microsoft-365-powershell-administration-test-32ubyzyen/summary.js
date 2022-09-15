@@ -15,18 +15,51 @@ import { pink } from '@mui/material/colors'
 import Snackbar from '@mui/material/Snackbar'
 const clone = require('clone')
 
-const gradeQuestion = (question, correctAnswers) => {
+const gradeQuestion = (question, correctAnswers, testQuestion) => {
   let pointsReceived = 0
 
-  Object.values(correctAnswers).forEach(correctAnswer => {
-    const userMarkedCorrect = Boolean(question.answers[correctAnswer.id])
+  if (testQuestion.type === 'hot-area') {
+    Object.values(correctAnswers).forEach(correctAnswer => {
+      const answer = question.answers[correctAnswer.id]
+      const correctAnswerId = Object.values(correctAnswer).find(a => a.isCorrect).id
 
-    if (correctAnswer.isCorrect && userMarkedCorrect)
-      pointsReceived++
-    else if (!correctAnswer.isCorrect && userMarkedCorrect) {
-      pointsReceived--
-    }
-  })
+      if (answer.answer == correctAnswerId)
+        pointsReceived++
+    })
+  } else if (testQuestion.type === 'drag-drop') {
+    Object.values(correctAnswers).forEach(correctAnswer => {
+      const correctAnswerId = correctAnswer.answerId
+      const answer = question.answers[correctAnswer.id]
+
+      if (answer.answerId === correctAnswerId)
+        pointsReceived++
+    })
+  } else if (testQuestion.type === 'build-list') {
+    Object.values(correctAnswers).forEach(correctAnswer => {
+      const answer = question.answers[correctAnswer.id]
+      if (answer && answer.idx === correctAnswer.idx) {
+        pointsReceived++
+      }
+    })
+    Object.values(question.answers).forEach(answer => {
+      const correctAnswer = correctAnswers[answer.id]
+      if (!correctAnswer || correctAnswer.idx !== answer.idx) {
+        pointsReceived--
+      }
+    })
+  } else if (testQuestion.type === 'multiple-choice') {
+    Object.values(correctAnswers).forEach(correctAnswer => {
+      const userMarkedCorrect = Boolean(question.answers[correctAnswer.id])
+
+      if (correctAnswer.isCorrect && userMarkedCorrect)
+        pointsReceived++
+      else if (!correctAnswer.isCorrect && userMarkedCorrect) {
+        pointsReceived--
+      }
+    })
+  } else {
+    console.error('unknown question type')
+  }
 
   if (pointsReceived < 0)
     pointsReceived = 0
@@ -34,13 +67,23 @@ const gradeQuestion = (question, correctAnswers) => {
   return pointsReceived
 }
 
-const getMaxPoints = (answers) => {
+const getMaxPoints = (testQuestion, answers) => {
   let maxPoints = 0
 
-  Object.values(answers).forEach(answer => {
-    if (answer.isCorrect)
-      maxPoints++
-  })
+  if (testQuestion.type === 'hot-area') {
+    maxPoints = Object.values(answers).length
+  } else if (testQuestion.type === 'drag-drop') {
+    maxPoints = Object.values(answers).length
+  } else if (testQuestion.type === 'build-list') {
+    maxPoints = Object.values(answers).length
+  } else if (testQuestion.type === 'multiple-choice') {
+    Object.values(answers).forEach(answer => {
+      if (answer.isCorrect)
+        maxPoints++
+    })
+  } else {
+    console.error(`Cannot get max points. unknown question type. question.type===${testQuestion.type}`)
+  }
 
   return maxPoints
 }
@@ -55,262 +98,9 @@ class TestsSummary extends Component {
     this.save = this.save.bind(this)
 
     this.state = {
-      test: {score: 0},
       uid: '',
       alert: '',
-      test: {
-        "images": [
-          "https://i.ibb.co/4VQpFYg/Policies-and-rules.png"
-        ],
-        "id": "32ubyzyen",
-        "slug": "microsoft-365-powershell-administration-test-32ubyzyen",
-        "type": "test",
-        "featuredImage": "https://i.ibb.co/4VQpFYg/Policies-and-rules.png",
-        "datePublished": "2022/9/9",
-        "answers": {
-          "zqutjz7m0": {
-            "rekj0j4ll": {
-              "id": "rekj0j4ll",
-              "isCorrect": false
-            },
-            "a4atpbozc": {
-              "isCorrect": false,
-              "id": "a4atpbozc"
-            },
-            "bsquilii4": {
-              "id": "bsquilii4",
-              "isCorrect": true
-            },
-            "1yeehmrdc": {
-              "isCorrect": false,
-              "id": "1yeehmrdc"
-            }
-          }
-        },
-        "description": "Test your knowledge of Microsoft 365 PowerShell. Everything you see here could be on your Microsoft 365 security administrator (MS-500) test!",
-        "questions": {
-          "zqutjz7m0": {
-            "slug": "your-company-has-a-micros-zqutjz7m0",
-            "questionHtml": "<p>Your company has a Microsoft 365 subscription.</p>\n<p>The company does not permit users to enroll personal devices in mobile device management (MDM).</p>\n<p>Users in the sales department have personal iOS devices.</p>\n<p>You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant.</p>\n<p>The users must be prevented from backing up the app data to iCloud.</p>\n<p>What should you create?</p>\n<img src=\"https://i.ibb.co/4VQpFYg/Policies-and-rules.png\" alt=\"Policies and rules\" style=\"height: undefined;width: undefined\"/>\n<p></p>\n",
-            "title": "users must be prevented from backing up the app data to iCloud",
-            "referencesHtml": "<p>App protection policies that apply to Microsoft 365 apps, for example, Power BI, will protect apps even if the user is on an unmanaged device.</p>\n<p><a href=\"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx\" target=\"_self\">https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx</a></p>\n",
-            "answerOptions": {
-              "1yeehmrdc": {
-                "answer": {
-                  "blocks": [
-                    {
-                      "type": "unstyled",
-                      "depth": 0,
-                      "inlineStyleRanges": [],
-                      "key": "eaneh",
-                      "data": {},
-                      "text": "A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a device state condition",
-                      "entityRanges": []
-                    }
-                  ],
-                  "entityMap": {}
-                },
-                "answerHtml": "<p>A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a device state condition</p>\n",
-                "id": "1yeehmrdc"
-              },
-              "rekj0j4ll": {
-                "answer": {
-                  "entityMap": {},
-                  "blocks": [
-                    {
-                      "key": "87pal",
-                      "data": {},
-                      "inlineStyleRanges": [],
-                      "entityRanges": [],
-                      "text": "A device compliance policy in Microsoft Endpoint Manager",
-                      "type": "unstyled",
-                      "depth": 0
-                    }
-                  ]
-                },
-                "answerHtml": "<p>A device compliance policy in Microsoft Endpoint Manager</p>\n",
-                "id": "rekj0j4ll"
-              },
-              "a4atpbozc": {
-                "answer": {
-                  "blocks": [
-                    {
-                      "key": "dchvg",
-                      "type": "unstyled",
-                      "inlineStyleRanges": [],
-                      "depth": 0,
-                      "data": {},
-                      "text": "A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a client apps condition",
-                      "entityRanges": []
-                    }
-                  ],
-                  "entityMap": {}
-                },
-                "id": "a4atpbozc",
-                "answerHtml": "<p>A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a client apps condition</p>\n"
-              },
-              "bsquilii4": {
-                "answerHtml": "<p>An app protection policy in Microsoft Endpoint Manager</p>\n",
-                "id": "bsquilii4",
-                "answer": {
-                  "blocks": [
-                    {
-                      "data": {},
-                      "type": "unstyled",
-                      "entityRanges": [],
-                      "text": "An app protection policy in Microsoft Endpoint Manager",
-                      "key": "6sjn1",
-                      "depth": 0,
-                      "inlineStyleRanges": []
-                    }
-                  ],
-                  "entityMap": {}
-                }
-              }
-            },
-            "questionText": "Your company has a Microsoft 365 subscription. The company does not permit users to enroll personal devices in mobile device management (MDM). Users in the sales department have personal iOS devices. You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant. The users must be prevented from backing up the app data to iCloud. What should you create? ",
-            "references": {
-              "blocks": [
-                {
-                  "text": "App protection policies that apply to Microsoft 365 apps, for example, Power BI, will protect apps even if the user is on an unmanaged device.",
-                  "depth": 0,
-                  "inlineStyleRanges": [],
-                  "key": "6bh37",
-                  "type": "unstyled",
-                  "entityRanges": [],
-                  "data": {}
-                },
-                {
-                  "data": {},
-                  "depth": 0,
-                  "entityRanges": [
-                    {
-                      "length": 98,
-                      "key": 0,
-                      "offset": 0
-                    }
-                  ],
-                  "inlineStyleRanges": [],
-                  "key": "cimr4",
-                  "text": "https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx",
-                  "type": "unstyled"
-                }
-              ],
-              "entityMap": {
-                "0": {
-                  "mutability": "MUTABLE",
-                  "data": {
-                    "url": "https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx",
-                    "target": "_blank",
-                    "href": "https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx"
-                  },
-                  "type": "LINK"
-                }
-              }
-            },
-            "question": {
-              "blocks": [
-                {
-                  "depth": 0,
-                  "key": "481vj",
-                  "text": "Your company has a Microsoft 365 subscription.",
-                  "type": "unstyled",
-                  "entityRanges": [],
-                  "data": {},
-                  "inlineStyleRanges": []
-                },
-                {
-                  "text": "The company does not permit users to enroll personal devices in mobile device management (MDM).",
-                  "inlineStyleRanges": [],
-                  "key": "7a48h",
-                  "entityRanges": [],
-                  "depth": 0,
-                  "type": "unstyled",
-                  "data": {}
-                },
-                {
-                  "inlineStyleRanges": [],
-                  "type": "unstyled",
-                  "data": {},
-                  "entityRanges": [],
-                  "key": "2ims1",
-                  "depth": 0,
-                  "text": "Users in the sales department have personal iOS devices."
-                },
-                {
-                  "key": "1qrdm",
-                  "entityRanges": [],
-                  "text": "You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant.",
-                  "type": "unstyled",
-                  "depth": 0,
-                  "inlineStyleRanges": [],
-                  "data": {}
-                },
-                {
-                  "depth": 0,
-                  "key": "8m19v",
-                  "inlineStyleRanges": [],
-                  "data": {},
-                  "type": "unstyled",
-                  "entityRanges": [],
-                  "text": "The users must be prevented from backing up the app data to iCloud."
-                },
-                {
-                  "text": "What should you create?",
-                  "key": "62b05",
-                  "data": {},
-                  "type": "unstyled",
-                  "depth": 0,
-                  "entityRanges": [],
-                  "inlineStyleRanges": []
-                },
-                {
-                  "data": {},
-                  "depth": 0,
-                  "type": "atomic",
-                  "inlineStyleRanges": [],
-                  "text": " ",
-                  "entityRanges": [
-                    {
-                      "offset": 0,
-                      "key": 0,
-                      "length": 1
-                    }
-                  ],
-                  "key": "ck7bs"
-                },
-                {
-                  "depth": 0,
-                  "inlineStyleRanges": [],
-                  "key": "fb22e",
-                  "data": {},
-                  "entityRanges": [],
-                  "text": "",
-                  "type": "unstyled"
-                }
-              ],
-              "entityMap": {
-                "0": {
-                  "type": "IMAGE",
-                  "data": {
-                    "src": "https://i.ibb.co/4VQpFYg/Policies-and-rules.png",
-                    "alt": "Policies and rules"
-                  },
-                  "mutability": "IMMUTABLE"
-                }
-              }
-            },
-            "id": "zqutjz7m0",
-            "type": "multiple-choice",
-            "images": [
-              "https://i.ibb.co/4VQpFYg/Policies-and-rules.png"
-            ]
-          }
-        },
-        "sectionId": "qwJW5VrBW",
-        "publish": true,
-        "title": "Microsoft 365 PowerShell administration test"
-      }
+      test: {"answers":{"2egqhjkom":{"5vjlp_zg_":{"53xmpuyd1":{"id":"53xmpuyd1","isCorrect":false},"fdy3eqptb":{"id":"fdy3eqptb","isCorrect":false},"id":"5vjlp_zg_","s2i55zn6y":{"id":"s2i55zn6y","isCorrect":true}},"e0fkkyanr":{"gnula41xc":{"id":"gnula41xc","isCorrect":false},"gtswslcbt":{"id":"gtswslcbt","isCorrect":true},"id":"e0fkkyanr","qgmvhchdd":{"id":"qgmvhchdd","isCorrect":false}}},"aktkstizt":{"efwb9hl3c":{"answerId":"jruifkk09","id":"efwb9hl3c"},"pd6a539va":{"answerId":"-j8imb47o","id":"pd6a539va"}},"lvam3s9vy":{"75fthwwax":{"id":"75fthwwax","idx":2},"ov_on3-no":{"id":"ov_on3-no","idx":1},"tygbxq-nb":{"id":"tygbxq-nb","idx":0}},"zqutjz7m0":{"1yeehmrdc":{"id":"1yeehmrdc","isCorrect":false},"a4atpbozc":{"id":"a4atpbozc","isCorrect":false},"bsquilii4":{"id":"bsquilii4","isCorrect":true},"rekj0j4ll":{"id":"rekj0j4ll","isCorrect":false}}},"datePublished":"2022/9/9","description":"Test your knowledge of Microsoft 365 PowerShell. Everything you see here could be on your Microsoft 365 security administrator (MS-500) test!","featuredImage":"https://i.ibb.co/4VQpFYg/Policies-and-rules.png","id":"32ubyzyen","images":["https://i.ibb.co/4VQpFYg/Policies-and-rules.png"],"publish":true,"questions":{"2egqhjkom":{"answerOptions":{"5vjlp_zg_":{"answerHtml":"","answers":{"53xmpuyd1":{"id":"53xmpuyd1","text":"4"},"fdy3eqptb":{"id":"fdy3eqptb","text":"1"},"s2i55zn6y":{"id":"s2i55zn6y","text":"2"}},"id":"5vjlp_zg_","text":"1+1?"},"e0fkkyanr":{"answerHtml":"","answers":{"gnula41xc":{"id":"gnula41xc","text":"2"},"gtswslcbt":{"id":"gtswslcbt","text":"3"},"qgmvhchdd":{"id":"qgmvhchdd","text":"1"}},"id":"e0fkkyanr","text":"What's 1+2"}},"id":"2egqhjkom","images":[],"question":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"902l","text":"This is my hot area question.","type":"unstyled"}],"entityMap":{}},"questionHtml":"<p>This is my hot area question.</p>\n","questionText":"This is my hot area question.","references":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"82edg","text":"Answers are 1+2=3 & 1+1=2","type":"unstyled"}],"entityMap":{}},"referencesHtml":"<p>Answers are 1+2=3 &amp; 1+1=2</p>\n","slug":"hot-area-3-2egqhjkom","title":"Hot area 3","type":"hot-area"},"aktkstizt":{"answerOptions":{"-j8imb47o":{"answer":"2","answerHtml":"","id":"-j8imb47o"},"1s24p6txc":{"answer":"4","answerHtml":"","id":"1s24p6txc"},"jruifkk09":{"answer":"3","answerHtml":"","id":"jruifkk09"}},"id":"aktkstizt","images":[],"question":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"462q6","text":"What's the math problem?","type":"unstyled"}],"entityMap":{}},"questionHtml":"<p>What's the math problem?</p>\n","questionText":"What's the math problem?","questions":{"efwb9hl3c":{"answerId":"","id":"efwb9hl3c","text":"1+2"},"pd6a539va":{"answerId":"","id":"pd6a539va","text":"1+1"}},"references":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"c1k2d","text":"1+1=2","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"2qee5","text":"1+2=3","type":"unstyled"}],"entityMap":{}},"referencesHtml":"<p>1+1=2</p>\n<p>1+2=3</p>\n","slug":"drag-and-drop-title-aktkstizt","title":"Drag and drop Title!","type":"drag-drop"},"lvam3s9vy":{"answerOptions":{"75fthwwax":{"answer":"3","answerHtml":"","id":"75fthwwax"},"fxugpl6siz":{"answer":"5","answerHtml":"","id":"fxugpl6siz"},"ov_on3-no":{"answer":"2","answerHtml":"","id":"ov_on3-no"},"sqfa3jlxx":{"answer":"10","answerHtml":"","id":"sqfa3jlxx"},"tygbxq-nb":{"answer":"1","answerHtml":"","id":"tygbxq-nb"}},"id":"lvam3s9vy","images":[],"question":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"b9q8o","text":"Put the numbers in order from 1-3","type":"unstyled"}],"entityMap":{}},"questionHtml":"<p>Put the numbers in order from 1-3</p>\n","questionText":"Put the numbers in order from 1-3","references":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"cnde5","text":"Should be 1 then 2 then 3","type":"unstyled"}],"entityMap":{}},"referencesHtml":"<p>Should be 1 then 2 then 3</p>\n","slug":"this-is-my-build-list-que-lvam3s9vy","title":"This is my build list question title","type":"build-list"},"zqutjz7m0":{"answerOptions":{"1yeehmrdc":{"answer":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"eaneh","text":"A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a device state condition","type":"unstyled"}],"entityMap":{}},"answerHtml":"<p>A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a device state condition</p>\n","id":"1yeehmrdc"},"a4atpbozc":{"answer":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"dchvg","text":"A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a client apps condition","type":"unstyled"}],"entityMap":{}},"answerHtml":"<p>A conditional access policy in Microsoft Azure Active Directory (Azure AD) that has a client apps condition</p>\n","id":"a4atpbozc"},"bsquilii4":{"answer":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"6sjn1","text":"An app protection policy in Microsoft Endpoint Manager","type":"unstyled"}],"entityMap":{}},"answerHtml":"<p>An app protection policy in Microsoft Endpoint Manager</p>\n","id":"bsquilii4"},"rekj0j4ll":{"answer":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"87pal","text":"A device compliance policy in Microsoft Endpoint Manager","type":"unstyled"}],"entityMap":{}},"answerHtml":"<p>A device compliance policy in Microsoft Endpoint Manager</p>\n","id":"rekj0j4ll"}},"id":"zqutjz7m0","images":["https://i.ibb.co/4VQpFYg/Policies-and-rules.png"],"question":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"481vj","text":"Your company has a Microsoft 365 subscription.","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"7a48h","text":"The company does not permit users to enroll personal devices in mobile device management (MDM).","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"2ims1","text":"Users in the sales department have personal iOS devices.","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"1qrdm","text":"You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant.","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"8m19v","text":"The users must be prevented from backing up the app data to iCloud.","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"62b05","text":"What should you create?","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[{"key":0,"length":1,"offset":0}],"inlineStyleRanges":[],"key":"ck7bs","text":" ","type":"atomic"},{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"fb22e","text":"","type":"unstyled"}],"entityMap":{"0":{"data":{"alt":"Policies and rules","src":"https://i.ibb.co/4VQpFYg/Policies-and-rules.png"},"mutability":"IMMUTABLE","type":"IMAGE"}}},"questionHtml":"<p>Your company has a Microsoft 365 subscription.</p>\n<p>The company does not permit users to enroll personal devices in mobile device management (MDM).</p>\n<p>Users in the sales department have personal iOS devices.</p>\n<p>You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant.</p>\n<p>The users must be prevented from backing up the app data to iCloud.</p>\n<p>What should you create?</p>\n<img src=\"https://i.ibb.co/4VQpFYg/Policies-and-rules.png\" alt=\"Policies and rules\" style=\"height: undefined;width: undefined\"/>\n<p></p>\n","questionText":"Your company has a Microsoft 365 subscription. The company does not permit users to enroll personal devices in mobile device management (MDM). Users in the sales department have personal iOS devices. You need to ensure that the sales department users can use the Microsoft Power BI app from iOS devices to access the Power BI data in your tenant. The users must be prevented from backing up the app data to iCloud. What should you create? ","references":{"blocks":[{"data":{},"depth":0,"entityRanges":[],"inlineStyleRanges":[],"key":"6bh37","text":"App protection policies that apply to Microsoft 365 apps, for example, Power BI, will protect apps even if the user is on an unmanaged device.","type":"unstyled"},{"data":{},"depth":0,"entityRanges":[{"key":0,"length":98,"offset":0}],"inlineStyleRanges":[],"key":"cimr4","text":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","type":"unstyled"}],"entityMap":{"0":{"data":{"href":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx","target":"_blank","url":"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx"},"mutability":"MUTABLE","type":"LINK"}}},"referencesHtml":"<p>App protection policies that apply to Microsoft 365 apps, for example, Power BI, will protect apps even if the user is on an unmanaged device.</p>\n<p><a href=\"https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx\" target=\"_self\">https://www.gitbit.org/course/ms-500/learn/Restricting-and-managing-apps-on-user-devices-62t_7oiZx</a></p>\n","slug":"users-must-be-prevented-f-zqutjz7m0","title":"users must be prevented from backing up the app data to iCloud","type":"multiple-choice"}},"sectionId":"qwJW5VrBW","slug":"microsoft-365-powershell-administration-test-32ubyzyen","title":"Microsoft 365 PowerShell administration test","type":"test"}
     }
 
     this.state.userAcct = {tests: {
@@ -358,9 +148,10 @@ class TestsSummary extends Component {
 
     Object.keys(this.state.test.answers).forEach(questionId => {
       const answers = this.state.test.answers[questionId]
-      const questionMaxPoints = getMaxPoints(answers)
       const question = userAcct.tests[this.state.test.id][questionId]
-      const pointsReceivedForQuestion = question ? gradeQuestion(question, answers) : 0
+      const testQuestion = this.state.test.questions[question.id]
+      const questionMaxPoints = getMaxPoints(testQuestion, answers)
+      const pointsReceivedForQuestion = question ? gradeQuestion(question, answers, testQuestion) : 0
 
       userAcct.tests[this.state.test.id][questionId].maxPoints = questionMaxPoints
       userAcct.tests[this.state.test.id][questionId].pointsReceived = pointsReceivedForQuestion
@@ -404,7 +195,7 @@ class TestsSummary extends Component {
                   <Typography variant="body1">
                     <strong>Result:</strong> {
                       this.state.userAcct.tests[this.state.test.id].score || this.state.userAcct.tests[this.state.test.id].score === 0 ?
-                        (this.state.userAcct.tests[this.state.test.id].score > 700 ? 'Pass' : 'Fail') :
+                        (this.state.userAcct.tests[this.state.test.id].score >= 700 ? 'Pass' : 'Fail') :
                         ''
                     }
                   </Typography>

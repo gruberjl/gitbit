@@ -47,7 +47,7 @@ class HotArea extends Component {
     this.props.setQuestion(question)
 
     const answers = clone(this.props.answers)
-    answers[answerOption.id] = {}
+    answers[answerOption.id] = {id: answerOption.id}
     this.props.setAnswers(answers)
   }
 
