@@ -34,8 +34,7 @@ class EditPage extends Component {
     this.handleClose = this.handleClose.bind(this)
     this.eraseProgress = this.eraseProgress.bind(this)
     this.gotoLatestQuestion = this.gotoLatestQuestion.bind(this)
-
-    const isBrowser = () => typeof window !== 'undefined'
+    this.getJsonLd = this.getJsonLd.bind(this)
 
     this.state = {
       uid: '',
@@ -70,13 +69,12 @@ class EditPage extends Component {
   }
 
   startTest() {
-    if (this.state.uid === '' || !this.state.userAcct) {
+    if (this.state.uid === '' || !this.state.userAcct)
       this.setState({showLoginModal: true})
-    } else if (this.state.userAcct.tests[this.state.test.id]) {
+    else if (this.state.userAcct.tests[this.state.test.id])
       this.setState({showRestartModal: true})
-    } else {
+    else
       window.location.href = `/course/ms-500/test/${this.state.test.slug}/question/${Object.values(this.state.test.questions)[0].slug}`
-    }
   }
 
   handleClose(modalCloseProp) {
@@ -101,7 +99,7 @@ class EditPage extends Component {
     const test = this.state.userAcct.tests[this.state.test.id]
     let redirecting = false
 
-    for(let i = 0; i < questions.length; i++) {
+    for (let i = 0; i < questions.length; i++) {
       const question = questions[i]
       if (!test[question.id] || !test[question.id].answers) {
         redirecting = true
@@ -109,14 +107,30 @@ class EditPage extends Component {
       }
     }
 
-    if (!redirecting) {
+    if (!redirecting)
       window.location.href = `/course/ms-500/test/${this.state.test.slug}/question/${questions[0].slug}`
+  }
+
+  getJsonLd() {
+    return {
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "@context": "http://schema.org",
+      "@type": "Quiz",
+      "assesses": this.state.test.title,
+      "educationalLevel": "beginner",
+      "learningResourceType": "Quiz",
+      "teaches": this.state.test.title,
+      "abstract": this.state.test.description,
+      "image": this.state.test.featuredImage,
+      "name": this.state.test.title,
+      "@id": location.href,
+      "description": this.state.test.description
     }
   }
 
   render() {
     return (
-      <Page title={this.state.test.title} description={`Microsoft 365 MS-500 practice test questions on the "${this.state.test.title}" topic`}>
+      <Page title={this.state.test.title} description={this.state.test.description} jsonLd={this.getJsonLd()} jsonLdType="Quiz">
         <main>
           <Container>
             <Grid container>
@@ -132,7 +146,7 @@ class EditPage extends Component {
               <Grid item xs={12}>
                 <ol>
                   { Object.values(this.state.test.questions).map((question, idx) => (
-                    <li><Link href={`/course/ms-500/test/${this.state.test.slug}/question/${question.slug}`} underline="hover" key={idx}>{question.title}</Link></li>
+                    <li key={idx}><Link href={`/course/ms-500/test/${this.state.test.slug}/question/${question.slug}`} underline="hover">{question.title}</Link></li>
                   ))}
                 </ol>
               </Grid>

@@ -24,7 +24,7 @@ const buildLearnArticles = async () => {
   deleteLearnArticles()
   const articles = []
 
-  const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('type', '==', 'article').where('publish', '==', true).get()
+  const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('publish', '==', true).get()
 
   querySnapshot.forEach((doc) => {
     const article = doc.data()
@@ -40,10 +40,10 @@ const buildLearnArticles = async () => {
   for (let i = 0; i < sortedArticles.length; i++) {
     const article = articles[i]
     debug(`building article: ${article.id}`)
-    const nextArticle = sortedArticles.length - 1 > i ? sortedArticles[i + 1].slug : 'NEXT_CONTENT'
-    const previousArticle = i > 0 ? sortedArticles[i - 1].slug : 'PREVIOUS_CONTENT'
+    const nextArticle = sortedArticles.length - 1 > i ? `${sortedArticles[i + 1].type ==='article' ? 'learn' : 'test'}/${sortedArticles[i + 1].slug}` : 'NEXT_CONTENT'
+    const previousArticle = i > 0 ? `${sortedArticles[i - 1].type==='article' ? 'learn' : 'test'}/${sortedArticles[i - 1].slug}` : 'PREVIOUS_CONTENT'
 
-    if (!article.error) {
+    if (!article.error && article.type==='article') {
       const articleHtml = draftToHtml(article.article)
         .replace(/style=".*?">/g, '>')
         .replaceAll('<br>', '<br/>')
@@ -55,7 +55,6 @@ const buildLearnArticles = async () => {
         .replace('<ARTICLE />', articleHtml)
         .replace('NEXT_CONTENT', nextArticle)
         .replace('PREVIOUS_CONTENT', previousArticle)
-        .replace('CURRENT_SLUG', article.slug)
 
       fs.writeFileSync(`./src/pages/course/ms-500/learn/${article.slug}.js`, newFile)
     }

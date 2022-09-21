@@ -1,32 +1,14 @@
 import {h, Component, createRef} from 'preact'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import ButtonGroup from '@mui/material/ButtonGroup'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import Checkbox from '@mui/material/Checkbox'
 import DragIcon from '@mui/icons-material/DragIndicator'
 import ChevronRight from '@mui/icons-material/ChevronRight'
 import ChevronLeft from '@mui/icons-material/ChevronLeft'
 import Error from '@mui/icons-material/Error'
 import Sortable from 'sortablejs'
 const clone = require('clone')
-
-const marginTop24Style = {
-  marginTop: '24px'
-}
-
-const correctAnswerStyle = {
-  background: 'rgb(237, 247, 237)',
-  color: 'rgb(30, 70, 32)',
-  paddingBottom: '6px',
-  marginTop: '6px'
-}
-
-const answerStyle = {
-  paddingBottom: '6px',
-  marginTop: '6px'
-}
 
 const answerContainerStyle = {
   display: 'flex',
@@ -72,9 +54,9 @@ class BuildList extends Component {
     return () => {
       const newAnswers = clone(this.props.answers)
 
-      if (newAnswers[answerOption.id]) {
+      if (newAnswers[answerOption.id])
         delete newAnswers[answerOption.id]
-      } else {
+      else {
         newAnswers[answerOption.id] = {
           id: answerOption.id
         }
@@ -174,13 +156,13 @@ class BuildList extends Component {
         <Grid item xs={12} md={5} ref={this.correctAnswerContainer} data-list='correct'>
           <Typography variant="h4" component="h2" gutterBottom>Correct answers</Typography>
           {answers.map((answer) => (
-            <div style={answerContainerStyle} className="answer" data-answer-option-id={answer.id} key={answer.id} style={this.showAnswerStyle(answer)}>
+            <div className="answer" data-answer-option-id={answer.id} key={answer.id} style={this.showAnswerStyle(answer)}>
               <IconButton className="answer-handle"><DragIcon /></IconButton>
               <Typography variant="body1" style={{display: 'flex', alignItems: 'center'}}>{this.props.question.answerOptions[answer.id].answer}</Typography>
             </div>
           ))}
           { this.props.showAnswers && answers.length < testAnswers.length ? (
-              <div style={answerContainerStyle} style={Object.assign({}, answerContainerStyle, {color: 'rgb(95, 33, 32)'})}>
+              <div style={Object.assign({}, answerContainerStyle, {color: 'rgb(95, 33, 32)'})}>
                 <IconButton><Error /></IconButton>
                 <Typography variant="body1" style={{display: 'flex', alignItems: 'center'}}>Missing answer</Typography>
               </div>
@@ -188,10 +170,10 @@ class BuildList extends Component {
             ''
           }
         </Grid>
-        <Grid item xs={12} style={this.props.showAnswers ? {display:'block'} : {display:'none'}}>
+        <Grid item xs={12} style={this.props.showAnswers ? {display: 'block'} : {display: 'none'}}>
           <Typography variant="h4" component="h2" gutterBottom>Answer</Typography>
           { testAnswers.map((testAnswer) => (
-            <span>
+            <span key={testAnswer.id}>
               <Typography variant="body1" gutterBottom>{this.props.question.answerOptions[testAnswer.id].answer}</Typography>
             </span>
           ))}

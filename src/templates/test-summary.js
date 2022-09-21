@@ -10,24 +10,26 @@ import CheckBoxOutlineBlank from '@mui/icons-material/CheckBoxOutlineBlank'
 import CheckBox from '@mui/icons-material/CheckBox'
 import Page from '../../../../../components/page'
 import Typography from '@mui/material/Typography'
-import QUESTIONS from '../../../../../data/questions'
-import { pink } from '@mui/material/colors'
+import {pink} from '@mui/material/colors'
 import Snackbar from '@mui/material/Snackbar'
+import Box from '@mui/material/Box'
+import ArrowBackIos from '@mui/icons-material/ArrowBackIos'
+import ArrowForwardIos from '@mui/icons-material/ArrowForwardIos'
 const clone = require('clone')
 
 const gradeQuestion = (question, correctAnswers, testQuestion) => {
   let pointsReceived = 0
 
   if (testQuestion.type === 'hot-area') {
-    Object.values(correctAnswers).forEach(correctAnswer => {
+    Object.values(correctAnswers).forEach((correctAnswer) => {
       const answer = question.answers[correctAnswer.id]
-      const correctAnswerId = Object.values(correctAnswer).find(a => a.isCorrect).id
+      const correctAnswerId = Object.values(correctAnswer).find((a) => a.isCorrect).id
 
       if (answer.answer == correctAnswerId)
         pointsReceived++
     })
   } else if (testQuestion.type === 'drag-drop') {
-    Object.values(correctAnswers).forEach(correctAnswer => {
+    Object.values(correctAnswers).forEach((correctAnswer) => {
       const correctAnswerId = correctAnswer.answerId
       const answer = question.answers[correctAnswer.id]
 
@@ -35,31 +37,28 @@ const gradeQuestion = (question, correctAnswers, testQuestion) => {
         pointsReceived++
     })
   } else if (testQuestion.type === 'build-list') {
-    Object.values(correctAnswers).forEach(correctAnswer => {
+    Object.values(correctAnswers).forEach((correctAnswer) => {
       const answer = question.answers[correctAnswer.id]
-      if (answer && answer.idx === correctAnswer.idx) {
+      if (answer && answer.idx === correctAnswer.idx)
         pointsReceived++
-      }
     })
-    Object.values(question.answers).forEach(answer => {
+    Object.values(question.answers).forEach((answer) => {
       const correctAnswer = correctAnswers[answer.id]
-      if (!correctAnswer || correctAnswer.idx !== answer.idx) {
+      if (!correctAnswer || correctAnswer.idx !== answer.idx)
         pointsReceived--
-      }
     })
   } else if (testQuestion.type === 'multiple-choice') {
-    Object.values(correctAnswers).forEach(correctAnswer => {
+    Object.values(correctAnswers).forEach((correctAnswer) => {
       const userMarkedCorrect = Boolean(question.answers[correctAnswer.id])
 
       if (correctAnswer.isCorrect && userMarkedCorrect)
         pointsReceived++
-      else if (!correctAnswer.isCorrect && userMarkedCorrect) {
+      else if (!correctAnswer.isCorrect && userMarkedCorrect)
         pointsReceived--
-      }
     })
-  } else {
+  } else
     console.error('unknown question type')
-  }
+
 
   if (pointsReceived < 0)
     pointsReceived = 0
@@ -70,20 +69,20 @@ const gradeQuestion = (question, correctAnswers, testQuestion) => {
 const getMaxPoints = (testQuestion, answers) => {
   let maxPoints = 0
 
-  if (testQuestion.type === 'hot-area') {
+  if (testQuestion.type === 'hot-area')
     maxPoints = Object.values(answers).length
-  } else if (testQuestion.type === 'drag-drop') {
+  else if (testQuestion.type === 'drag-drop')
     maxPoints = Object.values(answers).length
-  } else if (testQuestion.type === 'build-list') {
+  else if (testQuestion.type === 'build-list')
     maxPoints = Object.values(answers).length
-  } else if (testQuestion.type === 'multiple-choice') {
-    Object.values(answers).forEach(answer => {
+  else if (testQuestion.type === 'multiple-choice') {
+    Object.values(answers).forEach((answer) => {
       if (answer.isCorrect)
         maxPoints++
     })
-  } else {
+  } else
     console.error(`Cannot get max points. unknown question type. question.type===${testQuestion.type}`)
-  }
+
 
   return maxPoints
 }
@@ -96,10 +95,14 @@ class TestsSummary extends Component {
     this.setUid = this.setUid.bind(this)
     this.gradeTest = this.gradeTest.bind(this)
     this.save = this.save.bind(this)
+    this.getJsonLd = this.getJsonLd.bind(this)
+    this.setCompletedContent = this.setCompletedContent.bind(this)
 
     this.state = {
       uid: '',
       alert: '',
+      nextContentSlug: 'NEXT_CONTENT',
+      previousContentSlug: 'PREVIOUS_CONTENT',
       test: {TEST: true}
     }
 
@@ -141,12 +144,26 @@ class TestsSummary extends Component {
     })
   }
 
+  setCompletedContent(userAcct) {
+    return new Promise(resolve => {
+      if (!userAcct.completedContent.includes(this.state.test.id)) {
+        userAcct.completedContent.push(this.state.test.id)
+        this.setState({userAcct}, () => {
+          saveDoc('courses/MS-500/users', userAcct).then(() => resolve())
+        })
+      } else {
+        return resolve()
+      }
+    })
+  }
+
   gradeTest() {
     let maxPoints = 0
     let pointsReceived = 0
     const userAcct = clone(this.state.userAcct)
+    this.setCompletedContent(userAcct)
 
-    Object.keys(this.state.test.answers).forEach(questionId => {
+    Object.keys(this.state.test.answers).forEach((questionId) => {
       const answers = this.state.test.answers[questionId]
       const question = userAcct.tests[this.state.test.id][questionId]
       const testQuestion = this.state.test.questions[question.id]
@@ -161,7 +178,7 @@ class TestsSummary extends Component {
 
     userAcct.tests[this.state.test.id].score = Math.round(pointsReceived / maxPoints * 1000)
 
-    this.setState({userAcct, alert:'test grading complete!'}, () => {
+    this.setState({userAcct, alert: 'test grading complete!'}, () => {
       this.save()
     })
 
@@ -174,12 +191,33 @@ class TestsSummary extends Component {
     return saveDoc(`courses/MS-500/users`, this.state.userAcct, false)
   }
 
+  getJsonLd() {
+    return {
+      "$schema": "https://json-schema.org/draft/2019-09/schema",
+      "@context": "http://schema.org",
+      "@type": "Quiz",
+      "assesses": this.state.test.title,
+      "educationalLevel": "beginner",
+      "learningResourceType": "Quiz",
+      "teaches": this.state.test.title,
+      "abstract": this.state.test.description,
+      "image": this.state.test.featuredImage,
+      "name": this.state.test.title,
+      "@id": location.href,
+      "description": this.state.test.description
+    }
+  }
+
   render() {
-    const questions = this.state.questions
     return (
-      <Page title={'Microsoft 365 MS-500 practice test summary'} description={'Microsoft 365 MS-500 practice test summary'}>
-        <main style={{backgroundColor: '#F3F6F9', paddingTop: '60px'}}>
+      <Page title={`${this.state.test.title} Summary`} description={this.state.test.description} jsonLd={this.getJsonLd()} jsonLdType="Quiz">
+        <main style={{backgroundColor: '#F3F6F9'}}>
           <Container>
+            <Box sx={{display: 'flex', justifyContent: 'space-between', py: 3}}>
+              <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/dashboard' : `/course/ms-500/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
+              <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/dashboard' : `/course/ms-500/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
+            </Box>
+
             <Paper elevation={3} sx={{p: 4}}>
               <Grid container className='box' spacing={2}>
                 <Grid item xs={6} className='box-row'>
@@ -211,13 +249,13 @@ class TestsSummary extends Component {
                 <Grid item xs={2}>
                   <Button onClick={this.gradeTest}>Grade test</Button>
                 </Grid>
-                { Object.keys(this.state.test.answers).map(questionId => (
+                { Object.keys(this.state.test.answers).map((questionId) => (
                   <Grid container item xs={6} key={questionId}>
                     <Grid item xs={1}>
                       <Button variant="text" href={`/course/ms-500/test/${this.state.test.slug}/question/${this.state.test.questions[questionId].slug}`}>
                         { this.state.userAcct.tests[this.state.test.id][questionId] ? (this.state.userAcct.tests[this.state.test.id][questionId].maxPoints === this.state.userAcct.tests[this.state.test.id][questionId].pointsReceived ?
                           <CheckBox color='success' /> :
-                           <CheckBoxOutlineBlank sx={{ color: pink[500] }} />) : ''
+                           <CheckBoxOutlineBlank sx={{color: pink[500]}} />) : ''
 
                         }
                       </Button>

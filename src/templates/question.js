@@ -165,7 +165,7 @@ class EditQuestionPage extends Component {
 
   render() {
     return (
-      <Page jsonLdType={'QAPage'} jsonLd={this.state.jsonLd} title={this.state.questionText} description={this.state.questionText}>
+      <Page jsonLdType={'QAPage'} jsonLd={this.state.jsonLd} title={this.state.questionText} description={this.state.questionText} canonical={this.state.question.canonical}>
         <main>
           <style>{universalStyles}</style>
           <div>

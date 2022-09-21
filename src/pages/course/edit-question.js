@@ -188,14 +188,14 @@ class EditQuestionPage extends Component {
                     </Select>
                     <FormHelperText>Type of question</FormHelperText>
                   </FormControl>
-                  <Alert severity="error" style={this.state.questionTypeRequired ? {display:'flex'} : {display:'none'}}>Question type is a required field!</Alert>
+                  <Alert severity="error" style={this.state.questionTypeRequired ? {display: 'flex'} : {display: 'none'}}>Question type is a required field!</Alert>
                 </Grid>
                 <Grid xs={2}>
                   <Button onClick={this.save}>Save</Button>
                 </Grid>
                 <Grid xs={12}>
                   <TextField id="title" label="Question title" variant="standard" onChange={this.setTitle} value={this.state.question.title} fullWidth />
-                  <Alert severity="error" style={this.state.titleRequired ? {display:'flex'} : {display:'none'}}>Question title is a required field!</Alert>
+                  <Alert severity="error" style={this.state.titleRequired ? {display: 'flex'} : {display: 'none'}}>Question title is a required field!</Alert>
                 </Grid>
                 <Grid xs={12}>
                   {

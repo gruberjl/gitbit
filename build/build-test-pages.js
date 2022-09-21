@@ -23,33 +23,43 @@ const buildTestPages = async () => {
   deleteTests()
   const tests = []
 
-  const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('type', '==', 'test').where('publish', '==', true).get()
+  const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('publish', '==', true).get()
 
   querySnapshot.forEach((doc) => {
     const test = doc.data()
     tests.push(test)
   })
 
-  for (let i = 0; i < tests.length; i++) {
-    const test = tests[i]
+  const course = (await db.collection("courses").doc('MS-500').get()).data()
+  const sortedContent = tests.sort((a, b) => course.contentOrder.indexOf(a.id) - course.contentOrder.indexOf(b.id))
+
+  for (let i = 0; i < sortedContent.length; i++) {
+    const test = sortedContent[i]
     debug(`building test: ${test.id}`)
+    const nextArticle = sortedContent.length - 1 > i ? `${sortedContent[i + 1].type ==='article' ? 'learn' : 'test'}/${sortedContent[i + 1].slug}` : 'NEXT_CONTENT'
+    const previousArticle = i > 0 ? `${sortedContent[i - 1].type==='article' ? 'learn' : 'test'}/${sortedContent[i - 1].slug}` : 'PREVIOUS_CONTENT'
 
-    const testTitleFile = testTitleTemplate.replace('{TEST: true}', stringify(test))
-    fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}.js`, testTitleFile)
+    if (test.type === 'test') {
+      const testTitleFile = testTitleTemplate.replace('{TEST: true}', stringify(test))
+      fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}.js`, testTitleFile)
 
-    fs.mkdirSync(`./src/pages/course/ms-500/test/${test.slug}`)
-    fs.mkdirSync(`./src/pages/course/ms-500/test/${test.slug}/question`)
+      fs.mkdirSync(`./src/pages/course/ms-500/test/${test.slug}`)
+      fs.mkdirSync(`./src/pages/course/ms-500/test/${test.slug}/question`)
 
-    const testSummaryFile = testSummaryTemplate.replace('{TEST: true}', stringify(test))
-    fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}/summary.js`, testSummaryFile)
-
-    const questions = Object.values(test.questions)
-    for (let q = 0; q < questions.length; q++) {
-      const question = questions[q]
-      const testQuestionFile = testQuestionTemplate
+      const testSummaryFile = testSummaryTemplate
         .replace('{TEST: true}', stringify(test))
-        .replace('{QUESTION: true}', stringify(question))
-      fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}/question/${question.slug}.js`, testQuestionFile)
+        .replace('NEXT_CONTENT', nextArticle)
+        .replace('PREVIOUS_CONTENT', previousArticle)
+      fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}/summary.js`, testSummaryFile)
+
+      const questions = Object.values(test.questions)
+      for (let q = 0; q < questions.length; q++) {
+        const question = questions[q]
+        const testQuestionFile = testQuestionTemplate
+          .replace('{TEST: true}', stringify(test))
+          .replace('{QUESTION: true}', stringify(question))
+        fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}/question/${question.slug}.js`, testQuestionFile)
+      }
     }
   }
 }
@@ -61,5 +71,4 @@ const deleteTests = () => {
   fs.mkdirSync('./src/pages/course/ms-500/test')
 }
 
-buildTestPages()
 export default buildTestPages

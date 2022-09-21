@@ -30,7 +30,6 @@ const getContents = async (course) => {
   for (let i = 0; i < contents.length; i++) {
     const content = contents[i]
     if (content.id === '32ubyzyen')
-      console.log(JSON.stringify(content, null, 2))
     if (content.title === '' || content.title === null) {
       content.error = `Title is blank in ${content.id}`
       console.error(content.error)
@@ -76,7 +75,8 @@ const getContents = async (course) => {
       sectionId: content.sectionId,
       slug: content.slug,
       title: content.title,
-      featuredImage: content.featuredImage
+      featuredImage: content.featuredImage,
+      type: content.type
     }
   })
 

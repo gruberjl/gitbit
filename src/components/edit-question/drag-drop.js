@@ -142,7 +142,6 @@ class DragDrop extends Component {
   render() {
     const optionalAnswers = Object.values(this.props.question.answerOptions)
     const questions = this.props.question.questions ? Object.values(this.props.question.questions) : []
-    const answers = Object.values(this.props.answers)
 
     return (
       <Grid container>

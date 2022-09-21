@@ -9,6 +9,7 @@ import buildRoot from './build-root'
 import buildQuestionPages from './build-question-pages'
 import buildLearnArticles from './build-learn-articles'
 import buildFeeds from './build-feeds'
+import buildTestPages from './build-test-pages'
 const debug = require('debug')('gitbit:build')
 
 const build = async () => {
@@ -18,6 +19,8 @@ const build = async () => {
   await buildQuestionPages()
   debug(`buildLearnArticles`)
   await buildLearnArticles()
+  debug('buildTestPages')
+  await buildTestPages()
   debug(`deleteDocs`)
   deleteDocs()
   debug(`buildRoot`)
@@ -41,4 +44,4 @@ const deleteDocs = () => {
   fs.mkdirSync('./docs')
 }
 
-buildData()
+build()

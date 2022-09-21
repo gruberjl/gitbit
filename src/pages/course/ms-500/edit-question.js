@@ -45,6 +45,7 @@ class EditQuestionPage extends Component {
     this.setReferencesEditorState = this.setReferencesEditorState.bind(this)
     this.setAnswersState = this.setAnswersState.bind(this)
     this.addImage = this.addImage.bind(this)
+    this.handleCanonicalChange = this.handleCanonicalChange.bind(this)
 
     let params = new URLSearchParams()
     if (isBrowser())
@@ -70,7 +71,8 @@ class EditQuestionPage extends Component {
         }
       ],
       hasBeenSaved: !!params.has('docid'),
-      doc: {}
+      doc: {},
+      canonical: ''
     }
 
     if (params.has('docid'))
@@ -82,7 +84,8 @@ class EditQuestionPage extends Component {
       doc,
       editorState: EditorState.createWithContent(convertFromRaw(doc.question), decorators),
       referencesEditorState: EditorState.createWithContent(convertFromRaw(doc.references), decorators),
-      answersState: doc.answers
+      answersState: doc.answers,
+      canonical: doc.canonical || ''
     }))
   }
 
@@ -108,6 +111,11 @@ class EditQuestionPage extends Component {
     const content = JSON.parse(JSON.stringify(this.state.content))
     content.images.push(json.data.url)
     this.setState({content})
+  }
+
+  handleCanonicalChange(event) {
+    const canonical = event.target.value
+    this.setState({canonical})
   }
 
   render() {
@@ -156,6 +164,9 @@ class EditQuestionPage extends Component {
         references: convertToRaw(this.state.referencesEditorState.getCurrentContent()),
         id: this.state.id
       }
+
+      if (this.state.canonical && this.state.canonical !== '')
+        data.canonical = this.state.canonical
 
       saveDoc('Tests/MS-500/Questions', data)
       this.setState({
@@ -213,6 +224,9 @@ class EditQuestionPage extends Component {
             <div>
               <h2 style={referencesStyle}>References</h2>
               <Wysiwyg editorState={referencesEditorState} onEditorStateChange={this.setReferencesEditorState} addImage={this.addImage} />
+            </div>
+            <div>
+              <TextField fullWidth label="Canonical" variant="outlined" value={this.state.canonical} onChange={this.handleCanonicalChange} sx={{mt:2}} />
             </div>
           </Container>
         </main>

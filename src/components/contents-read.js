@@ -6,6 +6,7 @@ import AccordionDetails from '@mui/material/AccordionDetails'
 import Typography from '@mui/material/Typography'
 import Article from '@mui/icons-material/Article'
 import CheckBox from '@mui/icons-material/CheckBox'
+import Quiz from '@mui/icons-material/Quiz'
 import ExpandMoreIcon from '@mui/icons-material/ExpandMore'
 import List from '@mui/material/List'
 import ListItem from '@mui/material/ListItem'
@@ -58,11 +59,15 @@ const ContentsRead = ({completedContent, comp='aside'}) => {
             <List>
               { contents.filter((content) => content.sectionId === section.id).map((content, contentIdx) => (
                 <ListItem key={contentIdx} disablePadding>
-                  <ListItemButton href={`/course/ms-500/learn/${content.slug}`}>
+                  <ListItemButton href={`/course/ms-500/${content.type === 'article' ? 'learn' : 'test'}/${content.slug}`}>
                     {
                       (completedContent || userAcct.completedContent).includes(content.id) ?
                         <ListItemIcon><CheckBox color="success" fontSize="large" /></ListItemIcon> :
-                        <ListItemIcon><Article fontSize="large" /></ListItemIcon>
+                        <ListItemIcon>{
+                          content.type === 'article' ?
+                            <Article fontSize="large" /> :
+                            <Quiz fontSize="large" />
+                        }</ListItemIcon>
                     }
                     <Typography>{content.title}</Typography>
                   </ListItemButton>

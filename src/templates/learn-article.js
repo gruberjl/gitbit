@@ -29,7 +29,6 @@ class ArticlePage extends Component {
 
     this.state = {
       isTrackScrolling: false,
-      path: '/course/ms-500/learn/CURRENT_SLUG',
       article: {ARTICLE: true},
       nextContentSlug: 'NEXT_CONTENT',
       previousContentSlug: 'PREVIOUS_CONTENT',
@@ -112,7 +111,7 @@ class ArticlePage extends Component {
     }
 
     return (
-      <Page jsonLdType={'BlogPosting'} jsonLd={jsonLd} image={this.state.article.featuredImage} canonical={this.state.path} title={this.state.article.title} description={this.state.article.description}>
+      <Page jsonLdType={'BlogPosting'} jsonLd={jsonLd} image={this.state.article.featuredImage} title={this.state.article.title} description={this.state.article.description}>
         <div>
           <style>
             {`main, h1, h2, h3, h4, h5, h6, p, span, li, a {
@@ -167,8 +166,8 @@ class ArticlePage extends Component {
                   <div><ARTICLE /></div>
                   <div id="bottom-of-article" />
                   <Box sx={{display: 'flex', justifyContent: 'space-between', mt: 3}}>
-                    <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
-                    <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/' : `/course/ms-500/learn/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
+                    <Button variant="text" href={ this.state.previousContentSlug === 'PREVIOUS_CONTENT' ? '/dashboard' : `/course/ms-500/${this.state.previousContentSlug}` } startIcon={<ArrowBackIos />}>Previous</Button>
+                    <Button variant="text" href={ this.state.nextContentSlug === 'NEXT_CONTENT' ? '/dashboard' : `/course/ms-500/${this.state.nextContentSlug}` } endIcon={<ArrowForwardIos />}>Next</Button>
                   </Box>
                 </main>
               </Grid>

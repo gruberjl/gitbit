@@ -1,41 +1,15 @@
 import {h, Component, createRef} from 'preact'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import ButtonGroup from '@mui/material/ButtonGroup'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
-import Checkbox from '@mui/material/Checkbox'
 import DragIcon from '@mui/icons-material/DragIndicator'
-import ChevronRight from '@mui/icons-material/ChevronRight'
-import ChevronLeft from '@mui/icons-material/ChevronLeft'
 const clone = require('clone')
-
-const marginTop24Style = {
-  marginTop: '24px'
-}
-
-const correctAnswerStyle = {
-  background: 'rgb(237, 247, 237)',
-  color: 'rgb(30, 70, 32)',
-  paddingBottom: '6px',
-  marginTop: '6px'
-}
-
-const answerStyle = {
-  paddingBottom: '6px',
-  marginTop: '6px'
-}
 
 const answerContainerStyle = {
   display: 'flex',
   margin: '8px 0px',
   'align-items': 'stretch'
-}
-
-const leftRightButtonStyle = {
-  display: 'flex',
-  flexDirection: 'column',
-  justifyContent: 'center'
 }
 
 const placeholderStyle = {
@@ -86,8 +60,7 @@ class DragDrop extends Component {
 
     if (correctAnswer === selectAnswer)
       return {background: 'rgb(237, 247, 237)'}
-    else
-      return {background: 'rgb(253, 237, 237)'}
+    return {background: 'rgb(253, 237, 237)'}
   }
 
   render() {
@@ -104,7 +77,7 @@ class DragDrop extends Component {
         <Grid item xs={12} md={6} ref={this.container} data-list='optional'>
           <Typography variant="h4" component="h2" gutterBottom>Optional answers</Typography>
           {answerOptions.map((answerOption) => (
-            <div style={answerContainerStyle} className="answer" key={answerOption.id}  draggable="true" ondragstart={this.onDragStart(answerOption)}>
+            <div style={answerContainerStyle} className="answer" key={answerOption.id} draggable="true" ondragstart={this.onDragStart(answerOption)}>
               <IconButton className="answer-handle"><DragIcon /></IconButton>
               <Typography variant="body1" style={{display: 'flex', alignItems: 'center'}}>{answerOption.answer}</Typography>
             </div>
@@ -114,11 +87,11 @@ class DragDrop extends Component {
         <Grid item xs={12} md={6} ref={this.correctAnswerContainer} data-list='correct'>
           <Typography variant="h4" component="h2" gutterBottom>Correct answers</Typography>
           { questions.map((question) => (
-            <Grid container item xs={12} key={question.id} style={{marginBottom:'8px'}}>
+            <Grid container item xs={12} key={question.id} style={{marginBottom: '8px'}}>
               <Grid item xs={6}>
                 <Typography variant="body1" style={{display: 'flex', alignItems: 'center', minHeight: '100%'}}>{question.text}</Typography>
               </Grid>
-              <Grid item xs={6}  style={this.showAnswerStyle(question)}>
+              <Grid item xs={6} style={this.showAnswerStyle(question)}>
                 <div style={{border: '1px solid black'}} ondrop={this.onDrop(question)} ondragover={(ev) => ev.preventDefault()}>
                   <p style={placeholderStyle}>{this.props.answers[question.id] ? this.props.question.answerOptions[this.props.answers[question.id].answerId].answer : 'correct answer here'}</p>
                 </div>
@@ -126,10 +99,10 @@ class DragDrop extends Component {
             </Grid>
           ))}
         </Grid>
-        <Grid item xs={12} style={this.props.showAnswers ? {display:'block'} : {display:'none'}}>
+        <Grid item xs={12} style={this.props.showAnswers ? {display: 'block'} : {display: 'none'}}>
           <Typography variant="h4" component="h2" gutterBottom>Answer</Typography>
           { Object.values(this.props.testAnswers).map((testAnswer) => (
-            <span>
+            <span key={testAnswer.id}>
               <Typography variant="h5" component="h3" gutterBottom>{this.props.question.questions[testAnswer.id].text}</Typography>
               <Typography variant="body1" gutterBottom>{this.props.question.answerOptions[testAnswer.answerId].answer}</Typography>
             </span>

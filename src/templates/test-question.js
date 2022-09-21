@@ -12,7 +12,6 @@ import DragDrop from '../../../../../../components/test-question/drag-drop'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
 import Button from '@mui/material/Button'
-import Link from '@mui/material/Link'
 import DialogTitle from '@mui/material/DialogTitle'
 import Dialog from '@mui/material/Dialog'
 import DialogContent from '@mui/material/DialogContent'
@@ -30,15 +29,6 @@ import Checkbox from '@mui/material/Checkbox'
 import Typography from '@mui/material/Typography'
 const clone = require('clone')
 
-const marginTop24Style = {
-  marginTop: '24px'
-}
-
-const alignRight = {
-  textAlign: 'right',
-  marginTop: '24px'
-}
-
 const isBrowser = () => typeof window !== 'undefined'
 
 class EditPage extends Component {
@@ -54,8 +44,6 @@ class EditPage extends Component {
     this.save = this.save.bind(this)
     this.endExam = this.endExam.bind(this)
     this.navigateTo = this.navigateTo.bind(this)
-
-    const isBrowser = () => typeof window !== 'undefined'
 
     this.state = {
       uid: '',
@@ -113,8 +101,7 @@ class EditPage extends Component {
         upvoteCount: 1,
         dateCreated: this.state.test.datePublished
       }
-      const correctAnswerIds = Object.values(this.state.test.answers[this.state.question.id]).filter(answer => answer.isCorrect).map(answer => answer.id)
-      // this.state.jsonLd.mainEntity.acceptedAnswer.text = this.state.test.answers[this.state.question.id] ? Object.values(this.state.test.answers[this.state.question.id]).filter((answer) => correctAnswerIds.includes(answer.id)).map((a) => a.text).join('; ') : 'None'
+
       this.state.jsonLd.mainEntity.acceptedAnswer.text = 'None'
     }
   }
@@ -122,13 +109,13 @@ class EditPage extends Component {
   componentDidMount() {
     if (isBrowser()) {
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
-      window.addEventListener("beforeunload", this.beforeUnload)
+      window.addEventListener('beforeunload', this.beforeUnload)
     }
   }
 
   componentWillUnmount() {
     this.onAuthStateChangedListener()
-    window.removeEventListener("beforeunload", this.beforeUnload)
+    window.removeEventListener('beforeunload', this.beforeUnload)
   }
 
   setUid(user) {
@@ -181,7 +168,7 @@ class EditPage extends Component {
     const userAcct = clone(this.state.userAcct)
     userAcct.tests[this.state.test.id][this.state.question.id].answers = answers
 
-    this.setState({userAcct, unsavedChanges:true})
+    this.setState({userAcct, unsavedChanges: true})
     if (!this.debounceSave)
       this.debounceSave = debounce(this.save, 5000)
 
@@ -190,12 +177,12 @@ class EditPage extends Component {
 
   beforeUnload() {
     if (this.state.unsavedChanges) {
-      const s = "You have unsaved changes. Really leave?";
+      const s = 'You have unsaved changes. Really leave?'
       this.save()
 
-      event = event || window.event;
+      event = event || window.event // eslint-disable-line no-global-assign
       if (event)
-        event.returnValue = s;
+        event.returnValue = s
 
       return s
     }
@@ -231,8 +218,7 @@ class EditPage extends Component {
         this.save().then(() => {
           window.location.href = url
         })
-      }
-      else
+      } else
         window.location.href = url
     }
   }
@@ -259,7 +245,7 @@ class EditPage extends Component {
                 <div dangerouslySetInnerHTML={{__html: this.state.question.referencesHtml}} style={{display: this.state.answerShown ? 'block' : 'none'}} />
               </Grid>
             </Grid>
-            <Footer uid={this.state.uid} previousQuestionSlug={this.state.previousQuestionSlug} nextQuestionSlug={this.state.nextQuestionSlug} testSlug={this.state.test.slug} toggleEndExam={this.toggleEndExam} toggleShowAnswer={this.toggleShowAnswer} toggleQuestionList={this.toggleQuestionList}  navigateTo={this.navigateTo} />
+            <Footer uid={this.state.uid} previousQuestionSlug={this.state.previousQuestionSlug} nextQuestionSlug={this.state.nextQuestionSlug} testSlug={this.state.test.slug} toggleEndExam={this.toggleEndExam} toggleShowAnswer={this.toggleShowAnswer} toggleQuestionList={this.toggleQuestionList} navigateTo={this.navigateTo} />
           </Container>
 
           <Dialog onClose={this.toggleQuestionList} open={this.state.showQuestionList}>

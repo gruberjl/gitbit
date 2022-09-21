@@ -6,6 +6,7 @@ import Button from '@mui/material/Button'
 import {onAuthStateChanged} from '../../../components/firebase/on-auth-state-changed'
 import questions from '../../../data/questions'
 import Typography from '@mui/material/Typography'
+import Check from '@mui/icons-material/Check'
 
 const isBrowser = () => typeof window !== 'undefined'
 
@@ -55,7 +56,13 @@ class BrowseQuestionsPage extends Component {
                 </Grid> :
                 ''
               }
-              <Grid item xs={this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ? 11 : 12}>
+              { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
+                <Grid item xs={1}>
+                  <Typography variant="h6" gutterBottom component="h3">canonical</Typography>
+                </Grid> :
+                ''
+              }
+              <Grid item xs={this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ? 10 : 12}>
                 <Typography variant="h6" gutterBottom component="h2">Question</Typography>
               </Grid>
               {questions.map((doc, idx) => (
@@ -66,7 +73,16 @@ class BrowseQuestionsPage extends Component {
                     </Grid> :
                     ''
                   }
-                  <Grid item xs={this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ? 11 : 12} sx={{borderTop: '1px solid rgb(224, 224, 224);'}}>
+                  { this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ?
+                    <Grid item xs={1}>
+                      { doc.canonical ?
+                          <Check /> : ''
+
+                      }
+                    </Grid> :
+                    ''
+                  }
+                  <Grid item xs={this.state.uid === 'bff94pwBjUP4qIb2Rbuy3l6Mhgg2' ? 10 : 12} sx={{borderTop: '1px solid rgb(224, 224, 224);'}}>
                     <Button variant="text" href={`/course/ms-500/question/${doc.id}`}>{doc.question}</Button>
                   </Grid>
                 </Grid>

@@ -25,8 +25,14 @@ const buildPage = async (pageFile) => {
     helmet: Helmet.rewind(),
     pathname: getPathname(pageFile),
     jsBundlePath,
-    pageFile
+    pageFile,
+    canonical: false
   }
+  data.helmet.link.toComponent().forEach(component => {
+    if (component.props.rel == 'canonical') {
+      data.canonical = component.props.href
+    }
+  })
 
   if (pageFile !== './src/pages/404.js') {
     const imageUrl = getImageUrl(data.helmet.meta.toString())
