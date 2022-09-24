@@ -79,10 +79,10 @@ const getPathname = (pageFile) => {
     .replace('.js', '')
 
   if (pathname == '/index')
-    return ''
+    return '/'
 
   if (pathname.endsWith('/index'))
-    return pathname.replace('/index', '')
+    return pathname.replace('/index', '/')
 
   return pathname
 }

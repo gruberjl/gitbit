@@ -189,20 +189,23 @@ class EditPage extends Component {
   }
 
   save() {
-    return saveDoc(`courses/MS-500/users`, this.state.userAcct, false).then(() => {
-      return new Promise((resolve, reject) => {
-        this.setState({
-          alert: 'Content saved',
-          unsavedChanges: false
-        }, () => {
-          return resolve()
-        })
+    if (this.state.uid) {
+      return saveDoc(`courses/MS-500/users`, this.state.userAcct, false).then(() => {
+        return new Promise((resolve, reject) => {
+          this.setState({
+            alert: 'Content saved',
+            unsavedChanges: false
+          }, () => {
+            return resolve()
+          })
 
-        setTimeout(() => {
-          this.setState({alert: ''})
-        }, 3000)
+          setTimeout(() => {
+            this.setState({alert: ''})
+          }, 3000)
+        })
       })
-    })
+    } else
+      return new Promise((res) => res())
   }
 
   endExam() {
