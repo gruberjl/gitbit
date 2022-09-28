@@ -5,6 +5,7 @@ import serviceAccount from "./firestore.json"
 import buildQuestionPage from './build-question-page'
 const debug = require('debug')('gitbit:build-test-pages')
 const stringify = require('json-stable-stringify')
+import {convertFromRaw} from 'draft-js'
 
 if ( !getApps().length ) {
   admin.initializeApp({
@@ -40,9 +41,6 @@ const buildTestPages = async () => {
     const previousArticle = i > 0 ? `${sortedContent[i - 1].type==='article' ? 'learn' : 'test'}/${sortedContent[i - 1].slug}` : 'PREVIOUS_CONTENT'
 
     if (test.type === 'test') {
-      const testTitleFile = testTitleTemplate.replace('{TEST: true}', stringify(test))
-      fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}.js`, testTitleFile)
-
       fs.mkdirSync(`./src/pages/course/ms-500/test/${test.slug}`)
       fs.mkdirSync(`./src/pages/course/ms-500/test/${test.slug}/question`)
 
@@ -55,11 +53,53 @@ const buildTestPages = async () => {
       const questions = Object.values(test.questions)
       for (let q = 0; q < questions.length; q++) {
         const question = questions[q]
+        question.answerText = ''
+
+        if (question.type === 'drag-drop') {
+          Object.values(test.answers[question.id]).forEach(answer => {
+            question.answerText = question.answerText + `${question.answerOptions[answer.answerId].answer}`
+            if (!question.answerText.endsWith('.'))
+              question.answerText = question.answerText + '. '
+          })
+        } else if (question.type === 'hot-area') {
+          Object.values(test.answers[question.id]).forEach(answer => {
+            let answerId = ''
+            Object.values(answer).forEach(ans => ans.isCorrect ? answerId = ans.id : '')
+            question.answerText = question.answerText  + `${question.answerOptions[answer.id].answers[answerId].text}`
+            if (!question.answerText.endsWith('.'))
+              question.answerText = question.answerText + '. '
+          })
+        } else if (question.type === 'multiple-choice') {
+          const answerIds = Object.values(test.answers[question.id]).filter(answer => answer.isCorrect)
+          answerIds.forEach(answer => {
+            question.answerText = question.answerText  + `${convertFromRaw(question.answerOptions[answer.id].answer).getPlainText().replace(/\r?\n|\r/g, ' ').replace(/\s\s+/g, ' ')}`
+            if (!question.answerText.endsWith('.'))
+              question.answerText = question.answerText + '. '
+          })
+        } else if (question.type === 'build-list') {
+          const answers = Object.values(test.answers[question.id]).sort((a, b) => a.idx - b.idx)
+          answers.forEach(answer => {
+            question.answerText = question.answerText  + `${question.answerOptions[answer.id].answer}`
+            if (!question.answerText.endsWith('.'))
+              question.answerText = question.answerText + '. '
+          })
+        } else {
+          console.error(`unknown question type: ${question.type}`)
+        }
+        question.answerText = question.answerText.trim()
+
         const testQuestionFile = testQuestionTemplate
           .replace('{TEST: true}', stringify(test))
           .replace('{QUESTION: true}', stringify(question))
         fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}/question/${question.slug}.js`, testQuestionFile)
       }
+
+      test.questions = questions.reduce((obj, question) => {
+        obj[question.id] = question
+        return obj
+      }, {})
+      const testTitleFile = testTitleTemplate.replace('{TEST: true}', stringify(test))
+      fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}.js`, testTitleFile)
     }
   }
 }
