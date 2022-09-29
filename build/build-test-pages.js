@@ -2,6 +2,7 @@ import fs from 'fs'
 import admin from "firebase-admin"
 import serviceAccount from "./firestore.json"
 import buildQuestionPage from './build-question-page'
+import sortKeys from './sort-keys'
 const debug = require('debug')('gitbit:build-test-pages')
 import {convertFromRaw} from 'draft-js'
 const {getApps} = require("firebase-admin/app")
@@ -50,6 +51,7 @@ const buildTestPages = async () => {
         .replace('PREVIOUS_CONTENT', previousArticle)
       fs.writeFileSync(`./src/pages/course/ms-500/test/${test.slug}/summary.js`, testSummaryFile)
 
+      test.questions = sortKeys(test.questions, {deep: true})
       const questions = Object.values(test.questions)
       for (let q = 0; q < questions.length; q++) {
         const question = questions[q]
@@ -110,5 +112,5 @@ const deleteTests = () => {
 
   fs.mkdirSync('./src/pages/course/ms-500/test')
 }
-
+buildTestPages()
 export default buildTestPages
