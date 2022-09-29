@@ -70,7 +70,6 @@
     "react": "npm:@preact/compat",
     "react-dom": "npm:@preact/compat",
     "shortid": "^2.2.16",
-    "sort-keys": "^5.0.0",
     "sortablejs": "^1.15.0"
   }
 }
