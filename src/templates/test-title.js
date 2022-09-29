@@ -147,7 +147,7 @@ class EditPage extends Component {
 
   render() {
     return (
-      <Page title={this.state.test.title} description={this.state.test.description} jsonLd={this.getJsonLd()} jsonLdType="Quiz">
+      <Page title={this.state.test.title} description={this.state.test.description} jsonLd={this.getJsonLd()} jsonLdType="Quiz" image={this.state.test.featuredImage}>
         <main>
           <Container>
             <Grid container>
