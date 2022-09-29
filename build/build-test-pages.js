@@ -1,11 +1,11 @@
 import fs from 'fs'
 import admin from "firebase-admin"
-const {getApps} = require("firebase-admin/app")
 import serviceAccount from "./firestore.json"
 import buildQuestionPage from './build-question-page'
 const debug = require('debug')('gitbit:build-test-pages')
-const stringify = require('json-stable-stringify')
 import {convertFromRaw} from 'draft-js'
+const {getApps} = require("firebase-admin/app")
+const stringify = require('json-stable-stringify')
 
 if ( !getApps().length ) {
   admin.initializeApp({
