@@ -56,7 +56,10 @@ class DragDrop extends Component {
       return {}
 
     const correctAnswer = this.props.testAnswers[question.id].answerId
-    const selectAnswer = this.props.answers[question.id].answerId
+
+    let selectAnswer
+    if (this.props.answers[question.id])
+      selectAnswer = this.props.answers[question.id].answerId
 
     if (correctAnswer === selectAnswer)
       return {background: 'rgb(237, 247, 237)'}
