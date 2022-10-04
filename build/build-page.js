@@ -30,7 +30,7 @@ const buildPage = async (pageFile) => {
   }
   data.helmet.link.toComponent().forEach(component => {
     if (component.props.rel == 'canonical') {
-      data.canonical = component.props.href
+      data.canonical = component.props.href.replace('http://', 'https://').replace('https://gitbit.org', 'https://www.gitbit.org')
     }
   })
 

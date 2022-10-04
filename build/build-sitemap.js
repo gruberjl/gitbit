@@ -8,6 +8,12 @@ const buildSitemap = async () => {
   debug(`building sitemap`)
   const pageFiles = glob.sync('./src/pages/**/*.js')
     .filter(file => file !== './src/pages/404.js')
+    .filter(file => file !== './src/pages/course/ms-500/edit-question.js')
+    .filter(file => file !== './src/pages/course/ms-500/edit.js')
+    .filter(file => file !== './src/pages/course/edit-article.js')
+    .filter(file => file !== './src/pages/course/edit-course.js')
+    .filter(file => file !== './src/pages/course/edit-question.js')
+    .filter(file => file !== './src/pages/course/edit-test.js')
 
   const links = pageFiles.map(file => {
     const stats = fs.statSync(file)
@@ -28,7 +34,7 @@ const buildSitemap = async () => {
   if (!fs.existsSync('./docs/sitemap/')){
     fs.mkdirSync('./docs/sitemap/');
   }
-  
+
   fs.writeFileSync('./docs/sitemap/sitemap-index.xml', sitemap)
 }
 
