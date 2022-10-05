@@ -11,5 +11,6 @@ Disallow: /course/edit-course$
 Disallow: /course/edit-article$
 Disallow: /course/edit-test$
 Disallow: /course/edit-question$
+Disallow: /course/ms-500/question/edit$
 
 Sitemap: https://www.gitbit.org/sitemap/sitemap-index.xml

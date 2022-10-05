@@ -112,33 +112,25 @@ class EditPage extends Component {
   }
 
   getJsonLd() {
-    let answers = {}
-    Object.values(this.state.test.questions).forEach(question => {
-      if (question.type === 'build-list') {
-        const correctAnswers = Object.values(this.state.test.answers).sort((a, b) => a.idx - b.idx)
-
-      }
-    })
-    const answerIds = Object.values(this.state.test.answers).filter(answer => answer.isCorrect)
     return {
-      "@context": "http://schema.org",
-      "@type": "FAQPage",
-      "assesses": this.state.test.title,
-      "educationalLevel": "beginner",
-      "learningResourceType": "Quiz",
-      "teaches": this.state.test.title,
-      "abstract": this.state.test.description,
-      "image": this.state.test.featuredImage,
-      "name": this.state.test.title,
-      "@id": location.href,
-      "description": this.state.test.description,
-      mainEntity: Object.values(this.state.test.questions).map(question => {
+      '@context': 'http://schema.org',
+      '@type': 'FAQPage',
+      assesses: this.state.test.title,
+      educationalLevel: 'beginner',
+      learningResourceType: 'Quiz',
+      teaches: this.state.test.title,
+      abstract: this.state.test.description,
+      image: this.state.test.featuredImage,
+      name: this.state.test.title,
+      '@id': location.href,
+      description: this.state.test.description,
+      mainEntity: Object.values(this.state.test.questions).map((question) => {
         return {
-          "@type": "Question",
+          '@type': 'Question',
           name: question.questionText,
           acceptedAnswer: {
-            "@type": "Answer",
-            "text": question.answerText
+            '@type': 'Answer',
+            text: question.answerText
           }
         }
       })

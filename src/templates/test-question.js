@@ -204,8 +204,7 @@ class EditPage extends Component {
           }, 3000)
         })
       })
-    } else
-      return new Promise((res) => res())
+    } return new Promise((res) => res())
   }
 
   endExam() {

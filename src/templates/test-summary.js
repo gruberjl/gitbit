@@ -145,15 +145,14 @@ class TestsSummary extends Component {
   }
 
   setCompletedContent(userAcct) {
-    return new Promise(resolve => {
+    return new Promise((resolve) => {
       if (!userAcct.completedContent.includes(this.state.test.id)) {
         userAcct.completedContent.push(this.state.test.id)
         this.setState({userAcct}, () => {
           saveDoc('courses/MS-500/users', userAcct).then(() => resolve())
         })
-      } else {
+      } else
         return resolve()
-      }
     })
   }
 
@@ -193,18 +192,18 @@ class TestsSummary extends Component {
 
   getJsonLd() {
     return {
-      "$schema": "https://json-schema.org/draft/2019-09/schema",
-      "@context": "http://schema.org",
-      "@type": "Quiz",
-      "assesses": this.state.test.title,
-      "educationalLevel": "beginner",
-      "learningResourceType": "Quiz",
-      "teaches": this.state.test.title,
-      "abstract": this.state.test.description,
-      "image": this.state.test.featuredImage,
-      "name": this.state.test.title,
-      "@id": location.href,
-      "description": this.state.test.description
+      $schema: 'https://json-schema.org/draft/2019-09/schema',
+      '@context': 'http://schema.org',
+      '@type': 'Quiz',
+      assesses: this.state.test.title,
+      educationalLevel: 'beginner',
+      learningResourceType: 'Quiz',
+      teaches: this.state.test.title,
+      abstract: this.state.test.description,
+      image: this.state.test.featuredImage,
+      name: this.state.test.title,
+      '@id': location.href,
+      description: this.state.test.description
     }
   }
 

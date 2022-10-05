@@ -226,7 +226,7 @@ class EditQuestionPage extends Component {
               <Wysiwyg editorState={referencesEditorState} onEditorStateChange={this.setReferencesEditorState} addImage={this.addImage} />
             </div>
             <div>
-              <TextField fullWidth label="Canonical" variant="outlined" value={this.state.canonical} onChange={this.handleCanonicalChange} sx={{mt:2}} />
+              <TextField fullWidth label="Canonical" variant="outlined" value={this.state.canonical} onChange={this.handleCanonicalChange} sx={{mt: 2}} />
             </div>
           </Container>
         </main>

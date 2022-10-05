@@ -106,7 +106,7 @@ export default function Heading(props) {
           {type: 'text/css', cssText: 'body {margin:0px} .blog-article p, .blog-article h1, .blog-article h2, .blog-article h3, .blog-article h4, .blog-article ol, .blog-article ul, .blog-article pre, .blog-article span { max-width: 900px; margin: 12px auto; } iframe { max-width: 100%; }'}
         ]}
 
-        link={props.canonical ? [{rel: "canonical", href: props.canonical}] : undefined}
+        link={props.canonical ? [{rel: 'canonical', href: props.canonical}] : undefined}
       />
     </div>
   )
