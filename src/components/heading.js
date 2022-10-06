@@ -99,8 +99,7 @@ export default function Heading(props) {
           {name: 'twitter:image', property: 'twitter:image', content: getImageUrl(props.image) || gitBitImg}
         ]}
         script={[
-          {type: 'application/ld+json', innerHTML: JSON.stringify(jsonLD)},
-          {src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8622067882965868', crossorigin: 'anonymous'}
+          {type: 'application/ld+json', innerHTML: JSON.stringify(jsonLD)}
         ]}
         style={[
           {type: 'text/css', cssText: 'body {margin:0px} .blog-article p, .blog-article h1, .blog-article h2, .blog-article h3, .blog-article h4, .blog-article ol, .blog-article ul, .blog-article pre, .blog-article span { max-width: 900px; margin: 12px auto; } iframe { max-width: 100%; }'}
