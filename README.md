@@ -20,6 +20,11 @@ GitBit was created to help the world get better at securing their Microsoft 365 
 
 Go to https://www.gitbit.org to get started. Or you can jump right into one of our lessons. Or jump right into the practice questions. The practice questions are very similar to the questions you'll find on the MS-500 certification by Microsoft.
 
+To find any deleted files in the previous commit
+```
+git log -n 1 --diff-filter D
+```
+
 ## Lessons
 
 * [What's in this course?](https://www.gitbit.org/course/ms-500/learn/Whats-in-this-course-cpchjBLkC)
