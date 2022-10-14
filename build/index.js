@@ -35,6 +35,7 @@ const build = async () => {
   for (let i = 0; i < pageFiles.length; i++) {
     await buildPage(pageFiles[i])
   }
+  debug('Done building site!')
 }
 
 const deleteDocs = () => {
