@@ -88,7 +88,6 @@ export default function PageHeader() {
                 </Box> :
                 <Box sx={{flexGrow: 1}}>
                   <Button href='/dashboard' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Dashboard</Button>
-                  <Button href='/tests' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>My Tests</Button>
                   <Button href='/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
                 </Box>
               }
@@ -122,11 +121,6 @@ export default function PageHeader() {
               <ListItem disablePadding>
                 <ListItemButton href='/dashboard'>
                   <ListItemText primary="Dashboard" />
-                </ListItemButton>
-              </ListItem>
-              <ListItem disablePadding>
-                <ListItemButton href='/tests'>
-                  <ListItemText primary="My Tests" />
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>

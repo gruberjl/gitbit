@@ -14,7 +14,8 @@ const buildPage = async (pageFile) => {
   debug(`building page: ${pageFile}`)
   global.location = {
     pathname: getPathname(pageFile),
-    href: `https://www.gitbit.org${getPathname(pageFile)}`
+    href: `https://www.gitbit.org${getPathname(pageFile)}`,
+    host: 'https:'
   }
   const jsBundlePath = getOutputPath(pageFile)
   const App = await import(`../${pageFile}`)

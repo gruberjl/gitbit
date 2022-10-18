@@ -9,6 +9,10 @@ export default function Page({children, canonical, title, description, jsonLdTyp
       (window.adsbygoogle = window.adsbygoogle || []).push({})
   }, [])
 
+  if (location.host == 'www.gitbit.org' && window.location.protocol != 'https:')
+    window.location.protocol = 'https:'
+
+
   return (
     <div>
       <Heading canonical={canonical} title={title} description={description} jsonLdType={jsonLdType} image={image} jsonLd={jsonLd} />
