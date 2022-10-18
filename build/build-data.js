@@ -18,12 +18,14 @@ if ( !getApps().length ) {
 const db = admin.firestore()
 
 const run = async () => {
-  debug('buildCourse')
-  const course = await buildCourse()
-  debug('buildQuestions')
-  await buildQuestions()
-  debug('buildContents')
-  await buildContents(course)
+  // debug('buildCourse')
+  // const course = await buildCourse()
+  // debug('buildQuestions')
+  // await buildQuestions()
+  // debug('buildContents')
+  // await buildContents(course)
+  debug('buildTestQuestions')
+  await buildTests()
 }
 
 const buildQuestions = async () => {
@@ -42,6 +44,31 @@ const buildQuestions = async () => {
 
   const contentsRead = dataTemplate.replace('0', stringify(questions))
   fs.writeFileSync('./src/data/questions.js', contentsRead)
+}
+
+const buildTests = async () => {
+  const tests = []
+
+  const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('publish', '==', true).where('type', '==', 'test').get()
+
+  querySnapshot.forEach((doc) => {
+    const test = doc.data()
+    test.id = doc.id
+    delete test.answers
+    Object.keys(test.questions).forEach(questionId => {
+      delete test.questions[questionId].referencesHtml
+      delete test.questions[questionId].questionHtml
+      delete test.questions[questionId].references
+      delete test.questions[questionId].question
+      delete test.questions[questionId].answerOptions
+    })
+    tests.push(test)
+  })
+  console.log(tests[0])
+  const dataTemplate = fs.readFileSync('./src/templates/data.js', 'utf8').toString()
+
+  const contentsRead = dataTemplate.replace('0', stringify(tests))
+  fs.writeFileSync('./src/data/tests.js', contentsRead)
 }
 
 const buildContents = async (course) => {
@@ -64,4 +91,5 @@ const buildCourse = async () => {
   return course
 }
 
+run()
 export default run

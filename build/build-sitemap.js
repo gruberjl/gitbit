@@ -14,6 +14,7 @@ const buildSitemap = async () => {
     .filter(file => file !== './src/pages/course/edit-course.js')
     .filter(file => file !== './src/pages/course/edit-question.js')
     .filter(file => file !== './src/pages/course/edit-test.js')
+    .filter(file => !file.includes('./src/pages/course/ms-500/question'))
 
   const links = pageFiles.map(file => {
     const stats = fs.statSync(file)

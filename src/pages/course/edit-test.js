@@ -155,8 +155,6 @@ class EditContentPage extends Component {
     return () => {
       if (window.confirm(`Are you sure you want to delete the question?`)) {
         const content = clone(this.state.content)
-        console.log(question)
-        console.log(content)
         delete content.questions[question.id]
         delete content.answers[question.id]
         this.setState({content}, () => {

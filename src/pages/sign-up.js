@@ -35,7 +35,6 @@ const SignUpPage = () => {
         })
         .catch((error) => {
           console.log(error.code)
-          console.log(error.message)
           setErr(error.message)
         })
   }

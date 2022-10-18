@@ -110,7 +110,6 @@ class HotArea extends Component {
   deleteAnswerOptionAnswer(answerOption, answer) {
     return () => {
       const question = clone(this.props.question)
-      console.log(question.answerOptions[answerOption.id].answers)
       delete question.answerOptions[answerOption.id].answers[answer.id]
       this.props.setQuestion(question)
     }

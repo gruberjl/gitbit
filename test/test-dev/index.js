@@ -7,7 +7,7 @@ const files = glob.sync('./docs/**/*.html')
   .filter(file => file !== './docs/404.html')
 
 const seoTest = async () => {
-  const errors = new SeoAnalyzer()
+  const errors = await new SeoAnalyzer()
     .inputFiles(files)
     .addRule('titleLengthRule', { min: 10, max: 50 })
     .addRule(aTagWithTrailingSlash)
@@ -39,6 +39,7 @@ const seoTest = async () => {
     //     console.log('Error in SEO in dev environment')
     // })
     testFileSize()
+    await testFilesExist()
 }
 
 function canonicalLinkRule(dom) {
@@ -96,7 +97,7 @@ function aTagWithTrailingSlash(dom) {
   });
 }
 
-const testFileSize = async () => {
+const testFileSize = () => {
   files.forEach(file => {
     const stats = fs.statSync(file)
     if (stats.isFile()) {
@@ -104,6 +105,14 @@ const testFileSize = async () => {
         console.log(`File ${file} is too large. It's ${stats.size / 1000}KB but it should be less than 125KB`)
     }
   })
+}
+
+const testFilesExist = async () => {
+  const srcPages = glob.sync('./src/pages/**/*')
+  for (let i = 0; i < srcPages.length; i++) {
+    const srcPage = srcPages[i]
+    const destPageHtml = srcPage.replace('src/pages', 'docs')
+  }
 }
 
 seoTest()

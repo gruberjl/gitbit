@@ -12,9 +12,7 @@ import Typography from '@mui/material/Typography'
 import {onAuthStateChanged} from '../components/firebase/on-auth-state-changed'
 import {getDoc} from '../components/firebase/get-doc'
 import ContentsRead from '../components/contents-read'
-import MyTests from '../components/my-tests'
 import contents from '../data/contents'
-import Paper from '@mui/material/Paper'
 
 const isBrowser = () => typeof window !== 'undefined'
 
@@ -104,21 +102,6 @@ const DashboardPage = () => {
           <Grid container justifyContent="center">
             <Grid>
               <ContentsRead completedContent={userAcct.completedContent} />
-            </Grid>
-          </Grid>
-          <Grid container>
-            <Grid xs={10}>
-              <Typography variant="h4" component="h2" sx={{mt: 4, mb: 4}}>Practice Tests</Typography>
-            </Grid>
-            <Grid xs={2} justifyContent="end" style={{display: 'flex'}}>
-              <Button href="/tests/new">Start New</Button>
-            </Grid>
-          </Grid>
-          <Grid container justifyContent="center" sx={{pb: 4}}>
-            <Grid>
-              <Paper elevation={3} >
-                <MyTests />
-              </Paper>
             </Grid>
           </Grid>
         </Container>

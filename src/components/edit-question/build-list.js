@@ -98,7 +98,6 @@ class BuildList extends Component {
       answers[ev.item.dataset.answerOptionId].idx = newIdx
     }
 
-    console.log(answers)
     this.props.setAnswers(answers)
   }
 

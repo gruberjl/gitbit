@@ -212,7 +212,6 @@ class EditContents extends Component {
     course.contentOrder = contentOrder
 
     if (!failed) {
-      console.log(course)
       this.setState({course})
       this.saveCourse(course)
     }

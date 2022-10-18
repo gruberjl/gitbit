@@ -69,8 +69,6 @@ class DragDrop extends Component {
   render() {
     const answerOptions = Object.values(this.props.question.answerOptions).filter((answerOption) => !Object.keys(this.props.answers).includes(answerOption.id))
     const questions = Object.values(this.props.question.questions)
-    // console.log(answerOptions)
-    // console.log(this.props.testAnswers[answerOptions[0].id].answerId)
 
     return (
       <Grid container>
