@@ -43,7 +43,7 @@ const jsonLd = {
   '@type': 'Course',
   headline: 'Training for MS-500: Microsoft 365 Security Admin',
   name: 'Training for MS-500: Microsoft 365 Security Administration',
-  description: 'Get Certified in MS-500 Microsoft 365 Security Administration',
+  description: 'Get Certified in MS-500 Microsoft 365 Security Administration. Candidates who pass the exam show they have the skills and expertise required to secure a Microsoft 365 environment.',
   provider: {
     '@type': 'Organization',
     name: 'GitBit',

@@ -40,7 +40,7 @@ const SignUpPage = () => {
   }
 
   return (
-    <Page title={'Sign Up for Gitbit'} description={'Sign up to receive free Microsoft 365 Security Administrator (MS-500) certificate training'} jsonLdType={'WebPage'} image={'/assets/microsoft365-security-administrator-associate-600x600.png'}>
+    <Page title={'Sign Up for Gitbit'} description={'Sign up to receive free Microsoft 365 Security Administrator (MS-500) certificate training. Users can track their progress through the lessons and the tests.'} jsonLdType={'WebPage'} image={'/assets/microsoft365-security-administrator-associate-600x600.png'}>
       <main>
         <Container>
           <Grid container justifyContent="center">

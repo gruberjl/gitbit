@@ -10,6 +10,7 @@ import saveDoc from '../../components/firebase/save-doc'
 import ViewPeople from '../../components/course/view-people'
 import EditCourseTab from '../../components/course/edit-course'
 import EditContents from '../../components/course/edit-contents'
+import EditBlog from '../../components/course/edit-blog'
 
 const isBrowser = () => typeof window !== 'undefined'
 
@@ -88,6 +89,7 @@ class EditCourse extends Component {
                       <Tab label="Edit Course" />
                       <Tab label="View People" />
                       <Tab label="Edit Contents" />
+                      <Tab label="Edit Blog" />
                     </Tabs>
                   </Box>
                   <div role="tabpanel" hidden={this.state.tab !== 0}>
@@ -98,6 +100,9 @@ class EditCourse extends Component {
                   </div>
                   <div role="tabpanel" hidden={this.state.tab !== 2}>
                     <EditContents courseId={this.state.courseId} />
+                  </div>
+                  <div role="tabpanel" hidden={this.state.tab !== 3}>
+                    <EditBlog courseId={this.state.courseId} />
                   </div>
                 </Box>
               </Grid>

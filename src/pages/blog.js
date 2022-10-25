@@ -99,7 +99,7 @@ class BlogArticle extends Component {
 
   render() {
     return (
-      <Page title={'Advice, opinions, and guides on Microsoft 365'} description={'Advice, opinions, and guides on Microsoft 365'} jsonLdType={'WebPage'} image={'/assets/microsoft365-security-administrator-associate-600x600.png'}>
+      <Page title={'Advice, opinions, and guides on Microsoft 365'} description={'Advice, opinions, and guides on Microsoft 365. Learn how to be more productive, as well as, secure a Microsoft 365 tenant.'} jsonLdType={'WebPage'} image={'/assets/microsoft365-security-administrator-associate-600x600.png'}>
         <main style={{backgroundColor: '#F3F6F9'}}>
           <Container className="blog-articles">
             <Grid container spacing={2}>

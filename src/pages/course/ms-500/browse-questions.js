@@ -42,7 +42,7 @@ class BrowseQuestionsPage extends Component {
 
   render() {
     return (
-      <Page title={'Microsoft 365 MS-500 practice test questions'} description={'Microsoft 365 MS-500 practice test questions edit page'} jsonLdType={'WebPage'} image={'/assets/microsoft365-security-administrator-associate-600x600.png'}>
+      <Page title={'Microsoft 365 MS-500 practice test questions'} description={'One of the best ways to prepare for a Microsoft certificate exam is by going through the practice questions.'} jsonLdType={'WebPage'} image={'/assets/microsoft365-security-administrator-associate-600x600.png'}>
         <main>
           <Container>
             <Grid container>
