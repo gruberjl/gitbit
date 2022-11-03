@@ -49,7 +49,7 @@ class EditBlog extends Component {
       description: '',
       featuredImage: '',
       publish: false,
-      publishDate: '',
+      datePublished: '',
       slug: '',
       article: JSON.parse(JSON.stringify(convertToRaw(EditorState.createEmpty().getCurrentContent())))
     }

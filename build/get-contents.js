@@ -29,7 +29,7 @@ const getContents = async (course) => {
   // Test the contents to verify all content is there
   for (let i = 0; i < contents.length; i++) {
     const content = contents[i]
-    if (content.id === '32ubyzyen')
+
     if (content.title === '' || content.title === null) {
       content.error = `Title is blank in ${content.id}`
       console.error(content.error)

@@ -1,6 +1,7 @@
 import {h} from 'preact'
 import Helmet from 'preact-helmet'
 const gitBitImg = '/assets/gitbit-icon-500x500.png'
+import universalStyles from './universal-styles'
 
 const getDescription = (propsDescription) => {
   if (propsDescription) {
@@ -102,7 +103,8 @@ export default function Heading(props) {
           {type: 'application/ld+json', innerHTML: JSON.stringify(jsonLD)}
         ]}
         style={[
-          {type: 'text/css', cssText: 'body {margin:0px} .blog-article p, .blog-article h1, .blog-article h2, .blog-article h3, .blog-article h4, .blog-article ol, .blog-article ul, .blog-article pre, .blog-article span { max-width: 900px; margin: 12px auto; } iframe, img { max-width: 100%; }'}
+          {type: 'text/css', cssText: 'body {margin:0px} .blog-article p, .blog-article h1, .blog-article h2, .blog-article h3, .blog-article h4, .blog-article ol, .blog-article ul, .blog-article pre, .blog-article span { max-width: 900px; margin: 12px auto; } iframe, img { max-width: 100%; }'},
+          {type: 'text/css', cssText: universalStyles}
         ]}
 
         link={props.canonical ? [{rel: 'canonical', href: props.canonical}] : undefined}

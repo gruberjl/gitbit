@@ -18,14 +18,16 @@ if ( !getApps().length ) {
 const db = admin.firestore()
 
 const run = async () => {
-  // debug('buildCourse')
-  // const course = await buildCourse()
-  // debug('buildQuestions')
-  // await buildQuestions()
-  // debug('buildContents')
-  // await buildContents(course)
+  debug('buildCourse')
+  const course = await buildCourse()
+  debug('buildQuestions')
+  await buildQuestions()
+  debug('buildContents')
+  await buildContents(course)
   debug('buildTestQuestions')
   await buildTests()
+  debug('buildBlogArticles')
+  await buildBlogArticles()
 }
 
 const buildQuestions = async () => {
@@ -64,7 +66,7 @@ const buildTests = async () => {
     })
     tests.push(test)
   })
-  console.log(tests[0])
+
   const dataTemplate = fs.readFileSync('./src/templates/data.js', 'utf8').toString()
 
   const contentsRead = dataTemplate.replace('0', stringify(tests))
@@ -89,6 +91,29 @@ const buildCourse = async () => {
   fs.writeFileSync('./src/data/course.js', contentsRead)
 
   return course
+}
+
+const buildBlogArticles = async () => {
+  const querySnapshot = await db.collection("courses").doc('MS-500').collection('blog').where('publish', '==', true).get()
+  const articles = []
+
+  querySnapshot.forEach((doc) => {
+    const article = doc.data()
+    delete article.article
+    articles.push(article)
+  })
+
+  const sortedArticles = articles.sort((a, b) => {
+    const aComps = a.datePublished.split("/")
+    const bComps = b.datePublished.split("/")
+    const aDate = new Date(aComps[0], aComps[1], aComps[2])
+    const bDate = new Date(bComps[0], bComps[1], bComps[2])
+    return bDate.getTime() - aDate.getTime()
+  })
+
+  const dataTemplate = fs.readFileSync('./src/templates/data.js', 'utf8').toString()
+  const contentsRead = dataTemplate.replace('0', stringify(sortedArticles))
+  fs.writeFileSync('./src/data/ms500-blog-articles.js', contentsRead)
 }
 
 run()

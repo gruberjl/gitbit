@@ -119,7 +119,7 @@ class BlogArticle extends Component {
                           <Typography gutterBottom variant="h5" component="div" sx={{mt: 4, mb: 4}}>{article.title}</Typography>
                           <Typography variant="body2" color="text.secondary">{article.description}</Typography>
                           <CardActions>
-                            <Button size="small" color="primary" href="/tests/new">Read more</Button>
+                            <Button size="small" color="primary" href={`/blog/${article.gitbitURL}`}>Read more</Button>
                           </CardActions>
                         </CardContent>
                       </CardActionArea>

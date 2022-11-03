@@ -69,7 +69,7 @@ class EditBlogPage extends Component {
         description: '',
         featuredImage: '',
         publish: false,
-        publishDate: '',
+        datePublished: '',
         slug: ''
       },
       courseId: params.get('courseId'),
