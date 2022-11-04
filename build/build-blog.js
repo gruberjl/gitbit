@@ -19,7 +19,7 @@ if ( !getApps().length ) {
 const db = admin.firestore()
 const template = fs.readFileSync('./src/templates/blog-article.js', 'utf8').toString()
 
-const buildLearnArticles = async () => {
+const buildBlogArticles = async () => {
   debug('deleteBlogArticles')
   deleteBlogArticles()
   const articles = []
@@ -69,5 +69,4 @@ const deleteBlogArticles = () => {
   fs.mkdirSync('./src/pages/course/ms-500/blog')
 }
 
-export default buildLearnArticles
-buildLearnArticles()
+export default buildBlogArticles

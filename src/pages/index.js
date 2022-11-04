@@ -120,7 +120,7 @@ const IndexPage = () => {
           </Container>
         </div>
         <div style={secondaryLanding}>
-          <Container>
+          <Container style={margin100}>
             <Grid container style={paddingBottom32px}>
               <Grid item>
                 <Typography variant="h4" component="h2">What you'll learn</Typography>
@@ -150,10 +150,10 @@ const IndexPage = () => {
             </Grid>
             <Grid item>
               <ul>
-                <Typography variant="h5" component="h3"><li style={margin12px}>Basic knowledge of Windows 10 devices</li></Typography>
-                <Typography variant="h5" component="h3"><li style={margin12px}>Basic understanding of Office 365</li></Typography>
-                <Typography variant="h5" component="h3"><li style={margin12px}>Simple understanding of authorization and authentication</li></Typography>
-                <Typography variant="h5" component="h3"><li style={margin12px}>Basic understanding of computer networking</li></Typography>
+                <li style={margin12px}><Typography variant="span" component="h3">Basic knowledge of Windows 10 devices</Typography></li>
+                <li style={margin12px}><Typography variant="span" component="h3">Basic understanding of Office 365</Typography></li>
+                <li style={margin12px}><Typography variant="span" component="h3">Simple understanding of authorization and authentication</Typography></li>
+                <li style={margin12px}><Typography variant="span" component="h3">Basic understanding of computer networking</Typography></li>
               </ul>
             </Grid>
           </Grid>

@@ -1,18 +1,8 @@
 /* eslint react/jsx-no-undef: "off", no-tabs: "off", no-irregular-whitespace: "off" */
 import {h, Component} from 'preact'
 import Page from '../../../../components/page'
-import ContentsRead from '../../../../components/contents-read'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
-import {getDoc} from '../../../../components/firebase/get-doc'
-import saveDoc from '../../../../components/firebase/save-doc'
-import {onAuthStateChanged} from '../../../../components/firebase/on-auth-state-changed'
-import ArrowBackIos from '@mui/icons-material/ArrowBackIos'
-import ArrowForwardIos from '@mui/icons-material/ArrowForwardIos'
-import Box from '@mui/material/Box'
-
-const isBrowser = () => typeof window !== 'undefined'
 
 const marginTop24Style = {
   marginTop: '24px'

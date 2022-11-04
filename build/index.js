@@ -10,6 +10,7 @@ import buildQuestionPages from './build-question-pages'
 import buildLearnArticles from './build-learn-articles'
 import buildFeeds from './build-feeds'
 import buildTestPages from './build-test-pages'
+import buildBlog from './build-blog'
 const debug = require('debug')('gitbit:build')
 
 const build = async () => {
@@ -24,17 +25,19 @@ const build = async () => {
   debug(`deleteDocs`)
   deleteDocs()
   debug(`buildRoot`)
-  buildRoot()
-  debug('buildFeeds')
-  buildFeeds()
-  debug(`buildSitemap`)
-  buildSitemap()
+  await buildRoot()
+  debug('buildBlog')
+  await buildBlog()
 
   const pageFiles = glob.sync('./src/pages/**/*.js')
 
   for (let i = 0; i < pageFiles.length; i++) {
     await buildPage(pageFiles[i])
   }
+  debug('buildFeeds')
+  await buildFeeds()
+  debug(`buildSitemap`)
+  await buildSitemap()
   debug('Done building site!')
 }
 

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://www.gitbit.org/course/ms-500/blog</id>
+    <title>Gitbit - Microsoft 365 security</title>
+    <updated>2022-11-04T15:15:40.848Z</updated>
+    <generator>GitBit</generator>
+    <author>
+        <name>John Gruber</name>
+        <email>John.Gruber@gitbit.org</email>
+        <uri>https://www.gitbit.org</uri>
+    </author>
+    <link rel="alternate" href="https://www.gitbit.org/course/ms-500/blog"/>
+    <link rel="self" href="https://www.gitbit.org/course/ms-500/blog/atom-feed.xml"/>
+    <subtitle>Read the latest news, guides, and how to articles on securing Microsoft 365.</subtitle>
+    <logo>https://www.gitbit.org/assets/gitbit-icon-1200x1200.png</logo>
+    <icon>https://www.gitbit.org/favicon-32x32.png</icon>
+    <rights>All rights reserved 2022, John Gruber</rights>
+    <category term="Technology"/>
+    <contributor>
+        <name>John Gruber</name>
+        <email>John.Gruber@gitbit.org</email>
+        <uri>https://www.gitbit.org</uri>
+    </contributor>
+    <entry>
+        <title type="html"><![CDATA[Error connecting Windows 10 computer to Microsoft 365. Error code: 80180014]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o"/>
+        <updated>2022-10-31T04:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Error when attempting to join a Windows 10 computer to Azure AD / Intune. Error code: 80180014 Your account was not set up on this device because device management could not be enabled. This device might not be able to access some resources, such as Wi-Fi, VPN, or email.]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
+</feed>

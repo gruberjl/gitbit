@@ -1,4 +1,4 @@
-import {h, Component} from 'preact'
+import {h} from 'preact'
 import Page from '../../../components/page'
 import Container from '@mui/material/Container'
 import Grid from '@mui/material/Grid'

@@ -1,0 +1,25 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "Gitbit - Microsoft 365 security",
+    "home_page_url": "https://www.gitbit.org/course/ms-500/blog",
+    "feed_url": "https://www.gitbit.org/course/ms-500/blog/json-feed.json",
+    "description": "Read the latest news, guides, and how to articles on securing Microsoft 365.",
+    "icon": "https://www.gitbit.org/assets/gitbit-icon-1200x1200.png",
+    "author": {
+        "name": "John Gruber",
+        "url": "https://www.gitbit.org"
+    },
+    "items": [
+        {
+            "id": "https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o",
+            "url": "https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o",
+            "title": "Error connecting Windows 10 computer to Microsoft 365. Error code: 80180014",
+            "summary": "Error when attempting to join a Windows 10 computer to Azure AD / Intune. Error code: 80180014 Your account was not set up on this device because device management could not be enabled. This device might not be able to access some resources, such as Wi-Fi, VPN, or email.",
+            "date_modified": "2022-10-31T04:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        }
+    ]
+}

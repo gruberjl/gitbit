@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Gitbit - Microsoft 365 security</title>
+        <link>https://www.gitbit.org/course/ms-500/blog</link>
+        <description>Read the latest news, guides, and how to articles on securing Microsoft 365.</description>
+        <lastBuildDate>Fri, 04 Nov 2022 15:15:40 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>GitBit</generator>
+        <language>en</language>
+        <image>
+            <title>Gitbit - Microsoft 365 security</title>
+            <url>https://www.gitbit.org/assets/gitbit-icon-1200x1200.png</url>
+            <link>https://www.gitbit.org/course/ms-500/blog</link>
+        </image>
+        <copyright>All rights reserved 2022, John Gruber</copyright>
+        <category>Technology</category>
+        <item>
+            <title><![CDATA[Error connecting Windows 10 computer to Microsoft 365. Error code: 80180014]]></title>
+            <link>https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o</link>
+            <guid>https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o</guid>
+            <pubDate>Mon, 31 Oct 2022 04:00:00 GMT</pubDate>
+            <description><![CDATA[Error when attempting to join a Windows 10 computer to Azure AD / Intune. Error code: 80180014 Your account was not set up on this device because device management could not be enabled. This device might not be able to access some resources, such as Wi-Fi, VPN, or email.]]></description>
+            <author>John.Gruber@gitbit.org (John Gruber)</author>
+        </item>
+    </channel>
+</rss>

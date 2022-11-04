@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitbit.org</id>
     <title>Training for MS-500: Microsoft Office 365 Security Admin</title>
-    <updated>2022-11-03T21:55:40.332Z</updated>
+    <updated>2022-11-04T15:15:40.831Z</updated>
     <generator>GitBit</generator>
     <author>
         <name>John Gruber</name>
@@ -11,8 +11,8 @@
     </author>
     <link rel="alternate" href="https://www.gitbit.org/blog"/>
     <link rel="self" href="https://www.gitbit.org/feed/atom.xml"/>
-    <subtitle>Learn, prepare and training for the Microsoft Microsoft Office 365 Exam MS-500: Microsoft 365 Security Administration MS-500 exam</subtitle>
-    <logo>https://www.gitbit.org/images/gitbit-logo-1200x675.png</logo>
+    <subtitle>Read the latest news, guides, and how to articles on securing Microsoft 365.</subtitle>
+    <logo>https://www.gitbit.org/assets/gitbit-icon-1200x1200.png</logo>
     <icon>https://www.gitbit.org/favicon-32x32.png</icon>
     <rights>All rights reserved 2021, John Gruber</rights>
     <category term="Technology"/>
