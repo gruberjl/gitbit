@@ -8,6 +8,10 @@ Go to https://www.gitbit.org to get started. Or you can jump right into one of o
 
 INSERT_LESSONS_HERE
 
-## MS-500 Practice Questions
+## MS-500 Practice Tests and questions
+
+INSERT_TEST_QUESTIONS_HERE
+
+## Old MS-500 Practice Questions
 
 INSERT_QUESTIONS_HERE

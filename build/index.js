@@ -11,6 +11,7 @@ import buildLearnArticles from './build-learn-articles'
 import buildFeeds from './build-feeds'
 import buildTestPages from './build-test-pages'
 import buildBlog from './build-blog'
+import buildReadMe from './build-readme'
 const debug = require('debug')('gitbit:build')
 
 const build = async () => {
@@ -22,6 +23,8 @@ const build = async () => {
   await buildLearnArticles()
   debug('buildTestPages')
   await buildTestPages()
+  debug('buildReadMe')
+  await buildReadMe()
   debug(`deleteDocs`)
   deleteDocs()
   debug(`buildRoot`)

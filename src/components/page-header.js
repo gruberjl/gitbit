@@ -83,12 +83,12 @@ export default function PageHeader() {
               </a>
               { uid == '' ?
                 <Box sx={{flexGrow: 1}}>
-                  <Button href='/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
+                  <Button href='/course/ms-500/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
                   <Button href='/course/ms-500/learn/Whats-in-this-course-cpchjBLkC' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>First lesson</Button>
                 </Box> :
                 <Box sx={{flexGrow: 1}}>
                   <Button href='/dashboard' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Dashboard</Button>
-                  <Button href='/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
+                  <Button href='/course/ms-500/blog' sx={{my: 2, color: 'white', display: {xs: 'none', md: 'inline-flex'}}}>Blog</Button>
                 </Box>
               }
               { uid ?
@@ -112,7 +112,7 @@ export default function PageHeader() {
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton href='/blog'>
+                <ListItemButton href='/course/ms-500/blog'>
                   <ListItemText primary="Blog" />
                 </ListItemButton>
               </ListItem>
@@ -124,7 +124,7 @@ export default function PageHeader() {
                 </ListItemButton>
               </ListItem>
               <ListItem disablePadding>
-                <ListItemButton href='/blog'>
+                <ListItemButton href='/course/ms-500/blog'>
                   <ListItemText primary="Blog" />
                 </ListItemButton>
               </ListItem>
