@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitbit.org/course/ms-500/blog</id>
     <title>Gitbit - Microsoft 365 security</title>
-    <updated>2022-11-12T07:00:01.650Z</updated>
+    <updated>2022-11-14T14:38:59.799Z</updated>
     <generator>GitBit</generator>
     <author>
         <name>John Gruber</name>
@@ -21,6 +21,18 @@
         <email>John.Gruber@gitbit.org</email>
         <uri>https://www.gitbit.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[14 steps to fix a hacked Microsoft 365 account]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc"/>
+        <updated>2022-11-12T05:00:00.000Z</updated>
+        <summary type="html"><![CDATA[14 steps to fix a compromised Microsoft 365 account. How to lock out the intruder and harden the account so it doesn't happen again.]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[Error connecting Windows 10 computer to Microsoft 365. Error code: 80180014]]></title>
         <id>https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o</id>

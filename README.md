@@ -6,8 +6,6 @@ Go to https://www.gitbit.org to get started. Or you can jump right into one of o
 
 ## Lessons
 
-* [Error in Autopilot: Device preparation failed. Preparing your device for mobile management (0x800705b4)](https://www.gitbit.org/course/ms-500/learn/error-in-autopilot-device-preparation-failed-preparing-your-device-for-mobile-management-0x800705b4-hzp4wlq9q)
-* [Error connecting Windows 10 computer to Microsoft 365. Error code: 80180014](https://www.gitbit.org/course/ms-500/learn/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o)
 * [Is the MS-500 worth it?](https://www.gitbit.org/course/ms-500/learn/Whats-in-this-course-cpchjBLkC)
 * [Creating a free Microsoft 365 tenant for practice](https://www.gitbit.org/course/ms-500/learn/Creating-a-free-Microsoft-365-tenant-for-practice-KKkBOVuS4)
 * [Managing the Microsoft 365 tenant - Introduction to the admin centers](https://www.gitbit.org/course/ms-500/learn/Managing-the-Microsoft-365-tenant-Introduction-to-the-admin-centers-bzotoOjEe)
