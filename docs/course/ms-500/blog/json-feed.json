@@ -11,6 +11,17 @@
     },
     "items": [
         {
+            "id": "https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n",
+            "url": "https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n",
+            "title": "The Anatomy of Great Phishing Emails",
+            "summary": "Everything you need to know about the anatomy of a great phishing email, with insights from a cybersecurity expert. We'll walk you through exactly what a hacker will do to track your users into giving up access to their accounts",
+            "date_modified": "2022-11-16T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
             "id": "https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc",
             "url": "https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc",
             "title": "14 steps to fix a hacked Microsoft 365 account",

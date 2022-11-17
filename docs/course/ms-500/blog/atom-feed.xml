@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitbit.org/course/ms-500/blog</id>
     <title>Gitbit - Microsoft 365 security</title>
-    <updated>2022-11-16T03:05:24.884Z</updated>
+    <updated>2022-11-16T04:31:17.122Z</updated>
     <generator>GitBit</generator>
     <author>
         <name>John Gruber</name>
@@ -21,6 +21,18 @@
         <email>John.Gruber@gitbit.org</email>
         <uri>https://www.gitbit.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[The Anatomy of Great Phishing Emails]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n"/>
+        <updated>2022-11-16T05:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Everything you need to know about the anatomy of a great phishing email, with insights from a cybersecurity expert. We'll walk you through exactly what a hacker will do to track your users into giving up access to their accounts]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[14 steps to fix a hacked Microsoft 365 account]]></title>
         <id>https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc</id>
