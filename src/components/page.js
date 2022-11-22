@@ -2,8 +2,9 @@ import {h} from 'preact'
 import {useEffect} from 'preact/hooks'
 import Heading from './heading'
 import PageHeader from './page-header'
+import Footer from './footer'
 
-export default function Page({children, canonical, title, description, jsonLdType, image, jsonLd}) {
+export default function Page({children, canonical, title, description, jsonLdType, image, jsonLd, footerMargin}) {
   useEffect(() => {
     if (window)
       (window.adsbygoogle = window.adsbygoogle || []).push({})
@@ -19,6 +20,7 @@ export default function Page({children, canonical, title, description, jsonLdTyp
       <PageHeader />
       {children}
       <ins class="adsbygoogle" data-ad-client="ca-pub-8622067882965868" />
+      <Footer footerMargin={footerMargin} />
     </div>
   )
 }

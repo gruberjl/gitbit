@@ -82,7 +82,7 @@ const IndexPage = () => {
   }, [])
 
   return (
-    <Page jsonLdType={'Course'} jsonLd={jsonLd} image={certImg} canonical={'https://www.gitbit.org'} title={'Training for Microsoft 365 Security Administration certificate (MS-500)'} description={'Get Certified in MS-500 Microsoft 365 Security Administration'}>
+    <Page jsonLdType={'Course'} jsonLd={jsonLd} image={certImg} canonical={'https://www.gitbit.org'} title={'Training for Microsoft 365 Security Administration certificate (MS-500)'} description={'Get Certified in MS-500 Microsoft 365 Security Administration'} footerMargin='0px'>
       <main>
         <div style={landingStyles}>
           <Container>
