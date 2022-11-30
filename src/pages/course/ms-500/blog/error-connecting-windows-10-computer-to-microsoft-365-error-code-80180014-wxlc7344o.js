@@ -50,29 +50,29 @@ class ArticlePage extends Component {
                   <p>Something went wrong</p>
                   <p>Your account was not set up on this device because device management could not be enabled. This device might not be able to access some resources, such as Wi-Fi, VPN, or email.</p>
                   <p>Error code: 80180014</p>
-                  <img src="https://i.ibb.co/XkNsKC7/something-went-wrong.png" alt="Your account was not set up on this device because device management could not be enabled. This device might not be able to access some resources, such as Wi-Fi, VPN, or email." style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/XkNsKC7/something-went-wrong.png" alt="Your account was not set up on this device because device management could not be enabled. This device might not be able to access some resources, such as Wi-Fi, VPN, or email." />
                   <p>Checking the event logs I found the following errors under the <strong>Application and Services/Microsoft/Windows/DeviceManagement-Enterprise-Diagnostics-Provider/Admin</strong> logs</p>
                   <h3>Event Logs Error 59</h3>
                   <p><strong>Description</strong>: MDM Enroll: Server context (fbe3f930-53a0-422b-a23d-1d3a363ef106).</p>
                   <p><strong>Event ID</strong>: 59</p>
-                  <img src="https://i.ibb.co/0cP5gK9/event-id-59.png" alt="Event Log Error Event ID: 59 MDM Enroll: Server context" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/0cP5gK9/event-id-59.png" alt="Event Log Error Event ID: 59 MDM Enroll: Server context" />
                   <h3>Event Logs Error 52</h3>
                   <p><strong>Description</strong>: MDM Enroll: Server Returned Fault/Code/Subcode/Value=(DeviceNotSupported) Fault/Reason/Text=(Autopilot device not allowed to enroll for management using WPJ).</p>
                   <p><strong>Event ID</strong>: 52</p>
-                  <img src="https://i.ibb.co/ZKLjRQQ/event-id-52.png" alt="Event Log Error 52 MDM Enroll: Server Returned Fault/Code/Subcode/Value=(DeviceNotSupported) Fault/Reason/Text=(Autopilot device not allowed to enroll for management using WPJ)." style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/ZKLjRQQ/event-id-52.png" alt="Event Log Error 52 MDM Enroll: Server Returned Fault/Code/Subcode/Value=(DeviceNotSupported) Fault/Reason/Text=(Autopilot device not allowed to enroll for management using WPJ)." />
                   <h3>Event Logs Error 11</h3>
                   <p><strong>Description</strong>: MDM Enroll: Failed to receive or parse certificate enroll response. Result: (Unknown Win32 Error code: 0x80180014).</p>
                   <p><strong>Event ID</strong>:11</p>
                   <p />
-                  <img src="https://i.ibb.co/ryhXVY2/event-id-11.png" alt="Event Log Error 11: MDM Enroll: Failed to receive or parse certificate enroll response. Result: (Unknown Win32 Error code: 0x80180014)." style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/ryhXVY2/event-id-11.png" alt="Event Log Error 11: MDM Enroll: Failed to receive or parse certificate enroll response. Result: (Unknown Win32 Error code: 0x80180014)." />
                   <h3>Event Logs Error 71</h3>
                   <p><strong>Description</strong>: MDM Enroll: Failed (Unknown Win32 Error code: 0x80180014)</p>
                   <p><strong>Event ID</strong>: 71</p>
                   <p />
-                  <img src="https://i.ibb.co/G36FbYH/event-id-71.png" alt="Event Log Error 71 MDM Enroll: Failed (Unknown Win32 Error code: 0x80180014)" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/G36FbYH/event-id-71.png" alt="Event Log Error 71 MDM Enroll: Failed (Unknown Win32 Error code: 0x80180014)" />
                   <h2>Reproduce the issue</h2>
                   <p>Reproducing the error was easy.</p>
-                  <img src="https://i.ibb.co/K2q6qYY/Steps-to-reproduce-Error-80180014.png" alt="Steps to reproduce Error 80180014" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/K2q6qYY/Steps-to-reproduce-Error-80180014.png" alt="Steps to reproduce Error 80180014" />
                   <ol>
                     <li>Go to <strong>Start </strong>&gt; <strong>Settings</strong></li>
                     <li>Click <strong>Accounts </strong>&gt; <strong>Access work or school</strong> &gt; <strong>Connect</strong></li>
@@ -81,14 +81,14 @@ class ArticlePage extends Component {
                   </ol>
                   <h2>Resolution</h2>
                   <h3>Get the serial number from the computer</h3>
-                  <img src="https://i.ibb.co/JKtBhVJ/get-serial-number-from-computer.png" alt="How to get the serial number from a Windows 10 computer" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/JKtBhVJ/get-serial-number-from-computer.png" alt="How to get the serial number from a Windows 10 computer" />
                   <ol>
                     <li>Open the <strong>start menu</strong> and type <strong>cmd</strong>. Click <strong>Command Prompt</strong>.</li>
                     <li>Type <strong>wmic bios get serialnumber </strong>and click <strong>Enter</strong>.</li>
                     <li>Copy down the response. In my picture above it's "6253-0645-3289-4085-2519-4291-09"</li>
                   </ol>
                   <h3>Delete the device from Intune</h3>
-                  <img src="https://i.ibb.co/xL3X9Fx/Delete-device-from-Intune.png" alt="How to delete a device from Intune" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/xL3X9Fx/Delete-device-from-Intune.png" alt="How to delete a device from Intune" />
                   <p />
                   <ol>
                     <li>Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Devices </strong>&gt; <strong>Windows</strong>.</li>
@@ -96,7 +96,7 @@ class ArticlePage extends Component {
                     <li>Click <strong>Delete </strong>&gt; <strong>Yes</strong></li>
                   </ol>
                   <h3>Delete the device from Windows Enrollment</h3>
-                  <img src="https://i.ibb.co/b1XG7N4/Delete-device-from-autopilot.png" alt="How to delete a device from autopilot" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/b1XG7N4/Delete-device-from-autopilot.png" alt="How to delete a device from autopilot" />
                   <ol>
                     <li>Login using your admin credentials to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Devices</strong> &gt; <strong>Windows </strong>&gt; <strong>Windows enrollment</strong> &gt; <strong>Devices</strong>.</li>
                     <li>Search for the device serial number you found in step 3 above. (In my example it's 6253-0645-3289-4085-2519-4291-09).</li>

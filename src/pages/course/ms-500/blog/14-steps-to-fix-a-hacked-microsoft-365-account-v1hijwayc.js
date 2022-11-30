@@ -44,7 +44,7 @@ class ArticlePage extends Component {
                 <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p />
-                  <img src="https://i.ibb.co/syxtrK4/14-steps-to-fix-a-hacked-Microsoft-365-account.png" alt="14 steps to fix a hacked Microsoft 365 account" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/syxtrK4/14-steps-to-fix-a-hacked-Microsoft-365-account.png" alt="14 steps to fix a hacked Microsoft 365 account" />
                   <p>The first 6 steps are all about getting the malicious actor out of the account. The next 5 steps are all about undoing the damage that was done to your Microsoft 365 tenant. The final 3 steps are all about hardening the account so it doesn't happen again. Here's a quick checklist you can use to lock out the hacker. Then you can scroll down to the appropriate section to learn how / why to perform the steps.</p>
                   <ol>
                     <li>Reset account password</li>
@@ -71,7 +71,7 @@ class ArticlePage extends Component {
                     <li>Click <strong>Reset password</strong>.</li>
                     <li>Set the password/options as you feel fit and click <strong>Reset password</strong>.</li>
                   </ol>
-                  <img src="https://i.ibb.co/VSK8ZhQ/reset-user-password.png" alt="Reset a user's password" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/VSK8ZhQ/reset-user-password.png" alt="Reset a user's password" />
                   <h2>&nbsp;2. Sign out of all sessions</h2>
                   <p>In short, a session is created every time a user signs into Microsoft 365 on any device/app. What happens is the user will provide the username/password. Microsoft will authorize the connection and then create a session. The device or app will receive an identifying key. Microsoft 365 will hold that key on their end to authorize the app every time the app wants to interact with Microsoft 365. That way the app doesn't need to send the password every time it is communicating with Microsoft 365. Disconnecting all the user's sessions will require the user to sign in on all their devices and apps again.</p>
                   <ol>
@@ -80,7 +80,7 @@ class ArticlePage extends Component {
                     <li>Click the <strong>Display name</strong> of the account.</li>
                     <li>Click Sign out of all sessions.</li>
                   </ol>
-                  <img src="https://i.ibb.co/kGz1T0n/sign-out-all-sessions.png" alt="Sign out of all sessions" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/kGz1T0n/sign-out-all-sessions.png" alt="Sign out of all sessions" />
                   <h2>3. Remove the account from admin roles</h2>
                   <p>Next, we may want to remove the account from any admin roles. It's good practice to temporarily remove the account from any admin roles until you are 100% sure the compromised account is no longer accessed by the hacker.</p>
                   <ol>
@@ -89,17 +89,17 @@ class ArticlePage extends Component {
                     <li>Click the <strong>Display name</strong> of the account.</li>
                     <li>Click <strong>Manage roles</strong> &gt; <strong>User (no admin center access)</strong> &gt; <strong>Save changes</strong>.</li>
                   </ol>
-                  <img src="https://i.ibb.co/0t9Cr5Z/remove-admin-roles.png" alt="Remove admin roles from the hacked account" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/0t9Cr5Z/remove-admin-roles.png" alt="Remove admin roles from the hacked account" />
                   <h2>4. Re-enroll in MFA</h2>
                   <p>If you have MFA enabled for the user you may want to re-enroll the devices or at least review the devices and make sure they are the user's devices. In short, once a malicious user has access to the user's Microsoft 365 account they can enroll their own devices and possibly reset the password after you've changed the password. So go to the user's MFA authentication methods and sit down with the user and ask if that's their authentication method.</p>
                   <ol>
                     <li>Go to <strong>Azure Active Directory</strong> &gt; <a href="https://aad.portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers" target="_self"><strong>Users</strong></a>. Search for the user, then click the <strong>user's display name</strong>.</li>
                     <li>Click <strong>Authentication methods</strong> then view the user's authentication methods.</li>
                   </ol>
-                  <img src="https://i.ibb.co/9HfSNqz/authentication-methods.png" alt="Microsoft 365 authentication methods" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/9HfSNqz/authentication-methods.png" alt="Microsoft 365 authentication methods" />
                   <h2>5. Check for enterprise apps authorized for the user</h2>
                   <p>Another way a malicious actor may retain access to your user's Microsoft 365 account is through enterprise apps. In short, once a person has access to the account they may register the user for a malicious enterprise app that the hacker can use to retain access to the account after the password reset. So we'll need to review the registered apps for the user.</p>
-                  <img src="https://i.ibb.co/pRL17ch/remove-enterprise-apps.png" alt="Remove any enterprise apps the hacker may have registered" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/pRL17ch/remove-enterprise-apps.png" alt="Remove any enterprise apps the hacker may have registered" />
                   <ol>
                     <li>Go to <strong>Azure Active Directory</strong> &gt; <a href="https://aad.portal.azure.com/#view/Microsoft_AAD_UsersAndTenants/UserManagementMenuBlade/~/AllUsers" target="_self"><strong>Users</strong></a> &gt; <strong>Search</strong> for then <strong>click </strong>the <strong>user's name</strong>.</li>
                     <li>Click <strong>Applications</strong>.</li>
@@ -113,7 +113,7 @@ class ArticlePage extends Component {
                   <h2>7. Review mailbox inbox rules</h2>
                   <p>One this hackers like to do once they gain access to one of your mailboxes is send a lot of phishing/spam emails. Of course, sending these emails will return a lot of undeliverable emails and emails from recipients saying things like "Is this legit?". So One of the ways hackers found to cover their tracks is by creating a mail flow rule that will automatically delete any emails the user receives. There are 2 ways to check for the rules, using the GUI or using PowerShell. Typically, people find the GUI to be more readable so we'll use that route below. First, you'll need to grant yourself full access to the mailbox. Then, you'll need to check for the inbox rules. Finally, you'll need to remove your full access to the mailbox.</p>
                   <h3>Grant yourself admin rights to the mailbox</h3>
-                  <img src="https://i.ibb.co/y6HcKyw/delegate-admin-rights-to-microsoft-365.png" alt="How to delegate Microsoft 365 mailbox rights to yourself" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/y6HcKyw/delegate-admin-rights-to-microsoft-365.png" alt="How to delegate Microsoft 365 mailbox rights to yourself" />
                   <ol>
                     <li>Open the <strong>Exchange admin center</strong> &gt; <strong>Recipients </strong>&gt; <a href="https://admin.exchange.microsoft.com/#/mailboxes" target="_self"><strong>Mailboxes</strong></a>.</li>
                     <li><strong>Search </strong>for and <strong>click</strong> the <strong>Display Name</strong> of the user that's been compromised.</li>
@@ -121,7 +121,7 @@ class ArticlePage extends Component {
                     <li>Click <strong>Add members</strong> &gt; Click the <strong>checkbox </strong>next to your <strong>admin account</strong>. Click <strong>Save</strong>.</li>
                   </ol>
                   <h3>Check the inbox rules</h3>
-                  <img src="https://i.ibb.co/hVbJgRK/delete-inbox-rules.png" alt="Delete the malicious inbox rules" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/hVbJgRK/delete-inbox-rules.png" alt="Delete the malicious inbox rules" />
                   <ol>
                     <li>Open <a href="https://outlook.office.com/mail/" target="_self">Outlook OWA</a> &gt; Click your <strong>profile icon</strong> in the top right. Click <strong>Open another mailbox</strong>.</li>
                     <li>Type the user's <strong>display name</strong> in the box provided. Click the <strong>user </strong>that appears in the <strong>dropdown</strong>. Click <strong>Open</strong>.</li>
@@ -131,7 +131,7 @@ class ArticlePage extends Component {
                   <p>Before you remove your delegated permissions you should check for mail forwarding. The steps are below.</p>
                   <h2>8. Review mail forwarding</h2>
                   <p>Another thing hackers like to do when they gain access to your mailbox is set up mail forwarding. In short, they may use your account to send phishing attacks to other organizations and request information from other people. So we'll need to disable any mail forwarding the hacker has set up.</p>
-                  <img src="https://i.ibb.co/D92rF5W/disable-mail-forwarding.png" alt="Disable mail forwarding in Microsoft 365 OWA" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/D92rF5W/disable-mail-forwarding.png" alt="Disable mail forwarding in Microsoft 365 OWA" />
                   <ol>
                     <li>Open <a href="https://outlook.office.com/mail/" target="_self">Outlook OWA</a> &gt; Click your <strong>profile icon</strong> in the top right. Click <strong>Open another mailbox</strong>.</li>
                     <li>Type the user's <strong>display name</strong> in the box provided. Click the <strong>user </strong>that appears in the <strong>dropdown</strong>. Click <strong>Open</strong>.</li>
@@ -143,7 +143,7 @@ class ArticlePage extends Component {
                   <p>In short, you'll need to move any emails that were deleted or moved to another folder back to the original location. Typically, the original location is the inbox but I'd recommend checking with the user to see if anything else moved or is out of place.</p>
                   <h2>10. Review audit logs to see if the malicious actor did anything else</h2>
                   <p>Typically, performing everything above is a good measure to undo the damage and access to the malicious user but you never know. Take a quick gander at the audit logs to verify. Especially, if the user account that was compromised was an admin account. The hacker may have dropped in another account and assigned an admin role to it!</p>
-                  <img src="https://i.ibb.co/9GxtgBs/run-an-audit-log-search.png" alt="Run an audit log search in Microsoft 365" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/9GxtgBs/run-an-audit-log-search.png" alt="Run an audit log search in Microsoft 365" />
                   <ol>
                     <li>Go to the <strong>Microsoft 365 Defender admin center</strong> &gt; <a href="https://security.microsoft.com/auditlogsearch" target="_self"><strong>Audit</strong></a>.</li>
                     <li>Type the <strong>user's name</strong> in the <strong>Users</strong> box. Click the <strong>user </strong>in the <strong>drop-down</strong>.</li>
@@ -161,7 +161,7 @@ class ArticlePage extends Component {
                   <p>If MFA isn't already enabled I would recommend it. It's a great second line of defense in case a user has their password stolen. There are several ways to enable MFA in a tenant / for a user in Microsoft 365. That's already covered in <a href="https://www.gitbit.org/course/ms-500/learn/The-many-ways-to-implement-multi-factor-authentication-MFA-in-Microsoft-365-nAAIvNbtk" target="_self">The many ways to implement multi-factor authentication (MFA) in Microsoft 365</a>. So I won't go into detail about it. But you really should consider enabling MFA.</p>
                   <h2>13. Review email apps and change availability</h2>
                   <p>Next up on the list of hardening your environment, is disabling unused email apps. What happens a lot of times is the hacker will gain entry into the user's mailbox and then set up an IMAP or a POP connection to the mailbox to send out the spam/phishing emails to everyone else. Assuming your users are using the browser or a modern application, for example, Outlook then we can go ahead and disable those email apps. You can disable the email apps using a conditional access policy but I didn't want to write a book so I'm going to show you how to disable it for a user. I'll write another article on conditional access policies that will have that listed so stay tuned!</p>
-                  <img src="https://i.ibb.co/f21pWzc/Disable-email-app-access-to-exchange-online.png" alt="Disable email app access to exchange online" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/f21pWzc/Disable-email-app-access-to-exchange-online.png" alt="Disable email app access to exchange online" />
                   <ol>
                     <li>Open <strong>Exchange admin center</strong> &gt; <strong>Recipients </strong>&gt; <a href="https://admin.exchange.microsoft.com/#/mailboxes" target="_self"><strong>Mailboxes</strong></a>.</li>
                     <li>Search for, then click on the <strong>user </strong>you want to disable the email apps.</li>
@@ -169,7 +169,7 @@ class ArticlePage extends Component {
                   </ol>
                   <h2>14. Review sign-in logs and check for additional security measures you can take</h2>
                   <p>Finally, we have almost finished with the compromised account. The last step is looking into how the hacker breached the account and then hardening that part of Microsoft 365. Did the hacker log in from Russia? Do you do business / have users logging in from Russia? No, then create a conditional access policy limiting sign-ins from Russia. Or maybe the user account was breached because the user received a phishing email and then clicked a link and entered their credentials in a fake Microsoft 365 sign-in portal. Then set up Safe Links. To review the sign-in logs perform the following:</p>
-                  <img src="https://i.ibb.co/XCBVzL8/Review-the-sign-in-logs-for-a-user-in-Microsoft-365.png" alt="Review the sign in logs for a user in Microsoft 365" style="height: undefined;width: undefined" />
+                  <img src="https://i.ibb.co/XCBVzL8/Review-the-sign-in-logs-for-a-user-in-Microsoft-365.png" alt="Review the sign in logs for a user in Microsoft 365" />
                   <ol>
                     <li>Go to <strong>Microsoft Azure Active Directory admin Center</strong> &gt; <strong>Users</strong>.</li>
                     <li><strong>Search for the user</strong> that was breached and <strong>click</strong> on his/her <strong>display name</strong>.</li>

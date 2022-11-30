@@ -49,6 +49,7 @@ const buildLearnArticles = async () => {
         .replaceAll('<br>', '<br/>')
         .replaceAll('{', '&#123;')
         .replaceAll('}', '&#125;')
+        .replaceAll(' style="height: undefined;width: undefined"', ' ')
 
       let newFile = template.replace('{COURSE:true, sections:[]}', stringify(course))
         .replace('{ARTICLE: true}', stringify(article))

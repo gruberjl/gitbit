@@ -52,6 +52,7 @@ const buildBlogArticles = async () => {
         .replaceAll('<br>', '<br/>')
         .replaceAll('{', '&#123;')
         .replaceAll('}', '&#125;')
+        .replaceAll(' style="height: undefined;width: undefined"', ' ')
 
       let newFile = template
         .replace('{ARTICLE: true}', stringify(article))
