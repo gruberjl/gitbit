@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Gitbit - Microsoft 365 security</title>
+        <link>https://www.gitbit.org/course/ms-500/blog</link>
+        <description>Read the latest news, guides, and how to articles on securing Microsoft 365.</description>
+        <lastBuildDate>Wed, 30 Nov 2022 15:31:15 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>GitBit</generator>
+        <language>en</language>
+        <image>
+            <title>Gitbit - Microsoft 365 security</title>
+            <url>https://www.gitbit.org/assets/gitbit-icon-1200x1200.png</url>
+            <link>https://www.gitbit.org/course/ms-500/blog</link>
+        </image>
+        <copyright>All rights reserved 2022, John Gruber</copyright>
+        <category>Technology</category>
+        <item>
+            <title><![CDATA[The Anatomy of Great Phishing Emails]]></title>
+            <link>https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n</link>
+            <guid>https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n</guid>
+            <pubDate>Wed, 16 Nov 2022 05:00:00 GMT</pubDate>
+            <description><![CDATA[Everything you need to know about the anatomy of a great phishing email, with insights from a cybersecurity expert. We'll walk you through exactly what a hacker will do to track your users into giving up access to their accounts]]></description>
+            <author>John.Gruber@gitbit.org (John Gruber)</author>
+        </item>
+        <item>
+            <title><![CDATA[14 steps to fix a hacked Microsoft 365 account]]></title>
+            <link>https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc</link>
+            <guid>https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc</guid>
+            <pubDate>Sat, 12 Nov 2022 05:00:00 GMT</pubDate>
+            <description><![CDATA[14 steps to fix a compromised Microsoft 365 account. How to lock out the intruder and harden the account so it doesn't happen again.]]></description>
+            <author>John.Gruber@gitbit.org (John Gruber)</author>
+        </item>
+        <item>
+            <title><![CDATA[Error connecting Windows 10 computer to Microsoft 365. Error code: 80180014]]></title>
+            <link>https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o</link>
+            <guid>https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o</guid>
+            <pubDate>Mon, 31 Oct 2022 04:00:00 GMT</pubDate>
+            <description><![CDATA[Error when attempting to join a Windows 10 computer to Azure AD / Intune. Error code: 80180014 Your account was not set up on this device because device management could not be enabled. This device might not be able to access some resources, such as Wi-Fi, VPN, or email.]]></description>
+            <author>John.Gruber@gitbit.org (John Gruber)</author>
+        </item>
+    </channel>
+</rss>
