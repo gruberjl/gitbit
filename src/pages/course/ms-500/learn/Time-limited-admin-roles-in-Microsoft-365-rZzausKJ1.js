@@ -162,10 +162,11 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
+                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p>Instead of granting all your admins admin roles that they have all the time you can grant users just-in-time (JIT) administration. With JIT you can have your admins request the access they need. The access can be time-limited so the admin can request the permissions they require to perform a function and then those permissions will automatically disappear after a short while. Just-in-time administration is part of Privileged Identity Management (PIM). With PIM you can monitor access to important resources in your organization.</p>
                     <p><em>NOTE: PIM requires Azure AD Premium 2 licenses</em></p>
-                    <h2>When to use PIM?</h2>
+                    <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>When to use PIM?</h2>
                     <p>You'll want to use PIM when you want to minimize the number of admins in your environment. With PIM users can be granted access when requested, if those accounts are compromised the malicious user won't have admin rights unless granted by another admin.</p>
                     <h2>What does PIM allow you to do?</h2>
                     <p>With PIM you can build several security-based access controls into your environment. Some of which are:</p>

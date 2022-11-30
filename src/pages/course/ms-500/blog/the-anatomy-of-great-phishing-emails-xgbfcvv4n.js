@@ -41,6 +41,7 @@ class ArticlePage extends Component {
           <Grid container>
             <Grid item>
               <main>
+                <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p />
                   <img src="https://i.ibb.co/GFy1CXc/How-to-create-a-great-phishing-campaign.jpg" alt="How to create a great phishing campaign" style="height: undefined;width: undefined" />
@@ -49,7 +50,7 @@ class ArticlePage extends Component {
                   <p>The goal of these phishing emails is to get the victim to click on an embedded link or attachment, which can then download malware onto their computer. Once the victim has clicked on the link or downloaded the attachment, their computer is compromised and the hacker can do whatever they want with it. They can steal personal information such as bank account numbers and passwords and then use them for identity theft. They could also use this information to access sensitive files stored on their computer.</p>
                   <p>But that’s not all. Sometimes, phishing emails are simply trying to trick the user into doing something. For example, they may send an email to an accountant that appears to be from the CEO asking for the accountant to wire some money.</p>
                   <p><em>Note: This is a guide to show people how easy and cheap it is to create a phishing campaign. I hope no one would follow this advice. Plus, I intentionally left out a few key details so you would get caught if you attempted to do this.</em></p>
-                  <h2>The attack strategy</h2>
+                  <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>The attack strategy</h2>
                   <p>There are two common attack strategies: whaling and spear phishing. Whaling is typically targeting very specific people within an organization. Spear phishing is still fairly targeted but typically targets a category of people. Let’s take a quick look at 2 examples.</p>
                   <h3>Whaling</h3>
                   <p>The hacker may follow the CEO on LinkedIn and Facebook. Then gather information, for example, the email address, and signature of the CEO. Then wait for the CEO to leave the country or go on a road trip. Once the CEO leaves the office the hacker can send an email to an accountant saying “My car broke down. Please wire $10,000 to bank account XXX”. This is a whaling attack</p>

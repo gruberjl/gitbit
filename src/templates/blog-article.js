@@ -41,6 +41,7 @@ class ArticlePage extends Component {
           <Grid container>
             <Grid item>
               <main>
+                <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><ARTICLE /></div>
               </main>

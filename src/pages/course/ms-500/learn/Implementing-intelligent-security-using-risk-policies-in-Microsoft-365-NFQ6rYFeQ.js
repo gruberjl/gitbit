@@ -162,6 +162,7 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
+                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p>There are two policies That we can enable in Microsoft 365 to help us find and block malicious users.&nbsp;</p>
                     <ul>
@@ -169,7 +170,7 @@ class ArticlePage extends Component {
                       <li><strong>Sign-in risk policy</strong></li>
                     </ul>
                     <div ><img src="https://i.ibb.co/0cyQJ7j/Risk-Detections.png" alt="Risk detections" style="height: auto;width: auto" /></div>
-                    <h2>What’s a user risk policy?</h2>
+                    <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>What’s a user risk policy?</h2>
                     <p>User risk is a calculation of the risk level that a user account has been compromised in Microsoft 365. The risk level is determined based on threat intelligence by reviewing normal behavior for the user. Some of the things that can be detected are the following:</p>
                     <ul>
                       <li><strong>Anonymous IP address</strong>: These can come from users trying to log in to your tenant using a TOR browser or anonymous VPN.</li>

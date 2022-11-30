@@ -162,10 +162,11 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
+                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p>"Microsoft Defender for Cloud Apps is a Cloud Access Security Broker (CASB) that operates on multiple clouds. It provides rich visibility, control over data travel, and sophisticated analytics to identify and combat cyber threats across all your cloud services." - <a href="https://docs.microsoft.com/en-us/defender-cloud-apps/" target="_blank" rel="noreferrer">Microsoft</a></p>
                     <p>In short, The Microsoft Defender for Cloud Apps portal is a place where you can integrate your Azure AD user accounts, devices, and other third-party cloud apps to see what your users are using and then potentially put a stop to it.</p>
-                    <h2>What are the license requirements?</h2>
+                    <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>What are the license requirements?</h2>
                     <p>Microsoft does have a stand-alone license available too so you can get access to Microsoft Defender for Cloud Apps without the rest of the security suite.</p>
                     <ul>
                       <li>Microsoft Cloud App Security stand-alone license</li>

@@ -162,10 +162,11 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
+                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p>Information protection labels are a great way to add a layer of security to certain files, SharePoint sites, and emails. After the document or email is labeled the label can encrypt or apply a watermark. A label can be manually applied to documents or emails or automatically based on a sensitive info type. For example, you can configure a label to be automatically applied if the document contains a credit card number.</p>
                     <p>But let's dig in and start the setup.</p>
-                    <h2>Enable labeling for Teams, SharePoint sites, and Microsoft 365 Groups</h2>
+                    <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>Enable labeling for Teams, SharePoint sites, and Microsoft 365 Groups</h2>
                     <p>Before you can apply labels to Teams, SharePoint sites, or Microsoft groups you first need to do some one-time configuration of your Microsoft 365 tenant.</p>
                     <p>1. Open PowerShell on your computer as an administrator.</p>
                     <p>2. Run the following command in PowerShell: "Install-Module <span >ExchangeOnlineManagement</span>". If prompted to install NuGet click <strong>Y </strong>then <strong>enter</strong>. When prompted to Install from the 'PSGallery' click <strong>A</strong> then <strong>enter</strong>.</p>

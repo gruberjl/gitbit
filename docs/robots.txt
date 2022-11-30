@@ -11,6 +11,7 @@ Disallow: /course/edit-course$
 Disallow: /course/edit-article$
 Disallow: /course/edit-test$
 Disallow: /course/edit-question$
+Disallow: /course/edit-blog$
 Disallow: /course/ms-500/question/edit$
 Disallow: /course/ms-500/test/*/summary$
 

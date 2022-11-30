@@ -162,10 +162,11 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
+                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><blockquote>Microsoft Defender for Endpoint is an enterprise endpoint security platform designed to help enterprise networks prevent, detect, investigate, and respond to advanced threats. - Microsoft (What is Microsoft Defender for Endpoint?)</blockquote>
                     <p>Microsoft Defender for Endpoint secures your endpoints (Windows 10, Windows Server, macOS, Linux, Android, and iOS). It's anti-malware on steroids. Microsoft Defender for Endpoint can be easily deployed through your Microsoft 365 admin centers and once it's deployed it will protect and recommend enhancing the security of your devices. Microsoft Defender for Endpoint allows you to protect, investigate, and responds to risks and security threats across all your endpoint.</p>
-                    <h2>What licenses are required to set up Defender for Endpoint?</h2>
+                    <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>What licenses are required to set up Defender for Endpoint?</h2>
                     <p>First, there are two plans for Microsoft Defender for Endpoint: Microsoft Defender for Endpoint Plan 1 (P1) &amp; Microsoft Defender for Endpoint Plan 2 (P2).</p>
                     <ul>
                       <li>Microsoft Defender for Endpoint Plan 1 (P1) is available as a standalone subscription and it's part of the Microsoft 365 E3 and Microsoft 365 A3 licenses.</li>

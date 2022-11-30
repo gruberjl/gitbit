@@ -50,12 +50,13 @@ const buildLearnArticles = async () => {
         .replaceAll('{', '&#123;')
         .replaceAll('}', '&#125;')
 
-      const newFile = template.replace('{COURSE:true, sections:[]}', stringify(course))
+      let newFile = template.replace('{COURSE:true, sections:[]}', stringify(course))
         .replace('{ARTICLE: true}', stringify(article))
         .replace('<ARTICLE />', articleHtml)
         .replace('NEXT_CONTENT', nextArticle)
         .replace('PREVIOUS_CONTENT', previousArticle)
 
+      newFile = newFile.replace('<h2>', '<div id="ld-7740-2760"></div><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>')
       fs.writeFileSync(`./src/pages/course/ms-500/learn/${article.slug}.js`, newFile)
     }
   }
