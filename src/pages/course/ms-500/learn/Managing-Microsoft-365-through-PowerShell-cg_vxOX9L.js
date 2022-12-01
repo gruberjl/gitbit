@@ -39,7 +39,15 @@ class ArticlePage extends Component {
 
   componentDidMount() {
     this.onAuthStateChangedListener = onAuthStateChanged(this.getUid)
-    this.addScroll()
+    this.addScroll()((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664931508787046, size: [0, 0], id: 'ld-534-9587'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664932884518758, size: [0, 0], id: 'ld-7740-2760'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')
   }
 
   getUid(user) {
@@ -162,9 +170,9 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
-                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
+                  <div id="ld-534-9587" />
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
-                  <div><div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>What's PowerShell?</h2>
+                  <div><div id="ld-7740-2760" /><h2>What's PowerShell?</h2>
                     <p>The best way to explain PowerShell is directly from Microsoft:</p>
                     <blockquote>PowerShell is a cross-platform task automation solution made up of a command-line shell, a scripting language, and a configuration management framework. PowerShell runs on Windows, Linux, and macOS.</blockquote>
                     <p>To put it another way, PowerShell is a command-line + a scripting language combined. It's a powerful tool that can be used to automate actions on your computer as well as actions in Microsoft 365. But it doesn't manage Microsoft 365 out of the box. You first have to extend it which can be done using modules.</p>

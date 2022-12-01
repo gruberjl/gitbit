@@ -39,7 +39,15 @@ class ArticlePage extends Component {
 
   componentDidMount() {
     this.onAuthStateChangedListener = onAuthStateChanged(this.getUid)
-    this.addScroll()
+    this.addScroll()((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664931508787046, size: [0, 0], id: 'ld-534-9587'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664932884518758, size: [0, 0], id: 'ld-7740-2760'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')
   }
 
   getUid(user) {
@@ -162,11 +170,11 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
-                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
+                  <div id="ld-534-9587" />
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p>Managing devices using Intune is typically done through configuration policies. Configuration policies are like group policies but more. If you don't know group policy, don't worry, I'll explain without the example.</p>
                     <p>Configuration policies allow you to configure the Intune connected devices. You can set all sorts of things. For example, you can require a password on the device. Configure BitLocker on Windows 10 devices and a whole lot more. Since Microsoft makes Windows (and Windows is more complicated than Android and iOS devices), there's more you can do with Windows devices than other manufacturers. So let's dig into managing Windows 10 devices Intune.</p>
-                    <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>Create a Windows 10 Device Configuration profile to set Telemetry data</h2>
+                    <div id="ld-7740-2760" /><h2>Create a Windows 10 Device Configuration profile to set Telemetry data</h2>
                     <p>So let's start off easy. Let's say your boss (or a question on the MS-500) wants you to disable telemetry data from being sent to Microsoft. How do you do it? With a device configuration profile that has device restrictions configured! Let's jump in.</p>
                     <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Devices</strong> &gt; <strong>Windows </strong>&gt; <a href="https://endpoint.microsoft.com/?ref=AdminCenter#blade/Microsoft_Intune_DeviceSettings/DevicesWindowsMenu/configProfiles" target="_blank" rel="noreferrer"><strong>Configuration profiles</strong></a>. Click <strong>Create profile</strong>. Set the <strong>platform </strong>to <strong>Windows 10 and later</strong>. Set the <strong>profile type</strong> to <strong>templates</strong>. Select <strong>Device restriction</strong> under <strong>Template name</strong>. Click <strong>Create</strong>.</p>
                     <div ><img src="https://i.ibb.co/YkcdP2T/Create-a-configuration-profile.png" alt="Create a configuration profile" style="height: auto;width: auto" /></div>

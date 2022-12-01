@@ -39,7 +39,15 @@ class ArticlePage extends Component {
 
   componentDidMount() {
     this.onAuthStateChangedListener = onAuthStateChanged(this.getUid)
-    this.addScroll()
+    this.addScroll()((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664931508787046, size: [0, 0], id: 'ld-534-9587'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664932884518758, size: [0, 0], id: 'ld-7740-2760'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')
   }
 
   getUid(user) {
@@ -162,7 +170,7 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
-                  <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
+                  <div id="ld-534-9587" />
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p>Microsoft Defender for Identity is designed to protect your on-premises Active Directory (AD) and Active Directory Federation Services (ADFS). Microsoft Defender for Identity can perform the following:</p>
                     <ul>
@@ -171,7 +179,7 @@ class ArticlePage extends Component {
                       <li>Identify and investigate suspicious user activities to find advanced attacks throughout your environment.</li>
                       <li>Use the Microsoft 365 portal to monitor and respond to investigate alerts and user activity.</li>
                     </ul>
-                    <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>How does Microsoft Defender for Identity work?</h2>
+                    <div id="ld-7740-2760" /><h2>How does Microsoft Defender for Identity work?</h2>
                     <p>Microsoft Defender for Identity monitors your domain controllers' network traffic and event logs. It then uses this information to detect attacks and threats. Microsoft Defender for Identity gathers the information and analyzes it based on user and device behavior. But what's the flow?</p>
                     <p>In short, you install a sensor on your AD FS servers and domain controllers. The sensor will send the network traffic, Windows events, and traces back to Microsoft Defender for Identity that's in the Microsoft 365 cloud. Microsoft Defender for Identity will send the information to the Microsoft Defender for Cloud Apps portal and show you the activities, and alerts.</p>
                     <p><em>But don't worry. Microsoft won't use your data for advertising or anything else other than providing you the defense your organization needs.</em></p>

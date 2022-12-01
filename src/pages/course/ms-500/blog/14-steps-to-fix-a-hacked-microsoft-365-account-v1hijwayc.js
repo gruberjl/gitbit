@@ -17,6 +17,18 @@ class ArticlePage extends Component {
     }
   }
 
+  componentDidMount() {
+    (function(w, d, s, i) {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664931508787046, size: [0, 0], id: 'ld-534-9587'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664932884518758, size: [0, 0], id: 'ld-7740-2760'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')
+  }
+
   render() {
     const jsonLd = {
       headline: this.state.article.title,
@@ -41,7 +53,7 @@ class ArticlePage extends Component {
           <Grid container>
             <Grid item>
               <main>
-                <div id="ld-534-9587" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664931508787046,size:[0, 0],id:"ld-534-9587"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script>
+                <div id="ld-534-9587" />
                 <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                 <div><p />
                   <img src="https://i.ibb.co/syxtrK4/14-steps-to-fix-a-hacked-Microsoft-365-account.png" alt="14 steps to fix a hacked Microsoft 365 account" />
@@ -62,7 +74,7 @@ class ArticlePage extends Component {
                     <li>Review email apps and change availability</li>
                     <li>Review sign-in logs and check for additional security measures you can take</li>
                   </ol>
-                  <div id="ld-7740-2760" /><script>{`(function(w,d,s,i){w.ldAdInit=w.ldAdInit||[];w.ldAdInit.push({slot:15664932884518758,size:[0, 0],id:"ld-7740-2760"});if(!d.getElementById(i)){var j=d.createElement(s),p=d.getElementsByTagName(s)[0];j.async=true;j.src="//cdn2.decide.dev/_js/ajs.js";j.id=i;p.parentNode.insertBefore(j,p);}})(window,document,"script","ld-ajs")`}</script><h2>1. Reset account password</h2>
+                  <div id="ld-7740-2760" /><h2>1. Reset account password</h2>
                   <p>First and foremost is locking the hacker out of the account. Reset the password! If it's a cloud-only account you can reset the user password right from the Microsoft 365 admin center. If it's a synced account you'll need to reset the password from your on-premises Active Directory.</p>
                   <ol>
                     <li>Go to <strong>Microsoft 365 admin center</strong> &gt; <strong>Users </strong>&gt; <a href="https://admin.microsoft.com/?#/users" target="_self"><strong>Active Users</strong></a>.</li>
