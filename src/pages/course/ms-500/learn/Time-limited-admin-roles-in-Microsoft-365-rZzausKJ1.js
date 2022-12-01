@@ -25,6 +25,8 @@ class ArticlePage extends Component {
     this.trackScrolling = this.trackScrolling.bind(this)
     this.setHasCompletedContent = this.setHasCompletedContent.bind(this)
     this.getUid = this.getUid.bind(this)
+    this.mountAds1 = this.mountAds1.bind(this)
+    this.mountAds2 = this.mountAds2.bind(this)
     this.addScroll = this.addScroll.bind(this)
 
     this.state = {
@@ -39,15 +41,9 @@ class ArticlePage extends Component {
 
   componentDidMount() {
     this.onAuthStateChangedListener = onAuthStateChanged(this.getUid)
-    this.addScroll()((w, d, s, i)=> {
-      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664931508787046, size: [0, 0], id: 'ld-534-9587'}); if (!d.getElementById(i)) {
-        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
-      }
-    })(window, document, 'script', 'ld-ajs')((w, d, s, i)=> {
-      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664932884518758, size: [0, 0], id: 'ld-7740-2760'}); if (!d.getElementById(i)) {
-        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
-      }
-    })(window, document, 'script', 'ld-ajs')
+    this.addScroll()
+    this.mountAds1()
+    this.mountAds2()
   }
 
   getUid(user) {
@@ -59,6 +55,22 @@ class ArticlePage extends Component {
         this.setState({userAcct})
       })
     }
+  }
+
+  mountAds1() {
+    (function(w, d, s, i) {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664931508787046, size: [0, 0], id: 'ld-534-9587'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')
+  }
+
+  mountAds2() {
+    ((w, d, s, i)=> {
+      w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664932884518758, size: [0, 0], id: 'ld-7740-2760'}); if (!d.getElementById(i)) {
+        const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
+      }
+    })(window, document, 'script', 'ld-ajs')
   }
 
   addScroll() {

@@ -11,18 +11,28 @@ const marginTop24Style = {
 class ArticlePage extends Component {
   constructor(props) {
     super(props)
-
+    this.mountAds1 = this.mountAds1.bind(this)
+    this.mountAds2 = this.mountAds2.bind(this)
     this.state = {
       article: {ARTICLE: true}
     }
   }
 
   componentDidMount() {
+    this.mountAds1()
+    this.mountAds2()
+  }
+
+  mountAds1() {
     (function(w, d, s, i) {
       w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664931508787046, size: [0, 0], id: 'ld-534-9587'}); if (!d.getElementById(i)) {
         const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
       }
-    })(window, document, 'script', 'ld-ajs')((w, d, s, i)=> {
+    })(window, document, 'script', 'ld-ajs')
+  }
+
+  mountAds2() {
+    ((w, d, s, i)=> {
       w.ldAdInit=w.ldAdInit||[]; w.ldAdInit.push({slot: 15664932884518758, size: [0, 0], id: 'ld-7740-2760'}); if (!d.getElementById(i)) {
         const j=d.createElement(s); const p=d.getElementsByTagName(s)[0]; j.async=true; j.src='//cdn2.decide.dev/_js/ajs.js'; j.id=i; p.parentNode.insertBefore(j, p)
       }
