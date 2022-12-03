@@ -34,6 +34,7 @@ const BlogArticle = () => {
           <Container className="blog-article">
             <Grid container>
               <Grid item>
+                <h1>{title}</h1>
                 <Typography variant="body1" gutterBottom>If you were not automatically redirected please go to <a href={canonical}>{title}</a></Typography>
               </Grid>
             </Grid>

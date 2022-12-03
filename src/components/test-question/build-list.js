@@ -1,6 +1,5 @@
 import {h, Component, createRef} from 'preact'
 import Grid from '@mui/material/Grid'
-import Button from '@mui/material/Button'
 import Typography from '@mui/material/Typography'
 import IconButton from '@mui/material/IconButton'
 import DragIcon from '@mui/icons-material/DragIndicator'
@@ -143,7 +142,6 @@ class BuildList extends Component {
               <Typography variant="body1" style={{display: 'flex', alignItems: 'center'}}>{answerOption.answer}</Typography>
             </div>
           ))}
-          <Button onClick={this.addAnswerOption}>Add</Button>
         </Grid>
         <Grid item xs={12} md='auto' style={leftRightButtonStyle}>
           <IconButton variant="outlined">

@@ -165,9 +165,11 @@ class TestsSummary extends Component {
     Object.keys(this.state.test.answers).forEach((questionId) => {
       const answers = this.state.test.answers[questionId]
       const question = userAcct.tests[this.state.test.id][questionId]
-      const testQuestion = this.state.test.questions[question.id]
+      const testQuestion = this.state.test.questions[questionId]
       const questionMaxPoints = getMaxPoints(testQuestion, answers)
       const pointsReceivedForQuestion = question ? gradeQuestion(question, answers, testQuestion) : 0
+      if (!userAcct.tests[this.state.test.id][questionId])
+        userAcct.tests[this.state.test.id][questionId] = {answers: {}, id: questionId}
 
       userAcct.tests[this.state.test.id][questionId].maxPoints = questionMaxPoints
       userAcct.tests[this.state.test.id][questionId].pointsReceived = pointsReceivedForQuestion

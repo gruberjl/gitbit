@@ -9,7 +9,10 @@ const getImageDimensions = async (imageUrl) => {
   debug(`Getting image dimensions for ${imageUrl}`)
   let dimensions
   if (imageUrl.startsWith('http')) {
-    dimensions = await downloadImage(imageUrl)
+    dimensions = await downloadImage(imageUrl).catch(e => {
+      debug(`Error getting image dimensions ${imageUrl}`)
+      debug(e)
+    })
   } else {
     imageUrl = `./docs/${imageUrl}`
     dimensions = sizeOf(imageUrl)
@@ -25,8 +28,14 @@ const downloadImage = (imgUrl) => new Promise((res, rej) => {
     const chunks = []
     response.on('data', function (chunk) {
       chunks.push(chunk)
-    }).on('end', function() {
+    }).on('error', (e) => {
+      debug(`Error getting image: ${imgUrl}`)
+      debug(e)
+      rej(e)
+    })
+    .on('end', function() {
       const buffer = Buffer.concat(chunks)
+      console.log(buffer)
       res(sizeOf(buffer))
     })
   })
