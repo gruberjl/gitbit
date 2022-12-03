@@ -22,7 +22,7 @@ const gradeQuestion = (question, correctAnswers, testQuestion) => {
 
   if (testQuestion.type === 'hot-area') {
     Object.values(correctAnswers).forEach((correctAnswer) => {
-      const answer = question.answers[correctAnswer.id]
+      const answer = question.answers[correctAnswer.id] || {}
       const correctAnswerId = Object.values(correctAnswer).find((a) => a.isCorrect).id
 
       if (answer.answer == correctAnswerId)
