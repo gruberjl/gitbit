@@ -189,36 +189,36 @@ class ArticlePage extends Component {
                     <p>Distribution groups also known as distribution lists will create an email address and distribute the emails to all the members of the group. Distribution groups do not have separate mailboxes. The emails land in the members of the distribution lists mailboxes. You can add anyone with a mailbox inside your organization and you can add mail contacts to distribution groups.</p>
                     <h3>Create a distribution group in Microsoft 365</h3>
                     <p>1. Go to the <strong>Microsoft 365 admin center</strong> &gt; <strong>Teams &amp; groups</strong> &gt; <strong>Active teams &amp; groups</strong>. Then click <a href="https://admin.microsoft.com/Adminportal/Home?source=applauncher#/addgroupwizard" target="_blank" rel="noreferrer"><strong>Add a group</strong></a>.</p>
-                    <div ><img src="https://i.ibb.co/nmmC28M/add-a-group-microsoft-365.png" alt="Add a group to Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/nmmC28M/add-a-group-microsoft-365.png" alt="Add a group to Microsoft 365" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Distribution </strong>&gt; <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/104HV6d/create-a-distribution-group.png" alt="create a distribution group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/104HV6d/create-a-distribution-group.png" alt="create a distribution group" height="auto" width="auto" /></div>
                     <p>3. Name the group. Optionally add a description. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/zQJ9x1M/name-your-new-group.png" alt="Name your new Microsoft 365 group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/zQJ9x1M/name-your-new-group.png" alt="Name your new Microsoft 365 group" height="auto" width="auto" /></div>
                     <p>4. Set the group email address. Optionally click <strong>Allow people outside of my organization to send email to this Distribution group</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/nLrY8x6/new-group-email-address.png" alt="New group email address" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/nLrY8x6/new-group-email-address.png" alt="New group email address" height="auto" width="auto" /></div>
                     <p>5. Click <strong>Create group</strong>.</p>
-                    <div ><img src="https://i.ibb.co/xM6DN61/create-distribution-group.png" alt="create distribution group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/xM6DN61/create-distribution-group.png" alt="create distribution group" height="auto" width="auto" /></div>
                     <h3>Add members to the distribution group</h3>
                     <p>You’ll notice you can’t add members to the group while creating the group. To add members, you’ll need to go to the group and manage the members.</p>
                     <p>1. Go to the <strong>Microsoft 365 admin center</strong> &gt; <strong>Teams &amp; groups</strong> &gt; <a href="https://admin.microsoft.com/Adminportal/Home?source=applauncher#/groups" target="_blank" rel="noreferrer"><strong>Active teams &amp; groups</strong></a> &gt; <strong>Distribution List</strong>.  Then click the group you want to manage.</p>
-                    <div ><img src="https://i.ibb.co/4frD0dC/manage-distribution-group.png" alt="manage distribution group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/4frD0dC/manage-distribution-group.png" alt="manage distribution group" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Members</strong> &gt; <strong>View all and manage members</strong>.</p>
-                    <div ><img src="https://i.ibb.co/YhY7R2R/manage-members-of-distribution-group.png" alt="manage members of distribution group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/YhY7R2R/manage-members-of-distribution-group.png" alt="manage members of distribution group" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Add members</strong>.</p>
-                    <div ><img src="https://i.ibb.co/5n13V6V/add-members-to-group.png" alt="add members to group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/5n13V6V/add-members-to-group.png" alt="add members to group" height="auto" width="auto" /></div>
                     <p>4. Select the users you want to add to the group. Then click <strong>Add</strong>.</p>
-                    <div ><img src="https://i.ibb.co/FmHL7tG/add-members-to-the-group.png" alt="Add members to the group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/FmHL7tG/add-members-to-the-group.png" alt="Add members to the group" height="auto" width="auto" /></div>
                     <h2>Security groups</h2>
                     <p>Microsoft 365 security groups, formerly known as Office 365 security groups, allow admins to manage access to resources, for example, SharePoint, Intune, or apply conditional access policies.</p>
                     <h3>Create a security group in Microsoft 365</h3>
                     <p>1. Go to the <strong>Microsoft 365 admin center</strong> &gt; <strong>Teams &amp; groups</strong> &gt; <strong>Active teams &amp; groups</strong>. Then click <a href="https://admin.microsoft.com/Adminportal/Home?source=applauncher#/addgroupwizard" target="_blank" rel="noreferrer"><strong>Add a group</strong></a></p>
-                    <div ><img src="https://i.ibb.co/nmmC28M/add-a-group-microsoft-365.png" alt="Add a group to Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/nmmC28M/add-a-group-microsoft-365.png" alt="Add a group to Microsoft 365" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Security</strong> &gt; <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/bbX5gBD/create-a-security-group.png" alt="Create a security group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/bbX5gBD/create-a-security-group.png" alt="Create a security group" height="auto" width="auto" /></div>
                     <p>3. Name the group. Optionally add a description. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/zQJ9x1M/name-your-new-group.png" alt="Name your new Microsoft 365 group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/zQJ9x1M/name-your-new-group.png" alt="Name your new Microsoft 365 group" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Create group</strong>.</p>
-                    <div ><img src="https://i.ibb.co/TTf23Bz/create-security-group.png" alt="Create security group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/TTf23Bz/create-security-group.png" alt="Create security group" height="auto" width="auto" /></div>
                     <h3>Add members to the security group</h3>
                     <p>To add members, you’ll need to go to the group and manage the members.</p>
                     <p>1. Go to the <strong>Microsoft 365 admin center</strong> &gt; <strong>Teams &amp; groups</strong> &gt; <strong>Active teams &amp; groups</strong> &gt; <strong>Security</strong>. Then click the group you want to manage</p>
@@ -233,11 +233,11 @@ class ArticlePage extends Component {
                     <h3>How to create a Microsoft 365 group with a shared mailbox</h3>
                     <p>1. Open Outlook.</p>
                     <p>2. Right-click Groups in the left pane and click New Group.</p>
-                    <div ><img src="https://i.ibb.co/ySVxbWK/new-microsoft-365-group.png" alt="Create a new Microsoft 365 group in Outlook" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/ySVxbWK/new-microsoft-365-group.png" alt="Create a new Microsoft 365 group in Outlook" height="auto" width="auto" /></div>
                     <p>3. Set the name, email address, description, privacy, and decide if you want the emails to go to everyone’s mailboxes. Then click <strong>Create</strong>.</p>
-                    <div ><img src="https://i.ibb.co/wR07Y6n/create-group-in-outlook.png" alt="Create Microsoft 365 group in Outlook" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/wR07Y6n/create-group-in-outlook.png" alt="Create Microsoft 365 group in Outlook" height="auto" width="auto" /></div>
                     <p>4. Enter the other members' names. Click the member to add them. Click <strong>Add Members</strong>.</p>
-                    <div ><img src="https://i.ibb.co/TkpzRv9/add-members-to-outlook-group.png" alt="Add members to outlook group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/TkpzRv9/add-members-to-outlook-group.png" alt="Add members to outlook group" height="auto" width="auto" /></div>
                     <h3>How to create a Microsoft 365 group in other apps</h3>
                     <p>Since knowing all the ways to create a Microsoft 365 group is outside the scope of MS-500 I’ll simply link the instructions below:</p>
                     <ul>
@@ -252,13 +252,13 @@ class ArticlePage extends Component {
                     <p>Up until now, we’ve only discussed “assigned” groups. Assigned Groups are where you have assigned the user to the group. Another group type in Microsoft 365 is Dynamic. Dynamic groups are where the members are automatically added/removed depending on the attributes of the user. For example, you may want to create a security group based on departments. Then every user that has the same department will be automatically added to the group. For example, if the test says, “Users must be added automatically to the security group of their department.” Then a dynamic security group would be required.</p>
                     <h3>How to create a dynamic security group</h3>
                     <p>1. Open <strong>Azure AD admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <strong>Groups</strong></p>
-                    <div ><img src="https://i.ibb.co/xMzW2hd/azure-ad-groups.png" alt="Azure AD Groups" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/xMzW2hd/azure-ad-groups.png" alt="Azure AD Groups" height="auto" width="auto" /></div>
                     <p>2. Click <strong>New Group</strong></p>
-                    <div ><img src="https://i.ibb.co/LzXYCTW/azure-ad-new-group.png" alt="Azure AD New Group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/LzXYCTW/azure-ad-new-group.png" alt="Azure AD New Group" height="auto" width="auto" /></div>
                     <p>3. Enter the Group name &gt; optionally group description &gt; Select <strong>Dynamic User</strong> under Membership type &gt; Then click <strong>Add dynamic query</strong></p>
-                    <div ><img src="https://i.ibb.co/Kq64m2j/New-dynamic-group.png" alt="Create a new dynamic group" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Kq64m2j/New-dynamic-group.png" alt="Create a new dynamic group" height="auto" width="auto" /></div>
                     <p>4. Set the property to <strong>department</strong>. Set the Operator to <strong>Equals</strong>. Then set the Value to <strong>HR</strong>. Then click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/JBzmGBQ/dyanmic-membership-rules.png" alt="Dynamic membership rules" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/JBzmGBQ/dyanmic-membership-rules.png" alt="Dynamic membership rules" height="auto" width="auto" /></div>
                     <h2>Dynamic membership rules</h2>
                     <p>There are several ways to filter / automatically add users to dynamic groups. Let’s review the rules.</p>
                     <h4>Property</h4>
@@ -276,29 +276,29 @@ class ArticlePage extends Component {
                     <p>With access review, you can set all groups or some of your groups to be reviewed. The reviewer can be the group owners, selected users, or groups, users can review their own access or managers of users. Lastly, you can set how often the reviewers need to perform the review. Let’s take a look.</p>
                     <h3>How to setup access review</h3>
                     <p>1. Go to <strong>Azure AD admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <strong>Identity Governance</strong>.</p>
-                    <div ><img src="https://i.ibb.co/vP17HPH/Azure-AD-Identity-Governance.png" alt="Azure AD Identity Governance" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/vP17HPH/Azure-AD-Identity-Governance.png" alt="Azure AD Identity Governance" height="auto" width="auto" /></div>
                     <p>2. <strong>Access reviews</strong> &gt; <strong>New access review</strong>.</p>
-                    <div ><img src="https://i.ibb.co/bXKkwKH/new-access-review.png" alt="new access review" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/bXKkwKH/new-access-review.png" alt="new access review" height="auto" width="auto" /></div>
                     <p>3. In the Select what to review dropdown click <strong>Teams + Groups</strong>. Click <strong>Select Teams + groups</strong>. Click <strong>select group(s)</strong>. Click the group you want to perform an access review. Click <strong>Select</strong>. Click <strong>All users</strong>. Click <strong>Next: Reviews</strong>.</p>
-                    <div ><img src="https://i.ibb.co/ggzVL3L/access-review-review-type2.png" alt="Create new access review Review Type page" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/ggzVL3L/access-review-review-type2.png" alt="Create new access review Review Type page" height="auto" width="auto" /></div>
                     <p>4. Click the Select reviewers drop down and click <strong>Group owner(s)</strong>. In duration (in days) set the number of days you want the review to be open for. For review recurrence set the amount of time before the next review. Click <strong>Next: Settings</strong>.</p>
-                    <div ><img src="https://i.ibb.co/DMZz1sY/Access-review-reviews2.png" alt="New access review reviews page" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/DMZz1sY/Access-review-reviews2.png" alt="New access review reviews page" height="auto" width="auto" /></div>
                     <p>5. Set <strong>Auto apply results to resource</strong>. Click <strong>Approve access under If reviewers don’t respond</strong>. Then click <strong>Next: Review + Create</strong>.</p>
-                    <div ><img src="https://i.ibb.co/3RtXhW7/access-review-settings.png" alt="Set the access review settings" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/3RtXhW7/access-review-settings.png" alt="Set the access review settings" height="auto" width="auto" /></div>
                     <p>6. Set the review name. Click <strong>Create</strong>.</p>
                     <h2>Group Naming policies</h2>
                     <p>The next thing I’d like to mention is group naming policies. Since users can create groups, you may want to use some sort of naming policy. For example, an organization Contoso may want a prefix in front of all the groups “Contoso-“</p>
                     <p>By setting a group naming policy all users will be required to use your specific naming policy with one exception. Global Admins &amp; User admins can still create groups without using the naming policy.</p>
                     <h3>How to set up a naming policy</h3>
                     <p>1. Go to <strong>Azure AD admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <strong>Groups</strong>.</p>
-                    <div ><img src="https://i.ibb.co/ZSKQgj7/naming-policy-navigation.png" alt="Azure AD Groups Navigation" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/ZSKQgj7/naming-policy-navigation.png" alt="Azure AD Groups Navigation" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Naming policy</strong> &gt; <strong>Group naming policy</strong>. Click <strong>Add prefix</strong>. Set the prefix to a <strong>string.</strong> Then set the prefix value. Click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/FD4vJbd/configure-group-naming-policy.png" alt="Configure group naming policy" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/FD4vJbd/configure-group-naming-policy.png" alt="Configure group naming policy" height="auto" width="auto" /></div>
                     <h2>Auto-expiration of groups</h2>
                     <p>So now your Microsoft 365 groups are growing. Sometimes the groups can grow out of control. How do you manage all of them? You put the burden on the group owners. In short, you set the groups to auto-expire. Then the group owners will receive an email where they will need to renew the groups to keep them around. Let's jump in and take a look.</p>
                     <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <strong>Groups </strong>&gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/GroupsManagementMenuBlade/Lifecycle" target="_blank" rel="noreferrer"><strong>Expiration</strong></a>.</p>
                     <p>2. Set the <strong>Group lifetime (in days)</strong>. Set your email in the <strong>Email contact for groups with no owners</strong>. Set the <strong>enable expiration for these Microsoft 365 groups</strong> to <strong>All</strong>. Click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/cxPHf87/set-group-expiration.png" alt="set group expiration" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/cxPHf87/set-group-expiration.png" alt="set group expiration" height="auto" width="auto" /></div>
                     <p />
                   </div>
                   <div id="bottom-of-article" />

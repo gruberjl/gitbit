@@ -188,11 +188,11 @@ class ArticlePage extends Component {
                     <div id="ld-7740-2760" /><h2>Add a single user account in Microsoft 365 admin center</h2>
                     <p>1. Go to <a href="https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users" target="_blank" rel="noreferrer">Microsoft 365 admin center &gt; Users &gt; active users</a> page. Log in with your admin credentials.</p>
                     <p>2. Click Add a user</p>
-                    <div ><img src="https://i.ibb.co/9ZJ0d61/Add-User-in-Microsoft-365.png" alt="Add a user button in Microsoft 365 admin center" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/9ZJ0d61/Add-User-in-Microsoft-365.png" alt="Add a user button in Microsoft 365 admin center" height="auto" width="auto" /></div>
                     <p>3. Enter the user's first name, last name, and username. On this page, you can also select if you want to automatically create a password or require the user to change the password at first login. Then click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/gycTqzd/basic-user-account-information.png" alt="Microsoft 365 basic user account information" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/gycTqzd/basic-user-account-information.png" alt="Microsoft 365 basic user account information" height="auto" width="auto" /></div>
                     <p>4. On the next page, you select the license assignment. Once you check the license you want to assign you can view the apps associated with the license by clicking the apps dropdown. Then click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/0BwW2xG/assign-licenses.png" alt="Assign licenses in Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/0BwW2xG/assign-licenses.png" alt="Assign licenses in Microsoft 365" height="auto" width="auto" /></div>
                     <p>5. On the Optional settings page select the admin roles you want to assign the user. More on the roles in the next lesson. On this page, you can also set profile info: Job title, department, office, phone numbers, and address. Click <strong>Next</strong>.</p>
                     <p>6. Click <strong>Finish adding</strong>.</p>
                     <h2>Add a lot of users at one time</h2>
@@ -200,31 +200,31 @@ class ArticlePage extends Component {
                     <p>1. Go to Microsoft 365 &gt; <a href="https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users/:/addmultipleusers" target="_blank" rel="noreferrer">Add Multiple Users</a>.</p>
                     <p>2. Click <strong>I'd like to upload a CSV with user information</strong>.</p>
                     <p>3. Click <strong>Download a blank CSV with the required headers</strong>.</p>
-                    <div ><img src="https://i.ibb.co/QPwjHtj/download-blank-csv-to-import-users.png" alt="Download a blank CSV file with the required headers" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/QPwjHtj/download-blank-csv-to-import-users.png" alt="Download a blank CSV file with the required headers" height="auto" width="auto" /></div>
                     <p>3. Open the file in Excel.</p>
                     <p>4. Add the user information that you want to be uploaded and save the sheet.</p>
-                    <div ><img src="https://i.ibb.co/Jxk3Xnp/users-to-upload.png" alt="Microsoft 365 Users to Upload CSV" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Jxk3Xnp/users-to-upload.png" alt="Microsoft 365 Users to Upload CSV" height="auto" width="auto" /></div>
                     <p>5. Go back to the Microsoft 365 admin center in your browser. Click <strong>browse </strong>and <strong>select the CSV</strong> you just updated. Then click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/LJgyy10/microsoft-365-upload-csv-for-user-import.png" alt="Microsoft 365 upload users to import" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/LJgyy10/microsoft-365-upload-csv-for-user-import.png" alt="Microsoft 365 upload users to import" height="auto" width="auto" /></div>
                     <p>6.  Select the licenses you want to assign to the new users then click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/DGCxsp0/microsoft-365-select-licenses.png" alt="Microsoft 365 Assign licenses to imported users" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/DGCxsp0/microsoft-365-select-licenses.png" alt="Microsoft 365 Assign licenses to imported users" height="auto" width="auto" /></div>
                     <p>7. Click <strong>Add users</strong>.</p>
                     <p>8. Click <strong>Download results</strong> to download a spreadsheet with the new user's usernames and password. Then click Close</p>
-                    <div ><img src="https://i.ibb.co/wwK3m1N/microsoft-365-import-users-download-results.png" alt="Microsoft 365 Import Users Download results" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/wwK3m1N/microsoft-365-import-users-download-results.png" alt="Microsoft 365 Import Users Download results" height="auto" width="auto" /></div>
                     <h2>Add a single user to Office 365 using PowerShell</h2>
                     <p>Alright, now that we know how to create users using the web browser let's create a user using PowerShell.</p>
                     <p>1. Run <strong>Connect-MsolService</strong> and log in with your admin credentials.</p>
                     <p>2. Run <strong>Get-MsolAccountSku</strong>. The Get-MsolAccountSku command will return the AccountSkuId which is a way to identify your license ids.</p>
-                    <div ><img src="https://i.ibb.co/C2WryQD/get-msolaccountsku.png" alt="Get-MsolAccountSku" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/C2WryQD/get-msolaccountsku.png" alt="Get-MsolAccountSku" height="auto" width="auto" /></div>
                     <p>3. Run the following command: <strong>New-MsolUser -DisplayName "&lt;DisplayName&gt;" -FirstName &lt;FirstName&gt; -LastName &lt;LastName&gt; -UserPrincipalName &lt;UserSignInName&gt; -UsageLocation US -LicenseAssignment &lt;AccountSkuId&gt;</strong> replacing the parts in brackets with your user's information.</p>
-                    <div ><img src="https://i.ibb.co/BNtPDq9/New-Msol-User.png" alt="New-MsolUser" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/BNtPDq9/New-Msol-User.png" alt="New-MsolUser" height="auto" width="auto" /></div>
                     <p>That's it. You've now created a new user using PowerShell.</p>
                     <h2>How to view and edit Microsoft 365 users</h2>
                     <p>Viewing and editing users in Microsoft 365 is as easy as pie.</p>
                     <p>1. First go to <a href="https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users" target="_blank" rel="noreferrer">https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users</a> and sign in with your admin credentials.</p>
                     <p>There's the list of users.</p>
                     <p><span >2. To edit a user click on the user. You'll see the user's information. There you can use the tabs at the top to navigate around the user or you can click Manage username and email to update the user's sign-in name or email address. Finally, click Manage contact information to edit the user's contact information.</span></p>
-                    <div ><img src="https://i.ibb.co/YBTcWND/Microsoft-365-edit-user.png" alt="Microsoft 365 edit user pane" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/YBTcWND/Microsoft-365-edit-user.png" alt="Microsoft 365 edit user pane" height="auto" width="auto" /></div>
                     <p />
                   </div>
                   <div id="bottom-of-article" />

@@ -187,15 +187,15 @@ class ArticlePage extends Component {
                   <div><p>Now that we have devices set up in Intune and secure how do we start deploying, managing, and securing apps? Let's start by deploying an app to an Android device.</p>
                     <div id="ld-7740-2760" /><h2>How to deploy an app to an Android device</h2>
                     <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Apps </strong>&gt; <a href="https://endpoint.microsoft.com/?ref=AdminCenter#blade/Microsoft_Intune_DeviceSettings/AppsAndroidMenu/androidApps" target="_blank" rel="noreferrer"><strong>Android</strong> </a>&gt; <strong>Add</strong>. Set <strong>App type</strong> to <strong>Manage Google Play app</strong>. Click <strong>Select</strong>.</p>
-                    <div ><img src="https://i.ibb.co/PCVRKDf/Add-an-Android-app-to-Intune.png" alt="Add an Android app to Intune" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/PCVRKDf/Add-an-Android-app-to-Intune.png" alt="Add an Android app to Intune" height="auto" width="auto" /></div>
                     <p>2. Search for the app you want to deploy, for example, <strong>Outlook</strong>. Click on the <strong>app icon</strong>.</p>
-                    <div ><img src="https://i.ibb.co/56RM4mY/select-outlook-in-the-app-selection.png" alt="Select outlook in the app selection" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/56RM4mY/select-outlook-in-the-app-selection.png" alt="Select outlook in the app selection" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Approve </strong>&gt; <strong>Approve</strong> &gt; <strong>Done </strong>&gt; <strong>Sync</strong>.</p>
-                    <div ><img src="https://i.ibb.co/VvzLtY2/approve-the-app.png" alt="Approve the app" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/VvzLtY2/approve-the-app.png" alt="Approve the app" height="auto" width="auto" /></div>
                     <p>4. Wait 15 minutes then go to Apps &gt; Android. (If the app still isn't there click Add &gt; Set App type to Manage Google Play app. Click Select. Search and click on the app&nbsp;</p>
-                    <div ><img src="https://i.ibb.co/Q69pRsR/Assign-the-app.png" alt="Assign the app" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Q69pRsR/Assign-the-app.png" alt="Assign the app" height="auto" width="auto" /></div>
                     <p>5. Click <strong>Add all users</strong> (or click Add group and add the group you want to deploy the app to) located under <strong>Required</strong>. Click <strong>Review + save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/Ny4rpWg/Assign-to-all-users.png" alt="Assign to all users" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Ny4rpWg/Assign-to-all-users.png" alt="Assign to all users" height="auto" width="auto" /></div>
                     <p>6. Click <strong>Save</strong>.</p>
                     <p>Now when the users' Android device checks in they'll receive the new app.</p>
                     <h2>Understanding assignments</h2>
@@ -209,33 +209,33 @@ class ArticlePage extends Component {
                     <h2>Configuring apps with the App configuration policies</h2>
                     <p>Some apps can even be configured through Intune. For example, in the last section, we installed Outlook on every user's device. Now that the app is installed the user would need to set up their mailbox in Outlook manually or we can create an app configuration policy to configure the app for us.</p>
                     <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Apps </strong>&gt; <strong>App configuration policy</strong> &gt; <strong>Add </strong>&gt; <strong>Managed devices</strong>.</p>
-                    <div ><img src="https://i.ibb.co/98k1njW/Create-an-app-configuration-policy.png" alt="Create an app configuration policy" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/98k1njW/Create-an-app-configuration-policy.png" alt="Create an app configuration policy" height="auto" width="auto" /></div>
                     <p>2. Set the <strong>name </strong>to <strong>Setup Outlook</strong>. Set <strong>Platform </strong>to <strong>Android Enterprise</strong>. <strong>Profile Type</strong>: <strong>All Profile Types</strong>. Click <strong>Select app</strong>. Click <strong>Microsoft Outlook</strong>. Click <strong>OK </strong>&gt; <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/WPv7R5g/Set-up-App-Configuration-policy-Basics.png" alt="Set up App Configuration policy Basics" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/WPv7R5g/Set-up-App-Configuration-policy-Basics.png" alt="Set up App Configuration policy Basics" height="auto" width="auto" /></div>
                     <p>3. Set the following options then click <strong>next</strong>.</p>
                     <p>Configuration settings format: <strong>Use configuration designer</strong></p>
                     <p>Configure email account settings: <strong>Yes</strong></p>
                     <p>Authentication type: <strong>Modern Authentication</strong></p>
                     <p>Username attribute from AAD: <strong>User Principal Name</strong></p>
                     <p>Email address attribute from AAD: <strong>Primary SMTP Address</strong></p>
-                    <div ><img src="https://i.ibb.co/BsXT1tZ/Create-app-configuration-policy-Settings.png" alt="Create app configuration policy - Settings" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/BsXT1tZ/Create-app-configuration-policy-Settings.png" alt="Create app configuration policy - Settings" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Add all users</strong> or select the same group you set in the How to deploy an app to an Android device section. Click <strong>Next</strong>.</p>
                     <p>5. Click <strong>Create</strong>.</p>
                     <p>Now when an Android device syncs with Intune the user will automatically receive the Outlook app and the app will be configured for them.</p>
                     <h2>How to protect apps and isolate data</h2>
                     <p>Now that we have Outlook installed and configured on your user devices how do we isolate and protect the company data stored in Outlook that's cached and accessible on the user device? With app protection policies of course!</p>
                     <p>1. Go to <strong>Microsoft Endpoint Manager admin center</strong> &gt; <strong>Apps </strong>&gt; <strong>App protection policy</strong> &gt; <strong>Create policy</strong> &gt; <strong>Android</strong>.</p>
-                    <div ><img src="https://i.ibb.co/7nmGbsm/create-an-app-protection-policy.png" alt="Create an app protection policy" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/7nmGbsm/create-an-app-protection-policy.png" alt="Create an app protection policy" height="auto" width="auto" /></div>
                     <p>2. Name the policy: "<strong>Protect Microsoft Apps</strong>". Click <strong>Next</strong>.</p>
                     <p>3. Set the <strong>Target policy to </strong>dropdown to <strong>All Microsoft Apps</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/qFPWBbn/Create-App-protection-policy-Apps.png" alt="Create App protection policy - Apps" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/qFPWBbn/Create-App-protection-policy-Apps.png" alt="Create App protection policy - Apps" height="auto" width="auto" /></div>
                     <p>4. Set the following options then click <strong>Next</strong>.</p>
                     <p>Backup org data to Android backup services: <strong>Block</strong></p>
                     <p>Send org data to other apps: <strong>Policy managed apps</strong></p>
                     <p>Click <strong>Select </strong>(next to select apps to exempt).</p>
                     <p>Name: <strong>Webex</strong></p>
                     <p>Value: <strong>com.cisco.webex.meetings</strong></p>
-                    <div ><img src="https://i.ibb.co/cy9zXyZ/App-protection-policy-Data-protection.png" alt="App protection policy - Data protection" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/cy9zXyZ/App-protection-policy-Data-protection.png" alt="App protection policy - Data protection" height="auto" width="auto" /></div>
                     <p>5. On the Access requirements page click <strong>Next</strong>.</p>
                     <p>6. On the Conditional launch page click <strong>Next</strong>.</p>
                     <p>7. On the Assignments page select your group. (you can't select all users on app protection policies. You can, however, create a dynamic group with all users). Click <strong>Next </strong>&gt; <strong>Create</strong>.</p>
@@ -249,12 +249,12 @@ class ArticlePage extends Component {
                     <p><strong>Users or workload identities</strong>: Set to the group that will use unmanaged devices.</p>
                     <p><strong>Cloud apps</strong>: Office 365 Exchange Online</p>
                     <p><strong>Session</strong>: Use app-enforced restrictions</p>
-                    <div ><img src="https://i.ibb.co/b6KtMZt/conditional-access-policy.png" alt="Conditional access policy" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/b6KtMZt/conditional-access-policy.png" alt="Conditional access policy" height="auto" width="auto" /></div>
                     <p>2. Run the following in PowerShell:</p>
                     <pre>Connect-ExchangeOnline<br />New-OwaMailboxPolicy LimitUnmanagedDevices<br />Set-OwaMailboxPolicy LimitUnmanagedDevices -ConditionalAccessPolicy ReadOnly</pre>
                     <p>3. Set the OWA mailbox policy on the mailboxes.</p>
                     <p>Go to <strong>Exchange admin center</strong> &gt; <a href="https://outlook.office365.com/ecp/?form=eac&mkt=en-US" target="_blank" rel="noreferrer"><strong>Classic Exchange admin center</strong></a>  &gt; <strong>recipients </strong>&gt; <strong>mailboxes</strong>. Select the <strong>mailbox </strong>&gt; <strong>mailbox features</strong> &gt; <strong>View details</strong> (under Outlook on the web). Click <strong>browse </strong>&gt; select <strong>LimitUnmanagedDevices </strong>&gt; <strong>OK </strong>&gt; <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/7GtPn4V/set-owa-mailbox-policy.png" alt="Set OWA Mailbox policy" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/7GtPn4V/set-owa-mailbox-policy.png" alt="Set OWA Mailbox policy" height="auto" width="auto" /></div>
                     <h2>Windows information protection</h2>
                     <p>Windows Information Protection (WIP), formally known as enterprise data protection (EDP), helps to protect against potential data leakage without interfering with the employee's work. In short, it prevents data from leaving apps protected by an app protection policy on Windows 10 devices. It works just like the App protection policy for Android we created above. It will prevent data from leaving the protected app. There are 4 settings:</p>
                     <ul>

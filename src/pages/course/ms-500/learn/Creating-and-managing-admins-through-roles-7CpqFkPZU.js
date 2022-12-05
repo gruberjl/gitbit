@@ -191,21 +191,21 @@ class ArticlePage extends Component {
                     <h2>How to assign roles to users</h2>
                     <p>1. Go to <a href="https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users" target="_blank" rel="noreferrer">https://admin.microsoft.com/Adminportal/Home?source=applauncher#/users</a>.</p>
                     <p>2. Click the user you want to assign a role to then click <strong>Manage roles</strong>.</p>
-                    <div ><img src="https://i.ibb.co/2g9zNSh/microsoft-365-manage-roles.png" alt="Microsoft 365 assign a role to a user" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/2g9zNSh/microsoft-365-manage-roles.png" alt="Microsoft 365 assign a role to a user" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Admin center access</strong> then select the roles you want to assign.</p>
-                    <div ><img src="https://i.ibb.co/h1hqMDC/microsoft-365-manage-admin-roles.png" alt="Microsoft 365 assign admin role to user" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/h1hqMDC/microsoft-365-manage-admin-roles.png" alt="Microsoft 365 assign admin role to user" height="auto" width="auto" /></div>
                     <p>If you want to give more specific permissions click <strong>Show all by category</strong>.</p>
-                    <div ><img src="https://i.ibb.co/37PBpQf/microsoft-365-admin-role-categories.png" alt="Microsoft 365 admin role categories" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/37PBpQf/microsoft-365-admin-role-categories.png" alt="Microsoft 365 admin role categories" height="auto" width="auto" /></div>
                     <h2>How to view the rights of admin roles</h2>
                     <p>A quick overview of the admin role can be seen by highlighting the <strong>I</strong> next to the role.</p>
-                    <div ><img src="https://i.ibb.co/984JZn2/microsoft-365-quick-view-of-admin-rights.png" alt="Microsoft 365 admin roles view description" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/984JZn2/microsoft-365-quick-view-of-admin-rights.png" alt="Microsoft 365 admin roles view description" height="auto" width="auto" /></div>
                     <p>But to see the actual role permissions assigned you'll need to use Azure Active Directory</p>
                     <p>1. Go to <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators" target="_blank" rel="noreferrer">https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/RolesAndAdministrators</a></p>
                     <p>2. Click the administrative role you want to view the permissions for.</p>
                     <p>From this page, you can view all the roles in your tenant.&nbsp;</p>
-                    <div ><img src="https://i.ibb.co/gVnhfmz/azure-ad-roles.png" alt="Azure AD Roles" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/gVnhfmz/azure-ad-roles.png" alt="Azure AD Roles" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Description</strong>. From there you can view the role permissions.</p>
-                    <div ><img src="https://i.ibb.co/g6MbsX9/azure-ad-role-permissions-descriptions.png" alt="C:\Users\john.gruber\Downloads\azure ad role permissions descriptions" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/g6MbsX9/azure-ad-role-permissions-descriptions.png" alt="C:\Users\john.gruber\Downloads\azure ad role permissions descriptions" height="auto" width="auto" /></div>
                     <h2>A few key Microsoft 365 roles</h2>
                     <p>In the next section, I'll review a few key roles and what they have access to do. It's important to remember what roles can perform what permissions as part of the MS-500 test.</p>
                     <h3>Global administrator</h3>
@@ -249,17 +249,17 @@ class ArticlePage extends Component {
                     <h3>How to assign Exchange Online admin roles</h3>
                     <p>1. Go to <a href="https://admin.exchange.microsoft.com/#/adminRoles" target="_blank" rel="noreferrer">https://admin.exchange.microsoft.com/#/adminRoles</a> and sign in with your admin credentials.</p>
                     <p>2. Click the role you want to assign to a user. Then click the <strong>Assigned</strong> tab. Finally, click <strong>Add</strong>.</p>
-                    <div ><img src="https://i.ibb.co/WyfXXJQ/assign-exchange-online-admin-roles.png" alt="Assign Exchange Online admin roles" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/WyfXXJQ/assign-exchange-online-admin-roles.png" alt="Assign Exchange Online admin roles" height="auto" width="auto" /></div>
                     <p>3. Type the name of the user you want to add as an admin. Click the user in the drop-down.</p>
-                    <div ><img src="https://i.ibb.co/GP6CfSM/exchange-online-add-admins.png" alt="Exchange Online add admin" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/GP6CfSM/exchange-online-add-admins.png" alt="Exchange Online add admin" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Add</strong>.</p>
-                    <div ><img src="https://i.ibb.co/LzbxPpt/add-user-to-exchange-admin-role.png" alt="Add user to Exchange admin role" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/LzbxPpt/add-user-to-exchange-admin-role.png" alt="Add user to Exchange admin role" height="auto" width="auto" /></div>
                     <h3><span >How to view the rights of Exchange Online admin roles</span>&nbsp;</h3>
                     <p>Just like the Microsoft 365 admin roles, you can view the description and see the permissions assigned to each role.</p>
                     <p>1. To view the description go to <a href="https://admin.exchange.microsoft.com/#/adminRoles" target="_blank" rel="noreferrer">https://admin.exchange.microsoft.com/#/adminRoles</a> and click the role you want to view.</p>
-                    <div ><img src="https://i.ibb.co/wgMcNZd/exchange-online-admin-roles-description.png" alt="View the Exchange Online admin role descrptions" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/wgMcNZd/exchange-online-admin-roles-description.png" alt="View the Exchange Online admin role descrptions" height="auto" width="auto" /></div>
                     <p>2. To view the permissions assigned click the <strong>Permissions </strong>tab. You can review the permissions by hovering the mouse over the <strong>I</strong>.</p>
-                    <div ><img src="https://i.ibb.co/7CtNXBz/Exchange-Online-admin-role-permissions.png" alt="Exchange Online admin role permissions" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/7CtNXBz/Exchange-Online-admin-role-permissions.png" alt="Exchange Online admin role permissions" height="auto" width="auto" /></div>
                     <h3>A few key Exchange Online roles</h3>
                     <h4>Organization Management</h4>
                     <p>Organization Management members can manage virtually everything in Exchange Online. It's like the global admin but for Exchange Online.</p>
@@ -272,23 +272,23 @@ class ArticlePage extends Component {
                     <h3>How to assign roles to users</h3>
                     <p>1. Go to <a href="https://compliance.microsoft.com/permissions" target="_blank" rel="noreferrer">https://compliance.microsoft.com/permissions</a>.</p>
                     <p>2. Click <strong>Roles</strong> under Compliance center.</p>
-                    <div ><img src="https://i.ibb.co/N2mM2rk/compliance-center-roles.png" alt="Microsoft 365 compliance center open roles button" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/N2mM2rk/compliance-center-roles.png" alt="Microsoft 365 compliance center open roles button" height="auto" width="auto" /></div>
                     <p>3. Click the role you want to assign</p>
-                    <div ><img src="https://i.ibb.co/wsFKJXB/assign-compliance-role-edit-members.png" alt="Compliance role edit members" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/wsFKJXB/assign-compliance-role-edit-members.png" alt="Compliance role edit members" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Choose members</strong></p>
-                    <div ><img src="https://i.ibb.co/jb73wrC/compliance-center-roles-choose-members.png" alt="C:\Users\john.gruber\Downloads\compliance center roles - choose members" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/jb73wrC/compliance-center-roles-choose-members.png" alt="C:\Users\john.gruber\Downloads\compliance center roles - choose members" height="auto" width="auto" /></div>
                     <p>5. Click <strong>Add</strong></p>
-                    <div ><img src="https://i.ibb.co/Jjvg1QG/compliance-center-roles-add-members.png" alt="compliance center roles - add members" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Jjvg1QG/compliance-center-roles-add-members.png" alt="compliance center roles - add members" height="auto" width="auto" /></div>
                     <p>6. Click the checkmark next to the users you want to add to the role. Verify the number of users you select appears next to Added. Click <strong>Add</strong>.</p>
-                    <div ><img src="https://i.ibb.co/TRFcysW/compliance-center-roles-select-members-to-add.png" alt="C:\Users\john.gruber\Downloads\compliance center roles - select members to add" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/TRFcysW/compliance-center-roles-select-members-to-add.png" alt="C:\Users\john.gruber\Downloads\compliance center roles - select members to add" height="auto" width="auto" /></div>
                     <p>7. Click <strong>Done</strong> then click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/ByVRjSV/compliance-center-roles-Save-member-change.png" alt="C:\Users\john.gruber\Downloads\compliance center roles - Save member change" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/ByVRjSV/compliance-center-roles-Save-member-change.png" alt="C:\Users\john.gruber\Downloads\compliance center roles - Save member change" height="auto" width="auto" /></div>
                     <h3>How to view the rights of compliance center admin roles</h3>
                     <p>It's easy to view the assigned roles to the role groups.</p>
                     <p>1. Go to <a href="https://compliance.microsoft.com/compliancecenterpermissions" target="_blank" rel="noreferrer">https://compliance.microsoft.com/compliancecenterpermissions</a> and sign in with your admin permissions.</p>
                     <p>2. Click the role you want to view the permissions for.</p>
                     <p>3. View the Assigned roles.</p>
-                    <div ><img src="https://i.ibb.co/Tv9X1NY/compliance-center-roles-view-assigned-roles.png" alt="Compliance center roles - view assigned roles" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Tv9X1NY/compliance-center-roles-view-assigned-roles.png" alt="Compliance center roles - view assigned roles" height="auto" width="auto" /></div>
                     <h3>A few key compliance center admin roles</h3>
                     <p>In the next section, I'll review a few key roles and what they have access to do. It's important to remember what roles can perform what permissions as part of the MS-500 test.</p>
                     <h4>Global admin</h4>

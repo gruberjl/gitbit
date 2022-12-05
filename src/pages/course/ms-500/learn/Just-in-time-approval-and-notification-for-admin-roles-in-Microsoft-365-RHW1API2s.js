@@ -190,53 +190,53 @@ class ArticlePage extends Component {
                     <h2>Assign a role</h2>
                     <p>Now let's assign a role using PIM. By default, the role can only be active for 8 hours. So let's give a user a permanent role assignment.</p>
                     <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</p>
-                    <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="How to open Azure AD PIM" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="How to open Azure AD PIM" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Azure AD roles</strong> &gt; <strong>Assignments</strong> &gt; <strong>Add assignments</strong>.</p>
-                    <div ><img src="https://i.ibb.co/mtw4673/PIM-Add-Assignments.png" alt="Add assignments in PIM" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/mtw4673/PIM-Add-Assignments.png" alt="Add assignments in PIM" height="auto" width="auto" /></div>
                     <p>3. Under <strong>Select role</strong> select <strong>Global Administrator</strong>. Click <strong>No member selected</strong>. Select the <strong>user </strong>you want to add. Click <strong>Select</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/MGjzT0Q/add-user-assignments.png" alt="Add user assignments in PIM" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/MGjzT0Q/add-user-assignments.png" alt="Add user assignments in PIM" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Assign</strong>.</p>
                     <h2>How to activate a role assignment</h2>
                     <p>Once you assign a user an eligible role the user will receive the following email:</p>
-                    <div ><img src="https://i.ibb.co/dcb6XFN/Activate-a-Role.png" alt="Activate a PIM role" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/dcb6XFN/Activate-a-Role.png" alt="Activate a PIM role" height="auto" width="auto" /></div>
                     <p>1. Click <strong>View or activate role</strong>.</p>
                     <p>2. Click <strong>Activate</strong>.</p>
                     <p>3. If additional verification is required click <strong>continue</strong>. Finish the authentication.</p>
-                    <div ><img src="https://i.ibb.co/2d73qCQ/continue.png" alt="additional-verification-click-to-continue" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/2d73qCQ/continue.png" alt="additional-verification-click-to-continue" height="auto" width="auto" /></div>
                     <p>4. Set a <strong>reason</strong>. Click <strong>Activate</strong>.</p>
-                    <div ><img src="https://i.ibb.co/XzvVpkv/activate-role.png" alt="Activate a role" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/XzvVpkv/activate-role.png" alt="Activate a role" height="auto" width="auto" /></div>
                     <h2>Review role assignments</h2>
                     <p>As an admin, you may need to review who's assigned what roles. Let's take a look.</p>
                     <p>1. <span >Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</span></p>
-                    <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Azure AD roles</strong> &gt; <strong>Assignments</strong>.</p>
-                    <div ><img src="https://i.ibb.co/svCt0jy/PIM-assignments.png" alt="PIM assignments" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/svCt0jy/PIM-assignments.png" alt="PIM assignments" height="auto" width="auto" /></div>
                     <p>Under eligible assignments, you'll see the user you added. These users have a role assigned through PIM that needs to be activated.</p>
-                    <div ><img src="https://i.ibb.co/t37zJqS/eligible-assignments.png" alt="Eligible assignements" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/t37zJqS/eligible-assignments.png" alt="Eligible assignements" height="auto" width="auto" /></div>
                     <p>Click <strong>Active assignments</strong>. These users currently have roles. If you look under state you'll see two different states: "Assigned" and "Active". Assigned users have the role assigned to them permanently. They'll always have admin rights. Activated roles show users that are eligible for assignment and have activated the role.</p>
-                    <div ><img src="https://i.ibb.co/7btbR3M/active-pim-assignements.png" alt="Active PIM Assignements" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/7btbR3M/active-pim-assignements.png" alt="Active PIM Assignements" height="auto" width="auto" /></div>
                     <h2>Update Settings</h2>
                     <p>So now we've configured a user and we know how they can activate the admin role. But we've got a problem. The activation should only be 1 hour and another admin needs to approve the activation before the role is activated. Next, we'll disable the permanent assignment of the role. Finally, we'll make sure an admin is notified when the PIM role is activated.</p>
                     <p><span >1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>All services</strong> &gt; <strong>Azure AD Privileged Identity Management</strong>.</span></p>
-                    <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM roles" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/g47sPD6/Azure-Ad-PIM.png" alt="Azure AD PIM roles" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Azure AD roles </strong>&gt; <strong>Assignments</strong> &gt; <strong>Settings</strong>.</p>
-                    <div ><img src="https://i.ibb.co/h1KfLY4/PIM-settings.png" alt="Open PIM settings" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/h1KfLY4/PIM-settings.png" alt="Open PIM settings" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Application Administrator</strong> &gt; <strong>Edit</strong>.</p>
-                    <div ><img src="https://i.ibb.co/G55hBDT/edit-PIM-role-assignments.png" alt="Edit PIM role assignments" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/G55hBDT/edit-PIM-role-assignments.png" alt="Edit PIM role assignments" height="auto" width="auto" /></div>
                     <p>4. Set the <strong>Activation maximum duration (hours) </strong>to <strong>1</strong>. Click <strong>Require approval to activate</strong>. Click <strong>No approver selected</strong>. <strong>Select</strong> the <strong>admin</strong> to approve. Click <strong>Select</strong>. Click <strong>Next: Assignment</strong>.</p>
-                    <div ><img src="https://i.ibb.co/2nWcPxZ/edit-PIM-role-settings.png" alt="Edit PIM role settings" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/2nWcPxZ/edit-PIM-role-settings.png" alt="Edit PIM role settings" height="auto" width="auto" /></div>
                     <p>5. Uncheck <strong>Allow permanent active assignment</strong>. Click <strong>Next: Notification</strong>.</p>
-                    <div ><img src="https://i.ibb.co/1r6Sv3c/edit-PIM-role-settings-assignments.png" alt="Edit PIM role settings assignments" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/1r6Sv3c/edit-PIM-role-settings-assignments.png" alt="Edit PIM role settings assignments" height="auto" width="auto" /></div>
                     <p>6. Set an <strong>email address</strong> in the <strong>Role activation alert additional recipients</strong>. Click <strong>Update</strong>.</p>
                     <h2>Who can approve the admin role assignment?</h2>
                     <p>Only global administrators and privileged role administrators can approve the admin role assignments. Let's try it now. Walk through the "Assign a role" steps above but this time grant someone the application administrator role. Then login with the user you made eligible for the role and activate the role following the "How to activate a role assignment steps above".</p>
                     <h2>How to approve activation of a role</h2>
                     <p>1. Once a user requests a role the approver will receive an email with the subject "PIM: Review User's request to activate the Application Administrator role". In that email, click <strong>Approve or deny request</strong>.</p>
-                    <div ><img src="https://i.ibb.co/C0MtxQc/approve-pim-role-assignment-email.png" alt="Approve PIM role assignment email" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/C0MtxQc/approve-pim-role-assignment-email.png" alt="Approve PIM role assignment email" height="auto" width="auto" /></div>
                     <p>2. <strong>Review </strong>the <strong>request</strong> then click the <strong>checkbox </strong>next to the role. Click <strong>Approve</strong>.</p>
-                    <div ><img src="https://i.ibb.co/6Nrtpt9/approve-pim-role-assignment.png" alt="Approve the PIM role assignment" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/6Nrtpt9/approve-pim-role-assignment.png" alt="Approve the PIM role assignment" height="auto" width="auto" /></div>
                     <p>3. Give a <strong>justification</strong> and click <strong>Confirm</strong>.</p>
-                    <div ><img src="https://i.ibb.co/GkpLRJq/approve-request-justification.png" alt="Approve request justification" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/GkpLRJq/approve-request-justification.png" alt="Approve request justification" height="auto" width="auto" /></div>
                     <p />
                   </div>
                   <div id="bottom-of-article" />

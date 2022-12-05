@@ -187,17 +187,17 @@ class ArticlePage extends Component {
                   <div><p>Before we can start learning how to secure Microsoft 365 we will need a test tenant. A tenant where we can implement whatever you want and test things out before implementing them in production. A place where we can perform hands-on learning in a live environment without affecting production. Fortunately, we can set up a Microsoft 365 tenant for free to try out. You only need a free email address, such as gmail.com, outlook.com, or yahoo.com, and a phone number.</p>
                     <p>1. Go to <a href="https://click.linksynergy.com/fs-bin/click?id=iOIpmChCQh0&offerid=817940.17&type=3&subid=0" target="_blank" rel="noreferrer">Office 365 E5</a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
                     <p>2. Click <a href="https://click.linksynergy.com/fs-bin/click?id=iOIpmChCQh0&offerid=817940.17&type=3&subid=0" target="_blank" rel="noreferrer">Free Trial</a></p>
-                    <div ><img src="https://i.ibb.co/F07sjQJ/microsoft-365-e5-trial.png" alt="Microsoft 365 E5 Trial" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/F07sjQJ/microsoft-365-e5-trial.png" alt="Microsoft 365 E5 Trial" height="auto" width="auto" /></div>
                     <p>3. Enter your email address. Click <strong>Next</strong>.</p>
                     <p>4. Click <strong>Set up account</strong>.</p>
                     <p>5. Fill out the form under Tell us about yourself. Then click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/MMLchmz/tell-us-about-yourself.png" alt="Tell us about yourself form" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/MMLchmz/tell-us-about-yourself.png" alt="Tell us about yourself form" height="auto" width="auto" /></div>
                     <p>6. Enter your phone number and click Send verification code. Enter the code texted to you.</p>
-                    <div ><img src="https://i.ibb.co/0ngk6BK/send-verification-code.png" alt="Send verification code" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/0ngk6BK/send-verification-code.png" alt="Send verification code" height="auto" width="auto" /></div>
                     <p>7. Enter a name for your test tenant, for example, gitbittest1. Then click <strong>Check Availability</strong>. Find an available name. Then click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/xSYVRY1/how-youll-sign-in.png" alt="How you'll sign in" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/xSYVRY1/how-youll-sign-in.png" alt="How you'll sign in" height="auto" width="auto" /></div>
                     <p>8. Then enter a username, and password for your new tenant. Remember them or write them down. Then click <strong>Sign up</strong>.</p>
-                    <div ><img src="https://i.ibb.co/QJXH0Dk/how-youll-sign-in-2.png" alt="How you'll sign in - enter credentials" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/QJXH0Dk/how-youll-sign-in-2.png" alt="How you'll sign in - enter credentials" height="auto" width="auto" /></div>
                     <p>That's it. You now have a Microsoft 365 test tenant.</p>
                   </div>
                   <div id="bottom-of-article" />

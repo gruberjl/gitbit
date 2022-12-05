@@ -215,53 +215,53 @@ class ArticlePage extends Component {
                     </ul>
                     <h2>How to configure an attack simulation</h2>
                     <p>1. Go to the <strong>Microsoft Defender portal</strong> &gt; <strong>Attack simulation training</strong> &gt; <a href="https://security.microsoft.com/attacksimulator?viewid=simulations" target="_blank" rel="noreferrer"><strong>Simulations</strong></a>. Click <strong>Launch a simulation</strong>.</p>
-                    <div ><img src="https://i.ibb.co/HxvgcYk/launch-a-simulation.png" alt="Launch a phishing attack simulation" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/HxvgcYk/launch-a-simulation.png" alt="Launch a phishing attack simulation" height="auto" width="auto" /></div>
                     <p>2. Select the technique you want to use. In this scenario, we’ll leave <strong>Credential Harvest</strong> checked and click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/YTvnDry/select-a-technique.png" alt="Select a Technique" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/YTvnDry/select-a-technique.png" alt="Select a Technique" height="auto" width="auto" /></div>
                     <p>3. Enter the simulation name of <strong>Test Simulation</strong> in the space provided. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/JtdZw5W/name-your-simulation.png" alt="Name your simulation then click Next" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/JtdZw5W/name-your-simulation.png" alt="Name your simulation then click Next" height="auto" width="auto" /></div>
                     <p>4. Select the <strong>2 Failed Messages</strong> payload. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/6BPbMjC/select-a-payload.png" alt="Select the 2 failed messages payload. Then click Next" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/6BPbMjC/select-a-payload.png" alt="Select the 2 failed messages payload. Then click Next" height="auto" width="auto" /></div>
                     <p>5. On the Target Users page you can either select the users you want to test the deployment with or click<strong> Include all users in my organization</strong>. Set up the users you want to send the attack simulation training to and click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/hdj5mcc/target-users.png" alt="Select the users to target. Then click Next" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/hdj5mcc/target-users.png" alt="Select the users to target. Then click Next" height="auto" width="auto" /></div>
                     <p>6. On the Assign Training page leave the defaults and click Next.</p>
                     <p>7. On the landing page window leave the defaults and click Next.</p>
                     <p>8. On the select end-user notification page click <strong>Microsoft default notification (recommended)</strong>. Then click <strong>Delivery preferences</strong> &gt; <strong>Deliver during campaign</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/SQTjGBD/select-end-user-notification.png" alt="Select end user notifications" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/SQTjGBD/select-end-user-notification.png" alt="Select end user notifications" height="auto" width="auto" /></div>
                     <p>9. On the Launch details page click <strong>Next</strong>.</p>
                     <p>10. Click <strong>Submit</strong>. Click <strong>Done</strong>.</p>
                     <h2>What will users experience?</h2>
                     <p />
-                    <div ><img src="https://i.ibb.co/nkq9MsK/fake-phishing-email.png" alt="Fake phishing email" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/nkq9MsK/fake-phishing-email.png" alt="Fake phishing email" height="auto" width="auto" /></div>
                     <p>Each user you selected to receive the phishing simulation will receive the same email. The email will contain a link to a website that appears to be from Microsoft. When the user enters their credentials they’ll receive a page informing them that they were duped. Once on the page, Microsoft will explain a couple of things that they review to know if the email is a phishing scam or not. Under the quick guide will be a link to training that the user can attend to learn more.</p>
-                    <div ><img src="https://i.ibb.co/PYx0XxT/fake-phishing-landing-page.png" alt="Fake phishing landing page" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/PYx0XxT/fake-phishing-landing-page.png" alt="Fake phishing landing page" height="auto" width="auto" /></div>
                     <h2>How to view the report on who clicked the link?</h2>
                     <p>So now, we have some data. We’ve sent the email to some users in our organization but how do we check on who clicked the link / completed the training? It’s easy!</p>
                     <p>1. Go to the Microsoft Defender portal &gt; <strong>Attack simulation training</strong> &gt; <a href="https://security.microsoft.com/attacksimulator?viewid=simulations" target="_blank" rel="noreferrer"><strong>Simulations</strong></a>. Click <strong>Test Simulation</strong>.</p>
-                    <div ><img src="https://i.ibb.co/Sdkb0n4/view-phishing-simulation.png" alt="View phishing simulation" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Sdkb0n4/view-phishing-simulation.png" alt="View phishing simulation" height="auto" width="auto" /></div>
                     <p>From this page, you have a quick overview of the simulation. You can see how many users reported the email as phishing, clicked the link, and who entered their credentials.</p>
                     <p>2. Click <strong>View users</strong> to see where your users landed in the simulation.</p>
-                    <div ><img src="https://i.ibb.co/NyvnbMK/simulation-overview-view-users-circled.png" alt="Simulation overview view users circled" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/NyvnbMK/simulation-overview-view-users-circled.png" alt="Simulation overview view users circled" height="auto" width="auto" /></div>
                     <p>From this page, you can see which users were compromised and which users completed the training.</p>
                     <h2>How do we automatically schedule simulations?</h2>
                     <p>So now you’ve evaluated the simulation and maybe even sent the simulation to some of your end-users. The next question is, how do we make the simulations reoccur? Let’s take a look.</p>
                     <p>1. Go to Microsoft 365 Defender Portal &gt; <strong>Attack simulation training</strong> &gt; <a href="https://security.microsoft.com/attacksimulator?viewid=simulationautomation" target="_blank" rel="noreferrer"><strong>Simulation automations</strong></a>. Click <strong>Create automation</strong>.</p>
-                    <div ><img src="https://i.ibb.co/x3gkQK4/create-phishing-simulation-automation.png" alt="Create phishing simulation automation" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/x3gkQK4/create-phishing-simulation-automation.png" alt="Create phishing simulation automation" height="auto" width="auto" /></div>
                     <p>2. Set the name to <strong>Simulation Automation</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/X3ztyC5/name-your-automation.png" alt="Name your automation. Click next" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/X3ztyC5/name-your-automation.png" alt="Name your automation. Click next" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Credential Harvest</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/D9Vp9q5/Select-social-engineering-technique.png" alt="Select social engineering technique" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/D9Vp9q5/Select-social-engineering-technique.png" alt="Select social engineering technique" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Randomize</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/4N4906n/select-payloads.png" alt="Set payloads to randomize. Click Next" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/4N4906n/select-payloads.png" alt="Set payloads to randomize. Click Next" height="auto" width="auto" /></div>
                     <p>5. Select the users you want to be tested. As a start, you may want to select a couple of users. Then later you may want to come back and click <strong>Include all users in my organization</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/RywpK18/select-the-target-users.png" alt="Select the target users." style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/RywpK18/select-the-target-users.png" alt="Select the target users." height="auto" width="auto" /></div>
                     <p>6. On the assign training page, click <strong>Next</strong>.</p>
                     <p>7. On the Landing page window, click <strong>Next</strong>.</p>
                     <p>8. On the Select end user notification page click <strong>Microsoft default notification (recommended)</strong>. Set <strong>Delivery preferences</strong> to <strong>Deliver during campaign</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/wgKfQNX/select-end-user-notifications-page.png" alt="Select end user notifications" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/wgKfQNX/select-end-user-notifications-page.png" alt="Select end user notifications" height="auto" width="auto" /></div>
                     <p>9. On the Simulation schedule page click <strong>Next</strong>.</p>
                     <p>10. Set the <strong>simulation recurrence</strong>. Then click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/2yBQcj2/schedule-details.png" alt="Schedule details" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/2yBQcj2/schedule-details.png" alt="Schedule details" height="auto" width="auto" /></div>
                     <p>11. On the launch details page click <strong>Next</strong>.</p>
                     <p>12. Click <strong>Submit</strong>. Click <strong>Done</strong>.</p>
                     <p />

@@ -194,72 +194,72 @@ class ArticlePage extends Component {
                     <p>First, will need to give the AD connect account permission to reset users’ passwords.&nbsp;</p>
                     <p>1. Log onto the server that has AD Connect installed.</p>
                     <p>2. Open Azure AD Connect. Click <strong>Configure</strong>. Click <strong>View or export current configuration</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/bmn5HNg/view-current-ad-connect-settings.png" alt="View current AD connect settings" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/bmn5HNg/view-current-ad-connect-settings.png" alt="View current AD connect settings" height="auto" width="auto" /></div>
                     <p>3. Take note of the account listed under <strong>Synchronized Directories</strong> &gt; <strong>Account</strong>.</p>
-                    <div ><img src="https://i.ibb.co/LkCDyjm/MSOL-account.png" alt="MSOL Account" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/LkCDyjm/MSOL-account.png" alt="MSOL Account" height="auto" width="auto" /></div>
                     <p>4. Exit the AD Connect wizard.</p>
                     <p>5. Login onto a server that has Active Directory Users &amp; Computers.</p>
                     <p>6. Open Active Directory Users and Computers. Click <strong>View </strong>&gt; <strong>Advanced Features</strong><br />(if there is a checkbox next to Advanced Features then don’t click it.)</p>
-                    <div ><img src="https://i.ibb.co/p4RPcvB/enable-advanced-features.png" alt="Enable Advanced features" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/p4RPcvB/enable-advanced-features.png" alt="Enable Advanced features" height="auto" width="auto" /></div>
                     <p>7. Right-click the root domain &gt; <strong>Properties</strong>.</p>
-                    <div ><img src="https://i.ibb.co/HHD24wp/open-ad-properties.png" alt="Open AD properties" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/HHD24wp/open-ad-properties.png" alt="Open AD properties" height="auto" width="auto" /></div>
                     <p>8. Click the <strong>Security</strong> tab &gt; <strong>Advanced</strong>.</p>
-                    <div ><img src="https://i.ibb.co/4fpNryL/open-advanced-properties-in-ad.png" alt="Open advanced properties" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/4fpNryL/open-advanced-properties-in-ad.png" alt="Open advanced properties" height="auto" width="auto" /></div>
                     <p>9. Click <strong>Add</strong>.</p>
-                    <div ><img src="https://i.ibb.co/XVNpVjD/Add-Permissions.png" alt="Add permissions in AD" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/XVNpVjD/Add-Permissions.png" alt="Add permissions in AD" height="auto" width="auto" /></div>
                     <p>10. Click <strong>Select a principal</strong> &gt; enter the name of the account you found in step 3 above. Click <strong>OK</strong>.</p>
-                    <div ><img src="https://i.ibb.co/TT4PC9t/select-a-principal-ad.png" alt="Select a principal" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/TT4PC9t/select-a-principal-ad.png" alt="Select a principal" height="auto" width="auto" /></div>
                     <p>11. Click the <strong>Applies to</strong> drop-down and select <strong>Descendant User Objects</strong>.</p>
-                    <div ><img src="https://i.ibb.co/YTznr3c/descendant-user-objects.png" alt="Select Descendant User Objects" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/YTznr3c/descendant-user-objects.png" alt="Select Descendant User Objects" height="auto" width="auto" /></div>
                     <p>12. Click <strong>Reset password</strong> (located under Permissions).</p>
-                    <div ><img src="https://i.ibb.co/ch4C20T/reset-password.png" alt="Reset password permissions" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/ch4C20T/reset-password.png" alt="Reset password permissions" height="auto" width="auto" /></div>
                     <p>13. Find and check <strong>Write lockoutTime</strong>.</p>
-                    <div ><img src="https://i.ibb.co/JqLvsnC/write-lockouttime.png" alt="Write lockoutTime" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/JqLvsnC/write-lockouttime.png" alt="Write lockoutTime" height="auto" width="auto" /></div>
                     <p>14. Find and check <strong>Write pwdLastSet</strong>.</p>
-                    <div ><img src="https://i.ibb.co/X3jDPmt/write-pwd-Last-Set.png" alt="Write pwdLastSet" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/X3jDPmt/write-pwd-Last-Set.png" alt="Write pwdLastSet" height="auto" width="auto" /></div>
                     <p>15. Click <strong>OK</strong>.</p>
                     <p>16. Click <strong>Add</strong> again.</p>
-                    <div ><img src="https://i.ibb.co/XVNpVjD/Add-Permissions.png" alt="Add permissions in AD" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/XVNpVjD/Add-Permissions.png" alt="Add permissions in AD" height="auto" width="auto" /></div>
                     <p>17. Click <strong>Select a principal</strong> &gt; enter the name of the account you found in step 3 above. Click <strong>OK</strong>.</p>
-                    <div ><img src="https://i.ibb.co/TT4PC9t/select-a-principal-ad.png" alt="Select a principal" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/TT4PC9t/select-a-principal-ad.png" alt="Select a principal" height="auto" width="auto" /></div>
                     <p>18. Click <strong>Unexpire password</strong>. Click <strong>OK </strong>until you’ve closed all the windows.</p>
-                    <div ><img src="https://i.ibb.co/yBsDWSF/unexpire-password.png" alt="Unexpire password" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/yBsDWSF/unexpire-password.png" alt="Unexpire password" height="auto" width="auto" /></div>
                     <h2>Configure password writeback in AD Connect</h2>
                     <p>Next, we’ll need to enable password write-back in AD Connect.</p>
                     <p>1. Logon to the AD Connect server.</p>
                     <p>2. Double click Azure AD Connect.</p>
                     <p>3. Click <strong>Configure</strong>.</p>
                     <p>4. Click <strong>Customize synchronization options</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/SJvpG6h/customize-syncronization-options.png" alt="Customize synchronization options" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/SJvpG6h/customize-syncronization-options.png" alt="Customize synchronization options" height="auto" width="auto" /></div>
                     <p>5. Enter your Microsoft 365 global admin credentials. Click <strong>Next</strong>. If required, re-enter your credentials in the space provided.</p>
-                    <div ><img src="https://i.ibb.co/X3bdwkd/ad-connect-enter-global-admin-credentials.png" alt="AD Connect enter your global admin credentials" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/X3bdwkd/ad-connect-enter-global-admin-credentials.png" alt="AD Connect enter your global admin credentials" height="auto" width="auto" /></div>
                     <p>6. On the Connect your directories page, click <strong>Next</strong>.</p>
                     <p>7. On the Domain and OU filtering page, click <strong>Next</strong>.</p>
                     <p>8. On the Optional features page, click <strong>Password writeback</strong>. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/dkbsv38/enable-password-writeback-in-ad-connect.png" alt="Enable password write-back in AD Connect" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/dkbsv38/enable-password-writeback-in-ad-connect.png" alt="Enable password write-back in AD Connect" height="auto" width="auto" /></div>
                     <p>9. On the Ready to configure page, click <strong>Configure</strong>.</p>
                     <p>10. Wait until the configuration is complete. Then click <strong>Exit</strong>.</p>
                     <h2>Enable SSPR in Microsoft 365</h2>
                     <p>Lastly, we need to enable self-service password reset in Microsoft 365.</p>
                     <p>1. Open Azure Active Directory admin center and login with a global admin account &gt; <strong>Azure Active Directory</strong> &gt; <strong>Password Reset</strong>.</p>
-                    <div ><img src="https://i.ibb.co/BnySDH5/password-reset-options-in-microsoft-365.png" alt="Password reset options in Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/BnySDH5/password-reset-options-in-microsoft-365.png" alt="Password reset options in Microsoft 365" height="auto" width="auto" /></div>
                     <p>2. Click <strong>All </strong>to enable SSPR for everyone. Click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/nLP24yX/enable-sspr.png" alt="Enable SSPR" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/nLP24yX/enable-sspr.png" alt="Enable SSPR" height="auto" width="auto" /></div>
                     <p>3. Go to <strong>on-premises integration</strong>. Click <strong>Yes</strong> under Write back passwords to your on-premises directory. Click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/58y9JVg/write-back-passwords-to-on-premises-directory.png" alt="Write-back on-premises integration" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/58y9JVg/write-back-passwords-to-on-premises-directory.png" alt="Write-back on-premises integration" height="auto" width="auto" /></div>
                     <h2>Enable combined registration</h2>
                     <p>Enabling combined registration will mean users will only need to register a device once for a multifactor and self-service password reset. Without enabling combined registration users will need to add their cell phone twice. This feature is already enabled for new tenants.&nbsp;</p>
                     <p>1. log in to Azure Active Directory admin center with global admin credentials.</p>
                     <p>2. Go to <strong>Azure Active Directory</strong> &gt; <strong>User Settings</strong> &gt; <strong>Manage user feature settings</strong>.</p>
-                    <div ><img src="https://i.ibb.co/cJLFytw/manage-user-feature-settings.png" alt="Microsoft 365 manage user feature settings" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/cJLFytw/manage-user-feature-settings.png" alt="Microsoft 365 manage user feature settings" height="auto" width="auto" /></div>
                     <p>3. Click <strong>All</strong> under Users can use the combined security information registration experience. Click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/61QhNtN/enable-combined-features.png" alt="Microsoft 365 enabled combined features" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/61QhNtN/enable-combined-features.png" alt="Microsoft 365 enabled combined features" height="auto" width="auto" /></div>
                     <h2>Set authentication methods and harden security</h2>
                     <p>So now we've configured self-service password reset but how do we harden the security? There is a couple of ways. First, let's jump into the authentication methods.</p>
                     <p>1. Sign in to Azure Active Directory admin center with a global admin. Then go to <strong>Azure Active Directory</strong> &gt; <strong>Password reset</strong> &gt; <strong>Authentication methods</strong>.</p>
                     <p>2. If you want to require a user to have 2 methods of authentication when resetting the password click <strong>2</strong>.</p>
                     <p>3. If you want to allow the users to provide answers to security questions or an office phone to authenticate click the checkboxes.</p>
-                    <div ><img src="https://i.ibb.co/Tvwz6YJ/microsoft-365-password-reset-authentication-methods.png" alt="Microsoft 365 password reset authentication methods" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Tvwz6YJ/microsoft-365-password-reset-authentication-methods.png" alt="Microsoft 365 password reset authentication methods" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Save</strong>.</p>
                     <h2>End-users experience setting up their own authentication methods</h2>
                     <p>Now self-service password reset is enabled for your tenant. How do users configure their authentication methods? It’s easy.</p>
@@ -273,17 +273,17 @@ class ArticlePage extends Component {
                     <p>In this section, I'll explain the end-user experience of resetting their passwords.&nbsp;</p>
                     <p>1. Go to <a href="https://portal.office.com" target="_blank" rel="noreferrer">https://portal.office.com</a>&nbsp;</p>
                     <p>2. Click <strong>Can’t access your account?</strong></p>
-                    <div ><img src="https://i.ibb.co/mX8t7P0/cant-access-your-account.png" alt="Can't access your account? Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/mX8t7P0/cant-access-your-account.png" alt="Can't access your account? Microsoft 365" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Work or school account</strong>.</p>
-                    <div ><img src="https://i.ibb.co/DYBGr63/which-type-of-account-do-you-need-help-with.png" alt="Which type of account do you need help with?" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/DYBGr63/which-type-of-account-do-you-need-help-with.png" alt="Which type of account do you need help with?" height="auto" width="auto" /></div>
                     <p>4. Enter your username in the space provided. Fill out the CAPTCHA in the space provided. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/V3qmVYF/get-back-into-your-account.png" alt="Get back into your account" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/V3qmVYF/get-back-into-your-account.png" alt="Get back into your account" height="auto" width="auto" /></div>
                     <p>5. Enter your phone number in the space provided. Click <strong>Text</strong>.</p>
-                    <div ><img src="https://i.ibb.co/FHym3Rx/get-back-into-your-account-text.png" alt="Get back into your account text message" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/FHym3Rx/get-back-into-your-account-text.png" alt="Get back into your account text message" height="auto" width="auto" /></div>
                     <p>6. Enter the code texted to you. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/xYsJ3gy/enter-the-code-texted-to-you.png" alt="Enter the code texted to you" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/xYsJ3gy/enter-the-code-texted-to-you.png" alt="Enter the code texted to you" height="auto" width="auto" /></div>
                     <p>7. Enter your new password twice. Click <strong>Finish</strong>.</p>
-                    <div ><img src="https://i.ibb.co/T0TR946/choose-a-new-password.png" alt="Choose a new password in SSPR for Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/T0TR946/choose-a-new-password.png" alt="Choose a new password in SSPR for Microsoft 365" height="auto" width="auto" /></div>
                     <p>There are a few more settings that can be changed in <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/PasswordResetMenuBlade/" target="_blank" rel="noreferrer">https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/PasswordResetMenuBlade/</a>  so be sure to take a look.</p>
                   </div>
                   <div id="bottom-of-article" />

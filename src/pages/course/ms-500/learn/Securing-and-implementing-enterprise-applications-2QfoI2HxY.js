@@ -192,16 +192,16 @@ class ArticlePage extends Component {
                     <p>4. Next, you’ll see the permissions requested page. From here you see the permissions the app would like to access in your Microsoft 365 user account.</p>
                     <p>If you’re an admin you’ll also see a <strong>Consent on behalf of your organization</strong>.</p>
                     <p>5. Click <strong>Accept</strong>.</p>
-                    <div ><img src="https://i.ibb.co/6wc4hND/3rd-party-app-consent-request.png" alt="3rd party app consenting request" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/6wc4hND/3rd-party-app-consent-request.png" alt="3rd party app consenting request" height="auto" width="auto" /></div>
                     <p>That’s it. Now Microsoft’s Tech Community can sign in as your user and read your user’s profile. Now, Microsoft’s Tech community is run by Microsoft so it’s a safe app to grant access to your tenant but what about other apps?</p>
                     <p>A malicious individual could trick your users into granting apps access to your tenant that they shouldn’t have. So, we’ll need to manage and restrict what apps users can grant access to. Before we lock down the access let’s look at the apps that already have access to your tenant.</p>
                     <h2>How to view third-party app access to your Microsoft 365 tenant</h2>
                     <p>1. Go to <strong>Azure AD admin center</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/StartboardApplicationsMenuBlade/AllApps" target="_blank" rel="noreferrer"><strong>Enterprise applications</strong></a>.</p>
                     <p>2. Find and click the <strong>Microsoft Tech Community</strong> app.</p>
-                    <div ><img src="https://i.ibb.co/6HwM4Zg/review-app-access.png" alt="Review app access" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/6HwM4Zg/review-app-access.png" alt="Review app access" height="auto" width="auto" /></div>
                     <p>3. By clicking <strong>Users and groups</strong> you can review who has given permissions to the app.</p>
                     <p>4. By clicking <strong>Permissions </strong>&gt; <strong>User consent</strong> you can review what permissions have been given to the app.</p>
-                    <div ><img src="https://i.ibb.co/3fVnBjt/enterprise-app-permissions.png" alt="Enterprise app permissions in Azure AD" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/3fVnBjt/enterprise-app-permissions.png" alt="Enterprise app permissions in Azure AD" height="auto" width="auto" /></div>
                     <h2>Block users from granting access to any apps</h2>
                     <p>The best way to protect your tenant is to require admins to approve any third-party applications before a user can consent. That way users can't grant malicious apps access to your Microsoft 365 data or tenant.</p>
                     <p>1. Go to <strong>Azure AD admin center</strong> &gt; <strong>Enterprise applications</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/UserSettings" target="_blank" rel="noreferrer">Consent and permissions</a>.&nbsp;</p>
@@ -210,34 +210,34 @@ class ArticlePage extends Component {
                     <p>4. Click <strong>Yes </strong>next to Users can request admin consent to apps they are unable to consent to.</p>
                     <p>5. Click <strong>Add roles</strong>. Search for <strong>global</strong>. Click <strong>Select</strong>.</p>
                     <p>6. Click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/C2mp69m/disable-user-consent.png" alt="Disable user consent and require an admin to approve" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/C2mp69m/disable-user-consent.png" alt="Disable user consent and require an admin to approve" height="auto" width="auto" /></div>
                     <p>Now, users can request access to apps and a notification will go to your global admins. Let’s look at how that would work.</p>
                     <h2>Require admin approval to allow an app access to Microsoft 365</h2>
                     <p>1. Go to <a href="https://www.zoho.com/signup.html" target="_blank" rel="noreferrer">https://www.zoho.com/signup.html</a>&nbsp;</p>
                     <p>2. Click the Office button.</p>
-                    <div ><img src="https://i.ibb.co/7RN0X5v/zoho-office-login.png" alt="Zoho Office login" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/7RN0X5v/zoho-office-login.png" alt="Zoho Office login" height="auto" width="auto" /></div>
                     <p>3. Login with a regular user account.</p>
                     <p>4. Enter a justification reason and click <strong>Request approval</strong>.</p>
-                    <div ><img src="https://i.ibb.co/BBN6L3x/request-app-access.png" alt="App requesting access to Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/BBN6L3x/request-app-access.png" alt="App requesting access to Microsoft 365" height="auto" width="auto" /></div>
                     <p><span >At this point, the admins will receive an email saying they need to review the consent.</span>&nbsp;</p>
                     <p>1. Click <strong>Review request</strong>.</p>
-                    <div ><img src="https://i.ibb.co/Q8dh29f/admin-review-email.png" alt="Admins receiving notification user wants app access" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Q8dh29f/admin-review-email.png" alt="Admins receiving notification user wants app access" height="auto" width="auto" /></div>
                     <p>2. Click the app that requests approval.</p>
-                    <div ><img src="https://i.ibb.co/DbBfrF4/review-app-access-requests.png" alt="Review app access requests" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/DbBfrF4/review-app-access-requests.png" alt="Review app access requests" height="auto" width="auto" /></div>
                     <p>3. Click <strong>Review permissions and consent</strong>.</p>
-                    <div ><img src="https://i.ibb.co/wQqYW6B/review-permissions-and-consent.png" alt="Review 3rd party app access request" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/wQqYW6B/review-permissions-and-consent.png" alt="Review 3rd party app access request" height="auto" width="auto" /></div>
                     <p>4. Click <strong>Accept</strong>.</p>
-                    <div ><img src="https://i.ibb.co/rxSkbBQ/approve-access.png" alt="Approve access to third-party app" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/rxSkbBQ/approve-access.png" alt="Approve access to third-party app" height="auto" width="auto" /></div>
                     <p>Once you click to accept the user will receive an email saying the access has been approved. Then the user can go back to the third-party app and gain access using their Microsoft 365 tenant account.</p>
-                    <div ><img src="https://i.ibb.co/RSwm2wQ/approved-email.png" alt="third-party app approved" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/RSwm2wQ/approved-email.png" alt="third-party app approved" height="auto" width="auto" /></div>
                     <h2>Auto-approval</h2>
                     <p>Now you may be wondering how many requests you’ll receive. If you are in a smaller organization then chances are you won’t receive too many and you’ll be fine. If you’re in a larger organization, you may receive a lot of requests. That’s not good. You’ll be constantly approving apps even though they may not need many permissions. Let’s set up auto-approval for verified publishers that request a few permissions.</p>
                     <p>1. Go to <strong>Azure AD admin center</strong> &gt; <strong>Enterprise applications</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ConsentPoliciesMenuBlade/UserSettings" target="_blank" rel="noreferrer"><strong>Consent and permissions</strong></a>.</p>
                     <p>2. Click <strong>Allow user consent for apps from verified publishers, for selected permissions</strong>. Click <strong>Save</strong></p>
                     <p>3. Click <strong>Select permissions to classify as minimal impact</strong>.</p>
-                    <div ><img src="https://i.ibb.co/vsv7Cyn/allow-user-consent-for-apps.png" alt="auto-approve apps with minimal impact" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/vsv7Cyn/allow-user-consent-for-apps.png" alt="auto-approve apps with minimal impact" height="auto" width="auto" /></div>
                     <p>4. Click the permissions you want to auto-approve. Click <strong>Yes, add selected permissions</strong>.</p>
-                    <div ><img src="https://i.ibb.co/16wXQjb/add-most-used-auto-approved-permissions.png" alt="Select permissions to auto-approve" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/16wXQjb/add-most-used-auto-approved-permissions.png" alt="Select permissions to auto-approve" height="auto" width="auto" /></div>
                     <p />
                   </div>
                   <div id="bottom-of-article" />

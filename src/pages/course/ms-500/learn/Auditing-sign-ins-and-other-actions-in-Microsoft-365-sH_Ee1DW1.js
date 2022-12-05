@@ -189,30 +189,30 @@ class ArticlePage extends Component {
                     <p>Sign-in logs are probably the most common logs used in Microsoft 365. From there you can see when a user logs in, what location they signed in from, and much more. Let's jump in and take a look.</p>
                     <h3>How to view sign-in logs</h3>
                     <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/SignIns" target="_blank" rel="noreferrer"><strong>Sign-in logs</strong></a>.</p>
-                    <div ><img src="https://i.ibb.co/gSn6PVP/sign-in-logs.png" alt="Sign-in logs" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/gSn6PVP/sign-in-logs.png" alt="Sign-in logs" height="auto" width="auto" /></div>
                     <p>From here you can see all the sign-ins to your Microsoft 365 tenant. You can filter the log to see more particular information. Finally, you can view the same sign-in logs from Azure Active Directory admin center &gt; Enterprise applications &gt; Sign-in logs.</p>
                     <h3>How to view sign-in logs for a user</h3>
                     <p>Now, you can go to the sign-in logs, then add a filter for a particular user but that's a bit tedious. Since most of the time when you want to review sign-in logs, you are looking at a particular user let's look at the sign-in logs another way. By having it automatically filtered for a user.</p>
                     <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>Users</strong>. <strong>Select the user</strong> you want to view.</p>
-                    <div ><img src="https://i.ibb.co/F8FqcGJ/sign-in-logs-for-user.png" alt="Sign-in logs for user" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/F8FqcGJ/sign-in-logs-for-user.png" alt="Sign-in logs for user" height="auto" width="auto" /></div>
                     <p>2. Click <strong>Sign-in logs</strong>.</p>
                     <h3>How to read the sign-in logs</h3>
                     <p>Now that we are at the sign-in logs let's take a look at how to read them. Before we jump into reviewing one of the logs you should know one thing. The sign-in logs will show more than one sign-in for the user. For example, if you sign into the Microsoft 365 admin center and then navigate to the Azure AD admin center you'll see at least two "sign-ins". That's because every time you navigate to a different app in Microsoft 365 you are re-authenticating using the same token. Now, click one of the sign-ins to view the data.</p>
                     <h4>Basic info</h4>
                     <p>On the basic info tab, you can see, basic info on the sign-in. Surprised right? Anyway, from here you can see information like the user that the sign-in is related to, and what application they signed into.</p>
-                    <div ><img src="https://i.ibb.co/DDHPKTV/activity-details.png" alt="activity details" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/DDHPKTV/activity-details.png" alt="activity details" height="auto" width="auto" /></div>
                     <h4>Location</h4>
                     <p>On the location tab, you'll find the information on where the user logged in from. For example, you'll see the IP address and the best guess on the actual location. For example, Philadelphia, PA, US.</p>
-                    <div ><img src="https://i.ibb.co/QY6q69M/location-tab.png" alt="Location tab" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/QY6q69M/location-tab.png" alt="Location tab" height="auto" width="auto" /></div>
                     <h4>Device info</h4>
                     <p>From the device info tab, you'll find information about the device. If the device is in Azure AD, you may see a device name. If the sign-in is from a browser, you'll notice the browser is located in the device info tab.</p>
-                    <div ><img src="https://i.ibb.co/gZQ2vnG/device-info-tab.png" alt="Device info tab" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/gZQ2vnG/device-info-tab.png" alt="Device info tab" height="auto" width="auto" /></div>
                     <h4>Authentication Details</h4>
                     <p>The authentication details tab is where you'll find information about how the user signed in. For example, if it's the actual sign-in you may see "Password Hash Sync" or "Password in the cloud". If the user is already signed in and simply connecting to another service you'll see "Previously satisfied"</p>
-                    <div ><img src="https://i.ibb.co/85LXdWW/Authentication-Details.png" alt="Authentication Details" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/85LXdWW/Authentication-Details.png" alt="Authentication Details" height="auto" width="auto" /></div>
                     <h4>Conditional access</h4>
                     <p>The conditional access tab will show you what conditional access policies were applied and which were not. It will also show you the status of the conditional access policy. For example, if the policy failed (and blocked the sign-in) then it will show Failure. Lastly, you can click the policy name to see information about the conditions and access controls. That way you can see why a policy failed, succeeded or didn't apply.</p>
-                    <div ><img src="https://i.ibb.co/2tCsbnf/conditional-access-policy-sign-in-logs.png" alt="conditional access policy sign-in logs" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/2tCsbnf/conditional-access-policy-sign-in-logs.png" alt="conditional access policy sign-in logs" height="auto" width="auto" /></div>
                     <h4>Report only</h4>
                     <p>The report-only tab will show you conditional access policies that are in report-only mode. They won't block the sign-in but that way you can test your conditional access policies before applying them.</p>
                     <h4>Additional details</h4>
@@ -222,13 +222,13 @@ class ArticlePage extends Component {
                     <h3>How to view account logs for the tenant</h3>
                     <p>Just like the sign-in logs except its one option lower (or up depending on where you are)</p>
                     <p>1. Go to <strong>Azure Active Directory admin center</strong> &gt; <strong>Azure Active Directory</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Audit" target="_blank" rel="noreferrer"><strong>Audit logs</strong></a>.</p>
-                    <div ><img src="https://i.ibb.co/7GmvDjZ/view-audit-logs.png" alt="View audit logs" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/7GmvDjZ/view-audit-logs.png" alt="View audit logs" height="auto" width="auto" /></div>
                     <p>You can also view an individual's account auditing logs by going to <strong>Azure Active Directory</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/UsersManagementMenuBlade/MsGraphUsers" target="_blank" rel="noreferrer"><strong>Users </strong></a>&gt; Click the user &gt; <strong>Audit Logs</strong>.</p>
                     <h2>Auditing actions</h2>
                     <p>Now that you have an understanding of auditing sign-ins and Active Directory account activity let's look at how to audit all the actions in Microsoft 365. You can review almost all activities in Microsoft 365. For example, you can review when a file is accessed and by whom. You can also view changes and access mailboxes. For example, you can view when an item is sent, moved, or updated. Before we can audit activity let's enable auditing.</p>
                     <h3>How to enable auditing in Microsoft 365</h3>
                     <p>1. Go to <strong>Microsoft 365 Defender admin center</strong> &gt; <strong>Audit</strong>. Click <strong>Start recording user and admin activity</strong>.</p>
-                    <div ><img src="https://i.ibb.co/BqMw3jZ/Start-recording-user-and-admin-activity.png" alt="Start recording user and admin activity" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/BqMw3jZ/Start-recording-user-and-admin-activity.png" alt="Start recording user and admin activity" height="auto" width="auto" /></div>
                     <h3>How to enable auditing on mailboxes</h3>
                     <p>Now that auditing is enabled for the Microsoft 365 tenant let's make sure auditing is enabled in Exchange Online. First, we'll enable auditing admin actions. This is good if you need to see who read and deleted items in a mailbox. Next, we'll enable auditing for each mailbox.</p>
                     <h4>How to enable admin auditing</h4>

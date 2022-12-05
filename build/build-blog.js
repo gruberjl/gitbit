@@ -1,5 +1,5 @@
 import fs from 'fs'
-const draftToHtml = require('draftjs-to-html')
+import draftToHtml from './draftjs-to-html'
 import admin from "firebase-admin"
 const {getApps} = require("firebase-admin/app")
 import serviceAccount from "./firestore.json"
@@ -52,7 +52,7 @@ const buildBlogArticles = async () => {
         .replaceAll('<br>', '<br/>')
         .replaceAll('{', '&#123;')
         .replaceAll('}', '&#125;')
-        .replaceAll(' style="height: undefined;width: undefined"', ' ')
+        .replaceAll(' height="undefined" width="undefined"', ' ')
 
       let newFile = template
         .replace('{ARTICLE: true}', stringify(article))

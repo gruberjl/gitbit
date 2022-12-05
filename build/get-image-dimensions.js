@@ -35,7 +35,6 @@ const downloadImage = (imgUrl) => new Promise((res, rej) => {
     })
     .on('end', function() {
       const buffer = Buffer.concat(chunks)
-      console.log(buffer)
       res(sizeOf(buffer))
     })
   })

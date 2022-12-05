@@ -185,7 +185,7 @@ class ArticlePage extends Component {
                   <div id="ld-534-9587" />
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p><span >Now, if you've been around Microsoft technology for a while you've heard of user accounts. It's the term they've been using for decades but recently things have become a bit more complicated. A person can have a user account in your on-premises Active Directory. They can have a user account in Microsoft 365. They can have a user account in other cloud providers as well. So now Microsoft, and the technology industry, have started separating user accounts and identities. User accounts may contain an email address, name, and other information about the person. The identity controls the authentication, for example, the username, and password.</span></p>
-                    <div ><img src="https://i.ibb.co/7nDqr9x/Whats-AD-Connect.png" alt="What's AD Connect" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/7nDqr9x/Whats-AD-Connect.png" alt="What's AD Connect" height="auto" width="auto" /></div>
                     <div id="ld-7740-2760" /><h2>Synchronizing your on-premises Active Directory (AD) to Microsoft 365</h2>
                     <p>AD Connect Is a Microsoft application that can be installed on a domain-joined Windows Server 2016 or later server that will sync your on-premises Active Directory to Microsoft 365’s Azure Active Directory. Every time you create, update, disable, or delete a user account in your on-premises AD, AD Connect will automatically sync that change to Microsoft 365.</p>
                     <h3>Why use Azure AD Connect?</h3>
@@ -237,10 +237,10 @@ class ArticlePage extends Component {
                     </ol>
                     <h4>The errors you'll receive</h4>
                     <p>The first thing you'll receive is an email with the subject line "Unhealthy identity synchronization notification".</p>
-                    <div ><img src="https://i.ibb.co/Vw4Y5TN/Unhealthy-identity-synchronization-notification.png" alt="Unhealthy identity synchronization notification" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/Vw4Y5TN/Unhealthy-identity-synchronization-notification.png" alt="Unhealthy identity synchronization notification" height="auto" width="auto" /></div>
                     <h4>How to review the error</h4>
                     <p>To review the error in more detail log on to the server that has the AD Connect service running then open the Synchronization Service Manager application. From there you'll see one of the profiles with a status of <strong>Completed-export-error</strong>. Click on it. Then click the <strong>error </strong>(in the bottom right corner. Click <strong>Detail</strong>. You can also click the CN=GUID to view the account that changed and what attributes have changed.</p>
-                    <div ><img src="https://i.ibb.co/3CS1K7m/AD-Connect-error.png" alt="AD Connect Error" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/3CS1K7m/AD-Connect-error.png" alt="AD Connect Error" height="auto" width="auto" /></div>
                     <h3>Password Writeback</h3>
                     <p>Remember when I said AD Connect synchronizes your on-premises Active Directory to Microsoft 365, that it's a one-way sync? Now we're getting into the exceptions. Password writeback allows admins, as well as, users to update their password in Microsoft 365 and have that password synchronized back to the on-premises Active Directory. Let's say all your users are working from home. And occasionally, a user forgets their password. Currently, they call into your IT helpdesk and the IT staff must reset the password in Active Directory manually. With password writeback those calls are history. Users can go to the Microsoft 365 portal And through their username authenticate using text messages, phone calls, or another MFA authorization and reset their passwords.</p>
                     <p>Note: Azure AD P1 licenses are needed to configure password writeback.</p>

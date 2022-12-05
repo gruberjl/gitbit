@@ -37,10 +37,10 @@ function findImageEntities(contentBlock, callback, contentState) {
 }
 
 const Image = (props) => {
-  const {src, alt} = props.contentState.getEntity(props.entityKey).getData()
+  const {src, alt, height, width} = props.contentState.getEntity(props.entityKey).getData()
   return (
     <div>
-      <img src={src} alt={alt} style="max-width:100%" />
+      <img src={src} alt={alt} style={`aspect-ratio: auto ${width} / ${height}; height: auto;`} height={height} width={width} />
     </div>
   )
 }

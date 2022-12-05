@@ -84,6 +84,8 @@ class Wysiwyg extends Component {
       linkUrl: '',
       imageDialogOpen: false,
       imageSrc: '',
+      imageHeight: '',
+      imageWidth: '',
       imageAlt: '',
       iframeSrc: '',
       iframeWidth: '',
@@ -219,8 +221,9 @@ class Wysiwyg extends Component {
       }
     }).then((response) => response.json())
         .then((json) => {
+          console.log(json)
           this.props.addImage(json)
-          this.openImageDialog(json.data.url)
+          this.openImageDialog(json.data.url, json.data.height, json.data.width)
         })
         .catch((e) => {
           console.log('Error uploading image')
@@ -228,10 +231,12 @@ class Wysiwyg extends Component {
         })
   }
 
-  openImageDialog(url) {
+  openImageDialog(url, height, width) {
     this.setState({
       imageSrc: url,
       imageAlt: '',
+      imageHeight: height,
+      imageWidth: width,
       imageDialogOpen: true
     })
   }
@@ -248,7 +253,7 @@ class Wysiwyg extends Component {
 
   insertImage() {
     const contentState = this.props.editorState.getCurrentContent()
-    const contentStateWithEntity = contentState.createEntity('IMAGE', 'IMMUTABLE', {src: this.state.imageSrc, alt: this.state.imageAlt})
+    const contentStateWithEntity = contentState.createEntity('IMAGE', 'IMMUTABLE', {src: this.state.imageSrc, alt: this.state.imageAlt, height: this.state.imageHeight, width: this.state.imageWidth})
     const entityKey = contentStateWithEntity.getLastCreatedEntityKey()
     const newEditorState = EditorState.set(this.props.editorState, {currentContent: contentStateWithEntity})
 

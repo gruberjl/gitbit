@@ -191,22 +191,22 @@ class ArticlePage extends Component {
                     <p>Security Defaults are available for all Microsoft 365 tenants regardless of your licensing.</p>
                     <h3>How to enable/disable security defaults</h3>
                     <p>1. Go to Azure Active Directory admin center &gt; <strong>Azure Active Directory</strong> &gt; <a href="https://aad.portal.azure.com/#blade/Microsoft_AAD_IAM/ActiveDirectoryMenuBlade/Properties" target="_blank" rel="noreferrer"><strong>Properties</strong></a><strong> </strong>&gt; <strong>Manage Security Defaults</strong>. Click <strong>Yes </strong>to enable the policy. Click <strong>No </strong>to disable the policy. Click <strong>Save</strong>.</p>
-                    <div ><img src="https://i.ibb.co/P1P0wNY/microsoft-365-manage-security-defaults.png" alt="Microsoft 365 security defaults" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/P1P0wNY/microsoft-365-manage-security-defaults.png" alt="Microsoft 365 security defaults" height="auto" width="auto" /></div>
                     <h2>Per-user MFA</h2>
                     <p>Per-user MFA gives more control over who is required to use multifactor authentication, but it requires you to enable MFA for every user individually. That means every time you create a new user in Microsoft 365 you need to enable MFA for that user. But it also means you can roll out MFA to a set of users.</p>
                     <p>Per-user MFA is available for all Microsoft 365 tenants regardless of your licensing.</p>
                     <h3>How to enable per-user MFA</h3>
                     <p>1. Go to Microsoft 365 admin center &gt; <strong>Active users</strong> &gt; <a href="https://account.activedirectory.windowsazure.com/UserManagement/MultifactorVerification.aspx" target="_blank" rel="noreferrer"><strong>Multi-factor authentication</strong></a>.</p>
-                    <div ><img src="https://i.ibb.co/RjswM6n/per-user-mfa.png" alt="Microsoft 365 Per-User MFA" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/RjswM6n/per-user-mfa.png" alt="Microsoft 365 Per-User MFA" height="auto" width="auto" /></div>
                     <p>2. Click the check box next to a user you want to enable MFA for. Click <strong>Enable</strong>.</p>
-                    <div ><img src="https://i.ibb.co/PZm5KmW/enable-per-user-mfa.png" alt="Enable per-user MFA" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/PZm5KmW/enable-per-user-mfa.png" alt="Enable per-user MFA" height="auto" width="auto" /></div>
                     <p>3. Click <strong>enable multi-factor auth</strong>.</p>
-                    <div ><img src="https://i.ibb.co/S7V5dtG/enable-per-user-mfa-last-button.png" alt="Enable multi-factor auth" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/S7V5dtG/enable-per-user-mfa-last-button.png" alt="Enable multi-factor auth" height="auto" width="auto" /></div>
                     <h3>Understanding MFA Status</h3>
-                    <div ><img src="https://i.ibb.co/HTFhBzB/MFA-Status.png" alt="MFA Status in Microsoft 365" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/HTFhBzB/MFA-Status.png" alt="MFA Status in Microsoft 365" height="auto" width="auto" /></div>
                     <p>With per-user MFA you'll notice there are three different statuses. <strong>Disabled</strong> means the user isn't required to use per-user MFA. Next, <strong>enabled </strong>means the user is required to set up their MFA at the next login. <strong>Enforced </strong>means the user has set up the MFA.</p>
                     <h3>How to configure the settings in per-user MFA</h3>
-                    <div ><img src="https://i.ibb.co/gz1c3d2/per-user-mfa-settings.png" alt="Per-User MFA Settings" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/gz1c3d2/per-user-mfa-settings.png" alt="Per-User MFA Settings" height="auto" width="auto" /></div>
                     <p>One last thing. You can configure some options in the per-user MFA. By going to service settings you'll notice a whole list of options.</p>
                     <ul>
                       <li><strong>App passwords </strong>are a great way to allow legacy apps to continue to connect to Microsoft 365. In short, app passwords will replace the users' passwords so they can still log in to Microsoft 365 using an app that doesn't support Microsoft 365 MFA.</li>
@@ -219,15 +219,15 @@ class ArticlePage extends Component {
                     <p>The one downside of conditional access policies is licensing. Conditional access policies are only available for azure SD premium P1 licensed users. Conditional access policies are also available to Microsoft 365 business premium users.</p>
                     <h3>How to enable MFA using conditional access policies</h3>
                     <p>1. log in to Azure Active Directory admin center &gt; <strong>All services</strong> &gt; <strong>Azure AD Conditional Access</strong> &gt; <strong>New Policy</strong> &gt; <strong>Create new policy</strong>.</p>
-                    <div ><img src="https://i.ibb.co/DQm1sY0/Create-conditional-access-policy.png" alt="Create a conditional access policy" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/DQm1sY0/Create-conditional-access-policy.png" alt="Create a conditional access policy" height="auto" width="auto" /></div>
                     <p>2. Enter a name of “<strong>Require MFA</strong>”</p>
-                    <div ><img src="https://i.ibb.co/qxDcS5y/name-conditional-access-policy.png" alt="Name the conditional access Policy Require MFA" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/qxDcS5y/name-conditional-access-policy.png" alt="Name the conditional access Policy Require MFA" height="auto" width="auto" /></div>
                     <p>3. Click <strong>0 users or workload identities selected</strong>. Click <strong>All users</strong>.</p>
-                    <div ><img src="https://i.ibb.co/12YyXpS/Set-Conditional-access-policy-to-all-users.png" alt="Set Conditional access policy to all users" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/12YyXpS/Set-Conditional-access-policy-to-all-users.png" alt="Set Conditional access policy to all users" height="auto" width="auto" /></div>
                     <p>4. Click <strong>No cloud apps, actions, or authentication contexts selected</strong>. Click <strong>All cloud apps</strong>.</p>
-                    <div ><img src="https://i.ibb.co/T0vZjsW/conditional-access-policy-all-cloud-apps.png" alt="Conditional access policy all cloud apps" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/T0vZjsW/conditional-access-policy-all-cloud-apps.png" alt="Conditional access policy all cloud apps" height="auto" width="auto" /></div>
                     <p>5. Click <strong>0 controls selected</strong> (under Grant). Click <strong>Require multi-factor authentication</strong>. Click <strong>Select</strong>. Click <strong>On</strong> (under Enable policy). Click <strong>Create</strong>.</p>
-                    <div ><img src="https://i.ibb.co/mcCvKFG/conditional-access-policy-requiring-mfa.png" alt="Conditional access policy requiring MFA" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/mcCvKFG/conditional-access-policy-requiring-mfa.png" alt="Conditional access policy requiring MFA" height="auto" width="auto" /></div>
                     <h2>MFA Server</h2>
                     <p>Another possibility to deploy multifactor authentication in Microsoft 365 is to deploy an MFA server. MFA server would be an application that's installed on any Windows 2008 R two or later server that's joined to your domain. In short, you would download the MFA server installation files from Microsoft and install the software on your server. Then with a quick configuration, you can deploy your MFA server. As of July 1st, 2019 Microsoft, no longer offers an MFA server for new deployments. So, we won't be covering the installation or configuration in this guide.</p>
                     <h2>Third-party options</h2>
@@ -235,27 +235,27 @@ class ArticlePage extends Component {
                     <h2>User experience</h2>
                     <p>Once MFA is enabled for a user the user will see the following prompts (either in the browser or in Outlook).</p>
                     <p>1. On the More information required prompt click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/gRrD5Pb/MFA-Enabled.png" alt="MFA Enabled More information required" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/gRrD5Pb/MFA-Enabled.png" alt="MFA Enabled More information required" height="auto" width="auto" /></div>
                     <p>2. On Keep your account secure / start by getting the app page download Microsoft Authenticator to your mobile phone and open the app.</p>
-                    <div ><img src="https://i.ibb.co/MsS22gP/install-the-authenticator-app.png" alt="Install the authentication app" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/MsS22gP/install-the-authenticator-app.png" alt="Install the authentication app" height="auto" width="auto" /></div>
                     <p>3. Once in the app click <strong>I agree </strong>&gt; <strong>Scan a QR code</strong> &gt; <strong>While using the app</strong>.</p>
-                    <div ><img src="https://i.ibb.co/vDYhfBd/Setup-authenticator-app.png" alt="Setup the authenticator app" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/vDYhfBd/Setup-authenticator-app.png" alt="Setup the authenticator app" height="auto" width="auto" /></div>
                     <p>3. Then go back to the sign-in page and click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/xDMnv45/keep-your-account-secure-page.png" alt="Keep you account secure page" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/xDMnv45/keep-your-account-secure-page.png" alt="Keep you account secure page" height="auto" width="auto" /></div>
                     <p>3. On Scan the QR code page scan the QR code with the Microsoft authenticator app on your phone. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/gT5QZKt/scan-qr-code.png" alt="Scan the QR code with your phone" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/gT5QZKt/scan-qr-code.png" alt="Scan the QR code with your phone" height="auto" width="auto" /></div>
                     <p>4. Approve the sign-in request on your phone.</p>
-                    <div ><img src="https://i.ibb.co/YhvggFT/approve-sign-in.png" alt="Approve the sign in" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/YhvggFT/approve-sign-in.png" alt="Approve the sign in" height="auto" width="auto" /></div>
                     <p>5. Once you see the Notification approved message click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/VjsxsJ4/notification-approved.png" alt="Notification approved" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/VjsxsJ4/notification-approved.png" alt="Notification approved" height="auto" width="auto" /></div>
                     <p>6. on the Phone page, enter your cell phone number and click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/St4Fkrz/enter-phone-number-to-recieve-text-message.png" alt="Enter phone number to receive text message" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/St4Fkrz/enter-phone-number-to-recieve-text-message.png" alt="Enter phone number to receive text message" height="auto" width="auto" /></div>
                     <p>7. Enter the code texted to you in the space provided. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/W6c37x4/enter-code-received-in-text-message.png" alt="Enter the code you received in the text message" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/W6c37x4/enter-code-received-in-text-message.png" alt="Enter the code you received in the text message" height="auto" width="auto" /></div>
                     <p>8. Once you see SMS verified. Click <strong>Next</strong>.</p>
-                    <div ><img src="https://i.ibb.co/wQ44kFB/SMS-verified.png" alt="SMS verified" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/wQ44kFB/SMS-verified.png" alt="SMS verified" height="auto" width="auto" /></div>
                     <p>9. On the success page click <strong>Done</strong>.</p>
-                    <div ><img src="https://i.ibb.co/TbQvJDf/Click-done.png" alt="Click done" style="height: auto;width: auto" /></div>
+                    <div ><img src="https://i.ibb.co/TbQvJDf/Click-done.png" alt="Click done" height="auto" width="auto" /></div>
                     <p />
                   </div>
                   <div id="bottom-of-article" />
