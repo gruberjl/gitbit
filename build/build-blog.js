@@ -57,7 +57,7 @@ const buildBlogArticles = async () => {
       let newFile = template
         .replace('{ARTICLE: true}', stringify(article))
         .replace('<ARTICLE />', articleHtml)
-      newFile = newFile.replace('<h2>', '<div id="ld-7740-2760"></div><h2>')
+      newFile = newFile.replace('<h2>', '<div id="ld-7740-2760" style={{height:this.state.decideHeight, overflow: "hidden"}}></div><h2>')
       fs.writeFileSync(`./src/pages/course/ms-500/blog/${article.slug}.js`, newFile)
     }
   }
@@ -70,4 +70,5 @@ const deleteBlogArticles = () => {
   fs.mkdirSync('./src/pages/course/ms-500/blog')
 }
 
+buildBlogArticles()
 export default buildBlogArticles

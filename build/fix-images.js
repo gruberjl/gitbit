@@ -16,7 +16,7 @@ const db = admin.firestore()
 const fixImages = async () => {
     const articles = []
 
-    const querySnapshot = await db.collection("courses").doc('MS-500').collection('blog').get()
+    const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('id', '==', 'cpchjBLkC').get()
   
     querySnapshot.forEach((doc) => {
       const article = doc.data()
@@ -41,7 +41,7 @@ const fixImages = async () => {
 
       if (updatedArticle) {
         console.log(JSON.stringify(articles[i], null, 2))
-        await db.collection('courses').doc('MS-500').collection('blog').doc(articles[i].id).set(articles[i])
+        await db.collection('courses').doc('MS-500').collection('contents').doc(articles[i].id).set(articles[i])
       }
     }
 }

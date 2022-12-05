@@ -1,5 +1,5 @@
 import fs from 'fs'
-const draftToHtml = require('draftjs-to-html')
+import draftToHtml from './draftjs-to-html'
 import admin from "firebase-admin"
 const {getApps} = require("firebase-admin/app")
 import serviceAccount from "./firestore.json"

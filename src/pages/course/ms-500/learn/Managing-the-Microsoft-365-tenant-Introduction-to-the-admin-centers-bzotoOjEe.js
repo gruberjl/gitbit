@@ -185,7 +185,7 @@ class ArticlePage extends Component {
                   <div id="ld-534-9587" />
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><p />
-                    <img src="https://i.ibb.co/f1cr4zt/Microsoft-365-admin-centers.png" alt="Microsoft 365 admin centers" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/f1cr4zt/Microsoft-365-admin-centers.png" alt="Microsoft 365 admin centers" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>Microsoft 365 management is broken down into multiple admin centers. An admin center is a website used to manage part of the tenant. For example, there's an Exchange Online admin center that can help you manage the email portion of your Microsoft 365 tenant. Another SharePoint Online admin center to help manage the SharePoint Online part of your tenant.</p>
                     <p>Here's a list of all the Microsoft 365 admin centers you may need.</p>
                     <div id="ld-7740-2760" /><h2>Microsoft 365 admin center</h2>
@@ -207,7 +207,7 @@ class ArticlePage extends Component {
                       <li>Supply a timeline for clear incident information<br />&nbsp;</li>
                     </ul>
                     <h2>Azure Active Directory (AD) admin center</h2>
-                    <img src="https://i.ibb.co/HK83H6d/Azure-ad-icon.png" alt="Azure AD Icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/HK83H6d/Azure-ad-icon.png" alt="Azure AD Icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Azure Active Directory (AD) admin center can be accessed by going to <a href="https://aad.portal.azure.com/" target="_blank" rel="noreferrer">https://aad.portal.azure.com/</a>. Azure AD is the cloud version of your on-premise AD. It's like on-premise AD on steroids. It's where you can perform the following:</p>
                     <ul>
                       <li>Manage identity including users and groups.</li>
@@ -218,7 +218,7 @@ class ArticlePage extends Component {
                       <li>Configure conditional access policies</li>
                     </ul>
                     <h2>Defender for Cloud Apps admin center</h2>
-                    <img src="https://i.ibb.co/hDbLPmR/Cloud-App-Security-admin-center-icon.png" alt="Cloud App Security Icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/hDbLPmR/Cloud-App-Security-admin-center-icon.png" alt="Cloud App Security Icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Defender for Cloud Apps admin center can be accessed by going to <a href="https://portal.cloudappsecurity.com" target="_blank" rel="noreferrer">https://portal.cloudappsecurity.com</a>. From the Defender for Cloud Apps admin center, you can manage unsanctioned cloud applications. From the Defender for Cloud Apps admin center you can perform the following:</p>
                     <ul>
                       <li>Discover unauthorized cloud applications being used within your organization</li>
@@ -227,7 +227,7 @@ class ArticlePage extends Component {
                       <li>View and manage alerts</li>
                     </ul>
                     <h2>Microsoft Purview Compliance admin center</h2>
-                    <img src="https://i.ibb.co/Jk3LPPL/compliance-icon.png" alt="Compliance admin center icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/Jk3LPPL/compliance-icon.png" alt="Compliance admin center icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Microsoft Purview Compliance admin center, also known as, Puview admin center or Microsoft 365 Compliance admin center, can be accessed by going to <a href="https://compliance.microsoft.com/homepage" target="_blank" rel="noreferrer">https://compliance.microsoft.com/homepage</a>. The Purview admin center is where you can manage the compliance of your tenant. You can classify data, set retention policies, and recover data. From the Purview admin center you can perform the following:</p>
                     <ul>
                       <li>and Create sensitivity and retention labels to retain data for as long as needed.</li>
@@ -235,7 +235,7 @@ class ArticlePage extends Component {
                       <li>Review a detailed view of the classification trends across your tenant.</li>
                     </ul>
                     <h2>Endpoint Manager admin center</h2>
-                    <img src="https://i.ibb.co/89kQWVH/endpoint-icon.png" alt="Endpoint manager compliance admin center icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/89kQWVH/endpoint-icon.png" alt="Endpoint manager compliance admin center icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Endpoint manager admin center can be accessed by going to <a href="https://endpoint.microsoft.com/?ref=AdminCenter#home" target="_blank" rel="noreferrer">https://endpoint.microsoft.com/?ref=AdminCenter#home</a>. The Endpoint manager admin center is where you can manage the end-user devices. It's where you can perform the following:</p>
                     <ul>
                       <li>Enroll and configure devices</li>
@@ -243,7 +243,7 @@ class ArticlePage extends Component {
                       <li>Monitor and set compliance requirements on devices</li>
                     </ul>
                     <h2>Exchange admin center</h2>
-                    <img src="https://i.ibb.co/9VWVrqp/exchange-icon.png" alt="Exchange admin center icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/9VWVrqp/exchange-icon.png" alt="Exchange admin center icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Exchange admin center can be accessed by going to <a href="https://admin.exchange.microsoft.com/" target="_blank" rel="noreferrer">https://admin.exchange.microsoft.com/</a>. The Exchange admin center is where you manage email and everything about email. It's where you can perform the following:</p>
                     <ul>
                       <li>Manage user mailboxes</li>
@@ -252,7 +252,7 @@ class ArticlePage extends Component {
                       <li>Perform message traces</li>
                     </ul>
                     <h2>Power Platform admin center</h2>
-                    <img src="https://i.ibb.co/LnWj2Yb/power-automate-icon.png" alt="Power Automate admin center icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/LnWj2Yb/power-automate-icon.png" alt="Power Automate admin center icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Power Platform admin center can be accessed by going to <a href="https://admin.powerplatform.microsoft.com/" target="_blank" rel="noreferrer">https://admin.powerplatform.microsoft.com/</a>. The Power Platform admin center is where you can manage the automation of repetitive tasks. From the Power Platform admin center you can perform the following:</p>
                     <ul>
                       <li>Review Power Automate analytics</li>
@@ -261,7 +261,7 @@ class ArticlePage extends Component {
                       <li>Manage Dynamics 365 apps</li>
                     </ul>
                     <h2>Microsoft 365 Apps admin center</h2>
-                    <img src="https://i.ibb.co/MpGbXrz/Office-install-icon.png" alt="Microsoft 365 Apps Office configuration icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/MpGbXrz/Office-install-icon.png" alt="Microsoft 365 Apps Office configuration icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Microsoft 365 Apps admin center can be accessed by going to <a href="https://config.office.com/officeSettings" target="_blank" rel="noreferrer">https://config.office.com/officeSettings</a>. The Microsoft 365 Apps admin center can be used to deploy settings and configurations to users that install the Office suite on their computers. Traditionally, the configuration found in the Microsoft 365 Apps admin center would have been performed via group policy</p>
                     <ul>
                       <li>Deploy Office customization policies</li>
@@ -276,7 +276,7 @@ class ArticlePage extends Component {
                       <li>Configure live events, comments, and restrict organization-wide channel creation</li>
                     </ul>
                     <h2>Power BI admin center</h2>
-                    <img src="https://i.ibb.co/r6J58w1/Power-Bi-Admin-Center.png" alt="Power BI admin center icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/r6J58w1/Power-Bi-Admin-Center.png" alt="Power BI admin center icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Power BI admin center can be accessed by going to <a href="https://app.powerbi.com/admin-portal" target="_blank" rel="noreferrer">https://app.powerbi.com/admin-portal</a>. The Power BI admin center is used to manage Power BI. From it, you can view usage metrics, and control how users interact with Power BI. From the Power BI admin center you can perform the following:</p>
                     <ul>
                       <li>Configure tenant settings</li>
@@ -285,7 +285,7 @@ class ArticlePage extends Component {
                       <li>Enable Cloud App Security integration</li>
                     </ul>
                     <h2>Microsoft 365 Defender admin center</h2>
-                    <img src="https://i.ibb.co/sHYV6Mz/security-admin-center-icon.png" alt="Security center admin center" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/sHYV6Mz/security-admin-center-icon.png" alt="Security center admin center" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Microsoft 365 Defender admin center can be accessed by going to <a href="https://security.microsoft.com/" target="_blank" rel="noreferrer">https://security.microsoft.com/</a>. The Defender admin center is used to get visibility, investigate, and manage the security of your Microsoft 365 tenant. From it you can perform the following:</p>
                     <ul>
                       <li>Manage and view alerts</li>
@@ -294,7 +294,7 @@ class ArticlePage extends Component {
                       <li>Configure anti-phishing, anti-spam, attachment, and link policies</li>
                     </ul>
                     <h2>SharePoint admin center</h2>
-                    <img src="https://i.ibb.co/M2C4Jmh/sharepoint-admin-center-icon.png" alt="SharePoint admin center" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/M2C4Jmh/sharepoint-admin-center-icon.png" alt="SharePoint admin center" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The SharePoint admin center can be accessed by going to the Microsoft 365 admin center &gt; Show all &gt; All admin centers &gt; SharePoint. From the SharePoint admin center, you can manage SharePoint sites and OneDrive sites. You can perform the following:</p>
                     <ul>
                       <li>Create and manage SharePoint sites</li>
@@ -303,7 +303,7 @@ class ArticlePage extends Component {
                       <li>Migrate data to SharePoint</li>
                     </ul>
                     <h2>Microsoft Teams admin center</h2>
-                    <img src="https://i.ibb.co/dGJJV84/Teams-admin-center.png" alt="Microsoft Teams admin center icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/dGJJV84/Teams-admin-center.png" alt="Microsoft Teams admin center icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Teams admin center can be accessed by going to <a href="https://admin.teams.microsoft.com/" target="_blank" rel="noreferrer">https://admin.teams.microsoft.com/</a>. From the Microsoft Teams admin center, you can manage Microsoft Teams. From it, you can configure messaging, conferencing, and external communication options. You can perform the following:</p>
                     <ul>
                       <li>&nbsp;Review relevant information about your Teams deployment</li>
@@ -312,7 +312,7 @@ class ArticlePage extends Component {
                       <li>Configure organization-wide settings</li>
                     </ul>
                     <h2>Yammer admin center</h2>
-                    <img src="https://i.ibb.co/zsz8HC5/Yammer-admin-center-icon.png" alt="Yammer admin center icon" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/zsz8HC5/Yammer-admin-center-icon.png" alt="Yammer admin center icon" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>The Yammer admin center can be accessed by going to the Microsoft 365 admin center &gt; Show all &gt; All admin centers &gt; Yammer. From the Yammer admin center, you can manage your Yammer network, for example, you can set usage policies and control external network settings. You can also perform the following:</p>
                     <ul>
                       <li>Configure Yammer tenant-wide settings</li>

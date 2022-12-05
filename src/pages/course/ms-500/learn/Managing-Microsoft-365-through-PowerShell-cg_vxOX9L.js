@@ -199,41 +199,41 @@ class ArticlePage extends Component {
                     <p><em>The following instructions need to be performed once per user on the machine.</em></p>
                     <p>1. If you're not running Windows 10, install <a href="https://download.microsoft.com/download/7/1/E/71EF1D05-A42C-4A1F-8162-96494B5E615C/msoidcli_32bit.msi" target="_blank" rel="noreferrer">Microsoft Online Services Sign-in Assistant</a>.&nbsp;</p>
                     <p>2. Run Windows PowerShell as an administrator by searching for <strong>PowerShell</strong> in the start menu. Right-click <strong>Windows PowerShell</strong> then click <strong>Run as administrator</strong>.</p>
-                    <img src="https://i.ibb.co/4WfH7pW/powershell-as-admin.png" alt="Open PowerShell as an admin" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/4WfH7pW/powershell-as-admin.png" alt="Open PowerShell as an admin" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>3. When prompted click <strong>Yes</strong>.</p>
-                    <img src="https://i.ibb.co/tYJ6H9X/Power-Shell-Allow-this-app.png" alt="PowerShell Allow open as admin" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/tYJ6H9X/Power-Shell-Allow-this-app.png" alt="PowerShell Allow open as admin" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>4. Run the following command: <strong>Set-PSRepository -Name "PSGallery" -InstallationPolicy Trusted</strong></p>
                     <p ><span >5. If prompted with the following click <strong>Y</strong> then press <strong>Enter</strong>.</span></p>
                     <p ><span >NuGet provider is required to continue<br />PowerShellGet requires NuGet provider version '2.8.5.201' or newer to interact with NuGet-based repositories. The NuGet provider must be available in 'C:\Program Files\PackageManagement\ProviderAssemblies' or 'C:\Users\BasicUser\AppData\Local\PackageManagement\ProviderAssemblies'. You can also install the NuGet provider by running 'Install-PackageProvider -Name NuGet -MinimumVersion 2.8.5.201 -Force'. Do you want PowerShellGet to install and import the NuGet provider now?</span></p>
-                    <img src="https://i.ibb.co/qyMttBg/install-nuget.png" alt="Install NuGet" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/qyMttBg/install-nuget.png" alt="Install NuGet" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>6. Run the following command: <strong>Install-Module MSOnline</strong></p>
                     <p>7. <span >Run the following command: </span><strong>Install-Module -Name AzureAD</strong></p>
                     <p>8. <span >Run the following command:</span> <strong>Install-Module -Name ExchangeOnlineManagement</strong></p>
                     <p>9. <span >Run the following command:</span> <strong>Install-Module -Name Microsoft.Online.SharePoint.PowerShell</strong></p>
                     <p>10. Run the following command: <strong>Install-Module -Name MicrosoftTeams -Force -AllowClobber</strong></p>
-                    <img src="https://i.ibb.co/HV13YF6/install-microsoft-365-powershell-modules.png" alt="Install Microsoft 365 PowerShell Modules" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/HV13YF6/install-microsoft-365-powershell-modules.png" alt="Install Microsoft 365 PowerShell Modules" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>11. <span >Run the following command: <strong>Set-ExecutionPolicy RemoteSigned</strong></span></p>
                     <p><span >12. When prompted with the following type <strong>Y</strong> then press <strong>Enter</strong>.<br />Execution Policy Change</span></p>
                     <p><span ><code>The execution policy helps protect you from scripts that you do not trust. Changing the execution policy might expose you to the security risks described in the about_Execution_Policies help topic at https:/go.microsoft.com/fwlink/?LinkID=135170. Do you want to change the execution policy?</code></span></p>
                     <p><span ><code>[Y] Yes  [A] Yes to All  [N] No  [L] No to All  [S] Suspend  [?] Help (default is "N"):</code></span></p>
                     <p />
-                    <img src="https://i.ibb.co/1mnGG2H/set-executionpolicy.png" alt="Set-ExecutionPolicy RemoteSigned" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/1mnGG2H/set-executionpolicy.png" alt="Set-ExecutionPolicy RemoteSigned" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>That's it. Your computer is set up to connect to Microsoft 365 using PowerShell. Now we need to connect to Microsoft 365 using PowerShell.</p>
                     <h3>Connect to Microsoft 365 using PowerShell</h3>
                     <p>You may have noticed that we installed modules for MSOnline, Azure AD, Exchange Online, SharePoint, and Microsoft Teams. Just like the Microsoft 365 admin centers, PowerShell is separated into different modules. Depending on the task you want to perform you'll need to connect using the correct module/command. The first connection we'll make is to Office 365. The MSOnline module is used to manage users, groups, licenses, and the tenant as a whole. It's directly related to the Microsoft 365 admin center from the last lesson.</p>
                     <p>The following commands will need to be run every time you want to connect to Microsoft 365 using PowerShell.</p>
                     <p>1. Run the following command: <strong>Connect-MsolService</strong></p>
                     <p>2. When prompted enter your username then click <strong>Next</strong>.</p>
-                    <img src="https://i.ibb.co/hdMWybz/connect-to-microsoft-365.png" alt="Connect to Microsoft 365 PowerShell - Enter Username" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/hdMWybz/connect-to-microsoft-365.png" alt="Connect to Microsoft 365 PowerShell - Enter Username" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>3. Then enter your password and click Sign in.</p>
-                    <img src="https://i.ibb.co/0VgpjZ3/connect-to-microsoft-365-enter-password.png" alt="Microsoft 365 PowerShell Sign in Enter Password" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/0VgpjZ3/connect-to-microsoft-365-enter-password.png" alt="Microsoft 365 PowerShell Sign in Enter Password" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>4. If prompted for MFA, enter your MFA information then finish the connection.</p>
                     <h3>How to learn more</h3>
                     <p>That's all it takes to connect to Microsoft 365 using PowerShell but the question is what now? How do you get a list of the users? Or the groups? Well, you can view all of the commands available to you via the command <strong>Get-Command -Module MSOnline</strong>. You can get help on each of the commands by running "<strong>get-help &lt;the-command&gt;</strong>".</p>
                     <p>For example, there's a command available called "Get-MsolUser". To see the help for it you can run <strong>Get-Help Get-MsolUser</strong>.</p>
-                    <img src="https://i.ibb.co/4Rs6bkV/get-help-get-msoluser.png" alt="P&#123;owerShell command Get-Help Get-MsolUser" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/4Rs6bkV/get-help-get-msoluser.png" alt="P&#123;owerShell command Get-Help Get-MsolUser" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>To see an example of running the commands you can run "<strong>Get-Help &lt;the-command&gt; -Examples</strong>"</p>
-                    <img src="https://i.ibb.co/HdW0MVN/get-help-get-msoluser-examples.png" alt="PowerShell running Get-Help Get-MsolUser -Example" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/HdW0MVN/get-help-get-msoluser-examples.png" alt="PowerShell running Get-Help Get-MsolUser -Example" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>If you need further help simply Google it.</p>
                     <h3>Connect to Exchange Online using PowerShell</h3>
                     <p>So now you've connected to Office 365, but you can't manage email from the Microsoft 365 PowerShell. To manage the email you need to connect to Exchange Online.</p>
@@ -267,9 +267,9 @@ class ArticlePage extends Component {
                     <p>2. Click <strong>SharePoint</strong> in the list.</p>
                     <div ><img src="https://i.ibb.co/xMS0rB1/sharepoint-admin-center.png" alt="Open SharePoint admin center" height="auto" width="auto" /></div>
                     <p>3. Copy the SharePoint URL. Everything before the _layouts.</p>
-                    <img src="https://i.ibb.co/BKbHN2x/Share-Point-url.png" alt="Copy the SharePoint URL" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/BKbHN2x/Share-Point-url.png" alt="Copy the SharePoint URL" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>4. Run the following command <strong>Connect-SPOService -Url &lt;The URL you copied&gt;</strong> replacing the &lt;The URL you copied&gt; with the URL you copied in step 3.</p>
-                    <img src="https://i.ibb.co/pPgzDsj/connect-to-sharepoint-online-using-powershell.png" alt="Connect the SharePoint Online using PowerShell" height="auto" width="auto" />
+                    <img src="https://i.ibb.co/pPgzDsj/connect-to-sharepoint-online-using-powershell.png" alt="Connect the SharePoint Online using PowerShell" height="auto" width="auto" style="aspect-ratio: auto auto / auto; height: auto;" />
                     <p>5. Login with your admin credentials.</p>
                     <p>That's it. You're now connected to SharePoint Online using PowerShell. To view, the commands run <strong>Get-Command -Module Microsoft.Online.SharePoint.PowerShell</strong>.</p>
                     <p>Let's take another example command. Let's say you're tasked with securing your SharePoint environment. You need to stop users from <span >downloading, printing, and syncing files</span> from SharePoint Online using unmanaged devices. What's a managed device? A managed device is a device that is hybrid Azure AD joined or compliant in Intune. In short, a user has logged in to your SharePoint environment using their device. How do you do it? You run <strong>Set-SPOTenant -ConditionalAccessPolicy AllowLimitedAccess</strong>. Let's break down the command. The Set-SPOTenant portion is the command. It's run to set properties on the SharePoint Online organization.</p>

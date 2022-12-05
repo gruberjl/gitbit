@@ -13,7 +13,7 @@ import blogArticles from '../../../data/ms500-blog-articles'
 
 const Blog = () => (
   <Page title={'Read the latest news, guides, and how to articles on securing Microsoft 365.'} description={'News, advice, opinions, and guides on securing Microsoft 365. Learn how to be a cybersecurity pro and secure your Microsoft 365 tenant better than the rest.'} jsonLdType={'WebPage'} image={'/assets/microsoft365-security-administrator-associate-600x600.png'}>
-    <main style={{backgroundColor: '#F3F6F9'}}>
+    <main style={{backgroundColor: '#F3F6F9', marginTop: '16px'}}>
       <Container className="blog-articles">
         <Grid container spacing={2}>
           <Grid container item>
