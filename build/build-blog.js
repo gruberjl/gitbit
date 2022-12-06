@@ -70,5 +70,4 @@ const deleteBlogArticles = () => {
   fs.mkdirSync('./src/pages/course/ms-500/blog')
 }
 
-buildBlogArticles()
 export default buildBlogArticles

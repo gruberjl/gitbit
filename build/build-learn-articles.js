@@ -57,7 +57,7 @@ const buildLearnArticles = async () => {
         .replace('NEXT_CONTENT', nextArticle)
         .replace('PREVIOUS_CONTENT', previousArticle)
 
-      newFile = newFile.replace('<h2>', '<div id="ld-7740-2760"></div><h2>')
+      newFile = newFile.replace('<h2>', '<div id="ld-7740-2760" style={{height:this.state.decideHeight, overflow: "hidden"}}></div><h2>')
       fs.writeFileSync(`./src/pages/course/ms-500/learn/${article.slug}.js`, newFile)
     }
   }
