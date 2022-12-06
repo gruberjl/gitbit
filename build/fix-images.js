@@ -29,7 +29,9 @@ const fixImages = async () => {
       for (let j = 0; j < Object.keys(articles[i].article.entityMap).length; j++) {
         const map = Object.keys(articles[i].article.entityMap)[j]
         if (articles[i].article.entityMap[map].type == 'IMAGE') {
-          if (!articles[i].article.entityMap[map].data.width || !articles[i].article.entityMap[map].data.height) {
+          const width = articles[i].article.entityMap[map].data.width
+          const height = articles[i].article.entityMap[map].data.height
+          if (!width || !height || width === 'auto' || height === 'auto') {
             updatedArticle = true
             const dimensions = await getImageDimensions(articles[i].article.entityMap[map].data.src)
             articles[i].article.entityMap[map].data.height = dimensions.height

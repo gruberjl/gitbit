@@ -190,7 +190,9 @@ class ArticlePage extends Component {
             <Grid container spacing={2}>
               <Grid item lg={9}>
                 <main>
-                  <div id="ld-534-9587" style={{height: this.state.decideHeight, overflow: 'hidden'}} />
+                  <div id="ld-534-9587" style={{height: this.state.decideHeight, overflow: 'hidden'}} >
+                    <p style="position: absolute;z-index: -1">Reserved for ads. Please scroll down.</p>
+                  </div>
                   <h1 style={marginTop24Style}>{this.state.article.title}</h1>
                   <div><ARTICLE /></div>
                   <div id="bottom-of-article" />

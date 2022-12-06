@@ -413,7 +413,7 @@ const funct = (function () { 'use strict';
         var alignment = entity.data.alignment;
   
         if (alignment && alignment.length) {
-            return "<div style=\"text-align:".concat(alignment, ";\"><img src=\"").concat(entity.data.src, "\" alt=\"").concat(entity.data.alt, "\" height=\"").concat(entity.data.height, "\" width=\"").concat(entity.data.width, "\"/></div>");
+            return `<div style="text-align:${alignment};"><img src="${entity.data.src}" alt="${entity.data.alt}" height="${entity.data.height}" width="${entity.data.width}" style="aspect-ratio: auto ${entity.data.width} / ${entity.data.height}; height: auto;" /></div>`
         }
         
         return `<img src="${entity.data.src}" alt="${entity.data.alt}" height="${entity.data.height}" width="${entity.data.width}" style="aspect-ratio: auto ${entity.data.width} / ${entity.data.height}; height: auto;" />`
