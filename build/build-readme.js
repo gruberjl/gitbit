@@ -3,17 +3,11 @@ const debug = require('debug')('gitbit:build-readme')
 
 const buildReadMe = async () => {
   const course = (await import('../src/data/course.js')).default
-  const questions = (await import('../src/data/questions.js')).default
+  const blogArticles = (await import('../src/data/ms500-blog-articles.js')).default
   const lessons = (await import('../src/data/contents.js')).default
     .sort((a, b) => course.contentOrder.indexOf(a.id) - course.contentOrder.indexOf(b.id))
   const testQuestions = (await import('../src/data/tests.js')).default
     .sort((a, b) => course.contentOrder.indexOf(a.id) - course.contentOrder.indexOf(b.id))
-
-  const questionsString = questions.reduce((stringOutput, doc) => {
-    let output = doc.question.replace(/\r?\n|\r/g, ' ').replace(/\s\s+/g, ' ')
-    output = `* [${output.trim()}](https:\/\/www.gitbit.org\/course\/ms-500\/question\/${doc.id})\n`
-    return stringOutput + output
-  }, '')
 
   const lessonsString = lessons.reduce((stringOutput, lesson) => {
     let output = `* [${lesson.title.trim()}](https:\/\/www.gitbit.org\/course\/ms-500\/learn\/${lesson.slug})\n`
@@ -28,10 +22,16 @@ const buildReadMe = async () => {
     })
   })
 
+  const blogArticlesString = blogArticles.reduce((stringOutput, article) => {
+    let output = `* [${article.title.trim()}](https:\/\/www.gitbit.org\/course\/ms-500\/blog\/${article.slug})\n`
+    return stringOutput + output
+  }, '')
+
+
   const file = fs.readFileSync('./README-original.md', 'utf8')
-    .replace('INSERT_QUESTIONS_HERE', questionsString)
     .replace('INSERT_LESSONS_HERE', lessonsString)
     .replace('INSERT_TEST_QUESTIONS_HERE', testQuestionString)
+    .replace('INSERT_BLOG_ARTICLES_HERE', blogArticlesString)
 
   fs.writeFileSync('./README.md', file)
 }
