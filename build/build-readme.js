@@ -10,6 +10,9 @@ const buildReadMe = async () => {
     .sort((a, b) => course.contentOrder.indexOf(a.id) - course.contentOrder.indexOf(b.id))
 
   const lessonsString = lessons.reduce((stringOutput, lesson) => {
+    if (lesson.type !== 'article')
+      return stringOutput
+
     let output = `* [${lesson.title.trim()}](https:\/\/www.gitbit.org\/course\/ms-500\/learn\/${lesson.slug})\n`
     return stringOutput + output
   }, '')
@@ -35,5 +38,5 @@ const buildReadMe = async () => {
 
   fs.writeFileSync('./README.md', file)
 }
-
+buildReadMe()
 export default buildReadMe
