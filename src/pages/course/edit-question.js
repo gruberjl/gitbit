@@ -20,7 +20,7 @@ import saveDoc from '../../components/firebase/save-doc'
 import {getDoc} from '../../components/firebase/get-doc'
 import Snackbar from '@mui/material/Snackbar'
 import TextField from '@mui/material/TextField'
-import draftToHtml from 'draftjs-to-html'
+import draftToHtml from '../../../build/draftjs-to-html'
 import Alert from '@mui/material/Alert'
 const clone = require('clone')
 

@@ -3,6 +3,7 @@ const {getApps} = require("firebase-admin/app")
 import serviceAccount from "./firestore.json"
 const stringify = require('json-stable-stringify')
 import getImageDimensions from './get-image-dimensions'
+import draftToHtml from './draftjs-to-html'
 
 if ( !getApps().length ) {
   admin.initializeApp({
@@ -14,36 +15,57 @@ if ( !getApps().length ) {
 const db = admin.firestore()
 
 const fixImages = async () => {
-    const articles = []
+    const tests = []
 
-    const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('type', '==', 'article').get()
+    const querySnapshot = await db.collection("courses").doc('MS-500').collection('contents').where('type', '==', 'test').get()
   
     querySnapshot.forEach((doc) => {
-      const article = doc.data()
-      articles.push(article)
+      const test = doc.data()
+      tests.push(test)
     })
 
-    for (let i = 0; i < articles.length; i++) {
-      let updatedArticle = false
-
-      for (let j = 0; j < Object.keys(articles[i].article.entityMap).length; j++) {
-        const map = Object.keys(articles[i].article.entityMap)[j]
-        if (articles[i].article.entityMap[map].type == 'IMAGE') {
-          const width = articles[i].article.entityMap[map].data.width
-          const height = articles[i].article.entityMap[map].data.height
-          if (!width || !height || width === 'auto' || height === 'auto') {
-            updatedArticle = true
-            const dimensions = await getImageDimensions(articles[i].article.entityMap[map].data.src)
-            articles[i].article.entityMap[map].data.height = dimensions.height
-            articles[i].article.entityMap[map].data.width = dimensions.width
-            
+    for (let i = 0; i < tests.length; i++) {
+      let updatedTest = false
+      for (let k = 0; k < Object.keys(tests[i].questions).length; k++) {
+        const key = Object.keys(tests[i].questions)[k]
+        let updatedQuestion = false
+        for (let j = 0; j < Object.keys(tests[i].questions[key].question.entityMap).length; j++) {
+          const map = Object.keys(tests[i].questions[key].question.entityMap)[j]
+          if (tests[i].questions[key].question.entityMap[map].type == 'IMAGE') {
+            const width = tests[i].questions[key].question.entityMap[map].data.width
+            const height = tests[i].questions[key].question.entityMap[map].data.height
+            if (!width || !height || width === 'auto' || height === 'auto') {
+              updatedTest = true
+              updatedQuestion = true
+              const dimensions = await getImageDimensions(tests[i].questions[key].question.entityMap[map].data.src)
+              tests[i].questions[key].question.entityMap[map].data.height = dimensions.height
+              tests[i].questions[key].question.entityMap[map].data.width = dimensions.width
+            }
           }
         }
+
+        for (let k = 0; k < Object.keys(tests[i].questions[key].references.entityMap).length; k++) {
+          const refMap = Object.keys(tests[i].questions[key].references.entityMap)[k]
+          if (tests[i].questions[key].references.entityMap[refMap].type == 'IMAGE') {
+            const width = tests[i].questions[key].references.entityMap[refMap].data.width
+            const height = tests[i].questions[key].references.entityMap[refMap].data.height
+            if (!width || !height || width === 'auto' || height === 'auto') {
+              updatedTest = true
+              updatedQuestion = true
+              const dimensions = await getImageDimensions(tests[i].questions[key].references.entityMap[refMap].data.src)
+              tests[i].questions[key].references.entityMap[refMap].data.height = dimensions.height
+              tests[i].questions[key].references.entityMap[refMap].data.width = dimensions.width
+            }
+          }
+        }
+
+        tests[i].questions[key].questionHtml = draftToHtml(tests[i].questions[key].question)
+        tests[i].questions[key].referencesHtml = draftToHtml(tests[i].questions[key].references).replace(/\\/g, '\\\\')
       }
 
-      if (updatedArticle) {
-        console.log(JSON.stringify(articles[i], null, 2))
-        await db.collection('courses').doc('MS-500').collection('contents').doc(articles[i].id).set(articles[i])
+      if (updatedTest) {
+        console.log(JSON.stringify(tests[i], null, 2))
+        await db.collection('courses').doc('MS-500').collection('contents').doc(tests[i].id).set(tests[i])
       }
     }
 }
