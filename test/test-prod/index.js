@@ -8,7 +8,6 @@ parser.on('error', function(err) { console.log('Parser error', err); })
 const testProd = async () => {
   await testLighthouse()
   const sitemap = await getSitemap()
-  console.log(sitemap)
 }
 
 const testLighthouse = async () => {

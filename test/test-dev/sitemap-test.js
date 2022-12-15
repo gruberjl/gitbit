@@ -22,7 +22,7 @@ const sitemapTest = async () => {
       console.error('new edited value is not a date')
       console.error(difference)
     } else {
-      console.log('Sitemap is clean!')
+      
     }
   })
 }

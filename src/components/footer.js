@@ -65,16 +65,16 @@ export default function Footer({footerMargin='24px'}) {
             </Toolbar>
             <Toolbar disableGutters>
               <Grid container justifyContent="center" spacing={1}>
-                <IconButton size="large" color="inherit" href='https://www.facebook.com/GitBit0'>
+                <IconButton size="large" color="inherit" href='https://www.facebook.com/GitBit0' aria-label="Check out Gitbit on Facebook">
                   <Facebook />
                 </IconButton>
-                <IconButton size="large" color="inherit" href='https://www.linkedin.com/company/gitbit-org/'>
+                <IconButton size="large" color="inherit" href='https://www.linkedin.com/company/gitbit-org/' aria-label="Check out Gitbit on Linkedin">
                   <LinkedIn />
                 </IconButton>
-                <IconButton size="large" color="inherit" href='https://twitter.com/gruberjl'>
+                <IconButton size="large" color="inherit" href='https://twitter.com/gruberjl' aria-label="Check out Gitbit on Twitter">
                   <Twitter />
                 </IconButton>
-                <IconButton size="large" color="inherit" href='https://www.youtube.com/@gitbitorg'>
+                <IconButton size="large" color="inherit" href='https://www.youtube.com/@gitbitorg' aria-label="Check out Gitbit on YouTube">
                   <YouTube />
                 </IconButton>
               </Grid>
