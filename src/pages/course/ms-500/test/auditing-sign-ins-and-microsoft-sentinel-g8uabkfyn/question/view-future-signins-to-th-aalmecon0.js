@@ -240,8 +240,8 @@ class EditPage extends Component {
           <Container>
             <Header uid={this.state.uid} questionIdx={this.state.questionIdx} previousQuestionSlug={this.state.previousQuestionSlug} nextQuestionSlug={this.state.nextQuestionSlug} testSlug={this.state.test.slug} toggleEndExam={this.toggleEndExam} numOfQuestions={Object.values(this.state.test.questions).length} navigateTo={this.navigateTo} />
             <Grid container>
-              <Grid item xs={12} style={{height:'60px'}}>
-                <div id="adm-container-17695"></div>
+              <Grid item xs={12} style={{height: '60px'}}>
+                <div id="adm-container-17695" />
               </Grid>
             </Grid>
             {

@@ -10,25 +10,33 @@ const sitemapTest = async () => {
   const newSitemapText = fs.readFileSync(path.resolve('docs/sitemap/sitemap-index.xml'), 'utf8')
   const newSitemap = convert.xml2js(newSitemapText)
   const differences = diff(newSitemap, publicSitemap)
+  console.log(differences)
+  console.log('newSitemap')
+  console.log(newSitemap)
+  console.log('')
+  console.log('publicSitemap')
+  console.log(publicSitemap)
   let error = false
 
-  differences.forEach(difference => {
-    if (difference.kind !== 'E') {
-      console.error('Change is not an edit')
-      console.error(difference)
-      error = true
-    } else if (/\d\d\d\d-\d\d-\d\d/.test(difference.lhs) !== true) {
-      console.error('new edited value is not a date')
-      console.error(difference)
-      error = true
-    } else if (/\d\d\d\d-\d\d-\d\d/.test(difference.rhs) !== true) {
-      console.error('new edited value is not a date')
-      console.error(difference)
-      error = true
-    } else {
-      
-    }
-  })
+  if (differences) {
+    differences.forEach(difference => {
+      if (difference.kind !== 'E') {
+        console.error('Change is not an edit')
+        console.error(difference)
+        error = true
+      } else if (/\d\d\d\d-\d\d-\d\d/.test(difference.lhs) !== true) {
+        console.error('new edited value is not a date')
+        console.error(difference)
+        error = true
+      } else if (/\d\d\d\d-\d\d-\d\d/.test(difference.rhs) !== true) {
+        console.error('new edited value is not a date')
+        console.error(difference)
+        error = true
+      } else {
+        
+      }
+    })
+  }
 
   if (!error)
     console.log('No changes to sitemap')

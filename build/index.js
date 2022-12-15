@@ -28,10 +28,11 @@ const build = async () => {
   await buildBlog()
 
   const pageFiles = glob.sync('./src/pages/**/*.js')
-
+  const buildingPages = []
   for (let i = 0; i < pageFiles.length; i++) {
-    await buildPage(pageFiles[i])
+    buildingPages.push(buildPage(pageFiles[i]))
   }
+  await Promise.all(buildingPages)
   debug('buildFeeds')
   await buildFeeds()
   debug(`buildSitemap`)
