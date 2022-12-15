@@ -111,6 +111,14 @@ class EditPage extends Component {
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
       window.addEventListener('beforeunload', this.beforeUnload)
     }
+    if (isBrowser()) {
+      const script = document.createElement('script')
+      script.src = '//display.jalewaads.com/display/items.php?17695&5820&468&60&4&0&0'
+      script.async = true
+      script['data-cfasync'] = 'false'
+      script.type = 'text/javascript'
+      document.body.appendChild(script)
+    }
   }
 
   componentWillUnmount() {
@@ -231,6 +239,11 @@ class EditPage extends Component {
         <main>
           <Container>
             <Header uid={this.state.uid} questionIdx={this.state.questionIdx} previousQuestionSlug={this.state.previousQuestionSlug} nextQuestionSlug={this.state.nextQuestionSlug} testSlug={this.state.test.slug} toggleEndExam={this.toggleEndExam} numOfQuestions={Object.values(this.state.test.questions).length} navigateTo={this.navigateTo} />
+            <Grid container>
+              <Grid item xs={12} style={{height:'60px'}}>
+                <div id="adm-container-17695"></div>
+              </Grid>
+            </Grid>
             {
               {
                 'multiple-choice': <Choice question={this.state.question} setAnswer={this.setAnswer} answers={this.state.userAcct.tests[this.state.test.id][this.state.question.id].answers} testAnswers={this.state.test.answers[this.state.question.id]} showAnswers={this.state.answerShown} />,

@@ -111,6 +111,31 @@ class EditPage extends Component {
       this.onAuthStateChangedListener = onAuthStateChanged(this.setUid)
       window.addEventListener('beforeunload', this.beforeUnload)
     }
+
+    if (isBrowser()) {
+      (function(d) {
+        const params =
+        {
+          bvwidgetid: 'ntv_2077170',
+          bvlinksownid: 2077170,
+          rows: 1,
+          cols: 2,
+          textpos: 'below',
+          imagewidth: 150,
+          mobilecols: 1,
+          cb: (new Date()).getTime()
+        }
+        params.bvwidgetid = `ntv_2077170${ params.cb}`
+        d.getElementById('ntv_2077170').id = params.bvwidgetid
+        const qs = Object.keys(params).reduce((a, k)=> {
+          a.push(`${k }=${ encodeURIComponent(params[k])}`); return a
+        }, []).join(String.fromCharCode(38))
+        const s = d.createElement('script'); s.type='text/javascript'; s.async=true
+        const p = 'https:' == document.location.protocol ? 'https' : 'http'
+        s.src = `${p }://cdn.hyperpromote.com/bidvertiser/tags/active/bdvws.js?${ qs}`
+        d.getElementById(params.bvwidgetid).appendChild(s)
+      })(document)
+    }
   }
 
   componentWillUnmount() {
@@ -231,6 +256,11 @@ class EditPage extends Component {
         <main>
           <Container>
             <Header uid={this.state.uid} questionIdx={this.state.questionIdx} previousQuestionSlug={this.state.previousQuestionSlug} nextQuestionSlug={this.state.nextQuestionSlug} testSlug={this.state.test.slug} toggleEndExam={this.toggleEndExam} numOfQuestions={Object.values(this.state.test.questions).length} navigateTo={this.navigateTo} />
+            <Grid container>
+              <Grid itm xs={12}>
+                <div id="ntv_2077170" />
+              </Grid>
+            </Grid>
             {
               {
                 'multiple-choice': <Choice question={this.state.question} setAnswer={this.setAnswer} answers={this.state.userAcct.tests[this.state.test.id][this.state.question.id].answers} testAnswers={this.state.test.answers[this.state.question.id]} showAnswers={this.state.answerShown} />,
