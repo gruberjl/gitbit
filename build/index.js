@@ -12,27 +12,26 @@ import buildReadMe from './build-readme'
 const debug = require('debug')('gitbit:build')
 
 const build = async () => {
-  // debug(`buildData`)
-  // await buildData()
-  // debug(`buildLearnArticles`)
-  // await buildLearnArticles()
-  // debug('buildTestPages')
-  // await buildTestPages()
-  // debug('buildBlog')
-  // debug('buildReadMe')
-  // await buildReadMe()
-  // debug(`deleteDocs`)
+  debug(`buildData`)
+  await buildData()
+  debug(`buildLearnArticles`)
+  await buildLearnArticles()
+  debug('buildTestPages')
+  await buildTestPages()
+  debug('buildBlog')
+  debug('buildReadMe')
+  await buildReadMe()
+  debug(`deleteDocs`)
   deleteDocs()
   debug(`buildRoot`)
   await buildRoot()
   await buildBlog()
 
   const pageFiles = glob.sync('./src/pages/**/*.js')
-  const buildingPages = []
+  
   for (let i = 0; i < pageFiles.length; i++) {
-    buildingPages.push(buildPage(pageFiles[i]))
+    await buildPage(pageFiles[i])
   }
-  await Promise.all(buildingPages)
   debug('buildFeeds')
   await buildFeeds()
   debug(`buildSitemap`)

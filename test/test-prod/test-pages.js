@@ -2,6 +2,8 @@ require('chromedriver')
 const webdriver = require('selenium-webdriver')
 const {By} = require('selenium-webdriver')
 
+const sleep = ms => new Promise(r => setTimeout(r, ms))
+
 const build = async (mobileEmulation) => {
   var chromeCapabilities = webdriver.Capabilities.chrome()
   const options = {'args': ['--disable-notifications']}
@@ -50,6 +52,7 @@ const start = async () => {
   for (let i = 0; i < urls.length; i++) {
     await browser.get(urls[i])
     await appleBrowser.get(urls[i])
+    await sleep(4000)
   }
 
   await browser.quit()
