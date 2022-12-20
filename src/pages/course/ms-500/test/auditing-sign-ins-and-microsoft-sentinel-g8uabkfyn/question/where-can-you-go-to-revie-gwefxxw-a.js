@@ -262,7 +262,7 @@ class EditPage extends Component {
         <main>
           <Container>
             <Header uid={this.state.uid} questionIdx={this.state.questionIdx} previousQuestionSlug={this.state.previousQuestionSlug} nextQuestionSlug={this.state.nextQuestionSlug} testSlug={this.state.test.slug} toggleEndExam={this.toggleEndExam} numOfQuestions={Object.values(this.state.test.questions).length} navigateTo={this.navigateTo} />
-            <div id="ntv_2077339" style={{height: this.state.bidvHeight}} />
+            <div id="ntv_2077339" style={{height: this.state.bidvHeight, overflow: 'hidden'}} />
             {
               {
                 'multiple-choice': <Choice question={this.state.question} setAnswer={this.setAnswer} answers={this.state.userAcct.tests[this.state.test.id][this.state.question.id].answers} testAnswers={this.state.test.answers[this.state.question.id]} showAnswers={this.state.answerShown} />,
