@@ -12,20 +12,21 @@ import buildReadMe from './build-readme'
 const debug = require('debug')('gitbit:build')
 
 const build = async () => {
-  debug(`buildData`)
-  await buildData()
-  debug(`buildLearnArticles`)
-  await buildLearnArticles()
-  debug('buildTestPages')
-  await buildTestPages()
-  debug('buildBlog')
-  debug('buildReadMe')
-  await buildReadMe()
+  // debug(`buildData`)
+  // await buildData()
+  // debug(`buildLearnArticles`)
+  // await buildLearnArticles()
+  // debug('buildTestPages')
+  // await buildTestPages()
+  // debug('buildBlog')
+  // debug('buildReadMe')
+  // await buildReadMe()
+  // await buildBlog()
   debug(`deleteDocs`)
   deleteDocs()
   debug(`buildRoot`)
   await buildRoot()
-  await buildBlog()
+  
 
   const pageFiles = glob.sync('./src/pages/**/*.js')
   

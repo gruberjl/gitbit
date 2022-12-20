@@ -10,12 +10,7 @@ const sitemapTest = async () => {
   const newSitemapText = fs.readFileSync(path.resolve('docs/sitemap/sitemap-index.xml'), 'utf8')
   const newSitemap = convert.xml2js(newSitemapText)
   const differences = diff(newSitemap, publicSitemap)
-  console.log(differences)
-  console.log('newSitemap')
-  console.log(newSitemap)
-  console.log('')
-  console.log('publicSitemap')
-  console.log(publicSitemap)
+
   let error = false
 
   if (differences) {
