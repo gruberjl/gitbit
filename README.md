@@ -203,6 +203,7 @@ Go to https://www.gitbit.org to get started. Or you can jump right into one of o
 
 ## MS-500 Blog articles
 
+* [0 to hero - the ultimate Microsoft Defender for Endpoint (MDE) guide](https://www.gitbit.org/course/ms-500/blog/how-to-manage-defender-for-endpoint-5lif8mrvd)
 * [The Anatomy of Great Phishing Emails](https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n)
 * [14 steps to fix a hacked Microsoft 365 account](https://www.gitbit.org/course/ms-500/blog/14-steps-to-fix-a-hacked-microsoft-365-account-v1hijwayc)
 * [Error connecting Windows 10 computer to Microsoft 365. Error code: 80180014](https://www.gitbit.org/course/ms-500/blog/error-connecting-windows-10-computer-to-microsoft-365-error-code-80180014-wxlc7344o)

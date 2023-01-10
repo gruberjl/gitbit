@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitbit.org/course/ms-500/blog</id>
     <title>Gitbit - Microsoft 365 security</title>
-    <updated>2022-12-20T03:59:32.055Z</updated>
+    <updated>2023-01-10T20:00:16.656Z</updated>
     <generator>GitBit</generator>
     <author>
         <name>John Gruber</name>
@@ -21,6 +21,18 @@
         <email>John.Gruber@gitbit.org</email>
         <uri>https://www.gitbit.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[0 to hero - the ultimate Microsoft Defender for Endpoint (MDE) guide]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/how-to-manage-defender-for-endpoint-5lif8mrvd</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/how-to-manage-defender-for-endpoint-5lif8mrvd"/>
+        <updated>2023-01-09T05:00:00.000Z</updated>
+        <summary type="html"><![CDATA[How to manage defender for endpoint?]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[The Anatomy of Great Phishing Emails]]></title>
         <id>https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n</id>

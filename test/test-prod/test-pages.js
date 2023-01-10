@@ -1,6 +1,7 @@
 require('chromedriver')
 const webdriver = require('selenium-webdriver')
 const {By} = require('selenium-webdriver')
+const errors = []
 
 const sleep = ms => new Promise(r => setTimeout(r, ms))
 
@@ -32,16 +33,12 @@ const getSitemap = async (browser) => {
   return urls
 }
 
-const getSite = async (browser, urls, url) => {
-  await browser.get(url)
-  const linkEls = await browser.findElements(By.css('a'))
-
-  for (let i=0; i<linkEls.length; i++) {
-    const text = await linkEls[i].getAttribute('href')
-    urls.add(text)
+const testPage = async (browser, currentUrl) => {
+  const pageWidth = await browser.executeScript('return document.body.scrollWidth - window.innerWidth')
+  if (pageWidth > 0) {
+    const err = `${currentUrl} width is larger than the screen`
+    errors.push(err)
   }
-
-  return urls
 }
 
 const start = async () => {
@@ -52,11 +49,13 @@ const start = async () => {
   for (let i = 0; i < urls.length; i++) {
     await browser.get(urls[i])
     await appleBrowser.get(urls[i])
+    await testPage(appleBrowser, urls[i])
     await sleep(4000)
   }
 
   await browser.quit()
   await appleBrowser.quit()
+  console.log(errors)
 }
 
 start()

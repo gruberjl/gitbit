@@ -11,6 +11,17 @@
     },
     "items": [
         {
+            "id": "https://www.gitbit.org/course/ms-500/blog/how-to-manage-defender-for-endpoint-5lif8mrvd",
+            "url": "https://www.gitbit.org/course/ms-500/blog/how-to-manage-defender-for-endpoint-5lif8mrvd",
+            "title": "0 to hero - the ultimate Microsoft Defender for Endpoint (MDE) guide",
+            "summary": "How to manage defender for endpoint?",
+            "date_modified": "2023-01-09T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
             "id": "https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n",
             "url": "https://www.gitbit.org/course/ms-500/blog/the-anatomy-of-great-phishing-emails-xgbfcvv4n",
             "title": "The Anatomy of Great Phishing Emails",
