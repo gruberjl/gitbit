@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitbit.org/course/ms-500/blog</id>
     <title>Gitbit - Microsoft 365 security</title>
-    <updated>2023-01-19T20:39:58.071Z</updated>
+    <updated>2023-01-25T15:36:01.963Z</updated>
     <generator>GitBit</generator>
     <author>
         <name>John Gruber</name>
@@ -21,6 +21,18 @@
         <email>John.Gruber@gitbit.org</email>
         <uri>https://www.gitbit.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[9 Conditional Access Policies You'll Kick Yourself for Not Setting Up]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/9-conditional-access-policies-youll-kick-yourself-for-not-setting-up-crntbkjzc</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/9-conditional-access-policies-youll-kick-yourself-for-not-setting-up-crntbkjzc"/>
+        <updated>2023-01-19T05:00:00.000Z</updated>
+        <summary type="html"><![CDATA[9 top recommended conditional access policies to secure your Microsoft 365 environment]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[0 to hero - the ultimate Microsoft Defender for Endpoint (MDE) guide]]></title>
         <id>https://www.gitbit.org/course/ms-500/blog/how-to-manage-defender-for-endpoint-5lif8mrvd</id>
