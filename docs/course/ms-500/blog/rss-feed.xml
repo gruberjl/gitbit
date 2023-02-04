@@ -4,7 +4,7 @@
         <title>Gitbit - Microsoft 365 security</title>
         <link>https://www.gitbit.org/course/ms-500/blog</link>
         <description>Read the latest news, guides, and how to articles on securing Microsoft 365.</description>
-        <lastBuildDate>Wed, 25 Jan 2023 15:36:01 GMT</lastBuildDate>
+        <lastBuildDate>Fri, 03 Feb 2023 12:52:22 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitBit</generator>
         <language>en</language>
@@ -15,6 +15,14 @@
         </image>
         <copyright>All rights reserved 2022, John Gruber</copyright>
         <category>Technology</category>
+        <item>
+            <title><![CDATA[26 cyber security careers with average pay and number of jobs available]]></title>
+            <link>https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx</link>
+            <guid>https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx</guid>
+            <pubDate>Wed, 25 Jan 2023 05:00:00 GMT</pubDate>
+            <description><![CDATA[26 cyber security careers with average pay and number of jobs available on Dice, and Career Builber]]></description>
+            <author>John.Gruber@gitbit.org (John Gruber)</author>
+        </item>
         <item>
             <title><![CDATA[9 Conditional Access Policies You'll Kick Yourself for Not Setting Up]]></title>
             <link>https://www.gitbit.org/course/ms-500/blog/9-conditional-access-policies-youll-kick-yourself-for-not-setting-up-crntbkjzc</link>

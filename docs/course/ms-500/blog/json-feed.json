@@ -11,6 +11,17 @@
     },
     "items": [
         {
+            "id": "https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx",
+            "url": "https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx",
+            "title": "26 cyber security careers with average pay and number of jobs available",
+            "summary": "26 cyber security careers with average pay and number of jobs available on Dice, and Career Builber",
+            "date_modified": "2023-01-25T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
             "id": "https://www.gitbit.org/course/ms-500/blog/9-conditional-access-policies-youll-kick-yourself-for-not-setting-up-crntbkjzc",
             "url": "https://www.gitbit.org/course/ms-500/blog/9-conditional-access-policies-youll-kick-yourself-for-not-setting-up-crntbkjzc",
             "title": "9 Conditional Access Policies You'll Kick Yourself for Not Setting Up",

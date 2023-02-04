@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitbit.org/course/ms-500/blog</id>
     <title>Gitbit - Microsoft 365 security</title>
-    <updated>2023-01-25T15:36:01.963Z</updated>
+    <updated>2023-02-03T12:52:22.378Z</updated>
     <generator>GitBit</generator>
     <author>
         <name>John Gruber</name>
@@ -21,6 +21,18 @@
         <email>John.Gruber@gitbit.org</email>
         <uri>https://www.gitbit.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[26 cyber security careers with average pay and number of jobs available]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx"/>
+        <updated>2023-01-25T05:00:00.000Z</updated>
+        <summary type="html"><![CDATA[26 cyber security careers with average pay and number of jobs available on Dice, and Career Builber]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[9 Conditional Access Policies You'll Kick Yourself for Not Setting Up]]></title>
         <id>https://www.gitbit.org/course/ms-500/blog/9-conditional-access-policies-youll-kick-yourself-for-not-setting-up-crntbkjzc</id>
