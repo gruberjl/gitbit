@@ -8,12 +8,11 @@ const sleep = ms => new Promise(r => setTimeout(r, ms))
 const build = async (mobileEmulation) => {
   var chromeCapabilities = webdriver.Capabilities.chrome()
   const options = {'args': ['--disable-notifications']}
+  
   if (mobileEmulation)
     options.mobileEmulation = {deviceName: mobileEmulation}
+
   chromeCapabilities.set('goog:chromeOptions', options)
-  
-  // if (mobileEmulation)
-  //   chromeCapabilities.setMobileEmulation({deviceName: mobileEmulation})
 
   let browser = new webdriver.Builder().withCapabilities(chromeCapabilities).build()
 
