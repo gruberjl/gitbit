@@ -2,7 +2,7 @@
 <feed xmlns="http://www.w3.org/2005/Atom">
     <id>https://www.gitbit.org/course/ms-500/blog</id>
     <title>Gitbit - Microsoft 365 security</title>
-    <updated>2023-02-03T12:52:22.378Z</updated>
+    <updated>2023-02-12T20:44:38.167Z</updated>
     <generator>GitBit</generator>
     <author>
         <name>John Gruber</name>
@@ -21,6 +21,30 @@
         <email>John.Gruber@gitbit.org</email>
         <uri>https://www.gitbit.org</uri>
     </contributor>
+    <entry>
+        <title type="html"><![CDATA[Zero Trust Explained]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/zero-trust-explained-izct6nv0h</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/zero-trust-explained-izct6nv0h"/>
+        <updated>2023-02-12T05:00:00.000Z</updated>
+        <summary type="html"><![CDATA[What is zero trust? Why does zero trust matter? Please explain zero trust.]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[How to send emails through Microsoft 365 from PowerShell]]></title>
+        <id>https://www.gitbit.org/course/ms-500/blog/how-to-send-emails-through-microsoft-365-from-powershell-injifle8u</id>
+        <link href="https://www.gitbit.org/course/ms-500/blog/how-to-send-emails-through-microsoft-365-from-powershell-injifle8u"/>
+        <updated>2023-02-03T05:00:00.000Z</updated>
+        <summary type="html"><![CDATA[With basic authentication going away it's time to move on from using credentials in PowerShell scripts. Fortunately, there's a new way to send emails from scripts. Using app registration!]]></summary>
+        <author>
+            <name>John Gruber</name>
+            <email>John.Gruber@gitbit.org</email>
+            <uri>https://www.gitbit.org</uri>
+        </author>
+    </entry>
     <entry>
         <title type="html"><![CDATA[26 cyber security careers with average pay and number of jobs available]]></title>
         <id>https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx</id>

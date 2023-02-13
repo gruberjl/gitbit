@@ -86,7 +86,7 @@ const DashboardPage = () => {
                     <CardContent>
                       <Typography gutterBottom variant="h5" component="div" sx={{mt: 4, mb: 4}}>{nextContent.title}</Typography>
                       <CardActions>
-                        <Button variant="contained" href={`/course/ms-500/learn/${nextContent.slug}`}>Start next lesson</Button>
+                        <Button variant="contained" href={`/course/ms-500/${nextContent.type === 'article' ? 'learn' : 'test'}/${nextContent.slug}`}>Start next lesson</Button>
                       </CardActions>
                     </CardContent>
                   )

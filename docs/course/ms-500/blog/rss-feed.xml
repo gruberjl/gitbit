@@ -4,7 +4,7 @@
         <title>Gitbit - Microsoft 365 security</title>
         <link>https://www.gitbit.org/course/ms-500/blog</link>
         <description>Read the latest news, guides, and how to articles on securing Microsoft 365.</description>
-        <lastBuildDate>Fri, 03 Feb 2023 12:52:22 GMT</lastBuildDate>
+        <lastBuildDate>Sun, 12 Feb 2023 20:44:38 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>GitBit</generator>
         <language>en</language>
@@ -15,6 +15,22 @@
         </image>
         <copyright>All rights reserved 2022, John Gruber</copyright>
         <category>Technology</category>
+        <item>
+            <title><![CDATA[Zero Trust Explained]]></title>
+            <link>https://www.gitbit.org/course/ms-500/blog/zero-trust-explained-izct6nv0h</link>
+            <guid>https://www.gitbit.org/course/ms-500/blog/zero-trust-explained-izct6nv0h</guid>
+            <pubDate>Sun, 12 Feb 2023 05:00:00 GMT</pubDate>
+            <description><![CDATA[What is zero trust? Why does zero trust matter? Please explain zero trust.]]></description>
+            <author>John.Gruber@gitbit.org (John Gruber)</author>
+        </item>
+        <item>
+            <title><![CDATA[How to send emails through Microsoft 365 from PowerShell]]></title>
+            <link>https://www.gitbit.org/course/ms-500/blog/how-to-send-emails-through-microsoft-365-from-powershell-injifle8u</link>
+            <guid>https://www.gitbit.org/course/ms-500/blog/how-to-send-emails-through-microsoft-365-from-powershell-injifle8u</guid>
+            <pubDate>Fri, 03 Feb 2023 05:00:00 GMT</pubDate>
+            <description><![CDATA[With basic authentication going away it's time to move on from using credentials in PowerShell scripts. Fortunately, there's a new way to send emails from scripts. Using app registration!]]></description>
+            <author>John.Gruber@gitbit.org (John Gruber)</author>
+        </item>
         <item>
             <title><![CDATA[26 cyber security careers with average pay and number of jobs available]]></title>
             <link>https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx</link>

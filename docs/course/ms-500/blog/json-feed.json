@@ -11,6 +11,28 @@
     },
     "items": [
         {
+            "id": "https://www.gitbit.org/course/ms-500/blog/zero-trust-explained-izct6nv0h",
+            "url": "https://www.gitbit.org/course/ms-500/blog/zero-trust-explained-izct6nv0h",
+            "title": "Zero Trust Explained",
+            "summary": "What is zero trust? Why does zero trust matter? Please explain zero trust.",
+            "date_modified": "2023-02-12T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
+            "id": "https://www.gitbit.org/course/ms-500/blog/how-to-send-emails-through-microsoft-365-from-powershell-injifle8u",
+            "url": "https://www.gitbit.org/course/ms-500/blog/how-to-send-emails-through-microsoft-365-from-powershell-injifle8u",
+            "title": "How to send emails through Microsoft 365 from PowerShell",
+            "summary": "With basic authentication going away it's time to move on from using credentials in PowerShell scripts. Fortunately, there's a new way to send emails from scripts. Using app registration!",
+            "date_modified": "2023-02-03T05:00:00.000Z",
+            "author": {
+                "name": "John Gruber",
+                "url": "https://www.gitbit.org"
+            }
+        },
+        {
             "id": "https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx",
             "url": "https://www.gitbit.org/course/ms-500/blog/cyber-security-careers-bhmjh1jcx",
             "title": "26 cyber security careers with average pay and number of jobs available",
