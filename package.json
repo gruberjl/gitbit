@@ -67,6 +67,7 @@
     "draftjs-to-html": "^0.9.1",
     "firebase": "^9.9.0",
     "install": "^0.13.0",
+    "nano": "^10.1.2",
     "npm": "^8.14.0",
     "preact": "^10.10.0",
     "preact-helmet": "^4.0.0-alpha-3",
