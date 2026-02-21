@@ -6,7 +6,7 @@ Then, I realized I could grab all the information I needed through Microsoft Gra
 
 Go to https://www.gitbit.org to get started discovering inactive users and reclaim wasted licenses in minutes. No complications, no guesswork.
 
-Not ready to get started. Read up on Microsoft at [Gitbit Docs](https://www.gitbit.org)
+Not ready to get started. Read up on Microsoft at [Gitbit Docs](https://www.gitbit.org/docs)
 Want to stay informed about Microsoft [subscribe](https://gitbit.substack.com/?r=a1cyh&utm_campaign=pub-share-checklist)
 
 ## Lessons
