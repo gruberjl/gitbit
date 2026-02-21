@@ -1,8 +1,13 @@
 # Welcome to Gitbit
 
-GitBit was created to help the world get better at securing their Microsoft 365 tenants. A lot of organizations are now using Microsoft 365 but how many of them are secure? Not many!
+One day, I had a customer ask me to find unused licenses in Microsoft 365. After a few weeks of manual digging, we uncovered over 200 accounts that were licensed but hadn't signed on, or were simply disabled. So I thought, there has to be a better way.
 
-Go to https://www.gitbit.org to get started. Or you can jump right into one of our lessons. Or jump right into the practice questions. The practice questions are very similar to the questions you'll find on the MS-500 certification by Microsoft.
+Then, I realized I could grab all the information I needed through Microsoft Graph. That's when Gitbit was born.
+
+Go to https://www.gitbit.org to get started discovering inactive users and reclaim wasted licenses in minutes. No complications, no guesswork.
+
+Not ready to get started. Read up on Microsoft at [Gitbit Docs](https://www.gitbit.org)
+Want to stay informed about Microsoft [subscribe](https://gitbit.substack.com/?r=a1cyh&utm_campaign=pub-share-checklist)
 
 ## Lessons
 
